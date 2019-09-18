@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>
+            Base file ThreeJS
+        </title>
+        <style>
+                body { margin: 0; }
+                canvas { width: 100%; height: 100% }
+        </style>
+    </head>
+
+
+    <body>
+
+        <script src="js/three.js"></script>
+        <script type = "module">
+
+            //import * as THREE from '/build/three.module.js';
+
+            var renderer, scene, camera;
+
+            init();
+            animate();
+
+            function generateBox(color, width, length, depth){
+
+                var geometry = new THREE.BoxGeometry( width, length, depth );
+			    var material = new THREE.MeshBasicMaterial( { color } );
+                var box = new THREE.Mesh( geometry, material );
+                
+                return box;
+            }
+
+            function init(){
+
+                scene = new THREE.Scene();
+
+                camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 1, 10000);
+                camera.position.set(10,10,10);
+                camera.lookAt(scene.position);
+                camera.updateMatrix();
+
+                renderer = new THREE.WebGLRenderer();
+                renderer.setSize( window.innerWidth, window.innerHeight );
+                document.body.appendChild( renderer.domElement );
+
+                var box = generateBox(0x00ff00, 1, 1, 1);
+                scene.add(box);
+            }
+
+            function animate(){
+
+                requestAnimationFrame( animate );
+
+                render();
+            }
+
+            function render() {
+
+                renderer.render(scene, camera);
+            }
+        </script>
+
+    </body>
+</html>
