@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <title>
-            Base file ThreeJS
+            3D Plane
         </title>
         <link rel="stylesheet" href="../CSS/main.css">
     </head>
@@ -18,6 +18,7 @@
 
             var renderer, scene, camera;
             var backGroundColor = "#e5e5e5";
+			var testShapeColor = "0x00ff00";
 
             init();
             animate();
@@ -31,12 +32,49 @@
                 return box;
             }
 
+			function generateAxes(){
+
+				var x = generateLine("#0324ff", new THREE.Vector3(-5,0,0),new THREE.Vector3(5,0,0));
+				var y = generateLine("#fc031c",new THREE.Vector3(0,-5,0),new THREE.Vector3(0,5,0));
+				var z = generateLine("#11ff00",new THREE.Vector3(0,0,-5),new THREE.Vector3(0,0,5));
+
+				return [x,y,z];
+			}
+
+			function generateLine(color, a, b){
+
+				var material = new THREE.LineBasicMaterial({color : color});
+				var geometry = new THREE.Geometry();
+				geometry.vertices.push(a);
+				geometry.vertices.push(b);
+				var line = new THREE.Line(geometry, material);
+
+				return line;
+			}
+
+			function addMeshToScene(value, index, array){
+
+				scene.add(value);
+			}
+
+			function onDocumentMouseMove(){
+
+			}
+
+			function onDocumentTouchStart(){
+
+			}
+
+			function onDocumentTouchMove(){
+
+			}
+
             function resizeWindow(){
 
                 renderer.setSize( window.innerWidth, window.innerHeight );
                 camera.aspect = window.innerWidth / window.innerHeight;
 
-                camera.updateProjectMatrix();
+                camera.updateProjectionMatrix();
             }
 
             function init(){
@@ -53,12 +91,19 @@
                 renderer.setSize( window.innerWidth, window.innerHeight );
                 document.body.appendChild( renderer.domElement );
 
-                window.addEventListener('resize', () => resizeWindow());
+                var box = generateBox(testShapeColor, 1, 1, 1);
+				var axes = generateAxes();
+				axes.forEach(addMeshToScene);
 
-                var box = generateBox(0x00ff00, 1, 1, 1);
-                scene.add(box);
+
+				document.addEventListener( 'mousemove', onDocumentMouseMove, false );
+				document.addEventListener( 'touchstart', onDocumentTouchStart, false );
+				document.addEventListener( 'touchmove', onDocumentTouchMove, false );
+
+                window.addEventListener('resize', resizeWindow);
             }
 
+			
             function animate(){
 
                 requestAnimationFrame( animate );
