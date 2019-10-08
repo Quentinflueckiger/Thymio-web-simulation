@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>
+            Base file ThreeJS
+        </title>
+        <link rel="stylesheet" href="../../CSS/main.css">
+    </head>
+
+
+    <body>
+
+        <script src="../js/three.js"></script>
+        <script type = "module">
+
+            //import * as THREE from '/build/three.module.js';
+
+            var renderer, scene, camera;
+            var backGroundColor = "#e5e5e5";
+
+            init();
+            animate();
+
+            function generateBox(color, width, length, depth){
+
+                var geometry = new THREE.BoxGeometry( width, length, depth );
+			    var material = new THREE.MeshBasicMaterial( { color } );
+                var box = new THREE.Mesh( geometry, material );
+                
+                return box;
+            }
+
+            function resizeWindow(){
+
+                renderer.setSize( window.innerWidth, window.innerHeight );
+                camera.aspect = window.innerWidth / window.innerHeight;
+
+                camera.updateProjectMatrix();
+            }
+
+            function init(){
+
+                scene = new THREE.Scene();
+
+                camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 1, 10000);
+                camera.position.set(10,10,10);
+                camera.lookAt(scene.position);
+                camera.updateMatrix();
+
+                renderer = new THREE.WebGLRenderer();
+                renderer.setClearColor(backGroundColor);
+                renderer.setSize( window.innerWidth, window.innerHeight );
+                document.body.appendChild( renderer.domElement );
+
+                window.addEventListener('resize', () => resizeWindow());
+
+                var box = generateBox(0x00ff00, 1, 1, 1);
+                scene.add(box);
+            }
+
+            function animate(){
+
+                requestAnimationFrame( animate );
+
+                render();
+            }
+
+            function render() {
+                
+                renderer.render(scene, camera);
+            }
+        </script>
+
+    </body>
+</html>

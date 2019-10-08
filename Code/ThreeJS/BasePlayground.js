@@ -1,0 +1,247 @@
+import { OrbitControls } from '../ThreeJS/js/examples/jsm/controls/OrbitControls.js';
+import { MTLLoader } from '../ThreeJS/js/examples/jsm/loaders/MTLLoader.js';
+import { OBJLoader } from '../ThreeJS/js/examples/jsm/loaders/OBJLoader.js';
+
+var renderer, scene, camera, light;
+var meshes;
+
+const WallHeight = 6;
+const WallDepth = 1;
+const GroundColor = "#bdbbbb";
+const BackGroundColor = "#7fc4f5";
+const Green = "#11ff00";
+const ThymioColor = "#e6e6e6";
+const Blue = "#0324ff";
+const Red = "#fc031c";
+const Grey = "#e5e5e5";
+
+init();
+animate();
+            
+/**
+*   Creates a box mesh.
+*   @param {Color} color    The hex value of the wanted color
+*   @param {Float} width    The x value
+*   @param {Float} length   The y value
+*   @param {Float} depth    The z value
+*   @return {Mesh}          The mesh created
+*/
+function generateBox(color, width, length, depth){
+
+    var geometry = new THREE.BoxGeometry( width, length, depth );
+    var material = new THREE.MeshPhongMaterial( { color : color} );
+    var box = new THREE.Mesh( geometry, material );
+                
+    return box;
+}
+
+function generatePlane(color, width, height){
+
+    var geometry = new THREE.PlaneGeometry( width, height, 32 );
+    var material = new THREE.MeshPhongMaterial( {color: color, side: THREE.DoubleSide} );
+    var plane = new THREE.Mesh( geometry, material );
+                
+    plane.rotateX(1.57);
+
+    return plane;
+}
+
+function generateAxes(){
+
+	var x = generateLine(Red, new THREE.Vector3(-25,0,0),new THREE.Vector3(25,0,0));
+	var y = generateLine(Green,new THREE.Vector3(0,-25,0),new THREE.Vector3(0,25,0));
+	var z = generateLine(Blue,new THREE.Vector3(0,0,-25),new THREE.Vector3(0,0,25));
+
+	return [x,y,z];
+}
+
+function generateLine(color, a, b){
+
+	var material = new THREE.LineBasicMaterial({color : color});
+	var geometry = new THREE.Geometry();
+	geometry.vertices.push(a);
+	geometry.vertices.push(b);
+	var line = new THREE.Line(geometry, material);
+
+	return line;
+}
+
+function generateSphere(color, radius){
+
+    var geometry = new THREE.SphereGeometry(radius, 32, 32, 0, 3.1,0 , 3.1);
+    var material = new THREE.MeshPhongMaterial({color});
+    var sphere = new THREE.Mesh(geometry,material);
+    return sphere;
+}
+
+function generateThymioMesh(){
+
+    var body = generateBox(ThymioColor, 2, 1, 2);
+    var head = generateSphere(ThymioColor, 1);
+    head.position.z = 1 ;
+    head.scale.y -= 0.5;
+    var thymio = new THREE.Group();
+    thymio.add(body);
+    thymio.add(head);
+
+    thymio.position.set(0, 0.5, 0);
+    thymio.rotateY(1.57);
+
+    thymio.castShadow = true;
+
+    return thymio;
+}
+
+function generateBasePlayGround(color, width, length){
+
+    var plane = generatePlane(color, width, length);
+    plane.receiveShadow = true;
+
+    var wallN = generateBox(color, WallDepth, WallHeight, width);
+    wallN.position.x -= width/2;
+    wallN.position.y += WallHeight/2;
+    wallN.castShadow = true;
+    wallN.receiveShadow = true;
+    var wallE = generateBox(color, width, WallHeight, WallDepth);
+    wallE.position.z -= width/2;
+    wallE.position.y += WallHeight/2;
+    wallE.castShadow = true;
+    wallE.receiveShadow = true;
+    var wallS = generateBox(color, WallDepth, WallHeight, width);
+    wallS.position.x += width/2;
+    wallS.position.y += WallHeight/2;
+    wallS.castShadow = true;
+    wallS.receiveShadow = true;
+    var wallW = generateBox(color, width, WallHeight, WallDepth);
+    wallW.position.z += width/2;
+    wallW.position.y += WallHeight/2;
+    wallW.castShadow = true;
+    wallW.receiveShadow = true;
+
+    var playground = new THREE.Group();
+    playground.add(plane);
+    playground.add(wallN);
+    playground.add(wallE);
+    playground.add(wallS);
+    playground.add(wallW);
+
+    return playground;
+}
+
+function loadOBJWMTL(){
+
+    var mtlLoader = new MTLLoader();
+    //mtlLoader.setTexturePath('../../Models/Thymio_3d_Model/');
+    mtlLoader.setPath('../../Models/Thymio_3d_Model/');
+    mtlLoader.load('obj.mtl', function(materials){
+        materials.preload();
+
+        var objLoader = new OBJLoader();
+        objLoader.setMaterials(materials);
+        objLoader.setPath('../../Models/Thymio_3d_Model/');
+        objLoader.load('tinker.obj', function(object){
+            object.scale.set(0.05,0.05,0.05);
+            object.rotateX(-1.57);
+            scene.add(object);
+        })
+    })
+
+    
+}
+
+function initGFX(){
+
+    meshes = generateAxes();
+    //meshes.push(generateThymioMesh());
+    
+    meshes.push(generateBasePlayGround(GroundColor,50,50));
+    meshes.forEach(addMeshToScene);
+
+    loadOBJWMTL();
+}
+
+function addMeshToScene(value, index, array){
+
+	scene.add(value);
+}
+
+function onDocumentMouseMove(){
+    //throw {name : "NotImplementedError", message : "staged to be implemented later"}; 
+}
+
+function onDocumentTouchStart(){
+
+}
+
+function onDocumentTouchMove(){
+
+}
+
+function resizeWindow(){
+
+    renderer.setSize( window.innerWidth, window.innerHeight );
+    camera.aspect = window.innerWidth / window.innerHeight;
+
+    camera.updateProjectionMatrix();
+}
+
+function initLight(){
+
+    light = new THREE.DirectionalLight( 0xffffff, 1, 100 );
+    light.position.set( 25, 25, 0 ); 			
+    light.castShadow = true;            
+    scene.add( light );
+
+    light.shadow.mapSize.width = 512;  
+    light.shadow.mapSize.height = 512; 
+    light.shadow.camera.near = 0.5;    
+    light.shadow.camera.far = 500;     
+}
+
+function init(){
+
+    scene = new THREE.Scene();
+
+    camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 1, 10000);
+    camera.position.set(20,20,20);
+    camera.lookAt(scene.position);
+    camera.updateMatrix();
+                
+    renderer = new THREE.WebGLRenderer();
+    renderer.setClearColor(BackGroundColor);
+    renderer.setSize( window.innerWidth, window.innerHeight );
+    renderer.shadowMap.enabled = true;
+    renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+ 
+    initLight();
+    initGFX();
+
+    var helper = new THREE.CameraHelper( light.shadow.camera );
+    scene.add( helper );
+
+	document.addEventListener( 'mousemove', onDocumentMouseMove, false );
+	document.addEventListener( 'touchstart', onDocumentTouchStart, false );
+	document.addEventListener( 'touchmove', onDocumentTouchMove, false );
+
+    // controls
+    var controls = new OrbitControls( camera, renderer.domElement );
+	controls.maxPolarAngle = Math.PI * 0.5;
+	controls.minDistance = 20;
+	controls.maxDistance = 1000;
+
+    window.addEventListener('resize', resizeWindow);
+    document.body.appendChild( renderer.domElement );
+}
+
+			
+function animate(){
+
+    requestAnimationFrame( animate );
+
+    render();
+}
+
+function render() {
+                
+    renderer.render(scene, camera);
+}
