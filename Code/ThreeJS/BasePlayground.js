@@ -5,6 +5,7 @@ import { OBJLoader } from '../ThreeJS/js/examples/jsm/loaders/OBJLoader.js';
 var renderer, scene, camera, light;
 var meshes;
 
+const thymiopath = '../Models/Thymio_3d_Model/';
 const WallHeight = 6;
 const WallDepth = 1;
 const GroundColor = "#bdbbbb";
@@ -132,13 +133,13 @@ function loadOBJWMTL(){
 
     var mtlLoader = new MTLLoader();
     //mtlLoader.setTexturePath('../../Models/Thymio_3d_Model/');
-    mtlLoader.setPath('../../Models/Thymio_3d_Model/');
+    mtlLoader.setPath(thymiopath);
     mtlLoader.load('obj.mtl', function(materials){
         materials.preload();
 
         var objLoader = new OBJLoader();
         objLoader.setMaterials(materials);
-        objLoader.setPath('../../Models/Thymio_3d_Model/');
+        objLoader.setPath(thymiopath);
         objLoader.load('tinker.obj', function(object){
             object.scale.set(0.05,0.05,0.05);
             object.rotateX(-1.57);

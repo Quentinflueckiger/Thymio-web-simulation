@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.07.0 (TeX Live 2018/W32TeX)  (format=lualatex 2018.10.2)  7 OCT 2019 16:14
+This is LuaTeX, Version 1.07.0 (TeX Live 2018/W32TeX)  (format=lualatex 2018.10.2)  11 OCT 2019 10:23
  restricted system commands enabled.
 **flucq1_Documentation.tex
 (./flucq1_Documentation.tex
@@ -1452,7 +1452,7 @@ LaTeX Font Info:    Font shape `TU/lmss/b/n' in size <12> not available
 File: ./ressources/images/prototype_thymio_old.jpg Graphic file (type jpg)
 <use ./ressources/images/prototype_thymio_old.jpg>
 Package luatex.def Info: ./ressources/images/prototype_thymio_old.jpg  used on i
-nput line 64.
+nput line 74.
 (luatex.def)             Requested size: 418.25555pt x 189.40805pt.
  [5
 
@@ -1463,16 +1463,16 @@ File: ./ressources/images/Wireless-thymioII-sensor-actuator-color-en.png Graphic
  file (type png)
 <use ./ressources/images/Wireless-thymioII-sensor-actuator-color-en.png>
 Package luatex.def Info: ./ressources/images/Wireless-thymioII-sensor-actuator-c
-olor-en.png  used on input line 72.
+olor-en.png  used on input line 87.
 (luatex.def)             Requested size: 418.25555pt x 292.75806pt.
  [6<./ressources/images/Wireless-thymioII-sensor-actuator-color-en.png>]
 
 LaTeX Warning: Citation 'Jerald:2015:VBH:2792790' on page 7 undefined on input l
-ine 93.
+ine 117.
 
 
 LaTeX Warning: Citation 'Diniz:2017:UGO:3100317.3100324' on page 7 undefined on 
-input line 95.
+input line 119.
 
 [7] (./flucq1_Documentation.lof)
 \tf@lof=\write6
@@ -1484,7 +1484,7 @@ input line 95.
 \openout7 = flucq1_Documentation.lot
 
 
-LaTeX Warning: Empty bibliography on input line 134.
+LaTeX Warning: Empty bibliography on input line 166.
 
 [8] (./flucq1_Documentation.aux)
 
@@ -1503,10 +1503,10 @@ Package logreq Info: Writing requests to 'flucq1_Documentation.run.xml'.
 Here is how much of LuaTeX's memory you used:
  25568 strings out of 494407
  100000,1373583 words of node,token memory allocated
- 575 words of node memory still in use:
-   6 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 glyph, 8 attribute, 69 glue_spec,
+ 580 words of node memory still in use:
+   6 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 glyph, 8 attribute, 70 glue_spec,
  8 attribute_list, 1 write nodes
-   avail lists: 1:5,2:397,3:140,4:29,5:158,6:41,7:2536,8:78,9:135,10:17,11:183
+   avail lists: 1:5,2:413,3:156,4:13,5:157,6:50,7:2536,8:111,9:173,10:8,11:183
  29033 multiletter control sequences out of 65536+600000
  100 fonts using 8986247 bytes
  62i,8n,83p,9117b,2195s stack positions out of 5000i,500n,10000p,200000b,100000s
@@ -1516,7 +1516,7 @@ n10-regular.otf><d:/Programmes/texlive/2018/texmf-dist/fonts/opentype/public/lm/
 lmmono12-regular.otf><d:/Programmes/texlive/2018/texmf-dist/fonts/opentype/publi
 c/lm/lmroman12-regular.otf><d:/Programmes/texlive/2018/texmf-dist/fonts/opentype
 /public/lm/lmsans10-bold.otf>
-Output written on flucq1_Documentation.pdf (8 pages, 448484 bytes).
+Output written on flucq1_Documentation.pdf (8 pages, 449217 bytes).
 
 PDF statistics: 67 PDF objects out of 1000 (max. 8388607)
  38 compressed objects within 1 object stream

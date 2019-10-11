@@ -46,4 +46,6 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {4.3}Version control}{8}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.4}Mettings}{8}
+\contentsline {subsection}{\numberline {4.4}Meetings}{8}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5}Problems encountered}{8}
