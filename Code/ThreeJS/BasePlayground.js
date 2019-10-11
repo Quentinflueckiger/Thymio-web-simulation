@@ -3,7 +3,7 @@ import { MTLLoader } from '../ThreeJS/js/examples/jsm/loaders/MTLLoader.js';
 import { OBJLoader } from '../ThreeJS/js/examples/jsm/loaders/OBJLoader.js';
 
 var renderer, scene, camera, light;
-var meshes;
+var meshes, thymio;
 
 const thymiopath = '../Models/Thymio_3d_Model/';
 const WallHeight = 6;
@@ -143,6 +143,9 @@ function loadOBJWMTL(){
         objLoader.load('tinker.obj', function(object){
             object.scale.set(0.05,0.05,0.05);
             object.rotateX(-1.57);
+
+            thymio = object;
+
             scene.add(object);
         })
     })
@@ -238,6 +241,11 @@ function init(){
 function animate(){
 
     requestAnimationFrame( animate );
+
+    // check that thymio exist, is already loaded
+    if (thymio){
+       
+    }
 
     render();
 }
