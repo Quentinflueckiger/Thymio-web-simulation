@@ -1,20 +1,33 @@
+// Hex value of four base colors.
+const Blue = "#0324ff";     
+const Red = "#fc031c";
+const Grey = "#e5e5e5";
+const Green = "#11ff00";
+
 /**
 *   Creates a box mesh.
 *   @param {Color} color    The hex value of the wanted color
 *   @param {Float} width    The x value
-*   @param {Float} length   The y value
+*   @param {Float} height   The y value
 *   @param {Float} depth    The z value
 *   @return {Mesh}          The mesh created
 */
-function generateBox(color, width, length, depth){
+function generateBox(color, width, height, depth){
 
-    var geometry = new THREE.BoxGeometry( width, length, depth );
+    var geometry = new THREE.BoxGeometry( width, height, depth );
     var material = new THREE.MeshPhongMaterial( { color : color} );
     var box = new THREE.Mesh( geometry, material );
                 
     return box;
 }
 
+/**
+ * Creates a plane mesh.
+ * @param {Color} color     The hex value of the wanted color
+ * @param {Float} width     The x value
+ * @param {Float} height    The z value
+ * @return {Mesh}           The mesh created
+ */
 function generatePlane(color, width, height){
 
     var geometry = new THREE.PlaneGeometry( width, height, 32 );
@@ -26,6 +39,10 @@ function generatePlane(color, width, height){
     return plane;
 }
 
+/**
+ * Create a XYZ axis system.
+ * @returns {Mesh[]}        An array filled with the three meshes of the corresponding axe. 
+ */
 function generateAxes(){
 
 	var x = generateLine(Red, new THREE.Vector3(-25,0,0),new THREE.Vector3(25,0,0));
@@ -35,6 +52,13 @@ function generateAxes(){
 	return [x,y,z];
 }
 
+/**
+ * Create a line mesh.
+ * @param {Color} color     The hex value of the wanted color
+ * @param {Float} a         Starting point of the line
+ * @param {Float} b         Ending point of the line
+ * @return {Mesh}           The mesh created
+ */
 function generateLine(color, a, b){
 
 	var material = new THREE.LineBasicMaterial({color : color});
@@ -46,6 +70,12 @@ function generateLine(color, a, b){
 	return line;
 }
 
+/**
+ * Create a sphere mesh.
+ * @param {Color} color     The hex value of the wanted color
+ * @param {Float} radius    The radius of the sphere
+ * @return {Mesh}           The mesh created
+ */
 function generateSphere(color, radius){
 
     var geometry = new THREE.SphereGeometry(radius, 32, 32, 0, 3.1,0 , 3.1);
@@ -54,20 +84,4 @@ function generateSphere(color, radius){
     return sphere;
 }
 
-function generateThymioMesh(){
-
-    var body = generateBox(ThymioColor, 2, 1, 2);
-    var head = generateSphere(ThymioColor, 1);
-    head.position.z = 1 ;
-    head.scale.y -= 0.5;
-    var thymio = new THREE.Group();
-    thymio.add(body);
-    thymio.add(head);
-
-    thymio.position.set(0, 0.5, 0);
-    thymio.rotateY(1.57);
-
-    thymio.castShadow = true;
-
-    return thymio;
-}
+export{generateBox, generatePlane, generateAxes, generateLine, generateSphere};

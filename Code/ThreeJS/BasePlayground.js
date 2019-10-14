@@ -2,6 +2,9 @@ import { OrbitControls } from '../ThreeJS/js/examples/jsm/controls/OrbitControls
 import { MTLLoader } from '../ThreeJS/js/examples/jsm/loaders/MTLLoader.js';
 import { OBJLoader } from '../ThreeJS/js/examples/jsm/loaders/OBJLoader.js';
 
+//import { generateBox } from './GeometricalMeshes.js';
+import * as GM from './GeometricalMeshes.js';
+
 var renderer, scene, camera, light;
 var meshes, thymio;
 
@@ -10,74 +13,15 @@ const WallHeight = 6;
 const WallDepth = 1;
 const GroundColor = "#bdbbbb";
 const BackGroundColor = "#7fc4f5";
-const Green = "#11ff00";
 const ThymioColor = "#e6e6e6";
-const Blue = "#0324ff";
-const Red = "#fc031c";
-const Grey = "#e5e5e5";
+const PI = 3.14;
 
 init();
 animate();
-            
-/**
-*   Creates a box mesh.
-*   @param {Color} color    The hex value of the wanted color
-*   @param {Float} width    The x value
-*   @param {Float} length   The y value
-*   @param {Float} depth    The z value
-*   @return {Mesh}          The mesh created
-*/
-function generateBox(color, width, length, depth){
-
-    var geometry = new THREE.BoxGeometry( width, length, depth );
-    var material = new THREE.MeshPhongMaterial( { color : color} );
-    var box = new THREE.Mesh( geometry, material );
-                
-    return box;
-}
-
-function generatePlane(color, width, height){
-
-    var geometry = new THREE.PlaneGeometry( width, height, 32 );
-    var material = new THREE.MeshPhongMaterial( {color: color, side: THREE.DoubleSide} );
-    var plane = new THREE.Mesh( geometry, material );
-                
-    plane.rotateX(1.57);
-
-    return plane;
-}
-
-function generateAxes(){
-
-	var x = generateLine(Red, new THREE.Vector3(-25,0,0),new THREE.Vector3(25,0,0));
-	var y = generateLine(Green,new THREE.Vector3(0,-25,0),new THREE.Vector3(0,25,0));
-	var z = generateLine(Blue,new THREE.Vector3(0,0,-25),new THREE.Vector3(0,0,25));
-
-	return [x,y,z];
-}
-
-function generateLine(color, a, b){
-
-	var material = new THREE.LineBasicMaterial({color : color});
-	var geometry = new THREE.Geometry();
-	geometry.vertices.push(a);
-	geometry.vertices.push(b);
-	var line = new THREE.Line(geometry, material);
-
-	return line;
-}
-
-function generateSphere(color, radius){
-
-    var geometry = new THREE.SphereGeometry(radius, 32, 32, 0, 3.1,0 , 3.1);
-    var material = new THREE.MeshPhongMaterial({color});
-    var sphere = new THREE.Mesh(geometry,material);
-    return sphere;
-}
 
 function generateThymioMesh(){
 
-    var body = generateBox(ThymioColor, 2, 1, 2);
+    var body = GM.generateBox(ThymioColor, 2, 1, 2);
     var head = generateSphere(ThymioColor, 1);
     head.position.z = 1 ;
     head.scale.y -= 0.5;
@@ -86,7 +30,7 @@ function generateThymioMesh(){
     thymio.add(head);
 
     thymio.position.set(0, 0.5, 0);
-    thymio.rotateY(1.57);
+    thymio.rotateY(PI/2);
 
     thymio.castShadow = true;
 
@@ -95,25 +39,25 @@ function generateThymioMesh(){
 
 function generateBasePlayGround(color, width, length){
 
-    var plane = generatePlane(color, width, length);
+    var plane = GM.generatePlane(color, width, length);
     plane.receiveShadow = true;
 
-    var wallN = generateBox(color, WallDepth, WallHeight, width);
+    var wallN = GM.generateBox(color, WallDepth, WallHeight, width);
     wallN.position.x -= width/2;
     wallN.position.y += WallHeight/2;
     wallN.castShadow = true;
     wallN.receiveShadow = true;
-    var wallE = generateBox(color, width, WallHeight, WallDepth);
+    var wallE = GM.generateBox(color, width, WallHeight, WallDepth);
     wallE.position.z -= width/2;
     wallE.position.y += WallHeight/2;
     wallE.castShadow = true;
     wallE.receiveShadow = true;
-    var wallS = generateBox(color, WallDepth, WallHeight, width);
+    var wallS = GM.generateBox(color, WallDepth, WallHeight, width);
     wallS.position.x += width/2;
     wallS.position.y += WallHeight/2;
     wallS.castShadow = true;
     wallS.receiveShadow = true;
-    var wallW = generateBox(color, width, WallHeight, WallDepth);
+    var wallW = GM.generateBox(color, width, WallHeight, WallDepth);
     wallW.position.z += width/2;
     wallW.position.y += WallHeight/2;
     wallW.castShadow = true;
@@ -129,6 +73,11 @@ function generateBasePlayGround(color, width, length){
     return playground;
 }
 
+function generateTestPlayground(){
+    var column = GM.generateBox(ThymioColor, 5, 10, 5);
+    scene.add(column);
+}
+
 function loadOBJWMTL(){
 
     var mtlLoader = new MTLLoader();
@@ -142,7 +91,7 @@ function loadOBJWMTL(){
         objLoader.setPath(thymiopath);
         objLoader.load('tinker.obj', function(object){
             object.scale.set(0.05,0.05,0.05);
-            object.rotateX(-1.57);
+            object.rotateX(-PI/2);
 
             thymio = object;
 
@@ -155,7 +104,7 @@ function loadOBJWMTL(){
 
 function initGFX(){
 
-    meshes = generateAxes();
+    meshes = GM.generateAxes();
     //meshes.push(generateThymioMesh());
     
     meshes.push(generateBasePlayGround(GroundColor,50,50));
