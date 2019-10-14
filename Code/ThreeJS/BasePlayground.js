@@ -4,79 +4,17 @@ import { OBJLoader } from '../ThreeJS/js/examples/jsm/loaders/OBJLoader.js';
 
 //import { generateBox } from './GeometricalMeshes.js';
 import * as GM from './GeometricalMeshes.js';
+import * as PG from './Playgrounds.js';
 
 var renderer, scene, camera, light;
 var meshes, thymio;
 
 const thymiopath = '../Models/Thymio_3d_Model/';
-const WallHeight = 6;
-const WallDepth = 1;
-const GroundColor = "#bdbbbb";
 const BackGroundColor = "#7fc4f5";
 const ThymioColor = "#e6e6e6";
-const PI = 3.14;
 
 init();
 animate();
-
-function generateThymioMesh(){
-
-    var body = GM.generateBox(ThymioColor, 2, 1, 2);
-    var head = generateSphere(ThymioColor, 1);
-    head.position.z = 1 ;
-    head.scale.y -= 0.5;
-    var thymio = new THREE.Group();
-    thymio.add(body);
-    thymio.add(head);
-
-    thymio.position.set(0, 0.5, 0);
-    thymio.rotateY(PI/2);
-
-    thymio.castShadow = true;
-
-    return thymio;
-}
-
-function generateBasePlayGround(color, width, length){
-
-    var plane = GM.generatePlane(color, width, length);
-    plane.receiveShadow = true;
-
-    var wallN = GM.generateBox(color, WallDepth, WallHeight, width);
-    wallN.position.x -= width/2;
-    wallN.position.y += WallHeight/2;
-    wallN.castShadow = true;
-    wallN.receiveShadow = true;
-    var wallE = GM.generateBox(color, width, WallHeight, WallDepth);
-    wallE.position.z -= width/2;
-    wallE.position.y += WallHeight/2;
-    wallE.castShadow = true;
-    wallE.receiveShadow = true;
-    var wallS = GM.generateBox(color, WallDepth, WallHeight, width);
-    wallS.position.x += width/2;
-    wallS.position.y += WallHeight/2;
-    wallS.castShadow = true;
-    wallS.receiveShadow = true;
-    var wallW = GM.generateBox(color, width, WallHeight, WallDepth);
-    wallW.position.z += width/2;
-    wallW.position.y += WallHeight/2;
-    wallW.castShadow = true;
-    wallW.receiveShadow = true;
-
-    var playground = new THREE.Group();
-    playground.add(plane);
-    playground.add(wallN);
-    playground.add(wallE);
-    playground.add(wallS);
-    playground.add(wallW);
-
-    return playground;
-}
-
-function generateTestPlayground(){
-    var column = GM.generateBox(ThymioColor, 5, 10, 5);
-    scene.add(column);
-}
 
 function loadOBJWMTL(){
 
@@ -91,10 +29,10 @@ function loadOBJWMTL(){
         objLoader.setPath(thymiopath);
         objLoader.load('tinker.obj', function(object){
             object.scale.set(0.05,0.05,0.05);
-            object.rotateX(-PI/2);
+            object.rotateX(-Math.PI/2);
 
             thymio = object;
-
+            
             scene.add(object);
         })
     })
@@ -105,12 +43,31 @@ function loadOBJWMTL(){
 function initGFX(){
 
     meshes = GM.generateAxes();
-    //meshes.push(generateThymioMesh());
-    
-    meshes.push(generateBasePlayGround(GroundColor,50,50));
+
+    //meshes.push(GM.generateOctagon(BackGroundColor, 50));
+
+    //var playground = PG.generateBasePlayGround();
+    var playground = PG.generateObstaclePlayGround();
+    playground.name = "playground";
+    meshes.push(playground);
+
     meshes.forEach(addMeshToScene);
 
     loadOBJWMTL();
+}
+
+function changePlayGround(playground){
+
+    clearPlayground();
+    meshes.push(playground);
+    playground.name = "plaground";
+    scene.add(playground);
+}
+
+function clearPlayground(){
+
+    var selectedObject = scene.getObjectByName(meshes.pop().name);
+    scene.remove(selectedObject);
 }
 
 function addMeshToScene(value, index, array){
@@ -174,8 +131,16 @@ function init(){
 
 	document.addEventListener( 'mousemove', onDocumentMouseMove, false );
 	document.addEventListener( 'touchstart', onDocumentTouchStart, false );
-	document.addEventListener( 'touchmove', onDocumentTouchMove, false );
-
+    document.addEventListener( 'touchmove', onDocumentTouchMove, false );
+    
+    document.getElementById("basePlaygroundBtn").onclick = function(){
+        var playground = PG.generateBasePlayGround();
+        changePlayGround(playground);
+    }
+    document.getElementById("obstaclePlaygroundBtn").onclick = function(){
+        var playground = PG.generateObstaclePlayGround();
+        changePlayGround(playground);
+    }
     // controls
     var controls = new OrbitControls( camera, renderer.domElement );
 	controls.maxPolarAngle = Math.PI * 0.5;

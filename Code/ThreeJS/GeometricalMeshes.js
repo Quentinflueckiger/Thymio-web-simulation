@@ -34,7 +34,7 @@ function generatePlane(color, width, height){
     var material = new THREE.MeshPhongMaterial( {color: color, side: THREE.DoubleSide} );
     var plane = new THREE.Mesh( geometry, material );
                 
-    plane.rotateX(1.57);
+    plane.rotateX(Math.PI/2);
 
     return plane;
 }
@@ -81,7 +81,82 @@ function generateSphere(color, radius){
     var geometry = new THREE.SphereGeometry(radius, 32, 32, 0, 3.1,0 , 3.1);
     var material = new THREE.MeshPhongMaterial({color});
     var sphere = new THREE.Mesh(geometry,material);
+
     return sphere;
 }
 
-export{generateBox, generatePlane, generateAxes, generateLine, generateSphere};
+/**
+ * Create a regular octagon mesh.
+ * @param {Color} color         The hex value of the wanted color
+ * @param {Float} segmentLength The length of the sides
+ * @return {Mesh}               The mesh created
+ */
+function generateOctagon(color, segmentLength){
+
+    var diameter = (1+Math.sqrt(2))*segmentLength;
+    var radius = diameter/2;
+    var geom = new THREE.Geometry();
+
+    geom.vertices.push(new THREE.Vector3(segmentLength/2, radius, 0));
+    geom.vertices.push(new THREE.Vector3(radius, segmentLength/2, 0));
+    geom.vertices.push(new THREE.Vector3(radius, -segmentLength/2, 0));
+    geom.vertices.push(new THREE.Vector3(segmentLength/2, -radius, 0));
+    geom.vertices.push(new THREE.Vector3(-segmentLength/2, -radius, 0));
+    geom.vertices.push(new THREE.Vector3(-radius, -segmentLength/2, 0));
+    geom.vertices.push(new THREE.Vector3(-radius, segmentLength/2, 0));
+    geom.vertices.push(new THREE.Vector3(-segmentLength/2, radius, 0));
+
+    geom.faces.push(new THREE.Face3(0, 2, 1));
+    geom.faces.push(new THREE.Face3(0, 3, 2));
+    geom.faces.push(new THREE.Face3(0, 4, 3));
+    geom.faces.push(new THREE.Face3(0, 5, 4));
+    geom.faces.push(new THREE.Face3(0, 6, 5));
+    geom.faces.push(new THREE.Face3(0, 7, 6));
+
+    geom.computeFaceNormals();
+    geom.computeVertexNormals();
+
+    var material = new THREE.MeshPhongMaterial({color});    
+    var octagon = new THREE.Mesh(geom, material);
+
+    octagon.rotateX(-Math.PI/2);
+
+    return octagon;
+}
+
+/**
+ * Create a U shaped mesh.
+ * @param {Color} color         The hex value of the wanted color
+ * @param {Float} wallHeight    The y parameter
+ * @param {Float} size          The scaling factor
+ * @return {Mesh}               The mesh created
+ */
+function generateUShapedFigure(color, wallHeight, size){
+
+    var botBox = generateBox(color, 8, wallHeight, 1);
+    botBox.position.z += 4;
+    var middleBox = generateBox(color, 2, wallHeight, 7);
+    middleBox.position.x -= 3;
+    var topBox = generateBox(color, 12, wallHeight, 2);
+    topBox.position.x +=2;
+    topBox.position.z -=4;
+
+    var uShapedFigure = new THREE.Group();
+    uShapedFigure.add(botBox);
+    uShapedFigure.add(middleBox);
+    uShapedFigure.add(topBox);
+    uShapedFigure.position.y += wallHeight/2;
+    uShapedFigure.scale.set(size,1,size);
+
+    return uShapedFigure;
+}
+
+function generateCylinder(color, height, botRadius, topRadius){
+
+    var geometry = new THREE.CylinderGeometry(topRadius, botRadius, height, 32);
+    var material = new THREE.MeshPhongMaterial({color});
+    var cylinder = new THREE.Mesh(geometry, material);
+    return cylinder;
+}
+
+export{generateBox, generatePlane, generateAxes, generateLine, generateSphere, generateOctagon, generateUShapedFigure, generateCylinder};
