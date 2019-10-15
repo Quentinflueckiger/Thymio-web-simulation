@@ -8,6 +8,7 @@ import * as PG from './Playgrounds.js';
 
 var renderer, scene, camera, light;
 var meshes, thymio;
+var points;
 
 const thymiopath = '../Models/Thymio_3d_Model/';
 const BackGroundColor = "#7fc4f5";
@@ -40,16 +41,19 @@ function loadOBJWMTL(){
     
 }
 
+
 function initGFX(){
 
     meshes = GM.generateAxes();
-
-    //meshes.push(GM.generateOctagon(BackGroundColor, 50));
 
     //var playground = PG.generateBasePlayGround();
     var playground = PG.generateObstaclePlayGround();
     playground.name = "playground";
     meshes.push(playground);
+
+    points = GM.createPoints();    
+    var track = GM.generateTrack(ThymioColor, points);
+    meshes.push(track);
 
     meshes.forEach(addMeshToScene);
 
@@ -60,14 +64,12 @@ function changePlayGround(playground){
 
     clearPlayground();
     meshes.push(playground);
-    playground.name = "plaground";
+    playground.name = "playground";
     scene.add(playground);
 }
 
 function clearPlayground(){
-
-    var selectedObject = scene.getObjectByName(meshes.pop().name);
-    scene.remove(selectedObject);
+    scene.remove(scene.getObjectByName("playground"));
 }
 
 function addMeshToScene(value, index, array){
@@ -156,7 +158,7 @@ function animate(){
 
     requestAnimationFrame( animate );
 
-    // check that thymio exist, is already loaded
+    // check that thymio is already loaded, exist
     if (thymio){
        
     }

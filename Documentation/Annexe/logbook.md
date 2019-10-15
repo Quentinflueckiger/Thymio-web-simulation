@@ -46,3 +46,15 @@ function generateOctagon(color, segmentLength){
     var geom = new THREE.Geometry();
 
     geom.vertices.push(new THREE.Vector3(segmentLength/2, radius, 0));
+
+
+## 15.10.2019
+
+### Morning
+
+Talk with Mr. Furher about :
+1. Webserver (have to be able to access it online of course) (Linux -> Apache, XAMP)
+2. Which element the user should be able to add to a playground (Track, boxes, cylinder)
+3. Problem of environment while developing a program using Thymio studio, only able to start coding if either of those two condition is met : -Real Thymio plugged in, -Virtual Thymio plugged in.
+First try at the algorithm to create the tracks. Using Lines wasn't a good idea as they are too thin.
+  var line = generateLine(color, points[i], points[i+1]);

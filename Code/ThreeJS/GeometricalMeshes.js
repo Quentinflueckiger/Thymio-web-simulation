@@ -4,6 +4,10 @@ const Red = "#fc031c";
 const Grey = "#e5e5e5";
 const Green = "#11ff00";
 
+// Used for the track, might let the users change their values later on 
+const TrackDepth = 1;
+const TrackHeight = 0.25;
+
 /**
 *   Creates a box mesh.
 *   @param {Color} color    The hex value of the wanted color
@@ -41,13 +45,13 @@ function generatePlane(color, width, height){
 
 /**
  * Create a XYZ axis system.
- * @returns {Mesh[]}        An array filled with the three meshes of the corresponding axe. 
+ * @returns {Mesh[]}        An array filled with the three meshes of the corresponding axes. 
  */
 function generateAxes(){
 
-	var x = generateLine(Red, new THREE.Vector3(-25,0,0),new THREE.Vector3(25,0,0));
-	var y = generateLine(Green,new THREE.Vector3(0,-25,0),new THREE.Vector3(0,25,0));
-	var z = generateLine(Blue,new THREE.Vector3(0,0,-25),new THREE.Vector3(0,0,25));
+	var x = generateLine(Red, new THREE.Vector3(-50,0,0),new THREE.Vector3(50,0,0));
+	var y = generateLine(Green,new THREE.Vector3(0,-50,0),new THREE.Vector3(0,25,0));
+	var z = generateLine(Blue,new THREE.Vector3(0,0,-50 ),new THREE.Vector3(0,0,50));
 
 	return [x,y,z];
 }
@@ -93,10 +97,12 @@ function generateSphere(color, radius){
  */
 function generateOctagon(color, segmentLength){
 
+    // Calculate the diameter of the octagon and it's radius
     var diameter = (1+Math.sqrt(2))*segmentLength;
     var radius = diameter/2;
     var geom = new THREE.Geometry();
 
+    // Push all 8 vertices
     geom.vertices.push(new THREE.Vector3(segmentLength/2, radius, 0));
     geom.vertices.push(new THREE.Vector3(radius, segmentLength/2, 0));
     geom.vertices.push(new THREE.Vector3(radius, -segmentLength/2, 0));
@@ -151,12 +157,74 @@ function generateUShapedFigure(color, wallHeight, size){
     return uShapedFigure;
 }
 
+/**
+ * Create a cylindric mesh.
+ * @param {Color} color         The hex value of the wanted color
+ * @param {Float} height        The y parameter
+ * @param {Float} botRadius     The radius at the bottom of the cylinder
+ * @param {Float} topRadius     The radius at the top of the cylinder
+ * @return {Mesh}               The mesh created
+ */
 function generateCylinder(color, height, botRadius, topRadius){
 
     var geometry = new THREE.CylinderGeometry(topRadius, botRadius, height, 32);
     var material = new THREE.MeshPhongMaterial({color});
     var cylinder = new THREE.Mesh(geometry, material);
+
     return cylinder;
 }
 
-export{generateBox, generatePlane, generateAxes, generateLine, generateSphere, generateOctagon, generateUShapedFigure, generateCylinder};
+/**
+ * Create a track composed of multiple box mesh.
+ * @param {Color} color     The hex value of the wanted color
+ * @return {THREE.Group}    The group containing all the parts of the track
+ */
+function generateTrack(color, points){
+    
+    // If less than two points are given throw an error message as no track can be built with only one point
+    if (points.length < 2){
+        throw {name : "MissingArgumentsError", message : "not enough points to create a track"}; 
+    }
+    
+    var track = new THREE.Group();
+
+    // Loop through the points array and create a box between every tow following points
+    for (let i = 0; i < points.length-1; i++) {
+
+        // Calculate a Vector3 between the two points
+        var trackWidth = new THREE.Vector3().copy(points[i+1]).sub(points[i]);
+        // Create the mesh with the calculated width from the Vector3
+        var line = generateBox(color, trackWidth.length(), TrackHeight, TrackDepth);
+        // Position the center of the object to first point + half of the distance between the points (for x and z)
+        line.position.x = points[i].x + trackWidth.x/2;
+        line.position.z = points[i].z + trackWidth.z/2;
+        // Align mesh to calculated Vector3
+        line.quaternion.setFromUnitVectors(new THREE.Vector3(1, 0, 0), trackWidth.clone().normalize());
+        track.add(line);       
+    }
+
+    track.position.y += TrackHeight/2;
+
+    return track;
+}
+
+/**
+ * Create an array with coordinates
+ * @return {Vector3[]}          The array filled with Vector3 coordinate of the points
+ */
+function createPoints(){
+    
+    var points = new Array(new THREE.Vector3(0,0,0));
+    points.push(new THREE.Vector3(5,0,0));
+    points.push(new THREE.Vector3(10,0,0));
+    points.push(new THREE.Vector3(25,0,0));
+    points.push(new THREE.Vector3(35,0,10));
+    points.push(new THREE.Vector3(35,0,30));
+
+    return points;
+}
+
+export{ generateBox, generatePlane, generateAxes, 
+        generateLine, generateSphere, generateOctagon, 
+        generateUShapedFigure, generateCylinder, generateTrack, 
+        createPoints };
