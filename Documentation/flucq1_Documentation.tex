@@ -106,6 +106,46 @@ After what comes the choice of connecting a physical Thymio or starting a simula
 
 \subsubsection{The different programming languages}
 \paragraph{VPL}
+
+One of the four different possibilities to program the Thymio is by using the visual programming language, or VPL, 
+developed by the creator of Aseba. A visual programming language is an abstraction of the more common way to program. 
+It is based on the manipulation of program elements graphically that can be manipulated following some spatial grammar to create a program. 
+VPLs are based on a set of entities and relations, whereas most of the time entities are represented by boxes, 
+or other graphical objects, and relations by simple arrows. They can be categorized into icon-based, 
+form-based and diagram-based languages depending on the extent of visual expression inside of it. 
+The use of visual programming languages can be found in multiple areas, such as the game engine “Unreal Engine 4” where their system of Blueprints is created upon a node-based VPL, 
+or “Microsoft SQL Server Integration Services”. This abstraction allows easier access for neophytes, 
+for example using graphic elements such as blocks, forms, diagrams, and others reduce drastically, if not eliminate, the syntactic errors made by the user.
+
+In the case of the VPL developed by Aseba’s team, and the one we are mostly interested in, we have a programming language based on two types of blocks: Event blocks & Action blocks. 
+From those two are built the seventeen, respectively eleven event blocks and six action blocks, entities. 
+One of the main goals of VPL for Thymio was to let people who cannot yet read the ability to start programming and discover this world.
+
+\begin{figure}[h!]
+  \includegraphics[width=\textwidth]{Thymio_blocks}
+  \caption{Thymio VPL Event & Action blocks}
+  \label{fig:thymio_vpl_blocks}
+\end{figure}
+
+To begin creating a program follow the first steps described in the “How does it works” section. 
+Once the VPL option has been chosen and the Thymio Visual Programming Language window appears we are ready to go. 
+The window is split into six different regions with each of their purposes.
+\begin{enumerate}
+  \item A tool bar
+  \item A programming window
+  \item Console messages
+  \item The event blocks
+  \item The action blocks
+  \item The program translated into AESL
+\end{enumerate}
+\begin{figure}[h!]
+  \includegraphics[width=\textwidth]{Thymio_VPL_window}
+  \caption{Thymio VPL Window}
+  \label{fig:thymio_vpl_window}
+\end{figure}
+
+By clicking the button with a student as icon we enable the advanced mode that gives us more possibilities for multiple blocks and as well the ability to assign multiple action to one event.
+
 \paragraph{Blockly}
 \paragraph{Aseba}
 \paragraph{Scratch}
@@ -151,6 +191,12 @@ Step by step Guide on how to set it up and use it.
   & Workplace\\
   & Discussion on the choice of Windows as the Virtual Machine \\
   & Create a configuration file with the information of the VM \\
+  & And an architecture proposal \\
+  \hline
+  15.10.2019 & \textbf{Fourth meeting} \\
+  & Which shapes and meshes should the user be able to create for his own custom playground \\
+  & Problems with webserver, has to be accessible from outside the vm, so maybe switching from windosw to linux \\
+  & Talk about the problem of thymio suite, that is the software allows the user to create programs only if a physical or a simulated one is plugged in \\
   \hline
 \end{tabular}
 
@@ -159,10 +205,13 @@ Step by step Guide on how to set it up and use it.
 \listoftables
 
 \section{Problems encountered}
-javascript not refreshing properly due to cache -> disable cache
-
-3d Model not loaded on the webserver -> changing directory place didn't resolve it but maybe the solution there should do the trick 
-https://stackoverflow.com/questions/41245938/web-server-cannot-find-mtl-file
+\begin{itemize}
+  \item javascript not refreshing properly due to cache -> disable cache
+  \item 3d Model not loaded on the webserver -> first tried to change the directory, then mixed two solution. 
+        Had to create a web.config file and add file extension for .mtl and .obj.
+        https://stackoverflow.com/questions/41245938/web-server-cannot-find-mtl-file
+        https://stackoverflow.com/questions/16097580/three-js-loading-obj-error-in-azure-but-not-locally
+\end{itemize}
 
 %% Print the bibibliography and add the section to the table of content
 \printbibliography[heading=bibintoc]

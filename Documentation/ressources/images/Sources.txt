@@ -1,2 +1,3 @@
 prototype_thymio_old : https://www.thymio.org/about/ 07.10.2019
 Wireless-thymioII-sensor-actuator-color-en : http://wiki.thymio.org/en:thymiospecifications 07.10.2019
+Thymio_blocks : http://creativecommons.org/licenses/by-sa/3.0/deed.fr 17.10.2019
