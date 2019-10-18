@@ -168,7 +168,7 @@ function generateUShapedFigure(color, wallHeight, size){
 function generateCylinder(color, height, botRadius, topRadius){
 
     var geometry = new THREE.CylinderGeometry(topRadius, botRadius, height, 32);
-    var material = new THREE.MeshPhongMaterial({color});
+    var material = new THREE.MeshLambertMaterial({color});
     var cylinder = new THREE.Mesh(geometry, material);
 
     return cylinder;

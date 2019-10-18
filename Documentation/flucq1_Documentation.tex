@@ -25,6 +25,22 @@
 \usepackage{array}
 
 \usepackage{listings}
+%% Custom javascript listings, from Gary Hammock recuperated the 18.10.2019 : https://github.com/ghammock/LaTeX_Listings_JavaScript_ES6
+\lstdefinelanguage{JavaScript}{
+  morekeywords=[1]{break, continue, delete, else, for, function, if, in,
+    new, return, this, typeof, var, void, while, with},
+  % Literals, primitive types, and reference types.
+  morekeywords=[2]{false, null, true, boolean, number, undefined,
+    Array, Boolean, Date, Math, Number, String, Object},
+  % Built-ins.
+  morekeywords=[3]{eval, parseInt, parseFloat, escape, unescape},
+  sensitive,
+  morecomment=[s]{/*}{*/},
+  morecomment=[l]//,
+  morecomment=[s]{/**}{*/}, % JavaDoc style comments
+  morestring=[b]',
+  morestring=[b]"
+}[keywords, comments, strings]
 
 \begin{document}
 \title{Web Simulation of a Thymio Robot}
@@ -53,8 +69,8 @@ Management Summary
 
 \section{Environment}
 
-\subsection{Thymio}
-\subsubsection{What is Thymio} 
+\section{Thymio}
+\subsection{What is Thymio} 
 
 Thymio is an educational robot that aims at improving early education (starting in primary school) in STEM (Science, Technology, Engineering and Mathematics),
 computational thinking, base computer science and researching the acknowledgment by kids of robots in their learning environment.
@@ -89,7 +105,7 @@ and reduce the cost and augment the lifetime for educational platforms and mater
   \label{fig:thymio_sensor_actuator}
 \end{figure}
 
-\subsubsection{How does it works}
+\subsection{How does it works}
 
 As seen in the figure above there exist two Thymio models, Thymio and Wireless Thymio. 
 The difference between them lies in the ability of the second one to be programmed wirelessly, 
@@ -104,8 +120,8 @@ This software doesn’t require a Thymio robot to be connected physically (or wi
 The four said languages are still available, and one need to be chosen. 
 After what comes the choice of connecting a physical Thymio or starting a simulation to emulate the programmed behaviour.
 
-\subsubsection{The different programming languages}
-\paragraph{VPL}
+\subsection{The different programming languages}
+\subsubsection{VPL}
 
 One of the four different possibilities to program the Thymio is by using the visual programming language, or VPL, 
 developed by the creator of Aseba. A visual programming language is an abstraction of the more common way to program. 
@@ -138,22 +154,59 @@ The window is split into six different regions with each of their purposes.
   \item The action blocks
   \item The program translated into AESL
 \end{enumerate}
+
 \begin{figure}[h!]
-  \includegraphics[width=\textwidth]{Thymio_VPL_window}
+  \includegraphics[width=\textwidth]{./VPL/Thymio_VPL_window}
   \caption{Thymio VPL Window}
   \label{fig:thymio_vpl_window}
 \end{figure}
 
-By clicking the button with a student as icon we enable the advanced mode that gives us more possibilities for multiple blocks and as well the ability to assign multiple action to one event.
+At first, the programming window will be empty of blocks, containing just a placeholder with empty slots. 
+This placeholder is the base of every Thymio VPL program, it contains exactly one event block and one or more action block. 
+This means that whenever the event of the event block happens then the set of actions added to this placeholder will occur at the same time. 
+For example, with the following pair:
+\begin{figure}[h!]
+  \includegraphics[width=\textwidth]{./VPL/middlebtn_forward}
+  \label{fig:thymio_vpl_middlebtn_1e1a}
+\end{figure}
+Both wheels are powered to the maximum when the middle button is pressed. But more than one action can be attributed to one event, 
+to do so simply drag another action block onto the previous pair, notice that the same block cannot be used twice for the same event. 
+Here we turned the lights on top and set them to a complete green:
+\begin{figure}[h!]
+  \includegraphics[width=\textwidth]{./VPL/middlebtn_forward_green}
+  \label{fig:thymio_vpl_middlebtn_1e2a}
+\end{figure}
+The maximum amount of action blocks we can add to an event is four, but we can add as many event blocks to our program as we want. 
+Let us add two more event blocks to allow the robot to turn:
+\begin{figure}[h!]
+  \includegraphics[width=\textwidth]{./VPL/middlebtn_3E}
+  \label{fig:thymio_vpl_middlebtn_3e6a}
+\end{figure}
+Now we have a basic behavior, go straight with green lights when the middle button is pushed, turn left on itself with orange lights when the left button is pushed, 
+and at last turn right on itself with yellow lights when the right button is pushed.
 
-\paragraph{Blockly}
-\paragraph{Aseba}
-\paragraph{Scratch}
-\subsubsection{What already exist} 
+By clicking the button with a student as an icon we enable the advanced mode that gives us more possibilities for multiple blocks. It raises the amount of action block from four to six as well. 
+
+Let us refactor a bit the program from before, we will change the program by making the robot look left then right and starting over again using timers. 
+To help us develop a more interesting program we have now access to a condition, a four led light on top of the robot, using this and the timer we can behave depending on the state of the robot. 
+For example, hereafter the middle button was pressed a timer will start and after a short amount of time, it will light one particular led. Afterward, the event “timer elapsed” will be triggered but which pair should the program execute, 
+turning right or turning left? Hence comes the use of the condition as we will execute the part of the program that corresponds to the state of the condition light. In this example, it will go back and forth between the two pairs: 
+\begin{figure}[h!]
+  \includegraphics[width=\textwidth]{./VPL/middlebtn_3E_adv}
+  \label{fig:thymio_vpl_middlebtn_3e9a}
+\end{figure}
+
+\subsubsection{Blockly}
+\subsubsection{Aseba}
+\subsubsection{Scratch}
+\subsection{What already exist} 
 WeBots / Aseba logiciel
-\subsection{TypeScript}
-\subsection{Three JS}
+\section{TypeScript}
+\section{Three JS}
 
+\begin{lstlisting}[style=JavaScript, caption={JavaScript Listing}]
+  Javascript code
+\end{lstlisting}
 For that we read the article book of \cite{Jerald:2015:VBH:2792790}
 which is very interesting, much more than the article
 \cite{Diniz:2017:UGO:3100317.3100324}

@@ -91,6 +91,8 @@ function generateObstaclePlayGround(){
 
     // Create middle figure
     var uShaped = GM.generateUShapedFigure(WallColor, WallHeight, 3);
+    uShaped.castShadow = true;
+    uShaped.receiveShadow = true;
 
     // Create multiple cylinder as columns
     var columnTPL = GM.generateCylinder(WallColor, WallHeight, 2, 2);
@@ -115,6 +117,9 @@ function generateObstaclePlayGround(){
             columns.add(column);
         }
     }
+    columns.castShadow = true;
+    columns.receiveShadow = true;
+
 
     var playground = new THREE.Group();
     playground.add(plane);

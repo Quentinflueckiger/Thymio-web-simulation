@@ -99,15 +99,19 @@ function resizeWindow(){
 
 function initLight(){
 
+    scene.add(new THREE.AmbientLight(0x555555));
+
     light = new THREE.DirectionalLight( 0xffffff, 1, 100 );
-    light.position.set( 25, 25, 0 ); 			
-    light.castShadow = true;            
-    scene.add( light );
+    light.position.set( 50, 50, 0 ); 			
+    light.castShadow = true;
 
     light.shadow.mapSize.width = 512;  
     light.shadow.mapSize.height = 512; 
     light.shadow.camera.near = 0.5;    
-    light.shadow.camera.far = 500;     
+    light.shadow.camera.far = 200;
+    
+    scene.add( light );
+    
 }
 
 function init(){
@@ -118,12 +122,6 @@ function init(){
     camera.position.set(20,20,20);
     camera.lookAt(scene.position);
     camera.updateMatrix();
-                
-    renderer = new THREE.WebGLRenderer();
-    renderer.setClearColor(BackGroundColor);
-    renderer.setSize( window.innerWidth, window.innerHeight );
-    renderer.shadowMap.enabled = true;
-    renderer.shadowMap.type = THREE.PCFSoftShadowMap;
  
     initLight();
     initGFX();
@@ -143,6 +141,17 @@ function init(){
         var playground = PG.generateObstaclePlayGround();
         changePlayGround(playground);
     }
+    document.getElementById("pgButton").onclick = function(){
+        var pgPicker = document.getElementById("pgPicker");
+        console.log("Playground : ", pgPicker.options[pgPicker.selectedIndex].value);
+    }
+
+    renderer = new THREE.WebGLRenderer();
+    renderer.setClearColor(BackGroundColor);
+    renderer.setSize( window.innerWidth, window.innerHeight );
+    renderer.shadowMap.enabled = true;
+    renderer.shadowMap.type = THREE.BasicShadowMap;
+
     // controls
     var controls = new OrbitControls( camera, renderer.domElement );
 	controls.maxPolarAngle = Math.PI * 0.5;
