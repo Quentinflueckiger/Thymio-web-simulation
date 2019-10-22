@@ -111,3 +111,20 @@ Fixed webserver, now accessible from within bfh network. Finished picker, it now
 
 ### Afternoon
 
+Looking for compiler/interpretor file from aseba.
+
+|   | Status  | Usefull file(s)  | Location  | Description  |
+|---|---|---|---|---|
+| aseba/aseba/clients  | done  | yes  | /studio/*, /massloader/massloader.cpp  | aesleditor and vpl blocks, file loader  |
+| aseba/aseba/common  | done  | no  | -  | -  |
+| aseba/aseba/compiler  | done  | yes  | *  | Compiler/Lexer/Parser  |
+| aseba/aseba/switches  | done  | no  | -  | -  |
+| aseba/aseba/targets  | done  | yes  | /playground/*, /challenge/challenge.cpp, /can-translator/morse.c  | playground simulator and thymio description, view of thymio variables (maybe too old), morse code for hexadecimal  |
+| aseba/aseba/transport  | done  | yes  | /buffer/vm-buffer.c  | ProcessIncEvent  |
+| aseba/aseba/vm    | done  | yes  | /vm.c   | SetupEvent, EventAddress |
+
+Decided to use a state machine to record and handle the aseba event system.
+
+Finished track for obstaclePlayground.
+
+

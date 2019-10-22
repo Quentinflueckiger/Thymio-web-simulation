@@ -215,11 +215,22 @@ function generateTrack(color, points){
 function createPoints(){
     
     var points = new Array(new THREE.Vector3(0,0,0));
-    points.push(new THREE.Vector3(5,0,0));
-    points.push(new THREE.Vector3(10,0,0));
     points.push(new THREE.Vector3(25,0,0));
     points.push(new THREE.Vector3(35,0,10));
-    points.push(new THREE.Vector3(35,0,30));
+    points.push(new THREE.Vector3(35,0,35));
+    points.push(new THREE.Vector3(25,0,45));
+    points.push(new THREE.Vector3(-20,0,45));
+    points.push(new THREE.Vector3(-37,0,28));
+    points.push(new THREE.Vector3(-37,0,23));
+    points.push(new THREE.Vector3(-18,0,6));
+    points.push(new THREE.Vector3(-18,0,-6));
+    points.push(new THREE.Vector3(-40,0,-25));
+    points.push(new THREE.Vector3(-40,0,-35));
+    points.push(new THREE.Vector3(-30,0,-45));
+    points.push(new THREE.Vector3(25,0,-45));
+    points.push(new THREE.Vector3(35,0,-35));
+    points.push(new THREE.Vector3(35,0,-10));
+    points.push(new THREE.Vector3(25,0,0));
 
     return points;
 }

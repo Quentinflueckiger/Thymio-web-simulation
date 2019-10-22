@@ -50,9 +50,9 @@ function initGFX(){
     playground.name = "playground";
     meshes.push(playground);
 
-    points = GM.createPoints();    
-    var track = GM.generateTrack(ThymioColor, points);
-    meshes.push(track);
+    // points = GM.createPoints();    
+    // var track = GM.generateTrack(ThymioColor, points);
+    // meshes.push(track);
 
     meshes.forEach(addMeshToScene);
 

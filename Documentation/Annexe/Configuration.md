@@ -26,7 +26,7 @@ https://www.youtube.com/watch?v=rPRLe7QeVHM
 Then we had to open the port in order to access it from within the LAN.
 1. Open the windows Firewall, click on Inbound Rules and New Rule. This will open the New Inbound Rule Wizard.
 2. Select the desired type, Port, click next.
-3. Chose TCP and specify the port used, here 80, click next.
+3. Choose TCP and specify the port used, here 80, click next.
 4. Select Allow connection, click next.
 5. Select all three profile options, click next.
 6. Add a Name and a description to this rule, click finish.

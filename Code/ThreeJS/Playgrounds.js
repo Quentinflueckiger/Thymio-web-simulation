@@ -8,6 +8,7 @@ const GroundColor = "#bdbbbb";
 const WallColor = "#9fa3bd";
 const basePlaygroundName = "basePlayground";
 const obstaclePlaygroundName = "obstaclePlayground";
+const borderlessPlaygroundName = "borderlessPlayground";
 
 /**
  * Chose the wanted playground based on the input given.
@@ -17,14 +18,17 @@ const obstaclePlaygroundName = "obstaclePlayground";
 function generatePlayGround(name){
 
     var playground;
-    if (name === basePlaygroundName) {
-        playground = generateBasePlayGround();
-    }
-    else if(name === obstaclePlaygroundName){
-        playground = generateObstaclePlayGround();
-    }
-    else{
-        playground = null;
+    switch (name) {
+        case basePlaygroundName:
+            playground = generateBasePlayGround();
+            break;
+        case obstaclePlaygroundName:
+            playground = generateObstaclePlayGround();
+            break;
+        case borderlessPlaygroundName:
+            playground = generateBorderlessPlayGround();
+        default:
+            break;
     }
     return playground;
 }
@@ -146,6 +150,9 @@ function generateObstaclePlayGround(){
     columns.castShadow = true;
     columns.receiveShadow = true;
 
+    var points = GM.createPoints();
+    var track = GM.generateTrack(WallColor, points);
+
     // Add every meshes to the final THREE.Group
     var playground = new THREE.Group();
     playground.add(plane);
@@ -159,8 +166,15 @@ function generateObstaclePlayGround(){
     playground.add(wallNW);
     playground.add(uShaped);
     playground.add(columns);
+    playground.add(track);
 
     return playground;
 }
 
-export { generateBasePlayGround, generateObstaclePlayGround, generatePlayGround };
+function generateBorderlessPlayGround(){
+
+    var playground = new THREE.Group();
+
+    return playground;
+}
+export { generateBasePlayGround, generateObstaclePlayGround, generateBorderlessPlayGround, generatePlayGround };
