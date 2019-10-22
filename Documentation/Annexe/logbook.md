@@ -32,14 +32,16 @@ Refactoring of Geometricalmeshes that is now used as an external module for ever
 Moved playground creation code into Playgrounds.js, added a second playground with columns and a U-shape in the middle. With the button added this morning we have the ability to switch between the two playgrounds. Only the actual playground gets recomputed each time, we are not reloading the Thymio model.
 Had a problem creating the Octagonal plane at start. The math weren't good.
 Not the right math to create a regular octagon.
-function generateOctagon(color, segmentLength){
+
+    function generateOctagon(color, segmentLength){
 
     var b = segmentLength * 2.5;
     var geom = new THREE.Geometry();
 
     geom.vertices.push(new THREE.Vector3(segmentLength, b, 0));
 Has been corrected with :
-function generateOctagon(color, segmentLength){
+
+    function generateOctagon(color, segmentLength){
 
     var diameter = (1+Math.sqrt(2)) x segmentLength;
     var radius = diameter/2;
@@ -56,5 +58,56 @@ Talk with Mr. Furher about :
 1. Webserver (have to be able to access it online of course) (Linux -> Apache, XAMP)
 2. Which element the user should be able to add to a playground (Track, boxes, cylinder)
 3. Problem of environment while developing a program using Thymio studio, only able to start coding if either of those two condition is met : -Real Thymio plugged in, -Virtual Thymio plugged in.
+
 First try at the algorithm to create the tracks. Using Lines wasn't a good idea as they are too thin.
-  var line = generateLine(color, points[i], points[i+1]);
+
+    var line = generateLine(color, points[i], points[i+1]);
+
+### Afternoon
+
+Second test for the algorithm to create a track. This work just fine for now, the method takes a hex color and an array of points as parameters.
+
+    for (let i = 0; i < points.length-1; i++) {
+
+        // Calculate a Vector3 between the two points
+        var trackWidth = new THREE.Vector3().copy(points[i+1]).sub(points[i]);
+        // Create the mesh with the calculated width from the Vector3
+        var line = generateBox(color, trackWidth.length(), TrackHeight, TrackDepth);
+        // Position the center of the object to first point + half of the distance between the points (for x and z)
+        line.position.x = points[i].x + trackWidth.x/2;
+        line.position.z = points[i].z + trackWidth.z/2;
+        // Align mesh to calculated Vector3
+        line.quaternion.setFromUnitVectors(new THREE.Vector3(1, 0, 0), trackWidth.clone().normalize());
+        track.add(line);       
+    }
+
+Trying to resolve issue with shadow on the main plane for both playground, still not working properly. 
+
+## 17.10.2019
+
+Worked on documentation, VPL part.
+
+## 18.10.2019
+
+Finished VPL part of dumentation.
+
+Tried to fix an issue with the sadow that occurs in both playgrounds, the shadow on the main plane isn't rendered. But for now it still is an open issue.
+Added a picker on the scene in order to select the playground.
+
+## 22.10.2019
+
+### Morning
+
+Fixed webserver, now accessible from within bfh network. Finished picker, it now loads the correct playground when submited.
+
+
+    var pgPicker = document.getElementById("pgPicker");
+    var playground = PG.generatePlayGround(pgPicker.options[pgPicker.selectedIndex].value);
+    if(playground != null){
+
+        changePlayGround(playground);
+    }
+
+
+### Afternoon
+

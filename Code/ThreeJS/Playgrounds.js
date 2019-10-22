@@ -6,6 +6,28 @@ const Width = 50;
 const Length = 50;
 const GroundColor = "#bdbbbb";
 const WallColor = "#9fa3bd";
+const basePlaygroundName = "basePlayground";
+const obstaclePlaygroundName = "obstaclePlayground";
+
+/**
+ * Chose the wanted playground based on the input given.
+ * @param {String} name     The name of the wanted playground
+ * @return {THREE.Group}    The wanted playground
+ */
+function generatePlayGround(name){
+
+    var playground;
+    if (name === basePlaygroundName) {
+        playground = generateBasePlayGround();
+    }
+    else if(name === obstaclePlaygroundName){
+        playground = generateObstaclePlayGround();
+    }
+    else{
+        playground = null;
+    }
+    return playground;
+}
 
 /**
  * Creates a base playground with a square plane as the bottom and four walls.
@@ -47,6 +69,10 @@ function generateBasePlayGround(){
     return playground;
 }
 
+/**
+ * Creates a playground with obstacles, an octagon plane and walls.
+ * @return {THREE.Group}    The group containing all the meshes
+ */
 function generateObstaclePlayGround(){
 
     // Create octagon plane
@@ -120,7 +146,7 @@ function generateObstaclePlayGround(){
     columns.castShadow = true;
     columns.receiveShadow = true;
 
-
+    // Add every meshes to the final THREE.Group
     var playground = new THREE.Group();
     playground.add(plane);
     playground.add(wallN);
@@ -137,4 +163,4 @@ function generateObstaclePlayGround(){
     return playground;
 }
 
-export { generateBasePlayGround, generateObstaclePlayGround };
+export { generateBasePlayGround, generateObstaclePlayGround, generatePlayGround };

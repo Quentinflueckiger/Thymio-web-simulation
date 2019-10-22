@@ -2,7 +2,6 @@ import { OrbitControls } from '../ThreeJS/js/examples/jsm/controls/OrbitControls
 import { MTLLoader } from '../ThreeJS/js/examples/jsm/loaders/MTLLoader.js';
 import { OBJLoader } from '../ThreeJS/js/examples/jsm/loaders/OBJLoader.js';
 
-//import { generateBox } from './GeometricalMeshes.js';
 import * as GM from './GeometricalMeshes.js';
 import * as PG from './Playgrounds.js';
 
@@ -133,17 +132,26 @@ function init(){
 	document.addEventListener( 'touchstart', onDocumentTouchStart, false );
     document.addEventListener( 'touchmove', onDocumentTouchMove, false );
     
-    document.getElementById("basePlaygroundBtn").onclick = function(){
+    /*document.getElementById("basePlaygroundBtn").onclick = function(){
         var playground = PG.generateBasePlayGround();
         changePlayGround(playground);
     }
     document.getElementById("obstaclePlaygroundBtn").onclick = function(){
         var playground = PG.generateObstaclePlayGround();
         changePlayGround(playground);
-    }
+    }*/
+
     document.getElementById("pgButton").onclick = function(){
         var pgPicker = document.getElementById("pgPicker");
-        console.log("Playground : ", pgPicker.options[pgPicker.selectedIndex].value);
+        var playground = PG.generatePlayGround(pgPicker.options[pgPicker.selectedIndex].value);
+        if(playground != null){
+
+            changePlayGround(playground);
+        }
+        else{
+
+            console.log("Playground : ", playground);
+        }
     }
 
     renderer = new THREE.WebGLRenderer();
