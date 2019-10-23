@@ -175,40 +175,6 @@ function generateCylinder(color, height, botRadius, topRadius){
 }
 
 /**
- * Create a track composed of multiple box mesh.
- * @param {Color} color     The hex value of the wanted color
- * @return {THREE.Group}    The group containing all the parts of the track
- */
-function generateTrack(color, points){
-    
-    // If less than two points are given throw an error message as no track can be built with only one point
-    if (points.length < 2){
-        throw {name : "MissingArgumentsError", message : "not enough points to create a track"}; 
-    }
-    
-    var track = new THREE.Group();
-
-    // Loop through the points array and create a box between every tow following points
-    for (let i = 0; i < points.length-1; i++) {
-
-        // Calculate a Vector3 between the two points
-        var trackWidth = new THREE.Vector3().copy(points[i+1]).sub(points[i]);
-        // Create the mesh with the calculated width from the Vector3
-        var line = generateBox(color, trackWidth.length(), TrackHeight, TrackDepth);
-        // Position the center of the object to first point + half of the distance between the points (for x and z)
-        line.position.x = points[i].x + trackWidth.x/2;
-        line.position.z = points[i].z + trackWidth.z/2;
-        // Align mesh to calculated Vector3
-        line.quaternion.setFromUnitVectors(new THREE.Vector3(1, 0, 0), trackWidth.clone().normalize());
-        track.add(line);       
-    }
-
-    track.position.y += TrackHeight/2;
-
-    return track;
-}
-
-/**
  * Create an array with coordinates
  * @return {Vector3[]}          The array filled with Vector3 coordinate of the points
  */
@@ -235,7 +201,66 @@ function createPoints(){
     return points;
 }
 
+/**
+ * A class to create and holds information about the track.
+ * Will be used more in the customizable playground.
+ */
+class Track {
+
+    /**
+     * @param {Color}       color   The wanted color         
+     * @param {Vector3[]}   points  The array containing all the points for the track
+     */
+    constructor(color, points){
+        this.color = color;
+        if (points.length < 2){
+
+            this.valide = false;
+        }
+        else{
+
+            this.valide = true;
+            this.points = points;
+        }
+    }
+
+    get trackmesh(){
+
+        return this.computeTrack();        
+    }
+
+    get trackpoints(){
+        
+        return this.points;
+    }
+
+    computeTrack(){
+
+        var track = new THREE.Group();
+
+        // Loop through the points array and create a box between every two following points
+        for (let i = 0; i < this.points.length-1; i++) {
+
+            // Calculate a Vector3 between the two points
+            var trackWidth = new THREE.Vector3().copy(this.points[i+1]).sub(this.points[i]);
+            // Create the mesh with the calculated width from the Vector3
+            var line = generateBox(this.color, trackWidth.length(), TrackHeight, TrackDepth);
+            // Position the center of the object to first point + half of the distance between the points (for x and z)
+            line.position.x = this.points[i].x + trackWidth.x/2;
+            line.position.z = this.points[i].z + trackWidth.z/2;
+            // Align mesh to calculated Vector3
+            line.quaternion.setFromUnitVectors(new THREE.Vector3(1, 0, 0), trackWidth.clone().normalize());
+            track.add(line);       
+        }
+
+        track.position.y += TrackHeight/2;
+
+        return track;
+    }
+    
+}
+
 export{ generateBox, generatePlane, generateAxes, 
         generateLine, generateSphere, generateOctagon, 
-        generateUShapedFigure, generateCylinder, generateTrack, 
-        createPoints };
+        generateUShapedFigure, generateCylinder, 
+        createPoints, Track };

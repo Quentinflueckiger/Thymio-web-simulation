@@ -151,7 +151,7 @@ function generateObstaclePlayGround(){
     columns.receiveShadow = true;
 
     var points = GM.createPoints();
-    var track = GM.generateTrack(WallColor, points);
+    var track = new GM.Track(WallColor, points);
 
     // Add every meshes to the final THREE.Group
     var playground = new THREE.Group();
@@ -166,7 +166,7 @@ function generateObstaclePlayGround(){
     playground.add(wallNW);
     playground.add(uShaped);
     playground.add(columns);
-    playground.add(track);
+    playground.add(track.trackmesh);
 
     return playground;
 }
