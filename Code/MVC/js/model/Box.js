@@ -1,7 +1,7 @@
-import GeometricalMesh from './GeometricalMesh.js';
+import Mesh from './Mesh.js';
 
-export default class Box extends GeometricalMesh{
-    constructor(name, properties){
+export default class Box extends Mesh {
+    constructor(name, properties) {
         super(name, properties);
         this.className = 'Box';
     }

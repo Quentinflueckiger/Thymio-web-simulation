@@ -1,11 +1,13 @@
+import GalaxyViewMediator from './mediator/GalaxyViewMediator.js';
+import ViewMediatorFactory from './ViewMediatorFactory.js';
+import RenderingContext from './RenderingContext.js';
+
 export default class MainView {
-    constructor(controller, playground) {
+    constructor(controller, galaxy) {
         this.controller = controller;
-        this.playground = playground;
+        this.galaxy = galaxy;
         this.renderingContext = this.createRenderingContext();
-        this.playgroundViewMediator = new playgroundViewMediator(playground, new ViewMediatorFactory());
-        this.objectPicker = new ObjectPicker(this.galaxyViewMediator, this.renderingContext);
-        this.descriptionPanel = new DescriptionPanel();
+        this.galaxyViewMediator = new GalaxyViewMediator(galaxy, new ViewMediatorFactory());
     }
 
     createRenderingContext() {
@@ -18,11 +20,11 @@ export default class MainView {
 
     initialize() {
         const scene = this.renderingContext.scene;
-        const object3D = this.playgroundViewMediator.object3D;
+        const object3D = this.galaxyViewMediator.object3D;
 
         scene.add(object3D);
 
-        document.getElementById("pgButton").addEventListener('click', (e) => this.controller.onClickPicker(e.value));
+
 
         window.addEventListener( 'resize', (e) => this.onWindowResize(), false );
         this.render();
@@ -32,7 +34,7 @@ export default class MainView {
         this.renderingContext.controls.update();
         requestAnimationFrame(() => this.render());
 
-        this.playgroundViewMediator.onFrameRenderered();
+        this.galaxyViewMediator.onFrameRenderered();
         this.renderingContext.renderer.render(this.renderingContext.scene, this.renderingContext.camera);
     }
 
@@ -41,6 +43,5 @@ export default class MainView {
         this.renderingContext.camera.updateProjectionMatrix();
 
         this.renderingContext.renderer.setSize(window.innerWidth, window.innerHeight);
-        this.objectPicker.notifyWindowResize();
     }
 }

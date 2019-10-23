@@ -1,18 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <title>
-            Thymio II Web Simulation
-        </title>
-        <link rel="stylesheet" href="./main.css">
-    </head>
-
-
-    <body>
-
-        <script src="./bin/three.js"></script>
-        
-
-    </body>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>Thymio II web simulation MVC</title>
+    <link rel="stylesheet" href="./main.css">
+    <link rel='icon' href='favicon.ico' type='image/x-icon'/ >
+    
+</head>
+<body>
+<div id="info">
+    <p>
+        Some text that is on top of the Three.js scene
+    </p>
+    
+    <form>
+        <select id = "pgPicker" name="cars">
+          <option value="basePlayground" selected>Base Playground</option>
+          <option value="obstaclePlayground">Obstacle Playground</option>
+          <option value="notAssigned">Third option</option>
+        </select>
+        <br><br>
+        <button id = "pgButton" type="button">Submit</button>
+    </form>
+</div>
+<script src="./bin/three.js"></script>
+<script src="./main.js" type ="module"></script>
+</body>
 </html>

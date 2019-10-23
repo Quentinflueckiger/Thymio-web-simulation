@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    height: 100vh;
+	height: 100vh;
 }
 
 canvas{
@@ -20,6 +20,7 @@ canvas{
 	user-select: none;
 	pointer-events: none;
 	z-index: 1; 
+	color: green;
 }
 
 button {
@@ -50,5 +51,5 @@ a, button, input, select {
 	-webkit-user-select: none;
 	-ms-user-select: none;
 	user-select: none;
-	z-index: 2 !important; /* TODO Solve this in HTML */
+	/*z-index: 2 !important; /* TODO Solve this in HTML */
 }
