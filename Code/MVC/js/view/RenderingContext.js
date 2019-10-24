@@ -11,9 +11,9 @@ export default class RenderingContext {
     static getDefault(containerElement) {
         const width  = window.innerWidth, height = window.innerHeight;
         const scene = new THREE.Scene();
-        const camera = new THREE.PerspectiveCamera(45, width / height, 0.01, 1000);
+        const camera = new THREE.PerspectiveCamera(45, width / height, 1, 10000);
         const renderer = new THREE.WebGLRenderer();
-        //const controls = new THREE.TrackballControls(camera);
+        const BackGroundColor = "#7fc4f5";
 
         // controls
         const controls = new OrbitControls(camera, renderer.domElement);
@@ -21,14 +21,30 @@ export default class RenderingContext {
 	    controls.minDistance = 20;
 	    controls.maxDistance = 1000;
 
-        camera.position.z = 20;
+        camera.position.set(20,20,20);camera.lookAt(scene.position);
+        camera.updateMatrix();
+
+        renderer.setClearColor(BackGroundColor);
         renderer.setSize(width, height);
-        scene.add(new THREE.AmbientLight(0x333333));
+        renderer.shadowMap.enabled = true;
+        renderer.shadowMap.type = THREE.BasicShadowMap;
 
-        const light = new THREE.DirectionalLight(0xffffff, 1);
+        scene.add(new THREE.AmbientLight(0x555555));
 
-        light.position.set(15,15,15);
+        const light = new THREE.DirectionalLight( 0xffffff, 1, 100 );
+
+        light.position.set( 50, 50, 0 ); 			
+        light.castShadow = true;
+    
+        light.shadow.mapSize.width = 512;  
+        light.shadow.mapSize.height = 512; 
+        light.shadow.camera.near = 0.5;    
+        light.shadow.camera.far = 200;
+         
         scene.add(light);
+
+        var helper = new THREE.CameraHelper( light.shadow.camera );
+        scene.add( helper );
 
         containerElement.appendChild(renderer.domElement);
 

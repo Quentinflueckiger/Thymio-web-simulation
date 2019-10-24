@@ -4,12 +4,12 @@ export default class EnvironmentViewMediator extends ViewMediator {
     constructor(environment, mediatorFactory) {
         super(environment, mediatorFactory);
 
-        this.astronomicalBody.addObserver("PlaygroundAdded", (e) => this.onPlaygroundAdded(e));
-        this.astronomicalBody.addObserver("PlaygroundRemoved", (e) => this.onPlaygroudRemoved(e));
+        this.model.addObserver("PlaygroundAdded", (e) => this.onPlaygroundAdded(e));
+        this.model.addObserver("PlaygroundRemoved", (e) => this.onPlaygroudRemoved(e));
 
-        const testSphere = this.createSphere(40,60);
+        //const testSphere = this.createSphere(5,60);
 
-        this.object3D.add(testSphere);
+        //this.object3D.add(testSphere);
     }
 
     onPlaygroundAdded(e){

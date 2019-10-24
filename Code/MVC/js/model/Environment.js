@@ -10,7 +10,7 @@ export default class Environment extends Model  {
     addPlayground(playground) {
         playground.parent = this;
         this.playground.push(playground);
-        this.emit('PlaygroudAdded', {playground});
+        this.emit('PlaygroundAdded', {playground});
     }
 
     removePlayground(playground) {
