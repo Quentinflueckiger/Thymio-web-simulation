@@ -9,7 +9,7 @@ import Environment from './js/model/Environment.js';
 
 const galaxy = new Galaxy('Milky Way');
 const environment = new Environment('Base environment');
-const galaxyController = new GalaxyController(galaxy);
+const galaxyController = new GalaxyController(galaxy, environment);
 
 // add solar system to galaxy
 const apiClient = new APIClient();

@@ -23,10 +23,11 @@ export default class MainView {
 
     initialize() {
         const scene = this.renderingContext.scene;
-        const object3D = this.galaxyViewMediator.object3D;
+        const object3Dg = this.galaxyViewMediator.object3D;
+        const object3De = this.environmentViewMediator.object3D;
 
-        scene.add(object3D);
-
+        scene.add(object3Dg);
+        scene.add(object3De);
 
 
         window.addEventListener( 'resize', (e) => this.onWindowResize(), false );
@@ -38,6 +39,7 @@ export default class MainView {
         requestAnimationFrame(() => this.render());
 
         this.galaxyViewMediator.onFrameRenderered();
+        this.environmentViewMediator.onFrameRenderered();
         this.renderingContext.renderer.render(this.renderingContext.scene, this.renderingContext.camera);
     }
 
