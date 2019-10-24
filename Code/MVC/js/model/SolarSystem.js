@@ -23,6 +23,13 @@ export default class SolarSystem extends AstronomicalBody {
         }
     }
 
+    // Test to add box
+    addBox(box){
+        box.parent = this;
+        this.planets.push(box);
+        this.emit('BoxAdded', {box});
+    }
+
     [Symbol.iterator]() {
         return this.planets.values();
     }

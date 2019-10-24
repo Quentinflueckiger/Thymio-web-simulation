@@ -7,6 +7,7 @@ export default class SolarSystemViewMediator extends ViewMediator {
         this.object3D.add(this.sunViewMediator.object3D);
         this.astronomicalBody.addObserver("PlanetAdded", (e) => this.onPlanetAdded(e));
         this.astronomicalBody.addObserver("PlanetRemoved", (e) => this.onPlanetRemoved(e));
+        this.astronomicalBody.addObserver("BoxAdded", (e) => this.onBoxAdded(e));
     }
 
     onPlanetAdded(e) {
@@ -15,5 +16,9 @@ export default class SolarSystemViewMediator extends ViewMediator {
 
     onPlanetRemoved(e) {
         this.removeChild(e.planet);
+    }
+
+    onBoxAdded(e){
+        this.addChild(e.box);
     }
 }

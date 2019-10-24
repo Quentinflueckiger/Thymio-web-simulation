@@ -139,3 +139,8 @@ Changed the function to create tracks to a class so later on we can use it and i
 Created a branch on git to hold the mvc development while it isn't stable. First test to convert the program to mvc using some parts of https://github.com/lucasmajerowicz/threejs-mvc-example and https://www.taniarascia.com/javascript-mvc-todo-app/ .
 Decided to delete what I had done and take the project of lucas majerowicz and enhance/modify with our needs. Deleted parts that would not be used and changed from trackball to orbitcontrols.
 Created the first draft for the favicon.
+
+## 24.10.2019
+
+### Afternoon
+

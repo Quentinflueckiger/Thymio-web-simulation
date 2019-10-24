@@ -1,13 +1,16 @@
 import GalaxyViewMediator from './mediator/GalaxyViewMediator.js';
 import ViewMediatorFactory from './ViewMediatorFactory.js';
 import RenderingContext from './RenderingContext.js';
+import EnvironmentViewMediator from './mediator/EnvironmentViewMediator.js';
 
 export default class MainView {
-    constructor(controller, galaxy) {
+    constructor(controller, galaxy, environment) {
         this.controller = controller;
         this.galaxy = galaxy;
+        this.environment = environment;
         this.renderingContext = this.createRenderingContext();
         this.galaxyViewMediator = new GalaxyViewMediator(galaxy, new ViewMediatorFactory());
+        this.environmentViewMediator = new EnvironmentViewMediator(environment, new ViewMediatorFactory());
     }
 
     createRenderingContext() {

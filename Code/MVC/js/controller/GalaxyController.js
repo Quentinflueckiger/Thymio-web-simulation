@@ -3,6 +3,7 @@ import MainView from '../view/MainView.js';
 export default class GalaxyController {
     constructor(galaxy) {
         this.galaxy = galaxy;
+        this.environment = environment;
         this.view = new MainView(this, galaxy);
         this.view.initialize();
     }
