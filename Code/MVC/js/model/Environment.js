@@ -17,7 +17,7 @@ export default class Environment extends Model  {
         const index = this.playground.indexOf(playground);
         
         if(index !== -1) {
-            this.playground.splice(inde, 1);
+            this.playground.splice(index, 1);
             this.emit('PlaygroundRemoved', {playground});
         }
     }

@@ -144,3 +144,54 @@ Created the first draft for the favicon.
 
 ### Afternoon
 
+
+
+## 25.10.2019
+
+### Morning
+
+Continue to convert old code to the mvc.
+
+### Afternoon
+
+Some issues with the attribution of points to the track, this is the old way. We now add them as properties at start. But it isn't suitable for dynamic creation of track. There was a algorithm error as well in TrackViewMediator, using a vector instead of a value for width, so it might be possible to use the following code.
+
+    import Shape from "./Shape.js";
+
+    export default class Point extends Shape {
+        constructor(name, properties) {
+            super(name, properties);
+            this.className = 'Point';
+            this.debugArray = [];
+        }
+
+        [Symbol.iterator]() {
+            return this.debugArray.values();
+        }
+    }
+-----
+    import ViewMediator from "./ViewMediator.js";
+
+    export default class PointViewMediator extends ViewMediator {
+        constructor(point, mediatorFactory) {
+            super(point, mediatorFactory);
+        }
+
+        makeObject3D() {
+            const container = new THREE.Object3D();
+            const mesh = new THREE.Mesh(
+                new THREE.BoxGeometry(1, 1, 1),
+                new THREE.MeshPhongMaterial( { color : "#fc031c"} )
+
+            )
+
+            container.add(mesh);
+
+            mesh.castShadow = true;
+            mesh.receiveShadow = true;
+
+            return container;
+        }
+    }
+
+Finished to add every shape needed to the mvc, and added as well the thymio.

@@ -8,6 +8,7 @@ import Octagon from './js/model/Octagon.js';
 import UShapeFigure from './js/model/UShapedFigure.js';
 import Cylinder from './js/model/Cylinder.js';
 import Track from './js/model/Track.js';
+import Thymio from './js/model/Thymio.js';
 
 //const galaxy = new Galaxy('Milky Way');
 const environment = new Environment('Base environment');
@@ -99,12 +100,32 @@ var cylinderProps = {
 var cylinder = new Cylinder("Cylinder", cylinderProps);
 
 var trackProps = {
-    color : ColorPalette.Grey
+    color : ColorPalette.Grey,
+    points: [
+        {
+            positionX : 0,
+            positionZ : 0
+        },
+        {
+            positionX : 25,
+            positionZ : 0
+        },
+        {
+            positionX : 35,
+            positionZ : 10
+        },
+        {
+            positionX : 35,
+            positionZ : 35
+        }
+
+    ]
 }
 var track = new Track("Track", trackProps);
-playground.addShape(track);
 
-track.addPoint(new THREE.Vector3(0,0,0));
-track.addPoint(new THREE.Vector3(25,0,0));
-track.addPoint(new THREE.Vector3(35,0,10));
-track.addPoint(new THREE.Vector3(35,0,35));
+var thymioProps = {
+}
+var thymio = new Thymio("Thymio", thymioProps);
+
+playground.addShape(thymio);
+//environment.removePlayground(playground);
