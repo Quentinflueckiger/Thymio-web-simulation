@@ -15,11 +15,9 @@ export default class PlaneViewMediator extends ViewMediator {
         container.add(mesh);
         mesh.rotateX(Math.PI/2);
 
-        return container;
-    }
+        mesh.receiveShadow = true;
 
-    onFrameRenderered(){
-        super.onFrameRenderered();
+        return container;
     }
 }
 PlaneViewMediator.SphereSegments = 32;

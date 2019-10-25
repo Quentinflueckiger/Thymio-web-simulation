@@ -5,7 +5,7 @@
 
 ### User information
 
-empty
+On demand.
 
 ### Access the Virtual Machine
 

@@ -1,9 +1,13 @@
+import * as ColorPalette from './js/ColorPalette.js';
 import EnvironmentController from './js/controller/GalaxyController.js';
 import Environment from './js/model/Environment.js';
 import Playground from './js/model/Playground.js';
 import Box from './js/model/Box.js';
 import Plane from './js/model/Plane.js';
-import * as ColorPalette from './js/ColorPalette.js';
+import Octagon from './js/model/Octagon.js';
+import UShapeFigure from './js/model/UShapedFigure.js';
+import Cylinder from './js/model/Cylinder.js';
+import Track from './js/model/Track.js';
 
 //const galaxy = new Galaxy('Milky Way');
 const environment = new Environment('Base environment');
@@ -12,31 +16,95 @@ const environmentController = new EnvironmentController(environment);
 const playground = new Playground("Base Playground");
 environment.addPlayground(playground);
 
-var box1Props = {
-    width : 1,
-    height : 1,
-    depth : 1,
-    color : '#11ff00',
-    position : 10
-}
-var box1 = new Box("Test Box", box1Props);
+// Data for base playground, will be moved in an other file as APIClients later on
+const WallHeight = 6;
+const WallDepth = 1;
+const Width = 50;
+const Length = 50;
 
-var box2Props = {
-    width : 1,
-    height : 1,
-    depth : 1,
-    color : '#11ff00',
-    position : -10
+var wallNProps = {
+    width : WallDepth,
+    height : WallHeight,
+    depth : Width + WallDepth,
+    color : ColorPalette.Grey,
+    positionX : -Width/2,
+    positionZ : 0
 }
-var box2 = new Box("Test Box", box2Props);
+var wallN = new Box("N Wall", wallNProps);
 
-playground.addShape(box1);
-playground.addShape(box2);
+var wallEProps = {
+    width : Width + WallDepth,
+    height : WallHeight,
+    depth : WallDepth,
+    color : ColorPalette.Grey,
+    positionX : 0,
+    positionZ : -Width/2
+}
+var wallE = new Box("E Wall", wallEProps);
+
+var wallSProps = {
+    width : WallDepth,
+    height : WallHeight,
+    depth : Width + WallDepth,
+    color : ColorPalette.Grey,
+    positionX : Width/2,
+    positionZ : 0
+}
+var wallS = new Box("S Wall", wallSProps);
+
+var wallWProps = {
+    width : Width + WallDepth,
+    height : WallHeight,
+    depth : WallDepth,
+    color : ColorPalette.Grey,
+    positionX : 0,
+    positionZ : Width/2
+}
+var wallW = new Box("W Wall", wallWProps);
+
+playground.addShape(wallN);
+playground.addShape(wallE);
+playground.addShape(wallS);
+playground.addShape(wallW);
 
 var planeProps = {
-    width :  50,
-    height : 50,
-    color : ColorPalette.GroundColor
+    width :  Width,
+    height : Length,
+    color : ColorPalette.LightGrey
 }
 var plane = new Plane("Bottom Plane", planeProps);
 playground.addShape(plane);
+
+var octagonProps = {
+    color : ColorPalette.LightGrey,
+    segmentLength : 50
+}
+var octagon = new Octagon("Octagon Plane", octagonProps);
+
+var ushapeProps = {
+    height : WallHeight,
+    size : 3,
+    color : ColorPalette.Grey
+}
+var uShape = new UShapeFigure("UShaped Figure", ushapeProps);
+
+var cylinderProps = {
+    topRadius : 2,
+    botRadius : 2,
+    height : WallHeight,
+    color : ColorPalette.Grey,
+    positionX : 10,
+    positionZ : 0
+}
+var cylinder = new Cylinder("Cylinder", cylinderProps);
+
+var trackProps = {
+    color : ColorPalette.Grey
+}
+var track = new Track("Track", trackProps);
+playground.addShape(track);
+
+track.addPoint(new THREE.Vector3(0,0,0));
+track.addPoint(new THREE.Vector3(25,0,0));
+track.addPoint(new THREE.Vector3(35,0,10));
+track.addPoint(new THREE.Vector3(35,0,35));

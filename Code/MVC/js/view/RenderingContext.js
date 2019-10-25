@@ -1,4 +1,5 @@
 import { OrbitControls } from '../../bin/controls/OrbitControls.js';
+import * as ColorPalette from '../ColorPalette.js';
 
 export default class RenderingContext {
     constructor(scene, camera, renderer, controls) {
@@ -13,7 +14,6 @@ export default class RenderingContext {
         const scene = new THREE.Scene();
         const camera = new THREE.PerspectiveCamera(45, width / height, 1, 10000);
         const renderer = new THREE.WebGLRenderer();
-        const BackGroundColor = "#7fc4f5";
 
         // controls
         const controls = new OrbitControls(camera, renderer.domElement);
@@ -24,7 +24,7 @@ export default class RenderingContext {
         camera.position.set(20,20,20);camera.lookAt(scene.position);
         camera.updateMatrix();
 
-        renderer.setClearColor(BackGroundColor);
+        renderer.setClearColor(ColorPalette.LightBlue);
         renderer.setSize(width, height);
         renderer.shadowMap.enabled = true;
         renderer.shadowMap.type = THREE.BasicShadowMap;
@@ -45,6 +45,9 @@ export default class RenderingContext {
 
         var helper = new THREE.CameraHelper( light.shadow.camera );
         scene.add( helper );
+
+        var axesHelper = new THREE.AxesHelper( 20 );
+        scene.add( axesHelper );
 
         containerElement.appendChild(renderer.domElement);
 

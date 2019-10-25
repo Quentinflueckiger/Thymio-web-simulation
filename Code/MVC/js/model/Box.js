@@ -4,10 +4,10 @@ export default class Box extends Shape {
     constructor(name, properties) {
         super(name, properties);
         this.className = 'Box';
-        this.debugArray = [];
+        //this.debugArray = [];
     }
-    
+    /*
     [Symbol.iterator](){
         return this.debugArray.values();
-    }
+    }*/
 }

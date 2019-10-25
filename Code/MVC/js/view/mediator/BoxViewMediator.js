@@ -14,12 +14,15 @@ export default class BoxViewMediator extends ViewMediator {
         )
 
         container.add(mesh);
-        mesh.position.setX(this.model.properties.position);
+        mesh.position.setX(this.model.properties.positionX);
+        mesh.position.setZ(this.model.properties.positionZ);
+
+        // Compute Y offset
+        mesh.position.y += this.model.properties.height/2;
+
+        mesh.castShadow = true;
+        mesh.receiveShadow = true;
 
         return container;
-    }
-
-    onFrameRenderered(){
-        super.onFrameRenderered();
     }
 }
