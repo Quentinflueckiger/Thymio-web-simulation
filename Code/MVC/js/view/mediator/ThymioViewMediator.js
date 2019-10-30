@@ -29,4 +29,17 @@ export default class ThymioViewMediator extends ViewMediator {
         })
         return container;
     }
+
+    move(left, right) {
+        if (left === right){
+            //move in a straight line
+        }
+        else if (left > right) {
+            //turn towards the right
+        }
+        else if ( left < right) {
+            //turn towards the left
+        }
+
+    }
 }

@@ -1,117 +1,143 @@
+import * as ColorPalette from './ColorPalette.js';
+
 export default class APIClient {
-    getRecord() {
-        return APIClient.galaxyRecord;
+    getRecord(playground) {
+        switch (playground) {
+            case 'Baseplayground':
+                return APIClient.basePlaygroundRecord;
+            case 'Obstacleplayground':
+                return APIClient.obstaclePlaygroundRecord;
+            default:
+                break;
+        }
     }
 }
 
-APIClient.galaxyRecord = {
-    name: 'Milky Way',
-    solarSystems: [
+APIClient.wallHeight = 6;
+APIClient.wallDepth = 1;
+APIClient.pgWidth = 50;
+APIClient.pgLength = 50;
+
+APIClient.basePlaygroundRecord = {
+    playground: [
         {
-            name: 'Solar System',
-            props: {},
-            sun: {
-                name: 'Sun',
-                props: {
-                    radius: 2,
-                    texture: 'images/sunmap.jpg'
+            name: 'Baseplayground',
+
+            boxes: [
+                {
+                    name: 'N Wall',
+                    props: {
+                        width : APIClient.wallDepth,
+                        height : APIClient.wallHeight,
+                        depth : APIClient.pgWidth + APIClient.wallDepth,
+                        color : ColorPalette.Grey,
+                        positionX : -APIClient.pgWidth/2,
+                        positionZ : 0
+                    }
+                },
+                {
+                    name: 'E Wall',
+                    props: {
+                        width : APIClient.pgWidth + APIClient.wallDepth,
+                        height : APIClient.wallHeight,
+                        depth : APIClient.wallDepth,
+                        color : ColorPalette.Grey,
+                        positionX : 0,
+                        positionZ : -APIClient.pgWidth/2
+                    }
+                },
+                {
+                    name: 'S Wall',
+                    props: {
+                        width : APIClient.wallDepth,
+                        height : APIClient.wallHeight,
+                        depth : APIClient.pgWidth + APIClient.wallDepth,
+                        color : ColorPalette.Grey,
+                        positionX : APIClient.pgWidth/2,
+                        positionZ : 0
+                    }
+                },
+                {
+                    name: 'W Wall',
+                    props: {
+                        width : APIClient.pgWidth + APIClient.wallDepth,
+                        height : APIClient.wallHeight,
+                        depth : APIClient.wallDepth,
+                        color : ColorPalette.Grey,
+                        positionX : 0,
+                        positionZ : APIClient.pgWidth/2
+                    }
                 }
-            },
-            planets: [
-                {name: 'Mercury',
+            ],
+
+            planes: [
+                {
+                    name: 'Bottom plane',
                     props: {
-                        texture: 'images/mercurymap.jpg',
-                        orbitalSpeed: 0.01,
-                        rotationSpeed: 0.05,
-                        radius: 0.4,
-                        distance: 5
+                        width : APIClient.pgWidth,
+                        height : APIClient.pgLength,
+                        color : ColorPalette.LightGrey
                     }
-                },
-                {name: 'Venus',
-                    props: {
-                        texture: 'images/venusmap.jpg',
-                        orbitalSpeed: 0.007,
-                        rotationSpeed: -0.05,
-                        radius: 0.8,
-                        distance: 10
-                    }
-                },
-                {name: 'Earth',
-                    satellites: [
-                        {
-                            name: 'Moon',
-                            props: {
-                                texture: 'images/moonmap1k.jpg',
-                                orbitalSpeed: -0.05,
-                                rotationSpeed: 0.01,
-                                radius: 0.4,
-                                distance: 2
-                            }
-                        }
-                    ],
-                    props: {
-                        texture: 'images/2_no_clouds_4k.jpg',
-                        orbitalSpeed: 0.006,
-                        rotationSpeed: 0.005,
-                        radius: 0.8,
-                        distance: 15
-                    }
-                },
-                {name: 'Mars',
-                    props: {
-                        texture: 'images/marsmap1k.jpg',
-                        orbitalSpeed: 0.005,
-                        rotationSpeed: 0.005,
-                        radius: 0.6,
-                        distance: 20
-                    }
-                },
-                {name: 'Jupiter',
-                    props: {
-                        texture: 'images/jupitermap.jpg',
-                        orbitalSpeed: 0.003,
-                        rotationSpeed: 0.0025,
-                        radius: 1.6,
-                        distance: 26
-                    }
-                },
-                {name: 'Saturn',
-                    props: {
-                        texture: 'images/saturnmap.jpg',
-                        orbitalSpeed: 0.002,
-                        rotationSpeed: 0.0025,
-                        radius: 1.2,
-                        distance: 33
-                    }
-                },
-                {name: 'Uranus',
-                    props: {
-                        texture: 'images/uranusmap.jpg',
-                        orbitalSpeed: 0.002,
-                        rotationSpeed: -0.004,
-                        radius: 1,
-                        distance: 40
-                    }
-                },
-                {name: 'Neptune',
-                    props: {
-                        texture: 'images/neptunemap.jpg',
-                        orbitalSpeed: 0.0015,
-                        rotationSpeed: 0.004,
-                        radius: 0.9,
-                        distance: 50
-                    }
-                },
-                {name: 'Pluto',
-                    props: {
-                        texture: 'images/plutomap1k.jpg',
-                        orbitalSpeed: 0.002,
-                        rotationSpeed: 0.003,
-                        radius: 0.4,
-                        distance: 60
-                    }
+                }
+            ],
+
+            thymios: [
+                {
+                    name: 'Thymio'
                 }
             ]
         }
     ]
 };
+
+
+APIClient.obstaclePlaygroundRecord = {
+    playground: [
+        {
+            name: 'Obstacleplayground',
+
+            boxes: [
+                {
+                    name: 'N Wall',
+                    props: {
+                        width : APIClient.wallDepth,
+                        height : APIClient.wallHeight,
+                        depth : APIClient.pgWidth + APIClient.wallDepth,
+                        color : ColorPalette.Grey,
+                        positionX : -APIClient.pgWidth/2,
+                        positionZ : 0
+                    }
+                },
+                {
+                    name: 'E Wall',
+                    props: {
+                        width : APIClient.pgWidth + APIClient.wallDepth,
+                        height : APIClient.wallHeight,
+                        depth : APIClient.wallDepth,
+                        color : ColorPalette.Grey,
+                        positionX : 0,
+                        positionZ : -APIClient.pgWidth/2
+                    }
+                }
+            ],
+
+            planes: [
+                {
+                    name: 'Bottom plane',
+                    props: {
+                        width : APIClient.pgWidth,
+                        height : APIClient.pgLength,
+                        color : ColorPalette.LightGrey
+                    }
+                }
+            ],
+
+            thymios: [
+                {
+                    name: 'Thymio'
+                }
+            ]
+        }
+    ]
+};
+

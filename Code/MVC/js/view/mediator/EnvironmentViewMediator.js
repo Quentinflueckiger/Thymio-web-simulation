@@ -15,4 +15,5 @@ export default class EnvironmentViewMediator extends ViewMediator {
     onPlaygroudRemoved(e){
         this.removeChild(e.playground);
     }
+
 }

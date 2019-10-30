@@ -15,4 +15,5 @@ export default class PlaygroundViewMediator extends ViewMediator {
     onShapeRemoved(e) {
         this.removeChild(e.shape);
     }
+    
 }

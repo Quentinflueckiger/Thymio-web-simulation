@@ -2,7 +2,6 @@ import ViewMediatorFactory from './ViewMediatorFactory.js';
 import RenderingContext from './RenderingContext.js';
 import EnvironmentViewMediator from './mediator/EnvironmentViewMediator.js';
 import EnvironmentButtons from './controls/EnvironmentButtons.js';
-import ButtonsPanel from '../controller/ButtonsPanel.js';
 
 export default class MainView {
     constructor(controller, environment) {
@@ -11,7 +10,6 @@ export default class MainView {
         this.renderingContext = this.createRenderingContext();
         this.environmentViewMediator = new EnvironmentViewMediator(environment, new ViewMediatorFactory());
         this.environmentButtons = new EnvironmentButtons();
-        this.ButtonsPanel = new ButtonsPanel();
     }
 
     createRenderingContext() {
@@ -29,7 +27,9 @@ export default class MainView {
         scene.add(object3D);
 
         this.environmentButtons.init();
-        this.environmentButtons.addObserver('pgPickerClicked', this.controller.onPGPickerClicked);
+        
+        this.environmentButtons.addObserver('pgPickerClicked', (e) => this.controller.onPGPickerClicked(e));
+        this.environmentButtons.addObserver('aeslFileSubmited', (e) => this.controller.onAeslFileSubmited(e));
 
         window.addEventListener( 'resize', (e) => this.onWindowResize(), false );
         this.render();

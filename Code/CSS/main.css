@@ -24,7 +24,6 @@ canvas{
 
 button {
 	cursor: pointer;
-	text-transform: uppercase;
 }
 
 a {
@@ -34,11 +33,6 @@ a {
 
 a:hover {
 	text-decoration: underline;
-}
-
-button {
-	cursor: pointer;
-	text-transform: uppercase;
 }
 
 a, button, input, select {

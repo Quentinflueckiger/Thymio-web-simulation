@@ -2,7 +2,7 @@ import ViewMediator from './ViewMediator.js';
 
 export default class BoxViewMediator extends ViewMediator {
     constructor(box, mediatorFactory){
-        super(box, mediatorFactory);     
+        super(box, mediatorFactory); 
     }
 
     makeObject3D(){
@@ -25,4 +25,5 @@ export default class BoxViewMediator extends ViewMediator {
 
         return container;
     }
+    
 }
