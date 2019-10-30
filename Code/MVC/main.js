@@ -1,5 +1,5 @@
 import * as ColorPalette from './js/ColorPalette.js';
-import EnvironmentController from './js/controller/GalaxyController.js';
+import EnvironmentController from './js/controller/EnvironmentController.js';
 import Environment from './js/model/Environment.js';
 import Playground from './js/model/Playground.js';
 import Box from './js/model/Box.js';
