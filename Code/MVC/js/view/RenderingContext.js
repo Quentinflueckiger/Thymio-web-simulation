@@ -17,7 +17,7 @@ export default class RenderingContext {
 
         // controls
         const controls = new OrbitControls(camera, renderer.domElement);
-        controls.maxPolarAngle = Math.PI * 0.5;
+        controls.maxPolarAngle = Math.PI * 0.49;
 	    controls.minDistance = 20;
 	    controls.maxDistance = 1000;
 

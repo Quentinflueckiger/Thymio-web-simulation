@@ -10,9 +10,18 @@ function loadFile(file) {
     reader.addEventListener('load', function(e) {
         var text = e.target.result;
 
+        var lines = this.result.split('\n');
+        for(var line = 0; line < lines.length; line++){
+            console.log(lines[line]);
+        }
         
+        if (!controlsIntegrity(lines)){
+            alert('File not conform.');
+            return;
+        }
+
         // contents of the file
-        console.log(text);
+        //console.log(text);
     });
 
     // file reading failed
