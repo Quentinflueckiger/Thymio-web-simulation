@@ -1,6 +1,6 @@
 import ViewMediator from "./ViewMediator.js";
-import { MTLLoader } from '../../../bin//loaders/MTLLoader.js';
-import { OBJLoader } from '../../../bin//loaders/OBJLoader.js';
+import { MTLLoader } from '../../../bin/loaders/MTLLoader.js';
+import { OBJLoader } from '../../../bin/loaders/OBJLoader.js';
 
 export default class ThymioViewMediator extends ViewMediator {
     constructor(thymio, mediatorFactory) {

@@ -195,3 +195,9 @@ Some issues with the attribution of points to the track, this is the old way. We
     }
 
 Finished to add every shape needed to the mvc, and added as well the thymio.
+
+## 01.11.2019
+
+### Morning
+
+Merged MVC into master as it is stable, and pulled it on the server. Added only the MVC folder to the webserver, probleme with javascript files, net::ERR_ABORTED 404 (Not Found), error for three.js and orbitcontrols.js (at least those two). Resolved the problem of three.js by adding an user to the IIS manager, IIS_IUSRS and gave him basic permission. But orbitcontrols is still not working. Loaders don't work either.

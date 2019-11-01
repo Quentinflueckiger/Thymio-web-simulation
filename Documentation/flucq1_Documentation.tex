@@ -202,9 +202,12 @@ turning right or turning left? Hence comes the use of the condition as we will e
 \subsubsection{Scratch}
 \subsection{What already exist} 
 WeBots / Aseba logiciel
-\section{TypeScript}
 \section{Three JS}
 
+\section{Structure}
+Write about the mvc, the interpreter pattern (?if used), problems because the three languages write files differently. All with the .aesl extension but not the same content format.
+
+\section{Usefull latex commands (to be deleted later on)}
 \begin{lstlisting}[style=JavaScript, caption={JavaScript Listing}]
   Javascript code
 \end{lstlisting}
@@ -220,9 +223,6 @@ which is very interesting, much more than the article
 \subsubsection{Objectives}
 \subsubsection{System Boundaries}
 \subsubsection{Requirements}
-
-\subsection{Virtual Machine Configuration}
-Step by step Guide on how to set it up and use it.
 
 \subsection{Version control}
 
@@ -255,6 +255,10 @@ Step by step Guide on how to set it up and use it.
   & Problems with webserver, has to be accessible from outside the vm, so maybe switching from windosw to linux \\
   & Talk about the problem of thymio suite, that is the software allows the user to create programs only if a physical or a simulated one is plugged in \\
   \hline
+  25.10.2019 & \textbf{Fifth meeting} \\
+  & Discussed using a Finite state machine to handle the events, but it may be too rigid so a non-deterministic finite state machine was the possible solution we came with \\
+  & First small talk about the meeting with the expert, report\\
+  \hline
 \end{tabular}
 
 \listoffigures
@@ -269,6 +273,7 @@ Step by step Guide on how to set it up and use it.
         https://stackoverflow.com/questions/41245938/web-server-cannot-find-mtl-file
         https://stackoverflow.com/questions/16097580/three-js-loading-obj-error-in-azure-but-not-locally
   \item shadow not rendering on plane of both playgrounds
+  \item javascript file not found on server, net::ERR_ABORTED 404 (Not Found) => first solution (working partially) was to add a IIS_IUSRS.
 \end{itemize}
 
 %% Print the bibibliography and add the section to the table of content

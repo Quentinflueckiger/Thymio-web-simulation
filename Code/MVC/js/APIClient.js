@@ -7,6 +7,8 @@ export default class APIClient {
                 return APIClient.basePlaygroundRecord;
             case 'Obstacleplayground':
                 return APIClient.obstaclePlaygroundRecord;
+            case 'Borderlessplayground' :
+                return APIClient.borderlessPlaygroundRecord;
             default:
                 break;
         }
@@ -480,7 +482,47 @@ APIClient.obstaclePlaygroundRecord = {
 APIClient.borderlessPlaygroundRecord = {
     playground: [
         {
-            name: 'Borderlessplayground'
+            name: 'Borderlessplayground',
+
+            octagons: [
+                {
+                    name: 'Bottom octagon',
+                    props: {
+                        segmentLength : APIClient.pgWidth,
+                        color : ColorPalette.LightGrey
+                    },
+                    hasWalls : false
+                }
+            ],
+
+            tracks: [
+                {
+                    name: 'Base Track',
+                    props: {
+                        color : ColorPalette.Red,
+                        points : [
+                            {
+                                positionX : 0,
+                                positionZ : 0
+                            },
+                            {
+                                positionX : 20,
+                                positionZ : 0
+                            },
+                            {
+                                positionX : 52,
+                                positionZ : 32
+                            }
+                        ]
+                    }
+                }
+            ],
+
+            thymios: [
+                {
+                    name: 'Thymio'
+                }
+            ]
         }
     ]
 };

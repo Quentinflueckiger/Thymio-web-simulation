@@ -14,12 +14,21 @@ function loadFile(file) {
         for(var line = 0; line < lines.length; line++){
             console.log(lines[line]);
         }
-        
-        if (!controlsIntegrity(lines)){
-            alert('File not conform.');
-            return;
-        }
 
+        var sourceType = getSourceType(lines);
+
+        switch (sourceType) {
+            case 0:
+                break;
+            case 1:
+                break;
+            case 2:
+                break;
+            case 3:
+                break;
+            default:
+                break;
+        }
         // contents of the file
         //console.log(text);
     });
@@ -39,6 +48,32 @@ function loadFile(file) {
 
     // read as text file
     reader.readAsText(file);
+}
+
+function getSourceType(contents) {
+
+    var sourceType;
+    for (let index = 0; index < contents.length; index++) {
+        if (contents[index].includes("<ThymioVisualProgramming>"))
+        {
+            sourceType = 0;
+        }
+        else if (contents[index].includes("<ThymioBlockly>"))
+        {
+            sourceType = 1;
+        }
+        else if (contents[index].includes("Something unique to aseba"))
+        {
+            // most likely aseba, but have to find a way to confirm it
+            sourceType = 2;
+        }
+        else 
+        {
+            sourceType = 3;
+        }
+        
+        return sourceType;
+    }
 }
 
 export{ loadFile }
