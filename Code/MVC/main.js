@@ -1,3 +1,7 @@
+/**
+ * @author  Quentinflueckiger   /   https://github.com/Quentinflueckiger
+ */
+
 import * as ColorPalette from './js/ColorPalette.js';
 import EnvironmentController from './js/controller/EnvironmentController.js';
 import Environment from './js/model/Environment.js';
@@ -11,9 +15,11 @@ import Track from './js/model/Track.js';
 import Thymio from './js/model/Thymio.js';
 import APIClient from './js/APIClient.js';
 
+// Creates the environment and its controller
 const environment = new Environment('Base environment');
 const environmentController = new EnvironmentController(environment);
 
+// Register the playground loaded as default
 environmentController.createPlayground("Baseplayground");
 
 /*

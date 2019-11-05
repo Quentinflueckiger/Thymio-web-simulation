@@ -1,3 +1,11 @@
+/**
+ * 
+ * @author  lucasmajerowicz   /   https://github.com/lucasmajerowicz
+ */
+
+ /**
+  * 
+  */
 export default class Observable {
     constructor() {
         this.observers = new Map();

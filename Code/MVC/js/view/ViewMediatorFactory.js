@@ -10,6 +10,11 @@ import ThymioViewMediator from './mediator/ThymioViewMediator.js';
 
 
 export default class ViewMediatorFactory {
+    /**
+     * 
+     * @param   {String} model The name of the model
+     * @return  {ViewMediator} The ViewMediator of the wanted type
+     */
     getMediator(model) {
         switch (model.className) {
             case 'Box' :

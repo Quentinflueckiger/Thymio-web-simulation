@@ -1,5 +1,8 @@
-// A color palette with the hex values
-
+/**
+ * @fileoverview A color palette with the hex values of multiple colors.
+ * 
+ * @author  Quentinflueckiger   /   https://github.com/Quentinflueckiger
+*/
 const Blue = "#0324ff"; 
 const LightBlue = "#7fc4f5"; 
 const Red = "#fc031c";

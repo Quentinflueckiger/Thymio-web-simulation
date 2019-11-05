@@ -1,6 +1,20 @@
+/**
+ * 
+ *  @author  Quentinflueckiger   /   https://github.com/Quentinflueckiger
+ */
+
 import * as ColorPalette from './ColorPalette.js';
 
+/**
+ * A class filled with the data of the prebuilt playgrounds.
+ */
 export default class APIClient {
+
+    /**
+     * 
+     * @param {String}  playground The wanted playground to load
+     * @return {Object}            The object containing the information about the wanted playground
+     */
     getRecord(playground) {
         switch (playground) {
             case 'Baseplayground':
@@ -479,6 +493,7 @@ APIClient.obstaclePlaygroundRecord = {
     ]
 };
 
+//
 APIClient.borderlessPlaygroundRecord = {
     playground: [
         {
