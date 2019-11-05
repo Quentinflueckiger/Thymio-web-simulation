@@ -190,14 +190,48 @@ By clicking the button with a student as an icon we enable the advanced mode tha
 
 Let us refactor a bit the program from before, we will change the program by making the robot look left then right and starting over again using timers. 
 To help us develop a more interesting program we have now access to a condition, a four led light on top of the robot, using this and the timer we can behave depending on the state of the robot. 
-For example, hereafter the middle button was pressed a timer will start and after a short amount of time, it will light one particular led. Afterward, the event “timer elapsed” will be triggered but which pair should the program execute, 
-turning right or turning left? Hence comes the use of the condition as we will execute the part of the program that corresponds to the state of the condition light. In this example, it will go back and forth between the two pairs: 
+For example, hereafter the middle button was pressed a timer will start and after a short amount of time, it will light one particular led. 
+Afterward, the event “timer elapsed” will be triggered but which pair should the program execute, turning right or turning left? 
+Hence comes the use of the condition as we will execute the part of the program that corresponds to the state of the condition light. 
+In this example, it will go back and forth between the two pairs: 
 \begin{figure}[h!]
   \includegraphics[width=\textwidth]{./VPL/middlebtn_3E_adv}
   \label{fig:thymio_vpl_middlebtn_3e9a}
 \end{figure}
 
-\subsubsection{Blockly}
+\subsubsection{Blockly 4 Thymio}
+
+The second possibility is to use Blockly4Thymio which is an environment based on Blockly. Blockly was released in May 2012 and was initially a replacement for OpenBlocks for the MIT App Inventor. 
+It is an open-source client-side library that allows its users to easily add a block-based visual programming language to an application or website. 
+Blockly is not in itself a programming language but rather used to create one. Its design makes it flexible and it can support a large set of features. 
+As it is a visual programming language, we find the same advantages as the first possibility, such for example applying programming principles with no regard towards syntactic error.
+
+Blockly includes a set of pre-defined blocks that can be used to develop with more ease the wanted application. They are arranged into eight families:
+\begin{enumerate}
+  \item Logic: Blocks with Boolean definition, equality check, and conditions.
+  \item Loop: Blocks for loops.
+  \item Math: Blocks for numbers, arithmetic operation, a few basic math functions (for example cos, sin, square root) and some mathematical constant (Pi).
+  \item Text: Blocks to create text and text operations.
+  \item Lists: Blocks to create lists and standard list operation (length, get the value).
+  \item Color: Blocks with a color definition.
+  \item Variables: Blocks to create variables, and to set/get their values.
+  \item Functions: Blocks to create functions, with return value or not, and to call existing function.
+\end{enumerate}
+
+Each block holds a pre-assigned shape, thus restraining its usage to certain situations as a "hidden" way to control the syntax. Their shapes are defined by the different connections with other blocks, 
+both external and internal, while external blocks describe what happens after or before, the internals describe what happens during or what are the arguments, logic. 
+Following is a basic variable block with three external connectors, and a math block with the value of one, with one connector, that is assigned to the “Count” variable (the blocks need to be assembled).
+\begin{figure}[h!]
+  \includegraphics[width=\textwidth]{./Blockly/basic_variable}
+  \label{fig:blockly_variable_block}
+\end{figure}
+Using the same logic as above we created a “Limit” variable with the value of 5 to demonstrate the next example. 
+The block used is from the logic family and test whether the “Count” variable is smaller or equal to the “Limit” as internal blocks.
+\begin{figure}[h!]
+  \includegraphics[width=\textwidth]{./Blockly/basic_logic}
+  \label{fig:blockly_logic_block}
+\end{figure}
+
 \subsubsection{Aseba}
 \subsubsection{Scratch}
 \subsection{What already exist} 
