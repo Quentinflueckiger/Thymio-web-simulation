@@ -240,9 +240,9 @@ It can then be added to a loop, a function or other statements that needs logic.
 Added to the base that Blockly is for Blockly4Thymio, is a compilator that interpret and adapt the Blockly code directly into Aseba language, and an Aseba Framework. 
 Let us once again follow the steps described in the “How does it works” section in order to start blockly-ing a little program with Blockly4Thymio. 
 Note that it is possible to open the Thymio Blockly environment without going through the Thymio suite, and without any Thymio II connected (physically or simulated). 
-To do so open the location of Thymio, the downloaded not the installed, and select thymio_blockly, and then index.
+To do so open the location of Thymio, the downloaded not the installed, and select thymio\textunderscore blockly, and then index.
 The environment window that opens after choosing the Blockly option is split into four parts.
-\being{enumerate}
+\begin{enumerate}
   \item A tool bar
   \item A programming window
   \item The category of blocks
@@ -265,7 +265,7 @@ The first one will activate the two motors at the same speed, as to drive forwar
 Here we set a variable to act as a control if Thymio is moving or not. We then use this information into a test when we click the middle button, and we either move forward or stop according to the result. 
 We added two other events for the right and left buttons that are responsible to turn the robot.
 \begin{figure}[h!]
-  \includegraphics[width=\textwidth]{./Blockly/advanced_program}
+  \includegraphics{./Blockly/advanced_program}
   \label{fig:thymio_blockly_advanced_program}
 \end{figure}
 \subsubsection{Aseba}
@@ -278,9 +278,8 @@ WeBots / Aseba logiciel
 Write about the mvc, the interpreter pattern (?if used), problems because the three languages write files differently. All with the .aesl extension but not the same content format.
 
 \section{Usefull latex commands (to be deleted later on)}
-\begin{lstlisting}[style=JavaScript, caption={JavaScript Listing}]
-  Javascript code
-\end{lstlisting}
+
+
 For that we read the article book of \cite{Jerald:2015:VBH:2792790}
 which is very interesting, much more than the article
 \cite{Diniz:2017:UGO:3100317.3100324}
@@ -343,7 +342,7 @@ which is very interesting, much more than the article
         https://stackoverflow.com/questions/41245938/web-server-cannot-find-mtl-file
         https://stackoverflow.com/questions/16097580/three-js-loading-obj-error-in-azure-but-not-locally
   \item shadow not rendering on plane of both playgrounds
-  \item javascript file not found on server, net::ERR_ABORTED 404 (Not Found) => first solution (working partially) was to add a IIS_IUSRS.
+  \item javascript file not found on server, net::ERR\textunderscore ABORTED 404 (Not Found) => first solution (working partially) was to add a IIS\textunderscore IUSRS.
   \item Thymio Blockly has trouble loading saved files. Using the software I wasn't able to load any .aesl file previously created with it, but I could load them if I used the index.html one.
 \end{itemize}
 

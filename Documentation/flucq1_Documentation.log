@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.07.0 (TeX Live 2018/W32TeX)  (format=lualatex 2018.10.2)  17 OCT 2019 17:46
+This is LuaTeX, Version 1.07.0 (TeX Live 2018/W32TeX)  (format=lualatex 2018.10.2)  5 NOV 2019 22:52
  restricted system commands enabled.
 **flucq1_Documentation.tex
 (./flucq1_Documentation.tex
@@ -32,7 +32,7 @@ Inserting `luaotfload.aux.set_capheight' at position 3 in `luaotfload.patch_font
 '.
 Inserting `luaotfload.rewrite_fontname' at position 4 in `luaotfload.patch_font'
 .
-luaotfload | main : initialization completed in 0.241 seconds (d:/Programmes/te
+luaotfload | main : initialization completed in 0.239 seconds (d:/Programmes/te
 xlive/2018/texmf-dist/tex/latex/koma-script/scrartcl.cls
 Document Class: scrartcl 2018/03/30 v3.25 KOMA-Script document class (article)
 (d:/Programmes/texlive/2018/texmf-dist/tex/latex/koma-script/scrkbase.sty
@@ -1258,35 +1258,88 @@ File: luatex.def 2018/01/08 v1.0l Graphics/color driver for luatex
 \Gin@req@height=\dimen147
 \Gin@req@width=\dimen148
 )
+(d:/Programmes/texlive/2018/texmf-dist/tex/latex/markdown/markdown.sty
+(d:/Programmes/texlive/2018/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty
+Package: fancyvrb 2008/02/07
+
+Style option: `fancyvrb' v2.7a, with DG/SPQR fixes, and firstline=lastline fix 
+<2008/02/07> (tvz)
+\FV@CodeLineNo=\count393
+\FV@InFile=\read3
+\FV@TabBox=\box45
+\c@FancyVerbLine=\count394
+\FV@StepNumber=\count395
+\FV@OutFile=\write5
+)
+(d:/Programmes/texlive/2018/texmf-dist/tex/latex/csvsimple/csvsimple.sty
+Package: csvsimple 2016/07/01 version 1.20 LaTeX CSV file processing
+
+(d:/Programmes/texlive/2018/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty
+(d:/Programmes/texlive/2018/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.t
+ex
+\pgfkeys@pathtoks=\toks23
+\pgfkeys@temptoks=\toks24
+
+(d:/Programmes/texlive/2018/texmf-dist/tex/generic/pgf/utilities/pgfkeysfiltere
+d.code.tex
+\pgfkeys@tmptoks=\toks25
+)))
+(d:/Programmes/texlive/2018/texmf-dist/tex/latex/tools/shellesc.sty
+Package: shellesc 2016/06/07 v0.02a unified shell escape interface for LaTeX
+Package shellesc Info: Restricted shell escape enabled on input line 69.
+)
+\csv@file=\read4
+\c@csvinputline=\count396
+\c@csvrow=\count397
+\c@csvcol=\count398
+\csv@out=\write6
+)
+(d:/Programmes/texlive/2018/texmf-dist/tex/generic/markdown/markdown.tex
+\markdownInputFileStream=\read5
+\markdownOutputFileStream=\write7
+(l.561) markdown.tex info: Using mode 2: Direct Lua access.
+)
+Package: markdown 2018/04/08 v2.5.6 markdown renderer
+
+(d:/Programmes/texlive/2018/texmf-dist/tex/latex/paralist/paralist.sty
+Package: paralist 2017/01/22 v2.7 Extended list environments
+\pltopsep=\skip88
+\plpartopsep=\skip89
+\plitemsep=\skip90
+\plparsep=\skip91
+\pl@lab=\toks26
+)
+\markdownLaTeXCitationsCounter=\count399
+)
 (d:/Programmes/texlive/2018/texmf-dist/tex/latex/tools/array.sty
 Package: array 2018/04/30 v2.4h Tabular extension package (FMi)
 \col@sep=\dimen149
-\ar@mcellbox=\box45
+\ar@mcellbox=\box46
 \extrarowheight=\dimen150
-\NC@list=\toks23
-\extratabsurround=\skip88
-\backup@length=\skip89
-\ar@cellbox=\box46
+\NC@list=\toks27
+\extratabsurround=\skip92
+\backup@length=\skip93
+\ar@cellbox=\box47
 )
 (d:/Programmes/texlive/2018/texmf-dist/tex/latex/listings/listings.sty
-\lst@mode=\count393
-\lst@gtempboxa=\box47
-\lst@token=\toks24
-\lst@length=\count394
+\lst@mode=\count400
+\lst@gtempboxa=\box48
+\lst@token=\toks28
+\lst@length=\count401
 \lst@currlwidth=\dimen151
-\lst@column=\count395
-\lst@pos=\count396
+\lst@column=\count402
+\lst@pos=\count403
 \lst@lostspace=\dimen152
 \lst@width=\dimen153
-\lst@newlines=\count397
-\lst@lineno=\count398
+\lst@newlines=\count404
+\lst@lineno=\count405
 \lst@maxwidth=\dimen154
 
 (d:/Programmes/texlive/2018/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2018/09/02 1.7 (Carsten Heinz)
-\c@lstnumber=\count399
-\lst@skipnumbers=\count400
-\lst@framebox=\box48
+\c@lstnumber=\count406
+\lst@skipnumbers=\count407
+\lst@framebox=\box49
 )
 (d:/Programmes/texlive/2018/texmf-dist/tex/latex/listings/listings.cfg
 File: listings.cfg 2018/09/02 1.7 listings configuration
@@ -1306,52 +1359,52 @@ File: english.lbx 2018/03/04 v3.11 biblatex localization (PK/MW)
 Package biblatex Warning: 'babel/polyglossia' detected but 'csquotes' missing.
 (biblatex)                Loading 'csquotes' recommended.
 
-\@quotelevel=\count401
-\@quotereset=\count402
+\@quotelevel=\count408
+\@quotereset=\count409
 (./flucq1_Documentation.aux)
 \openout1 = flucq1_Documentation.aux
 
-LaTeX Font Info:    Checking defaults for OML/jkp/m/it on input line 29.
-LaTeX Font Info:    Try loading font information for OML+jkp on input line 29.
+LaTeX Font Info:    Checking defaults for OML/jkp/m/it on input line 46.
+LaTeX Font Info:    Try loading font information for OML+jkp on input line 46.
 
 (d:/Programmes/texlive/2018/texmf-dist/tex/latex/kpfonts/omljkp.fd
 File: omljkp.fd 2006/08/15 v1.0
 )
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for OMS/jkp/m/n on input line 29.
-LaTeX Font Info:    Try loading font information for OMS+jkp on input line 29.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for OMS/jkp/m/n on input line 46.
+LaTeX Font Info:    Try loading font information for OMS+jkp on input line 46.
 
 (d:/Programmes/texlive/2018/texmf-dist/tex/latex/kpfonts/omsjkp.fd
 File: omsjkp.fd 2006/08/15 v1.0
 )
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 29.
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for OMX/jkp/m/n on input line 29.
-LaTeX Font Info:    Try loading font information for OMX+jkp on input line 29.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 46.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for OMX/jkp/m/n on input line 46.
+LaTeX Font Info:    Try loading font information for OMX+jkp on input line 46.
 
 (d:/Programmes/texlive/2018/texmf-dist/tex/latex/kpfonts/omxjkp.fd
 File: omxjkp.fd 2006/08/15 v1.0
 )
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for U/jkpexa/m/n on input line 29.
-LaTeX Font Info:    Try loading font information for U+jkpexa on input line 29.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for U/jkpexa/m/n on input line 46.
+LaTeX Font Info:    Try loading font information for U+jkpexa on input line 46.
 
 (d:/Programmes/texlive/2018/texmf-dist/tex/latex/kpfonts/ujkpexa.fd
 File: ujkpexa.fd 2006/08/15 v1.0
 )
-LaTeX Font Info:    ... okay on input line 29.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 29.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 29.
+LaTeX Font Info:    ... okay on input line 46.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 46.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 46.
 
 (d:/Programmes/texlive/2018/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    ... okay on input line 46.
 Package biblatex Info: LuaTeX detected.
 (biblatex)             Assuming input encoding 'utf8'.
 Package biblatex Info: Automatic encoding selection.
@@ -1362,21 +1415,21 @@ Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'flucq1_Documentation.bbl' not found.
 
 No file flucq1_Documentation.bbl.
-Package biblatex Info: Reference section=0 on input line 29.
-Package biblatex Info: Reference segment=0 on input line 29.
+Package biblatex Info: Reference section=0 on input line 46.
+Package biblatex Info: Reference segment=0 on input line 46.
 (d:/Programmes/texlive/2018/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count403
+\scratchcounter=\count410
 \scratchdimen=\dimen155
-\scratchbox=\box49
-\nofMPsegments=\count404
-\nofMParguments=\count405
-\everyMPshowfont=\toks25
-\MPscratchCnt=\count406
+\scratchbox=\box50
+\nofMPsegments=\count411
+\nofMParguments=\count412
+\everyMPshowfont=\toks29
+\MPscratchCnt=\count413
 \MPscratchDim=\dimen156
-\MPnumerator=\count407
-\makeMPintoPDFobject=\count408
-\everyMPtoPDFconversion=\toks26
+\MPnumerator=\count414
+\makeMPintoPDFobject=\count415
+\everyMPtoPDFconversion=\toks30
 ) (d:/Programmes/texlive/2018/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
 
@@ -1397,31 +1450,31 @@ Package grfext Info: Graphics extension search list:
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 
 ))
-\c@lstlisting=\count409
+\c@lstlisting=\count416
 LaTeX Font Info:    Font shape `TU/lmss/b/n' in size <10.95> not available
-(Font)              Font shape `TU/lmss/bx/n' tried instead on input line 39.
+(Font)              Font shape `TU/lmss/bx/n' tried instead on input line 56.
 LaTeX Font Info:    Font shape `TU/lmss/b/n' in size <20.74> not available
-(Font)              Font shape `TU/lmss/bx/n' tried instead on input line 39.
-LaTeX Font Info:    Try loading font information for OT1+jkp on input line 39.
+(Font)              Font shape `TU/lmss/bx/n' tried instead on input line 56.
+LaTeX Font Info:    Try loading font information for OT1+jkp on input line 56.
 (d:/Programmes/texlive/2018/texmf-dist/tex/latex/kpfonts/ot1jkp.fd
 File: ot1jkp.fd 2007/08/30 Fontinst v1.928 font definitions for OT1/jkp.
 )
-LaTeX Font Info:    Try loading font information for U+jkpmia on input line 39.
+LaTeX Font Info:    Try loading font information for U+jkpmia on input line 56.
 
 (d:/Programmes/texlive/2018/texmf-dist/tex/latex/kpfonts/ujkpmia.fd
 File: ujkpmia.fd 2006/08/15 v1.0
 )
-LaTeX Font Info:    Try loading font information for U+jkpsya on input line 39.
+LaTeX Font Info:    Try loading font information for U+jkpsya on input line 56.
 
 (d:/Programmes/texlive/2018/texmf-dist/tex/latex/kpfonts/ujkpsya.fd
 File: ujkpsya.fd 2006/08/15 v1.0
 )
-LaTeX Font Info:    Try loading font information for U+jkpsyb on input line 39.
+LaTeX Font Info:    Try loading font information for U+jkpsyb on input line 56.
 
 (d:/Programmes/texlive/2018/texmf-dist/tex/latex/kpfonts/ujkpsyb.fd
 File: ujkpsyb.fd 2006/08/15 v1.0
 )
-LaTeX Font Info:    Try loading font information for U+jkpsyc on input line 39.
+LaTeX Font Info:    Try loading font information for U+jkpsyc on input line 56.
 
 (d:/Programmes/texlive/2018/texmf-dist/tex/latex/kpfonts/ujkpsyc.fd
 File: ujkpsyc.fd 2006/08/15 v1.0
@@ -1435,24 +1488,24 @@ File: ujkpsyc.fd 2006/08/15 v1.0
 
 ]
 LaTeX Font Info:    Font shape `TU/lmss/b/n' in size <14.4> not available
-(Font)              Font shape `TU/lmss/bx/n' tried instead on input line 49.
+(Font)              Font shape `TU/lmss/bx/n' tried instead on input line 66.
 
 (./flucq1_Documentation.toc)
-\tf@toc=\write5
+\tf@toc=\write8
 
-\openout5 = flucq1_Documentation.toc
+\openout8 = flucq1_Documentation.toc
  [4
 
 
 ]
 LaTeX Font Info:    Font shape `TU/lmss/b/n' in size <12> not available
-(Font)              Font shape `TU/lmss/bx/n' tried instead on input line 56.
+(Font)              Font shape `TU/lmss/bx/n' tried instead on input line 74.
 <./ressources/images/prototype_thymio_old.jpg, id=19, 1735.48375pt x 785.93625pt
 >
 File: ./ressources/images/prototype_thymio_old.jpg Graphic file (type jpg)
 <use ./ressources/images/prototype_thymio_old.jpg>
 Package luatex.def Info: ./ressources/images/prototype_thymio_old.jpg  used on i
-nput line 74.
+nput line 91.
 (luatex.def)             Requested size: 418.25555pt x 189.40805pt.
  [5
 
@@ -1463,51 +1516,166 @@ File: ./ressources/images/Wireless-thymioII-sensor-actuator-color-en.png Graphic
  file (type png)
 <use ./ressources/images/Wireless-thymioII-sensor-actuator-color-en.png>
 Package luatex.def Info: ./ressources/images/Wireless-thymioII-sensor-actuator-c
-olor-en.png  used on input line 87.
+olor-en.png  used on input line 104.
 (luatex.def)             Requested size: 418.25555pt x 292.75806pt.
  [6<./ressources/images/Wireless-thymioII-sensor-actuator-color-en.png>]
 <./ressources/images/Thymio_blocks.png, id=28, 557.83406pt x 557.08125pt>
 File: ./ressources/images/Thymio_blocks.png Graphic file (type png)
 <use ./ressources/images/Thymio_blocks.png>
 Package luatex.def Info: ./ressources/images/Thymio_blocks.png  used on input li
-ne 125.
+ne 142.
 (luatex.def)             Requested size: 418.25555pt x 417.6994pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<./ressources/images/Thymio_VPL_window.png, id=29, 740.0147pt x 466.74374pt>
-File: ./ressources/images/Thymio_VPL_window.png Graphic file (type png)
-<use ./ressources/images/Thymio_VPL_window.png>
-Package luatex.def Info: ./ressources/images/Thymio_VPL_window.png  used on inpu
-t line 142.
+<./ressources/images/./VPL/Thymio_VPL_window.png, id=29, 740.0147pt x 466.74374p
+t>
+File: ./ressources/images/./VPL/Thymio_VPL_window.png Graphic file (type png)
+<use ./ressources/images/./VPL/Thymio_VPL_window.png>
+Package luatex.def Info: ./ressources/images/./VPL/Thymio_VPL_window.png  used o
+n input line 160.
 (luatex.def)             Requested size: 418.25555pt x 263.80328pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[7] [8<./ressources/images/Thymio_blocks.PNG>]
+<./ressources/images/./VPL/middlebtn_forward.png, id=30, 198.7425pt x 82.80937pt
+>
+File: ./ressources/images/./VPL/middlebtn_forward.png Graphic file (type png)
+<use ./ressources/images/./VPL/middlebtn_forward.png>
+Package luatex.def Info: ./ressources/images/./VPL/middlebtn_forward.png  used o
+n input line 170.
+(luatex.def)             Requested size: 418.25555pt x 174.2927pt.
+<./ressources/images/./VPL/middlebtn_forward_green.png, id=31, 274.02374pt x 81.
+30376pt>
+File: ./ressources/images/./VPL/middlebtn_forward_green.png Graphic file (type p
+ng)
+<use ./ressources/images/./VPL/middlebtn_forward_green.png>
+Package luatex.def Info: ./ressources/images/./VPL/middlebtn_forward_green.png  
+used on input line 177.
+(luatex.def)             Requested size: 418.25555pt x 124.10774pt.
+<./ressources/images/./VPL/middlebtn_3E.png, id=32, 273.27094pt x 298.86656pt>
+File: ./ressources/images/./VPL/middlebtn_3E.png Graphic file (type png)
+<use ./ressources/images/./VPL/middlebtn_3E.png>
+Package luatex.def Info: ./ressources/images/./VPL/middlebtn_3E.png  used on inp
+ut line 183.
+(luatex.def)             Requested size: 418.25555pt x 457.46042pt.
+[7]
 
-LaTeX Warning: Citation 'Jerald:2015:VBH:2792790' on page 9 undefined on input l
-ine 157.
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-LaTeX Warning: Citation 'Diniz:2017:UGO:3100317.3100324' on page 9 undefined on 
-input line 159.
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[9<./ressources/images/Thymio_VPL_window.PNG>] (./flucq1_Documentation.lof
-[10])
-\tf@lof=\write6
+[8<./ressources/images/Thymio_blocks.PNG>]
 
-\openout6 = flucq1_Documentation.lof
- (./flucq1_Documentation.lot)
-\tf@lot=\write7
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-\openout7 = flucq1_Documentation.lot
+[9<./ressources/images/./VPL/Thymio_VPL_window.PNG><./ressources/images/./VPL/mi
+ddlebtn_forward.PNG>]
+<./ressources/images/./VPL/middlebtn_3E_adv.png, id=44, 402.00188pt x 285.31593p
+t>
+File: ./ressources/images/./VPL/middlebtn_3E_adv.png Graphic file (type png)
+<use ./ressources/images/./VPL/middlebtn_3E_adv.png>
+Package luatex.def Info: ./ressources/images/./VPL/middlebtn_3E_adv.png  used on
+ input line 198.
+(luatex.def)             Requested size: 418.25555pt x 296.85217pt.
 
 
-LaTeX Warning: Empty bibliography on input line 217.
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[11] (./flucq1_Documentation.aux)
+[10<./ressources/images/./VPL/middlebtn_forward_green.PNG>] [11<./ressources/ima
+ges/./VPL/middlebtn_3E.PNG>]
+<./ressources/images/./Blockly/basic_variable.png, id=54, 250.68657pt x 63.23625
+pt>
+File: ./ressources/images/./Blockly/basic_variable.png Graphic file (type png)
+<use ./ressources/images/./Blockly/basic_variable.png>
+Package luatex.def Info: ./ressources/images/./Blockly/basic_variable.png  used 
+on input line 229.
+(luatex.def)             Requested size: 418.25555pt x 105.51826pt.
+<./ressources/images/./Blockly/basic_logic.png, id=55, 310.15875pt x 76.78688pt>
+
+File: ./ressources/images/./Blockly/basic_logic.png Graphic file (type png)
+<use ./ressources/images/./Blockly/basic_logic.png>
+Package luatex.def Info: ./ressources/images/./Blockly/basic_logic.png  used on 
+input line 236.
+(luatex.def)             Requested size: 418.25555pt x 103.54883pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[12<./ressources/images/./VPL/middlebtn_3E_adv.PNG>]
+<./ressources/images/./Blockly/blockly_window.png, id=60, 770.88pt x 548.80031pt
+>
+File: ./ressources/images/./Blockly/blockly_window.png Graphic file (type png)
+<use ./ressources/images/./Blockly/blockly_window.png>
+Package luatex.def Info: ./ressources/images/./Blockly/blockly_window.png  used 
+on input line 253.
+(luatex.def)             Requested size: 418.25555pt x 297.76295pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<./ressources/images/./Blockly/forward_stop_wall.png, id=61, 370.38374pt x 240.9
+pt>
+File: ./ressources/images/./Blockly/forward_stop_wall.png Graphic file (type png
+)
+<use ./ressources/images/./Blockly/forward_stop_wall.png>
+Package luatex.def Info: ./ressources/images/./Blockly/forward_stop_wall.png  us
+ed on input line 261.
+(luatex.def)             Requested size: 418.25555pt x 272.04105pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<./ressources/images/./Blockly/advanced_program.png, id=62, 394.47375pt x 595.47
+469pt>
+File: ./ressources/images/./Blockly/advanced_program.png Graphic file (type png)
+
+<use ./ressources/images/./Blockly/advanced_program.png>
+Package luatex.def Info: ./ressources/images/./Blockly/advanced_program.png  use
+d on input line 268.
+(luatex.def)             Requested size: 394.47278pt x 595.47322pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[13<./ressources/images/./Blockly/basic_variable.PNG><./ressources/images/./Bloc
+kly/basic_logic.PNG>]
+
+LaTeX Warning: Citation 'Jerald:2015:VBH:2792790' on page 14 undefined on input 
+line 283.
+
+
+LaTeX Warning: Citation 'Diniz:2017:UGO:3100317.3100324' on page 14 undefined on
+ input line 285.
+
+[14<./ressources/images/./Blockly/blockly_window.png>]
+Package markdown Info: Including markdown document "./Annexe/Configuration.md" o
+n input line 299.
+
+(./_markdown_flucq1_Documentation/9506b59e62d240efc9546f27320f2f80.md.tex
+[15<./ressources/images/./Blockly/forward_stop_wall.PNG>]
+Overfull \hbox (154.16661pt too wide) in paragraph at lines 9--9
+\TU/lmr/m/n/10.95 We fol-lowed the steps in this tu-to-rial video in or-der to 
+con-fig-ure IIS. https://www.youtube.com/watch?v=rPRLe7QeVHM 
+ []
+
+) [16] (./flucq1_Documentation.lof)
+\tf@lof=\write9
+
+\openout9 = flucq1_Documentation.lof
+ [17] (./flucq1_Documentation.lot)
+\tf@lot=\write10
+
+\openout10 = flucq1_Documentation.lot
+
+
+LaTeX Warning: Empty bibliography on input line 350.
+
+[18] [19<./ressources/images/./Blockly/advanced_program.PNG>]
+(./flucq1_Documentation.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -1522,13 +1690,13 @@ Package logreq Info: Writing requests to 'flucq1_Documentation.run.xml'.
 )
 
 Here is how much of LuaTeX's memory you used:
- 25604 strings out of 494407
+ 27582 strings out of 494407
  100000,1373583 words of node,token memory allocated
- 580 words of node memory still in use:
-   6 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 glyph, 8 attribute, 70 glue_spec,
+ 600 words of node memory still in use:
+   6 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 glyph, 8 attribute, 74 glue_spec,
  8 attribute_list, 1 write nodes
-   avail lists: 1:5,2:413,3:133,4:13,5:198,6:50,7:3146,8:152,9:206,10:8,11:217
- 29043 multiletter control sequences out of 65536+600000
+   avail lists: 1:4,2:613,3:184,4:40,5:272,6:54,7:4421,8:178,9:260,10:21,11:253
+ 30813 multiletter control sequences out of 65536+600000
  100 fonts using 8986247 bytes
  62i,8n,83p,9117b,2195s stack positions out of 5000i,500n,10000p,200000b,100000s
 <d:/Programmes/texlive/2018/texmf-dist/fonts/opentype/public/lm/lmromandemi10-re
@@ -1537,10 +1705,10 @@ n10-regular.otf><d:/Programmes/texlive/2018/texmf-dist/fonts/opentype/public/lm/
 lmmono12-regular.otf><d:/Programmes/texlive/2018/texmf-dist/fonts/opentype/publi
 c/lm/lmroman12-regular.otf><d:/Programmes/texlive/2018/texmf-dist/fonts/opentype
 /public/lm/lmsans10-bold.otf>
-Output written on flucq1_Documentation.pdf (11 pages, 617126 bytes).
+Output written on flucq1_Documentation.pdf (19 pages, 845178 bytes).
 
-PDF statistics: 82 PDF objects out of 1000 (max. 8388607)
- 46 compressed objects within 1 object stream
+PDF statistics: 122 PDF objects out of 1000 (max. 8388607)
+ 62 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 131072)
  1 words of extra memory for PDF output out of 10000 (max. 100000000)
 
