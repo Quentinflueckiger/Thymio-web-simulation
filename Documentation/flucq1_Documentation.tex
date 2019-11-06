@@ -43,6 +43,8 @@
   morestring=[b]"
 }[keywords, comments, strings]
 
+\usepackage{pdfpages}
+
 \begin{document}
 \title{Web Simulation of a Thymio Robot}
 \date{\today}   %% or \date{01 november 2018}
@@ -74,18 +76,17 @@ Management Summary
 \subsection{What is Thymio} 
 
 Thymio is an educational robot that aims at improving early education (starting in primary school) in STEM (Science, Technology, Engineering and Mathematics),
-computational thinking, base computer science and researching the acknowledgment by kids of robots in their learning environment.
+computational thinking, base computer science and researching the acknowledgement by kids of robots in their learning environment.
 The project also had technical aims, such as how to provide hardware modularity, fast reaction time amid perception and action,
 clear internal communication bus in a user-friendly way and streamline development for group robot, this includes direct changes to the robots’ programs and parallel debugging wirelessly, 
-transparently and cheaply.
+transparently and cheaply.\\
 
 The Thymio project is based on a collaboration between the MOBOTS group from the Swiss Federal Institute of Technology in Lausanne (EPFL) and the Lausanne Arts School (ECAL).
 MOBOTS being the Miniature Mobile Robots Group, they are mainly focused around system design for small robots of the kind. It started with a strange-looking pile of components, 
-that were assembled on any kind of support and holt the name of “Monsieur Patate” (Sir Potato), most likely due to its appearance, 
+that were assembled on any kind of support and hold the name of “Monsieur Patate” (Sir Potato), most likely due to its appearance, 
 that saw life during the first workshop between the two contributors. After what the first “Thymio” was developed, 
 it was a four-block robot that could be self-assembled, but not self-programmed as it was coming with pre-programmed behaviours. 
-It was used as a user study to gather feedback from clients to know what features needed to be implemented on the Thymio II.
-
+It was used as a user study to gather feedback from clients to know what features needed to be implemented on the Thymio II.\\
 
 \begin{figure}[h!]
   \includegraphics[width=\textwidth]{prototype_thymio_old}
@@ -95,9 +96,9 @@ It was used as a user study to gather feedback from clients to know what feature
 
 The result is a robot with a complex and complete set of sensors and actuators. 
 The National Centre for Competence in Research (NCCR) Robotics research program supported the development of the robot whereas Mobsya, 
-a non-profit organization that creates a robot, software, and educational activities to broaden young people’s mind about technology and science, 
+a non-profit organization that creates a robot, software, and educational activities to broaden young people's mind about technology and science, 
 oversees the production, distribution, and communication of said robot. 
-Every step of the Thymio project is open-source and has a non-profit aim to enhance the quality of it with the user’s project and research, 
+Every step of the Thymio project is open-source and has a non-profit aim to enhance the quality of it with the user's project and research, 
 and reduce the cost and augment the lifetime for educational platforms and materials.
 
 \begin{figure}[h!]
@@ -114,7 +115,7 @@ as its name suggests. To begin the creation of a program for the robot there exi
 The first one, and the most common one for the public is done by using the software Aseba and a connected Thymio. 
 In this case, the robot needs to be plugged in via USB cable or USB dongle (possible only if it is the Wireless Thymio) and powered on. 
 Then the software can be used to connect to said robot and start to program in one of the four different programming languages, 
-that are: VPL, Blockly, Aseba, and Scratch. Once the program is ready and sent to the robot it will be available to play.
+that are: VPL, Blockly, Aseba, and Scratch. Once the program is ready and sent to the robot it will be available to play. \\
 
 The second option is to use the work-in-progress Thymio Suite version. 
 This software doesn’t require a Thymio robot to be connected physically (or wirelessly) at all times as it has its own simulator built-in. 
@@ -132,14 +133,14 @@ or other graphical objects, and relations by simple arrows. They can be categori
 form-based and diagram-based languages depending on the extent of visual expression inside of it. 
 The use of visual programming languages can be found in multiple areas, such as the game engine “Unreal Engine 4” where their system of Blueprints is created upon a node-based VPL, 
 or “Microsoft SQL Server Integration Services”. This abstraction allows easier access for neophytes, 
-for example using graphic elements such as blocks, forms, diagrams, and others reduce drastically, if not eliminate, the syntactic errors made by the user.
+for example using graphic elements such as blocks, forms, diagrams, and others reduce drastically, if not eliminate, the syntactic errors made by the user.\\
 
 In the case of the VPL developed by Aseba’s team, and the one we are mostly interested in, we have a programming language based on two types of blocks: Event blocks and Action blocks. 
 From those two are built the seventeen, respectively eleven event blocks and six action blocks, entities. 
-One of the main goals of VPL for Thymio was to let people who cannot yet read the ability to start programming and discover this world.
+One of the main goals of VPL for Thymio was to let people who cannot yet read the ability to start programming and discover this world.\\
 
-\begin{figure}[h!]
-  \includegraphics[width=\textwidth]{Thymio_blocks}
+\begin{figure}[h]
+  \includegraphics[width=\textwidth]{Thymio_VPL_window}
   \caption{Thymio VPL Event and Action blocks}
   \label{fig:thymio_vpl_blocks}
 \end{figure}
@@ -157,7 +158,7 @@ The window is split into six different regions with each of their purposes.
 \end{enumerate}
 
 \begin{figure}[h!]
-  \includegraphics[width=\textwidth]{./VPL/Thymio_VPL_window}
+  \includegraphics[width=\textwidth]{./VPL/Thymio_blocks}
   \caption{Thymio VPL Window}
   \label{fig:thymio_vpl_window}
 \end{figure}
@@ -165,37 +166,48 @@ The window is split into six different regions with each of their purposes.
 At first, the programming window will be empty of blocks, containing just a placeholder with empty slots. 
 This placeholder is the base of every Thymio VPL program, it contains exactly one event block and one or more action block. 
 This means that whenever the event of the event block happens then the set of actions added to this placeholder will occur at the same time. 
-For example, with the following pair:
+For example, with the following pair: \\
 \begin{figure}[h!]
-  \includegraphics[width=\textwidth]{./VPL/middlebtn_forward}
+  \centering
+  \includegraphics[scale=0.5]{./VPL/middlebtn_forward}
+  \caption{Event and one Action relation}
   \label{fig:thymio_vpl_middlebtn_1e1a}
 \end{figure}
+
 Both wheels are powered to the maximum when the middle button is pressed. But more than one action can be attributed to one event, 
 to do so simply drag another action block onto the previous pair, notice that the same block cannot be used twice for the same event. 
-Here we turned the lights on top and set them to a complete green:
+Here we turned the lights on top and set them to a complete green:\\
 \begin{figure}[h!]
-  \includegraphics[width=\textwidth]{./VPL/middlebtn_forward_green}
+  \centering
+  \includegraphics[scale=0.5]{./VPL/middlebtn_forward_green}
+  \caption{Event and multiple Actions relation}
   \label{fig:thymio_vpl_middlebtn_1e2a}
 \end{figure}
+
 The maximum amount of action blocks we can add to an event is four, but we can add as many event blocks to our program as we want. 
-Let us add two more event blocks to allow the robot to turn:
+Let us add two more event blocks to allow the robot to turn:\\
 \begin{figure}[h!]
-  \includegraphics[width=\textwidth]{./VPL/middlebtn_3E}
+  \centering
+  \includegraphics[scale=0.5]{./VPL/middlebtn_3E}
+  \caption{Event and Actions relations}
   \label{fig:thymio_vpl_middlebtn_3e6a}
 \end{figure}
-Now we have a basic behavior, go straight with green lights when the middle button is pushed, turn left on itself with orange lights when the left button is pushed, 
-and at last turn right on itself with yellow lights when the right button is pushed.
 
-By clicking the button with a student as an icon we enable the advanced mode that gives us more possibilities for multiple blocks. It raises the amount of action block from four to six as well. 
+Now we have a basic behavior, go straight with green lights when the middle button is pushed, turn left on itself with orange lights when the left button is pushed, 
+and at last turn right on itself with yellow lights when the right button is pushed.\\
+
+By clicking the button with a student as an icon we enable the advanced mode that gives us more possibilities for multiple blocks. It raises the amount of action block from four to six as well. \\
 
 Let us refactor a bit the program from before, we will change the program by making the robot look left then right and starting over again using timers. 
 To help us develop a more interesting program we have now access to a condition, a four led light on top of the robot, using this and the timer we can behave depending on the state of the robot. 
 For example, hereafter the middle button was pressed a timer will start and after a short amount of time, it will light one particular led. 
 Afterward, the event “timer elapsed” will be triggered but which pair should the program execute, turning right or turning left? 
 Hence comes the use of the condition as we will execute the part of the program that corresponds to the state of the condition light. 
-In this example, it will go back and forth between the two pairs: 
+In this example, it will go back and forth between the two pairs: \\
 \begin{figure}[h!]
-  \includegraphics[width=\textwidth]{./VPL/middlebtn_3E_adv}
+  \centering
+  \includegraphics[scale=0.5]{./VPL/middlebtn_3E_adv}
+  \caption{Advanced program}
   \label{fig:thymio_vpl_middlebtn_3e9a}
 \end{figure}
 
@@ -208,7 +220,7 @@ As it is a visual programming language, we find the same advantages as the first
 Blockly is among the growing and most used visual programming environments because of a few important features. First, it can export the code generated with the blocks to one of the five following programming languages, 
 as a built-in feature, JavaScript, Lua, Dart, Python, and PHP, and can be enhanced for any textual programming languages. 
 The block pool can be expanded from its base pool or even reduced depending on the needs. The blocks are not restrained to only basic tasks and can implement sophisticated programming tasks. 
-And it has been translated in over forty languages, and as well right-to-left versions.
+And it has been translated in over forty languages, and as well right-to-left versions. \\
 
 Blockly includes a set of pre-defined blocks that can be used to develop with more ease the wanted application. They are arranged into eight families:
 \begin{enumerate}
@@ -224,16 +236,21 @@ Blockly includes a set of pre-defined blocks that can be used to develop with mo
 
 Each block holds a pre-assigned shape, thus restraining its usage to certain situations as a "hidden" way to control the syntax. Their shapes are defined by the different connections with other blocks, 
 both external and internal, while external blocks describe what happens after or before, the internals describe what happens during or what are the arguments, logic. 
-Following is a basic variable block with three external connectors, and a math block with the value of one, with one connector, that is assigned to the “Count” variable (the blocks need to be assembled).
+Following is a basic variable block with three external connectors, and a math block with the value of one, with one connector, that is assigned to the “Count” variable (the blocks need to be assembled). \\
 \begin{figure}[h!]
-  \includegraphics[width=\textwidth]{./Blockly/basic_variable}
+  \centering
+  \includegraphics[scale=0.5]{./Blockly/basic_variable}
+  \caption{Variable block}
   \label{fig:thymio_blockly_variable_block}
 \end{figure}
+
 Using the same logic as above we created a “Limit” variable with the value of 5 to demonstrate the next example. 
 The block used is from the logic family and test whether the “Count” variable is smaller or equal to the “Limit” as internal blocks. 
-It can then be added to a loop, a function or other statements that needs logic.
+It can then be added to a loop, a function or other statements that needs logic.\\
 \begin{figure}[h!]
-  \includegraphics[width=\textwidth]{./Blockly/basic_logic}
+  \centering
+  \includegraphics[scale=0.5]{./Blockly/basic_logic}
+  \caption{Logic block}
   \label{fig:thymio_blockly_logic_block}
 \end{figure}
 
@@ -250,22 +267,27 @@ The environment window that opens after choosing the Blockly option is split int
 \end{enumerate}
 
 \begin{figure}[h!]
-  \includegraphics[width=\textwidth]{./Blockly/blockly_window}
+  \centering
+  \includegraphics[scale=0.5]{./Blockly/blockly_window}
   \caption{Thymio Blockly window}
   \label{fig:thymio_blockly_window}
 \end{figure}
 
 The following figure demonstrates a simple program, once run the program listens to two different events. When the center button is pressed and when the front middle proximity sensor detects a wall. 
-The first one will activate the two motors at the same speed, as to drive forward, and light the top LED to green. Whereas the second will stop the motors and turn the LED to red.
+The first one will activate the two motors at the same speed, as to drive forward, and light the top LED to green. Whereas the second will stop the motors and turn the LED to red. \\
 \begin{figure}[h!]
-  \includegraphics[width=\textwidth]{./Blockly/forward_stop_wall}
+  \centering
+  \includegraphics[scale=0.5]{./Blockly/forward_stop_wall}
+  \caption{Basic program}
   \label{fig:thymio_blockly_basic_program}
 \end{figure}
 
 Here we set a variable to act as a control if Thymio is moving or not. We then use this information into a test when we click the middle button, and we either move forward or stop according to the result. 
 We added two other events for the right and left buttons that are responsible to turn the robot.
 \begin{figure}[h!]
-  \includegraphics{./Blockly/advanced_program}
+  \centering
+  \includegraphics[scale=0.5]{./Blockly/advanced_program}
+  \caption{More complex program}
   \label{fig:thymio_blockly_advanced_program}
 \end{figure}
 \subsubsection{Aseba}
@@ -275,11 +297,17 @@ WeBots / Aseba logiciel
 \section{Three JS}
 
 \section{Structure}
+Domain class diagrams,
+Domain model,
+Package diagram,
+Sequence diagram,
+System sequence diagram,
+Use case diagram
+
 Write about the mvc, the interpreter pattern (?if used), problems because the three languages write files differently. All with the .aesl extension but not the same content format.
 
+
 \section{Usefull latex commands (to be deleted later on)}
-
-
 For that we read the article book of \cite{Jerald:2015:VBH:2792790}
 which is very interesting, much more than the article
 \cite{Diniz:2017:UGO:3100317.3100324}
@@ -292,11 +320,145 @@ which is very interesting, much more than the article
 \subsubsection{Objectives}
 \subsubsection{System Boundaries}
 \subsubsection{Requirements}
+\subsubsection{Risk Analysis}
+
+\subsection{Product Backlog}
+\begin{table}[]
+  \begin{tabular}{l|l|l|l|l|l|l|l}
+  ID                     & Story Name & Story / Task Description & Priority & \begin{tabular}[c]{@{}l@{}}Est.\\ Effort {[}h{]}\end{tabular} & \begin{tabular}[c]{@{}l@{}}Update\\ Effort {[}h{]}\end{tabular} & \begin{tabular}[c]{@{}l@{}}Actual\\ Effort{[}h{]}\end{tabular} & Status                \\ \hline
+  \multicolumn{1}{|l|}{} &            &                          &          &                                                               &                                                                 &                                                                & \multicolumn{1}{l|}{} \\ \hline
+  \multicolumn{1}{|l|}{} &            &                          &          &                                                               &                                                                 &                                                                & \multicolumn{1}{l|}{} \\ \hline
+  \multicolumn{1}{|l|}{} &            &                          &          &                                                               &                                                                 &                                                                & \multicolumn{1}{l|}{} \\ \hline
+  \multicolumn{1}{|l|}{} &            &                          &          &                                                               &                                                                 &                                                                & \multicolumn{1}{l|}{} \\ \hline
+  \multicolumn{1}{|l|}{} &            &                          &          &                                                               &                                                                 &                                                                & \multicolumn{1}{l|}{} \\ \hline
+  \multicolumn{1}{|l|}{} &            &                          &          &                                                               &                                                                 &                                                                & \multicolumn{1}{l|}{} \\ \hline
+  \multicolumn{1}{|l|}{} &            &                          &          &                                                               &                                                                 &                                                                & \multicolumn{1}{l|}{} \\ \hline
+  \end{tabular}
+\end{table}
+
+\subsection{Sprint Backlog}
+\subsubsection{First Sprint}
+\textbf{2019-09-16 until 2019-11-15}
+\begin{table}[]
+  \begin{tabular}{l|l|l|l|l|l|l|l}
+  ID                     & Story Name & Story / Task Description & Priority & \begin{tabular}[c]{@{}l@{}}Est.\\ Effort {[}h{]}\end{tabular} & \begin{tabular}[c]{@{}l@{}}Update\\ Effort {[}h{]}\end{tabular} & \begin{tabular}[c]{@{}l@{}}Actual\\ Effort{[}h{]}\end{tabular} & Status                \\ \hline
+  \multicolumn{1}{|l|}{} &            &                          &          &                                                               &                                                                 &                                                                & \multicolumn{1}{l|}{} \\ \hline
+  \multicolumn{1}{|l|}{} &            &                          &          &                                                               &                                                                 &                                                                & \multicolumn{1}{l|}{} \\ \hline
+  \multicolumn{1}{|l|}{} &            &                          &          &                                                               &                                                                 &                                                                & \multicolumn{1}{l|}{} \\ \hline
+  \multicolumn{1}{|l|}{} &            &                          &          &                                                               &                                                                 &                                                                & \multicolumn{1}{l|}{} \\ \hline
+  \multicolumn{1}{|l|}{} &            &                          &          &                                                               &                                                                 &                                                                & \multicolumn{1}{l|}{} \\ \hline
+  \multicolumn{1}{|l|}{} &            &                          &          &                                                               &                                                                 &                                                                & \multicolumn{1}{l|}{} \\ \hline
+  \multicolumn{1}{|l|}{} &            &                          &          &                                                               &                                                                 &                                                                & \multicolumn{1}{l|}{} \\ \hline
+  \end{tabular}
+\end{table}
+
+\subsubsection{Second Sprint}
+\textbf{2019-11-15 until 2019-12-16}
+\begin{table}[]
+  \begin{tabular}{l|l|l|l|l|l|l|l}
+  ID                     & Story Name & Story / Task Description & Priority & \begin{tabular}[c]{@{}l@{}}Est.\\ Effort {[}h{]}\end{tabular} & \begin{tabular}[c]{@{}l@{}}Update\\ Effort {[}h{]}\end{tabular} & \begin{tabular}[c]{@{}l@{}}Actual\\ Effort{[}h{]}\end{tabular} & Status                \\ \hline
+  \multicolumn{1}{|l|}{} &            &                          &          &                                                               &                                                                 &                                                                & \multicolumn{1}{l|}{} \\ \hline
+  \multicolumn{1}{|l|}{} &            &                          &          &                                                               &                                                                 &                                                                & \multicolumn{1}{l|}{} \\ \hline
+  \multicolumn{1}{|l|}{} &            &                          &          &                                                               &                                                                 &                                                                & \multicolumn{1}{l|}{} \\ \hline
+  \multicolumn{1}{|l|}{} &            &                          &          &                                                               &                                                                 &                                                                & \multicolumn{1}{l|}{} \\ \hline
+  \multicolumn{1}{|l|}{} &            &                          &          &                                                               &                                                                 &                                                                & \multicolumn{1}{l|}{} \\ \hline
+  \multicolumn{1}{|l|}{} &            &                          &          &                                                               &                                                                 &                                                                & \multicolumn{1}{l|}{} \\ \hline
+  \multicolumn{1}{|l|}{} &            &                          &          &                                                               &                                                                 &                                                                & \multicolumn{1}{l|}{} \\ \hline
+  \end{tabular}
+\end{table}
+
+\subsubsection{Third Sprint}
+\textbf{2019-12-16 until 2020-01-06}
+\begin{table}[]
+  \begin{tabular}{l|l|l|l|l|l|l|l}
+  ID                     & Story Name & Story / Task Description & Priority & \begin{tabular}[c]{@{}l@{}}Est.\\ Effort {[}h{]}\end{tabular} & \begin{tabular}[c]{@{}l@{}}Update\\ Effort {[}h{]}\end{tabular} & \begin{tabular}[c]{@{}l@{}}Actual\\ Effort{[}h{]}\end{tabular} & Status                \\ \hline
+  \multicolumn{1}{|l|}{} &            &                          &          &                                                               &                                                                 &                                                                & \multicolumn{1}{l|}{} \\ \hline
+  \multicolumn{1}{|l|}{} &            &                          &          &                                                               &                                                                 &                                                                & \multicolumn{1}{l|}{} \\ \hline
+  \multicolumn{1}{|l|}{} &            &                          &          &                                                               &                                                                 &                                                                & \multicolumn{1}{l|}{} \\ \hline
+  \multicolumn{1}{|l|}{} &            &                          &          &                                                               &                                                                 &                                                                & \multicolumn{1}{l|}{} \\ \hline
+  \multicolumn{1}{|l|}{} &            &                          &          &                                                               &                                                                 &                                                                & \multicolumn{1}{l|}{} \\ \hline
+  \multicolumn{1}{|l|}{} &            &                          &          &                                                               &                                                                 &                                                                & \multicolumn{1}{l|}{} \\ \hline
+  \multicolumn{1}{|l|}{} &            &                          &          &                                                               &                                                                 &                                                                & \multicolumn{1}{l|}{} \\ \hline
+  \end{tabular}
+\end{table}
+
+\subsubsection{Fourth Sprint}
+\textbf{2020-01-06 until 2020-02-?}
+\begin{table}[]
+  \begin{tabular}{l|l|l|l|l|l|l|l}
+  ID                     & Story Name & Story / Task Description & Priority & \begin{tabular}[c]{@{}l@{}}Est.\\ Effort {[}h{]}\end{tabular} & \begin{tabular}[c]{@{}l@{}}Update\\ Effort {[}h{]}\end{tabular} & \begin{tabular}[c]{@{}l@{}}Actual\\ Effort{[}h{]}\end{tabular} & Status                \\ \hline
+  \multicolumn{1}{|l|}{} &            &                          &          &                                                               &                                                                 &                                                                & \multicolumn{1}{l|}{} \\ \hline
+  \multicolumn{1}{|l|}{} &            &                          &          &                                                               &                                                                 &                                                                & \multicolumn{1}{l|}{} \\ \hline
+  \multicolumn{1}{|l|}{} &            &                          &          &                                                               &                                                                 &                                                                & \multicolumn{1}{l|}{} \\ \hline
+  \multicolumn{1}{|l|}{} &            &                          &          &                                                               &                                                                 &                                                                & \multicolumn{1}{l|}{} \\ \hline
+  \multicolumn{1}{|l|}{} &            &                          &          &                                                               &                                                                 &                                                                & \multicolumn{1}{l|}{} \\ \hline
+  \multicolumn{1}{|l|}{} &            &                          &          &                                                               &                                                                 &                                                                & \multicolumn{1}{l|}{} \\ \hline
+  \multicolumn{1}{|l|}{} &            &                          &          &                                                               &                                                                 &                                                                & \multicolumn{1}{l|}{} \\ \hline
+  \end{tabular}
+\end{table}
+
+\subsection{Gantt Diagram}
+\includepdf[pages=-, pagecommand={}, width=\textwidth]{Thymio_web_simulation_Gantt.pdf}
 
 \subsection{Version control}
 
 \subsection{Configuration}
-\markdownInput{./Annexe/Configuration.md}
+
+\textbf{\underline{User information}}
+On demand.\\
+
+\textbf{\underline{Access the Windows Virtual Machine}}
+\begin{center}
+  \begin{tabular}{|c|c|c|}
+    \hline
+     & Linux WM -ssh & Windows VM - rdp \\
+    \hline
+    Windows & Putty & Remote Desktop Connection \\
+    \hline
+    Linux & terminal & Remmina \\
+    \hline
+    MacOS & terminal & Microsoft Remote Desktop \\
+    \hline
+  \begin{tabular}
+\end{center}
+
+See link bellow for more information and links. (It requires to be inside the bfh networkd to access it)
+\url{https://intranet.bfh.ch/TI/fr/Studium/Bachelor/Informatik/Tools/VMsHowto/Pages/default.aspx?k=vm}
+
+\textbf{\underline{First Configuration of IIS manager}}
+
+We followed the steps in this tutorial video in order to configure IIS. \url{https://www.youtube.com/watch?v=rPRLe7QeVHM}
+
+Then we had to open the port in order to access it from within the LAN.
+\begin{enumerate}
+  \item Open the windows Firewall, click on Inbound Rules and New Rule. This will open the New Inbound Rule Wizard.
+  \item Select the desired type, Port, click next.
+  \item Choose TCP and specify the port used, here 80, click next.
+  \item Select Allow connection, click next.
+  \item Select all three profile options, click next.
+  \item Add a Name and a description to this rule, click finish.
+\end{enumerate}
+
+With this specified the website is now accessible from within the LAN at the following adress : http://147.87.116.44/Code/HTML
+
+\textbf{\underline{Additional setup}}
+
+It was needed to create a web.config file and add a few file extension so that the .mtl and .obj would still be able to load. 
+Otherwise we encountered an error of the type "Failed to load resource: the server responded with a status of 404 (Not Found)." 
+The text that needed to be added to the web.config file is the following : \\
+\lstset{language=XML}
+\begin{lstlisting}
+<?xml version="1.0" encoding="UTF-8"?>
+  <configuration>
+    <system.webServer>
+         <staticContent>
+           <remove fileExtension=".mtl" />
+           <mimeMap fileExtension=".mtl" mimeType="text/plain" />
+           <mimeMap fileExtension=".obj" mimeType="application/octet-stream" />
+         </staticContent>
+    </system.webServer>
+</configuration>
+\end{lstlisting}
 
 \subsection{Meetings}
 \begin{tabular}{ | m{3cm} | m{10cm} | }
@@ -304,29 +466,29 @@ which is very interesting, much more than the article
   Date & Content \\
   \hline
   17.09.2019 & \textbf{Kick Off meeting}\\
-  & Documentation/Management\\
-  & Technology to use : ThreeJS and Typescript\\
-  & Setting up the goals\\
+  & - Documentation/Management\\
+  & - Technology to use : ThreeJS and Typescript\\
+  & - Setting up the goals\\
   \hline
   24.09.2019 & \textbf{Second meeting} \\
-  & Documentation language : English \\
-  & Thymio model \\
-  & Base talk about riks management \\
+  & - Documentation language : English \\
+  & - Thymio model \\
+  & - Base talk about riks management \\
   \hline
   08.10.2019 & \textbf{Third meeting}\\
   & Workplace\\
-  & Discussion on the choice of Windows as the Virtual Machine \\
-  & Create a configuration file with the information of the VM \\
-  & And an architecture proposal \\
+  & - Discussion on the choice of Windows as the Virtual Machine \\
+  & - Create a configuration file with the information of the VM \\
+  & - And an architecture proposal \\
   \hline
   15.10.2019 & \textbf{Fourth meeting} \\
-  & Which shapes and meshes should the user be able to create for his own custom playground \\
-  & Problems with webserver, has to be accessible from outside the vm, so maybe switching from windosw to linux \\
-  & Talk about the problem of thymio suite, that is the software allows the user to create programs only if a physical or a simulated one is plugged in \\
+  & - Which shapes and meshes should the user be able to create for his own custom playground \\
+  & - Problems with webserver, has to be accessible from outside the vm, so maybe switching from windosw to linux \\
+  & - Talk about the problem of thymio suite, that is the software allows the user to create programs only if a physical or a simulated one is plugged in \\
   \hline
   25.10.2019 & \textbf{Fifth meeting} \\
-  & Discussed using a Finite state machine to handle the events, but it may be too rigid so a non-deterministic finite state machine was the possible solution we came with \\
-  & First little talk about the meeting with the expert, report\\
+  & - Discussed using a Finite state machine to handle the events, but it may be too rigid so a non-deterministic finite state machine was the possible solution we came with \\
+  & - First little talk about the meeting with the expert, report\\
   \hline
 \end{tabular}
 
