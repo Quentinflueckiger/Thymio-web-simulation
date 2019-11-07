@@ -2,7 +2,7 @@
 \defcounter {refsection}{0}\relax 
 \select@language {english}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {1}{\ignorespaces From left to right, "Monsieur Patate", Thymio, Thymio II}}{5}
+\contentsline {figure}{\numberline {1}{\ignorespaces From left to right, "Monsieur Patate", Thymio, Thymio II}}{6}
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {2}{\ignorespaces Thymio II sensor and actuator}}{6}
 \defcounter {refsection}{0}\relax 
@@ -10,4 +10,20 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {4}{\ignorespaces Thymio VPL Window}}{9}
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5}{\ignorespaces Thymio Blockly window}}{14}
+\contentsline {figure}{\numberline {5}{\ignorespaces Event and one Action relation}}{9}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6}{\ignorespaces Event and multiple Actions relation}}{10}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {7}{\ignorespaces Event and Actions relations}}{10}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {8}{\ignorespaces Advanced program}}{11}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {9}{\ignorespaces Variable block}}{12}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {10}{\ignorespaces Logic block}}{12}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {11}{\ignorespaces Thymio Blockly window}}{13}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {12}{\ignorespaces Basic program}}{13}
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {13}{\ignorespaces More complex program}}{14}
