@@ -296,13 +296,12 @@ We added two other events for the right and left buttons that are responsible to
 WeBots / Aseba logiciel
 \section{Three JS}
 
-\section{Structure}
+\section{Architecture}
 Domain class diagrams,
 Domain model,
 Package diagram,
 Sequence diagram,
-System sequence diagram,
-Use case diagram
+System sequence diagram
 
 Write about the mvc, the interpreter pattern (?if used), problems because the three languages write files differently. All with the .aesl extension but not the same content format.
 
@@ -321,18 +320,35 @@ which is very interesting, much more than the article
 \subsubsection{System Boundaries}
 \subsubsection{Requirements}
 \subsubsection{Risk Analysis}
+Hack via .aesl as we execute the code if some code with malicious is feeded we still execute it.
+What happens if part of the project aren't implemented ? How to bypass blockade? Security?
+
+\subsubsection{User Stories}
+\textbf{\large Customer User Stories}
+
+\subsubsection{Use Cases Model}
+Use case diagram
 
 \subsection{Product Backlog}
 \begin{table}[]
   \begin{tabular}{l|l|l|l|l|l|l|l}
-  ID                     & Story Name & Story / Task Description & Priority & \begin{tabular}[c]{@{}l@{}}Est.\\ Effort {[}h{]}\end{tabular} & \begin{tabular}[c]{@{}l@{}}Update\\ Effort {[}h{]}\end{tabular} & \begin{tabular}[c]{@{}l@{}}Actual\\ Effort{[}h{]}\end{tabular} & Status                \\ \hline
-  \multicolumn{1}{|l|}{} &            &                          &          &                                                               &                                                                 &                                                                & \multicolumn{1}{l|}{} \\ \hline
-  \multicolumn{1}{|l|}{} &            &                          &          &                                                               &                                                                 &                                                                & \multicolumn{1}{l|}{} \\ \hline
-  \multicolumn{1}{|l|}{} &            &                          &          &                                                               &                                                                 &                                                                & \multicolumn{1}{l|}{} \\ \hline
-  \multicolumn{1}{|l|}{} &            &                          &          &                                                               &                                                                 &                                                                & \multicolumn{1}{l|}{} \\ \hline
-  \multicolumn{1}{|l|}{} &            &                          &          &                                                               &                                                                 &                                                                & \multicolumn{1}{l|}{} \\ \hline
-  \multicolumn{1}{|l|}{} &            &                          &          &                                                               &                                                                 &                                                                & \multicolumn{1}{l|}{} \\ \hline
-  \multicolumn{1}{|l|}{} &            &                          &          &                                                               &                                                                 &                                                                & \multicolumn{1}{l|}{} \\ \hline
+  ID                     & Story Name & Story / Task Description & Priority & Est. Effort {[}h{]} & Update Effort {[}h{]} & Actual Effort{[}h{]} & Status                \\ \hline
+  \multicolumn{1}{|l|}{1} & Create Documentation & Develop and write the documentation & High & 108 & 52 &  & \multicolumn{1}{l|}{In-Progress} \\ \hline
+  \multicolumn{1}{|l|}{2} & Set up the Environment & Setting up and configuring the development environment & High & 12 & 12 & 12 & \multicolumn{1}{l|}{Done} \\ \hline
+  \multicolumn{1}{|l|}{3} & Basic Learning & Learning and training of the different technology used later on & High & 44 & 58 & 58 & \multicolumn{1}{l|}{Done} \\ \hline
+  \multicolumn{1}{|l|}{4} & Develop Playgrounds & Create playgrounds and function to generate meshes & High & 40 & 48 & 48 & \multicolumn{1}{l|}{Done} \\ \hline
+  \multicolumn{1}{|l|}{5} & Architecture Implementation & Refactor the existing code into the designed architecture & High & 40 & 48 &  & \multicolumn{1}{l|}{In-Progress} \\ \hline
+  \multicolumn{1}{|l|}{6} & Web Deployement & Deploy the application on a webserver & High & 16 & 12 & 12 & \multicolumn{1}{l|}{Done} \\ \hline
+  \multicolumn{1}{|l|}{7} & Basic UI & Implement a basic UI & Low & 8 & 4 &  & \multicolumn{1}{l|}{In-Progress} \\ \hline
+  \multicolumn{1}{|l|}{8} & Behaviour Pipeline & Create pipeline to take .aesl file and translate/compile it into behaviour in javascript for the Thymio II & High &  &  &  & \multicolumn{1}{l|}{To Do} \\ \hline
+  \multicolumn{1}{|l|}{9} & Phyisics Implementation & Implementation of Collisions for ThreeJS Meshes & High &  &  &  & \multicolumn{1}{l|}{To Do} \\ \hline
+  \multicolumn{1}{|l|}{10} & Enhanced UI & Enhancement of the current UI & Low &  &  &  & \multicolumn{1}{l|}{To Do} \\ \hline
+  \multicolumn{1}{|l|}{11} & Customizable Playgrounds & Implementation of a playground creator for users & High &  &  &  & \multicolumn{1}{l|}{To Do} \\ \hline
+  \multicolumn{1}{|l|}{12} & Update Documentation & Update existing documentation and elaborate use cases and diagrams & High &  &  &  & \multicolumn{1}{l|}{To Do} \\ \hline
+  \multicolumn{1}{|l|}{13} & Enhanced Behaviour Pipeline & Implement more sensors, action and event for Thymio II & High &  &  &  & \multicolumn{1}{l|}{To Do} \\ \hline
+  \multicolumn{1}{|l|}{14} & Update Documentation & Update existing documentation & High &  &  &  & \multicolumn{1}{l|}{To Do} \\ \hline
+  \multicolumn{1}{|l|}{15} & Finish Documentation & Finish documentation & High &  &  &  & \multicolumn{1}{l|}{To Do} \\ \hline
+  \multicolumn{1}{|l|}{} &  &  & Total &  &  &  & \multicolumn{1}{l|}{} \\ \hline
   \end{tabular}
 \end{table}
 
@@ -341,60 +357,72 @@ which is very interesting, much more than the article
 \textbf{2019-09-16 until 2019-11-15}
 \begin{table}[]
   \begin{tabular}{l|l|l|l|l|l|l|l}
-  ID                     & Story Name & Story / Task Description & Priority & \begin{tabular}[c]{@{}l@{}}Est.\\ Effort {[}h{]}\end{tabular} & \begin{tabular}[c]{@{}l@{}}Update\\ Effort {[}h{]}\end{tabular} & \begin{tabular}[c]{@{}l@{}}Actual\\ Effort{[}h{]}\end{tabular} & Status                \\ \hline
-  \multicolumn{1}{|l|}{} &            &                          &          &                                                               &                                                                 &                                                                & \multicolumn{1}{l|}{} \\ \hline
-  \multicolumn{1}{|l|}{} &            &                          &          &                                                               &                                                                 &                                                                & \multicolumn{1}{l|}{} \\ \hline
-  \multicolumn{1}{|l|}{} &            &                          &          &                                                               &                                                                 &                                                                & \multicolumn{1}{l|}{} \\ \hline
-  \multicolumn{1}{|l|}{} &            &                          &          &                                                               &                                                                 &                                                                & \multicolumn{1}{l|}{} \\ \hline
-  \multicolumn{1}{|l|}{} &            &                          &          &                                                               &                                                                 &                                                                & \multicolumn{1}{l|}{} \\ \hline
-  \multicolumn{1}{|l|}{} &            &                          &          &                                                               &                                                                 &                                                                & \multicolumn{1}{l|}{} \\ \hline
-  \multicolumn{1}{|l|}{} &            &                          &          &                                                               &                                                                 &                                                                & \multicolumn{1}{l|}{} \\ \hline
-  \end{tabular}
+  ID                     & Story Name & Story / Task Description & Priority & Est. Effort {[}h{]} & Update Effort {[}h{]} & Actual Effort{[}h{]} & Status                \\ \hline
+  \multicolumn{1}{|l|}{1} & Create Documentation & Develop and write the documentation & High & 108 & 52 &  & \multicolumn{1}{l|}{In-Progress} \\ \hline
+  \multicolumn{1}{|l|}{1.1} & Template and Content & Choose a latex template and modify the content structure & High & 8 & 8 & 8 & \multicolumn{1}{l|}{Done} \\ \hline
+  \multicolumn{1}{|l|}{1.2} & About Thymio & What is thymio and how does it work. & High & 8 & 8 & 8 & \multicolumn{1}{l|}{Done} \\ \hline
+  \multicolumn{1}{|l|}{1.3} & Four supported languages & Descibe and initiate to VPL, Blockly, Aseba and Scratch & High & 32 & 24 &  & \multicolumn{1}{l|}{In-Progress} \\ \hline
+  \multicolumn{1}{|l|}{1.4} & Backlogs & Create the Sprint and Project backlog & High & 12 & 8 &  & \multicolumn{1}{l|}{In-Progress} \\ \hline
+  \multicolumn{1}{|l|}{1.5} & Architecture & Create DCD, DM, PD, SD, SSD and proposition of architecture & High & 20 & 4 &  & \multicolumn{1}{l|}{In-Progress} \\ \hline
+  \multicolumn{1}{|l|}{1.6} & User Stories & Formulate the User Stories & Medium & 8 &  &  & \multicolumn{1}{l|}{To Do} \\ \hline
+  \multicolumn{1}{|l|}{1.7} & Risk Analysis & Create risk analysis & High & 12 &  &  & \multicolumn{1}{l|}{To Do} \\ \hline
+  \multicolumn{1}{|l|}{2} & Set up the Environment & Setting up and configuring the development environment & High & 12 & 12 & 12 & \multicolumn{1}{l|}{Done} \\ \hline
+  \multicolumn{1}{|l|}{2.1} & GitHub & Create the project in GitHub and the Git environment & High & 4 & 4 & 4 & \multicolumn{1}{l|}{Done} \\ \hline
+  \multicolumn{1}{|l|}{2.2} & Tools & Install Thymio Suite, NodeJS and download ThreeJS & High & 8 & 8 & 8 & \multicolumn{1}{l|}{Done} \\ \hline
+  \multicolumn{1}{|l|}{3} & Basic Learning & Learning and training of the different technology used later on & High & 44 & 58 & 58 & \multicolumn{1}{l|}{Done} \\ \hline
+  \multicolumn{1}{|l|}{3.1} & ThreeJS & Read documentation and examples, and practice & High & 16 & 20 & 20 & \multicolumn{1}{l|}{Done} \\ \hline
+  \multicolumn{1}{|l|}{3.2} & JavaScript & Update and deepen knowledge  & High & 8 & 8 & 8 & \multicolumn{1}{l|}{Done} \\ \hline
+  \multicolumn{1}{|l|}{3.3} & Thymio languages & Learning and using VPL, Blockly, Aseba and Scratch & Medium & 24 & 30 & 30 & \multicolumn{1}{l|}{Done} \\ \hline
+  \multicolumn{1}{|l|}{4} & Develop Playgrounds & Create playgrounds and function to generate meshes & High & 40 & 48 & 48 & \multicolumn{1}{l|}{Done} \\ \hline
+  \multicolumn{1}{|l|}{4.1} & Two Default Playgrounds & Generating two defalut playground to be choosen for the simulator & Medium & 12 & 12 & 12 & \multicolumn{1}{l|}{Done} \\ \hline
+  \multicolumn{1}{|l|}{4.2} & Thymio Model & Create or load Thymio model & Medium & 4 & 4 & 4 & \multicolumn{1}{l|}{Done} \\ \hline
+  \multicolumn{1}{|l|}{4.3} & Mesh Generation & Create function to generate meshes for the playgrounds & High & 24 & 32 & 32 & \multicolumn{1}{l|}{Done} \\ \hline
+  \multicolumn{1}{|l|}{5} & Architecture Implementation & Refactor the existing code into the designed architecture & High & 40 & 48 &  & \multicolumn{1}{l|}{In-Progress} \\ \hline
+  \multicolumn{1}{|l|}{5.1} & Refactor Code & Refactor existing code into MVC Pattern & High & 20 & 44 & 44 & \multicolumn{1}{l|}{Done} \\ \hline
+  \multicolumn{1}{|l|}{5.3} & Unit Testing & Write the JavaScript tests & High & 12 &  &  & \multicolumn{1}{l|}{To Do} \\ \hline
+  \multicolumn{1}{|l|}{5.4} & JSDoc & Write the JavaScriptDoc & High & 8 & 4 &  & \multicolumn{1}{l|}{In-Progress} \\ \hline
+  \multicolumn{1}{|l|}{6} & Web Deployement & Deploy the application on a webserver & High & 16 & 12 & 12 & \multicolumn{1}{l|}{Done} \\ \hline
+  \multicolumn{1}{|l|}{6.1} & Virtual Machine Setup & Set up the Virtual machine & High & 8 & 4 & 4 & \multicolumn{1}{l|}{Done} \\ \hline
+  \multicolumn{1}{|l|}{6.2} & WebServer & Create WebServer and publish it on bfh network & High & 8 & 8 & 8 & \multicolumn{1}{l|}{Done} \\ \hline
+  \multicolumn{1}{|l|}{7} & Basic UI & Implement a basic UI & Low & 8 & 4 &  & \multicolumn{1}{l|}{In-Progress} \\ \hline
+  \multicolumn{1}{|l|}{7} & Pages UI & Create three pages UI, one for each of the following index, simulation and creation pages & Low & 8 & 4 &  & \multicolumn{1}{l|}{In-Progress} \\ \hline
+  \multicolumn{1}{|l|}{} &  &  & Total & 268 & 234 &  & \multicolumn{1}{l|}{} \\ \hline
+\end{tabular}
 \end{table}
 
+Domain class diagrams,
+Domain model,
+Package diagram,
+Sequence diagram,
+System sequence diagram
 \subsubsection{Second Sprint}
 \textbf{2019-11-15 until 2019-12-16}
 \begin{table}[]
   \begin{tabular}{l|l|l|l|l|l|l|l}
-  ID                     & Story Name & Story / Task Description & Priority & \begin{tabular}[c]{@{}l@{}}Est.\\ Effort {[}h{]}\end{tabular} & \begin{tabular}[c]{@{}l@{}}Update\\ Effort {[}h{]}\end{tabular} & \begin{tabular}[c]{@{}l@{}}Actual\\ Effort{[}h{]}\end{tabular} & Status                \\ \hline
-  \multicolumn{1}{|l|}{} &            &                          &          &                                                               &                                                                 &                                                                & \multicolumn{1}{l|}{} \\ \hline
-  \multicolumn{1}{|l|}{} &            &                          &          &                                                               &                                                                 &                                                                & \multicolumn{1}{l|}{} \\ \hline
-  \multicolumn{1}{|l|}{} &            &                          &          &                                                               &                                                                 &                                                                & \multicolumn{1}{l|}{} \\ \hline
-  \multicolumn{1}{|l|}{} &            &                          &          &                                                               &                                                                 &                                                                & \multicolumn{1}{l|}{} \\ \hline
-  \multicolumn{1}{|l|}{} &            &                          &          &                                                               &                                                                 &                                                                & \multicolumn{1}{l|}{} \\ \hline
-  \multicolumn{1}{|l|}{} &            &                          &          &                                                               &                                                                 &                                                                & \multicolumn{1}{l|}{} \\ \hline
-  \multicolumn{1}{|l|}{} &            &                          &          &                                                               &                                                                 &                                                                & \multicolumn{1}{l|}{} \\ \hline
-  \end{tabular}
+  ID                     & Story Name & Story / Task Description & Priority & Est. Effort {[}h{]} & Update Effort {[}h{]} & Actual Effort{[}h{]} & Status                \\ \hline
+  \multicolumn{1}{|l|}{} &  &  &  &  &  &  & \multicolumn{1}{l|}{To Do} \\ \hline
+  \multicolumn{1}{|l|}{} &  &  & Total &  &  &  & \multicolumn{1}{l|}{} \\ \hline
+\end{tabular}
 \end{table}
 
 \subsubsection{Third Sprint}
 \textbf{2019-12-16 until 2020-01-06}
 \begin{table}[]
   \begin{tabular}{l|l|l|l|l|l|l|l}
-  ID                     & Story Name & Story / Task Description & Priority & \begin{tabular}[c]{@{}l@{}}Est.\\ Effort {[}h{]}\end{tabular} & \begin{tabular}[c]{@{}l@{}}Update\\ Effort {[}h{]}\end{tabular} & \begin{tabular}[c]{@{}l@{}}Actual\\ Effort{[}h{]}\end{tabular} & Status                \\ \hline
-  \multicolumn{1}{|l|}{} &            &                          &          &                                                               &                                                                 &                                                                & \multicolumn{1}{l|}{} \\ \hline
-  \multicolumn{1}{|l|}{} &            &                          &          &                                                               &                                                                 &                                                                & \multicolumn{1}{l|}{} \\ \hline
-  \multicolumn{1}{|l|}{} &            &                          &          &                                                               &                                                                 &                                                                & \multicolumn{1}{l|}{} \\ \hline
-  \multicolumn{1}{|l|}{} &            &                          &          &                                                               &                                                                 &                                                                & \multicolumn{1}{l|}{} \\ \hline
-  \multicolumn{1}{|l|}{} &            &                          &          &                                                               &                                                                 &                                                                & \multicolumn{1}{l|}{} \\ \hline
-  \multicolumn{1}{|l|}{} &            &                          &          &                                                               &                                                                 &                                                                & \multicolumn{1}{l|}{} \\ \hline
-  \multicolumn{1}{|l|}{} &            &                          &          &                                                               &                                                                 &                                                                & \multicolumn{1}{l|}{} \\ \hline
-  \end{tabular}
+  ID                     & Story Name & Story / Task Description & Priority & Est. Effort {[}h{]} & Update Effort {[}h{]} & Actual Effort{[}h{]} & Status                \\ \hline
+  \multicolumn{1}{|l|}{1} & Create Documentation &  & High & 8 & 4 &  & \multicolumn{1}{l|}{} \\ \hline
+  \multicolumn{1}{|l|}{} &  &  & Total &  &  &  & \multicolumn{1}{l|}{} \\ \hline
+\end{tabular}
 \end{table}
 
 \subsubsection{Fourth Sprint}
 \textbf{2020-01-06 until 2020-02-?}
 \begin{table}[]
   \begin{tabular}{l|l|l|l|l|l|l|l}
-  ID                     & Story Name & Story / Task Description & Priority & \begin{tabular}[c]{@{}l@{}}Est.\\ Effort {[}h{]}\end{tabular} & \begin{tabular}[c]{@{}l@{}}Update\\ Effort {[}h{]}\end{tabular} & \begin{tabular}[c]{@{}l@{}}Actual\\ Effort{[}h{]}\end{tabular} & Status                \\ \hline
-  \multicolumn{1}{|l|}{} &            &                          &          &                                                               &                                                                 &                                                                & \multicolumn{1}{l|}{} \\ \hline
-  \multicolumn{1}{|l|}{} &            &                          &          &                                                               &                                                                 &                                                                & \multicolumn{1}{l|}{} \\ \hline
-  \multicolumn{1}{|l|}{} &            &                          &          &                                                               &                                                                 &                                                                & \multicolumn{1}{l|}{} \\ \hline
-  \multicolumn{1}{|l|}{} &            &                          &          &                                                               &                                                                 &                                                                & \multicolumn{1}{l|}{} \\ \hline
-  \multicolumn{1}{|l|}{} &            &                          &          &                                                               &                                                                 &                                                                & \multicolumn{1}{l|}{} \\ \hline
-  \multicolumn{1}{|l|}{} &            &                          &          &                                                               &                                                                 &                                                                & \multicolumn{1}{l|}{} \\ \hline
-  \multicolumn{1}{|l|}{} &            &                          &          &                                                               &                                                                 &                                                                & \multicolumn{1}{l|}{} \\ \hline
-  \end{tabular}
+  ID                     & Story Name & Story / Task Description & Priority & Est. Effort {[}h{]} & Update Effort {[}h{]} & Actual Effort{[}h{]} & Status                \\ \hline
+  \multicolumn{1}{|l|}{1} & Create Documentation &  & High & 8 & 4 &  & \multicolumn{1}{l|}{} \\ \hline
+  \multicolumn{1}{|l|}{} &  &  & Total &  &  &  & \multicolumn{1}{l|}{} \\ \hline
+\end{tabular}
 \end{table}
 
 \subsection{Gantt Diagram}
