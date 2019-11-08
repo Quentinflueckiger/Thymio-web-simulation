@@ -44,8 +44,11 @@
 }[keywords, comments, strings]
 
 \usepackage{pdfpages}
+\usepackage{longtable}
 
 \begin{document}
+
+Add picture
 \title{Web Simulation of a Thymio Robot}
 \date{\today}   %% or \date{01 november 2018}
 \author{Quentin Flückiger (\texttt{flucq1@bfh.ch})}
@@ -88,7 +91,7 @@ that saw life during the first workshop between the two contributors. After what
 it was a four-block robot that could be self-assembled, but not self-programmed as it was coming with pre-programmed behaviours. 
 It was used as a user study to gather feedback from clients to know what features needed to be implemented on the Thymio II.\\
 
-\begin{figure}[h!]
+\begin{figure}
   \includegraphics[width=\textwidth]{prototype_thymio_old}
   \caption{From left to right, "Monsieur Patate", Thymio, Thymio II}
   \label{fig:thymio_prototype}
@@ -101,13 +104,13 @@ oversees the production, distribution, and communication of said robot.
 Every step of the Thymio project is open-source and has a non-profit aim to enhance the quality of it with the user's project and research, 
 and reduce the cost and augment the lifetime for educational platforms and materials.
 
-\begin{figure}[h!]
+\begin{figure}
   \includegraphics[width=\textwidth]{Wireless-thymioII-sensor-actuator-color-en}
   \caption{Thymio II sensor and actuator}
   \label{fig:thymio_sensor_actuator}
 \end{figure}
 
-\subsection{How does it works}
+\subsection{How does it works} \label{howdoesitworkref}
 
 As seen in the figure above there exist two Thymio models, Thymio and Wireless Thymio. 
 The difference between them lies in the ability of the second one to be programmed wirelessly, 
@@ -139,13 +142,13 @@ In the case of the VPL developed by Aseba’s team, and the one we are mostly in
 From those two are built the seventeen, respectively eleven event blocks and six action blocks, entities. 
 One of the main goals of VPL for Thymio was to let people who cannot yet read the ability to start programming and discover this world.\\
 
-\begin{figure}[h]
+\begin{figure}
   \includegraphics[width=\textwidth]{./VPL/Thymio_VPL_window}
   \caption{Thymio VPL Event and Action blocks}
   \label{fig:thymio_vpl_blocks}
 \end{figure}
 
-To begin creating a program follow the first steps described in the “How does it works” section. 
+To begin creating a program follow the first steps described in the section \ref{howdoesitworkref} at the page \pageref{howdoesitworkref}. 
 Once the VPL option has been chosen and the Thymio Visual Programming Language window appears we are ready to go. 
 The window is split into six different regions with each of their purposes.
 \begin{enumerate}
@@ -157,7 +160,7 @@ The window is split into six different regions with each of their purposes.
   \item The program translated into AESL
 \end{enumerate}
 
-\begin{figure}[h!]
+\begin{figure}
   \includegraphics[width=\textwidth]{./VPL/Thymio_blocks}
   \caption{Thymio VPL Window}
   \label{fig:thymio_vpl_window}
@@ -167,7 +170,7 @@ At first, the programming window will be empty of blocks, containing just a plac
 This placeholder is the base of every Thymio VPL program, it contains exactly one event block and one or more action block. 
 This means that whenever the event of the event block happens then the set of actions added to this placeholder will occur at the same time. 
 For example, with the following pair: \\
-\begin{figure}[h!]
+\begin{figure}
   \centering
   \includegraphics[scale=0.5]{./VPL/middlebtn_forward}
   \caption{Event and one Action relation}
@@ -177,7 +180,7 @@ For example, with the following pair: \\
 Both wheels are powered to the maximum when the middle button is pressed. But more than one action can be attributed to one event, 
 to do so simply drag another action block onto the previous pair, notice that the same block cannot be used twice for the same event. 
 Here we turned the lights on top and set them to a complete green:\\
-\begin{figure}[h!]
+\begin{figure}
   \centering
   \includegraphics[scale=0.5]{./VPL/middlebtn_forward_green}
   \caption{Event and multiple Actions relation}
@@ -186,7 +189,7 @@ Here we turned the lights on top and set them to a complete green:\\
 
 The maximum amount of action blocks we can add to an event is four, but we can add as many event blocks to our program as we want. 
 Let us add two more event blocks to allow the robot to turn:\\
-\begin{figure}[h!]
+\begin{figure}
   \centering
   \includegraphics[scale=0.5]{./VPL/middlebtn_3E}
   \caption{Event and Actions relations}
@@ -204,7 +207,7 @@ For example, hereafter the middle button was pressed a timer will start and afte
 Afterward, the event “timer elapsed” will be triggered but which pair should the program execute, turning right or turning left? 
 Hence comes the use of the condition as we will execute the part of the program that corresponds to the state of the condition light. 
 In this example, it will go back and forth between the two pairs: \\
-\begin{figure}[h!]
+\begin{figure}
   \centering
   \includegraphics[scale=0.5]{./VPL/middlebtn_3E_adv}
   \caption{Advanced program}
@@ -223,31 +226,31 @@ The block pool can be expanded from its base pool or even reduced depending on t
 And it has been translated in over forty languages, and as well right-to-left versions. \\
 
 Blockly includes a set of pre-defined blocks that can be used to develop with more ease the wanted application. They are arranged into eight families:
-\begin{enumerate}
-  \item Logic: Blocks with Boolean definition, equality check, and conditions.
-  \item Loop: Blocks for loops.
-  \item Math: Blocks for numbers, arithmetic operation, a few basic math functions (for example cos, sin, square root) and some mathematical constant (Pi).
-  \item Text: Blocks to create text and text operations.
-  \item Lists: Blocks to create lists and standard list operation (length, get the value).
-  \item Color: Blocks with a color definition.
-  \item Variables: Blocks to create variables, and to set/get their values.
-  \item Functions: Blocks to create functions, with return value or not, and to call existing function.
-\end{enumerate}
+\begin{description}
+  \item [Logic:] Blocks with Boolean definition, equality check, and conditions.
+  \item [Loop:] Blocks for loops.
+  \item [Math:] Blocks for numbers, arithmetic operation, a few basic math functions (for example cos, sin, square root) and some mathematical constant (Pi).
+  \item [Text:] Blocks to create text and text operations.
+  \item [Lists:] Blocks to create lists and standard list operation (length, get the value).
+  \item [Color:] Blocks with a color definition.
+  \item [Variables:] Blocks to create variables, and to set/get their values.
+  \item [Functions:] Blocks to create functions, with return value or not, and to call existing function.
+\end{description}
 
 Each block holds a pre-assigned shape, thus restraining its usage to certain situations as a "hidden" way to control the syntax. Their shapes are defined by the different connections with other blocks, 
 both external and internal, while external blocks describe what happens after or before, the internals describe what happens during or what are the arguments, logic. 
-Following is a basic variable block with three external connectors, and a math block with the value of one, with one connector, that is assigned to the “Count” variable (the blocks need to be assembled). \\
-\begin{figure}[h!]
+Following is a basic variable block with three external connectors, and a math block with the value of one, with one connector, that is assigned to the \texttt{Count} variable (the blocks need to be assembled). \\
+\begin{figure}
   \centering
   \includegraphics[scale=0.5]{./Blockly/basic_variable}
   \caption{Variable block}
   \label{fig:thymio_blockly_variable_block}
 \end{figure}
 
-Using the same logic as above we created a “Limit” variable with the value of 5 to demonstrate the next example. 
-The block used is from the logic family and test whether the “Count” variable is smaller or equal to the “Limit” as internal blocks. 
+Using the same logic as above we created a \texttt{Limit} variable with the value of 5 to demonstrate the next example. 
+The block used is from the logic family and test whether the \texttt{Count} variable is smaller or equal to the \texttt{Limit} as internal blocks. 
 It can then be added to a loop, a function or other statements that needs logic.\\
-\begin{figure}[h!]
+\begin{figure}
   \centering
   \includegraphics[scale=0.5]{./Blockly/basic_logic}
   \caption{Logic block}
@@ -266,7 +269,7 @@ The environment window that opens after choosing the Blockly option is split int
   \item The program translated into AESL
 \end{enumerate}
 
-\begin{figure}[h!]
+\begin{figure}
   \centering
   \includegraphics[scale=0.5]{./Blockly/blockly_window}
   \caption{Thymio Blockly window}
@@ -275,7 +278,7 @@ The environment window that opens after choosing the Blockly option is split int
 
 The following figure demonstrates a simple program, once run the program listens to two different events. When the center button is pressed and when the front middle proximity sensor detects a wall. 
 The first one will activate the two motors at the same speed, as to drive forward, and light the top LED to green. Whereas the second will stop the motors and turn the LED to red. \\
-\begin{figure}[h!]
+\begin{figure}
   \centering
   \includegraphics[scale=0.5]{./Blockly/forward_stop_wall}
   \caption{Basic program}
@@ -284,17 +287,33 @@ The first one will activate the two motors at the same speed, as to drive forwar
 
 Here we set a variable to act as a control if Thymio is moving or not. We then use this information into a test when we click the middle button, and we either move forward or stop according to the result. 
 We added two other events for the right and left buttons that are responsible to turn the robot.
-\begin{figure}[h!]
+\begin{figure}
   \centering
   \includegraphics[scale=0.5]{./Blockly/advanced_program}
   \caption{More complex program}
   \label{fig:thymio_blockly_advanced_program}
 \end{figure}
+
 \subsubsection{Aseba}
 \subsubsection{Scratch}
 \subsection{What already exist} 
 WeBots / Aseba logiciel
 \section{Three JS}
+
+\section{Requirements Documentation}
+\subsection{Vision}
+\subsection{Objectives}
+\subsection{System Boundaries}
+\subsection{Requirements}
+\subsection{Risk Analysis}
+Hack via .aesl as we execute the code if some code with malicious is feeded we still execute it.
+What happens if part of the project aren't implemented ? How to bypass blockade? Security?
+No financial risks.
+\subsection{User Stories}
+\textbf{\large Customer User Stories}
+
+\subsection{Use Cases Model}
+Use case diagram
 
 \section{Architecture}
 Domain class diagrams,
@@ -307,6 +326,17 @@ Write about the mvc, the interpreter pattern (?if used), problems because the th
 
 
 \section{Usefull latex commands (to be deleted later on)}
+\lstset{language=JavaScript}
+\begin{lstlisting}{basicstyle=\ttfamily\small}
+  function generateBox(color, width, height, depth){
+
+    var geometry = new THREE.BoxGeometry( width, height, depth );
+    var material = new THREE.MeshPhongMaterial( { color : color} );
+    var box = new THREE.Mesh( geometry, material );
+                
+    return box;
+  }
+\end{lstlisting}
 For that we read the article book of \cite{Jerald:2015:VBH:2792790}
 which is very interesting, much more than the article
 \cite{Diniz:2017:UGO:3100317.3100324}
@@ -314,116 +344,97 @@ which is very interesting, much more than the article
 \section{Conclusion and future work}
 
 \section{Appendices}
-\subsection{Requirements Documentation}
-\subsubsection{Vision}
-\subsubsection{Objectives}
-\subsubsection{System Boundaries}
-\subsubsection{Requirements}
-\subsubsection{Risk Analysis}
-Hack via .aesl as we execute the code if some code with malicious is feeded we still execute it.
-What happens if part of the project aren't implemented ? How to bypass blockade? Security?
-
-\subsubsection{User Stories}
-\textbf{\large Customer User Stories}
-
-\subsubsection{Use Cases Model}
-Use case diagram
 
 \subsection{Product Backlog}
-\begin{table}[]
-  \begin{tabular}{l|l|l|l|l|l|l|l}
-  ID                     & Story Name & Story / Task Description & Priority & Est. Effort {[}h{]} & Update Effort {[}h{]} & Actual Effort{[}h{]} & Status                \\ \hline
-  \multicolumn{1}{|l|}{1} & Create Documentation & Develop and write the documentation & High & 108 & 52 &  & \multicolumn{1}{l|}{In-Progress} \\ \hline
-  \multicolumn{1}{|l|}{2} & Set up the Environment & Setting up and configuring the development environment & High & 12 & 12 & 12 & \multicolumn{1}{l|}{Done} \\ \hline
-  \multicolumn{1}{|l|}{3} & Basic Learning & Learning and training of the different technology used later on & High & 44 & 58 & 58 & \multicolumn{1}{l|}{Done} \\ \hline
-  \multicolumn{1}{|l|}{4} & Develop Playgrounds & Create playgrounds and function to generate meshes & High & 40 & 48 & 48 & \multicolumn{1}{l|}{Done} \\ \hline
-  \multicolumn{1}{|l|}{5} & Architecture Implementation & Refactor the existing code into the designed architecture & High & 40 & 48 &  & \multicolumn{1}{l|}{In-Progress} \\ \hline
-  \multicolumn{1}{|l|}{6} & Web Deployement & Deploy the application on a webserver & High & 16 & 12 & 12 & \multicolumn{1}{l|}{Done} \\ \hline
-  \multicolumn{1}{|l|}{7} & Basic UI & Implement a basic UI & Low & 8 & 4 &  & \multicolumn{1}{l|}{In-Progress} \\ \hline
-  \multicolumn{1}{|l|}{8} & Behaviour Pipeline & Create pipeline to take .aesl file and translate/compile it into behaviour in javascript for the Thymio II & High &  &  &  & \multicolumn{1}{l|}{To Do} \\ \hline
-  \multicolumn{1}{|l|}{9} & Phyisics Implementation & Implementation of Collisions for ThreeJS Meshes & High &  &  &  & \multicolumn{1}{l|}{To Do} \\ \hline
-  \multicolumn{1}{|l|}{10} & Enhanced UI & Enhancement of the current UI & Low &  &  &  & \multicolumn{1}{l|}{To Do} \\ \hline
-  \multicolumn{1}{|l|}{11} & Customizable Playgrounds & Implementation of a playground creator for users & High &  &  &  & \multicolumn{1}{l|}{To Do} \\ \hline
-  \multicolumn{1}{|l|}{12} & Update Documentation & Update existing documentation and elaborate use cases and diagrams & High &  &  &  & \multicolumn{1}{l|}{To Do} \\ \hline
-  \multicolumn{1}{|l|}{13} & Enhanced Behaviour Pipeline & Implement more sensors, action and event for Thymio II & High &  &  &  & \multicolumn{1}{l|}{To Do} \\ \hline
-  \multicolumn{1}{|l|}{14} & Update Documentation & Update existing documentation & High &  &  &  & \multicolumn{1}{l|}{To Do} \\ \hline
-  \multicolumn{1}{|l|}{15} & Finish Documentation & Finish documentation & High &  &  &  & \multicolumn{1}{l|}{To Do} \\ \hline
-  \multicolumn{1}{|l|}{} &  &  & Total &  &  &  & \multicolumn{1}{l|}{} \\ \hline
-  \end{tabular}
-\end{table}
+\begin{longtable}{p{5mm}|p{2cm}|p{4cm}|p{1cm}|p{1cm}|p{1cm}|p{1cm}|p{1cm}}
+  ID                     & Story Name & Story / Task Description & Priority & Est. Effort {[}h{]} & Update Effort {[}h{]} & Actual Effort{[}h{]} & Status                \\ 
+  1 & Create Documentation & Develop and write the documentation & High & 108 & 52 &  & In-Progress \\ 
+  2 & Set up the Environment & Setting up and configuring the development environment & High & 12 & 12 & 12 & Done \\ 
+  3 & Basic Learning & Learning and training of the different technology used later on & High & 44 & 58 & 58 & Done \\ 
+  4 & Develop Playgrounds & Create playgrounds and function to generate meshes & High & 40 & 48 & 48 & Done \\ 
+  5 & Architecture Implementation & Refactor the existing code into the designed architecture & High & 40 & 48 &  & In-Progress}\\ 
+  6 & Web Deployement & Deploy the application on a webserver & High & 16 & 12 & 12 & Done \\ 
+  7 & Basic UI & Implement a basic UI & Low & 8 & 4 &  & In-Progress \\ 
+  8 & Behaviour Pipeline & Create pipeline to take .aesl file and translate/compile it into behaviour in javascript for the Thymio II & High &  &  &  & To Do \\ 
+  9 & Phyisics Implementation & Implementation of Collisions for ThreeJS Meshes & High &  &  &  & To Do \\ 
+  10 & Enhanced UI & Enhancement of the current UI & Low &  &  &  & To Do \\ 
+  11 & Customizable Playgrounds & Implementation of a playground creator for users & High &  &  &  & To Do \\ 
+  12 & Update Documentation & Update existing documentation and elaborate use cases and diagrams & High &  &  &  & To Do \\ 
+  13 & Enhanced Behaviour Pipeline & Implement more sensors, action and event for Thymio II & High &  &  &  & To Do \\ 
+  14 & Update Documentation & Update existing documentation & High &  &  &  & To Do \\ \hline
+  15 & Finish Documentation & Finish documentation & High &  &  &  & To Do \\ 
+   &  &  & Total &  &  &  &  \\ 
+\end{longtable}
 
 \subsection{Sprint Backlog}
 \subsubsection{First Sprint}
 \textbf{2019-09-16 until 2019-11-15}
-\begin{table}[]
-  \begin{tabular}{l|l|l|l|l|l|l|l}
-  ID                     & Story Name & Story / Task Description & Priority & Est. Effort {[}h{]} & Update Effort {[}h{]} & Actual Effort{[}h{]} & Status                \\ \hline
-  \multicolumn{1}{|l|}{1} & Create Documentation & Develop and write the documentation & High & 108 & 52 &  & \multicolumn{1}{l|}{In-Progress} \\ \hline
-  \multicolumn{1}{|l|}{1.1} & Template and Content & Choose a latex template and modify the content structure & High & 8 & 8 & 8 & \multicolumn{1}{l|}{Done} \\ \hline
-  \multicolumn{1}{|l|}{1.2} & About Thymio & What is thymio and how does it work. & High & 8 & 8 & 8 & \multicolumn{1}{l|}{Done} \\ \hline
-  \multicolumn{1}{|l|}{1.3} & Four supported languages & Descibe and initiate to VPL, Blockly, Aseba and Scratch & High & 32 & 24 &  & \multicolumn{1}{l|}{In-Progress} \\ \hline
-  \multicolumn{1}{|l|}{1.4} & Backlogs & Create the Sprint and Project backlog & High & 12 & 8 &  & \multicolumn{1}{l|}{In-Progress} \\ \hline
-  \multicolumn{1}{|l|}{1.5} & Architecture & Create DCD, DM, PD, SD, SSD and proposition of architecture & High & 20 & 4 &  & \multicolumn{1}{l|}{In-Progress} \\ \hline
-  \multicolumn{1}{|l|}{1.6} & User Stories & Formulate the User Stories & Medium & 8 &  &  & \multicolumn{1}{l|}{To Do} \\ \hline
-  \multicolumn{1}{|l|}{1.7} & Risk Analysis & Create risk analysis & High & 12 &  &  & \multicolumn{1}{l|}{To Do} \\ \hline
-  \multicolumn{1}{|l|}{2} & Set up the Environment & Setting up and configuring the development environment & High & 12 & 12 & 12 & \multicolumn{1}{l|}{Done} \\ \hline
-  \multicolumn{1}{|l|}{2.1} & GitHub & Create the project in GitHub and the Git environment & High & 4 & 4 & 4 & \multicolumn{1}{l|}{Done} \\ \hline
-  \multicolumn{1}{|l|}{2.2} & Tools & Install Thymio Suite, NodeJS and download ThreeJS & High & 8 & 8 & 8 & \multicolumn{1}{l|}{Done} \\ \hline
-  \multicolumn{1}{|l|}{3} & Basic Learning & Learning and training of the different technology used later on & High & 44 & 58 & 58 & \multicolumn{1}{l|}{Done} \\ \hline
-  \multicolumn{1}{|l|}{3.1} & ThreeJS & Read documentation and examples, and practice & High & 16 & 20 & 20 & \multicolumn{1}{l|}{Done} \\ \hline
-  \multicolumn{1}{|l|}{3.2} & JavaScript & Update and deepen knowledge  & High & 8 & 8 & 8 & \multicolumn{1}{l|}{Done} \\ \hline
-  \multicolumn{1}{|l|}{3.3} & Thymio languages & Learning and using VPL, Blockly, Aseba and Scratch & Medium & 24 & 30 & 30 & \multicolumn{1}{l|}{Done} \\ \hline
-  \multicolumn{1}{|l|}{4} & Develop Playgrounds & Create playgrounds and function to generate meshes & High & 40 & 48 & 48 & \multicolumn{1}{l|}{Done} \\ \hline
-  \multicolumn{1}{|l|}{4.1} & Two Default Playgrounds & Generating two defalut playground to be choosen for the simulator & Medium & 12 & 12 & 12 & \multicolumn{1}{l|}{Done} \\ \hline
-  \multicolumn{1}{|l|}{4.2} & Thymio Model & Create or load Thymio model & Medium & 4 & 4 & 4 & \multicolumn{1}{l|}{Done} \\ \hline
-  \multicolumn{1}{|l|}{4.3} & Mesh Generation & Create function to generate meshes for the playgrounds & High & 24 & 32 & 32 & \multicolumn{1}{l|}{Done} \\ \hline
-  \multicolumn{1}{|l|}{5} & Architecture Implementation & Refactor the existing code into the designed architecture & High & 40 & 48 &  & \multicolumn{1}{l|}{In-Progress} \\ \hline
-  \multicolumn{1}{|l|}{5.1} & Refactor Code & Refactor existing code into MVC Pattern & High & 20 & 44 & 44 & \multicolumn{1}{l|}{Done} \\ \hline
-  \multicolumn{1}{|l|}{5.3} & Unit Testing & Write the JavaScript tests & High & 12 &  &  & \multicolumn{1}{l|}{To Do} \\ \hline
-  \multicolumn{1}{|l|}{5.4} & JSDoc & Write the JavaScriptDoc & High & 8 & 4 &  & \multicolumn{1}{l|}{In-Progress} \\ \hline
-  \multicolumn{1}{|l|}{6} & Web Deployement & Deploy the application on a webserver & High & 16 & 12 & 12 & \multicolumn{1}{l|}{Done} \\ \hline
-  \multicolumn{1}{|l|}{6.1} & Virtual Machine Setup & Set up the Virtual machine & High & 8 & 4 & 4 & \multicolumn{1}{l|}{Done} \\ \hline
-  \multicolumn{1}{|l|}{6.2} & WebServer & Create WebServer and publish it on bfh network & High & 8 & 8 & 8 & \multicolumn{1}{l|}{Done} \\ \hline
-  \multicolumn{1}{|l|}{7} & Basic UI & Implement a basic UI & Low & 8 & 4 &  & \multicolumn{1}{l|}{In-Progress} \\ \hline
-  \multicolumn{1}{|l|}{7} & Pages UI & Create three pages UI, one for each of the following index, simulation and creation pages & Low & 8 & 4 &  & \multicolumn{1}{l|}{In-Progress} \\ \hline
-  \multicolumn{1}{|l|}{} &  &  & Total & 268 & 234 &  & \multicolumn{1}{l|}{} \\ \hline
-\end{tabular}
-\end{table}
+\begin{longtable}{p{5mm}|p{2cm}|p{4cm}|p{1cm}|p{1cm}|p{1cm}|p{1cm}|p{1cm}}
+  ID                     & Story Name & Story / Task Description & Priority & Est. Effort {[}h{]} & Update Effort {[}h{]} & Actual Effort{[}h{]} & Status                \\ 
+  1 & Create Documentation & Develop and write the documentation & High & 108 & 52 &  & In-Progress \\ 
+  1.1 & Template and Content & Choose a latex template and modify the content structure & High & 8 & 8 & 8 & Done \\ 
+  1.2 & About Thymio & What is thymio and how does it work. & High & 8 & 8 & 8 & Done \\ 
+  1.3 & Four supported languages & Descibe and initiate to VPL, Blockly, Aseba and Scratch & High & 32 & 24 &  & In-Progress \\ 
+  1.4 & Backlogs & Create the Sprint and Project backlog & High & 12 & 8 &  & In-Progress \\ 
+  1.5 & Architecture & Create DCD, DM, PD, SD, SSD and proposition of architecture & High & 20 & 4 &  & In-Progress \\
+  1.6 & User Stories & Formulate the User Stories & Medium & 8 &  &  & To Do \\ 
+  1.7 & Risk Analysis & Create risk analysis & High & 12 &  &  & To Do \\ 
+  2 & Set up the Environment & Setting up and configuring the development environment & High & 12 & 12 & 12 & Done \\ 
+  2.1 & GitHub & Create the project in GitHub and the Git environment & High & 4 & 4 & 4 & Done \\ 
+  2.2 & Tools & Install Thymio Suite, NodeJS and download ThreeJS & High & 8 & 8 & 8 & Done \\ 
+  3 & Basic Learning & Learning and training of the different technology used later on & High & 44 & 58 & 58 & Done \\
+  3.1 & ThreeJS & Read documentation and examples, and practice & High & 16 & 20 & 20 & Done \\ 
+  3.2 & JavaScript & Update and deepen knowledge  & High & 8 & 8 & 8 & Done \\ 
+  3.3 & Thymio languages & Learning and using VPL, Blockly, Aseba and Scratch & Medium & 24 & 30 & 30 & Done \\ 
+  4 & Develop Playgrounds & Create playgrounds and function to generate meshes & High & 40 & 48 & 48 & Done \\ 
+  4.1 & Two Default Playgrounds & Generating two defalut playground to be choosen for the simulator & Medium & 12 & 12 & 12 & Done \\ 
+  4.2 & Thymio Model & Create or load Thymio model & Medium & 4 & 4 & 4 & Done \\ 
+  4.3 & Mesh Generation & Create function to generate meshes for the playgrounds & High & 24 & 32 & 32 & Done \\ 
+  5 & Architecture Implementation & Refactor the existing code into the designed architecture & High & 40 & 48 &  & In-Progress \\ 
+  5.1 & Refactor Code & Refactor existing code into MVC Pattern & High & 20 & 44 & 44 & Done \\ 
+  5.3 & Unit Testing & Write the JavaScript tests & High & 12 &  &  & To Do \\
+  5.4 & JSDoc & Write the JavaScriptDoc & High & 8 & 4 &  & In-Progress \\ 
+  6 & Web Deployement & Deploy the application on a webserver & High & 16 & 12 & 12 & Done \\ 
+  6.1 & Virtual Machine Setup & Set up the Virtual machine & High & 8 & 4 & 4 & Done \\ 
+  6.2 & WebServer & Create WebServer and publish it on bfh network & High & 8 & 8 & 8 & Done \\ 
+  7 & Basic UI & Implement a basic UI & Low & 8 & 4 &  & In-Progress \\ 
+  7.1 & Pages UI & Create three pages UI, one for each of the following index, simulation and creation pages & Low & 8 & 4 &  & In-Progress \\ \hline
+   &  &  & Total & 268 & 234 &  &  \\ 
+\end{longtable}
 
-Domain class diagrams,
-Domain model,
-Package diagram,
-Sequence diagram,
-System sequence diagram
 \subsubsection{Second Sprint}
 \textbf{2019-11-15 until 2019-12-16}
-\begin{table}[]
-  \begin{tabular}{l|l|l|l|l|l|l|l}
-  ID                     & Story Name & Story / Task Description & Priority & Est. Effort {[}h{]} & Update Effort {[}h{]} & Actual Effort{[}h{]} & Status                \\ \hline
-  \multicolumn{1}{|l|}{} &  &  &  &  &  &  & \multicolumn{1}{l|}{To Do} \\ \hline
-  \multicolumn{1}{|l|}{} &  &  & Total &  &  &  & \multicolumn{1}{l|}{} \\ \hline
-\end{tabular}
-\end{table}
+\begin{longtable}{p{5mm}|p{2cm}|p{4cm}|p{1cm}|p{1cm}|p{1cm}|p{1cm}|p{1cm}}
+  ID                     & Story Name & Story / Task Description & Priority & Est. Effort {[}h{]} & Update Effort {[}h{]} & Actual Effort{[}h{]} & Status                \\ 
+  8 & Behaviour Pipeline & Create pipeline to take .aesl file and translate/compile it into behaviour in javascript for the Thymio II & High &  &  &  & To Do} \\ 
+  9 & Phyisics Implementation & Implementation of Collisions for ThreeJS Meshes & High &  &  &  & To Do} \\
+  10 & Enhanced UI & Enhancement of the current UI & Low &  &  &  & To Do} \\ 
+  12 & Update Documentation & Update existing documentation & High &  &  &  & To Do} \\ \hline
+   & Phyisics Implementation &  & Total &  &  &  & } \\ 
+\end{longtable}
 
 \subsubsection{Third Sprint}
 \textbf{2019-12-16 until 2020-01-06}
-\begin{table}[]
-  \begin{tabular}{l|l|l|l|l|l|l|l}
-  ID                     & Story Name & Story / Task Description & Priority & Est. Effort {[}h{]} & Update Effort {[}h{]} & Actual Effort{[}h{]} & Status                \\ \hline
-  \multicolumn{1}{|l|}{1} & Create Documentation &  & High & 8 & 4 &  & \multicolumn{1}{l|}{} \\ \hline
-  \multicolumn{1}{|l|}{} &  &  & Total &  &  &  & \multicolumn{1}{l|}{} \\ \hline
-\end{tabular}
-\end{table}
+\begin{longtable}{p{5mm}|p{2cm}|p{4cm}|p{1cm}|p{1cm}|p{1cm}|p{1cm}|p{1cm}}
+  ID                     & Story Name & Story / Task Description & Priority & Est. Effort {[}h{]} & Update Effort {[}h{]} & Actual Effort{[}h{]} & Status                \\ 
+  11 & Customizable Playgrounds & Implementation of a playground creator for users & High &  &  &  & To Do} \\ 
+  13 & Enhanced Behaviour Pipeline & Implement more sensors, action and event for Thymio II & High &  &  &  & To Do} \\ 
+  14 & Update Documentation & Update existing documentation & High &  &  &  & To Do} \\ \hline
+   &  &  & Total &  &  &  & } \\ 
+\end{longtable}
 
 \subsubsection{Fourth Sprint}
 \textbf{2020-01-06 until 2020-02-?}
-\begin{table}[]
-  \begin{tabular}{l|l|l|l|l|l|l|l}
-  ID                     & Story Name & Story / Task Description & Priority & Est. Effort {[}h{]} & Update Effort {[}h{]} & Actual Effort{[}h{]} & Status                \\ \hline
-  \multicolumn{1}{|l|}{1} & Create Documentation &  & High & 8 & 4 &  & \multicolumn{1}{l|}{} \\ \hline
-  \multicolumn{1}{|l|}{} &  &  & Total &  &  &  & \multicolumn{1}{l|}{} \\ \hline
-\end{tabular}
-\end{table}
+\begin{longtable}{p{5mm}|p{2cm}|p{4cm}|p{1cm}|p{1cm}|p{1cm}|p{1cm}|p{1cm}}
+  ID                     & Story Name & Story / Task Description & Priority & Est. Effort {[}h{]} & Update Effort {[}h{]} & Actual Effort{[}h{]} & Status                \\ 
+  15 & Finish Documentation &  & High &  &  &  & To Do} \\
+  15.1 & Create Video & Create the video file & High &  &  &  & To Do} \\ 
+  15.2 & Prepare Presentation Day & Create the poster and the presentation for the Presentation Day & High &  &  &  & To Do} \\
+  15.3 & Write in the Book & Write the page for the Book & High & 8 & 4 &  & To Do} \\ 
+  15.4 & Finish Writting Documentation & Terminate the writting part of the documentation & High &  &  &  & To Do} \\ 
+  15.5 & Prepare to Submit & Check spelling mistake, check images, print it, put the project on a USB stick & High &  &  &  & To Do} \\ \hline
+   &  &  & Total &  &  &  & } \\ 
+\end{longtable}
 
 \subsection{Gantt Diagram}
 \includepdf[pages=-, pagecommand={}, width=\textwidth]{Thymio_web_simulation_Gantt.pdf}
@@ -432,10 +443,10 @@ System sequence diagram
 
 \subsection{Configuration}
 
-\textbf{\underline{User information}}
+\textbf{User information} \\
 On demand.\\
 
-\textbf{\underline{Access the Windows Virtual Machine}}
+\textbf{Access the Windows Virtual Machine}\\
 \begin{center}
   \begin{tabular}{|c|c|c|}
     \hline
@@ -448,12 +459,12 @@ On demand.\\
     MacOS & terminal & Microsoft Remote Desktop \\
     \hline
   \end{tabular}
-\end{center}
+\end{center}\\
 
 See link bellow for more information and links. (It requires to be inside the bfh networkd to access it)
-\url{https://intranet.bfh.ch/TI/fr/Studium/Bachelor/Informatik/Tools/VMsHowto/Pages/default.aspx?k=vm}
+\url{https://intranet.bfh.ch/TI/fr/Studium/Bachelor/Informatik/Tools/VMsHowto/Pages/default.aspx?k=vm}\\
 
-\textbf{\underline{First Configuration of IIS manager}}
+\textbf{First Configuration of IIS manager}\\
 
 We followed the steps in this tutorial video in order to configure IIS. \url{https://www.youtube.com/watch?v=rPRLe7QeVHM}
 
@@ -467,15 +478,15 @@ Then we had to open the port in order to access it from within the LAN.
   \item Add a Name and a description to this rule, click finish.
 \end{enumerate}
 
-With this specified the website is now accessible from within the LAN at the following adress : http://147.87.116.44/Code/HTML
+With this specified the website is now accessible from within the LAN at the following adress : http://147.87.116.44/Code/HTML \\
 
-\textbf{\underline{Additional setup}}
+\textbf{Additional setup}\\
 
 It was needed to create a web.config file and add a few file extension so that the .mtl and .obj would still be able to load. 
 Otherwise we encountered an error of the type "Failed to load resource: the server responded with a status of 404 (Not Found)." 
 The text that needed to be added to the web.config file is the following : \\
 \lstset{language=XML}
-\begin{lstlisting}
+\begin{lstlisting}{basicstyle=\ttfamily\small}
 <?xml version="1.0" encoding="UTF-8"?>
   <configuration>
     <system.webServer>
@@ -522,8 +533,6 @@ The text that needed to be added to the web.config file is the following : \\
 
 \listoffigures
 
-\listoftables
-
 \section{Problems encountered}
 \begin{itemize}
   \item javascript not refreshing properly due to cache -> disable cache
@@ -531,7 +540,7 @@ The text that needed to be added to the web.config file is the following : \\
         Had to create a web.config file and add file extension for .mtl and .obj.
         https://stackoverflow.com/questions/41245938/web-server-cannot-find-mtl-file
         https://stackoverflow.com/questions/16097580/three-js-loading-obj-error-in-azure-but-not-locally
-  \item shadow not rendering on plane of both playgrounds
+  \item shadow not rendering on plane of all playgrounds
   \item javascript file not found on server, net::ERR\textunderscore ABORTED 404 (Not Found) => first solution (working partially) was to add a IIS\textunderscore IUSRS.
   \item Thymio Blockly has trouble loading saved files. Using the software I wasn't able to load any .aesl file previously created with it, but I could load them if I used the index.html one.
 \end{itemize}
