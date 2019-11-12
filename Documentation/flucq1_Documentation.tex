@@ -25,12 +25,6 @@
 \usepackage{markdown}
 \usepackage{array}
 
-
-\usepackage{color}
-\definecolor{gray}{rgb}{0.4,0.4,0.4}
-\definecolor{darkblue}{rgb}{0.0,0.0,0.6}
-\definecolor{cyan}{rgb}{0.0,0.6,0.6}
-
 \usepackage{listings}
 %% Custom javascript listings, from Gary Hammock recuperated the 18.10.2019 : https://github.com/ghammock/LaTeX_Listings_JavaScript_ES6
 \lstdefinelanguage{JavaScript}{
@@ -49,23 +43,11 @@
   morestring=[b]"
 }[keywords, comments, strings]
 
-\lstdefinelanguage{XML}
-{
-  morestring=[b]",
-  morestring=[s]{>}{<},
-  morecomment=[s]{<?}{?>},
-  stringstyle=\color{black},
-  identifierstyle=\color{darkblue},
-  keywordstyle=\color{cyan},
-  morekeywords={xmlns,version,type}% list your attributes here
-}
-
 \usepackage{pdfpages}
 \usepackage{longtable}
 
 \begin{document}
 
-Add picture
 \title{Web Simulation of a Thymio Robot}
 \date{\today}   %% or \date{01 november 2018}
 \author{Quentin Flückiger (\texttt{flucq1@bfh.ch})}
@@ -109,7 +91,7 @@ it was a four-block robot that could be self-assembled, but not self-programmed 
 It was used as a user study to gather feedback from clients to know what features needed to be implemented on the Thymio II.\\
 
 \begin{center}
-  \includegraphics[width=\textwidth]{prototype_thymio_old}
+  \includegraphics[width=\textwidth]{prototype_thymio_old}\\
   From left to right, "Monsieur Patate", Thymio, Thymio II
 \end{center}
 
@@ -121,7 +103,7 @@ Every step of the Thymio project is open-source and has a non-profit aim to enha
 and reduce the cost and augment the lifetime for educational platforms and materials.
 
 \begin{center}
-  \includegraphics[width=\textwidth]{Wireless-thymioII-sensor-actuator-color-en}
+  \includegraphics[width=\textwidth]{Wireless-thymioII-sensor-actuator-color-en}\\
   Thymio II sensor and actuator
 \end{center}
 
@@ -158,7 +140,7 @@ From those two are built the seventeen, respectively eleven event blocks and six
 One of the main goals of VPL for Thymio was to let people who cannot yet read the ability to start programming and discover this world.\\
 
 \begin{center}
-  \includegraphics[width=\textwidth]{./VPL/Thymio_VPL_window}
+  \includegraphics[width=\textwidth]{./VPL/Thymio_VPL_window}\\
   Thymio VPL Event and Action blocks
 \end{center}
 
@@ -184,7 +166,7 @@ This placeholder is the base of every Thymio VPL program, it contains exactly on
 This means that whenever the event of the event block happens then the set of actions added to this placeholder will occur at the same time. 
 For example, with the following pair: \\
 \begin{center}
-  \includegraphics[scale=0.5]{./VPL/middlebtn_forward}
+  \includegraphics[scale=0.5]{./VPL/middlebtn_forward}\\
   Event and one Action relation
 \end{center}
 
@@ -192,14 +174,14 @@ Both wheels are powered to the maximum when the middle button is pressed. But mo
 to do so simply drag another action block onto the previous pair, notice that the same block cannot be used twice for the same event. 
 Here we turned the lights on top and set them to a complete green:\\
 \begin{center}
-  \includegraphics[scale=0.5]{./VPL/middlebtn_forward_green}
+  \includegraphics[scale=0.5]{./VPL/middlebtn_forward_green}\\
   Event and multiple Actions relation
 \end{center}
 
 The maximum amount of action blocks we can add to an event is four, but we can add as many event blocks to our program as we want. 
 Let us add two more event blocks to allow the robot to turn:\\
 \begin{center}
-  \includegraphics[scale=0.5]{./VPL/middlebtn_3E}
+  \includegraphics[scale=0.5]{./VPL/middlebtn_3E}\\
   Event and Actions relations
 \end{center}
 
@@ -215,7 +197,7 @@ Afterward, the event “timer elapsed” will be triggered but which pair should
 Hence comes the use of the condition as we will execute the part of the program that corresponds to the state of the condition light. 
 In this example, it will go back and forth between the two pairs: \\
 \begin{center}
-  \includegraphics[scale=0.5]{./VPL/middlebtn_3E_adv}
+  \includegraphics[scale=0.5]{./VPL/middlebtn_3E_adv}\\
   Advanced program
 \end{center}
 
@@ -246,7 +228,7 @@ Each block holds a pre-assigned shape, thus restraining its usage to certain sit
 both external and internal, while external blocks describe what happens after or before, the internals describe what happens during or what are the arguments, logic. 
 Following is a basic variable block with three external connectors, and a math block with the value of one, with one connector, that is assigned to the \texttt{Count} variable (the blocks need to be assembled). \\
 \begin{center}
-  \includegraphics[scale=0.5]{./Blockly/basic_variable}
+  \includegraphics[scale=0.5]{./Blockly/basic_variable}\\
   Variable block
 \end{center}
 
@@ -254,7 +236,7 @@ Using the same logic as above we created a \texttt{Limit} variable with the valu
 The block used is from the logic family and test whether the \texttt{Count} variable is smaller or equal to the \texttt{Limit} as internal blocks. 
 It can then be added to a loop, a function or other statements that needs logic.\\
 \begin{center}
-  \includegraphics[scale=0.5]{./Blockly/basic_logic}
+  \includegraphics[scale=0.5]{./Blockly/basic_logic}\\
   Logic block
 \end{center}
 
@@ -271,21 +253,21 @@ The environment window that opens after choosing the Blockly option is split int
 \end{enumerate}
 
 \begin{center}
-  \includegraphics[scale=0.5]{./Blockly/blockly_window}
+  \includegraphics[scale=0.5]{./Blockly/blockly_window}\\
   Thymio Blockly window
 \end{center}
 
 The following figure demonstrates a simple program, once run the program listens to two different events. When the center button is pressed and when the front middle proximity sensor detects a wall. 
 The first one will activate the two motors at the same speed, as to drive forward, and light the top LED to green. Whereas the second will stop the motors and turn the LED to red. \\
 \begin{center}
-  \includegraphics[scale=0.5]{./Blockly/forward_stop_wall}
+  \includegraphics[scale=0.5]{./Blockly/forward_stop_wall}\\
   Basic program
 \end{center}
 
 Here we set a variable to act as a control if Thymio is moving or not. We then use this information into a test when we click the middle button, and we either move forward or stop according to the result. 
 We added two other events for the right and left buttons that are responsible to turn the robot.
 \begin{center}
-  \includegraphics[scale=0.5]{./Blockly/advanced_program}
+  \includegraphics[scale=0.5]{./Blockly/advanced_program}\\
   More complex program
 \end{center}
 
@@ -316,6 +298,7 @@ Flückiger Quentin flucq1@bfh.ch
   \item The product owner wants to satisfy the customer.
 \end{itemize}
 
+
 \textbf{Development Team}
 Flückiger Quentin flucq1@bfh.ch
 \textit{Interests}:
@@ -324,8 +307,8 @@ Flückiger Quentin flucq1@bfh.ch
 \end{itemize}
 
 \subsection{User Stories}
-\textbf{\large Users User Stories}
-As a user, I want to uplaod an .aesl file, so that I can witness the simulated behaviour. \\
+\textbf{\large Users User Stories}\\
+\textbf{As} a user, I want to uplaod an .aesl file, so that I can witness the simulated behaviour. \\
 Description:\\
 The user wants to upload an .aesl file to see the programmed behaviour simulated.
 Success:\\
@@ -338,7 +321,8 @@ Failure:\\
   \item The .aesl file contains behaviour not included in the simulator.
 \end{itemize}
 
-As a user, I want to create a simple testing environment, so that I can diversify the experiences. \\
+
+\textbf{As} a user, I want to create a simple testing environment, so that I can diversify the experiences. \\
 Description:\\
 The user wants to create home made playground with a simple playground creation tool.
 Success:\\
@@ -351,7 +335,8 @@ Failure:\\
   \item The user encounters trouble while creating the playground, be it meshes creation or placement.
 \end{itemize}
 
-As a user, I want to use the application without having to install anything, so that the application can be accessed easily. \\
+
+\textbf{As} a user, I want to use the application without having to install anything, so that the application can be accessed easily. \\
 Description:\\
 The user wants to access and use the application without installing anything.
 Success:\\
@@ -382,7 +367,7 @@ Write about the mvc, the interpreter pattern (?if used), problems because the th
 
 \section{Usefull latex commands (to be deleted later on)}
 \lstset{language=JavaScript}
-\begin{lstlisting}{basicstyle=\ttfamily\small}
+\begin{lstlisting}[basicstyle=\ttfamily\small]
   function generateBox(color, width, height, depth){
 
     var geometry = new THREE.BoxGeometry( width, height, depth );
@@ -407,7 +392,7 @@ which is very interesting, much more than the article
   3 & Basic Learning & Learning and training of the different technology used later on & High & 44 & 58 & 58 & Done \\ 
   4 & Develop Playgrounds & Create playgrounds and function to generate meshes & High & 40 & 48 & 48 & Done \\ 
   5 & Update Documentation & Update existing documentation & High &  &  &  & In-Progress \\
-  6 & Architecture Implementation & Refactor the existing code into the designed architecture & High & 40 & 48 &  & In-Progress}\\ 
+  6 & Architecture Implementation & Refactor the existing code into the designed architecture & High & 40 & 48 &  & In-Progress\\ 
   7 & Web Deployement & Deploy the application on a webserver & High & 16 & 12 & 12 & Done \\ 
   8 & Basic UI & Implement a basic UI & Low & 8 & 4 &  & In-Progress \\ 
   9 & Behaviour Pipeline & Create pipeline to take .aesl file and translate/compile it into behaviour in javascript for the Thymio II & High &  &  &  & To Do \\ 
@@ -452,21 +437,21 @@ which is very interesting, much more than the article
 \textbf{2019-10-28 until 2019-11-15}
 \begin{longtable}{p{5mm}|p{2cm}|p{4cm}|p{1cm}|p{1cm}|p{1cm}|p{1cm}|p{1cm}}
   ID                     & Story Name & Story / Task Description & Priority & Est. Effort {[}h{]} & Update Effort {[}h{]} & Actual Effort{[}h{]} & Status                \\ \hline
-  5 & Update Documentation & Update existing documentation & High &  &  &  & In-Progress \\
-  5.1 & Four supported languages & Descibe and initiate to VPL, Blockly, Aseba and Scratch & High & 32 & 24 &  & In-Progress \\ 
-  5.2 & Backlogs & Create the Sprint and Project backlog & High & 12 & 8 &  & In-Progress \\ 
-  5.3 & Architecture & Create DCD, DM, PD, SD, SSD and proposition of architecture & High & 20 & 4 &  & In-Progress \\
+  5 & Update Documentation & Update existing documentation & High &  &  &  & In Progress \\
+  5.1 & Four supported languages & Descibe and initiate to VPL, Blockly, Aseba and Scratch & High & 32 & 24 &  & In Progress \\ 
+  5.2 & Backlogs & Create the Sprint and Project backlog & High & 12 & 8 & 16 & Done \\ 
+  5.3 & Architecture & Create DCD, DM, PD, SD, SSD and proposition of architecture & High & 20 & 4 &  & In Progress \\
   5.4 & User Stories & Formulate the User Stories & Medium & 8 &  &  & To Do \\ 
   5.5 & Risk Analysis & Create risk analysis & High & 12 &  &  & To Do \\ 
-  6 & Architecture Implementation & Refactor the existing code into the designed architecture & High & 40 & 48 &  & In-Progress \\ 
+  6 & Architecture Implementation & Refactor the existing code into the designed architecture & High & 40 & 48 &  & In Progress \\ 
   6.1 & Refactor Code & Refactor existing code into MVC Pattern & High & 20 & 44 & 44 & Done \\ 
   6.3 & Unit Testing & Write the JavaScript tests & High & 12 &  &  & To Do \\
-  6.4 & JSDoc & Write the JavaScriptDoc & High & 8 & 4 &  & In-Progress \\ 
+  6.4 & JSDoc & Write the JavaScriptDoc & High & 8 & 4 & . & In-Progress \\ 
   7 & Web Deployement & Deploy the application on a webserver & High & 16 & 12 & 12 & Done \\ 
   7.1 & Virtual Machine Setup & Set up the Virtual machine & High & 8 & 4 & 4 & Done \\ 
   7.2 & WebServer & Create WebServer and publish it on bfh network & High & 8 & 8 & 8 & Done \\
-  8 & Basic UI & Implement a basic UI & Low & 8 & 4 &  & In-Progress \\ 
-  8.1 & Pages UI & Create three pages UI, one for each of the following index, simulation and creation pages & Low & 8 & 4 &  & In-Progress
+  8 & Basic UI & Implement a basic UI & Low & 8 & 4 &  & In Progress \\ 
+  8.1 & Pages UI & Create three pages UI, one for each of the following index, simulation and creation pages & Low & 8 & 4 &  & In Progress \\
 \end{longtable}
 
 \subsubsection{Fourth Sprint}
@@ -492,11 +477,11 @@ which is very interesting, much more than the article
   13 & Update Documentation & Update existing documentation and elaborate use cases and diagrams & High &  &  &  & To Do \\ 
   14 & Enhanced Behaviour Pipeline & Implement more sensors, action and event for Thymio II & High &  &  &  & To Do \\ 
   15 & Finish Documentation & Finish existing documentation & High &  &  &  & To Do \\
-  15.1 & Create Video & Create the video file & High &  &  &  & To Do} \\ 
-  15.2 & Prepare Presentation Day & Create the poster and the presentation for the Presentation Day & High &  &  &  & To Do} \\
-  15.3 & Write in the Book & Write the page for the Book & High & 8 & 4 &  & To Do} \\ 
-  15.4 & Finish Writting Documentation & Terminate the writting part of the documentation & High &  &  &  & To Do} \\ 
-  15.5 & Prepare to Submit & Check spelling mistake, check images, print it, put the project on a USB stick & High &  &  &  & To Do} \\ \hline
+  15.1 & Create Video & Create the video file & High &  &  &  & To Do \\ 
+  15.2 & Prepare Presentation Day & Create the poster and the presentation for the Presentation Day & High &  &  &  & To Do \\
+  15.3 & Write in the Book & Write the page for the Book & High & 8 & 4 &  & To Do \\ 
+  15.4 & Finish Writting Documentation & Terminate the writting part of the documentation & High &  &  &  & To Do \\ 
+  15.5 & Prepare to Submit & Check spelling mistake, check images, print it, put the project on a USB stick & High &  &  &  & To Do\\ \hline
 \end{longtable}
 
 \subsubsection{Seventh Sprint}
@@ -507,7 +492,7 @@ which is very interesting, much more than the article
 \end{longtable}
 
 \subsection{Gantt Diagram}
-\includepdf[pages=-, pagecommand={}, width=\textwidth]{Thymio_web_simulation_Gantt.pdf}
+%%\includepdf[pages=-, pagecommand={}, width=\textwidth]{Thymio_web_simulation_Gantt.pdf}
 
 \subsection{Version control}
 
@@ -529,10 +514,10 @@ On demand.\\
     MacOS & terminal & Microsoft Remote Desktop \\
     \hline
   \end{tabular}
-\end{center}\\
+\end{center}
 
 See link bellow for more information and links. (It requires to be inside the bfh networkd to access it)
-\url{https://intranet.bfh.ch/TI/fr/Studium/Bachelor/Informatik/Tools/VMsHowto/Pages/default.aspx?k=vm}\\
+\url{https://intranet.bfh.ch/TI/fr/Studium/Bachelor/Informatik/Tools/VMsHowto/Pages/default.aspx?k=vm}
 
 \textbf{First Configuration of IIS manager}\\
 
@@ -555,8 +540,7 @@ With this specified the website is now accessible from within the LAN at the fol
 It was needed to create a web.config file and add a few file extension so that the .mtl and .obj would still be able to load. 
 Otherwise we encountered an error of the type "Failed to load resource: the server responded with a status of 404 (Not Found)." 
 The text that needed to be added to the web.config file is the following : \\
-\lstset{language=XML}
-\begin{lstlisting}{basicstyle=\ttfamily\small}
+\begin{lstlisting}[language=XML, basicstyle=\ttfamily\small]
 <?xml version="1.0" encoding="UTF-8"?>
   <configuration>
     <system.webServer>
