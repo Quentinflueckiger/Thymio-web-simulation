@@ -46,6 +46,12 @@
 \usepackage{pdfpages}
 \usepackage{longtable}
 
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=false, 
+    linktoc=all
+}
+
 \begin{document}
 
 \title{Web Simulation of a Thymio Robot}
@@ -185,7 +191,7 @@ Let us add two more event blocks to allow the robot to turn:\\
   Event and Actions relations
 \end{center}
 
-Now we have a basic behavior, go straight with green lights when the middle button is pushed, turn left on itself with orange lights when the left button is pushed, 
+Now we have a basic behaviour, go straight with green lights when the middle button is pushed, turn left on itself with orange lights when the left button is pushed, 
 and at last turn right on itself with yellow lights when the right button is pushed.\\
 
 By clicking the button with a student as an icon we enable the advanced mode that gives us more possibilities for multiple blocks. It raises the amount of action block from four to six as well. \\
@@ -277,18 +283,40 @@ We added two other events for the right and left buttons that are responsible to
 \section{Requirements Documentation}
 \subsection{Vision}
 
+A start-up from the EPFL has developed a robot, the Thymio robot or Thymio II, that promotes the programming and robotic activities among children. 
+To feed program to the robot, a software has been developed, it integrates the four following programming languages: 
+\begin{itemize}
+  \item VPL
+  \item Blockly4Thymio
+  \item Aseba
+  \item Scratch
+\end{itemize}
+
+The project Web Simulation of a Thymio robot is aimed to create a simulator for the Thymio II so as to allow people to see their programmed behaviour directly.
 
 \subsection{Goals}
 \begin{center}
   \includegraphics[width=\textwidth]{./goals}
 \end{center}
 
-\subsection{System Boundaries}
-\subsection{Requirements}
+\subsection{System Context}
+%%\subsection{Requirements}
 \subsection{Risk Analysis}
-Hack via .aesl as we execute the code if some code with malicious is fed we still execute it.
-What happens if part of the project aren't implemented ? How to bypass blockade? Security?
-No financial risks.
+In order to carry out the project successfully, we must consider the following possible complications. The possible complications are on one hand assessed according to their impact and on the other hand according to their likelihood to occur. 
+Thus, we obtain a predictable risk factor that allows us to have an overall view and take preventive measures if necessary.
+
+\begin{center}
+  \includegraphics[width=\textwidth]{./risk-matrix}\\
+  Risk Matrix
+\end{center}
+
+\begin{table}{p{1cm} p{1cm} p{1cm} p{1cm}}
+  Event & Likelihood (A) & Impact (B) & Risk Factor (A*B) \\ \hline
+  Financial issues & 0 & 1 & 0 \\
+  Collisions not implemented & 0.3 & 0.6 & 0.18 \\
+  Behaviour pipeline not working & 0.4 & 0.9 & 0.36 \\
+  Playground creator not working & 0.4 & 0.6 & 0.24 \\
+\end{table}
 
 \subsection{Stakeholder Descriptions}
 \textbf{Product Owner}
@@ -356,14 +384,21 @@ WeBots / Aseba logiciel
 \section{Three JS}
 
 \section{Architecture}
+Proposed architecture for the simulator.
+\begin{center}
+  \includegraphics[width=\textwidth]{./architecture_proposal-Page-1}
+\end{center}
+
+Proposed architecture for the playground creator.
+\begin{center}
+  \includegraphics[width=\textwidth]{./architecture_proposal-Page-2}
+\end{center}
+
 Domain class diagrams,
 Domain model,
 Package diagram,
 Sequence diagram,
 System sequence diagram
-
-Write about the mvc, the interpreter pattern (?if used), problems because the three languages write files differently. All with the .aesl extension but not the same content format.
-
 
 \section{Usefull latex commands (to be deleted later on)}
 \lstset{language=JavaScript}
@@ -387,22 +422,23 @@ which is very interesting, much more than the article
 \subsection{Product Backlog}
 \begin{longtable}{p{5mm}|p{2cm}|p{4cm}|p{1cm}|p{1cm}|p{1cm}|p{1cm}|p{1cm}}
   ID                     & Story Name & Story / Task Description & Priority & Est. Effort {[}h{]} & Update Effort {[}h{]} & Actual Effort{[}h{]} & Status                \\ \hline
-  1 & Create Documentation & Develop and write the documentation & High & 108 & 52 &  & In-Progress \\ 
+  1 & Create Documentation & Develop and write the documentation & High & 16 & 16 & 16 & In-Progress \\ 
   2 & Set up the Environment & Setting up and configuring the development environment & High & 12 & 12 & 12 & Done \\ 
   3 & Basic Learning & Learning and training of the different technology used later on & High & 44 & 58 & 58 & Done \\ 
   4 & Develop Playgrounds & Create playgrounds and function to generate meshes & High & 40 & 48 & 48 & Done \\ 
-  5 & Update Documentation & Update existing documentation & High &  &  &  & In-Progress \\
+  5 & Update Documentation & Update existing documentation & High & 60 &  &  & In-Progress \\
   6 & Architecture Implementation & Refactor the existing code into the designed architecture & High & 40 & 48 &  & In-Progress\\ 
   7 & Web Deployement & Deploy the application on a webserver & High & 16 & 12 & 12 & Done \\ 
   8 & Basic UI & Implement a basic UI & Low & 8 & 4 &  & In-Progress \\ 
-  9 & Behaviour Pipeline & Create pipeline to take .aesl file and translate/compile it into behaviour in javascript for the Thymio II & High &  &  &  & To Do \\ 
-  10 & Phyisics Implementation & Implementation of Collisions for ThreeJS Meshes & High &  &  &  & To Do \\ 
-  11 & Enhanced UI & Enhancement of the current UI & Low &  &  &  & To Do \\ 
-  12 & Customizable Playgrounds & Implementation of a playground creator for users & High &  &  &  & To Do \\ 
-  13 & Update Documentation & Update existing documentation and elaborate use cases and diagrams & High &  &  &  & To Do \\ 
-  14 & Enhanced Behaviour Pipeline & Implement more sensors, action and event for Thymio II & High &  &  &  & To Do \\ 
-  15 & Finish Documentation & Finish existing documentation & High &  &  &  & To Do \\
-  16 & Prepare Defense & Prepare the defense & High &  &  &  & To Do \\ 
+  9 & Behaviour Pipeline & Create pipeline to take .aesl file and translate/compile it into behaviour in javascript for the Thymio II & High & 40 &  &  & To Do \\ 
+  10 & Phyisics Implementation & Implementation of Collisions for ThreeJS Meshes & High & 20 &  &  & To Do \\ 
+  11 & Update Documentation & Update existing documentation & High & 20 &  &  & To Do \\ 
+  12 & Enhanced UI & Enhancement of the current UI & Low &  &  &  & To Do \\ 
+  13 & Customizable Playgrounds & Implementation of a playground creator for users & High &  &  &  & To Do \\ 
+  14 & Update Documentation & Update existing documentation & High & 20 &  &  & To Do \\ 
+  15 & Enhanced Behaviour Pipeline & Implement more sensors, action and event for Thymio II & High &  &  &  & To Do \\ 
+  16 & Finish Documentation & Finish existing documentation & High &  &  &  & To Do \\
+  17 & Prepare Defense & Prepare the defense & High &  &  &  & To Do \\ 
    &  &  & Total &  &  &  &  \\ 
 \end{longtable}
 
@@ -431,64 +467,67 @@ which is very interesting, much more than the article
   4.1 & Two Default Playgrounds & Generating two defalut playground to be choosen for the simulator & Medium & 12 & 12 & 12 & Done \\ 
   4.2 & Thymio Model & Create or load Thymio model & Medium & 4 & 4 & 4 & Done \\ 
   4.3 & Mesh Generation & Create function to generate meshes for the playgrounds & High & 24 & 32 & 32 & Done \\ 
+  5 & Update Documentation & Update existing documentation & High & 60 & 12 &  & In-Progress \\
+  5.1 & Four supported languages & Descibe and initiate to VPL, Blockly, Aseba and Scratch & High & 24 & 12 & {/} & In-Progress \\ 
 \end{longtable}
 
 \subsubsection{Third Sprint}
 \textbf{2019-10-28 until 2019-11-15}
 \begin{longtable}{p{5mm}|p{2cm}|p{4cm}|p{1cm}|p{1cm}|p{1cm}|p{1cm}|p{1cm}}
   ID                     & Story Name & Story / Task Description & Priority & Est. Effort {[}h{]} & Update Effort {[}h{]} & Actual Effort{[}h{]} & Status                \\ \hline
-  5 & Update Documentation & Update existing documentation & High &  &  &  & In Progress \\
-  5.1 & Four supported languages & Descibe and initiate to VPL, Blockly, Aseba and Scratch & High & 32 & 24 &  & In Progress \\ 
+  5 & Update Documentation & Update existing documentation & High & 60 &  &  & In-Progress \\
+  5.1 & Four supported languages & Descibe and initiate to VPL, Blockly, Aseba and Scratch & High & 24 & 24 &  & In-Progress \\ 
   5.2 & Backlogs & Create the Sprint and Project backlog & High & 12 & 8 & 16 & Done \\ 
-  5.3 & Architecture & Create DCD, DM, PD, SD, SSD and proposition of architecture & High & 20 & 4 &  & In Progress \\
-  5.4 & User Stories & Formulate the User Stories & Medium & 8 &  &  & To Do \\ 
-  5.5 & Risk Analysis & Create risk analysis & High & 12 &  &  & To Do \\ 
-  6 & Architecture Implementation & Refactor the existing code into the designed architecture & High & 40 & 48 &  & In Progress \\ 
+  5.3 & Architecture & Create DCD, DM, PD, SD, SSD and proposition of architecture & High & 12 & 4 &  & In-Progress \\
+  5.4 & User Stories & Formulate the User Stories & Medium & 4 & 4 & 4 & To Do \\ 
+  5.5 & Risk Analysis & Create risk analysis & High & 8 &  &  & To Do \\ 
+  6 & Architecture Implementation & Refactor the existing code into the designed architecture & High & 40 & 48 &  & In-Progress \\ 
   6.1 & Refactor Code & Refactor existing code into MVC Pattern & High & 20 & 44 & 44 & Done \\ 
   6.3 & Unit Testing & Write the JavaScript tests & High & 12 &  &  & To Do \\
-  6.4 & JSDoc & Write the JavaScriptDoc & High & 8 & 4 & . & In-Progress \\ 
+  6.4 & JSDoc & Write the JavaScriptDoc & High & 8 & 4 &  & In-Progress \\ 
   7 & Web Deployement & Deploy the application on a webserver & High & 16 & 12 & 12 & Done \\ 
   7.1 & Virtual Machine Setup & Set up the Virtual machine & High & 8 & 4 & 4 & Done \\ 
   7.2 & WebServer & Create WebServer and publish it on bfh network & High & 8 & 8 & 8 & Done \\
-  8 & Basic UI & Implement a basic UI & Low & 8 & 4 &  & In Progress \\ 
-  8.1 & Pages UI & Create three pages UI, one for each of the following index, simulation and creation pages & Low & 8 & 4 &  & In Progress \\
+  8 & Basic UI & Implement a basic UI & Low & 8 & 4 &  & In-Progress \\ 
+  8.1 & Pages UI & Create three pages UI, one for each of the following index, simulation and creation pages & Low & 8 & 4 &  & In-Progress \\
 \end{longtable}
 
 \subsubsection{Fourth Sprint}
 \textbf{2019-11-15 until 2019-12-09}
 \begin{longtable}{p{5mm}|p{2cm}|p{4cm}|p{1cm}|p{1cm}|p{1cm}|p{1cm}|p{1cm}}
   ID                     & Story Name & Story / Task Description & Priority & Est. Effort {[}h{]} & Update Effort {[}h{]} & Actual Effort{[}h{]} & Status                \\ \hline
-  9 & Behaviour Pipeline & Create pipeline to take .aesl file and translate/compile it into behaviour in javascript for the Thymio II & High &  &  &  & To Do \\ 
-  10 & Phyisics Implementation & Implementation of Collisions for ThreeJS Meshes & High &  &  &  & To Do \\ 
+  9 & Behaviour Pipeline & Create pipeline to take .aesl file and translate/compile it into behaviour in javascript for the Thymio II & High & 40 &  &  & To Do \\ 
+  10 & Phyisics Implementation & Implementation of Collisions for ThreeJS Meshes & High & 20 &  &  & To Do \\
+  11 & Update Documentation & Update existing documentation & High & 20 &  &  & To Do \\ 
 \end{longtable}
 
 \subsubsection{Fifth Sprint}
 \textbf{2019-12-09 until 2019-12-30}
 \begin{longtable}{p{5mm}|p{2cm}|p{4cm}|p{1cm}|p{1cm}|p{1cm}|p{1cm}|p{1cm}}
   ID                     & Story Name & Story / Task Description & Priority & Est. Effort {[}h{]} & Update Effort {[}h{]} & Actual Effort{[}h{]} & Status                \\ \hline
-  11 & Enhanced UI & Enhancement of the current UI & Low &  &  &  & To Do \\ 
-  12 & Customizable Playgrounds & Implementation of a playground creator for users & High &  &  &  & To Do \\ 
+  12 & Enhanced UI & Enhancement of the current UI & Low & 10 &  &  & To Do \\ 
+  13 & Customizable Playgrounds & Implementation of a playground creator for users & High & 40 &  &  & To Do \\ 
+  14 & Update Documentation & Update existing documentation & High & 20 &  &  & To Do \\ 
 \end{longtable}
 
 \subsubsection{Sixth Sprint}
-\textbf{2019-12-30 until 2020-01-18}
+\textbf{2019-12-30 until 2020-01-17}
 \begin{longtable}{p{5mm}|p{2cm}|p{4cm}|p{1cm}|p{1cm}|p{1cm}|p{1cm}|p{1cm}}
   ID                     & Story Name & Story / Task Description & Priority & Est. Effort {[}h{]} & Update Effort {[}h{]} & Actual Effort{[}h{]} & Status                \\ \hline
-  13 & Update Documentation & Update existing documentation and elaborate use cases and diagrams & High &  &  &  & To Do \\ 
-  14 & Enhanced Behaviour Pipeline & Implement more sensors, action and event for Thymio II & High &  &  &  & To Do \\ 
-  15 & Finish Documentation & Finish existing documentation & High &  &  &  & To Do \\
-  15.1 & Create Video & Create the video file & High &  &  &  & To Do \\ 
-  15.2 & Prepare Presentation Day & Create the poster and the presentation for the Presentation Day & High &  &  &  & To Do \\
-  15.3 & Write in the Book & Write the page for the Book & High & 8 & 4 &  & To Do \\ 
-  15.4 & Finish Writting Documentation & Terminate the writting part of the documentation & High &  &  &  & To Do \\ 
-  15.5 & Prepare to Submit & Check spelling mistake, check images, print it, put the project on a USB stick & High &  &  &  & To Do\\ \hline
+  15 & Enhanced Behaviour Pipeline & Implement more sensors, action and event for Thymio II & High &  &  &  & To Do \\ 
+  16 & Finish Documentation & Finish existing documentation & High &  &  &  & To Do \\
+  16.1 & Create Video & Create the video file & High &  &  &  & To Do \\ 
+  16.2 & Prepare Presentation Day & Create the poster and the presentation for the Presentation Day & High &  &  &  & To Do \\
+  16.3 & Write in the Book & Write the page for the Book & High & 8 & 4 &  & To Do \\ 
+  16.4 & Finish Writting Documentation & Terminate the writting part of the documentation & High &  &  &  & To Do \\ 
+  16.5 & Prepare to Submit & Check spelling mistake, check images, print it, put the project on a USB stick & High &  &  &  & To Do\\ \hline
 \end{longtable}
 
 \subsubsection{Seventh Sprint}
-\textbf{2020-01-18 until 2020-01-end}
+\textbf{2020-01-17 until 2020-01-end}
 \begin{longtable}{p{5mm}|p{2cm}|p{4cm}|p{1cm}|p{1cm}|p{1cm}|p{1cm}|p{1cm}}
   ID                     & Story Name & Story / Task Description & Priority & Est. Effort {[}h{]} & Update Effort {[}h{]} & Actual Effort{[}h{]} & Status                \\ \hline
-  16 & Prepare Defense & Prepare the defense & High &  &  &  & To Do \\ 
+  17 & Prepare Defense & Prepare the defense & High &  &  &  & To Do \\ 
 \end{longtable}
 
 \subsection{Gantt Diagram}
