@@ -48,11 +48,15 @@
 
 \usepackage{hyperref}
 \hypersetup{
-    colorlinks=false, 
-    linktoc=all
+    colorlinks=true, 
+    linktoc=all,
+    urlcolor     = black, %Colour for external hyperlinks
+    linkcolor    = black, %Colour of internal links
+    citecolor   = black %Colour of citations
 }
 
 \begin{document}
+
 
 \title{Web Simulation of a Thymio Robot}
 \date{\today}   %% or \date{01 november 2018}
@@ -61,8 +65,8 @@
 
 
 
-
 \maketitle
+\includegraphics[width=\textwidth]{./title}
 \clearpage
 
 Declaration of Authorship
@@ -209,7 +213,7 @@ In this example, it will go back and forth between the two pairs: \\
 
 \subsubsection{Blockly 4 Thymio}
 
-The second possibility is to use Blockly4Thymio which is an environment based on Blockly. Blockly was released in May 2012 and was initially a replacement for OpenBlocks for the MIT App Inventor. 
+The second possibility is to use \texttt{Blockly4Thymio} which is an environment based on Blockly. Blockly was released in May 2012 and was initially a replacement for OpenBlocks for the \texttt{MIT App Inventor}. 
 It is an open-source client-side library that allows its users to easily add a block-based visual programming language to an application or website. 
 Blockly is not in itself a programming language but rather used to create one. Its design makes it flexible and it can support a large set of features. 
 As it is a visual programming language, we find the same advantages as the first possibility, such for example applying programming principles with no regard towards syntactic error.
@@ -246,9 +250,9 @@ It can then be added to a loop, a function or other statements that needs logic.
   Logic block
 \end{center}
 
-Added to the base that Blockly is for Blockly4Thymio, is a compilator that interpret and adapt the Blockly code directly into Aseba language, and an Aseba Framework. 
-Let us once again follow the steps described in the “How does it works” section in order to start blockly-ing a little program with Blockly4Thymio. 
-Note that it is possible to open the Thymio Blockly environment without going through the Thymio suite, and without any Thymio II connected (physically or simulated). 
+Added to the base that Blockly is for \texttt{Blockly4Thymio}, is a compilator that interpret and adapt the Blockly code directly into Aseba language, and an Aseba Framework. 
+Let us once again follow the steps described in the “How does it works” section in order to start blockly-ing a little program with \texttt{Blockly4Thymio}. 
+Note that it is possible to open the \texttt{Thymio Blockly} environment without going through the Thymio suite, and without any Thymio II connected (physically or simulated). 
 To do so open the location of Thymio, the downloaded not the installed, and select thymio\textunderscore blockly, and then index.
 The environment window that opens after choosing the Blockly option is split into four parts.
 \begin{enumerate}
@@ -310,17 +314,17 @@ Thus, we obtain a predictable risk factor that allows us to have an overall view
   Risk Matrix
 \end{center}
 
-\begin{table}{p{1cm} p{1cm} p{1cm} p{1cm}}
+\begin{tabular}{p{2cm} p{2cm} p{2cm} p{2cm}}
   Event & Likelihood (A) & Impact (B) & Risk Factor (A*B) \\ \hline
   Financial issues & 0 & 1 & 0 \\
   Collisions not implemented & 0.3 & 0.6 & 0.18 \\
   Behaviour pipeline not working & 0.4 & 0.9 & 0.36 \\
   Playground creator not working & 0.4 & 0.6 & 0.24 \\
-\end{table}
+\end{tabular}
 
 \subsection{Stakeholder Descriptions}
 \textbf{Product Owner}
-Flückiger Quentin flucq1@bfh.ch
+Flückiger Quentin flucq1@bfh.ch \\
 \textit{Interests}:
 \begin{itemize}
   \item The product owner wants to satisfy the customer.
@@ -328,7 +332,7 @@ Flückiger Quentin flucq1@bfh.ch
 
 
 \textbf{Development Team}
-Flückiger Quentin flucq1@bfh.ch
+Flückiger Quentin flucq1@bfh.ch \\
 \textit{Interests}:
 \begin{itemize}
   \item The development team wants to develop a usefull application for the customer.
@@ -376,29 +380,25 @@ Failure:\\
   \item The webserver isn't accessible.
 \end{itemize}
 
-\subsection{Use Cases Model}
-Use case diagram
+%%\subsection{Use Cases Model}
+%%Use case diagram
 
 \section{What already exist} 
 WeBots / Aseba logiciel
 \section{Three JS}
 
 \section{Architecture}
-Proposed architecture for the simulator.
 \begin{center}
   \includegraphics[width=\textwidth]{./architecture_proposal-Page-1}
 \end{center}
+Proposed architecture for the simulator.
 
-Proposed architecture for the playground creator.
 \begin{center}
   \includegraphics[width=\textwidth]{./architecture_proposal-Page-2}
 \end{center}
+Proposed architecture for the playground creator.
 
-Domain class diagrams,
-Domain model,
-Package diagram,
-Sequence diagram,
-System sequence diagram
+%% Domain class diagrams, Domain model, Package diagram, Sequence diagram, System sequence diagram
 
 \section{Usefull latex commands (to be deleted later on)}
 \lstset{language=JavaScript}
@@ -420,7 +420,7 @@ which is very interesting, much more than the article
 
 \section{Appendices}
 \subsection{Product Backlog}
-\begin{longtable}{p{5mm}|p{2cm}|p{4cm}|p{1cm}|p{1cm}|p{1cm}|p{1cm}|p{1cm}}
+\begin{longtable}{p{5mm}|p{2cm}|p{4cm}|p{1cm}|p{1cm}|p{1cm}|p{1cm}|p{15mm}}
   ID                     & Story Name & Story / Task Description & Priority & Est. Effort {[}h{]} & Update Effort {[}h{]} & Actual Effort{[}h{]} & Status                \\ \hline
   1 & Create Documentation & Develop and write the documentation & High & 16 & 16 & 16 & In-Progress \\ 
   2 & Set up the Environment & Setting up and configuring the development environment & High & 12 & 12 & 12 & Done \\ 
@@ -445,7 +445,7 @@ which is very interesting, much more than the article
 \subsection{Sprint Backlog}
 \subsubsection{First Sprint}
 \textbf{2019-09-16 until 2019-10-07}
-\begin{longtable}{p{5mm}|p{2cm}|p{4cm}|p{1cm}|p{1cm}|p{1cm}|p{1cm}|p{1cm}}
+\begin{longtable}{p{5mm}|p{2cm}|p{4cm}|p{1cm}|p{1cm}|p{1cm}|p{1cm}|p{15mm}}
   ID                     & Story Name & Story / Task Description & Priority & Est. Effort {[}h{]} & Update Effort {[}h{]} & Actual Effort{[}h{]} & Status                \\ \hline
   1 & Create Documentation & Develop and write the documentation & High & 16 & 16 & 16 & Done \\ 
   1.1 & Template and Content & Choose a latex template and modify the content structure & High & 8 & 8 & 8 & Done \\ 
@@ -457,7 +457,7 @@ which is very interesting, much more than the article
 
 \subsubsection{Second Sprint}
 \textbf{2019-10-07 until 2019-10-28}
-\begin{longtable}{p{5mm}|p{2cm}|p{4cm}|p{1cm}|p{1cm}|p{1cm}|p{1cm}|p{1cm}}
+\begin{longtable}{p{5mm}|p{2cm}|p{4cm}|p{1cm}|p{1cm}|p{1cm}|p{1cm}|p{15mm}}
   ID                     & Story Name & Story / Task Description & Priority & Est. Effort {[}h{]} & Update Effort {[}h{]} & Actual Effort{[}h{]} & Status                \\ \hline
   3 & Basic Learning & Learning and training of the different technology used later on & High & 44 & 58 & 58 & Done \\
   3.1 & ThreeJS & Read documentation and examples, and practice & High & 16 & 20 & 20 & Done \\ 
@@ -473,7 +473,7 @@ which is very interesting, much more than the article
 
 \subsubsection{Third Sprint}
 \textbf{2019-10-28 until 2019-11-15}
-\begin{longtable}{p{5mm}|p{2cm}|p{4cm}|p{1cm}|p{1cm}|p{1cm}|p{1cm}|p{1cm}}
+\begin{longtable}{p{5mm}|p{2cm}|p{4cm}|p{1cm}|p{1cm}|p{1cm}|p{1cm}|p{15mm}}
   ID                     & Story Name & Story / Task Description & Priority & Est. Effort {[}h{]} & Update Effort {[}h{]} & Actual Effort{[}h{]} & Status                \\ \hline
   5 & Update Documentation & Update existing documentation & High & 60 &  &  & In-Progress \\
   5.1 & Four supported languages & Descibe and initiate to VPL, Blockly, Aseba and Scratch & High & 24 & 24 &  & In-Progress \\ 
@@ -494,7 +494,7 @@ which is very interesting, much more than the article
 
 \subsubsection{Fourth Sprint}
 \textbf{2019-11-15 until 2019-12-09}
-\begin{longtable}{p{5mm}|p{2cm}|p{4cm}|p{1cm}|p{1cm}|p{1cm}|p{1cm}|p{1cm}}
+\begin{longtable}{p{5mm}|p{2cm}|p{4cm}|p{1cm}|p{1cm}|p{1cm}|p{1cm}|p{15mm}}
   ID                     & Story Name & Story / Task Description & Priority & Est. Effort {[}h{]} & Update Effort {[}h{]} & Actual Effort{[}h{]} & Status                \\ \hline
   9 & Behaviour Pipeline & Create pipeline to take .aesl file and translate/compile it into behaviour in javascript for the Thymio II & High & 40 &  &  & To Do \\ 
   10 & Phyisics Implementation & Implementation of Collisions for ThreeJS Meshes & High & 20 &  &  & To Do \\
@@ -503,7 +503,7 @@ which is very interesting, much more than the article
 
 \subsubsection{Fifth Sprint}
 \textbf{2019-12-09 until 2019-12-30}
-\begin{longtable}{p{5mm}|p{2cm}|p{4cm}|p{1cm}|p{1cm}|p{1cm}|p{1cm}|p{1cm}}
+\begin{longtable}{p{5mm}|p{2cm}|p{4cm}|p{1cm}|p{1cm}|p{1cm}|p{1cm}|p{15mm}}
   ID                     & Story Name & Story / Task Description & Priority & Est. Effort {[}h{]} & Update Effort {[}h{]} & Actual Effort{[}h{]} & Status                \\ \hline
   12 & Enhanced UI & Enhancement of the current UI & Low & 10 &  &  & To Do \\ 
   13 & Customizable Playgrounds & Implementation of a playground creator for users & High & 40 &  &  & To Do \\ 
@@ -512,7 +512,7 @@ which is very interesting, much more than the article
 
 \subsubsection{Sixth Sprint}
 \textbf{2019-12-30 until 2020-01-17}
-\begin{longtable}{p{5mm}|p{2cm}|p{4cm}|p{1cm}|p{1cm}|p{1cm}|p{1cm}|p{1cm}}
+\begin{longtable}{p{5mm}|p{2cm}|p{4cm}|p{1cm}|p{1cm}|p{1cm}|p{1cm}|p{15mm}}
   ID                     & Story Name & Story / Task Description & Priority & Est. Effort {[}h{]} & Update Effort {[}h{]} & Actual Effort{[}h{]} & Status                \\ \hline
   15 & Enhanced Behaviour Pipeline & Implement more sensors, action and event for Thymio II & High &  &  &  & To Do \\ 
   16 & Finish Documentation & Finish existing documentation & High &  &  &  & To Do \\
@@ -525,7 +525,7 @@ which is very interesting, much more than the article
 
 \subsubsection{Seventh Sprint}
 \textbf{2020-01-17 until 2020-01-end}
-\begin{longtable}{p{5mm}|p{2cm}|p{4cm}|p{1cm}|p{1cm}|p{1cm}|p{1cm}|p{1cm}}
+\begin{longtable}{p{5mm}|p{2cm}|p{4cm}|p{1cm}|p{1cm}|p{1cm}|p{1cm}|p{15mm}}
   ID                     & Story Name & Story / Task Description & Priority & Est. Effort {[}h{]} & Update Effort {[}h{]} & Actual Effort{[}h{]} & Status                \\ \hline
   17 & Prepare Defense & Prepare the defense & High &  &  &  & To Do \\ 
 \end{longtable}

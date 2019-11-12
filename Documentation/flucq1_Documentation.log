@@ -1,4 +1,4 @@
-This is LuaTeX, Version 1.07.0 (TeX Live 2018/W32TeX)  (format=lualatex 2018.10.2)  12 NOV 2019 11:32
+This is LuaTeX, Version 1.07.0 (TeX Live 2018/W32TeX)  (format=lualatex 2018.10.2)  12 NOV 2019 19:17
  restricted system commands enabled.
 **flucq1_Documentation.tex
 (./flucq1_Documentation.tex
@@ -32,7 +32,7 @@ Inserting `luaotfload.aux.set_capheight' at position 3 in `luaotfload.patch_font
 '.
 Inserting `luaotfload.rewrite_fontname' at position 4 in `luaotfload.patch_font'
 .
-luaotfload | main : initialization completed in 0.221 seconds (d:/Programmes/te
+luaotfload | main : initialization completed in 0.236 seconds (d:/Programmes/te
 xlive/2018/texmf-dist/tex/latex/koma-script/scrartcl.cls
 Document Class: scrartcl 2018/03/30 v3.25 KOMA-Script document class (article)
 (d:/Programmes/texlive/2018/texmf-dist/tex/latex/koma-script/scrkbase.sty
@@ -1417,6 +1417,100 @@ Package: longtable 2014/10/28 v4.11 Multi-page Table package (DPC)
 )
 Class scrartcl Info: longtable captions redefined on input line 48.
 
+(d:/Programmes/texlive/2018/texmf-dist/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2018/09/30 v6.88a Hypertext links for LaTeX
+
+(d:/Programmes/texlive/2018/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
+Package: hobsub-hyperref 2016/05/16 v1.14 Bundle oberdiek, subset hyperref (HO)
+(d:/Programmes/texlive/2018/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty
+Package: hobsub-generic 2016/05/16 v1.14 Bundle oberdiek, subset generic (HO)
+Package: hobsub 2016/05/16 v1.14 Construct package bundles (HO)
+Package hobsub Info: Skipping package `infwarerr' (already loaded).
+Package hobsub Info: Skipping package `ltxcmds' (already loaded).
+Package hobsub Info: Skipping package `ifluatex' (already loaded).
+Package: ifvtex 2016/05/16 v1.6 Detect VTeX and its facilities (HO)
+Package ifvtex Info: VTeX not detected.
+Package: intcalc 2016/05/16 v1.2 Expandable calculations with integers (HO)
+Package hobsub Info: Skipping package `ifpdf' (already loaded).
+Package hobsub Info: Skipping package `etexcmds' (already loaded).
+Package hobsub Info: Skipping package `kvsetkeys' (already loaded).
+Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
+Package: luatex-loader 2016/05/16 v0.6 Lua module loader (HO)
+
+(d:/Programmes/texlive/2018/texmf-dist/scripts/oberdiek/oberdiek.luatex.lua)
+Package hobsub Info: Skipping package `pdftexcmds' (already loaded).
+Package: pdfescape 2016/05/16 v1.14 Implements pdfTeX's escape features (HO)
+Package: bigintcalc 2016/05/16 v1.4 Expandable calculations on big integers (HO)
+
+Package: bitset 2016/05/16 v1.2 Handle bit-vector datatype (HO)
+Package: uniquecounter 2016/05/16 v1.3 Provide unlimited unique counter (HO)
+)
+Package hobsub Info: Skipping package `hobsub' (already loaded).
+Package: letltxmacro 2016/05/16 v1.5 Let assignment for LaTeX macros (HO)
+Package: hopatch 2016/05/16 v1.3 Wrapper for package hooks (HO)
+Package: xcolor-patch 2016/05/16 xcolor patch
+Package: atveryend 2016/05/16 v1.9 Hooks at the very end of document (HO)
+Package hobsub Info: Skipping package `atbegshi' (already loaded).
+Package: refcount 2016/05/16 v3.5 Data extraction from label references (HO)
+Package: hycolor 2016/05/16 v1.8 Color options for hyperref/bookmark (HO)
+)
+(d:/Programmes/texlive/2018/texmf-dist/tex/latex/oberdiek/auxhook.sty
+Package: auxhook 2016/05/16 v1.4 Hooks for auxiliary files (HO)
+)
+\@linkdim=\dimen160
+\Hy@linkcounter=\count417
+\Hy@pagecounter=\count418
+
+(d:/Programmes/texlive/2018/texmf-dist/tex/latex/hyperref/pd1enc.def
+File: pd1enc.def 2018/09/30 v6.88a Hyperref: PDFDocEncoding definition (HO)
+)
+\Hy@SavedSpaceFactor=\count419
+
+(d:/Programmes/texlive/2018/texmf-dist/tex/latex/latexconfig/hyperref.cfg
+File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
+)
+Package hyperref Info: Hyper figures OFF on input line 4535.
+Package hyperref Info: Link nesting OFF on input line 4540.
+Package hyperref Info: Hyper index ON on input line 4543.
+Package hyperref Info: Plain pages OFF on input line 4550.
+Package hyperref Info: Backreferencing OFF on input line 4555.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4788.
+\c@Hy@tempcnt=\count420
+LaTeX Info: Redefining \url on input line 5141.
+\XeTeXLinkMargin=\dimen161
+\Fld@menulength=\count421
+\Field@Width=\dimen162
+\Fld@charsize=\dimen163
+Package hyperref Info: Hyper figures OFF on input line 6396.
+Package hyperref Info: Link nesting OFF on input line 6401.
+Package hyperref Info: Hyper index ON on input line 6404.
+Package hyperref Info: backreferencing OFF on input line 6411.
+Package hyperref Info: Link coloring OFF on input line 6416.
+Package hyperref Info: Link coloring with OCG OFF on input line 6421.
+Package hyperref Info: PDF/A mode OFF on input line 6426.
+LaTeX Info: Redefining \ref on input line 6466.
+LaTeX Info: Redefining \pageref on input line 6470.
+\Hy@abspage=\count422
+\c@Item=\count423
+\c@Hfootnote=\count424
+)
+Package hyperref Info: Driver (autodetected): hluatex.
+
+(d:/Programmes/texlive/2018/texmf-dist/tex/latex/hyperref/hluatex.def
+File: hluatex.def 2018/09/30 v6.88a Hyperref driver for luaTeX
+\Fld@listcount=\count425
+\c@bookmark@seq@number=\count426
+
+(d:/Programmes/texlive/2018/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
+Package: rerunfilecheck 2016/05/16 v1.8 Rerun checks for auxiliary files (HO)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 28
+2.
+)
+\Hy@SectionHShift=\skip101
+)
+Package hyperref Info: Option `colorlinks' set `true' on input line 56.
+
 
 Package biblatex Warning: File 'english-ieee.lbx' not found!
 (biblatex)                Ignoring mapping 'english' -> 'english-ieee'.
@@ -1430,52 +1524,54 @@ File: english.lbx 2018/03/04 v3.11 biblatex localization (PK/MW)
 Package biblatex Warning: 'babel/polyglossia' detected but 'csquotes' missing.
 (biblatex)                Loading 'csquotes' recommended.
 
-\@quotelevel=\count417
-\@quotereset=\count418
+\@quotelevel=\count427
+\@quotereset=\count428
 (./flucq1_Documentation.aux)
 \openout1 = flucq1_Documentation.aux
 
-LaTeX Font Info:    Checking defaults for OML/jkp/m/it on input line 49.
-LaTeX Font Info:    Try loading font information for OML+jkp on input line 49.
+LaTeX Font Info:    Checking defaults for OML/jkp/m/it on input line 58.
+LaTeX Font Info:    Try loading font information for OML+jkp on input line 58.
 
 (d:/Programmes/texlive/2018/texmf-dist/tex/latex/kpfonts/omljkp.fd
 File: omljkp.fd 2006/08/15 v1.0
 )
-LaTeX Font Info:    ... okay on input line 49.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
-LaTeX Font Info:    Checking defaults for OMS/jkp/m/n on input line 49.
-LaTeX Font Info:    Try loading font information for OMS+jkp on input line 49.
+LaTeX Font Info:    ... okay on input line 58.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 58.
+LaTeX Font Info:    ... okay on input line 58.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 58.
+LaTeX Font Info:    ... okay on input line 58.
+LaTeX Font Info:    Checking defaults for OMS/jkp/m/n on input line 58.
+LaTeX Font Info:    Try loading font information for OMS+jkp on input line 58.
 
 (d:/Programmes/texlive/2018/texmf-dist/tex/latex/kpfonts/omsjkp.fd
 File: omsjkp.fd 2006/08/15 v1.0
 )
-LaTeX Font Info:    ... okay on input line 49.
-LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 49.
-LaTeX Font Info:    ... okay on input line 49.
-LaTeX Font Info:    Checking defaults for OMX/jkp/m/n on input line 49.
-LaTeX Font Info:    Try loading font information for OMX+jkp on input line 49.
+LaTeX Font Info:    ... okay on input line 58.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 58.
+LaTeX Font Info:    ... okay on input line 58.
+LaTeX Font Info:    Checking defaults for OMX/jkp/m/n on input line 58.
+LaTeX Font Info:    Try loading font information for OMX+jkp on input line 58.
 
 (d:/Programmes/texlive/2018/texmf-dist/tex/latex/kpfonts/omxjkp.fd
 File: omxjkp.fd 2006/08/15 v1.0
 )
-LaTeX Font Info:    ... okay on input line 49.
-LaTeX Font Info:    Checking defaults for U/jkpexa/m/n on input line 49.
-LaTeX Font Info:    Try loading font information for U+jkpexa on input line 49.
+LaTeX Font Info:    ... okay on input line 58.
+LaTeX Font Info:    Checking defaults for U/jkpexa/m/n on input line 58.
+LaTeX Font Info:    Try loading font information for U+jkpexa on input line 58.
 
 (d:/Programmes/texlive/2018/texmf-dist/tex/latex/kpfonts/ujkpexa.fd
 File: ujkpexa.fd 2006/08/15 v1.0
 )
-LaTeX Font Info:    ... okay on input line 49.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 49.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 49.
+LaTeX Font Info:    ... okay on input line 58.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 58.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 58.
 
 (d:/Programmes/texlive/2018/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 49.
+LaTeX Font Info:    ... okay on input line 58.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 58.
+LaTeX Font Info:    ... okay on input line 58.
 Package biblatex Info: LuaTeX detected.
 (biblatex)             Assuming input encoding 'utf8'.
 Package biblatex Info: Automatic encoding selection.
@@ -1486,30 +1582,27 @@ Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'flucq1_Documentation.bbl' not found.
 
 No file flucq1_Documentation.bbl.
-Package biblatex Info: Reference section=0 on input line 49.
-Package biblatex Info: Reference segment=0 on input line 49.
+Package biblatex Info: Reference section=0 on input line 58.
+Package biblatex Info: Reference segment=0 on input line 58.
 (d:/Programmes/texlive/2018/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count419
-\scratchdimen=\dimen160
+\scratchcounter=\count429
+\scratchdimen=\dimen164
 \scratchbox=\box56
-\nofMPsegments=\count420
-\nofMParguments=\count421
+\nofMPsegments=\count430
+\nofMParguments=\count431
 \everyMPshowfont=\toks32
-\MPscratchCnt=\count422
-\MPscratchDim=\dimen161
-\MPnumerator=\count423
-\makeMPintoPDFobject=\count424
+\MPscratchCnt=\count432
+\MPscratchDim=\dimen165
+\MPnumerator=\count433
+\makeMPintoPDFobject=\count434
 \everyMPtoPDFconversion=\toks33
 ) (d:/Programmes/texlive/2018/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
 
 (d:/Programmes/texlive/2018/texmf-dist/tex/latex/oberdiek/grfext.sty
 Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
-
-(d:/Programmes/texlive/2018/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
-Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
-))
+)
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 43
 8.
 Package grfext Info: Graphics extension search list:
@@ -1521,7 +1614,7 @@ Package grfext Info: Graphics extension search list:
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 
 ))
-\c@lstlisting=\count425
+\c@lstlisting=\count435
 \AtBeginShipoutBox=\box57
 (d:/Programmes/texlive/2018/texmf-dist/tex/latex/oberdiek/pdflscape.sty
 Package: pdflscape 2016/05/14 v0.11 Display of landscape pages in PDF (HO)
@@ -1531,1563 +1624,1494 @@ Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
 )
 Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 )
+Package hyperref Info: Link coloring ON on input line 58.
+
+(d:/Programmes/texlive/2018/texmf-dist/tex/latex/hyperref/nameref.sty
+Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
+
+(d:/Programmes/texlive/2018/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
+Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
+)
+\c@section@level=\count436
+)
+LaTeX Info: Redefining \ref on input line 58.
+LaTeX Info: Redefining \pageref on input line 58.
+LaTeX Info: Redefining \nameref on input line 58.
+ (./flucq1_Documentation.out) (./flucq1_Documentation.out)
+\@outlinefile=\write8
+
+\openout8 = flucq1_Documentation.out
 LaTeX Font Info:    Font shape `TU/lmss/b/n' in size <10.95> not available
-(Font)              Font shape `TU/lmss/bx/n' tried instead on input line 60.
+(Font)              Font shape `TU/lmss/bx/n' tried instead on input line 69.
 LaTeX Font Info:    Font shape `TU/lmss/b/n' in size <20.74> not available
-(Font)              Font shape `TU/lmss/bx/n' tried instead on input line 60.
-LaTeX Font Info:    Try loading font information for OT1+jkp on input line 60.
+(Font)              Font shape `TU/lmss/bx/n' tried instead on input line 69.
+LaTeX Font Info:    Try loading font information for OT1+jkp on input line 69.
 
 (d:/Programmes/texlive/2018/texmf-dist/tex/latex/kpfonts/ot1jkp.fd
 File: ot1jkp.fd 2007/08/30 Fontinst v1.928 font definitions for OT1/jkp.
 )
-LaTeX Font Info:    Try loading font information for U+jkpmia on input line 60.
+LaTeX Font Info:    Try loading font information for U+jkpmia on input line 69.
 
 (d:/Programmes/texlive/2018/texmf-dist/tex/latex/kpfonts/ujkpmia.fd
 File: ujkpmia.fd 2006/08/15 v1.0
 )
-LaTeX Font Info:    Try loading font information for U+jkpsya on input line 60.
+LaTeX Font Info:    Try loading font information for U+jkpsya on input line 69.
 
 (d:/Programmes/texlive/2018/texmf-dist/tex/latex/kpfonts/ujkpsya.fd
 File: ujkpsya.fd 2006/08/15 v1.0
 )
-LaTeX Font Info:    Try loading font information for U+jkpsyb on input line 60.
+LaTeX Font Info:    Try loading font information for U+jkpsyb on input line 69.
 
 (d:/Programmes/texlive/2018/texmf-dist/tex/latex/kpfonts/ujkpsyb.fd
 File: ujkpsyb.fd 2006/08/15 v1.0
 )
-LaTeX Font Info:    Try loading font information for U+jkpsyc on input line 60.
+LaTeX Font Info:    Try loading font information for U+jkpsyc on input line 69.
 
 (d:/Programmes/texlive/2018/texmf-dist/tex/latex/kpfonts/ujkpsyc.fd
 File: ujkpsyc.fd 2006/08/15 v1.0
-) [1
+)
+<./ressources/images/./title.png, id=152, 494.59781pt x 339.51843pt>
+File: ./ressources/images/./title.png Graphic file (type png)
+<use ./ressources/images/./title.png>
+Package luatex.def Info: ./ressources/images/./title.png  used on input line 69.
+
+(luatex.def)             Requested size: 418.25555pt x 287.11037pt.
+
+Overfull \hbox (10.95pt too wide) in paragraph at lines 69--70
+[][] 
+ []
+
+[1
 
 
-{d:/Programmes/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2
+{d:/Programmes/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map}<./ress
+ources/images/./title.PNG>] [2
 
 ] [3
 
 
 ]
 LaTeX Font Info:    Font shape `TU/lmss/b/n' in size <14.4> not available
-(Font)              Font shape `TU/lmss/bx/n' tried instead on input line 70.
-
-(./flucq1_Documentation.toc [4
+(Font)              Font shape `TU/lmss/bx/n' tried instead on input line 80.
+ (./flucq1_Documentation.toc [4
 
 
 ])
-\tf@toc=\write8
+\tf@toc=\write9
 
-\openout8 = flucq1_Documentation.toc
- [5]
+\openout9 = flucq1_Documentation.toc
+
+[5]
 LaTeX Font Info:    Font shape `TU/lmss/b/n' in size <12> not available
-(Font)              Font shape `TU/lmss/bx/n' tried instead on input line 78.
+(Font)              Font shape `TU/lmss/bx/n' tried instead on input line 88.
 
-Underfull \hbox (badness 10000) in paragraph at lines 80--85
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 86--92
+Underfull \hbox (badness 10000) in paragraph at lines 90--95
 
  []
 
-<./ressources/images/prototype_thymio_old.jpg, id=22, 1735.48375pt x 785.93625pt
->
+
+Underfull \hbox (badness 10000) in paragraph at lines 96--102
+
+ []
+
+<./ressources/images/prototype_thymio_old.jpg, id=257, 1735.48375pt x 785.93625p
+t>
 File: ./ressources/images/prototype_thymio_old.jpg Graphic file (type jpg)
 <use ./ressources/images/prototype_thymio_old.jpg>
 Package luatex.def Info: ./ressources/images/prototype_thymio_old.jpg  used on i
-nput line 94.
+nput line 104.
 (luatex.def)             Requested size: 418.25555pt x 189.40805pt.
 [6
 
 <./ressources/images/prototype_thymio_old.jpg>]
-<./ressources/images/Wireless-thymioII-sensor-actuator-color-en.png, id=26, 2064
-.85715pt x 1445.4pt>
+<./ressources/images/Wireless-thymioII-sensor-actuator-color-en.png, id=262, 206
+4.85715pt x 1445.4pt>
 File: ./ressources/images/Wireless-thymioII-sensor-actuator-color-en.png Graphic
  file (type png)
 <use ./ressources/images/Wireless-thymioII-sensor-actuator-color-en.png>
 Package luatex.def Info: ./ressources/images/Wireless-thymioII-sensor-actuator-c
-olor-en.png  used on input line 106.
+olor-en.png  used on input line 116.
 (luatex.def)             Requested size: 418.25555pt x 292.75806pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 112--119
+Underfull \hbox (badness 10000) in paragraph at lines 122--129
 
  []
 
 [7<./ressources/images/Wireless-thymioII-sensor-actuator-color-en.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 128--137
+Underfull \hbox (badness 10000) in paragraph at lines 138--147
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 138--141
+Underfull \hbox (badness 10000) in paragraph at lines 148--151
 
  []
 
-<./ressources/images/./VPL/Thymio_VPL_window.png, id=31, 740.0147pt x 466.74374p
-t>
+<./ressources/images/./VPL/Thymio_VPL_window.png, id=268, 740.0147pt x 466.74374
+pt>
 File: ./ressources/images/./VPL/Thymio_VPL_window.png Graphic file (type png)
 <use ./ressources/images/./VPL/Thymio_VPL_window.png>
 Package luatex.def Info: ./ressources/images/./VPL/Thymio_VPL_window.png  used o
-n input line 143.
+n input line 153.
 (luatex.def)             Requested size: 418.25555pt x 263.80328pt.
 [8]
-<./ressources/images/./VPL/Thymio_blocks.png, id=35, 557.83406pt x 557.08125pt>
+<./ressources/images/./VPL/Thymio_blocks.png, id=275, 557.83406pt x 557.08125pt>
+
 File: ./ressources/images/./VPL/Thymio_blocks.png Graphic file (type png)
 <use ./ressources/images/./VPL/Thymio_blocks.png>
 Package luatex.def Info: ./ressources/images/./VPL/Thymio_blocks.png  used on in
-put line 160.
+put line 170.
 (luatex.def)             Requested size: 418.25555pt x 417.6994pt.
  [9<./ressources/images/./VPL/Thymio_VPL_window.PNG>]
-Underfull \hbox (badness 10000) in paragraph at lines 164--168
+Underfull \hbox (badness 10000) in paragraph at lines 174--178
 
  []
 
-<./ressources/images/./VPL/middlebtn_forward.png, id=39, 198.7425pt x 82.80937pt
->
+<./ressources/images/./VPL/middlebtn_forward.png, id=288, 198.7425pt x 82.80937p
+t>
 File: ./ressources/images/./VPL/middlebtn_forward.png Graphic file (type png)
 <use ./ressources/images/./VPL/middlebtn_forward.png>
 Package luatex.def Info: ./ressources/images/./VPL/middlebtn_forward.png  used o
-n input line 169.
+n input line 179.
 (luatex.def)             Requested size: 99.371pt x 41.40457pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 173--176
+Underfull \hbox (badness 10000) in paragraph at lines 183--186
 
  []
 
 [10<./ressources/images/./VPL/Thymio_blocks.PNG><./ressources/images/./VPL/middl
 ebtn_forward.PNG>]
-<./ressources/images/./VPL/middlebtn_forward_green.png, id=45, 274.02374pt x 81.
-30376pt>
+<./ressources/images/./VPL/middlebtn_forward_green.png, id=295, 274.02374pt x 81
+.30376pt>
 File: ./ressources/images/./VPL/middlebtn_forward_green.png Graphic file (type p
 ng)
 <use ./ressources/images/./VPL/middlebtn_forward_green.png>
 Package luatex.def Info: ./ressources/images/./VPL/middlebtn_forward_green.png  
-used on input line 177.
+used on input line 187.
 (luatex.def)             Requested size: 137.01154pt x 40.65176pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 181--183
+Underfull \hbox (badness 10000) in paragraph at lines 191--193
 
  []
 
-<./ressources/images/./VPL/middlebtn_3E.png, id=46, 273.27094pt x 298.86656pt>
+<./ressources/images/./VPL/middlebtn_3E.png, id=296, 273.27094pt x 298.86656pt>
 File: ./ressources/images/./VPL/middlebtn_3E.png Graphic file (type png)
 <use ./ressources/images/./VPL/middlebtn_3E.png>
 Package luatex.def Info: ./ressources/images/./VPL/middlebtn_3E.png  used on inp
-ut line 184.
+ut line 194.
 (luatex.def)             Requested size: 136.63512pt x 149.4329pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 188--190
+Underfull \hbox (badness 10000) in paragraph at lines 198--200
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 191--192
+Underfull \hbox (badness 10000) in paragraph at lines 201--202
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 193--199
+Underfull \hbox (badness 10000) in paragraph at lines 203--209
 
  []
 
 [11<./ressources/images/./VPL/middlebtn_forward_green.PNG><./ressources/images/.
 /VPL/middlebtn_3E.PNG>]
-<./ressources/images/./VPL/middlebtn_3E_adv.png, id=53, 402.00188pt x 285.31593p
-t>
+<./ressources/images/./VPL/middlebtn_3E_adv.png, id=305, 402.00188pt x 285.31593
+pt>
 File: ./ressources/images/./VPL/middlebtn_3E_adv.png Graphic file (type png)
 <use ./ressources/images/./VPL/middlebtn_3E_adv.png>
 Package luatex.def Info: ./ressources/images/./VPL/middlebtn_3E_adv.png  used on
- input line 200.
+ input line 210.
 (luatex.def)             Requested size: 201.00044pt x 142.65761pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 206--214
+Underfull \hbox (badness 10000) in paragraph at lines 216--224
 
  []
 
 [12<./ressources/images/./VPL/middlebtn_3E_adv.PNG>]
-Underfull \hbox (badness 10000) in paragraph at lines 227--230
+Underfull \hbox (badness 10000) in paragraph at lines 237--240
 
  []
 
-<./ressources/images/./Blockly/basic_variable.png, id=58, 250.68657pt x 63.23625
-pt>
+<./ressources/images/./Blockly/basic_variable.png, id=312, 250.68657pt x 63.2362
+5pt>
 File: ./ressources/images/./Blockly/basic_variable.png Graphic file (type png)
 <use ./ressources/images/./Blockly/basic_variable.png>
 Package luatex.def Info: ./ressources/images/./Blockly/basic_variable.png  used 
-on input line 231.
+on input line 241.
 (luatex.def)             Requested size: 125.34297pt x 31.61804pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 235--238
+Underfull \hbox (badness 10000) in paragraph at lines 245--248
 
  []
 
-<./ressources/images/./Blockly/basic_logic.png, id=59, 310.15875pt x 76.78688pt>
-
+<./ressources/images/./Blockly/basic_logic.png, id=313, 310.15875pt x 76.78688pt
+>
 File: ./ressources/images/./Blockly/basic_logic.png Graphic file (type png)
 <use ./ressources/images/./Blockly/basic_logic.png>
 Package luatex.def Info: ./ressources/images/./Blockly/basic_logic.png  used on 
-input line 239.
+input line 249.
 (luatex.def)             Requested size: 155.079pt x 38.39334pt.
-<./ressources/images/./Blockly/blockly_window.png, id=60, 770.88pt x 548.80031pt
->
+<./ressources/images/./Blockly/blockly_window.png, id=314, 770.88pt x 548.80031p
+t>
 File: ./ressources/images/./Blockly/blockly_window.png Graphic file (type png)
 <use ./ressources/images/./Blockly/blockly_window.png>
 Package luatex.def Info: ./ressources/images/./Blockly/blockly_window.png  used 
-on input line 256.
+on input line 266.
 (luatex.def)             Requested size: 385.43906pt x 274.39948pt.
 [13<./ressources/images/./Blockly/basic_variable.PNG><./ressources/images/./Bloc
 kly/basic_logic.PNG>]
-Underfull \hbox (badness 10000) in paragraph at lines 260--262
+Underfull \hbox (badness 10000) in paragraph at lines 270--272
 
  []
 
-<./ressources/images/./Blockly/forward_stop_wall.png, id=67, 370.38374pt x 240.9
-pt>
+<./ressources/images/./Blockly/forward_stop_wall.png, id=324, 370.38374pt x 240.
+9pt>
 File: ./ressources/images/./Blockly/forward_stop_wall.png Graphic file (type png
 )
 <use ./ressources/images/./Blockly/forward_stop_wall.png>
 Package luatex.def Info: ./ressources/images/./Blockly/forward_stop_wall.png  us
-ed on input line 263.
+ed on input line 273.
 (luatex.def)             Requested size: 185.1914pt x 120.44969pt.
-<./ressources/images/./Blockly/advanced_program.png, id=68, 394.47375pt x 595.47
-469pt>
+<./ressources/images/./Blockly/advanced_program.png, id=325, 394.47375pt x 595.4
+7469pt>
 File: ./ressources/images/./Blockly/advanced_program.png Graphic file (type png)
 
 <use ./ressources/images/./Blockly/advanced_program.png>
 Package luatex.def Info: ./ressources/images/./Blockly/advanced_program.png  use
-d on input line 270.
+d on input line 280.
 (luatex.def)             Requested size: 197.23639pt x 297.7366pt.
 [14<./ressources/images/./Blockly/blockly_window.png><./ressources/images/./Bloc
-kly/forward_stop_wall.PNG>]
-<./ressources/images/./goals.png, id=73, 773.89125pt x 181.67876pt>
+kly/forward_stop_wall.PNG>] [15<./ressources/images/./Blockly/advanced_program.P
+NG>]
+<./ressources/images/./goals.png, id=338, 773.89125pt x 181.67876pt>
 File: ./ressources/images/./goals.png Graphic file (type png)
 <use ./ressources/images/./goals.png>
-Package luatex.def Info: ./ressources/images/./goals.png  used on input line 283
+Package luatex.def Info: ./ressources/images/./goals.png  used on input line 303
 .
 (luatex.def)             Requested size: 418.25555pt x 98.191pt.
- [15<./ressources/images/./Blockly/advanced_program.PNG><./ressources/images/./g
-oals.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 310--316
+<./ressources/images/./risk-matrix.png, id=339, 740.0147pt x 185.19188pt>
+File: ./ressources/images/./risk-matrix.png Graphic file (type png)
+<use ./ressources/images/./risk-matrix.png>
+Package luatex.def Info: ./ressources/images/./risk-matrix.png  used on input li
+ne 313.
+(luatex.def)             Requested size: 418.25555pt x 104.67032pt.
 
+Underfull \hbox (badness 10000) in paragraph at lines 318--318
+[]|\TU/lmr/m/n/10.95 Like-li-hood
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 318--320
-
+Underfull \hbox (badness 10000) in paragraph at lines 319--319
+[]|\TU/lmr/m/n/10.95 Fi-nan-cial
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 325--330
-
+Underfull \hbox (badness 10000) in paragraph at lines 320--320
+[]|\TU/lmr/m/n/10.95 Col-li-sions
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 332--334
-
+Underfull \hbox (badness 7326) in paragraph at lines 320--320
+\TU/lmr/m/n/10.95 not im-ple-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 339--344
-
- []
-
-[16]
-Underfull \hbox (badness 10000) in paragraph at lines 346--348
-
- []
-
-
-LaTeX Warning: Citation 'Jerald:2015:VBH:2792790' on page 17 undefined on input 
-line 380.
-
-
-LaTeX Warning: Citation 'Diniz:2017:UGO:3100317.3100324' on page 17 undefined on
- input line 382.
-
-[17]
-Underfull \hbox (badness 10000) in paragraph at lines 389--389
-[]|\TU/lmr/m/n/10.95 Pri-or-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 389--389
-[]|\TU/lmr/m/n/10.95 Est.
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 389--389
-\TU/lmr/m/n/10.95 Ef-fort
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 389--389
-[]|\TU/lmr/m/n/10.95 Up-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 389--389
-\TU/lmr/m/n/10.95 date
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 389--389
-\TU/lmr/m/n/10.95 Ef-fort
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 389--389
-[]|\TU/lmr/m/n/10.95 Ac-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 389--389
-\TU/lmr/m/n/10.95 tual
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 389--389
-\TU/lmr/m/n/10.95 Ef-
- []
-
-
-Overfull \hbox (1.1013pt too wide) in paragraph at lines 389--389
-\TU/lmr/m/n/10.95 fort[h]| 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 389--389
-[]|\TU/lmr/m/n/10.95 Sta-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 390--391
-[]|\TU/lmr/m/n/10.95 In-
- []
-
-
-Overfull \hbox (12.02943pt too wide) in paragraph at lines 390--391
-\TU/lmr/m/n/10.95 Progress| 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 391--391
-\TU/lmr/m/n/10.95 En-vi-ron-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 392--392
-[]|\TU/lmr/m/n/10.95 Ba-sic
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 393--393
-[]|\TU/lmr/m/n/10.95 De-velop
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 393--393
-\TU/lmr/m/n/10.95 Play-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 393--393
-\TU/lmr/m/n/10.95 func-tion to gen-er-ate
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 394--394
-[]|\TU/lmr/m/n/10.95 Up-date
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 394--394
-\TU/lmr/m/n/10.95 Doc-u-men-
- []
-
-
-Underfull \hbox (badness 1009) in paragraph at lines 394--394
-[]|\TU/lmr/m/n/10.95 Up-date ex-ist-ing doc-u-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 394--395
-[]|\TU/lmr/m/n/10.95 In-
- []
-
-
-Overfull \hbox (12.02943pt too wide) in paragraph at lines 394--395
-\TU/lmr/m/n/10.95 Progress| 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 395--395
-[]|\TU/lmr/m/n/10.95 Ar-chi-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 395--395
-\TU/lmr/m/n/10.95 tec-ture
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 395--395
-\TU/lmr/m/n/10.95 Im-ple-men-
- []
-
-
-Underfull \hbox (badness 5417) in paragraph at lines 395--395
-[]|\TU/lmr/m/n/10.95 Refac-tor the ex-ist-ing
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 395--396
-[]|\TU/lmr/m/n/10.95 In-
- []
-
-
-Overfull \hbox (12.02943pt too wide) in paragraph at lines 395--396
-\TU/lmr/m/n/10.95 Progress| 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 396--396
-[]|\TU/lmr/m/n/10.95 Web De-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 397--398
-[]|\TU/lmr/m/n/10.95 In-
- []
-
-
-Overfull \hbox (12.02943pt too wide) in paragraph at lines 397--398
-\TU/lmr/m/n/10.95 Progress| 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 398--398
+Underfull \hbox (badness 10000) in paragraph at lines 321--321
 []|\TU/lmr/m/n/10.95 Be-haviour
  []
 
 
-Underfull \hbox (badness 6859) in paragraph at lines 398--398
-\TU/lmr/m/n/10.95 .aesl file and trans-
+Underfull \hbox (badness 10000) in paragraph at lines 322--322
+[]|\TU/lmr/m/n/10.95 Play-ground
+ []
+
+[16<./ressources/images/./goals.png><./ressources/images/./risk-matrix.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 342--348
+
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 398--399
-[]|\TU/lmr/m/n/10.95 To
+Underfull \hbox (badness 10000) in paragraph at lines 350--352
+
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 399--399
-[]|\TU/lmr/m/n/10.95 Phy-isics
+Underfull \hbox (badness 10000) in paragraph at lines 357--362
+
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 399--399
-\TU/lmr/m/n/10.95 Im-ple-men-
+Underfull \hbox (badness 10000) in paragraph at lines 364--366
+
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 399--399
-[]|\TU/lmr/m/n/10.95 Im-ple-men-ta-tion of
+Underfull \hbox (badness 10000) in paragraph at lines 371--376
+
  []
 
 
-Underfull \hbox (badness 1024) in paragraph at lines 399--399
-\TU/lmr/m/n/10.95 Col-li-sions for ThreeJS
+Underfull \hbox (badness 10000) in paragraph at lines 378--380
+
  []
 
+[17]
+<./ressources/images/./architecture_proposal-Page-1.png, id=351, 591.20876pt x 6
+83.55376pt>
+File: ./ressources/images/./architecture_proposal-Page-1.png Graphic file (type 
+png)
+<use ./ressources/images/./architecture_proposal-Page-1.png>
+Package luatex.def Info: ./ressources/images/./architecture_proposal-Page-1.png 
+ used on input line 392.
+(luatex.def)             Requested size: 418.25555pt x 483.59515pt.
+ [18]
+<./ressources/images/./architecture_proposal-Page-2.png, id=356, 553.06625pt x 3
+86.44376pt>
+File: ./ressources/images/./architecture_proposal-Page-2.png Graphic file (type 
+png)
+<use ./ressources/images/./architecture_proposal-Page-2.png>
+Package luatex.def Info: ./ressources/images/./architecture_proposal-Page-2.png 
+ used on input line 397.
+(luatex.def)             Requested size: 418.25555pt x 292.24384pt.
+ [19<./ressources/images/./architecture_proposal-Page-1.png>]
 
-Underfull \hbox (badness 10000) in paragraph at lines 399--400
-[]|\TU/lmr/m/n/10.95 To
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 400--400
-[]|\TU/lmr/m/n/10.95 En-hanced
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 400--400
-[]|\TU/lmr/m/n/10.95 En-hance-ment of the
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 400--401
-[]|\TU/lmr/m/n/10.95 To
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 401--401
-[]|\TU/lmr/m/n/10.95 Cus-tomiz-
- []
+LaTeX Warning: Citation 'Jerald:2015:VBH:2792790' on page 20 undefined on input 
+line 415.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 401--401
-\TU/lmr/m/n/10.95 able Play-
- []
+LaTeX Warning: Citation 'Diniz:2017:UGO:3100317.3100324' on page 20 undefined on
+ input line 417.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 401--401
-[]|\TU/lmr/m/n/10.95 Im-ple-men-ta-tion of a
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 401--402
-[]|\TU/lmr/m/n/10.95 To
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 402--402
-[]|\TU/lmr/m/n/10.95 Up-date
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 402--402
-\TU/lmr/m/n/10.95 Doc-u-men-
- []
-
-
-Underfull \hbox (badness 1009) in paragraph at lines 402--402
-[]|\TU/lmr/m/n/10.95 Up-date ex-ist-ing doc-u-
- []
-
-
-Underfull \hbox (badness 3219) in paragraph at lines 402--402
-\TU/lmr/m/n/10.95 men-ta-tion and elab-o-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 402--403
-[]|\TU/lmr/m/n/10.95 To
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 403--403
-[]|\TU/lmr/m/n/10.95 En-hanced
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 403--403
-\TU/lmr/m/n/10.95 Be-haviour
- []
-
-
-Underfull \hbox (badness 4279) in paragraph at lines 403--403
-[]|\TU/lmr/m/n/10.95 Im-ple-ment more sen-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 403--404
-[]|\TU/lmr/m/n/10.95 To
- []
-
-
-Underfull \hbox (badness 5008) in paragraph at lines 404--404
-[]|\TU/lmr/m/n/10.95 Fin-ish ex-ist-ing doc-u-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 404--405
-[]|\TU/lmr/m/n/10.95 To
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 405--406
-[]|\TU/lmr/m/n/10.95 To
- []
-
-
-Overfull \hbox (7.751pt too wide) in alignment at lines 388--407
- [][][][][][][][] 
- []
-
-[18]
-Underfull \hbox (badness 10000) in paragraph at lines 413--413
+Underfull \hbox (badness 10000) in paragraph at lines 424--424
 []|\TU/lmr/m/n/10.95 Pri-or-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 413--413
+Underfull \hbox (badness 10000) in paragraph at lines 424--424
 []|\TU/lmr/m/n/10.95 Est.
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 413--413
+Underfull \hbox (badness 10000) in paragraph at lines 424--424
 \TU/lmr/m/n/10.95 Ef-fort
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 413--413
+Underfull \hbox (badness 10000) in paragraph at lines 424--424
 []|\TU/lmr/m/n/10.95 Up-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 413--413
+Underfull \hbox (badness 10000) in paragraph at lines 424--424
 \TU/lmr/m/n/10.95 date
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 413--413
+Underfull \hbox (badness 10000) in paragraph at lines 424--424
 \TU/lmr/m/n/10.95 Ef-fort
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 413--413
+Underfull \hbox (badness 10000) in paragraph at lines 424--424
 []|\TU/lmr/m/n/10.95 Ac-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 413--413
+Underfull \hbox (badness 10000) in paragraph at lines 424--424
 \TU/lmr/m/n/10.95 tual
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 413--413
+Underfull \hbox (badness 10000) in paragraph at lines 424--424
 \TU/lmr/m/n/10.95 Ef-
  []
 
 
-Overfull \hbox (1.1013pt too wide) in paragraph at lines 413--413
+Overfull \hbox (1.1013pt too wide) in paragraph at lines 424--424
 \TU/lmr/m/n/10.95 fort[h]| 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 413--413
-[]|\TU/lmr/m/n/10.95 Sta-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 415--415
-[]|\TU/lmr/m/n/10.95 Tem-plate
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 415--415
-\TU/lmr/m/n/10.95 and Con-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 416--416
-[]|\TU/lmr/m/n/10.95 About
- []
-
-
-Underfull \hbox (badness 3168) in paragraph at lines 416--416
-[]|\TU/lmr/m/n/10.95 What is thymio and
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 417--417
-\TU/lmr/m/n/10.95 En-vi-ron-
- []
-
-
-Underfull \hbox (badness 1460) in paragraph at lines 418--418
-[]|\TU/lmr/m/n/10.95 Cre-ate the project in
- []
-
-
-Underfull \hbox (badness 3417) in paragraph at lines 419--419
-[]|\TU/lmr/m/n/10.95 In-stall Thymio Suite,
- []
-
-
-Overfull \hbox (7.751pt too wide) in alignment at lines 412--420
- [][][][][][][][] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 425--425
-[]|\TU/lmr/m/n/10.95 Pri-or-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 425--425
-[]|\TU/lmr/m/n/10.95 Est.
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 425--425
-\TU/lmr/m/n/10.95 Ef-fort
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 425--425
-[]|\TU/lmr/m/n/10.95 Up-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 425--425
-\TU/lmr/m/n/10.95 date
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 425--425
-\TU/lmr/m/n/10.95 Ef-fort
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 425--425
-[]|\TU/lmr/m/n/10.95 Ac-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 425--425
-\TU/lmr/m/n/10.95 tual
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 425--425
-\TU/lmr/m/n/10.95 Ef-
- []
-
-
-Overfull \hbox (1.1013pt too wide) in paragraph at lines 425--425
-\TU/lmr/m/n/10.95 fort[h]| 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 425--425
-[]|\TU/lmr/m/n/10.95 Sta-
+Underfull \hbox (badness 10000) in paragraph at lines 425--426
+[]|\TU/lmr/m/n/10.95 In-
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 426--426
+\TU/lmr/m/n/10.95 En-vi-ron-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 427--427
 []|\TU/lmr/m/n/10.95 Ba-sic
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 427--427
-[]|\TU/lmr/m/n/10.95 Read doc-u-men-ta-tion
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 427--427
-\TU/lmr/m/n/10.95 and ex-am-ples, and
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 428--428
-[]|\TU/lmr/m/n/10.95 Up-date and deepen
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 429--429
-[]|\TU/lmr/m/n/10.95 Thymio
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 429--429
-[]|\TU/lmr/m/n/10.95 Learn-ing and us-ing
- []
-
-
-Underfull \hbox (badness 4084) in paragraph at lines 429--429
-\TU/lmr/m/n/10.95 VPL, Blockly, Aseba
- []
-
-
-Overfull \hbox (10.79205pt too wide) in paragraph at lines 429--429
-[]|\TU/lmr/m/n/10.95 Medium| 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 430--430
 []|\TU/lmr/m/n/10.95 De-velop
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 430--430
+Underfull \hbox (badness 10000) in paragraph at lines 428--428
 \TU/lmr/m/n/10.95 Play-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 430--430
+Underfull \hbox (badness 10000) in paragraph at lines 428--428
 \TU/lmr/m/n/10.95 func-tion to gen-er-ate
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 431--431
-[]|\TU/lmr/m/n/10.95 Two De-
- []
-
-
-Underfull \hbox (badness 3460) in paragraph at lines 431--431
-\TU/lmr/m/n/10.95 fault Play-
- []
-
-
-Underfull \hbox (badness 4556) in paragraph at lines 431--431
-[]|\TU/lmr/m/n/10.95 Gen-er-at-ing two de-fa-
- []
-
-
-Underfull \hbox (badness 2020) in paragraph at lines 431--431
-\TU/lmr/m/n/10.95 lut play-ground to be
- []
-
-
-Overfull \hbox (10.79205pt too wide) in paragraph at lines 431--431
-[]|\TU/lmr/m/n/10.95 Medium| 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 432--432
-[]|\TU/lmr/m/n/10.95 Thymio
- []
-
-
-Overfull \hbox (10.79205pt too wide) in paragraph at lines 432--432
-[]|\TU/lmr/m/n/10.95 Medium| 
- []
-
-
-Underfull \hbox (badness 1776) in paragraph at lines 433--433
-[]|\TU/lmr/m/n/10.95 Mesh Gen-
- []
-
-
-Underfull \hbox (badness 3118) in paragraph at lines 433--433
-\TU/lmr/m/n/10.95 er-ate meshes for the
- []
-
-
-Overfull \hbox (7.751pt too wide) in alignment at lines 424--434
- [][][][][][][][] 
- []
-
-[19]
-Underfull \hbox (badness 10000) in paragraph at lines 439--439
-[]|\TU/lmr/m/n/10.95 Pri-or-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 439--439
-[]|\TU/lmr/m/n/10.95 Est.
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 439--439
-\TU/lmr/m/n/10.95 Ef-fort
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 439--439
-[]|\TU/lmr/m/n/10.95 Up-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 439--439
-\TU/lmr/m/n/10.95 date
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 439--439
-\TU/lmr/m/n/10.95 Ef-fort
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 439--439
-[]|\TU/lmr/m/n/10.95 Ac-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 439--439
-\TU/lmr/m/n/10.95 tual
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 439--439
-\TU/lmr/m/n/10.95 Ef-
- []
-
-
-Overfull \hbox (1.1013pt too wide) in paragraph at lines 439--439
-\TU/lmr/m/n/10.95 fort[h]| 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 439--439
-[]|\TU/lmr/m/n/10.95 Sta-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 440--440
+Underfull \hbox (badness 10000) in paragraph at lines 429--429
 []|\TU/lmr/m/n/10.95 Up-date
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 440--440
+Underfull \hbox (badness 10000) in paragraph at lines 429--429
 \TU/lmr/m/n/10.95 Doc-u-men-
  []
 
 
-Underfull \hbox (badness 1009) in paragraph at lines 440--440
+Underfull \hbox (badness 1009) in paragraph at lines 429--429
 []|\TU/lmr/m/n/10.95 Up-date ex-ist-ing doc-u-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 440--441
-[]|\TU/lmr/m/n/10.95 In
- []
-
-
-Overfull \hbox (12.02943pt too wide) in paragraph at lines 440--441
-\TU/lmr/m/n/10.95 Progress| 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 441--441
-[]|\TU/lmr/m/n/10.95 Four sup-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 441--441
-\TU/lmr/m/n/10.95 ported
- []
-
-
-Underfull \hbox (badness 4084) in paragraph at lines 441--441
-\TU/lmr/m/n/10.95 VPL, Blockly, Aseba
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 441--442
-[]|\TU/lmr/m/n/10.95 In
- []
-
-
-Overfull \hbox (12.02943pt too wide) in paragraph at lines 441--442
-\TU/lmr/m/n/10.95 Progress| 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 443--443
-[]|\TU/lmr/m/n/10.95 Ar-chi-tec-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 443--444
-[]|\TU/lmr/m/n/10.95 In
- []
-
-
-Overfull \hbox (12.02943pt too wide) in paragraph at lines 443--444
-\TU/lmr/m/n/10.95 Progress| 
- []
-
-
-Overfull \hbox (10.79205pt too wide) in paragraph at lines 444--444
-[]|\TU/lmr/m/n/10.95 Medium| 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 444--445
-[]|\TU/lmr/m/n/10.95 To
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 445--446
-[]|\TU/lmr/m/n/10.95 To
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 446--446
-[]|\TU/lmr/m/n/10.95 Ar-chi-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 446--446
-\TU/lmr/m/n/10.95 tec-ture
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 446--446
-\TU/lmr/m/n/10.95 Im-ple-men-
- []
-
-
-Underfull \hbox (badness 5417) in paragraph at lines 446--446
-[]|\TU/lmr/m/n/10.95 Refac-tor the ex-ist-ing
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 446--447
-[]|\TU/lmr/m/n/10.95 In
- []
-
-
-Overfull \hbox (12.02943pt too wide) in paragraph at lines 446--447
-\TU/lmr/m/n/10.95 Progress| 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 447--447
-[]|\TU/lmr/m/n/10.95 Refac-tor
- []
-
-
-Underfull \hbox (badness 7168) in paragraph at lines 448--448
-[]|\TU/lmr/m/n/10.95 Unit Test-
- []
-
-
-Underfull \hbox (badness 6188) in paragraph at lines 448--448
-[]|\TU/lmr/m/n/10.95 Write the JavaScript
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 448--449
-[]|\TU/lmr/m/n/10.95 To
- []
-
-
-Underfull \hbox (badness 2582) in paragraph at lines 449--449
-[]|\TU/lmr/m/n/10.95 Write the JavaScript-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 449--450
+Underfull \hbox (badness 10000) in paragraph at lines 429--430
 []|\TU/lmr/m/n/10.95 In-
  []
 
 
-Overfull \hbox (12.02943pt too wide) in paragraph at lines 449--450
-\TU/lmr/m/n/10.95 Progress| 
+Underfull \hbox (badness 10000) in paragraph at lines 430--430
+[]|\TU/lmr/m/n/10.95 Ar-chi-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 450--450
-[]|\TU/lmr/m/n/10.95 Web De-
+Underfull \hbox (badness 10000) in paragraph at lines 430--430
+\TU/lmr/m/n/10.95 tec-ture
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 453--454
-[]|\TU/lmr/m/n/10.95 In
- []
-
-
-Overfull \hbox (12.02943pt too wide) in paragraph at lines 453--454
-\TU/lmr/m/n/10.95 Progress| 
- []
-
-
-Underfull \hbox (badness 2790) in paragraph at lines 454--454
-\TU/lmr/m/n/10.95 low-ing in-dex, sim-u-la-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 454--455
-[]|\TU/lmr/m/n/10.95 In
- []
-
-
-Overfull \hbox (12.02943pt too wide) in paragraph at lines 454--455
-\TU/lmr/m/n/10.95 Progress| 
- []
-
-
-Overfull \hbox (7.751pt too wide) in alignment at lines 438--455
- [][][][][][][][] 
- []
-
-[20]
-Underfull \hbox (badness 10000) in paragraph at lines 460--460
-[]|\TU/lmr/m/n/10.95 Pri-or-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 460--460
-[]|\TU/lmr/m/n/10.95 Est.
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 460--460
-\TU/lmr/m/n/10.95 Ef-fort
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 460--460
-[]|\TU/lmr/m/n/10.95 Up-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 460--460
-\TU/lmr/m/n/10.95 date
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 460--460
-\TU/lmr/m/n/10.95 Ef-fort
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 460--460
-[]|\TU/lmr/m/n/10.95 Ac-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 460--460
-\TU/lmr/m/n/10.95 tual
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 460--460
-\TU/lmr/m/n/10.95 Ef-
- []
-
-
-Overfull \hbox (1.1013pt too wide) in paragraph at lines 460--460
-\TU/lmr/m/n/10.95 fort[h]| 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 460--460
-[]|\TU/lmr/m/n/10.95 Sta-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 461--461
-[]|\TU/lmr/m/n/10.95 Be-haviour
- []
-
-
-Underfull \hbox (badness 6859) in paragraph at lines 461--461
-\TU/lmr/m/n/10.95 .aesl file and trans-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 461--462
-[]|\TU/lmr/m/n/10.95 To
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 462--462
-[]|\TU/lmr/m/n/10.95 Phy-isics
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 462--462
+Underfull \hbox (badness 10000) in paragraph at lines 430--430
 \TU/lmr/m/n/10.95 Im-ple-men-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 462--462
+Underfull \hbox (badness 5417) in paragraph at lines 430--430
+[]|\TU/lmr/m/n/10.95 Refac-tor the ex-ist-ing
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 430--431
+[]|\TU/lmr/m/n/10.95 In-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 431--431
+[]|\TU/lmr/m/n/10.95 Web De-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 432--433
+[]|\TU/lmr/m/n/10.95 In-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 433--433
+[]|\TU/lmr/m/n/10.95 Be-haviour
+ []
+
+
+Underfull \hbox (badness 6859) in paragraph at lines 433--433
+\TU/lmr/m/n/10.95 .aesl file and trans-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 434--434
+[]|\TU/lmr/m/n/10.95 Phy-isics
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 434--434
+\TU/lmr/m/n/10.95 Im-ple-men-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 434--434
 []|\TU/lmr/m/n/10.95 Im-ple-men-ta-tion of
  []
 
 
-Underfull \hbox (badness 1024) in paragraph at lines 462--462
+Underfull \hbox (badness 1024) in paragraph at lines 434--434
 \TU/lmr/m/n/10.95 Col-li-sions for ThreeJS
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 462--463
-[]|\TU/lmr/m/n/10.95 To
- []
-
-
-Overfull \hbox (7.751pt too wide) in alignment at lines 459--463
- [][][][][][][][] 
- []
-
-[21]
-Underfull \hbox (badness 10000) in paragraph at lines 468--468
-[]|\TU/lmr/m/n/10.95 Pri-or-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 468--468
-[]|\TU/lmr/m/n/10.95 Est.
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 468--468
-\TU/lmr/m/n/10.95 Ef-fort
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 468--468
-[]|\TU/lmr/m/n/10.95 Up-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 468--468
-\TU/lmr/m/n/10.95 date
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 468--468
-\TU/lmr/m/n/10.95 Ef-fort
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 468--468
-[]|\TU/lmr/m/n/10.95 Ac-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 468--468
-\TU/lmr/m/n/10.95 tual
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 468--468
-\TU/lmr/m/n/10.95 Ef-
- []
-
-
-Overfull \hbox (1.1013pt too wide) in paragraph at lines 468--468
-\TU/lmr/m/n/10.95 fort[h]| 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 468--468
-[]|\TU/lmr/m/n/10.95 Sta-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 469--469
-[]|\TU/lmr/m/n/10.95 En-hanced
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 469--469
-[]|\TU/lmr/m/n/10.95 En-hance-ment of the
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 469--470
-[]|\TU/lmr/m/n/10.95 To
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 470--470
-[]|\TU/lmr/m/n/10.95 Cus-tomiz-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 470--470
-\TU/lmr/m/n/10.95 able Play-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 470--470
-[]|\TU/lmr/m/n/10.95 Im-ple-men-ta-tion of a
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 470--471
-[]|\TU/lmr/m/n/10.95 To
- []
-
-
-Overfull \hbox (7.751pt too wide) in alignment at lines 467--471
- [][][][][][][][] 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 476--476
-[]|\TU/lmr/m/n/10.95 Pri-or-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 476--476
-[]|\TU/lmr/m/n/10.95 Est.
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 476--476
-\TU/lmr/m/n/10.95 Ef-fort
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 476--476
-[]|\TU/lmr/m/n/10.95 Up-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 476--476
-\TU/lmr/m/n/10.95 date
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 476--476
-\TU/lmr/m/n/10.95 Ef-fort
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 476--476
-[]|\TU/lmr/m/n/10.95 Ac-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 476--476
-\TU/lmr/m/n/10.95 tual
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 476--476
-\TU/lmr/m/n/10.95 Ef-
- []
-
-
-Overfull \hbox (1.1013pt too wide) in paragraph at lines 476--476
-\TU/lmr/m/n/10.95 fort[h]| 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 476--476
-[]|\TU/lmr/m/n/10.95 Sta-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 477--477
+Underfull \hbox (badness 10000) in paragraph at lines 435--435
 []|\TU/lmr/m/n/10.95 Up-date
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 477--477
+Underfull \hbox (badness 10000) in paragraph at lines 435--435
 \TU/lmr/m/n/10.95 Doc-u-men-
  []
 
 
-Underfull \hbox (badness 1009) in paragraph at lines 477--477
+Underfull \hbox (badness 1009) in paragraph at lines 435--435
 []|\TU/lmr/m/n/10.95 Up-date ex-ist-ing doc-u-
  []
 
 
-Underfull \hbox (badness 3219) in paragraph at lines 477--477
-\TU/lmr/m/n/10.95 men-ta-tion and elab-o-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 477--478
-[]|\TU/lmr/m/n/10.95 To
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 478--478
+Underfull \hbox (badness 10000) in paragraph at lines 436--436
 []|\TU/lmr/m/n/10.95 En-hanced
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 478--478
-\TU/lmr/m/n/10.95 Be-haviour
+Underfull \hbox (badness 10000) in paragraph at lines 436--436
+[]|\TU/lmr/m/n/10.95 En-hance-ment of the
  []
 
 
-Underfull \hbox (badness 4279) in paragraph at lines 478--478
-[]|\TU/lmr/m/n/10.95 Im-ple-ment more sen-
+Underfull \hbox (badness 10000) in paragraph at lines 437--437
+[]|\TU/lmr/m/n/10.95 Cus-tomiz-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 478--479
-[]|\TU/lmr/m/n/10.95 To
+Underfull \hbox (badness 10000) in paragraph at lines 437--437
+\TU/lmr/m/n/10.95 able Play-
  []
 
 
-Underfull \hbox (badness 5008) in paragraph at lines 479--479
-[]|\TU/lmr/m/n/10.95 Fin-ish ex-ist-ing doc-u-
+Underfull \hbox (badness 10000) in paragraph at lines 437--437
+[]|\TU/lmr/m/n/10.95 Im-ple-men-ta-tion of a
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 479--480
-[]|\TU/lmr/m/n/10.95 To
+Underfull \hbox (badness 10000) in paragraph at lines 438--438
+[]|\TU/lmr/m/n/10.95 Up-date
  []
 
 
-Overfull \hbox (5.24275pt too wide) in paragraph at lines 480--480
-[]|\TU/lmr/m/n/10.95 15.1| 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 480--480
-[]|\TU/lmr/m/n/10.95 Cre-ate
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 480--481
-[]|\TU/lmr/m/n/10.95 To
- []
-
-
-Overfull \hbox (5.24275pt too wide) in paragraph at lines 481--481
-[]|\TU/lmr/m/n/10.95 15.2| 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 481--481
-[]|\TU/lmr/m/n/10.95 Pre-pare
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 481--481
-\TU/lmr/m/n/10.95 Pre-sen-ta-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 481--482
-[]|\TU/lmr/m/n/10.95 To
- []
-
-
-Overfull \hbox (5.24275pt too wide) in paragraph at lines 482--482
-[]|\TU/lmr/m/n/10.95 15.3| 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 482--483
-[]|\TU/lmr/m/n/10.95 To
- []
-
-
-Overfull \hbox (5.24275pt too wide) in paragraph at lines 483--483
-[]|\TU/lmr/m/n/10.95 15.4| 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 483--483
-[]|\TU/lmr/m/n/10.95 Fin-ish
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 483--483
-\TU/lmr/m/n/10.95 Writ-ting
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 483--483
+Underfull \hbox (badness 10000) in paragraph at lines 438--438
 \TU/lmr/m/n/10.95 Doc-u-men-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 483--484
-[]|\TU/lmr/m/n/10.95 To
+Underfull \hbox (badness 1009) in paragraph at lines 438--438
+[]|\TU/lmr/m/n/10.95 Up-date ex-ist-ing doc-u-
  []
 
 
-Overfull \hbox (5.24275pt too wide) in paragraph at lines 484--484
-[]|\TU/lmr/m/n/10.95 15.5| 
+Underfull \hbox (badness 10000) in paragraph at lines 439--439
+[]|\TU/lmr/m/n/10.95 En-hanced
  []
 
 
-Underfull \hbox (badness 3919) in paragraph at lines 484--484
-[]|\TU/lmr/m/n/10.95 Pre-pare to
+Underfull \hbox (badness 10000) in paragraph at lines 439--439
+\TU/lmr/m/n/10.95 Be-haviour
  []
 
 
-Underfull \hbox (badness 1275) in paragraph at lines 484--484
-\TU/lmr/m/n/10.95 put the project on a
+Underfull \hbox (badness 4279) in paragraph at lines 439--439
+[]|\TU/lmr/m/n/10.95 Im-ple-ment more sen-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 484--484
-[]|\TU/lmr/m/n/10.95 To
+Underfull \hbox (badness 5008) in paragraph at lines 440--440
+[]|\TU/lmr/m/n/10.95 Fin-ish ex-ist-ing doc-u-
  []
 
 
-Overfull \hbox (7.751pt too wide) in alignment at lines 475--485
+Overfull \hbox (21.97739pt too wide) in alignment at lines 423--443
  [][][][][][][][] 
  []
 
-[22]
-Underfull \hbox (badness 10000) in paragraph at lines 490--490
+[20<./ressources/images/./architecture_proposal-Page-2.png>] [21]
+Underfull \hbox (badness 10000) in paragraph at lines 449--449
 []|\TU/lmr/m/n/10.95 Pri-or-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 490--490
+Underfull \hbox (badness 10000) in paragraph at lines 449--449
 []|\TU/lmr/m/n/10.95 Est.
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 490--490
+Underfull \hbox (badness 10000) in paragraph at lines 449--449
 \TU/lmr/m/n/10.95 Ef-fort
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 490--490
+Underfull \hbox (badness 10000) in paragraph at lines 449--449
 []|\TU/lmr/m/n/10.95 Up-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 490--490
+Underfull \hbox (badness 10000) in paragraph at lines 449--449
 \TU/lmr/m/n/10.95 date
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 490--490
+Underfull \hbox (badness 10000) in paragraph at lines 449--449
 \TU/lmr/m/n/10.95 Ef-fort
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 490--490
+Underfull \hbox (badness 10000) in paragraph at lines 449--449
 []|\TU/lmr/m/n/10.95 Ac-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 490--490
+Underfull \hbox (badness 10000) in paragraph at lines 449--449
 \TU/lmr/m/n/10.95 tual
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 490--490
+Underfull \hbox (badness 10000) in paragraph at lines 449--449
 \TU/lmr/m/n/10.95 Ef-
  []
 
 
-Overfull \hbox (1.1013pt too wide) in paragraph at lines 490--490
+Overfull \hbox (1.1013pt too wide) in paragraph at lines 449--449
 \TU/lmr/m/n/10.95 fort[h]| 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 490--490
-[]|\TU/lmr/m/n/10.95 Sta-
+Underfull \hbox (badness 10000) in paragraph at lines 451--451
+[]|\TU/lmr/m/n/10.95 Tem-plate
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 491--492
-[]|\TU/lmr/m/n/10.95 To
+Underfull \hbox (badness 10000) in paragraph at lines 451--451
+\TU/lmr/m/n/10.95 and Con-
  []
 
 
-Overfull \hbox (7.751pt too wide) in alignment at lines 489--492
+Underfull \hbox (badness 10000) in paragraph at lines 452--452
+[]|\TU/lmr/m/n/10.95 About
+ []
+
+
+Underfull \hbox (badness 3168) in paragraph at lines 452--452
+[]|\TU/lmr/m/n/10.95 What is thymio and
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 453--453
+\TU/lmr/m/n/10.95 En-vi-ron-
+ []
+
+
+Underfull \hbox (badness 1460) in paragraph at lines 454--454
+[]|\TU/lmr/m/n/10.95 Cre-ate the project in
+ []
+
+
+Underfull \hbox (badness 3417) in paragraph at lines 455--455
+[]|\TU/lmr/m/n/10.95 In-stall Thymio Suite,
+ []
+
+
+Overfull \hbox (21.97739pt too wide) in alignment at lines 448--456
  [][][][][][][][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 501--503
-
+Underfull \hbox (badness 10000) in paragraph at lines 461--461
+[]|\TU/lmr/m/n/10.95 Pri-or-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 504--505
-
+Underfull \hbox (badness 10000) in paragraph at lines 461--461
+[]|\TU/lmr/m/n/10.95 Est.
  []
 
 
-Overfull \hbox (4.11873pt too wide) in paragraph at lines 519--521
-\TU/lmr/m/n/10.95 workd to ac-cess it) $\TU/lmtt/m/n/10.95 https://intranet.bfh
-.ch/TI/fr/Studium/Bachelor/Informatik/
+Underfull \hbox (badness 10000) in paragraph at lines 461--461
+\TU/lmr/m/n/10.95 Ef-fort
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 522--523
+Underfull \hbox (badness 10000) in paragraph at lines 461--461
+[]|\TU/lmr/m/n/10.95 Up-
+ []
 
+
+Underfull \hbox (badness 10000) in paragraph at lines 461--461
+\TU/lmr/m/n/10.95 date
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 461--461
+\TU/lmr/m/n/10.95 Ef-fort
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 461--461
+[]|\TU/lmr/m/n/10.95 Ac-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 461--461
+\TU/lmr/m/n/10.95 tual
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 461--461
+\TU/lmr/m/n/10.95 Ef-
+ []
+
+
+Overfull \hbox (1.1013pt too wide) in paragraph at lines 461--461
+\TU/lmr/m/n/10.95 fort[h]| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 462--462
+[]|\TU/lmr/m/n/10.95 Ba-sic
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 463--463
+[]|\TU/lmr/m/n/10.95 Read doc-u-men-ta-tion
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 463--463
+\TU/lmr/m/n/10.95 and ex-am-ples, and
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 464--464
+[]|\TU/lmr/m/n/10.95 Up-date and deepen
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 465--465
+[]|\TU/lmr/m/n/10.95 Thymio
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 465--465
+[]|\TU/lmr/m/n/10.95 Learn-ing and us-ing
+ []
+
+
+Underfull \hbox (badness 4084) in paragraph at lines 465--465
+\TU/lmr/m/n/10.95 VPL, Blockly, Aseba
+ []
+
+
+Overfull \hbox (10.79205pt too wide) in paragraph at lines 465--465
+[]|\TU/lmr/m/n/10.95 Medium| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 466--466
+[]|\TU/lmr/m/n/10.95 De-velop
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 466--466
+\TU/lmr/m/n/10.95 Play-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 466--466
+\TU/lmr/m/n/10.95 func-tion to gen-er-ate
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 467--467
+[]|\TU/lmr/m/n/10.95 Two De-
+ []
+
+
+Underfull \hbox (badness 3460) in paragraph at lines 467--467
+\TU/lmr/m/n/10.95 fault Play-
+ []
+
+
+Underfull \hbox (badness 4556) in paragraph at lines 467--467
+[]|\TU/lmr/m/n/10.95 Gen-er-at-ing two de-fa-
+ []
+
+
+Underfull \hbox (badness 2020) in paragraph at lines 467--467
+\TU/lmr/m/n/10.95 lut play-ground to be
+ []
+
+
+Overfull \hbox (10.79205pt too wide) in paragraph at lines 467--467
+[]|\TU/lmr/m/n/10.95 Medium| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 468--468
+[]|\TU/lmr/m/n/10.95 Thymio
+ []
+
+
+Overfull \hbox (10.79205pt too wide) in paragraph at lines 468--468
+[]|\TU/lmr/m/n/10.95 Medium| 
+ []
+
+
+Underfull \hbox (badness 1776) in paragraph at lines 469--469
+[]|\TU/lmr/m/n/10.95 Mesh Gen-
+ []
+
+
+Underfull \hbox (badness 3118) in paragraph at lines 469--469
+\TU/lmr/m/n/10.95 er-ate meshes for the
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 470--470
+[]|\TU/lmr/m/n/10.95 Up-date
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 470--470
+\TU/lmr/m/n/10.95 Doc-u-men-
+ []
+
+
+Underfull \hbox (badness 1009) in paragraph at lines 470--470
+[]|\TU/lmr/m/n/10.95 Up-date ex-ist-ing doc-u-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 470--471
+[]|\TU/lmr/m/n/10.95 In-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 471--471
+[]|\TU/lmr/m/n/10.95 Four sup-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 471--471
+\TU/lmr/m/n/10.95 ported
+ []
+
+
+Underfull \hbox (badness 4084) in paragraph at lines 471--471
+\TU/lmr/m/n/10.95 VPL, Blockly, Aseba
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 471--472
+[]|\TU/lmr/m/n/10.95 In-
+ []
+
+
+Overfull \hbox (21.97739pt too wide) in alignment at lines 460--472
+ [][][][][][][][] 
+ []
+
+[22]
+Underfull \hbox (badness 10000) in paragraph at lines 477--477
+[]|\TU/lmr/m/n/10.95 Pri-or-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 477--477
+[]|\TU/lmr/m/n/10.95 Est.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 477--477
+\TU/lmr/m/n/10.95 Ef-fort
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 477--477
+[]|\TU/lmr/m/n/10.95 Up-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 477--477
+\TU/lmr/m/n/10.95 date
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 477--477
+\TU/lmr/m/n/10.95 Ef-fort
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 477--477
+[]|\TU/lmr/m/n/10.95 Ac-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 477--477
+\TU/lmr/m/n/10.95 tual
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 477--477
+\TU/lmr/m/n/10.95 Ef-
+ []
+
+
+Overfull \hbox (1.1013pt too wide) in paragraph at lines 477--477
+\TU/lmr/m/n/10.95 fort[h]| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 478--478
+[]|\TU/lmr/m/n/10.95 Up-date
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 478--478
+\TU/lmr/m/n/10.95 Doc-u-men-
+ []
+
+
+Underfull \hbox (badness 1009) in paragraph at lines 478--478
+[]|\TU/lmr/m/n/10.95 Up-date ex-ist-ing doc-u-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 478--479
+[]|\TU/lmr/m/n/10.95 In-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 479--479
+[]|\TU/lmr/m/n/10.95 Four sup-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 479--479
+\TU/lmr/m/n/10.95 ported
+ []
+
+
+Underfull \hbox (badness 4084) in paragraph at lines 479--479
+\TU/lmr/m/n/10.95 VPL, Blockly, Aseba
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 479--480
+[]|\TU/lmr/m/n/10.95 In-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 481--481
+[]|\TU/lmr/m/n/10.95 Ar-chi-tec-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 481--482
+[]|\TU/lmr/m/n/10.95 In-
+ []
+
+
+Overfull \hbox (10.79205pt too wide) in paragraph at lines 482--482
+[]|\TU/lmr/m/n/10.95 Medium| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 484--484
+[]|\TU/lmr/m/n/10.95 Ar-chi-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 484--484
+\TU/lmr/m/n/10.95 tec-ture
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 484--484
+\TU/lmr/m/n/10.95 Im-ple-men-
+ []
+
+
+Underfull \hbox (badness 5417) in paragraph at lines 484--484
+[]|\TU/lmr/m/n/10.95 Refac-tor the ex-ist-ing
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 484--485
+[]|\TU/lmr/m/n/10.95 In-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 485--485
+[]|\TU/lmr/m/n/10.95 Refac-tor
+ []
+
+
+Underfull \hbox (badness 7168) in paragraph at lines 486--486
+[]|\TU/lmr/m/n/10.95 Unit Test-
+ []
+
+
+Underfull \hbox (badness 6188) in paragraph at lines 486--486
+[]|\TU/lmr/m/n/10.95 Write the JavaScript
+ []
+
+
+Underfull \hbox (badness 2582) in paragraph at lines 487--487
+[]|\TU/lmr/m/n/10.95 Write the JavaScript-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 487--488
+[]|\TU/lmr/m/n/10.95 In-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 488--488
+[]|\TU/lmr/m/n/10.95 Web De-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 491--492
+[]|\TU/lmr/m/n/10.95 In-
+ []
+
+
+Underfull \hbox (badness 2790) in paragraph at lines 492--492
+\TU/lmr/m/n/10.95 low-ing in-dex, sim-u-la-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 492--493
+[]|\TU/lmr/m/n/10.95 In-
+ []
+
+
+Overfull \hbox (21.97739pt too wide) in alignment at lines 476--493
+ [][][][][][][][] 
  []
 
 [23]
-Underfull \hbox (badness 10000) in paragraph at lines 536--537
+Underfull \hbox (badness 10000) in paragraph at lines 498--498
+[]|\TU/lmr/m/n/10.95 Pri-or-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 498--498
+[]|\TU/lmr/m/n/10.95 Est.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 498--498
+\TU/lmr/m/n/10.95 Ef-fort
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 498--498
+[]|\TU/lmr/m/n/10.95 Up-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 498--498
+\TU/lmr/m/n/10.95 date
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 498--498
+\TU/lmr/m/n/10.95 Ef-fort
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 498--498
+[]|\TU/lmr/m/n/10.95 Ac-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 498--498
+\TU/lmr/m/n/10.95 tual
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 498--498
+\TU/lmr/m/n/10.95 Ef-
+ []
+
+
+Overfull \hbox (1.1013pt too wide) in paragraph at lines 498--498
+\TU/lmr/m/n/10.95 fort[h]| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 499--499
+[]|\TU/lmr/m/n/10.95 Be-haviour
+ []
+
+
+Underfull \hbox (badness 6859) in paragraph at lines 499--499
+\TU/lmr/m/n/10.95 .aesl file and trans-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 500--500
+[]|\TU/lmr/m/n/10.95 Phy-isics
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 500--500
+\TU/lmr/m/n/10.95 Im-ple-men-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 500--500
+[]|\TU/lmr/m/n/10.95 Im-ple-men-ta-tion of
+ []
+
+
+Underfull \hbox (badness 1024) in paragraph at lines 500--500
+\TU/lmr/m/n/10.95 Col-li-sions for ThreeJS
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 501--501
+[]|\TU/lmr/m/n/10.95 Up-date
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 501--501
+\TU/lmr/m/n/10.95 Doc-u-men-
+ []
+
+
+Underfull \hbox (badness 1009) in paragraph at lines 501--501
+[]|\TU/lmr/m/n/10.95 Up-date ex-ist-ing doc-u-
+ []
+
+
+Overfull \hbox (21.97739pt too wide) in alignment at lines 497--502
+ [][][][][][][][] 
+ []
+
+[24]
+Underfull \hbox (badness 10000) in paragraph at lines 507--507
+[]|\TU/lmr/m/n/10.95 Pri-or-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 507--507
+[]|\TU/lmr/m/n/10.95 Est.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 507--507
+\TU/lmr/m/n/10.95 Ef-fort
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 507--507
+[]|\TU/lmr/m/n/10.95 Up-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 507--507
+\TU/lmr/m/n/10.95 date
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 507--507
+\TU/lmr/m/n/10.95 Ef-fort
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 507--507
+[]|\TU/lmr/m/n/10.95 Ac-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 507--507
+\TU/lmr/m/n/10.95 tual
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 507--507
+\TU/lmr/m/n/10.95 Ef-
+ []
+
+
+Overfull \hbox (1.1013pt too wide) in paragraph at lines 507--507
+\TU/lmr/m/n/10.95 fort[h]| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 508--508
+[]|\TU/lmr/m/n/10.95 En-hanced
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 508--508
+[]|\TU/lmr/m/n/10.95 En-hance-ment of the
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 509--509
+[]|\TU/lmr/m/n/10.95 Cus-tomiz-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 509--509
+\TU/lmr/m/n/10.95 able Play-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 509--509
+[]|\TU/lmr/m/n/10.95 Im-ple-men-ta-tion of a
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 510--510
+[]|\TU/lmr/m/n/10.95 Up-date
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 510--510
+\TU/lmr/m/n/10.95 Doc-u-men-
+ []
+
+
+Underfull \hbox (badness 1009) in paragraph at lines 510--510
+[]|\TU/lmr/m/n/10.95 Up-date ex-ist-ing doc-u-
+ []
+
+
+Overfull \hbox (21.97739pt too wide) in alignment at lines 506--511
+ [][][][][][][][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 516--516
+[]|\TU/lmr/m/n/10.95 Pri-or-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 516--516
+[]|\TU/lmr/m/n/10.95 Est.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 516--516
+\TU/lmr/m/n/10.95 Ef-fort
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 516--516
+[]|\TU/lmr/m/n/10.95 Up-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 516--516
+\TU/lmr/m/n/10.95 date
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 516--516
+\TU/lmr/m/n/10.95 Ef-fort
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 516--516
+[]|\TU/lmr/m/n/10.95 Ac-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 516--516
+\TU/lmr/m/n/10.95 tual
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 516--516
+\TU/lmr/m/n/10.95 Ef-
+ []
+
+
+Overfull \hbox (1.1013pt too wide) in paragraph at lines 516--516
+\TU/lmr/m/n/10.95 fort[h]| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 517--517
+[]|\TU/lmr/m/n/10.95 En-hanced
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 517--517
+\TU/lmr/m/n/10.95 Be-haviour
+ []
+
+
+Underfull \hbox (badness 4279) in paragraph at lines 517--517
+[]|\TU/lmr/m/n/10.95 Im-ple-ment more sen-
+ []
+
+
+Underfull \hbox (badness 5008) in paragraph at lines 518--518
+[]|\TU/lmr/m/n/10.95 Fin-ish ex-ist-ing doc-u-
+ []
+
+
+Overfull \hbox (5.24275pt too wide) in paragraph at lines 519--519
+[]|\TU/lmr/m/n/10.95 16.1| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 519--519
+[]|\TU/lmr/m/n/10.95 Cre-ate
+ []
+
+
+Overfull \hbox (5.24275pt too wide) in paragraph at lines 520--520
+[]|\TU/lmr/m/n/10.95 16.2| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 520--520
+[]|\TU/lmr/m/n/10.95 Pre-pare
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 520--520
+\TU/lmr/m/n/10.95 Pre-sen-ta-
+ []
+
+
+Overfull \hbox (5.24275pt too wide) in paragraph at lines 521--521
+[]|\TU/lmr/m/n/10.95 16.3| 
+ []
+
+
+Overfull \hbox (5.24275pt too wide) in paragraph at lines 522--522
+[]|\TU/lmr/m/n/10.95 16.4| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 522--522
+[]|\TU/lmr/m/n/10.95 Fin-ish
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 522--522
+\TU/lmr/m/n/10.95 Writ-ting
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 522--522
+\TU/lmr/m/n/10.95 Doc-u-men-
+ []
+
+
+Overfull \hbox (5.24275pt too wide) in paragraph at lines 523--523
+[]|\TU/lmr/m/n/10.95 16.5| 
+ []
+
+
+Underfull \hbox (badness 3919) in paragraph at lines 523--523
+[]|\TU/lmr/m/n/10.95 Pre-pare to
+ []
+
+
+Underfull \hbox (badness 1275) in paragraph at lines 523--523
+\TU/lmr/m/n/10.95 put the project on a
+ []
+
+
+Overfull \hbox (21.97739pt too wide) in alignment at lines 515--524
+ [][][][][][][][] 
+ []
+
+[25]
+Underfull \hbox (badness 10000) in paragraph at lines 529--529
+[]|\TU/lmr/m/n/10.95 Pri-or-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 529--529
+[]|\TU/lmr/m/n/10.95 Est.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 529--529
+\TU/lmr/m/n/10.95 Ef-fort
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 529--529
+[]|\TU/lmr/m/n/10.95 Up-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 529--529
+\TU/lmr/m/n/10.95 date
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 529--529
+\TU/lmr/m/n/10.95 Ef-fort
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 529--529
+[]|\TU/lmr/m/n/10.95 Ac-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 529--529
+\TU/lmr/m/n/10.95 tual
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 529--529
+\TU/lmr/m/n/10.95 Ef-
+ []
+
+
+Overfull \hbox (1.1013pt too wide) in paragraph at lines 529--529
+\TU/lmr/m/n/10.95 fort[h]| 
+ []
+
+
+Overfull \hbox (21.97739pt too wide) in alignment at lines 528--531
+ [][][][][][][][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 540--542
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 538--539
+Underfull \hbox (badness 10000) in paragraph at lines 543--544
+
+ []
+
+
+Overfull \hbox (4.11873pt too wide) in paragraph at lines 558--560
+\TU/lmr/m/n/10.95 workd to ac-cess it) [][]$\TU/lmtt/m/n/10.95 https://intranet
+.bfh.ch/TI/fr/Studium/Bachelor/Informatik/
+ []
+
+[26]
+Underfull \hbox (badness 10000) in paragraph at lines 561--562
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 575--576
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 577--578
 
  []
 
@@ -3097,29 +3121,34 @@ File: lstlang1.sty 2018/09/02 1.7 listings language file
 (d:/Programmes/texlive/2018/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2018/09/02 1.7 (Carsten Heinz)
 )
-Underfull \hbox (badness 10000) in paragraph at lines 540--543
+Underfull \hbox (badness 10000) in paragraph at lines 579--582
 
  []
 
 
-Overfull \hbox (55.74927pt too wide) in paragraph at lines 550--551
-[][][][][][][][][][][][][][][][][][][][][][][][][] 
+Overfull \hbox (55.74927pt too wide) in paragraph at lines 589--590
+[][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-[24] (./flucq1_Documentation.lof)
-\tf@lof=\write9
+[27] (./flucq1_Documentation.lof)
+\tf@lof=\write10
 
-\openout9 = flucq1_Documentation.lof
- [25]
+\openout10 = flucq1_Documentation.lof
+ [28]
 
-LaTeX Warning: Empty bibliography on input line 603.
+LaTeX Warning: Empty bibliography on input line 642.
 
-[26] (./flucq1_Documentation.aux)
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 644.
+[29]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 644.
+ (./flucq1_Documentation.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 644.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 644.
+Package rerunfilecheck Info: File `flucq1_Documentation.out' has not changed.
+(rerunfilecheck)             Checksum: 2C4F4DBB01E334F0A6064AEDDB9546EE;2360.
+
 
 LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
 
 Package biblatex Warning: Please (re)run Biber on the file:
@@ -3132,14 +3161,14 @@ Package logreq Info: Writing requests to 'flucq1_Documentation.run.xml'.
 )
 
 Here is how much of LuaTeX's memory you used:
- 29250 strings out of 494407
+ 32804 strings out of 494407
  100000,1373583 words of node,token memory allocated
- 620 words of node memory still in use:
-   6 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 glyph, 8 attribute, 78 glue_spec,
- 8 attribute_list, 1 write nodes
-   avail lists: 1:4,2:1359,3:811,4:99,5:249,6:332,7:5755,8:991,9:1565,10:18,11:3
-32
- 32386 multiletter control sequences out of 65536+600000
+ 645 words of node memory still in use:
+   6 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 glyph, 10 attribute, 79 glue_spec
+, 10 attribute_list, 1 write, 2 pdf_action nodes
+   avail lists: 1:3,2:1598,3:839,4:244,5:291,6:344,7:6306,8:1041,9:1739,10:18,11
+:357
+ 35682 multiletter control sequences out of 65536+600000
  104 fonts using 9343287 bytes
  62i,8n,83p,9117b,2195s stack positions out of 5000i,500n,10000p,200000b,100000s
 <d:/Programmes/texlive/2018/texmf-dist/fonts/opentype/public/lm/lmmonolt10-bold.
@@ -3151,10 +3180,10 @@ blic/lm/lmroman10-regular.otf><d:/Programmes/texlive/2018/texmf-dist/fonts/opent
 ype/public/lm/lmmono12-regular.otf><d:/Programmes/texlive/2018/texmf-dist/fonts/
 opentype/public/lm/lmroman12-regular.otf><d:/Programmes/texlive/2018/texmf-dist/
 fonts/opentype/public/lm/lmsans10-bold.otf>
-Output written on flucq1_Documentation.pdf (26 pages, 884500 bytes).
+Output written on flucq1_Documentation.pdf (29 pages, 959867 bytes).
 
-PDF statistics: 167 PDF objects out of 1000 (max. 8388607)
- 89 compressed objects within 1 object stream
- 0 named destinations out of 1000 (max. 131072)
- 1 words of extra memory for PDF output out of 10000 (max. 100000000)
+PDF statistics: 505 PDF objects out of 1000 (max. 8388607)
+ 411 compressed objects within 5 object streams
+ 113 named destinations out of 1000 (max. 131072)
+ 297 words of extra memory for PDF output out of 10000 (max. 100000000)
 
