@@ -27,6 +27,8 @@ export default class APIClient {
                 break;
         }
     }
+
+    
 }
 
 APIClient.wallHeight = 6;

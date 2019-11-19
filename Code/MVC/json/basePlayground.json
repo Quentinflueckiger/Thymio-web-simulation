@@ -1,0 +1,40 @@
+
+{
+    "playground" : [
+        {
+            "name": "Baseplayground",
+
+            "boxes": [
+                {
+                    "name": "N Wall",
+                    "props": {
+                        "width" : "1",
+                        "height" : "4",
+                        "depth" : "10",
+                        "color" : "",
+                        "positionX" : "3",
+                        "positionZ" : "0"
+                    }
+                }
+            ],
+
+            "planes": [
+                {
+                    "name": "Bottom plane",
+                    "props": {
+                        "width" : "APIClient.pgWidth",
+                        "height" : "APIClient.pgLength",
+                        "color" : "ColorPalette.LightGrey"
+                    },
+                    "hasWalls": "true"
+                }
+            ],
+
+            "thymios": [
+                {
+                    "name": "Thymio"
+                }
+            ]
+        }
+    ]
+}
