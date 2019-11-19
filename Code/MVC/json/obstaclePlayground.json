@@ -1,0 +1,373 @@
+{
+    "playground": "Obstacleplayground",
+    "tracks": [
+        {
+          "name": "Base Track",
+          "props": {
+            "color" : "#fc031c",
+            "points" : [
+                {
+                    "positionX" : 0,
+                    "positionZ" : 0
+                },
+                {
+                    "positionX" : 25,
+                    "positionZ" : 0
+                },
+                {
+                    "positionX" : 35,
+                    "positionZ" : 10
+                },
+                {
+                    "positionX" : 35,
+                    "positionZ" : 35
+                },
+                {
+                    "positionX" : 25,
+                    "positionZ" : 45
+                },
+                {
+                    "positionX" : -20,
+                    "positionZ" : 40
+                },
+                {
+                    "positionX" : -34,
+                    "positionZ" : 28
+                },
+                {
+                    "positionX" : -34,
+                    "positionZ" : 23
+                },
+                {
+                    "positionX" : -18,
+                    "positionZ" : 6
+                },
+                {
+                    "positionX" : -18,
+                    "positionZ" : -6
+                },
+                {
+                    "positionX" : -40,
+                    "positionZ" : -25
+                },
+                {
+                    "positionX" : -40,
+                    "positionZ" : -35
+                },
+                {
+                    "positionX" : -30,
+                    "positionZ" : -45
+                },
+                {
+                    "positionX" : 25,
+                    "positionZ" : -45
+                },
+                {
+                    "positionX" : 35,
+                    "positionZ" : -35
+                },
+                {
+                    "positionX" : 35,
+                    "positionZ" : -10
+                },
+                {
+                    "positionX" : 25,
+                    "positionZ" : 0
+                }
+            ]  
+          }
+        }
+    ],
+    "octagons" : [
+        {
+          "name": "Bottom octagon",
+          "props": {
+            "segmentLength" : 50,
+            "color" : "#bdbbbb"
+          },
+          "hasWalls": true
+      }
+    ],
+  "uShapes" : [
+        {
+        "name": "Central UShape",
+        "props": {
+            "height" : 6,
+            "positionX" : 0,
+            "positionZ" : 0,
+            "size" : 3,
+            "color" : "#9fa3bd"
+        },
+        "hasWalls": true
+        }
+    ],
+    "cylinders" : [
+        {
+          "name": "TLC1",
+          "props": {
+            "topRadius" : 2,
+            "botRadius" : 2,
+            "height" : 6,
+            "positionX" : -14,
+            "positionZ" : -14,
+            "color" : "#9fa3bd"
+          }
+        },
+        {
+            "name": "TLC2",
+            "props": {
+              "topRadius" : 2,
+              "botRadius" : 2,
+              "height" : 6,
+              "positionX" : -17,
+              "positionZ" : -17,
+              "color" : "#9fa3bd"
+            }
+          },
+          {
+            "name": "TLC3",
+            "props": {
+              "topRadius" : 2,
+              "botRadius" : 2,
+              "height" : 6,
+              "positionX" : -20,
+              "positionZ" : -20,
+              "color" : "#9fa3bd"
+            }
+          },
+          {
+            "name": "TLC4",
+            "props": {
+              "topRadius" : 2,
+              "botRadius" : 2,
+              "height" : 6,
+              "positionX" : -23,
+              "positionZ" : -23,
+              "color" : "#9fa3bd"
+            }
+          },
+          {
+            "name": "TLC5",
+            "props": {
+              "topRadius" : 2,
+              "botRadius" : 2,
+              "height" : 6,
+              "positionX" : -26,
+              "positionZ" : -26,
+              "color" : "#9fa3bd"
+            }
+          },
+          {
+            "name": "TLC6",
+            "props": {
+              "topRadius" : 2,
+              "botRadius" : 2,
+              "height" : 6,
+              "positionX" : -29,
+              "positionZ" : -29,
+              "color" : "#9fa3bd"
+            }
+          },
+          {
+            "name": "TLC7",
+            "props": {
+              "topRadius" : 2,
+              "botRadius" : 2,
+              "height" : 6,
+              "positionX" : -32,
+              "positionZ" : -32,
+              "color" : "#9fa3bd"
+            }
+          },
+          {
+            "name": "MLC1",
+            "props": {
+              "topRadius" : 2,
+              "botRadius" : 2,
+              "height" : 6,
+              "positionX" : -58,
+              "positionZ" : 0,
+              "color" : "#9fa3bd"
+            }
+          },
+          {
+            "name": "MLC2",
+            "props": {
+              "topRadius" : 2,
+              "botRadius" : 2,
+              "height" : 6,
+              "positionX" : -54,
+              "positionZ" : 0,
+              "color" : "#9fa3bd"
+            }
+          },
+          {
+            "name": "MLC3",
+            "props": {
+              "topRadius" : 2,
+              "botRadius" : 2,
+              "height" : 6,
+              "positionX" : -50,
+              "positionZ" : 0,
+              "color" : "#9fa3bd"
+            }
+          },
+          {
+            "name": "MLC4",
+            "props": {
+              "topRadius" : 2,
+              "botRadius" : 2,
+              "height" : 6,
+              "positionX" : -46,
+              "positionZ" : 0,
+              "color" : "#9fa3bd"
+            }
+          },
+          {
+            "name": "MLC5",
+            "props": {
+              "topRadius" : 2,
+              "botRadius" : 2,
+              "height" : 6,
+              "positionX" : -42,
+              "positionZ" : 0,
+              "color" : "#9fa3bd"
+            }
+          },
+          {
+            "name": "MLC6",
+            "props": {
+              "topRadius" : 2,
+              "botRadius" : 2,
+              "height" : 6,
+              "positionX" : -38,
+              "positionZ" : 0,
+              "color" : "#9fa3bd"
+            }
+          },
+          {
+            "name": "MLC7",
+            "props": {
+              "topRadius" : 2,
+              "botRadius" : 2,
+              "height" : 6,
+              "positionX" : -34,
+              "positionZ" : 0,
+              "color" : "#9fa3bd"
+            }
+          },
+          {
+            "name": "MLC8",
+            "props": {
+              "topRadius" : 2,
+              "botRadius" : 2,
+              "height" : 6,
+              "positionX" : -30,
+              "positionZ" : 0,
+              "color" : "#9fa3bd"
+            }
+          },
+          {
+            "name": "MLC9",
+            "props": {
+              "topRadius" : 2,
+              "botRadius" : 2,
+              "height" : 6,
+              "positionX" : -26,
+              "positionZ" : 0,
+              "color" : "#9fa3bd"
+            }
+          },
+          {
+            "name": "BLC1",
+            "props": {
+              "topRadius" : 2,
+              "botRadius" : 2,
+              "height" : 6,
+              "positionX" : -14,
+              "positionZ" : 14,
+              "color" : "#9fa3bd"
+            }
+          },
+          {
+            "name": "BLC2",
+            "props": {
+              "topRadius" : 2,
+              "botRadius" : 2,
+              "height" : 6,
+              "positionX" : -17,
+              "positionZ" : 17,
+              "color" : "#9fa3bd"
+            }
+          },
+          {
+            "name": "BLC3",
+            "props": {
+              "topRadius" : 2,
+              "botRadius" : 2,
+              "height" : 6,
+              "positionX" : -20,
+              "positionZ" : 20,
+              "color" : "#9fa3bd"
+            }
+          },
+          {
+            "name": "BLC4",
+            "props": {
+              "topRadius" : 2,
+              "botRadius" : 2,
+              "height" : 6,
+              "positionX" : -23,
+              "positionZ" : 23,
+              "color" : "#9fa3bd"
+            }
+          },
+          {
+            "name": "BLC5",
+            "props": {
+              "topRadius" : 2,
+              "botRadius" : 2,
+              "height" : 6,
+              "positionX" : -26,
+              "positionZ" : 26,
+              "color" : "#9fa3bd"
+            }
+          },
+          {
+            "name": "BLC6",
+            "props": {
+              "topRadius" : 2,
+              "botRadius" : 2,
+              "height" : 6,
+              "positionX" : -35,
+              "positionZ" : 35,
+              "color" : "#9fa3bd"
+            }
+          },
+          {
+            "name": "BLC7",
+            "props": {
+              "topRadius" : 2,
+              "botRadius" : 2,
+              "height" : 6,
+              "positionX" : -38,
+              "positionZ" : 38,
+              "color" : "#9fa3bd"
+            }
+          },
+          {
+            "name": "BLC8",
+            "props": {
+              "topRadius" : 2,
+              "botRadius" : 2,
+              "height" : 6,
+              "positionX" : -41,
+              "positionZ" : 41,
+              "color" : "#9fa3bd"
+            }
+          }
+    ],
+    "thymios": {
+      "name": "Thymio"
+    }
+}

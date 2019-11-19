@@ -1,15 +1,15 @@
 import ViewMediatorFactory from './ViewMediatorFactory.js';
 import RenderingContext from './RenderingContext.js';
 import EnvironmentViewMediator from './mediator/EnvironmentViewMediator.js';
-import EnvironmentButtons from './controls/EnvironmentButtons.js';
+import SimulatorButtons from './controls/SimulatorButtons.js';
 
-export default class MainView {
+export default class SimulatorView {
     constructor(controller, environment) {
         this.controller = controller;
         this.environment = environment;
         this.renderingContext = this.createRenderingContext();
         this.environmentViewMediator = new EnvironmentViewMediator(environment, new ViewMediatorFactory());
-        this.environmentButtons = new EnvironmentButtons();
+        this.simulatorButtons = new SimulatorButtons();
     }
 
     createRenderingContext() {
@@ -26,10 +26,12 @@ export default class MainView {
 
         scene.add(object3D);
 
-        this.environmentButtons.init();
+        this.simulatorButtons.init();
         
-        this.environmentButtons.addObserver('pgPickerClicked', (e) => this.controller.onPGPickerClicked(e));
-        this.environmentButtons.addObserver('aeslFileSubmited', (e) => this.controller.onAeslFileSubmited(e));
+        this.simulatorButtons.addObserver('pgPickerClicked', (e) => this.controller.onPGPickerClicked(e));
+        this.simulatorButtons.addObserver('aeslFileSubmited', (e) => this.controller.onAeslFileSubmited(e));
+        this.simulatorButtons.addObserver('fwdButtonClicked', (e) => this.controller.onFwdButtonClicked(e));
+        this.simulatorButtons.addObserver('bwdButtonClicked', (e) => this.controller.onBwdButtonClicked(e));
 
         window.addEventListener( 'resize', (e) => this.onWindowResize(), false );
         this.render();

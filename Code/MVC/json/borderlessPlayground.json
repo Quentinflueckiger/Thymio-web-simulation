@@ -1,0 +1,39 @@
+
+{
+        "playground": "Borderlessplayground",
+        "tracks": [
+          {
+            "name": "Base Track",
+            "props": {
+              "color" : "#fc031c",
+              "points" : [
+                  {
+                      "positionX" : 0,
+                      "positionZ" : 0
+                  },
+                  {
+                    "positionX" : 20,
+                    "positionZ" : 0
+                  },
+                  {
+                    "positionX" : 52,
+                    "positionZ" : 32
+                  }
+              ]  
+            }
+          }
+        ],
+        "octagons" : [
+          {
+            "name": "Bottom octagon",
+            "props": {
+              "segmentLength" : 50,
+              "color" : "#bdbbbb"
+            },
+            "hasWalls": false
+        }
+      ],
+        "thymios": {
+          "name": "Thymio"
+        }
+}

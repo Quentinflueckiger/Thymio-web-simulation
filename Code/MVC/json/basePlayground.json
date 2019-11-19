@@ -1,40 +1,63 @@
-
 {
-    "playground" : [
-        {
-            "name": "Baseplayground",
-
-            "boxes": [
-                {
-                    "name": "N Wall",
-                    "props": {
-                        "width" : "1",
-                        "height" : "4",
-                        "depth" : "10",
-                        "color" : "",
-                        "positionX" : "3",
-                        "positionZ" : "0"
-                    }
-                }
-            ],
-
-            "planes": [
-                {
-                    "name": "Bottom plane",
-                    "props": {
-                        "width" : "APIClient.pgWidth",
-                        "height" : "APIClient.pgLength",
-                        "color" : "ColorPalette.LightGrey"
-                    },
-                    "hasWalls": "true"
-                }
-            ],
-
-            "thymios": [
-                {
-                    "name": "Thymio"
-                }
-            ]
+    "playground": "Baseplayground",
+    "boxes": [
+      {
+        "name": "N Wall",
+        "props": {
+          "width" : 1,
+          "height" : 6,
+          "depth" : 51,
+          "color" : "#9fa3bd",
+          "positionX" : -25,
+          "positionZ" : 0
         }
-    ]
+      },
+      {
+        "name": "E Wall",
+        "props": {
+          "width" : 51,
+          "height" : 6,
+          "depth" : 1,
+          "color" : "#9fa3bd",
+          "positionX" : 0,
+          "positionZ" : -25
+        }
+      },
+      {
+        "name": "S Wall",
+        "props": {
+          "width" : 1,
+          "height" : 6,
+          "depth" : 51,
+          "color" : "#9fa3bd",
+          "positionX" : 25,
+          "positionZ" : 0
+        }
+      },
+      {
+        "name": "W Wall",
+        "props": {
+          "width" : 51,
+          "height" : 6,
+          "depth" : 1,
+          "color" : "#9fa3bd",
+          "positionX" : 0,
+          "positionZ" : 25
+        }
+      }
+    ],
+    "planes" : [
+      {
+        "name": "Bottom plane",
+        "props": {
+          "width" : 50,
+          "height" : 50,
+          "color" : "#bdbbbb"
+        },
+        "hasWalls": true
+    }
+  ],
+    "thymios": {
+      "name": "Thymio"
+    }
 }

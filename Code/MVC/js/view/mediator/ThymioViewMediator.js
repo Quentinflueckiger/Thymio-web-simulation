@@ -5,9 +5,12 @@ import { OBJLoader } from '../../../bin/loaders/OBJLoader.js';
 export default class ThymioViewMediator extends ViewMediator {
     constructor(thymio, mediatorFactory) {
         super(thymio, mediatorFactory);
+        this.ready = false;
+        this.speed = 0.000;
     }
 
     makeObject3D() {
+        var tvm = this;
         const container = new THREE.Object3D();
         
         const thymiopath = '../../../images/Thymio_3d_Model/';
@@ -24,15 +27,27 @@ export default class ThymioViewMediator extends ViewMediator {
                 object.rotateX(-Math.PI/2);
 
                 container.add(object);
+                tvm.ready = true;
                 
             })
         })
         return container;
     }
 
+    onFrameRenderered() {
+        super.onFrameRenderered();
+
+        if (this.ready){
+            this.move(30,30);
+            //console.log("speed:", this.speed);
+        }
+        
+    }
+
     move(left, right) {
         if (left === right){
             //move in a straight line
+            this.object3D.position.x += this.speed * right;
         }
         else if (left > right) {
             //turn towards the right

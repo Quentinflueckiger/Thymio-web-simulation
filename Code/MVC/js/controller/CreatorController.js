@@ -1,38 +1,28 @@
-import SimulatorView from '../view/SimulatorView.js';
+import CreatorView from '../view/CreatorView.js';
 import Thymio from '../model/Thymio.js';
 import Playground from '../model/Playground.js';
 import Box from '../model/Box.js';
 import Plane from '../model/Plane.js';
-import * as Interpreter from '../Interpreter/IntegrityFilter.js';
 import Octagon from '../model/Octagon.js';
 import UShapedFigure from '../model/UShapedFigure.js';
 import Cylinder from '../model/Cylinder.js';
 import Track from '../model/Track.js';
 
-export default class EnvironmentController {
+export default class CreatorController {
     constructor(environment) {
         this.environment = environment;
-        this.view = new SimulatorView(this, environment);
+        this.view = new CreatorView(this, environment);
         this.view.initialize();
     }
 
-    onPGPickerClicked(e){
-        var pgPicker = document.getElementById("pgPicker");
-        
-        this.environment.removePlayground(this.environment.playground[0]);
-
-        var newPlayground = pgPicker.options[pgPicker.selectedIndex].value;
-        this.loadPlayground(newPlayground);
-    }
-    
     loadPlayground(playgroundName) {
-        var ec = this;
-
+        var cc = this;
+        //loadJSON(function test(){}, this);
         var xmlhttp = new XMLHttpRequest();
         xmlhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
                 var myArr = JSON.parse(this.responseText);
-                ec.createPlayground(myArr);
+                cc.createPlayground(myArr);
             }
         };
         xmlhttp.open("GET", './json/'+playgroundName+'.json', true);
@@ -60,8 +50,8 @@ export default class EnvironmentController {
         }
         
         if (file.thymios) {
-                this.thymioModel = new Thymio(file.thymios.name, {});
-                playground.addShape(this.thymioModel);
+                var thymio = new Thymio(file.thymios.name, {});
+                playground.addShape(thymio);
         }
         
         if (file.octagons) {
@@ -91,18 +81,5 @@ export default class EnvironmentController {
                 playground.addShape(track);
             }
         }
-    }
-
-    onAeslFileSubmited(e) {
-        const file = document.getElementById("aeslFile").files[0];
-
-        Interpreter.loadFile(file);
-    }
-
-    onFwdButtonClicked(e) {
-        console.log("b", this.thymioModel.parent.originalObject);
-    }
-
-    onBwdButtonClicked(e) {
     }
 }
