@@ -6,7 +6,10 @@ export default class ThymioViewMediator extends ViewMediator {
     constructor(thymio, mediatorFactory) {
         super(thymio, mediatorFactory);
         this.ready = false;
-        this.speed = 0.000;
+        this.speed = 0.001;
+        this.model.mediator = this;
+        this.leftMotor = 0;
+        this.rightMotor = 0;
     }
 
     makeObject3D() {
@@ -33,26 +36,42 @@ export default class ThymioViewMediator extends ViewMediator {
         })
         return container;
     }
-
+    
     onFrameRenderered() {
         super.onFrameRenderered();
 
         if (this.ready){
-            this.move(30,30);
-            //console.log("speed:", this.speed);
+            this.move();
         }
         
     }
 
-    move(left, right) {
-        if (left === right){
+    setMotors(left, right) {
+        this.leftMotor = left;
+        this.rightMotor = right;
+    }
+
+    stopMotors() {
+        this.object3D.rotateY(-Math.PI/2);
+        this.leftMotor = 0;
+        this.rightMotor = 0;
+    }
+
+    getDirection() {
+        var direction = new THREE.Vector3();
+        return this.object3D.getWorldDirection(direction);;
+    }
+    move() {
+        if (this.leftMotor === this.rightMotor){
             //move in a straight line
-            this.object3D.position.x += this.speed * right;
+            //this.object3D.translateOnAxis(this.getDirection(), this.speed + this.rightMotor); 
+            this.object3D.position.x += this.getDirection().x * this.speed * this.rightMotor;
+            this.object3D.position.z += this.getDirection().z * this.speed * this.rightMotor;
         }
-        else if (left > right) {
+        else if (this.leftMotor > this.rightMotor) {
             //turn towards the right
         }
-        else if ( left < right) {
+        else if (this.leftMotor < this.rightMotor) {
             //turn towards the left
         }
 

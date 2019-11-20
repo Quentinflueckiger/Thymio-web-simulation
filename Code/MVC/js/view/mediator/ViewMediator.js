@@ -35,6 +35,7 @@ export default class ViewMediator extends Observable {
         const mediator = this.childMediators.get(child);
 
         if (mediator) {
+            console.log("Child: ", child);
             this.object3D.children[0].remove(mediator.object3D);
             this.childMediators.delete(child);
         }

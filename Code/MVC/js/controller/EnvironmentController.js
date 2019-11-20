@@ -60,8 +60,9 @@ export default class EnvironmentController {
         }
         
         if (file.thymios) {
-                this.thymioModel = new Thymio(file.thymios.name, {});
-                playground.addShape(this.thymioModel);
+            this.thymio = new Thymio(file.thymios.name, {});
+            playground.addShape(this.thymio);
+            console.log("Thymio: ", this.thymio.mediator);
         }
         
         if (file.octagons) {
@@ -100,9 +101,10 @@ export default class EnvironmentController {
     }
 
     onFwdButtonClicked(e) {
-        console.log("b", this.thymioModel.parent.originalObject);
+        this.thymio.mediator.setMotors(30,15);
     }
 
     onBwdButtonClicked(e) {
+        this.thymio.mediator.stopMotors();
     }
 }
