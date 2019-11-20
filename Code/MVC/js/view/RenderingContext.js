@@ -43,8 +43,8 @@ export default class RenderingContext {
          
         scene.add(light);
 
-        var helper = new THREE.CameraHelper( light.shadow.camera );
-        scene.add( helper );
+        /*var helper = new THREE.CameraHelper( light.shadow.camera );
+        scene.add( helper );*/
 
         var axesHelper = new THREE.AxesHelper( 20 );
         scene.add( axesHelper );

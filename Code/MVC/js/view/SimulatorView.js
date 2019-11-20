@@ -30,8 +30,12 @@ export default class SimulatorView {
         
         this.simulatorButtons.addObserver('pgPickerClicked', (e) => this.controller.onPGPickerClicked(e));
         this.simulatorButtons.addObserver('aeslFileSubmited', (e) => this.controller.onAeslFileSubmited(e));
-        this.simulatorButtons.addObserver('fwdButtonClicked', (e) => this.controller.onFwdButtonClicked(e));
-        this.simulatorButtons.addObserver('bwdButtonClicked', (e) => this.controller.onBwdButtonClicked(e));
+        
+        this.simulatorButtons.addObserver('dPadUpClicked', (e) => this.controller.onDPUpClicked(e));
+        this.simulatorButtons.addObserver('dPadLeftClicked', (e) => this.controller.onDPLeftClicked(e));
+        this.simulatorButtons.addObserver('dPadCenterClicked', (e) => this.controller.onDPCenterClicked(e));
+        this.simulatorButtons.addObserver('dPadRightClicked', (e) => this.controller.onDPRightClicked(e));
+        this.simulatorButtons.addObserver('dPadDownClicked', (e) => this.controller.onDPDownClicked(e));
 
         window.addEventListener( 'resize', (e) => this.onWindowResize(), false );
         this.render();

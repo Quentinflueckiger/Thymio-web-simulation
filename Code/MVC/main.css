@@ -77,3 +77,56 @@ a, button, input, select {
 	margin: 4px 2px;
 	cursor: pointer;
 }
+/*
+TEST FOR D-PAD
+.btn-group-vertical .button {
+  background-color: #4CAF50;
+  border: 1px solid green;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+  width: 150px;
+  display: block;
+}
+
+.btn-group-vertical .button:hover {
+  background-color: #3e8e41;
+}
+
+.btn-group-horizontal .buttonh {
+  background-color: #4CAF50;
+  border: 1px solid green;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+  width: 150px;
+  float: left;
+}
+
+
+.btn-group-horizontal .buttonh:hover {
+  background-color: #3e8e41;
+}
+</style>
+</head>
+<body>
+
+<h2>Vertical Button Group</h2>
+
+<div class="btn-group-vertical">
+  <button class="button">Button</button>
+  <div class="btn-group-horizontal">
+  <button class="buttonh">Button</button>
+  <button class="buttonh">Button</button>
+  <button class="buttonh">Button</button>
+  </div><p style="clear:both"></p>
+  <button class="button">Button</button>
+  <button class="button">Button</button>
+</div>
+*/

@@ -100,11 +100,28 @@ export default class EnvironmentController {
         Interpreter.loadFile(file);
     }
 
-    onFwdButtonClicked(e) {
-        this.thymio.mediator.setMotors(30,15);
+    onDPUpClicked(e) {
+        
+        this.thymio.mediator.setMotors(300,-300);
     }
 
-    onBwdButtonClicked(e) {
+    onDPLeftClicked(e) {
+        
+        this.thymio.mediator.setMotors(500,0);
+    }
+
+    onDPCenterClicked(e) {
+        
         this.thymio.mediator.stopMotors();
+    }
+
+    onDPRightClicked(e) {
+        
+        this.thymio.mediator.setMotors(0,300);
+    }
+
+    onDPDownClicked(e) {
+        
+        this.thymio.mediator.setMotors(-300,300);
     }
 }

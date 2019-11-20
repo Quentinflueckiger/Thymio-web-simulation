@@ -3,8 +3,6 @@ import Observable from '../../Observable.js';
 export default class SimulatorButtons extends Observable{
     constructor() {
         super();
-        //this.mediator = mediator;
-        //this.renderingContext = renderingContext;
     }
     
     init() {
@@ -12,8 +10,11 @@ export default class SimulatorButtons extends Observable{
         document.getElementById("pgPickerButton").addEventListener('click', (e)=>this.onPGPickerClicked(e));
         document.getElementById("aeslFileButton").addEventListener('click', (e)=>this.onAeslFileSubmited(e));
 
-        document.getElementById("fwdButton").addEventListener('click', (e)=>this.onFwdButtonClicked(e));
-        document.getElementById("bwdButton").addEventListener('click', (e)=>this.onBwdButtonClicked(e));
+        document.getElementById("dPadUp").addEventListener('click', (e)=>this.onDPUpClicked(e));
+        document.getElementById("dPadLeft").addEventListener('click', (e)=>this.onDPLeftClicked(e));
+        document.getElementById("dPadCenter").addEventListener('click', (e)=>this.onDPCenterClicked(e));
+        document.getElementById("dPadRight").addEventListener('click', (e)=>this.onDPRightClicked(e));
+        document.getElementById("dPadDown").addEventListener('click', (e)=>this.onDPDownClicked(e));
     }
 
     onPGPickerClicked(e) {
@@ -32,5 +33,30 @@ export default class SimulatorButtons extends Observable{
     onBwdButtonClicked(e) {
 
         this.emit('bwdButtonClicked', { e });
+    }
+
+    onDPUpClicked(e) {
+        
+        this.emit('dPadUpClicked', { e });
+    }
+
+    onDPLeftClicked(e) {
+        
+        this.emit('dPadLeftClicked', { e });
+    }
+
+    onDPCenterClicked(e) {
+        
+        this.emit('dPadCenterClicked', { e });
+    }
+
+    onDPRightClicked(e) {
+        
+        this.emit('dPadRightClicked', { e });
+    }
+
+    onDPDownClicked(e) {
+        
+        this.emit('dPadDownClicked', { e });
     }
 }
