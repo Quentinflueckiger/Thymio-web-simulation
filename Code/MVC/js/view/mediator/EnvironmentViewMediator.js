@@ -6,6 +6,8 @@ export default class EnvironmentViewMediator extends ViewMediator {
 
         this.model.addObserver("PlaygroundAdded", (e) => this.onPlaygroundAdded(e));
         this.model.addObserver("PlaygroundRemoved", (e) => this.onPlaygroudRemoved(e));
+        this.model.addObserver("ThymiosAdded", (e) => this.onThymiosAdded(e));
+        this.model.addObserver("ThymiosRemoved", (e) => this.onThymiosRemoved(e));
     }
 
     onPlaygroundAdded(e){
@@ -14,6 +16,14 @@ export default class EnvironmentViewMediator extends ViewMediator {
 
     onPlaygroudRemoved(e){
         this.removeChild(e.playground);
+    }
+
+    onThymiosAdded(e) {
+        this.addChild(e.thymio);
+    }
+
+    onThymiosRemoved(e) {
+        this.removeChild(e.thymio);
     }
 
 }

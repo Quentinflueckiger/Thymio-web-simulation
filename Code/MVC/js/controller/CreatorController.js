@@ -9,10 +9,11 @@ import Cylinder from '../model/Cylinder.js';
 import Track from '../model/Track.js';
 
 export default class CreatorController {
-    constructor(environment) {
+    constructor(environment, thymio) {
         this.environment = environment;
         this.view = new CreatorView(this, environment);
         this.view.initialize();
+        this.thymio = thymio;
     }
 
     loadPlayground(playgroundName) {
@@ -50,8 +51,8 @@ export default class CreatorController {
         }
         
         if (file.thymios) {
-                var thymio = new Thymio(file.thymios.name, {});
-                playground.addShape(thymio);
+            
+            this.thymio.mediator.setPosition(file.thymios.positionX, file.thymios.positionX);
         }
         
         if (file.octagons) {

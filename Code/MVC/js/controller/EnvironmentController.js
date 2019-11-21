@@ -10,10 +10,11 @@ import Cylinder from '../model/Cylinder.js';
 import Track from '../model/Track.js';
 
 export default class EnvironmentController {
-    constructor(environment) {
+    constructor(environment, thymio) {
         this.environment = environment;
         this.view = new SimulatorView(this, environment);
         this.view.initialize();
+        this.thymio = thymio;
     }
 
     onPGPickerClicked(e){
@@ -23,6 +24,7 @@ export default class EnvironmentController {
 
         var newPlayground = pgPicker.options[pgPicker.selectedIndex].value;
         this.loadPlayground(newPlayground);
+        this.thymio.mediator.resetRotation();
     }
     
     loadPlayground(playgroundName) {
@@ -59,10 +61,10 @@ export default class EnvironmentController {
             }
         }
         
+        
         if (file.thymios) {
-            this.thymio = new Thymio(file.thymios.name, {});
-            playground.addShape(this.thymio);
-            console.log("Thymio: ", this.thymio.mediator);
+            
+            this.thymio.mediator.setPosition(file.thymios.positionX, file.thymios.positionX);
         }
         
         if (file.octagons) {

@@ -368,6 +368,8 @@
           }
     ],
     "thymios": {
-      "name": "Thymio"
+      "name": "Thymio",
+      "positionX": 0,
+      "positionZ": 0
     }
 }

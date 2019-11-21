@@ -55,6 +55,11 @@ export default class ThymioViewMediator extends ViewMediator {
         
     }
 
+    setPosition(x,z) {
+        this.object3D.position.x = x;
+        this.object3D.position.z = z;
+    }
+
     setMotors(left, right) {
         this.leftMotor = left*this.ratio;
         this.rightMotor = right*this.ratio;
@@ -63,6 +68,11 @@ export default class ThymioViewMediator extends ViewMediator {
     stopMotors() {
         this.leftMotor = 0;
         this.rightMotor = 0;
+    }
+
+    
+    resetRotation() {
+        this.object3D.rotation.y = Math.PI/2;
     }
 
     move() {
