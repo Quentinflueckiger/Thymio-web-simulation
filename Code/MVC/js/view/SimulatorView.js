@@ -8,7 +8,7 @@ export default class SimulatorView {
         this.controller = controller;
         this.environment = environment;
         this.renderingContext = this.createRenderingContext();
-        this.environmentViewMediator = new EnvironmentViewMediator(environment, new ViewMediatorFactory());
+        this.environmentViewMediator = new EnvironmentViewMediator(environment, new ViewMediatorFactory(), this.renderingContext.scene);
         this.simulatorButtons = new SimulatorButtons();
     }
 
@@ -47,6 +47,7 @@ export default class SimulatorView {
 
         this.environmentViewMediator.onFrameRenderered();
         this.renderingContext.renderer.render(this.renderingContext.scene, this.renderingContext.camera);
+        this.renderingContext.scene.simulate();
     }
 
     onWindowResize(){

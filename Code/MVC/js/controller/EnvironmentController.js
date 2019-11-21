@@ -1,5 +1,4 @@
 import SimulatorView from '../view/SimulatorView.js';
-import Thymio from '../model/Thymio.js';
 import Playground from '../model/Playground.js';
 import Box from '../model/Box.js';
 import Plane from '../model/Plane.js';
@@ -21,10 +20,12 @@ export default class EnvironmentController {
         var pgPicker = document.getElementById("pgPicker");
         
         this.environment.removePlayground(this.environment.playground[0]);
+        
+        this.thymio.mediator.stopMotors();
+        this.thymio.mediator.resetRotation();
 
         var newPlayground = pgPicker.options[pgPicker.selectedIndex].value;
         this.loadPlayground(newPlayground);
-        this.thymio.mediator.resetRotation();
     }
     
     loadPlayground(playgroundName) {
@@ -43,7 +44,6 @@ export default class EnvironmentController {
     }
 
     createPlayground(file) {
-
         const playground = new Playground(file.playground);
         this.environment.addPlayground(playground);
         

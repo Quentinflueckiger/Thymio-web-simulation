@@ -1,5 +1,0 @@
-new THREE.Mesh(
-            new THREE.BoxGeometry(2, 2, 1),
-            new THREE.MeshPhongMaterial( { color : "#fc031c"} )
-
-        )

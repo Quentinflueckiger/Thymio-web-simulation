@@ -1,9 +1,10 @@
 import ViewMediator from "./ViewMediator.js";
 
 export default class EnvironmentViewMediator extends ViewMediator {
-    constructor(environment, mediatorFactory) {
+    constructor(environment, mediatorFactory, scene) {
         super(environment, mediatorFactory);
-
+        this.scene = scene;
+        
         this.model.addObserver("PlaygroundAdded", (e) => this.onPlaygroundAdded(e));
         this.model.addObserver("PlaygroundRemoved", (e) => this.onPlaygroudRemoved(e));
         this.model.addObserver("ThymiosAdded", (e) => this.onThymiosAdded(e));

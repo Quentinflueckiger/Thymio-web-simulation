@@ -6,14 +6,15 @@ export default class BoxViewMediator extends ViewMediator {
     }
 
     makeObject3D(){
-        const container = new THREE.Object3D();
-        const mesh = new THREE.Mesh(
+        //const container = new THREE.Object3D();
+        const mesh = new Physijs.BoxMesh(
             new THREE.BoxGeometry(this.model.properties.width, this.model.properties.height, this.model.properties.depth),
-            new THREE.MeshPhongMaterial( { color : this.model.properties.color} )
+            new THREE.MeshPhongMaterial( { color : this.model.properties.color} ),
+            100
 
         )
-
-        container.add(mesh);
+            
+        //container.add(mesh);
         mesh.position.setX(this.model.properties.positionX);
         mesh.position.setZ(this.model.properties.positionZ);
 
@@ -23,7 +24,7 @@ export default class BoxViewMediator extends ViewMediator {
         mesh.castShadow = true;
         mesh.receiveShadow = true;
 
-        return container;
+        return mesh;//container;
     }
     
 }

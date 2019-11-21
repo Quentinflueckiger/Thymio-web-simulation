@@ -10,8 +10,13 @@ export default class RenderingContext {
     }
 
     static getDefault(containerElement) {
+
+        Physijs.scripts.worker = "../../bin/physijs/physijs_worker.js";
+        Physijs.scripts.ammo = "../../bin/physijs/ammo.js";
+
         const width  = window.innerWidth, height = window.innerHeight;
-        const scene = new THREE.Scene();
+        const scene = new Physijs.Scene();
+        scene.setGravity(new THREE.Vector3( 0, -30, 0 ));
         const camera = new THREE.PerspectiveCamera(45, width / height, 1, 10000);
         const renderer = new THREE.WebGLRenderer();
 
@@ -49,6 +54,13 @@ export default class RenderingContext {
         var axesHelper = new THREE.AxesHelper( 20 );
         scene.add( axesHelper );
 
+        /*
+        var testBox = new Physijs.BoxMesh(
+			new THREE.BoxGeometry(10, 10, 10),
+			new THREE.MeshPhongMaterial( { color : "#fc031c"} )
+		);
+        scene.add(testBox);*/
+        
         containerElement.appendChild(renderer.domElement);
 
         return new RenderingContext(scene, camera, renderer, controls);
