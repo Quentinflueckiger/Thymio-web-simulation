@@ -131,8 +131,166 @@ The second option is to use the work-in-progress Thymio Suite version.
 This software doesn’t require a Thymio robot to be connected physically (or wirelessly) at all times as it has its own simulator built-in. 
 The four said languages are still available, and one need to be chosen. 
 After what comes the choice of connecting a physical Thymio or starting a simulation to emulate the programmed behaviour.
+A more detailed section on the four differents programming languages can be found in the section \ref{fourlanguages} at the page \pageref{fourlanguages}.
 
-\subsection{The different programming languages}
+\section{Requirements Documentation}
+\subsection{Vision}
+
+A start-up from the EPFL has developed a robot, the Thymio robot or Thymio II, that promotes the programming and robotic activities among children. 
+To feed program to the robot, a software has been developed, it integrates the four following programming languages: 
+\begin{itemize}
+  \item VPL
+  \item Blockly4Thymio
+  \item Aseba
+  \item Scratch
+\end{itemize}
+
+The project Web Simulation of a Thymio robot is aimed to create a simulator for the Thymio II so as to allow people to see their programmed behaviour directly.
+
+\subsection{Goals}
+\begin{center}
+  \includegraphics[width=\textwidth]{./goals}
+\end{center}
+
+\subsection{System Context}
+%%\subsection{Requirements}
+\subsection{Risk Analysis}
+In order to carry out the project successfully, we must consider the following possible complications. The possible complications are on one hand assessed according to their impact and on the other hand according to their likelihood to occur. 
+Thus, we obtain a predictable risk factor that allows us to have an overall view and take preventive measures if necessary.
+
+\begin{center}
+  \includegraphics[width=\textwidth]{./risk-matrix}\\
+  Risk Matrix
+\end{center}
+
+\begin{tabular}{p{2cm} p{2cm} p{2cm} p{2cm}}
+  Event & Likelihood (A) & Impact (B) & Risk Factor (A*B) \\ \hline
+  Financial issues & 0 & 1 & 0 \\
+  Collisions not implemented & 0.3 & 0.6 & 0.18 \\
+  Behaviour pipeline not working & 0.4 & 0.9 & 0.36 \\
+  Playground creator not working & 0.4 & 0.6 & 0.24 \\
+\end{tabular}
+
+\subsection{Stakeholder Descriptions}
+\textbf{Product Owner}
+Flückiger Quentin flucq1@bfh.ch \\
+\textit{Interests}:
+\begin{itemize}
+  \item The product owner wants to satisfy the customer.
+\end{itemize}
+
+
+\textbf{Development Team}
+Flückiger Quentin flucq1@bfh.ch \\
+\textit{Interests}:
+\begin{itemize}
+  \item The development team wants to develop a usefull application for the customer.
+\end{itemize}
+
+\subsection{User Stories}
+\textbf{\large Users User Stories}\\
+\textbf{As} a user, I want to uplaod an .aesl file, so that I can witness the simulated behaviour. \\
+Description:\\
+The user wants to upload an .aesl file to see the programmed behaviour simulated.
+Success:\\
+\begin{itemize}
+  \item The simulation works.
+\end{itemize}
+Failure:\\
+\begin{itemize}
+  \item The .aesl file doesn't contain a program.
+  \item The .aesl file contains behaviour not included in the simulator.
+\end{itemize}
+
+
+\textbf{As} a user, I want to create a simple testing environment, so that I can diversify the experiences. \\
+Description:\\
+The user wants to create home made playground with a simple playground creation tool.
+Success:\\
+\begin{itemize}
+  \item The playground was successfully created and saved.
+\end{itemize}
+Failure:\\
+\begin{itemize}
+  \item The created playground isn't saved properly.
+  \item The user encounters trouble while creating the playground, be it meshes creation or placement.
+\end{itemize}
+
+
+\textbf{As} a user, I want to use the application without having to install anything, so that the application can be accessed easily. \\
+Description:\\
+The user wants to access and use the application without installing anything.
+Success:\\
+\begin{itemize}
+  \item The use can start the application directly in his browser.
+\end{itemize}
+Failure:\\
+\begin{itemize}
+  \item The webserver isn't accessible.
+\end{itemize}
+
+%%\subsection{Use Cases Model}
+%%Use case diagram
+
+\section{What already exist} 
+
+There exist two possibilities to simulate the behavior of a Thymio II Robot on a computer. 
+The first one is through the Thymio Suite application developed by the creator of Thymio. 
+It is an application that regroups multiple features such as coding the robot in one of the four available languages, 
+uploading the program to a real robot or simulating its behavior via a simulator developed in the programming language C++. 
+This simulator allows one to load a playground among multiple pre-set and run the coded program for the robot.
+
+\begin{center}
+  \includegraphics[width=\textwidth]{./suite_simulator}
+\end{center}
+
+The other option is to use WeBots, which is an open-source 3D robot simulator for industry, education and research purpose. 
+It has been developed in 1996 at the Swiss Federal Institute of Technology in Lausanne since then it became a property license software of Cyberbotics in 1998, 
+and in December 2018 was lastly released under the free and open-source Apache 2 license.
+WeBots is a very powerful software that can do a lot of things, and one of these things is an accurate Thymio II model with almost all its sensors and actuator. 
+The two Aseba Studio and VPL for Thymio can be directly connected to the software and its simulated robot. 
+The specification and usage can be found on their website with the following link \href{https://www.cyberbotics.com/doc/guide/thymio2#mosybas-thymio-ii}{WeBots Thymio} .
+
+\section{Three JS}
+
+\begin{center}
+  \includegraphics[width=\textwidth]{./basic_threejs_rendering}
+\end{center}
+
+\section{Architecture}
+\begin{center}
+  \includegraphics[width=\textwidth]{./architecture_proposal-Page-1}
+\end{center}
+Proposed architecture for the simulator.
+
+\begin{center}
+  \includegraphics[width=\textwidth]{./architecture_proposal-Page-2}
+\end{center}
+Proposed architecture for the playground creator.
+
+%% Domain class diagrams, Domain model, Package diagram, Sequence diagram, System sequence diagram
+
+\section{Usefull latex commands (to be deleted later on)}
+\lstset{language=JavaScript}
+\begin{lstlisting}[basicstyle=\ttfamily\small]
+  function generateBox(color, width, height, depth){
+
+    var geometry = new THREE.BoxGeometry( width, height, depth );
+    var material = new THREE.MeshPhongMaterial( { color : color} );
+    var box = new THREE.Mesh( geometry, material );
+                
+    return box;
+  }
+\end{lstlisting}
+For that we read the article book of \cite{Jerald:2015:VBH:2792790}
+which is very interesting, much more than the article
+\cite{Diniz:2017:UGO:3100317.3100324}
+
+\section{Conclusion and future work}
+
+\section{Appendices}
+
+\subsection{The different programming languages} \label{fourlanguages}
 \subsubsection{VPL}
 
 One of the four different possibilities to program the Thymio is by using the visual programming language, or VPL, 
@@ -284,141 +442,6 @@ We added two other events for the right and left buttons that are responsible to
 \subsubsection{Aseba}
 \subsubsection{Scratch}
 
-\section{Requirements Documentation}
-\subsection{Vision}
-
-A start-up from the EPFL has developed a robot, the Thymio robot or Thymio II, that promotes the programming and robotic activities among children. 
-To feed program to the robot, a software has been developed, it integrates the four following programming languages: 
-\begin{itemize}
-  \item VPL
-  \item Blockly4Thymio
-  \item Aseba
-  \item Scratch
-\end{itemize}
-
-The project Web Simulation of a Thymio robot is aimed to create a simulator for the Thymio II so as to allow people to see their programmed behaviour directly.
-
-\subsection{Goals}
-\begin{center}
-  \includegraphics[width=\textwidth]{./goals}
-\end{center}
-
-\subsection{System Context}
-%%\subsection{Requirements}
-\subsection{Risk Analysis}
-In order to carry out the project successfully, we must consider the following possible complications. The possible complications are on one hand assessed according to their impact and on the other hand according to their likelihood to occur. 
-Thus, we obtain a predictable risk factor that allows us to have an overall view and take preventive measures if necessary.
-
-\begin{center}
-  \includegraphics[width=\textwidth]{./risk-matrix}\\
-  Risk Matrix
-\end{center}
-
-\begin{tabular}{p{2cm} p{2cm} p{2cm} p{2cm}}
-  Event & Likelihood (A) & Impact (B) & Risk Factor (A*B) \\ \hline
-  Financial issues & 0 & 1 & 0 \\
-  Collisions not implemented & 0.3 & 0.6 & 0.18 \\
-  Behaviour pipeline not working & 0.4 & 0.9 & 0.36 \\
-  Playground creator not working & 0.4 & 0.6 & 0.24 \\
-\end{tabular}
-
-\subsection{Stakeholder Descriptions}
-\textbf{Product Owner}
-Flückiger Quentin flucq1@bfh.ch \\
-\textit{Interests}:
-\begin{itemize}
-  \item The product owner wants to satisfy the customer.
-\end{itemize}
-
-
-\textbf{Development Team}
-Flückiger Quentin flucq1@bfh.ch \\
-\textit{Interests}:
-\begin{itemize}
-  \item The development team wants to develop a usefull application for the customer.
-\end{itemize}
-
-\subsection{User Stories}
-\textbf{\large Users User Stories}\\
-\textbf{As} a user, I want to uplaod an .aesl file, so that I can witness the simulated behaviour. \\
-Description:\\
-The user wants to upload an .aesl file to see the programmed behaviour simulated.
-Success:\\
-\begin{itemize}
-  \item The simulation works.
-\end{itemize}
-Failure:\\
-\begin{itemize}
-  \item The .aesl file doesn't contain a program.
-  \item The .aesl file contains behaviour not included in the simulator.
-\end{itemize}
-
-
-\textbf{As} a user, I want to create a simple testing environment, so that I can diversify the experiences. \\
-Description:\\
-The user wants to create home made playground with a simple playground creation tool.
-Success:\\
-\begin{itemize}
-  \item The playground was successfully created and saved.
-\end{itemize}
-Failure:\\
-\begin{itemize}
-  \item The created playground isn't saved properly.
-  \item The user encounters trouble while creating the playground, be it meshes creation or placement.
-\end{itemize}
-
-
-\textbf{As} a user, I want to use the application without having to install anything, so that the application can be accessed easily. \\
-Description:\\
-The user wants to access and use the application without installing anything.
-Success:\\
-\begin{itemize}
-  \item The use can start the application directly in his browser.
-\end{itemize}
-Failure:\\
-\begin{itemize}
-  \item The webserver isn't accessible.
-\end{itemize}
-
-%%\subsection{Use Cases Model}
-%%Use case diagram
-
-\section{What already exist} 
-WeBots / Aseba logiciel
-\section{Three JS}
-
-\section{Architecture}
-\begin{center}
-  \includegraphics[width=\textwidth]{./architecture_proposal-Page-1}
-\end{center}
-Proposed architecture for the simulator.
-
-\begin{center}
-  \includegraphics[width=\textwidth]{./architecture_proposal-Page-2}
-\end{center}
-Proposed architecture for the playground creator.
-
-%% Domain class diagrams, Domain model, Package diagram, Sequence diagram, System sequence diagram
-
-\section{Usefull latex commands (to be deleted later on)}
-\lstset{language=JavaScript}
-\begin{lstlisting}[basicstyle=\ttfamily\small]
-  function generateBox(color, width, height, depth){
-
-    var geometry = new THREE.BoxGeometry( width, height, depth );
-    var material = new THREE.MeshPhongMaterial( { color : color} );
-    var box = new THREE.Mesh( geometry, material );
-                
-    return box;
-  }
-\end{lstlisting}
-For that we read the article book of \cite{Jerald:2015:VBH:2792790}
-which is very interesting, much more than the article
-\cite{Diniz:2017:UGO:3100317.3100324}
-
-\section{Conclusion and future work}
-
-\section{Appendices}
 \subsection{Product Backlog}
 \begin{longtable}{p{5mm}|p{2cm}|p{4cm}|p{1cm}|p{1cm}|p{1cm}|p{1cm}|p{15mm}}
   ID                     & Story Name & Story / Task Description & Priority & Est. Effort {[}h{]} & Update Effort {[}h{]} & Actual Effort{[}h{]} & Status                \\ \hline
