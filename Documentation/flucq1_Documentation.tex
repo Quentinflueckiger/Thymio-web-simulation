@@ -232,6 +232,17 @@ Failure:\\
 %%\subsection{Use Cases Model}
 %%Use case diagram
 
+\section{Architecture}
+\begin{center}
+  \includegraphics[width=\textwidth]{./architecture_proposal-Page-1}
+\end{center}
+Proposed architecture for the simulator.
+
+\begin{center}
+  \includegraphics[width=\textwidth]{./architecture_proposal-Page-2}
+\end{center}
+Proposed architecture for the playground creator.
+
 \section{What already exist} 
 
 There exist two possibilities to simulate the behavior of a Thymio II Robot on a computer. 
@@ -257,16 +268,65 @@ The specification and usage can be found on their website with the following lin
   \includegraphics[width=\textwidth]{./basic_threejs_rendering}
 \end{center}
 
-\section{Architecture}
-\begin{center}
-  \includegraphics[width=\textwidth]{./architecture_proposal-Page-1}
-\end{center}
-Proposed architecture for the simulator.
+\section{Our Approach}
 
-\begin{center}
-  \includegraphics[width=\textwidth]{./architecture_proposal-Page-2}
-\end{center}
-Proposed architecture for the playground creator.
+Development
+Models + Basic controls
+MVC
+\subsection{WebServer}
+Regarding the goal number 5, Require no software installation, we decided to use a webserver in order to access the application. At first we choose the IIS Manager that is built in with Windows 10, 
+we followed the steps in this tutorial video in order to configure IIS: \url{https://www.youtube.com/watch?v=rPRLe7QeVHM} .
+
+Then we had to open the port in order to access it from within the LAN.
+\begin{enumerate}
+  \item Open the windows Firewall, click on Inbound Rules and New Rule. This will open the New Inbound Rule Wizard.
+  \item Select the desired type, Port, click next.
+  \item Choose TCP and specify the port used, here 80, click next.
+  \item Select Allow connection, click next.
+  \item Select all three profile options, click next.
+  \item Add a Name and a description to this rule, click finish.
+\end{enumerate}
+
+\textbf{Additional setup}\\
+
+It was needed to create a web.config file and add a few file extension so that the .mtl and .obj would still be able to load. 
+Otherwise we encountered an error of the type "Failed to load resource: the server responded with a status of 404 (Not Found)." 
+The text that needed to be added to the web.config file is the following : \\
+\begin{lstlisting}[language=XML, basicstyle=\ttfamily\small]
+<?xml version="1.0" encoding="UTF-8"?>
+  <configuration>
+    <system.webServer>
+         <staticContent>
+           <remove fileExtension=".mtl" />
+           <mimeMap fileExtension=".mtl" mimeType="text/plain" />
+           <mimeMap fileExtension=".obj" mimeType="application/octet-stream" />
+         </staticContent>
+    </system.webServer>
+</configuration>
+\end{lstlisting}
+
+Unfortunately, after implementing the new MVC architecture for our application we encountered an issue where the application wasn't able to locate some Javascript file and giving the following error message in the console : 
+\texttt{javascript file not found on server, net::ERR\textunderscore ABORTED 404 (Not Found)} .  After a while of debugging and asking questions to persons who could know the issue, 
+we decided to move away from ISS Manager as our knowledge of this software is too small and the time needed to acquire this knowledge wasn't worth the effort. 
+The alternative solution we came up with was to use XAMPP, we managed to push the same version of the application without any problem and without having to do anything special. So we decided to go forth with XAMPP.
+
+Playgrounds 
+JSON
+\subsection{Interpreter}
+The interpreter found that compile/translate .aesl file into another programming language is the one used in the Thymio Suite application, its source code can be found in the following repository \href{https://github.com/aseba-community/aseba/tree/master/aseba/compiler}{Aseba git}.
+Unfortunately, it is a C++ one, so we had to understand it and find a way to either use it and then use a C++ to Javascript interpreter, or translate the compiler from C++ to Javascript by hand.
+
+\subsection{Phyisics}
+
+Adding physics to allow collisions between the robot and the different objects. Trying to use Physijs, source code can be found in the following repository \href{https://github.com/chandlerprall/Physijs/wiki/Basic-Setup}{Physijs git}, 
+but with the architecture of our application, we encounter a problem due to the fact we are adding THREE.Object3D instead of basic mesh and Physijs works only with a fixed amount of meshes. A solution would be to not use Physijs as we need it only for the Thymio,
+and instead, shoot rays from the robot and check for collisions this way, as only Thymio needs to move and stop upon collisions.
+
+Sensor actuator
+Create playground
+
+\section{Results}
+
 
 %% Domain class diagrams, Domain model, Package diagram, Sequence diagram, System sequence diagram
 
@@ -543,18 +603,17 @@ We added two other events for the right and left buttons that are responsible to
   16.2 & Prepare Presentation Day & Create the poster and the presentation for the Presentation Day & High &  &  &  & To Do \\
   16.3 & Write in the Book & Write the page for the Book & High & 8 & 4 &  & To Do \\ 
   16.4 & Finish Writting Documentation & Terminate the writting part of the documentation & High &  &  &  & To Do \\ 
-  16.5 & Prepare to Submit & Check spelling mistake, check images, print it, put the project on a USB stick & High &  &  &  & To Do\\ \hline
-\end{longtable}
-
-\subsubsection{Seventh Sprint}
-\textbf{2020-01-17 until 2020-01-end}
-\begin{longtable}{p{5mm}|p{2cm}|p{4cm}|p{1cm}|p{1cm}|p{1cm}|p{1cm}|p{15mm}}
-  ID                     & Story Name & Story / Task Description & Priority & Est. Effort {[}h{]} & Update Effort {[}h{]} & Actual Effort{[}h{]} & Status                \\ \hline
-  17 & Prepare Defense & Prepare the defense & High &  &  &  & To Do \\ 
+  16.5 & Prepare to Submit & Check spelling mistake, check images, print it, put the project on a USB stick & High &  &  &  & To Do\\ 
+  17 & Prepare Defense & Prepare the defense & High &  &  &  & To Do \\ \hline
 \end{longtable}
 
 \subsection{Gantt Diagram}
-%%\includepdf[pages=-, pagecommand={}, width=\textwidth]{Thymio_web_simulation_Gantt.pdf}
+\begin{center}
+  \includegraphics[width=\textwidth]{./Gantt-1}
+\end{center}
+\begin{center}
+  \includegraphics[width=\textwidth]{./Gantt-2}
+\end{center}
 
 \subsection{Version control}
 
@@ -581,39 +640,8 @@ On demand.\\
 See link bellow for more information and links. (It requires to be inside the bfh networkd to access it)
 \url{https://intranet.bfh.ch/TI/fr/Studium/Bachelor/Informatik/Tools/VMsHowto/Pages/default.aspx?k=vm}
 
-\textbf{First Configuration of IIS manager}\\
-
-We followed the steps in this tutorial video in order to configure IIS. \url{https://www.youtube.com/watch?v=rPRLe7QeVHM}
-
-Then we had to open the port in order to access it from within the LAN.
-\begin{enumerate}
-  \item Open the windows Firewall, click on Inbound Rules and New Rule. This will open the New Inbound Rule Wizard.
-  \item Select the desired type, Port, click next.
-  \item Choose TCP and specify the port used, here 80, click next.
-  \item Select Allow connection, click next.
-  \item Select all three profile options, click next.
-  \item Add a Name and a description to this rule, click finish.
-\end{enumerate}
-
-With this specified the website is now accessible from within the LAN at the following adress : http://147.87.116.44/Code/HTML \\
-
-\textbf{Additional setup}\\
-
-It was needed to create a web.config file and add a few file extension so that the .mtl and .obj would still be able to load. 
-Otherwise we encountered an error of the type "Failed to load resource: the server responded with a status of 404 (Not Found)." 
-The text that needed to be added to the web.config file is the following : \\
-\begin{lstlisting}[language=XML, basicstyle=\ttfamily\small]
-<?xml version="1.0" encoding="UTF-8"?>
-  <configuration>
-    <system.webServer>
-         <staticContent>
-           <remove fileExtension=".mtl" />
-           <mimeMap fileExtension=".mtl" mimeType="text/plain" />
-           <mimeMap fileExtension=".obj" mimeType="application/octet-stream" />
-         </staticContent>
-    </system.webServer>
-</configuration>
-\end{lstlisting}
+\textbf{First Configuration of XAMPP}\\
+configuration, installation, access
 
 \subsection{Meetings}
 \begin{tabular}{ | m{3cm} | m{10cm} | }
@@ -644,6 +672,9 @@ The text that needed to be added to the web.config file is the following : \\
   25.10.2019 & \textbf{Fifth meeting} \\
   & - Discussed using a Finite state machine to handle the events, but it may be too rigid so a non-deterministic finite state machine was the possible solution we came with \\
   & - First little talk about the meeting with the expert, report\\
+  \hline
+  19.11.2019 & \textbf{Sixth meeting} \\
+  & \\
   \hline
 \end{tabular}
 

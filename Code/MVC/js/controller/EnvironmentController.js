@@ -99,7 +99,7 @@ export default class EnvironmentController {
     onAeslFileSubmited(e) {
         const file = document.getElementById("aeslFile").files[0];
 
-        Interpreter.loadFile(file);
+        Interpreter.loadFile(file, this);
     }
 
     onDPUpClicked(e) {

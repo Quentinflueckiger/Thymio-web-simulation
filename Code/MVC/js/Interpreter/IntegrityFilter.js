@@ -1,4 +1,8 @@
-function loadFile(file) {
+import Lexer from './Lexer.js'
+
+
+// This content will most likely end in the compiler
+function loadFile(file, environmentController) {
     var reader = new FileReader();
 
     // file reading started
@@ -11,10 +15,11 @@ function loadFile(file) {
         var text = e.target.result;
 
         var lines = this.result.split('\n');
-        for(var line = 0; line < lines.length; line++){
+        /*for(var line = 0; line < lines.length; line++){
             console.log(lines[line]);
-        }
+        }*/
 
+        /*
         var sourceType = getSourceType(lines);
 
         switch (sourceType) {
@@ -28,11 +33,13 @@ function loadFile(file) {
                 break;
             default:
                 break;
-        }
+        }*/
         // contents of the file
         //console.log(text);
-    });
 
+        interpreteSource(text);
+    });
+    
     // file reading failed
     reader.addEventListener('error', function() {
         alert('Error : Failed to read file');
@@ -48,6 +55,11 @@ function loadFile(file) {
 
     // read as text file
     reader.readAsText(file);
+}
+
+function interpreteSource(source) {
+    //var lexer = new Lexer(source);
+    //console.log("T: ",lexer.getToken());
 }
 
 function getSourceType(contents) {
