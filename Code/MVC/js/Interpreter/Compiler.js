@@ -1,8 +1,7 @@
 export default class Compiler {
     constructor(){};
 }    
-    
-  
+
 // Compiler from aseba
 /*
 	Aseba - an event-based framework for distributed robot control

@@ -316,13 +316,16 @@ JSON
 The interpreter found that compile/translate .aesl file into another programming language is the one used in the Thymio Suite application, its source code can be found in the following repository \href{https://github.com/aseba-community/aseba/tree/master/aseba/compiler}{Aseba git}.
 Unfortunately, it is a C++ one, so we had to understand it and find a way to either use it and then use a C++ to Javascript interpreter, or translate the compiler from C++ to Javascript by hand.
 
+Curently translating the compiler from C++ by hand and encountered a problem, beacause enums don't exist as they exist in C++, with no given value.
+
 \subsection{Phyisics}
 
 Adding physics to allow collisions between the robot and the different objects. Trying to use Physijs, source code can be found in the following repository \href{https://github.com/chandlerprall/Physijs/wiki/Basic-Setup}{Physijs git}, 
 but with the architecture of our application, we encounter a problem due to the fact we are adding THREE.Object3D instead of basic mesh and Physijs works only with a fixed amount of meshes. A solution would be to not use Physijs as we need it only for the Thymio,
 and instead, shoot rays from the robot and check for collisions this way, as only Thymio needs to move and stop upon collisions.
 
-Sensor actuator
+\subsection{Sensor and Actuator}
+How they work in real life, what do they output, what do they return as value, and how they work in the application.
 Create playground
 
 \section{Results}

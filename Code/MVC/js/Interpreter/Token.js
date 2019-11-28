@@ -52,7 +52,7 @@ export default class Token {
 
     //! Return the name of the type of this token
     getTypeName() {
-        switch (type)
+        switch (Type)
         {
             case TOKEN_END_OF_STREAM: return translate(ERROR_TOKEN_END_OF_STREAM);
             case TOKEN_STR_when: return translate(ERROR_TOKEN_STR_when);

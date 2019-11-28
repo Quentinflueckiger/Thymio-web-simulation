@@ -1,12 +1,153 @@
 import Token from './Token.js';
+import Deque from '../Deque.js';
+import SourcePos from './SourcePos.js';
+import * as TT from './TokenType.js';
 
 export default class Lexer {
     constructor(source) {
         this.source = source;
+        this.tokens = new Deque();
+        
     }
     
     getToken() {
         return new Token("test", 0, "test");
+    }
+
+    tokenize() {
+        
+        this.tokens.clear();
+        var pos = new SourcePos();
+        const tabSize = 4; //???
+
+        while(true) {
+            if (pos.character === this.source.length-2){
+                console.log("Iterator out of bound");
+                break;
+            }
+
+            pos.character++;
+            var c = this.source[pos.character];
+            pos.column++;
+
+            switch (c) 
+            {
+                // simple cases of one character
+                case ' ': break;
+                //case '\t': pos.column += tabSize - 1; break;
+                case '\t': break;
+                case '\n': pos.row++; pos.column = -1; break; // -1 so next call to pos.column++ result set 0
+                case '\r': pos.column = -1; break; // -1 so next call to pos.column++ result set 0
+                case '(': this.tokens.addRear({token : TT.type.TOKEN_PAR_OPEN, position : pos.getValues()}); break;
+                case ')': this.tokens.addRear({token : TT.type.TOKEN_PAR_CLOSE, position : pos.getValues()}); break;
+                case '[': this.tokens.addRear({token : TT.type.TOKEN_BRACKET_OPEN, position : pos.getValues()}); break;
+                case ']': this.tokens.addRear({token : TT.type.TOKEN_BRACKET_CLOSE, position : pos.getValues()}); break;
+                case ':': this.tokens.addRear({token : TT.type.TOKEN_COLON, position : pos.getValues()}); break;
+                case ',': this.tokens.addRear({token : TT.type.TOKEN_COMMA, position : pos.getValues()}); break;
+                
+                // special case for comment
+                case '#':
+                    {
+                        console.log("Comment found");
+                        // check if it's a comment block #* ... *#
+                        if (this.source[pos.character + 1] === '*')
+                        {
+                            console.log("Comment block");
+                            // comment block
+                            // record position of the begining
+                            var begin = new SourcePos();
+                            begin.setValues(pos.getValues());
+                            // move forward by 2 characters then search for the end
+                            var step = 2;
+                            while ((step > 0) || (c != '*') || (this.source[pos.character] != '#'))
+                            {   
+                                if (step)
+                                    step--;
+        
+                                if (c == '\t')
+                                {
+                                    pos.column += tabSize;
+                                }
+                                else if (c == '\n')
+                                {
+                                    pos.row++;
+                                    pos.column = 0;
+                                }
+                                else
+                                    pos.column++;
+                                c = this.source[pos.character];
+                                pos.character++;
+                                if (pos.character === this.source.length-2)
+                                {
+                                    // EOF -> unbalanced block
+                                    throw "Unbalanced comment block";
+                                }
+                            }
+                            // fetch the #
+                            this.getNextCharacter(pos);
+                        }
+                        else
+                        {
+                            console.log("Simple comment");
+                            // simple comment
+                            while ((c != '\n') && (c != '\r') && (!(pos.character === this.source.length-2)))
+                            {
+                                if (c == '\t')
+                                    pos.column += tabSize;
+                                else
+                                    pos.column++;
+                                c = this.source[pos.character];
+                                pos.character++;
+                            }
+                            if (c == '\n')
+                            {
+                                pos.row++;
+                                pos.column = 0;
+                            }
+                            else if (c == '\r')
+                                pos.column = 0;
+                            
+                        }
+                    }
+                    break;
+                
+                // cases that require one character look-ahead
+                case '+':
+                    if (this.testNextCharacter(pos, '=', TT.type.TOKEN_OP_ADD_EQUAL))
+                        break;
+                    if (this.testNextCharacter(pos, '+', TT.type.TOKEN_OP_PLUS_PLUS))
+                        break;
+                    this.tokens.addRear({token : TT.type.TOKEN_OP_ADD, position : pos.getValues()});
+                    break;
+                    
+                default:
+                    break;
+            }
+        }
+
+        this.printTokens();
+    }
+
+    getNextCharacter(pos) {
+        pos.column++;
+        pos.character++;
+        return this.source[pos.character];
+    }
+
+    testNextCharacter(pos, strtest, tokenIfTrue) {
+
+        if (this.source[pos.character + 1]=== strtest)
+        {
+
+            this.tokens.addRear({token : tokenIfTrue, position : pos.getValues()});
+            this.getNextCharacter(pos);
+            return true;
+        }
+        return false;
+    }
+
+    printTokens(){
+        console.log("Tokens", this.tokens);
     }
 }
 
@@ -27,7 +168,19 @@ export default class Lexer {
 	You should have received a copy of the GNU Lesser General Public License
 	along with this program. If not, see <http://www.gnu.org/licenses/>.
 */
-/*
+   /*
+ 	//! Position in a source file or string. First is line, second is column
+	 struct SourcePos
+	 {
+		 unsigned character{0}; //!< position in source text
+		 unsigned row{0}; //!< line in source text
+		 unsigned column{0}; //!< column in source text
+		 bool valid{false}; //!< true if character, row and column hold valid values
+ 
+		 SourcePos(unsigned character, unsigned row, unsigned column) : character(character - 1), row(row), column(column - 1) { valid = true; }
+		 SourcePos() = default;
+		 std::wstring toWString() const;
+	 }; 
 //! Return a string representation of the token
 std::wstring Compiler::Token::toWString() const
 {

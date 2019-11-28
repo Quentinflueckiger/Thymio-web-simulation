@@ -5,6 +5,7 @@ import Lexer from './Lexer.js'
 function loadFile(file, environmentController) {
     var reader = new FileReader();
 
+    
     // file reading started
     reader.addEventListener('loadstart', function() {
         console.log('File reading started');
@@ -18,25 +19,7 @@ function loadFile(file, environmentController) {
         /*for(var line = 0; line < lines.length; line++){
             console.log(lines[line]);
         }*/
-
-        /*
-        var sourceType = getSourceType(lines);
-
-        switch (sourceType) {
-            case 0:
-                break;
-            case 1:
-                break;
-            case 2:
-                break;
-            case 3:
-                break;
-            default:
-                break;
-        }*/
-        // contents of the file
-        //console.log(text);
-
+        //console.log("Character:", text[0]);
         interpreteSource(text);
     });
     
@@ -58,8 +41,8 @@ function loadFile(file, environmentController) {
 }
 
 function interpreteSource(source) {
-    //var lexer = new Lexer(source);
-    //console.log("T: ",lexer.getToken());
+    var lexer = new Lexer(source);
+    lexer.tokenize();
 }
 
 function getSourceType(contents) {
