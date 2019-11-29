@@ -50,6 +50,7 @@ const type = Object.freeze( //freeze so it can't be modified from outside
     TOKEN_BRACKET_CLOSE : "TOKEN_BRACKET_CLOSE",
     TOKEN_COLON : "TOKEN_COLON",
     TOKEN_COMMA : "TOKEN_COMMA",
+    TOKEN_EXCLAMATION : "TOKEN_EXCLAMATION",
     TOKEN_ASSIGN : "TOKEN_ASSIGN",
     TOKEN_OP_OR : "TOKEN_OP_OR",
     TOKEN_OP_AND : "TOKEN_OP_AND",
