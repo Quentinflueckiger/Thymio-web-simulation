@@ -1,4 +1,5 @@
 import Lexer from './Lexer.js'
+import Compiler from './Compiler.js';
 
 
 // This content will most likely end in the compiler
@@ -15,11 +16,6 @@ function loadFile(file, environmentController) {
     reader.addEventListener('load', function(e) {
         var text = e.target.result;
 
-        var lines = this.result.split('\n');
-        /*for(var line = 0; line < lines.length; line++){
-            console.log(lines[line]);
-        }*/
-        //console.log("Character:", text[0]);
         interpreteSource(text);
     });
     
@@ -41,8 +37,21 @@ function loadFile(file, environmentController) {
 }
 
 function interpreteSource(source) {
-    var lexer = new Lexer(source);
-    lexer.tokenize();
+    var compiler = new Compiler();
+    
+    compiler.setTargetDescription();//getDescription(nodeId));
+    compiler.setCommonDefinitions();
+
+    var result = compiler.compile(source, 1, 1, 1);
+
+    if (result) {
+
+    }
+    else {
+        
+    }
+    //var lexer = new Lexer(source);
+    //lexer.tokenize();
 }
 
 function getSourceType(contents) {
