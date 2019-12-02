@@ -23,6 +23,14 @@ export default class Deque {
         return this.items.pop();
     }
 
+    front() {
+        return this.items[0];
+    }
+
+    end() {
+        return this.item[this.item.length-1];
+    }
+
     size() {
         return this.items.length;
     }

@@ -1,4 +1,5 @@
 import Lexer from "./Lexer.js";
+import Parser from "./Parser.js";
 
 export default class Compiler {
     constructor(){
@@ -12,6 +13,8 @@ export default class Compiler {
 		this.constantsMap = [];
 		this.variablesMap = [];
 		this.functionsMap = [];
+		this.globalEventsMap = [];
+		this.allEventsMap = [];
 	};
 
 	setTargetDescription(description){
@@ -24,6 +27,8 @@ export default class Compiler {
 	//compile(std::wistream& source, BytecodeVector& bytecode, unsigned& allocatedVariablesCount, Error &errorDescription, std::wostream* dump)
 	compile(source, destByteCode, allocatedVariablesCount, dump){
 		var lexer = new Lexer(source);
+		var parser = new Parser(this);
+		var tokens, parsed, program;
 
 		console.log("Compile");
 		if(typeof this.targetDescription === 'undefined') {
@@ -39,7 +44,7 @@ export default class Compiler {
 
 		// tokenization
 		try {
-			lexer.tokenize();
+			tokens = lexer.tokenize();
 		}
 		catch(error) {
 			console.error(error);
@@ -47,10 +52,9 @@ export default class Compiler {
 		}
 
 		// parsing
-		var program;// = new Node();
 		
 		try {
-			program.reset(parseProgram());
+			parsed = parser.parseProgram(tokens);
 		} catch (error) {
 			console.error(error);
 			//return false;
@@ -58,7 +62,7 @@ export default class Compiler {
 
 		// check vectors' size
 		try {
-			program.checkVectorSize();
+			checkVectorSize(parsed);
 		} catch (error) {
 			console.error(error);
 			//return false;
@@ -66,9 +70,9 @@ export default class Compiler {
 
 		// expand the syntax tree to Aseba-like syntax
 		try {
-			var expandedProgram = program.expandAbstractNodes();
-			program.release();
-			program.reset(expandedProgram);
+			var expandedProgram = expandAbstractNodes(parsed);
+			release();//program.release();
+			reset(expandedProgram);//program.reset(expandedProgram);
 		} catch (error) {
 			console.error(error);
 			//return false;
@@ -76,9 +80,9 @@ export default class Compiler {
 
 		// expand the vectorial nodes into scalar operations
 		try {
-			var expandedProgram = program.expandVectorialNodes();
-			program.release();
-			program.reset(expandedProgram);
+			var expandedProgram = expandVectorialNodes(parsed);
+			release();//program.release();
+			reset(expandedProgram);//program.reset(expandedProgram);
 		} catch (error) {
 			console.error(error);
 			//return false;
@@ -86,7 +90,7 @@ export default class Compiler {
 
 		// typecheck
 		try {
-			program.typeCheck();
+			typeCheck(program);
 		} catch (error) {
 			console.error(error);
 			//return false;
@@ -123,9 +127,9 @@ export default class Compiler {
 		this.functionsMap.length = 0;//this.targetDescription.getFunctionsMap();
 
 		this.constantsMap.length = 0;
-		for(var i = 0; i < this.commonDefinitions; i++){
 
-		}
+		this.globalEventsMap.length = 0;
+		this.allEventsMap.length = 0;
 	}
 
 }    

@@ -346,6 +346,8 @@ export default class Lexer {
             }
         }
         this.printTokens();
+
+        return  this.tokens;
     }
 
     getNextCharacter(pos) {
