@@ -70,12 +70,10 @@ export default class Parser{
 
         // check if constant exists
         // Not working properly
-        if (this.compiler.constantsMap.find(function(element){
-                return element.constName === constName
-            }))
-        {
-            console.error("Constant "+constName+" already exist.");
-        }
+        this.compiler.constantsMap.forEach(element => {
+            if (element.constName === constName)
+                console.error("Constant "+constName+" already exist.");
+        });
 
         // mandatory assignation, must resolve to a constant expression
         if(this.tokens.front().type !== TT.type.TOKEN_ASSIGN)
