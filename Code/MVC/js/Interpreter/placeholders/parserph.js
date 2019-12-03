@@ -1288,24 +1288,15 @@
 		// used to access the facility offered by the AssignmentNode (size check,...)
 		std::unique_ptr<Node> tempTree1(new AssignmentNode(pos, new MemoryVectorNode(pos, 0, 1, L"fake"), tree));
 
-		//tempTree1->children.push_back(parseBinaryOrExpression());
 
-		//unsigned indent = 0;
-		//std::cerr << "Tree before expanding" << std::endl;
-		//tempTree1->dump(std::wcerr, indent);
 
 		tempTree1->expandAbstractNodes(nullptr);	// root node (AssignmentNode) is not abstract, so modify in place
 		std::unique_ptr<Node> tempTree2(tempTree1->expandVectorialNodes(nullptr));
 
-		//std::cerr << "Tree after expanding" << std::endl;
-		//tempTree2->dump(std::wcerr, indent);
 
 		tempTree1.reset();
 		tempTree2->optimize(nullptr);
 
-		//std::cerr << "Tree after optimization" << std::endl;
-		//tempTree2->dump(std::wcerr, indent);
-		//std::cerr << std::endl;
 
 		// valid optimization?
 		if ( !tempTree2.get() || tempTree2->children.size() == 0 )

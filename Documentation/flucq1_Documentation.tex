@@ -318,12 +318,15 @@ Unfortunately, it is a C++ one, so we had to understand it and find a way to eit
 
 Curently translating the compiler from C++ by hand and encountered a problem, beacause enums don't exist as they exist in C++, with no given value.
 Using is_utf8_alpha_num() in C++ which is a derivated function of isalnum in C function to check if the character is alphanumeric, the matching function in Javascript is the following :
-\begin{lstlisting}[basicstyle=\ttfamily\small]
+\begin{lstlisting}[language=JavaScript, basicstyle=\ttfamily\small]
   isAlphaNumeric(ch) {
     return ch.match(/^[a-z0-9]+$/i) !== null;
   }
 \end{lstlisting}
 Had a little issue because if the parameter ch is not a string it doens't work anymore, so have to explicitely pass it as a string.
+
+Parser
+
 
 \subsection{Phyisics}
 

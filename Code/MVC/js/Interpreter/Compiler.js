@@ -32,11 +32,11 @@ export default class Compiler {
 
 		console.log("Compile");
 		if(typeof this.targetDescription === 'undefined') {
-			console.error("TargetDescription not defined.");
+			//console.error("TargetDescription not defined.");
 			//return false;
 		}
 		if(typeof this.commonDefinitions === 'undefined') {
-			console.error("CommonDefinitions not defined.");
+			//console.error("CommonDefinitions not defined.");
 			//return false;
 		}
 
@@ -59,7 +59,7 @@ export default class Compiler {
 			console.error(error);
 			//return false;
 		}
-
+		/*
 		// check vectors' size
 		try {
 			checkVectorSize(parsed);
@@ -95,7 +95,7 @@ export default class Compiler {
 			console.error(error);
 			//return false;
 		}
-
+		*/
 		/*
 		// set the number of allocated variables
 		allocatedVariablesCount = this.freeVariableIndex;

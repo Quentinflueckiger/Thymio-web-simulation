@@ -31,6 +31,10 @@ export default class Deque {
         return this.item[this.item.length-1];
     }
 
+    getAt(pos) {
+        return this.items[pos];
+    }
+
     size() {
         return this.items.length;
     }
