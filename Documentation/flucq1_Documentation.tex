@@ -333,8 +333,39 @@ Unfortunately, after implementing the new MVC architecture for our application w
 we decided to move away from ISS Manager as our knowledge of this software is too small and the time needed to acquire this knowledge wasn't worth the effort. 
 The alternative solution we came up with was to use XAMPP, we managed to push the same version of the application without any problem and without having to do anything special. So we decided to go forth with XAMPP.
 
-Playgrounds 
+\subsection{Playgrounds}
+
+Two steps for the algorithm to create tracks, first one was too thin as we used lines.
+\begin{lstlisting}[language=JavaScript, basicstyle=\ttfamily\small]
+  var line = generateLine(color, points[i], points[i+1]);
+\end{lstlisting} 
+The second iteration for this alogrithm takes an array of points and compute and position the line that link one point to the next.
+\begin{lstlisting}[language=JavaScript, basicstyle=\ttfamily\small]
+  for (let i = 0; i < points.length-1; i++) {
+
+    // Calculate a Vector3 between the two points
+    const trackWidth = new THREE.Vector3().copy(points[i+1]).sub(points[i]);
+    // Create the mesh with the calculated width from the Vector3
+    const track = new THREE.Mesh(
+      new THREE.BoxGeometry(trackWidth.length(), TrackHeight, TrackDepth),
+      material
+    )
+
+    // Position the center of the object to first point + half of the distance between the points (for x and z)
+    track.position.x = points[i].x + trackWidth.x/2;
+    track.position.z = points[i].z + trackWidth.z/2;
+    // Align mesh to calculated Vector3
+    track.quaternion.setFromUnitVectors(new THREE.Vector3(1, 0, 0), trackWidth.clone().normalize());
+    container.add(track);      
+  }
+\end{lstlisting} 
+
+We decided to load only once the Thymio model, as it takes approximately in average 500ms to load it, and to reset it's position and rotation whenever we change the playground, or if a position is given in the playground.json data file, the Thymio is moved to the wanted position.
+Thinking about the creation of playground we decided to change how the playgrounds data were recorded and instead of having them as JavaScript file, we moved them all as Json file. So later on it would not require more work to load a 
+customized playground. To do so we open and read a json file of a given name, and then skim through the json file and create the Shapes accordingly of the data.
+Unfortunately we found later on that Three JS has a built in function that translate a ThreeJS Object into a Json file element, and inversely.
 JSON
+
 \subsection{Interpreter}
 The interpreter found that compile/translate .aesl file into another programming language is the one used in the Thymio Suite application, its source code can be found in the following repository \href{https://github.com/aseba-community/aseba/tree/master/aseba/compiler}{Aseba git}.
 Unfortunately, it is a C++ one, so we had to understand it and find a way to either use it and then use a C++ to Javascript interpreter, or translate the compiler from C++ to Javascript by hand.
