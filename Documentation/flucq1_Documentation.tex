@@ -283,9 +283,13 @@ The specification and usage can be found on their website with the following lin
 
 \section{Three JS}
 
+Three JS is a 3D library for JavaScript which uses a default WebGL renderer. It allows the user to display, create and animate 3D computer graphics in a web browser. Its basic rendering pipeline is as follow :
 \begin{center}
   \includegraphics[scale=0.5]{./basic_threejs_rendering}
 \end{center}
+
+Every Three JS application is composed of at least one Camera element, a Renderer element and a Scene element. The different meshes are added to the scene and this scene along with the camera are rendered using the method 
+\texttt{requestAnimationFrame} from ThreeJS on the renderer element. 
 
 \section{Our Approach}
 
@@ -334,10 +338,10 @@ JSON
 \subsection{Interpreter}
 The interpreter found that compile/translate .aesl file into another programming language is the one used in the Thymio Suite application, its source code can be found in the following repository \href{https://github.com/aseba-community/aseba/tree/master/aseba/compiler}{Aseba git}.
 Unfortunately, it is a C++ one, so we had to understand it and find a way to either use it and then use a C++ to Javascript interpreter, or translate the compiler from C++ to Javascript by hand.
-We decided to translate the already existing one from Aseba and started by the compiler. After looking at his behaviour we recognize how it was built and separated,
-then came the time to translate it to Javascript. First thing first it creates multiple maps of variable, constant and events that need to be rebuild with each call to the compiler in case the previous one produced errors.
-Afterwhat comes the tokenization of the source file, which consist of creating Tokens with the position of the element, its type in the environment, and its value if provided.
-Then 
+We decided to translate the already existing one from \texttt{Aseba} and started by the compiler. After looking at his behaviour we recognize how it was built and separated,
+then came the time to translate it to Javascript. First thing first it creates multiple maps of variable, constant and events that need to be rebuild with each call to the compiler in case the previous ones produced errors.
+Afterwhat comes the tokenization of the source file, which consist of creating Tokens with the position of the element, its type in the environment, and its value if provided. Then this tokenized source is parsed into Nodes, 
+which are expanded and type checked. Once the program is checked, it is emited as a first bytecode output and then this bytecode is linked creating the final program.
 
 Here is a sequence diagram of the compilation of a file.
 \begin{center}
@@ -346,20 +350,23 @@ Here is a sequence diagram of the compilation of a file.
 
 \subsubsection{Tokenize}
 
-which consist of a switch that skimming through the document character after character, one or two characters look-ahead,
-or even undefined look-ahead for default cases.  
-As we translated the tokenize method from the file Lexer.cpp we encountered a few problems of 
-Curently translating the compiler from C++ by hand and encountered a problem, beacause enums don't exist as they exist in C++, with no given value. 
-Using is\textunderscore utf8\textunderscore alpha\textunderscore num() in C++ which is a derivated function of isalnum in C function to check if the character is alphanumeric, the matching function in Javascript is the following :
+To tokenize the source file we skim through the document and switch depending on the value of the character, we have basically five categories for this switch.
+The first one are the tokens which require only to read one character, such as ')', ',' those can directly be given their type. Next are the comments, the comment block ,\#* ... *\#, or the simple line comment ,\#. For the block comment,
+we run through the source in search of the *\# character association that marks the end of the comment block, throwing an error if not found. The third category encompass the cases that require one character look-ahead, such as when we found
+the character + is it a simple + or += or even ++ ? The fourth is almost the same but with two characters look-ahead, such as <. The fifth category, and the default case of this switch, is the one where the amount of look-ahead needed is not defined.
+In this category fit the numbers and the strings, which are found using a regex as replacement of the C++ method is\textunderscore utf8\textunderscore alpha\textunderscore num(), which controls that the element is either a letter or a number. Bellow is 
+the code for this regex.
 \begin{lstlisting}[language=JavaScript, basicstyle=\ttfamily\small]
   isAlphaNumeric(ch) {
     return ch.match(/^[a-z0-9]+$/i) !== null;
   }
-\end{lstlisting}
+\end{lstlisting}  
+We have to be wary of one point when using this method, and it is that if the \texttt{ch} parameter is not a string, then it will throw an error. Coming back to the switch we first test if the chain of character is a number by combining regex and looking for multiple characters.
+If it is not the case we check wether or not its value is the same as one of the given keywords, such as when or const. And if none of the keywords match it is labeled as a string literal and given the value of the chain of characters.
 
-We had a little issue because if the parameter ch is not a string it doens't work anymore, so have to explicitely pass it as a string.
+\subsubsection{Parser}
 
-Parser
+Once the source file is tokenized we can parse it into a three. To do so we translated the needed part of the three from \texttt{Aseba} in C++ to Javascript.
 
 
 \subsection{Phyisics}
