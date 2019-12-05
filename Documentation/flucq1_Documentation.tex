@@ -229,7 +229,26 @@ Failure:\\
   \item The webserver isn't accessible.
 \end{itemize}
 
-%%\subsection{Use Cases Model}
+\subsection{System sequence diagrams}
+
+\begin{center}
+  \includegraphics[scale=0.7]{./loadPlayground_ssd} \\
+  \texttt{Load playground ssd}
+\end{center}
+
+\begin{center}
+  \includegraphics[scale=0.7]{./compiler_ssd} \\
+  \texttt{Compile source ssd}
+\end{center}
+
+\subsection{Sequence diagrams}
+
+\begin{center}
+  \includegraphics[scale=0.7]{./loadPlayground_sd} \\
+  \texttt{Load playground sd}
+\end{center}
+
+
 %%Use case diagram
 
 \section{Architecture}
@@ -265,7 +284,7 @@ The specification and usage can be found on their website with the following lin
 \section{Three JS}
 
 \begin{center}
-  \includegraphics[width=\textwidth]{./basic_threejs_rendering}
+  \includegraphics[scale=0.5]{./basic_threejs_rendering}
 \end{center}
 
 \section{Our Approach}
@@ -315,15 +334,30 @@ JSON
 \subsection{Interpreter}
 The interpreter found that compile/translate .aesl file into another programming language is the one used in the Thymio Suite application, its source code can be found in the following repository \href{https://github.com/aseba-community/aseba/tree/master/aseba/compiler}{Aseba git}.
 Unfortunately, it is a C++ one, so we had to understand it and find a way to either use it and then use a C++ to Javascript interpreter, or translate the compiler from C++ to Javascript by hand.
+We decided to translate the already existing one from Aseba and started by the compiler. After looking at his behaviour we recognize how it was built and separated,
+then came the time to translate it to Javascript. First thing first it creates multiple maps of variable, constant and events that need to be rebuild with each call to the compiler in case the previous one produced errors.
+Afterwhat comes the tokenization of the source file, which consist of creating Tokens with the position of the element, its type in the environment, and its value if provided.
+Then 
 
-Curently translating the compiler from C++ by hand and encountered a problem, beacause enums don't exist as they exist in C++, with no given value.
-Using is_utf8_alpha_num() in C++ which is a derivated function of isalnum in C function to check if the character is alphanumeric, the matching function in Javascript is the following :
+Here is a sequence diagram of the compilation of a file.
+\begin{center}
+  \includegraphics[width=\textwidth]{./compiler_sequence_diagram}
+\end{center}
+
+\subsubsection{Tokenize}
+
+which consist of a switch that skimming through the document character after character, one or two characters look-ahead,
+or even undefined look-ahead for default cases.  
+As we translated the tokenize method from the file Lexer.cpp we encountered a few problems of 
+Curently translating the compiler from C++ by hand and encountered a problem, beacause enums don't exist as they exist in C++, with no given value. 
+Using is\textunderscore utf8\textunderscore alpha\textunderscore num() in C++ which is a derivated function of isalnum in C function to check if the character is alphanumeric, the matching function in Javascript is the following :
 \begin{lstlisting}[language=JavaScript, basicstyle=\ttfamily\small]
   isAlphaNumeric(ch) {
     return ch.match(/^[a-z0-9]+$/i) !== null;
   }
 \end{lstlisting}
-Had a little issue because if the parameter ch is not a string it doens't work anymore, so have to explicitely pass it as a string.
+
+We had a little issue because if the parameter ch is not a string it doens't work anymore, so have to explicitely pass it as a string.
 
 Parser
 
