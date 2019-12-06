@@ -1,4 +1,3 @@
-%%\documentclass{scrartcl}
 %%scrreprt
 \documentclass{scrbook}
 \usepackage{lipsum}
@@ -26,6 +25,7 @@
 
 \usepackage{markdown}
 \usepackage{array}
+\usepackage{appendix}
 
 \usepackage{listings}
 %% Custom javascript listings, from Gary Hammock recuperated the 18.10.2019 : https://github.com/ghammock/LaTeX_Listings_JavaScript_ES6
@@ -82,12 +82,12 @@ Management Summary
 \tableofcontents
 \clearpage
 
-\section{Introduction}
+\chapter{Introduction}
 
-\section{Environment}
+\chapter{Environment}
 
-\section{Thymio}
-\subsection{What is Thymio} 
+\chapter{Thymio}
+\section{What is Thymio} 
 
 Thymio is an educational robot that aims at improving early education (starting in primary school) in STEM (Science, Technology, Engineering and Mathematics),
 computational thinking, base computer science and researching the acknowledgement by kids of robots in their learning environment.
@@ -119,7 +119,7 @@ and reduce the cost and augment the lifetime for educational platforms and mater
   Thymio II sensor and actuator
 \end{center}
 
-\subsection{How does it works} \label{howdoesitworkref}
+\section{How does it works} \label{howdoesitworkref}
 
 As seen in the figure above there exist two Thymio models, Thymio and Wireless Thymio. 
 The difference between them lies in the ability of the second one to be programmed wirelessly, 
@@ -135,8 +135,8 @@ The four said languages are still available, and one need to be chosen.
 After what comes the choice of connecting a physical Thymio or starting a simulation to emulate the programmed behaviour.
 A more detailed section on the four differents programming languages can be found in the section \ref{fourlanguages} at the page \pageref{fourlanguages}.
 
-\section{Requirements Documentation}
-\subsection{Vision}
+\chapter{Requirements Documentation}
+\section{Vision}
 
 A start-up from the EPFL has developed a robot, the Thymio robot or Thymio II, that promotes the programming and robotic activities among children. 
 To feed program to the robot, a software has been developed, it integrates the four following programming languages: 
@@ -149,14 +149,14 @@ To feed program to the robot, a software has been developed, it integrates the f
 
 The project Web Simulation of a Thymio robot is aimed to create a simulator for the Thymio II so as to allow people to see their programmed behaviour directly.
 
-\subsection{Goals}
+\section{Goals}
 \begin{center}
   \includegraphics[width=\textwidth]{./goals}
 \end{center}
 
-\subsection{System Context}
-%%\subsection{Requirements}
-\subsection{Risk Analysis}
+\section{System Context}
+%%\section{Requirements}
+\section{Risk Analysis}
 In order to carry out the project successfully, we must consider the following possible complications. The possible complications are on one hand assessed according to their impact and on the other hand according to their likelihood to occur. 
 Thus, we obtain a predictable risk factor that allows us to have an overall view and take preventive measures if necessary.
 
@@ -173,7 +173,7 @@ Thus, we obtain a predictable risk factor that allows us to have an overall view
   Playground creator not working & 0.4 & 0.6 & 0.24 \\
 \end{tabular}
 
-\subsection{Stakeholder Descriptions}
+\section{Stakeholder Descriptions}
 \textbf{Product Owner}
 Flückiger Quentin flucq1@bfh.ch \\
 \textit{Interests}:
@@ -189,7 +189,7 @@ Flückiger Quentin flucq1@bfh.ch \\
   \item The development team wants to develop a usefull application for the customer.
 \end{itemize}
 
-\subsection{User Stories}
+\section{User Stories}
 \textbf{\large Users User Stories}\\
 \textbf{As} a user, I want to uplaod an .aesl file, so that I can witness the simulated behaviour. \\
 Description:\\
@@ -231,7 +231,7 @@ Failure:\\
   \item The webserver isn't accessible.
 \end{itemize}
 
-\subsection{System sequence diagrams}
+\section{System sequence diagrams}
 
 \begin{center}
   \includegraphics[scale=0.7]{./loadPlayground_ssd} \\
@@ -243,7 +243,7 @@ Failure:\\
   \texttt{Compile source ssd}
 \end{center}
 
-\subsection{Sequence diagrams}
+\section{Sequence diagrams}
 
 \begin{center}
   \includegraphics[scale=0.7]{./loadPlayground_sd} \\
@@ -253,7 +253,8 @@ Failure:\\
 
 %%Use case diagram
 
-\section{Architecture}
+\chapter{Architecture}
+%% Domain class diagrams, Domain model, Package diagram, Sequence diagram, System sequence diagram
 \begin{center}
   \includegraphics[width=\textwidth]{./architecture_proposal-Page-1}
 \end{center}
@@ -264,7 +265,7 @@ Proposed architecture for the simulator.
 \end{center}
 Proposed architecture for the playground creator.
 
-\section{What already exist} 
+\chapter{What already exist} 
 
 There exist two possibilities to simulate the behavior of a Thymio II Robot on a computer. 
 The first one is through the Thymio Suite application developed by the creator of Thymio. 
@@ -283,7 +284,7 @@ WeBots is a very powerful software that can do a lot of things, and one of these
 The two Aseba Studio and VPL for Thymio can be directly connected to the software and its simulated robot. 
 The specification and usage can be found on their website with the following link \href{https://www.cyberbotics.com/doc/guide/thymio2#mosybas-thymio-ii}{WeBots Thymio} .
 
-\section{Three JS}
+\chapter{Three JS}
 
 Three JS is a 3D library for JavaScript which uses a default WebGL renderer. It allows the user to display, create and animate 3D computer graphics in a web browser. Its basic rendering pipeline is as follow :
 \begin{center}
@@ -293,12 +294,14 @@ Three JS is a 3D library for JavaScript which uses a default WebGL renderer. It 
 Every Three JS application is composed of at least one Camera element, a Renderer element and a Scene element. The different meshes are added to the scene and this scene along with the camera are rendered using the method 
 \texttt{requestAnimationFrame} from ThreeJS on the renderer element. 
 
-\section{Our Approach}
+\chapter{Our Approach}
 
 Development
+
+\section{Models}
 Models + Basic controls
 MVC
-\subsection{WebServer}
+\section{WebServer}
 Regarding the goal number 5, Require no software installation, we decided to use a webserver in order to access the application. At first we choose the IIS Manager that is built in with Windows 10, 
 we followed the steps in this tutorial video in order to configure IIS: \url{https://www.youtube.com/watch?v=rPRLe7QeVHM} .
 
@@ -335,13 +338,16 @@ Unfortunately, after implementing the new MVC architecture for our application w
 we decided to move away from ISS Manager as our knowledge of this software is too small and the time needed to acquire this knowledge wasn't worth the effort. 
 The alternative solution we came up with was to use XAMPP, we managed to push the same version of the application without any problem and without having to do anything special. So we decided to go forth with XAMPP.
 
-\subsection{Playgrounds}
+\section{Playgrounds}
 
-Two steps for the algorithm to create tracks, first one was too thin as we used lines.
+There was two steps for the algorithm to create tracks, the first one was to compute a simple line between two points. But the result was 
+too thin and therefore a better solution was found.
 \begin{lstlisting}[language=JavaScript, basicstyle=\ttfamily\small]
   var line = generateLine(color, points[i], points[i+1]);
 \end{lstlisting} 
-The second iteration for this alogrithm takes an array of points and compute and position the line that link one point to the next.
+The second iteration for this alogrithm takes an array of points, those points are of type Vector3 so as to register the three coordinates, and compute 
+a new Vector3 that holds the resulting vector of the next point minus the current point. The x and z values of this vector are then used 
+as the center to position a box object, which represent the track, and then it is aligned to this vector.
 \begin{lstlisting}[language=JavaScript, basicstyle=\ttfamily\small]
   for (let i = 0; i < points.length-1; i++) {
 
@@ -362,13 +368,23 @@ The second iteration for this alogrithm takes an array of points and compute and
   }
 \end{lstlisting} 
 
-We decided to load only once the Thymio model, as it takes approximately in average 500ms to load it, and to reset it's position and rotation whenever we change the playground, or if a position is given in the playground.json data file, the Thymio is moved to the wanted position.
-Thinking about the creation of playground we decided to change how the playgrounds data were recorded and instead of having them as JavaScript file, we moved them all as Json file. So later on it would not require more work to load a 
-customized playground. To do so we open and read a json file of a given name, and then skim through the json file and create the Shapes accordingly of the data.
-Unfortunately we found later on that Three JS has a built in function that translate a ThreeJS Object into a Json file element, and inversely.
-JSON
+We decided to load only once the Thymio model, as it takes in average 500ms to load it, and we encountered some issues where the model would not load everytime when we would change the playgrounds.
+Therefore we reset it's position and rotation whenever we change the playground, or if a position is given in the playground.json data file, the Thymio is moved to the wanted position.
 
-\subsection{Interpreter}
+Thinking about the creation of playground we decided to change how the playgrounds data were recorded and instead of having them as JavaScript file, we moved them all as Json file. So later on it would not require more work to load a 
+customized playground. To do so we open and read a json file of a given name, and then skim through the json file and create the Shapes accordingly of the data. Bellow an example for the boxes.
+\begin{lstlisting}[language=JavaScript, basicstyle=\ttfamily\small]
+  if (file.boxes) {
+    for (const boxRecord of file.boxes) {
+        var box = new Box(boxRecord.name, boxRecord.props);
+        playground.addShape(box);
+    }
+  }
+\end{lstlisting} 
+
+Unfortunately we found later on that Three JS has a built in function that translate a ThreeJS Object into a Json file element, and inversely.
+
+\section{Interpreter}
 The interpreter found that compile/translate .aesl file into another programming language is the one used in the Thymio Suite application, its source code can be found in the following repository \href{https://github.com/aseba-community/aseba/tree/master/aseba/compiler}{Aseba git}.
 Unfortunately, it is a C++ one, so we had to understand it and find a way to either use it and then use a C++ to Javascript interpreter, or translate the compiler from C++ to Javascript by hand.
 We decided to translate the already existing one from \texttt{Aseba} and started by the compiler. After looking at his behaviour we recognize how it was built and separated,
@@ -381,7 +397,7 @@ Here is a sequence diagram of the compilation of a file.
   \includegraphics[width=\textwidth]{./compiler_sequence_diagram}
 \end{center}
 
-\subsubsection{Tokenize}
+\subsection{Tokenize}
 
 To tokenize the source file we skim through the document and switch depending on the value of the character, we have basically five categories for this switch.
 The first one are the tokens which require only to read one character, such as ')', ',' those can directly be given their type. Next are the comments, the comment block ,\#* ... *\#, or the simple line comment ,\#. For the block comment,
@@ -397,48 +413,61 @@ the code for this regex.
 We have to be wary of one point when using this method, and it is that if the \texttt{ch} parameter is not a string, then it will throw an error. Coming back to the switch we first test if the chain of character is a number by combining regex and looking for multiple characters.
 If it is not the case we check wether or not its value is the same as one of the given keywords, such as when or const. And if none of the keywords match it is labeled as a string literal and given the value of the chain of characters.
 
-\subsubsection{Parser}
+\subsection{Parser}
 
 Once the source file is tokenized we can parse it into a three. To do so we translated the needed part of the three from \texttt{Aseba} in C++ to Javascript.
 
 
-\subsection{Phyisics}
+\section{Phyisics}
 
 Adding physics to allow collisions between the robot and the different objects. Trying to use Physijs, source code can be found in the following repository \href{https://github.com/chandlerprall/Physijs/wiki/Basic-Setup}{Physijs git}, 
 but with the architecture of our application, we encounter a problem due to the fact we are adding THREE.Object3D instead of basic mesh and Physijs works only with a fixed amount of meshes. A solution would be to not use Physijs as we need it only for the Thymio,
 and instead, shoot rays from the robot and check for collisions this way, as only Thymio needs to move and stop upon collisions.
 
-\subsection{Sensor and Actuator}
+\section{Sensor and Actuator}
+
+A thymio robot moves in according with two motors, one for its right wheel and one for its left wheel. They have a value for the output power between -500 and 500, minus meaning the motor powers the wheel in the oposite direction. 
+And those two motors can only ouptut power in a straight line, forward / backward. Bellow are three representations of the expected movements of a Thymio. The yellow arrow is the power for the left motor, the blue arrow is the power for the right motor, 
+and the green arrow is the final vector movement for the robot. On the first representation the power of the two motors are the same, both in value and direction, thus the final vector is simply the same as either one of the two.
+On the second one the value of the power for both motors is still the same but their direction are opposite, hence the final vector is a circle because the robot will turn on itself. 
+And finaly the third representation shows the resultant vector when the value is not the same but the direction is.
+\begin{center}
+  \includegraphics[width=\textwidth]{./thymio_move}
+\end{center}
+
+It was complex to convey the way the Thymio robots move onto this application as we move models and don't physically power motors. To achieve the same behaviour we decided to use some trigonometry and a few tricks.
+
 How they work in real life, what do they output, what do they return as value, and how they work in the application.
 Create playground
 
-\section{Results}
+\chapter{Results}
 
 
-%% Domain class diagrams, Domain model, Package diagram, Sequence diagram, System sequence diagram
 
-\section{Usefull latex commands (to be deleted later on)}
-\lstset{language=JavaScript}
-\begin{lstlisting}[basicstyle=\ttfamily\small]
-  function generateBox(color, width, height, depth){
 
-    var geometry = new THREE.BoxGeometry( width, height, depth );
-    var material = new THREE.MeshPhongMaterial( { color : color} );
-    var box = new THREE.Mesh( geometry, material );
+%%\section{Usefull latex commands (to be deleted later on)}
+%%\lstset{language=JavaScript}
+%%\begin{lstlisting}[basicstyle=\ttfamily\small]
+%%  function generateBox(color, width, height, depth){
+
+%%    var geometry = new THREE.BoxGeometry( width, height, depth );
+%%    var material = new THREE.MeshPhongMaterial( { color : color} );
+%%    var box = new THREE.Mesh( geometry, material );
                 
-    return box;
-  }
-\end{lstlisting}
-For that we read the article book of \cite{Jerald:2015:VBH:2792790}
-which is very interesting, much more than the article
-\cite{Diniz:2017:UGO:3100317.3100324}
+%%    return box;
+%%  }
+%%\end{lstlisting}
+%%For that we read the article book of \cite{Jerald:2015:VBH:2792790}
+%%which is very interesting, much more than the article
+%%\cite{Diniz:2017:UGO:3100317.3100324}
+%%
 
-\section{Conclusion and future work}
+\chapter{Conclusion and future work}
 
-\section{Appendices}
+\appendix
 
-\subsection{The different programming languages \label{fourlanguages}} 
-\subsubsection{VPL}
+\chapter{The different programming languages \label{fourlanguages}} 
+\section{VPL}
 
 One of the four different possibilities to program the Thymio is by using the visual programming language, or VPL, 
 developed by the creator of Aseba. A visual programming language is an abstraction of the more common way to program. 
@@ -516,7 +545,7 @@ In this example, it will go back and forth between the two pairs: \\
   Advanced program
 \end{center}
 
-\subsubsection{Blockly 4 Thymio}
+\section{Blockly 4 Thymio}
 
 The second possibility is to use \texttt{Blockly4Thymio} which is an environment based on Blockly. Blockly was released in May 2012 and was initially a replacement for OpenBlocks for the \texttt{MIT App Inventor}. 
 It is an open-source client-side library that allows its users to easily add a block-based visual programming language to an application or website. 
@@ -586,10 +615,10 @@ We added two other events for the right and left buttons that are responsible to
   More complex program
 \end{center}
 
-\subsubsection{Aseba}
-\subsubsection{Scratch}
+\section{Aseba}
+\section{Scratch}
 
-\subsection{Product Backlog}
+\chapter{Product Backlog}
 \begin{longtable}{p{5mm}|p{2cm}|p{4cm}|p{1cm}|p{1cm}|p{1cm}|p{1cm}|p{15mm}}
   ID                     & Story Name & Story / Task Description & Priority & Est. Effort {[}h{]} & Update Effort {[}h{]} & Actual Effort{[}h{]} & Status                \\ \hline
   1 & Create Documentation & Develop and write the documentation & High & 16 & 16 & 16 & In-Progress \\ 
@@ -612,8 +641,8 @@ We added two other events for the right and left buttons that are responsible to
    &  &  & Total &  &  &  &  \\ 
 \end{longtable}
 
-\subsection{Sprint Backlog}
-\subsubsection{First Sprint}
+\chapter{Sprint Backlog}
+\section{First Sprint}
 \textbf{2019-09-16 until 2019-10-07}
 \begin{longtable}{p{5mm}|p{2cm}|p{4cm}|p{1cm}|p{1cm}|p{1cm}|p{1cm}|p{15mm}}
   ID                     & Story Name & Story / Task Description & Priority & Est. Effort {[}h{]} & Update Effort {[}h{]} & Actual Effort{[}h{]} & Status                \\ \hline
@@ -625,7 +654,7 @@ We added two other events for the right and left buttons that are responsible to
   2.2 & Tools & Install Thymio Suite, NodeJS and download ThreeJS & High & 8 & 8 & 8 & Done \\ 
 \end{longtable}
 
-\subsubsection{Second Sprint}
+\section{Second Sprint}
 \textbf{2019-10-07 until 2019-10-28}
 \begin{longtable}{p{5mm}|p{2cm}|p{4cm}|p{1cm}|p{1cm}|p{1cm}|p{1cm}|p{15mm}}
   ID                     & Story Name & Story / Task Description & Priority & Est. Effort {[}h{]} & Update Effort {[}h{]} & Actual Effort{[}h{]} & Status                \\ \hline
@@ -641,7 +670,7 @@ We added two other events for the right and left buttons that are responsible to
   5.1 & Four supported languages & Descibe and initiate to VPL, Blockly, Aseba and Scratch & High & 24 & 12 & {/} & In-Progress \\ 
 \end{longtable}
 
-\subsubsection{Third Sprint}
+\section{Third Sprint}
 \textbf{2019-10-28 until 2019-11-15}
 \begin{longtable}{p{5mm}|p{2cm}|p{4cm}|p{1cm}|p{1cm}|p{1cm}|p{1cm}|p{15mm}}
   ID                     & Story Name & Story / Task Description & Priority & Est. Effort {[}h{]} & Update Effort {[}h{]} & Actual Effort{[}h{]} & Status                \\ \hline
@@ -662,7 +691,7 @@ We added two other events for the right and left buttons that are responsible to
   8.1 & Pages UI & Create three pages UI, one for each of the following index, simulation and creation pages & Low & 8 & 4 &  & In-Progress \\
 \end{longtable}
 
-\subsubsection{Fourth Sprint}
+\section{Fourth Sprint}
 \textbf{2019-11-15 until 2019-12-09}
 \begin{longtable}{p{5mm}|p{2cm}|p{4cm}|p{1cm}|p{1cm}|p{1cm}|p{1cm}|p{15mm}}
   ID                     & Story Name & Story / Task Description & Priority & Est. Effort {[}h{]} & Update Effort {[}h{]} & Actual Effort{[}h{]} & Status                \\ \hline
@@ -671,7 +700,7 @@ We added two other events for the right and left buttons that are responsible to
   11 & Update Documentation & Update existing documentation & High & 20 &  &  & To Do \\ 
 \end{longtable}
 
-\subsubsection{Fifth Sprint}
+\section{Fifth Sprint}
 \textbf{2019-12-09 until 2019-12-30}
 \begin{longtable}{p{5mm}|p{2cm}|p{4cm}|p{1cm}|p{1cm}|p{1cm}|p{1cm}|p{15mm}}
   ID                     & Story Name & Story / Task Description & Priority & Est. Effort {[}h{]} & Update Effort {[}h{]} & Actual Effort{[}h{]} & Status                \\ \hline
@@ -680,7 +709,7 @@ We added two other events for the right and left buttons that are responsible to
   14 & Update Documentation & Update existing documentation & High & 20 &  &  & To Do \\ 
 \end{longtable}
 
-\subsubsection{Sixth Sprint}
+\section{Sixth Sprint}
 \textbf{2019-12-30 until 2020-01-17}
 \begin{longtable}{p{5mm}|p{2cm}|p{4cm}|p{1cm}|p{1cm}|p{1cm}|p{1cm}|p{15mm}}
   ID                     & Story Name & Story / Task Description & Priority & Est. Effort {[}h{]} & Update Effort {[}h{]} & Actual Effort{[}h{]} & Status                \\ \hline
@@ -694,17 +723,19 @@ We added two other events for the right and left buttons that are responsible to
   17 & Prepare Defense & Prepare the defense & High &  &  &  & To Do \\ \hline
 \end{longtable}
 
-\subsection{Gantt Diagram}
+\chapter{Gantt Diagram}
+\clearpage
 \begin{center}
-  \includegraphics[width=\textwidth, rotate=90]{./Gantt-1}
+  \includegraphics[scale = 0.28, angle=-90]{./Gantt-1}
 \end{center}
 \begin{center}
-  \includegraphics[width=\textwidth, , rotate=90]{./Gantt-2}
+  \includegraphics[scale = 0.28,  angle=-90]{./Gantt-2}
 \end{center}
+\clearpage
 
-\subsection{Version control}
+\chapter{Version control}
 
-\subsection{Configuration}
+\chapter{Configuration}
 
 \textbf{User information} \\
 On demand.\\
@@ -730,7 +761,7 @@ See link bellow for more information and links. (It requires to be inside the bf
 \textbf{First Configuration of XAMPP}\\
 configuration, installation, access
 
-\subsection{Meetings}
+\chapter{Meetings}
 \begin{tabular}{ | m{3cm} | m{10cm} | }
   \hline
   Date & Content \\
@@ -765,9 +796,7 @@ configuration, installation, access
   \hline
 \end{tabular}
 
-\listoffigures
-
-\section{Problems encountered}
+\chapter{Problems encountered}
 \begin{itemize}
   \item javascript not refreshing properly due to cache -> disable cache
   \item 3d Model not loaded on the webserver -> first tried to change the directory, then mixed two solution. 
