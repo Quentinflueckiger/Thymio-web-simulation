@@ -1,23 +1,56 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018/W32TeX) (preloaded format=pdflatex 2018.10.2)  6 DEC 2019 13:20
-entering extended mode
- restricted \write18 enabled.
- file:line:error style messages enabled.
- %&-line parsing enabled.
-**"d:/Quentin/Documents/Thymio simulation/Thymio-web-simulation/Documentation/flucq1_Documentation.tex"
-(d:/Quentin/Documents/Thymio simulation/Thymio-web-simulation/Documentation/flucq1_Documentation.tex
+This is LuaTeX, Version 1.07.0 (TeX Live 2018/W32TeX)  (format=lualatex 2018.10.2)  6 DEC 2019 15:51
+ restricted system commands enabled.
+**flucq1_Documentation.tex
+(./flucq1_Documentation.tex
 LaTeX2e <2018-04-01> patch level 5
-(d:/Programmes/texlive/2018/texmf-dist/tex/latex/koma-script/scrbook.cls
+Lua module: luaotfload-main 2018/09/24 2.90001 OpenType layout system.
+Lua module: lualibs 2018-09-21 2.6 ConTeXt Lua standard libraries.
+Lua module: lualibs-extended 2018-09-21 2.6 ConTeXt Lua libraries -- extended co
+llection.
+luaotfload | conf : Root cache directory is D:/Programmes/texlive/2018/texmf-var
+/luatex-cache/generic/names.
+luaotfload | init : Loading fontloader “fontloader-2018-09-24.lua” from kpse
+-resolved path “d:/Programmes/texlive/2018/texmf-dist/tex/luatex/luaotfload/fo
+ntloader-2018-09-24.lua”.
+Lua-only attribute luaotfload@state = 1
+Lua-only attribute luaotfload@noligature = 2
+Lua-only attribute luaotfload@syllabe = 3
+luaotfload | init : Context OpenType loader version “3.104”
+Inserting `luaotfload.node_processor' at position 1 in `pre_linebreak_filter'.
+Inserting `luaotfload.node_processor' at position 1 in `hpack_filter'.
+Inserting `luaotfload.define_font' at position 1 in `define_font'.
+Lua-only attribute luaotfload_color_attribute = 4
+luaotfload | conf : Root cache directory is D:/Programmes/texlive/2018/texmf-var
+/luatex-cache/generic/names.
+Inserting `luaotfload.aux.set_sscale_dimens' at position 1 in `luaotfload.patch_
+font'.
+Inserting `luaotfload.aux.patch_cambria_domh' at position 2 in `luaotfload.patch
+_font'.
+Inserting `luaotfload.aux.fixup_fontdata' at position 1 in `luaotfload.patch_fon
+t_unsafe'.
+Inserting `luaotfload.aux.set_capheight' at position 3 in `luaotfload.patch_font
+'.
+Inserting `luaotfload.rewrite_fontname' at position 4 in `luaotfload.patch_font'
+.
+luaotfload | main : initialization completed in 0.257 seconds (d:/Programmes/te
+xlive/2018/texmf-dist/tex/latex/koma-script/scrbook.cls
 Document Class: scrbook 2018/03/30 v3.25 KOMA-Script document class (book)
 (d:/Programmes/texlive/2018/texmf-dist/tex/latex/koma-script/scrkbase.sty
-Package: scrkbase 2018/03/30 v3.25 KOMA-Script package (KOMA-Script-dependent basics and keyval usage)
- (d:/Programmes/texlive/2018/texmf-dist/tex/latex/koma-script/scrbase.sty
-Package: scrbase 2018/03/30 v3.25 KOMA-Script package (KOMA-Script-independent basics and keyval usage)
- (d:/Programmes/texlive/2018/texmf-dist/tex/latex/graphics/keyval.sty
+Package: scrkbase 2018/03/30 v3.25 KOMA-Script package (KOMA-Script-dependent ba
+sics and keyval usage)
+
+(d:/Programmes/texlive/2018/texmf-dist/tex/latex/koma-script/scrbase.sty
+Package: scrbase 2018/03/30 v3.25 KOMA-Script package (KOMA-Script-independent b
+asics and keyval usage)
+
+(d:/Programmes/texlive/2018/texmf-dist/tex/latex/graphics/keyval.sty
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \KV@toks@=\toks14
-) (d:/Programmes/texlive/2018/texmf-dist/tex/latex/koma-script/scrlfile.sty
+)
+(d:/Programmes/texlive/2018/texmf-dist/tex/latex/koma-script/scrlfile.sty
 Package: scrlfile 2018/03/30 v3.25 KOMA-Script package (loading files)
-))) (d:/Programmes/texlive/2018/texmf-dist/tex/latex/koma-script/tocbasic.sty
+)))
+(d:/Programmes/texlive/2018/texmf-dist/tex/latex/koma-script/tocbasic.sty
 Package: tocbasic 2018/03/30 v3.25 KOMA-Script package (handling toc-files)
 \scr@dte@tocline@numberwidth=\skip41
 \scr@dte@tocline@numbox=\box26
@@ -25,12 +58,18 @@ Package: tocbasic 2018/03/30 v3.25 KOMA-Script package (handling toc-files)
 Package tocbasic Info: omitting babel extension for `toc'
 (tocbasic)             because of feature `nobabel' available
 (tocbasic)             for `toc' on input line 136.
-Package tocbasic Info: defining new hook before heading of `' on input line 1663.
+Package tocbasic Info: defining new hook before heading of `' on input line 1663
+.
 Class scrbook Info: File `scrsize11pt.clo' used instead of
 (scrbook)           file `scrsize11.clo' to setup font sizes on input line 2331.
- (d:/Programmes/texlive/2018/texmf-dist/tex/latex/koma-script/scrsize11pt.clo
+
+
+(d:/Programmes/texlive/2018/texmf-dist/tex/latex/koma-script/scrsize11pt.clo
 File: scrsize11pt.clo 2018/03/30 v3.25 KOMA-Script font size class option (11pt)
-) (d:/Programmes/texlive/2018/texmf-dist/tex/latex/koma-script/typearea.sty
+
+luaotfload | db : Font names database loaded from D:/Programmes/texlive/2018/tex
+mf-var/luatex-cache/generic/names/luaotfload-names.luc)
+(d:/Programmes/texlive/2018/texmf-dist/tex/latex/koma-script/typearea.sty
 Package: typearea 2018/03/30 v3.25 KOMA-Script package (type area)
 \ta@bcor=\skip42
 \ta@div=\count80
@@ -85,12 +124,15 @@ Package tocbasic Info: omitting babel extension for `lot'
 \c@table=\count89
 Class scrbook Info: Redefining `\numberline' on input line 6445.
 \bibindent=\dimen102
-) (d:/Programmes/texlive/2018/texmf-dist/tex/latex/lipsum/lipsum.sty
+)
+(d:/Programmes/texlive/2018/texmf-dist/tex/latex/lipsum/lipsum.sty
 Package: lipsum 2014/07/27 v1.3 150 paragraphs of Lorem Ipsum dummy text
 \c@lips@count=\count90
-) (d:/Programmes/texlive/2018/texmf-dist/tex/latex/kpfonts/kpfonts.sty
+)
+(d:/Programmes/texlive/2018/texmf-dist/tex/latex/kpfonts/kpfonts.sty
 Package: kpfonts  2010/08/20 v3.31
- (d:/Programmes/texlive/2018/texmf-dist/tex/latex/base/textcomp.sty
+
+(d:/Programmes/texlive/2018/texmf-dist/tex/latex/base/textcomp.sty
 Package: textcomp 2017/04/05 v2.0i Standard LaTeX package
 Package textcomp Info: Sub-encoding information:
 (textcomp)               5 = only ISO-Adobe without \textcurrency
@@ -105,83 +147,10 @@ Package textcomp Info: Sub-encoding information:
 (textcomp)             See the documentation for details.
 Package textcomp Info: Setting ? sub-encoding to TS1/1 on input line 79.
 Package textcomp Info: Changing ? sub-encoding to TS1/0 on input line 80.
- (d:/Programmes/texlive/2018/texmf-dist/tex/latex/base/ts1enc.def
+
+(d:/Programmes/texlive/2018/texmf-dist/tex/latex/base/ts1enc.def
 File: ts1enc.def 2001/06/05 v3.0e (jk/car/fm) Standard LaTeX file
-Now handling font encoding TS1 ...
-... processing UTF-8 mapping file for font encoding TS1
- (d:/Programmes/texlive/2018/texmf-dist/tex/latex/base/ts1enc.dfu
-File: ts1enc.dfu 2018/04/05 v1.2c UTF-8 support for inputenc
-   defining Unicode char U+00A2 (decimal 162)
-   defining Unicode char U+00A3 (decimal 163)
-   defining Unicode char U+00A4 (decimal 164)
-   defining Unicode char U+00A5 (decimal 165)
-   defining Unicode char U+00A6 (decimal 166)
-   defining Unicode char U+00A7 (decimal 167)
-   defining Unicode char U+00A8 (decimal 168)
-   defining Unicode char U+00A9 (decimal 169)
-   defining Unicode char U+00AA (decimal 170)
-   defining Unicode char U+00AC (decimal 172)
-   defining Unicode char U+00AE (decimal 174)
-   defining Unicode char U+00AF (decimal 175)
-   defining Unicode char U+00B0 (decimal 176)
-   defining Unicode char U+00B1 (decimal 177)
-   defining Unicode char U+00B2 (decimal 178)
-   defining Unicode char U+00B3 (decimal 179)
-   defining Unicode char U+00B4 (decimal 180)
-   defining Unicode char U+00B5 (decimal 181)
-   defining Unicode char U+00B6 (decimal 182)
-   defining Unicode char U+00B7 (decimal 183)
-   defining Unicode char U+00B9 (decimal 185)
-   defining Unicode char U+00BA (decimal 186)
-   defining Unicode char U+00BC (decimal 188)
-   defining Unicode char U+00BD (decimal 189)
-   defining Unicode char U+00BE (decimal 190)
-   defining Unicode char U+00D7 (decimal 215)
-   defining Unicode char U+00F7 (decimal 247)
-   defining Unicode char U+0192 (decimal 402)
-   defining Unicode char U+02C7 (decimal 711)
-   defining Unicode char U+02D8 (decimal 728)
-   defining Unicode char U+02DD (decimal 733)
-   defining Unicode char U+0E3F (decimal 3647)
-   defining Unicode char U+2016 (decimal 8214)
-   defining Unicode char U+2020 (decimal 8224)
-   defining Unicode char U+2021 (decimal 8225)
-   defining Unicode char U+2022 (decimal 8226)
-   defining Unicode char U+2030 (decimal 8240)
-   defining Unicode char U+2031 (decimal 8241)
-   defining Unicode char U+203B (decimal 8251)
-   defining Unicode char U+203D (decimal 8253)
-   defining Unicode char U+2044 (decimal 8260)
-   defining Unicode char U+204E (decimal 8270)
-   defining Unicode char U+2052 (decimal 8274)
-   defining Unicode char U+20A1 (decimal 8353)
-   defining Unicode char U+20A4 (decimal 8356)
-   defining Unicode char U+20A6 (decimal 8358)
-   defining Unicode char U+20A9 (decimal 8361)
-   defining Unicode char U+20AB (decimal 8363)
-   defining Unicode char U+20AC (decimal 8364)
-   defining Unicode char U+20B1 (decimal 8369)
-   defining Unicode char U+2103 (decimal 8451)
-   defining Unicode char U+2116 (decimal 8470)
-   defining Unicode char U+2117 (decimal 8471)
-   defining Unicode char U+211E (decimal 8478)
-   defining Unicode char U+2120 (decimal 8480)
-   defining Unicode char U+2122 (decimal 8482)
-   defining Unicode char U+2126 (decimal 8486)
-   defining Unicode char U+2127 (decimal 8487)
-   defining Unicode char U+212E (decimal 8494)
-   defining Unicode char U+2190 (decimal 8592)
-   defining Unicode char U+2191 (decimal 8593)
-   defining Unicode char U+2192 (decimal 8594)
-   defining Unicode char U+2193 (decimal 8595)
-   defining Unicode char U+2329 (decimal 9001)
-   defining Unicode char U+232A (decimal 9002)
-   defining Unicode char U+2422 (decimal 9250)
-   defining Unicode char U+25E6 (decimal 9702)
-   defining Unicode char U+25EF (decimal 9711)
-   defining Unicode char U+266A (decimal 9834)
-   defining Unicode char U+FEFF (decimal 65279)
-))
+)
 LaTeX Info: Redefining \oldstylenums on input line 334.
 Package textcomp Info: Setting cmr sub-encoding to TS1/0 on input line 349.
 Package textcomp Info: Setting cmss sub-encoding to TS1/0 on input line 350.
@@ -244,21 +213,25 @@ Package textcomp Info: Setting pplx sub-encoding to TS1/3 on input line 406.
 Package textcomp Info: Setting pplj sub-encoding to TS1/3 on input line 407.
 Package textcomp Info: Setting ptmx sub-encoding to TS1/4 on input line 408.
 Package textcomp Info: Setting ptmj sub-encoding to TS1/4 on input line 409.
-) (d:/Programmes/texlive/2018/texmf-dist/tex/latex/amsmath/amsmath.sty
+)
+(d:/Programmes/texlive/2018/texmf-dist/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2017/09/02 v2.17a AMS math features
 \@mathmargin=\skip58
 
 For additional information on amsmath, use the `?' option.
 (d:/Programmes/texlive/2018/texmf-dist/tex/latex/amsmath/amstext.sty
 Package: amstext 2000/06/29 v2.01 AMS text
- (d:/Programmes/texlive/2018/texmf-dist/tex/latex/amsmath/amsgen.sty
+
+(d:/Programmes/texlive/2018/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
 \@emptytoks=\toks15
 \ex@=\dimen103
-)) (d:/Programmes/texlive/2018/texmf-dist/tex/latex/amsmath/amsbsy.sty
+))
+(d:/Programmes/texlive/2018/texmf-dist/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
 \pmbraise@=\dimen104
-) (d:/Programmes/texlive/2018/texmf-dist/tex/latex/amsmath/amsopn.sty
+)
+(d:/Programmes/texlive/2018/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 2016/03/08 v2.02 operator names
 )
 \inf@bad=\count91
@@ -564,25 +537,37 @@ LaTeX Font Info:    Overwriting symbol font `largesymbolsA' in version `sf'
 LaTeX Font Info:    Overwriting symbol font `largesymbolsA' in version `boldsf'
 (Font)                  U/jkpexa/m/n --> U/jkpexa/bx/n on input line 620.
 LaTeX Info: Redefining \not on input line 1580.
-) (d:/Programmes/texlive/2018/texmf-dist/tex/latex/polyglossia/polyglossia.sty
-Package: polyglossia 2018/04/07 v1.43 Alternative to Babel for XeLaTeX and LuaLaTeX
- (d:/Programmes/texlive/2018/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+)
+(d:/Programmes/texlive/2018/texmf-dist/tex/latex/polyglossia/polyglossia.sty
+Package: polyglossia 2018/04/07 v1.43 Alternative to Babel for XeLaTeX and LuaLa
+TeX
+
+(d:/Programmes/texlive/2018/texmf-dist/tex/latex/etoolbox/etoolbox.sty
 Package: etoolbox 2018/08/19 v2.5f e-TeX tools for LaTeX (JAW)
 \etb@tempcnta=\count107
-) (d:/Programmes/texlive/2018/texmf-dist/tex/latex/makecmds/makecmds.sty
+)
+(d:/Programmes/texlive/2018/texmf-dist/tex/latex/makecmds/makecmds.sty
 Package: makecmds 2009/09/03 v1.0a extra command making commands
-) (d:/Programmes/texlive/2018/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+)
+(d:/Programmes/texlive/2018/texmf-dist/tex/latex/xkeyval/xkeyval.sty
 Package: xkeyval 2014/12/03 v2.7a package option processing (HA)
- (d:/Programmes/texlive/2018/texmf-dist/tex/generic/xkeyval/xkeyval.tex (d:/Programmes/texlive/2018/texmf-dist/tex/generic/xkeyval/xkvutils.tex
+
+(d:/Programmes/texlive/2018/texmf-dist/tex/generic/xkeyval/xkeyval.tex
+(d:/Programmes/texlive/2018/texmf-dist/tex/generic/xkeyval/xkvutils.tex
 \XKV@toks=\toks20
 \XKV@tempa@toks=\toks21
 )
 \XKV@depth=\count108
 File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
-)) (d:/Programmes/texlive/2018/texmf-dist/tex/latex/fontspec/fontspec.sty (d:/Programmes/texlive/2018/texmf-dist/tex/latex/l3packages/xparse/xparse.sty (d:/Programmes/texlive/2018/texmf-dist/tex/latex/l3kernel/expl3.sty
+))
+(d:/Programmes/texlive/2018/texmf-dist/tex/latex/fontspec/fontspec.sty
+(d:/Programmes/texlive/2018/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
+(d:/Programmes/texlive/2018/texmf-dist/tex/latex/l3kernel/expl3.sty
 Package: expl3 2018-09-24 L3 programming layer (loader) 
- (d:/Programmes/texlive/2018/texmf-dist/tex/latex/l3kernel/expl3-code.tex
+
+(d:/Programmes/texlive/2018/texmf-dist/tex/latex/l3kernel/expl3-code.tex
 Package: expl3 2018-09-24 L3 programming layer (code)
+\ucharcat@table=\catcodetable5
 \c_max_int=\count109
 \l_tmpa_int=\count110
 \l_tmpb_int=\count111
@@ -625,65 +610,62 @@ Package: expl3 2018-09-24 L3 programming layer (code)
 \c__fp_Bigg_leading_shift_int=\count129
 \c__fp_Bigg_middle_shift_int=\count130
 \c__fp_Bigg_trailing_shift_int=\count131
-\c__kernel_randint_max_int=\count132
-\g__fp_array_int=\count133
-\l__fp_array_loop_int=\count134
-\l__sort_length_int=\count135
-\l__sort_min_int=\count136
-\l__sort_top_int=\count137
-\l__sort_max_int=\count138
-\l__sort_true_max_int=\count139
-\l__sort_block_int=\count140
-\l__sort_begin_int=\count141
-\l__sort_end_int=\count142
-\l__sort_A_int=\count143
-\l__sort_B_int=\count144
-\l__sort_C_int=\count145
-\l__tl_analysis_normal_int=\count146
-\l__tl_analysis_index_int=\count147
-\l__tl_analysis_nesting_int=\count148
-\l__tl_analysis_type_int=\count149
-\l__regex_internal_a_int=\count150
-\l__regex_internal_b_int=\count151
-\l__regex_internal_c_int=\count152
-\l__regex_balance_int=\count153
-\l__regex_group_level_int=\count154
-\l__regex_mode_int=\count155
-\c__regex_cs_in_class_mode_int=\count156
-\c__regex_cs_mode_int=\count157
-\l__regex_catcodes_int=\count158
-\l__regex_default_catcodes_int=\count159
-\c__regex_catcode_D_int=\count160
-\c__regex_catcode_S_int=\count161
-\c__regex_catcode_L_int=\count162
-\c__regex_catcode_O_int=\count163
-\c__regex_catcode_A_int=\count164
-\c__regex_all_catcodes_int=\count165
-\l__regex_show_lines_int=\count166
-\l__regex_min_state_int=\count167
-\l__regex_max_state_int=\count168
-\l__regex_left_state_int=\count169
-\l__regex_right_state_int=\count170
-\l__regex_capturing_group_int=\count171
-\l__regex_min_pos_int=\count172
-\l__regex_max_pos_int=\count173
-\l__regex_curr_pos_int=\count174
-\l__regex_start_pos_int=\count175
-\l__regex_success_pos_int=\count176
-\l__regex_curr_char_int=\count177
-\l__regex_curr_catcode_int=\count178
-\l__regex_last_char_int=\count179
-\l__regex_case_changed_char_int=\count180
-\l__regex_curr_state_int=\count181
-\l__regex_step_int=\count182
-\l__regex_min_active_int=\count183
-\l__regex_max_active_int=\count184
-\l__regex_replacement_csnames_int=\count185
-\l__regex_match_count_int=\count186
-\l__regex_min_submatch_int=\count187
-\l__regex_submatch_int=\count188
-\l__regex_zeroth_submatch_int=\count189
-\g__regex_trace_regex_int=\count190
+\g__fp_array_int=\count132
+\l__fp_array_loop_int=\count133
+\l__sort_length_int=\count134
+\l__sort_min_int=\count135
+\l__sort_top_int=\count136
+\l__sort_max_int=\count137
+\l__sort_true_max_int=\count138
+\l__sort_block_int=\count139
+\l__sort_begin_int=\count140
+\l__sort_end_int=\count141
+\l__sort_A_int=\count142
+\l__sort_B_int=\count143
+\l__sort_C_int=\count144
+\l__tl_analysis_normal_int=\count145
+\l__tl_analysis_index_int=\count146
+\l__tl_analysis_nesting_int=\count147
+\l__tl_analysis_type_int=\count148
+\l__regex_internal_a_int=\count149
+\l__regex_internal_b_int=\count150
+\l__regex_internal_c_int=\count151
+\l__regex_balance_int=\count152
+\l__regex_group_level_int=\count153
+\l__regex_mode_int=\count154
+\c__regex_cs_in_class_mode_int=\count155
+\c__regex_cs_mode_int=\count156
+\l__regex_catcodes_int=\count157
+\l__regex_default_catcodes_int=\count158
+\c__regex_catcode_L_int=\count159
+\c__regex_catcode_O_int=\count160
+\c__regex_catcode_A_int=\count161
+\c__regex_all_catcodes_int=\count162
+\l__regex_show_lines_int=\count163
+\l__regex_min_state_int=\count164
+\l__regex_max_state_int=\count165
+\l__regex_left_state_int=\count166
+\l__regex_right_state_int=\count167
+\l__regex_capturing_group_int=\count168
+\l__regex_min_pos_int=\count169
+\l__regex_max_pos_int=\count170
+\l__regex_curr_pos_int=\count171
+\l__regex_start_pos_int=\count172
+\l__regex_success_pos_int=\count173
+\l__regex_curr_char_int=\count174
+\l__regex_curr_catcode_int=\count175
+\l__regex_last_char_int=\count176
+\l__regex_case_changed_char_int=\count177
+\l__regex_curr_state_int=\count178
+\l__regex_step_int=\count179
+\l__regex_min_active_int=\count180
+\l__regex_max_active_int=\count181
+\l__regex_replacement_csnames_int=\count182
+\l__regex_match_count_int=\count183
+\l__regex_min_submatch_int=\count184
+\l__regex_submatch_int=\count185
+\l__regex_zeroth_submatch_int=\count186
+\g__regex_trace_regex_int=\count187
 \c_empty_box=\box30
 \l_tmpa_box=\box31
 \l_tmpb_box=\box32
@@ -725,55 +707,2684 @@ Package: expl3 2018-09-24 L3 programming layer (code)
 \l__coffin_top_corner_dim=\dimen141
 \l__coffin_scaled_total_height_dim=\dimen142
 \l__coffin_scaled_width_dim=\dimen143
-\l__seq_internal_a_int=\count191
-\l__seq_internal_b_int=\count192
-) (d:/Programmes/texlive/2018/texmf-dist/tex/latex/l3kernel/l3pdfmode.def
+\l__seq_internal_a_int=\count188
+\l__seq_internal_b_int=\count189
+)
+(d:/Programmes/texlive/2018/texmf-dist/tex/latex/l3kernel/l3pdfmode.def
 File: l3pdfmode.def 2018-09-24 v L3 Experimental driver: PDF mode
-\l__driver_color_stack_int=\count193
+\l__driver_color_stack_int=\count190
 ))
 Package: xparse 2018-09-24 L3 Experimental document command parser
-\l__xparse_current_arg_int=\count194
-\g__xparse_grabber_int=\count195
-\l__xparse_m_args_int=\count196
-\l__xparse_mandatory_args_int=\count197
-\l__xparse_v_nesting_int=\count198
+\l__xparse_current_arg_int=\count191
+\g__xparse_grabber_int=\count192
+\l__xparse_m_args_int=\count193
+\l__xparse_mandatory_args_int=\count194
+\l__xparse_v_nesting_int=\count195
 )
 Package: fontspec 2018/07/30 vv2.6h Font selection for XeLaTeX and LuaLaTeX
+Lua module: fontspec 2018/07/30 v2.6h Font selection for XeLaTeX and LuaLaTeX
+(d:/Programmes/texlive/2018/texmf-dist/tex/latex/fontspec/fontspec-luatex.sty
+Package: fontspec-luatex 2018/07/30 vv2.6h Font selection for XeLaTeX and LuaLaT
+eX
+\l__fontspec_script_int=\count196
+\l__fontspec_language_int=\count197
+\l__fontspec_strnum_int=\count198
+\l__fontspec_tmp_int=\count199
+\l__fontspec_em_int=\count266
+\l__fontspec_emdef_int=\count267
+\l__fontspec_strong_int=\count268
+\l__fontspec_strongdef_int=\count269
+\l__fontspec_tmpa_dim=\dimen144
+\l__fontspec_tmpb_dim=\dimen145
+\l__fontspec_tmpc_dim=\dimen146
+
+(d:/Programmes/texlive/2018/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2017/04/05 v2.0i Standard LaTeX package
+
+(d:/Programmes/texlive/2018/texmf-dist/tex/latex/base/tuenc.def
+File: tuenc.def 2017/04/05 v2.0i Standard LaTeX file
+LaTeX Font Info:    Redeclaring font encoding TU on input line 82.
+))
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \fontspec with sig. 'O{}mO{}' on line 564.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \setmainfont with sig. 'O{}mO{}' on line 569.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \setsansfont with sig. 'O{}mO{}' on line 574.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \setmonofont with sig. 'O{}mO{}' on line 579.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \setmathrm with sig. 'O{}mO{}' on line 583.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \setboldmathrm with sig. 'O{}mO{}' on line 587.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \setmathsf with sig. 'O{}mO{}' on line 591.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \setmathtt with sig. 'O{}mO{}' on line 595.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \setromanfont with sig. 'O{}mO{}' on line 599.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \newfontfamily with sig. 'mO{}mO{}' on line 603.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \renewfontfamily with sig. 'mO{}mO{}' on line 607.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \setfontfamily with sig. 'mO{}mO{}' on line 611.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \newfontface with sig. 'mO{}mO{}' on line 615.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \defaultfontfeatures with sig. 't+om' on line 622.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \addfontfeatures with sig. 'm' on line 626.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \addfontfeature with sig. 'm' on line 630.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \newfontfeature with sig. 'mm' on line 634.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \newAATfeature with sig. 'mmmm' on line 638.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \newopentypefeature with sig. 'mmm' on line 642.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \newICUfeature with sig. 'mmm' on line 646.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \aliasfontfeature with sig. 'mm' on line 650.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \aliasfontfeatureoption with sig. 'mmm' on line 654.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \newfontscript with sig. 'mm' on line 658.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \newfontlanguage with sig. 'mm' on line 662.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \DeclareFontExtensions with sig. 'm' on line 666.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \IfFontFeatureActiveTF with sig. 'mmm' on line 670.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \EncodingCommand with sig. 'mO{}m' on line 3389.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \EncodingAccent with sig. 'mm' on line 3395.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \EncodingSymbol with sig. 'mm' on line 3401.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \EncodingComposite with sig. 'mmm' on line 3407.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \EncodingCompositeCommand with sig. 'mmm' on line 3413.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \DeclareUnicodeEncoding with sig. 'mm' on line 3438.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \UndeclareSymbol with sig. 'm' on line 3444.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \UndeclareAccent with sig. 'm' on line 3450.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \UndeclareCommand with sig. 'm' on line 3456.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \UndeclareComposite with sig. 'mm' on line 3463.
+.................................................
+
+(d:/Programmes/texlive/2018/texmf-dist/tex/latex/fontspec/fontspec.cfg)
+LaTeX Info: Redefining \itshape on input line 3644.
+LaTeX Info: Redefining \slshape on input line 3649.
+LaTeX Info: Redefining \scshape on input line 3654.
+LaTeX Info: Redefining \upshape on input line 3659.
+LaTeX Info: Redefining \em on input line 3689.
+LaTeX Info: Redefining \emph on input line 3714.
+LaTeX Info: Redefining \- on input line 3768.
+.................................................
+. LaTeX info: "xparse/redefine-command"
+. 
+. Redefining command \oldstylenums with sig. 'm' on line 3863.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \liningnums with sig. 'm' on line 3867.
+.................................................
+))
+(d:/Programmes/texlive/2018/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX detected.
+)
+(d:/Programmes/texlive/2018/texmf-dist/tex/generic/ifxetex/ifxetex.sty
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+)
+(d:/Programmes/texlive/2018/texmf-dist/tex/luatex/luatexbase/luatexbase.sty
+Package: luatexbase 2015/10/04 v1.3 luatexbase interface to LuaTeX 
+
+(d:/Programmes/texlive/2018/texmf-dist/tex/luatex/ctablestack/ctablestack.sty
+Package: ctablestack 2015/10/01 v1.0 Catcode table stable support
+\@catcodetablestackcnt=\count270
+)
+\CatcodeTableOther=\catcodetable6
+\CatcodeTableExpl=\catcodetable7
+)
+luatex-hyphen: using data file: d:/Programmes/texlive/2018/texmf-var/tex/generic
+/config/language.dat.lua
+Lua module: polyglossia 2013/05/11 1.3 Polyglossia)
+(d:/Programmes/texlive/2018/texmf-dist/tex/latex/polyglossia/gloss-english.ldf
+File: gloss-english.ldf polyglossia: module for english
+)
+Package polyglossia Info: Default language is english.
+(d:/Programmes/texlive/2018/texmf-dist/tex/latex/biblatex/biblatex.sty
+Package: biblatex 2018/03/04 v3.11 programmable bibliographies (PK/MW)
+
+(d:/Programmes/texlive/2018/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2018/09/10 v0.29 Utility functions of pdfTeX for LuaTeX (HO)
 
 
-!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-!
-d:/Programmes/texlive/2018/texmf-dist/tex/latex/fontspec/fontspec.sty:45: Fatal fontspec error: "cannot-use-pdftex"
-! 
-! The fontspec package requires either XeTeX or LuaTeX.
-! 
-! You must change your typesetting engine to, e.g., "xelatex" or
-! "lualatex"instead of "latex" or "pdflatex".
-! 
-! See the fontspec documentation for further information.
-! 
-! For immediate help type H <return>.
-!...............................................  
-                                                  
-l.45 \msg_fatal:nn {fontspec} {cannot-use-pdftex}
-                                                 
-|'''''''''''''''''''''''''''''''''''''''''''''''
-| This is a fatal error: LaTeX will abort.
-|...............................................
+(d:/Programmes/texlive/2018/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
+)
+(d:/Programmes/texlive/2018/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
+)
+(d:/Programmes/texlive/2018/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2018/09/07 v3.3 Provides the ifpdf switch
+)
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+\pdftexcmds@toks=\toks22
+)
+(d:/Programmes/texlive/2018/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
 
- ) ) ) 
-Here is how much of TeX's memory you used:
- 14196 strings out of 492639
- 260259 string characters out of 6127852
- 490463 words of memory out of 5000000
- 18078 multiletter control sequences out of 15000+600000
- 532638 words of font info for 25 fonts, out of 8000000 for 9000
- 1141 hyphenation exceptions out of 8191
- 62i,1n,83p,9195b,275s stack positions out of 5000i,500n,10000p,200000b,80000s
+(d:/Programmes/texlive/2018/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
 
-No pages of output.
-PDF statistics:
- 0 PDF objects out of 1000 (max. 8388607)
- 0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+(d:/Programmes/texlive/2018/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
+)))
+(d:/Programmes/texlive/2018/texmf-dist/tex/latex/logreq/logreq.sty
+Package: logreq 2010/08/04 v1.0 xml request logger
+\lrq@indent=\count271
+
+(d:/Programmes/texlive/2018/texmf-dist/tex/latex/logreq/logreq.def
+File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
+))
+(d:/Programmes/texlive/2018/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
+)
+(d:/Programmes/texlive/2018/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip17
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+(d:/Programmes/texlive/2018/texmf-dist/tex/generic/xstring/xstring.sty
+(d:/Programmes/texlive/2018/texmf-dist/tex/generic/xstring/xstring.tex
+\@xs@message=\write3
+\integerpart=\count272
+\decimalpart=\count273
+)
+Package: xstring 2013/10/13  v1.7c  String manipulations (C Tellechea)
+)
+\c@tabx@nest=\count274
+\c@listtotal=\count275
+\c@listcount=\count276
+\c@liststart=\count277
+\c@liststop=\count278
+\c@citecount=\count279
+\c@citetotal=\count280
+\c@multicitecount=\count281
+\c@multicitetotal=\count282
+\c@instcount=\count283
+\c@maxnames=\count284
+\c@minnames=\count285
+\c@maxitems=\count286
+\c@minitems=\count287
+\c@citecounter=\count288
+\c@savedcitecounter=\count289
+\c@uniquelist=\count290
+\c@uniquename=\count291
+\c@refsection=\count292
+\c@refsegment=\count293
+\c@maxextratitle=\count294
+\c@maxextratitleyear=\count295
+\c@maxextradate=\count296
+\c@maxextraalpha=\count297
+\c@abbrvpenalty=\count298
+\c@highnamepenalty=\count299
+\c@lownamepenalty=\count300
+\c@maxparens=\count301
+\c@parenlevel=\count302
+\blx@tempcnta=\count303
+\blx@tempcntb=\count304
+\blx@tempcntc=\count305
+\blx@maxsection=\count306
+\blx@maxsegment@0=\count307
+\blx@notetype=\count308
+\blx@parenlevel@text=\count309
+\blx@parenlevel@foot=\count310
+\blx@sectionciteorder@0=\count311
+\labelnumberwidth=\skip67
+\labelalphawidth=\skip68
+\biblabelsep=\skip69
+\bibitemsep=\skip70
+\bibnamesep=\skip71
+\bibinitsep=\skip72
+\bibparsep=\skip73
+\bibhang=\skip74
+\blx@bcfin=\read2
+\blx@bcfout=\write4
+\c@mincomprange=\count312
+\c@maxcomprange=\count313
+\c@mincompwidth=\count314
+Package biblatex Info: Trying to load biblatex default data model...
+Package biblatex Info: ... file 'blx-dm.def' found.
+
+(d:/Programmes/texlive/2018/texmf-dist/tex/latex/biblatex/blx-dm.def
+File: blx-dm.def 2018/03/04 v3.11 biblatex localization (PK/MW)
+)
+Package biblatex Info: Trying to load biblatex style data model...
+Package biblatex Info: ... file 'ieee.dbx' not found.
+Package biblatex Info: Trying to load biblatex custom data model...
+Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
+\c@afterword=\count315
+\c@savedafterword=\count316
+\c@annotator=\count317
+\c@savedannotator=\count318
+\c@author=\count319
+\c@savedauthor=\count320
+\c@bookauthor=\count321
+\c@savedbookauthor=\count322
+\c@commentator=\count323
+\c@savedcommentator=\count324
+\c@editor=\count325
+\c@savededitor=\count326
+\c@editora=\count327
+\c@savededitora=\count328
+\c@editorb=\count329
+\c@savededitorb=\count330
+\c@editorc=\count331
+\c@savededitorc=\count332
+\c@foreword=\count333
+\c@savedforeword=\count334
+\c@holder=\count335
+\c@savedholder=\count336
+\c@introduction=\count337
+\c@savedintroduction=\count338
+\c@namea=\count339
+\c@savednamea=\count340
+\c@nameb=\count341
+\c@savednameb=\count342
+\c@namec=\count343
+\c@savednamec=\count344
+\c@translator=\count345
+\c@savedtranslator=\count346
+\c@shortauthor=\count347
+\c@savedshortauthor=\count348
+\c@shorteditor=\count349
+\c@savedshorteditor=\count350
+\c@labelname=\count351
+\c@savedlabelname=\count352
+\c@institution=\count353
+\c@savedinstitution=\count354
+\c@lista=\count355
+\c@savedlista=\count356
+\c@listb=\count357
+\c@savedlistb=\count358
+\c@listc=\count359
+\c@savedlistc=\count360
+\c@listd=\count361
+\c@savedlistd=\count362
+\c@liste=\count363
+\c@savedliste=\count364
+\c@listf=\count365
+\c@savedlistf=\count366
+\c@location=\count367
+\c@savedlocation=\count368
+\c@organization=\count369
+\c@savedorganization=\count370
+\c@origlocation=\count371
+\c@savedoriglocation=\count372
+\c@origpublisher=\count373
+\c@savedorigpublisher=\count374
+\c@publisher=\count375
+\c@savedpublisher=\count376
+\c@language=\count377
+\c@savedlanguage=\count378
+\c@origlanguage=\count379
+\c@savedoriglanguage=\count380
+\c@pageref=\count381
+\c@savedpageref=\count382
+\shorthandwidth=\skip75
+\shortjournalwidth=\skip76
+\shortserieswidth=\skip77
+\shorttitlewidth=\skip78
+\shortauthorwidth=\skip79
+\shorteditorwidth=\skip80
+\locallabelnumberwidth=\skip81
+\locallabelalphawidth=\skip82
+\localshorthandwidth=\skip83
+\localshortjournalwidth=\skip84
+\localshortserieswidth=\skip85
+\localshorttitlewidth=\skip86
+\localshortauthorwidth=\skip87
+\localshorteditorwidth=\skip88
+Package biblatex Info: Trying to load enhanced support for Unicode engines...
+Package biblatex Info: ... file 'blx-unicode.def' found.
+
+(d:/Programmes/texlive/2018/texmf-dist/tex/latex/biblatex/blx-unicode.def)
+Package biblatex Info: Trying to load compatibility code...
+Package biblatex Info: ... file 'blx-compat.def' found.
+
+(d:/Programmes/texlive/2018/texmf-dist/tex/latex/biblatex/blx-compat.def
+File: blx-compat.def 2018/03/04 v3.11 biblatex compatibility (PK/MW)
+)
+Package biblatex Info: Trying to load generic definitions...
+Package biblatex Info: ... file 'biblatex.def' found.
+
+(d:/Programmes/texlive/2018/texmf-dist/tex/latex/biblatex/biblatex.def
+File: biblatex.def 2018/03/04 v3.11 biblatex compatibility (PK/MW)
+\c@textcitecount=\count383
+\c@textcitetotal=\count384
+\c@textcitemaxnames=\count385
+\c@biburlnumpenalty=\count386
+\c@biburlucpenalty=\count387
+\c@biburllcpenalty=\count388
+\c@smartand=\count389
+)
+Package biblatex Info: Trying to load bibliography style 'ieee'...
+Package biblatex Info: ... file 'ieee.bbx' found.
+
+(d:/Programmes/texlive/2018/texmf-dist/tex/latex/biblatex-ieee/ieee.bbx
+File: ieee.bbx 2018/08/20 v1.3 biblatex bibliography style
+Package biblatex Info: Trying to load bibliography style 'numeric-comp'...
+Package biblatex Info: ... file 'numeric-comp.bbx' found.
+
+(d:/Programmes/texlive/2018/texmf-dist/tex/latex/biblatex/bbx/numeric-comp.bbx
+File: numeric-comp.bbx 2018/03/04 v3.11 biblatex bibliography style (PK/MW)
+Package biblatex Info: Trying to load bibliography style 'numeric'...
+Package biblatex Info: ... file 'numeric.bbx' found.
+
+(d:/Programmes/texlive/2018/texmf-dist/tex/latex/biblatex/bbx/numeric.bbx
+File: numeric.bbx 2018/03/04 v3.11 biblatex bibliography style (PK/MW)
+Package biblatex Info: Trying to load bibliography style 'standard'...
+Package biblatex Info: ... file 'standard.bbx' found.
+
+(d:/Programmes/texlive/2018/texmf-dist/tex/latex/biblatex/bbx/standard.bbx
+File: standard.bbx 2018/03/04 v3.11 biblatex bibliography style (PK/MW)
+\c@bbx:relatedcount=\count390
+\c@bbx:relatedtotal=\count391
+))))
+Package biblatex Info: Trying to load citation style 'ieee'...
+Package biblatex Info: ... file 'ieee.cbx' found.
+
+(d:/Programmes/texlive/2018/texmf-dist/tex/latex/biblatex-ieee/ieee.cbx
+File: ieee.cbx 2018/08/20 v1.3 biblatex citation style
+Package biblatex Info: Trying to load citation style 'numeric-comp'...
+Package biblatex Info: ... file 'numeric-comp.cbx' found.
+
+(d:/Programmes/texlive/2018/texmf-dist/tex/latex/biblatex/cbx/numeric-comp.cbx
+File: numeric-comp.cbx 2018/03/04 v3.11 biblatex citation style (PK/MW)
+\c@cbx@tempcnta=\count392
+\c@cbx@tempcntb=\count393
+Package biblatex Info: Redefining '\cite'.
+Package biblatex Info: Redefining '\parencite'.
+Package biblatex Info: Redefining '\footcite'.
+Package biblatex Info: Redefining '\footcitetext'.
+Package biblatex Info: Redefining '\smartcite'.
+Package biblatex Info: Redefining '\supercite'.
+Package biblatex Info: Redefining '\textcite'.
+Package biblatex Info: Redefining '\textcites'.
+Package biblatex Info: Redefining '\cites'.
+Package biblatex Info: Redefining '\parencites'.
+Package biblatex Info: Redefining '\smartcites'.
+)
+Package biblatex Info: Redefining '\cite'.
+Package biblatex Info: Redefining '\cites'.
+)
+Package biblatex Info: Trying to load configuration file...
+Package biblatex Info: ... file 'biblatex.cfg' found.
+ (d:/Programmes/texlive/2018/texmf-dist/tex/latex/biblatex/biblatex.cfg
+File: biblatex.cfg 
+))
+(d:/Programmes/texlive/2018/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
+
+(d:/Programmes/texlive/2018/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2017/06/25 v1.2c Standard LaTeX Graphics (DPC,SPQR)
+
+(d:/Programmes/texlive/2018/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+(d:/Programmes/texlive/2018/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: luatex.def on input line 99.
+
+(d:/Programmes/texlive/2018/texmf-dist/tex/latex/graphics-def/luatex.def
+File: luatex.def 2018/01/08 v1.0l Graphics/color driver for luatex
+))
+\Gin@req@height=\dimen147
+\Gin@req@width=\dimen148
+)
+(d:/Programmes/texlive/2018/texmf-dist/tex/latex/markdown/markdown.sty
+(d:/Programmes/texlive/2018/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty
+Package: fancyvrb 2008/02/07
+
+Style option: `fancyvrb' v2.7a, with DG/SPQR fixes, and firstline=lastline fix 
+<2008/02/07> (tvz)
+\FV@CodeLineNo=\count394
+\FV@InFile=\read3
+\FV@TabBox=\box45
+\c@FancyVerbLine=\count395
+\FV@StepNumber=\count396
+\FV@OutFile=\write5
+)
+(d:/Programmes/texlive/2018/texmf-dist/tex/latex/csvsimple/csvsimple.sty
+Package: csvsimple 2016/07/01 version 1.20 LaTeX CSV file processing
+
+(d:/Programmes/texlive/2018/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty
+(d:/Programmes/texlive/2018/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.t
+ex
+\pgfkeys@pathtoks=\toks23
+\pgfkeys@temptoks=\toks24
+
+(d:/Programmes/texlive/2018/texmf-dist/tex/generic/pgf/utilities/pgfkeysfiltere
+d.code.tex
+\pgfkeys@tmptoks=\toks25
+)))
+(d:/Programmes/texlive/2018/texmf-dist/tex/latex/tools/shellesc.sty
+Package: shellesc 2016/06/07 v0.02a unified shell escape interface for LaTeX
+Package shellesc Info: Restricted shell escape enabled on input line 69.
+)
+\csv@file=\read4
+\c@csvinputline=\count397
+\c@csvrow=\count398
+\c@csvcol=\count399
+\csv@out=\write6
+)
+(d:/Programmes/texlive/2018/texmf-dist/tex/generic/markdown/markdown.tex
+\markdownInputFileStream=\read5
+\markdownOutputFileStream=\write7
+(l.561) markdown.tex info: Using mode 2: Direct Lua access.
+)
+Package: markdown 2018/04/08 v2.5.6 markdown renderer
+
+(d:/Programmes/texlive/2018/texmf-dist/tex/latex/paralist/paralist.sty
+Package: paralist 2017/01/22 v2.7 Extended list environments
+\pltopsep=\skip89
+\plpartopsep=\skip90
+\plitemsep=\skip91
+\plparsep=\skip92
+\pl@lab=\toks26
+)
+\markdownLaTeXCitationsCounter=\count400
+)
+(d:/Programmes/texlive/2018/texmf-dist/tex/latex/tools/array.sty
+Package: array 2018/04/30 v2.4h Tabular extension package (FMi)
+\col@sep=\dimen149
+\ar@mcellbox=\box46
+\extrarowheight=\dimen150
+\NC@list=\toks27
+\extratabsurround=\skip93
+\backup@length=\skip94
+\ar@cellbox=\box47
+)
+(d:/Programmes/texlive/2018/texmf-dist/tex/latex/appendix/appendix.sty
+Package: appendix 2009/09/02 v1.2b extra appendix facilities
+\c@@pps=\count401
+\c@@ppsavesec=\count402
+\c@@ppsaveapp=\count403
+)
+(d:/Programmes/texlive/2018/texmf-dist/tex/latex/listings/listings.sty
+\lst@mode=\count404
+\lst@gtempboxa=\box48
+\lst@token=\toks28
+\lst@length=\count405
+\lst@currlwidth=\dimen151
+\lst@column=\count406
+\lst@pos=\count407
+\lst@lostspace=\dimen152
+\lst@width=\dimen153
+\lst@newlines=\count408
+\lst@lineno=\count409
+\lst@maxwidth=\dimen154
+
+(d:/Programmes/texlive/2018/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2018/09/02 1.7 (Carsten Heinz)
+\c@lstnumber=\count410
+\lst@skipnumbers=\count411
+\lst@framebox=\box49
+)
+(d:/Programmes/texlive/2018/texmf-dist/tex/latex/listings/listings.cfg
+File: listings.cfg 2018/09/02 1.7 listings configuration
+))
+Package: listings 2018/09/02 1.7 (Carsten Heinz)
+
+(d:/Programmes/texlive/2018/texmf-dist/tex/latex/pdfpages/pdfpages.sty
+Package: pdfpages 2017/10/31 v0.5l Insert pages of external PDF documents (AM)
+
+(d:/Programmes/texlive/2018/texmf-dist/tex/latex/tools/calc.sty
+Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count412
+\calc@Bcount=\count413
+\calc@Adimen=\dimen155
+\calc@Bdimen=\dimen156
+\calc@Askip=\skip95
+\calc@Bskip=\skip96
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
+\calc@Ccount=\count414
+\calc@Cskip=\skip97
+)
+(d:/Programmes/texlive/2018/texmf-dist/tex/latex/eso-pic/eso-pic.sty
+Package: eso-pic 2018/04/12 v2.0h eso-pic (RN)
+
+(d:/Programmes/texlive/2018/texmf-dist/tex/generic/oberdiek/atbegshi.sty
+Package: atbegshi 2016/06/09 v1.18 At begin shipout hook (HO)
+)
+(d:/Programmes/texlive/2018/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
+
+(d:/Programmes/texlive/2018/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: luatex.def on input line 225.
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1352.
+Package xcolor Info: Model `RGB' extended on input line 1364.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1366.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1367.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
+))
+\AM@pagewidth=\dimen157
+\AM@pageheight=\dimen158
+
+(d:/Programmes/texlive/2018/texmf-dist/tex/latex/pdfpages/ppluatex.def
+File: ppluatex.def 2017/10/31 v0.5l Pdfpages driver for LuaTeX (AM)
+)
+\AM@pagebox=\box50
+\AM@global@opts=\toks29
+\AM@toc@title=\toks30
+\c@AM@survey=\count415
+\AM@templatesizebox=\box51
+)
+(d:/Programmes/texlive/2018/texmf-dist/tex/latex/tools/longtable.sty
+Package: longtable 2014/10/28 v4.11 Multi-page Table package (DPC)
+\LTleft=\skip98
+\LTright=\skip99
+\LTpre=\skip100
+\LTpost=\skip101
+\LTchunksize=\count416
+\LTcapwidth=\dimen159
+\LT@head=\box52
+\LT@firsthead=\box53
+\LT@foot=\box54
+\LT@lastfoot=\box55
+\LT@cols=\count417
+\LT@rows=\count418
+\c@LT@tables=\count419
+\c@LT@chunks=\count420
+\LT@p@ftn=\toks31
+)
+Class scrbook Info: longtable captions redefined on input line 50.
+
+(d:/Programmes/texlive/2018/texmf-dist/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2018/09/30 v6.88a Hypertext links for LaTeX
+
+(d:/Programmes/texlive/2018/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
+Package: hobsub-hyperref 2016/05/16 v1.14 Bundle oberdiek, subset hyperref (HO)
+(d:/Programmes/texlive/2018/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty
+Package: hobsub-generic 2016/05/16 v1.14 Bundle oberdiek, subset generic (HO)
+Package: hobsub 2016/05/16 v1.14 Construct package bundles (HO)
+Package hobsub Info: Skipping package `infwarerr' (already loaded).
+Package hobsub Info: Skipping package `ltxcmds' (already loaded).
+Package hobsub Info: Skipping package `ifluatex' (already loaded).
+Package: ifvtex 2016/05/16 v1.6 Detect VTeX and its facilities (HO)
+Package ifvtex Info: VTeX not detected.
+Package: intcalc 2016/05/16 v1.2 Expandable calculations with integers (HO)
+Package hobsub Info: Skipping package `ifpdf' (already loaded).
+Package hobsub Info: Skipping package `etexcmds' (already loaded).
+Package hobsub Info: Skipping package `kvsetkeys' (already loaded).
+Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
+Package: luatex-loader 2016/05/16 v0.6 Lua module loader (HO)
+
+(d:/Programmes/texlive/2018/texmf-dist/scripts/oberdiek/oberdiek.luatex.lua)
+Package hobsub Info: Skipping package `pdftexcmds' (already loaded).
+Package: pdfescape 2016/05/16 v1.14 Implements pdfTeX's escape features (HO)
+Package: bigintcalc 2016/05/16 v1.4 Expandable calculations on big integers (HO)
+
+Package: bitset 2016/05/16 v1.2 Handle bit-vector datatype (HO)
+Package: uniquecounter 2016/05/16 v1.3 Provide unlimited unique counter (HO)
+)
+Package hobsub Info: Skipping package `hobsub' (already loaded).
+Package: letltxmacro 2016/05/16 v1.5 Let assignment for LaTeX macros (HO)
+Package: hopatch 2016/05/16 v1.3 Wrapper for package hooks (HO)
+Package: xcolor-patch 2016/05/16 xcolor patch
+Package: atveryend 2016/05/16 v1.9 Hooks at the very end of document (HO)
+Package hobsub Info: Skipping package `atbegshi' (already loaded).
+Package: refcount 2016/05/16 v3.5 Data extraction from label references (HO)
+Package: hycolor 2016/05/16 v1.8 Color options for hyperref/bookmark (HO)
+)
+(d:/Programmes/texlive/2018/texmf-dist/tex/latex/oberdiek/auxhook.sty
+Package: auxhook 2016/05/16 v1.4 Hooks for auxiliary files (HO)
+)
+\@linkdim=\dimen160
+\Hy@linkcounter=\count421
+\Hy@pagecounter=\count422
+
+(d:/Programmes/texlive/2018/texmf-dist/tex/latex/hyperref/pd1enc.def
+File: pd1enc.def 2018/09/30 v6.88a Hyperref: PDFDocEncoding definition (HO)
+)
+\Hy@SavedSpaceFactor=\count423
+
+(d:/Programmes/texlive/2018/texmf-dist/tex/latex/latexconfig/hyperref.cfg
+File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
+)
+Package hyperref Info: Hyper figures OFF on input line 4535.
+Package hyperref Info: Link nesting OFF on input line 4540.
+Package hyperref Info: Hyper index ON on input line 4543.
+Package hyperref Info: Plain pages OFF on input line 4550.
+Package hyperref Info: Backreferencing OFF on input line 4555.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4788.
+\c@Hy@tempcnt=\count424
+LaTeX Info: Redefining \url on input line 5141.
+\XeTeXLinkMargin=\dimen161
+\Fld@menulength=\count425
+\Field@Width=\dimen162
+\Fld@charsize=\dimen163
+Package hyperref Info: Hyper figures OFF on input line 6396.
+Package hyperref Info: Link nesting OFF on input line 6401.
+Package hyperref Info: Hyper index ON on input line 6404.
+Package hyperref Info: backreferencing OFF on input line 6411.
+Package hyperref Info: Link coloring OFF on input line 6416.
+Package hyperref Info: Link coloring with OCG OFF on input line 6421.
+Package hyperref Info: PDF/A mode OFF on input line 6426.
+LaTeX Info: Redefining \ref on input line 6466.
+LaTeX Info: Redefining \pageref on input line 6470.
+\Hy@abspage=\count426
+\c@Item=\count427
+\c@Hfootnote=\count428
+)
+Package hyperref Info: Driver (autodetected): hluatex.
+
+(d:/Programmes/texlive/2018/texmf-dist/tex/latex/hyperref/hluatex.def
+File: hluatex.def 2018/09/30 v6.88a Hyperref driver for luaTeX
+\Fld@listcount=\count429
+\c@bookmark@seq@number=\count430
+
+(d:/Programmes/texlive/2018/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
+Package: rerunfilecheck 2016/05/16 v1.8 Rerun checks for auxiliary files (HO)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 28
+2.
+)
+\Hy@SectionHShift=\skip102
+)
+Package hyperref Info: Option `colorlinks' set `true' on input line 58.
+
+
+Package biblatex Warning: File 'english-ieee.lbx' not found!
+(biblatex)                Ignoring mapping 'english' -> 'english-ieee'.
+
+Package biblatex Info: Trying to load language 'english'...
+Package biblatex Info: ... file 'english.lbx' found.
+(d:/Programmes/texlive/2018/texmf-dist/tex/latex/biblatex/lbx/english.lbx
+File: english.lbx 2018/03/04 v3.11 biblatex localization (PK/MW)
+)
+
+Package biblatex Warning: 'babel/polyglossia' detected but 'csquotes' missing.
+(biblatex)                Loading 'csquotes' recommended.
+
+\@quotelevel=\count431
+\@quotereset=\count432
+(./flucq1_Documentation.aux)
+\openout1 = flucq1_Documentation.aux
+
+LaTeX Font Info:    Checking defaults for OML/jkp/m/it on input line 60.
+LaTeX Font Info:    Try loading font information for OML+jkp on input line 60.
+
+(d:/Programmes/texlive/2018/texmf-dist/tex/latex/kpfonts/omljkp.fd
+File: omljkp.fd 2006/08/15 v1.0
+)
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for OMS/jkp/m/n on input line 60.
+LaTeX Font Info:    Try loading font information for OMS+jkp on input line 60.
+
+(d:/Programmes/texlive/2018/texmf-dist/tex/latex/kpfonts/omsjkp.fd
+File: omsjkp.fd 2006/08/15 v1.0
+)
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for TU/lmr/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for OMX/jkp/m/n on input line 60.
+LaTeX Font Info:    Try loading font information for OMX+jkp on input line 60.
+
+(d:/Programmes/texlive/2018/texmf-dist/tex/latex/kpfonts/omxjkp.fd
+File: omxjkp.fd 2006/08/15 v1.0
+)
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for U/jkpexa/m/n on input line 60.
+LaTeX Font Info:    Try loading font information for U+jkpexa on input line 60.
+
+(d:/Programmes/texlive/2018/texmf-dist/tex/latex/kpfonts/ujkpexa.fd
+File: ujkpexa.fd 2006/08/15 v1.0
+)
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 60.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 60.
+
+(d:/Programmes/texlive/2018/texmf-dist/tex/latex/base/ts1cmr.fd
+File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    ... okay on input line 60.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 60.
+LaTeX Font Info:    ... okay on input line 60.
+Package biblatex Info: LuaTeX detected.
+(biblatex)             Assuming input encoding 'utf8'.
+Package biblatex Info: Automatic encoding selection.
+(biblatex)             Assuming data encoding 'utf8'.
+
+\openout4 = flucq1_Documentation.bcf
+Package biblatex Info: Trying to load bibliographic data...
+Package biblatex Info: ... file 'flucq1_Documentation.bbl' not found.
+
+No file flucq1_Documentation.bbl.
+Package biblatex Info: Reference section=0 on input line 60.
+Package biblatex Info: Reference segment=0 on input line 60.
+(d:/Programmes/texlive/2018/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count433
+\scratchdimen=\dimen164
+\scratchbox=\box56
+\nofMPsegments=\count434
+\nofMParguments=\count435
+\everyMPshowfont=\toks32
+\MPscratchCnt=\count436
+\MPscratchDim=\dimen165
+\MPnumerator=\count437
+\makeMPintoPDFobject=\count438
+\everyMPtoPDFconversion=\toks33
+) (d:/Programmes/texlive/2018/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
+
+(d:/Programmes/texlive/2018/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
+)
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 43
+8.
+Package grfext Info: Graphics extension search list:
+(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG
+,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 456.
+
+(d:/Programmes/texlive/2018/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
+
+))
+\c@lstlisting=\count439
+\AtBeginShipoutBox=\box57
+(d:/Programmes/texlive/2018/texmf-dist/tex/latex/oberdiek/pdflscape.sty
+Package: pdflscape 2016/05/14 v0.11 Display of landscape pages in PDF (HO)
+
+(d:/Programmes/texlive/2018/texmf-dist/tex/latex/graphics/lscape.sty
+Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
+)
+Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
+)
+Package hyperref Info: Link coloring ON on input line 60.
+
+(d:/Programmes/texlive/2018/texmf-dist/tex/latex/hyperref/nameref.sty
+Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
+
+(d:/Programmes/texlive/2018/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
+Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
+)
+\c@section@level=\count440
+)
+LaTeX Info: Redefining \ref on input line 60.
+LaTeX Info: Redefining \pageref on input line 60.
+LaTeX Info: Redefining \nameref on input line 60.
+\@outlinefile=\write8
+
+\openout8 = flucq1_Documentation.out
+LaTeX Font Info:    Font shape `TU/lmss/b/n' in size <10.95> not available
+(Font)              Font shape `TU/lmss/bx/n' tried instead on input line 71.
+LaTeX Font Info:    Font shape `TU/lmss/b/n' in size <20.74> not available
+(Font)              Font shape `TU/lmss/bx/n' tried instead on input line 71.
+LaTeX Font Info:    Try loading font information for OT1+jkp on input line 71.
+ (d:/Programmes/texlive/2018/texmf-dist/tex/latex/kpfonts/ot1jkp.fd
+File: ot1jkp.fd 2007/08/30 Fontinst v1.928 font definitions for OT1/jkp.
+)
+LaTeX Font Info:    Try loading font information for U+jkpmia on input line 71.
+
+(d:/Programmes/texlive/2018/texmf-dist/tex/latex/kpfonts/ujkpmia.fd
+File: ujkpmia.fd 2006/08/15 v1.0
+)
+LaTeX Font Info:    Try loading font information for U+jkpsya on input line 71.
+
+(d:/Programmes/texlive/2018/texmf-dist/tex/latex/kpfonts/ujkpsya.fd
+File: ujkpsya.fd 2006/08/15 v1.0
+)
+LaTeX Font Info:    Try loading font information for U+jkpsyb on input line 71.
+
+(d:/Programmes/texlive/2018/texmf-dist/tex/latex/kpfonts/ujkpsyb.fd
+File: ujkpsyb.fd 2006/08/15 v1.0
+)
+LaTeX Font Info:    Try loading font information for U+jkpsyc on input line 71.
+
+(d:/Programmes/texlive/2018/texmf-dist/tex/latex/kpfonts/ujkpsyc.fd
+File: ujkpsyc.fd 2006/08/15 v1.0
+) [1
+
+
+
+{d:/Programmes/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+<./ressources/images/./title.png, id=12, 494.59781pt x 339.51843pt>
+File: ./ressources/images/./title.png Graphic file (type png)
+<use ./ressources/images/./title.png>
+Package luatex.def Info: ./ressources/images/./title.png  used on input line 71.
+
+(luatex.def)             Requested size: 418.25555pt x 287.11037pt.
+
+Overfull \hbox (10.95pt too wide) in paragraph at lines 71--72
+[][] 
+ []
+
+[2<./ressources/images/./title.PNG>] [3
+
+] [4
+
+
+]
+\tf@toc=\write9
+
+\openout9 = flucq1_Documentation.toc
+ [5
+
+
+
+
+] [6
+
+
+
+]
+chapter 1.
+
+Class scrbook Warning: \float@addtolists detected!
+(scrbook)              Implementation of \float@addtolist became
+(scrbook)              deprecated in KOMA-Script v3.01 2008/11/14 and
+(scrbook)              has been replaced by several more flexible
+(scrbook)              features of package `tocbasic`.
+(scrbook)              Since Version 3.12 support for deprecated
+(scrbook)              \float@addtolist interface has been
+(scrbook)              restricted to only some of the KOMA-Script
+(scrbook)              features and been removed from others.
+(scrbook)              Loading of package `scrhack' may help to
+(scrbook)              avoid this warning, if you are using a
+(scrbook)              a package that still implements the
+(scrbook)              deprecated \float@addtolist interface .
+
+[7] [8
+
+
+]
+chapter 2.
+[9] [10
+
+
+]
+chapter 3.
+LaTeX Font Info:    Font shape `TU/lmss/b/n' in size <14.4> not available
+(Font)              Font shape `TU/lmss/bx/n' tried instead on input line 90.
+
+Underfull \hbox (badness 10000) in paragraph at lines 92--97
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 98--104
+
+ []
+
+<./ressources/images/prototype_thymio_old.jpg, id=54, 1735.48375pt x 785.93625pt
+>
+File: ./ressources/images/prototype_thymio_old.jpg Graphic file (type jpg)
+<use ./ressources/images/prototype_thymio_old.jpg>
+Package luatex.def Info: ./ressources/images/prototype_thymio_old.jpg  used on i
+nput line 106.
+(luatex.def)             Requested size: 418.25555pt x 189.40805pt.
+[11<./ressources/images/prototype_thymio_old.jpg>]
+<./ressources/images/Wireless-thymioII-sensor-actuator-color-en.png, id=62, 2064
+.85715pt x 1445.4pt>
+File: ./ressources/images/Wireless-thymioII-sensor-actuator-color-en.png Graphic
+ file (type png)
+<use ./ressources/images/Wireless-thymioII-sensor-actuator-color-en.png>
+Package luatex.def Info: ./ressources/images/Wireless-thymioII-sensor-actuator-c
+olor-en.png  used on input line 118.
+(luatex.def)             Requested size: 418.25555pt x 292.75806pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 124--131
+
+ []
+
+[12<./ressources/images/Wireless-thymioII-sensor-actuator-color-en.png>]
+
+LaTeX Warning: Reference `fourlanguages' on page 13 undefined on input line 136.
+
+
+
+LaTeX Warning: Reference `fourlanguages' on page 13 undefined on input line 136.
+
+
+[13] [14
+
+
+]
+chapter 4.
+<./ressources/images/./goals.png, id=79, 773.89125pt x 181.67876pt>
+File: ./ressources/images/./goals.png Graphic file (type png)
+<use ./ressources/images/./goals.png>
+Package luatex.def Info: ./ressources/images/./goals.png  used on input line 154
+.
+(luatex.def)             Requested size: 418.25555pt x 98.191pt.
+<./ressources/images/./risk-matrix.png, id=80, 740.0147pt x 185.19188pt>
+File: ./ressources/images/./risk-matrix.png Graphic file (type png)
+<use ./ressources/images/./risk-matrix.png>
+Package luatex.def Info: ./ressources/images/./risk-matrix.png  used on input li
+ne 164.
+(luatex.def)             Requested size: 418.25555pt x 104.67032pt.
+[15<./ressources/images/./goals.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 169--169
+[]|\TU/lmr/m/n/10.95 Like-li-hood
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 170--170
+[]|\TU/lmr/m/n/10.95 Fi-nan-cial
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 171--171
+[]|\TU/lmr/m/n/10.95 Col-li-sions
+ []
+
+
+Underfull \hbox (badness 7326) in paragraph at lines 171--171
+\TU/lmr/m/n/10.95 not im-ple-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 172--172
+[]|\TU/lmr/m/n/10.95 Be-haviour
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 173--173
+[]|\TU/lmr/m/n/10.95 Play-ground
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 193--199
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 201--203
+
+ []
+
+[16<./ressources/images/./risk-matrix.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 208--213
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 215--217
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 222--227
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 229--231
+
+ []
+
+<./ressources/images/./loadPlayground_ssd.png, id=98, 221.82875pt x 212.795pt>
+File: ./ressources/images/./loadPlayground_ssd.png Graphic file (type png)
+<use ./ressources/images/./loadPlayground_ssd.png>
+Package luatex.def Info: ./ressources/images/./loadPlayground_ssd.png  used on i
+nput line 237.
+(luatex.def)             Requested size: 155.27905pt x 148.95547pt.
+[17<./ressources/images/./loadPlayground_ssd.png>]
+<./ressources/images/./compiler_ssd.png, id=105, 302.12875pt x 252.945pt>
+File: ./ressources/images/./compiler_ssd.png Graphic file (type png)
+<use ./ressources/images/./compiler_ssd.png>
+Package luatex.def Info: ./ressources/images/./compiler_ssd.png  used on input l
+ine 242.
+(luatex.def)             Requested size: 211.48868pt x 177.06029pt.
+<./ressources/images/./loadPlayground_sd.png, id=106, 541.02126pt x 373.395pt>
+File: ./ressources/images/./loadPlayground_sd.png Graphic file (type png)
+<use ./ressources/images/./loadPlayground_sd.png>
+Package luatex.def Info: ./ressources/images/./loadPlayground_sd.png  used on in
+put line 249.
+(luatex.def)             Requested size: 378.7123pt x 261.37471pt.
+ [18<./ressources/images/./compiler_ssd.png><./ressources/images/./loadPlaygroun
+d_sd.png>]
+chapter 5.
+<./ressources/images/./architecture_proposal-Page-1.png, id=115, 591.20876pt x 6
+83.55376pt>
+File: ./ressources/images/./architecture_proposal-Page-1.png Graphic file (type 
+png)
+<use ./ressources/images/./architecture_proposal-Page-1.png>
+Package luatex.def Info: ./ressources/images/./architecture_proposal-Page-1.png 
+ used on input line 259.
+(luatex.def)             Requested size: 418.25555pt x 483.59515pt.
+<./ressources/images/./architecture_proposal-Page-2.png, id=116, 553.06625pt x 3
+86.44376pt>
+File: ./ressources/images/./architecture_proposal-Page-2.png Graphic file (type 
+png)
+<use ./ressources/images/./architecture_proposal-Page-2.png>
+Package luatex.def Info: ./ressources/images/./architecture_proposal-Page-2.png 
+ used on input line 264.
+(luatex.def)             Requested size: 418.25555pt x 292.24384pt.
+[19
+
+
+<./ressources/images/./architecture_proposal-Page-1.png>] [20<./ressources/image
+s/./architecture_proposal-Page-2.png>]
+chapter 6.
+<./ressources/images/./suite_simulator.png, id=128, 599.23875pt x 470.50781pt>
+File: ./ressources/images/./suite_simulator.png Graphic file (type png)
+<use ./ressources/images/./suite_simulator.png>
+Package luatex.def Info: ./ressources/images/./suite_simulator.png  used on inpu
+t line 277.
+(luatex.def)             Requested size: 418.25555pt x 328.41272pt.
+[21
+
+
+<./ressources/images/./suite_simulator.PNG>] [22]
+chapter 7.
+<./ressources/images/./basic_threejs_rendering.png, id=142, 328.22626pt x 270.00
+874pt>
+File: ./ressources/images/./basic_threejs_rendering.png Graphic file (type png)
+<use ./ressources/images/./basic_threejs_rendering.png>
+Package luatex.def Info: ./ressources/images/./basic_threejs_rendering.png  used
+ on input line 291.
+(luatex.def)             Requested size: 164.11272pt x 135.00403pt.
+[23
+
+
+<./ressources/images/./basic_threejs_rendering.png>] [24
+
+
+]
+chapter 8.
+
+Underfull \hbox (badness 10000) in paragraph at lines 318--319
+
+ []
+
+(d:/Programmes/texlive/2018/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2018/09/02 1.7 listings language file
+)
+(d:/Programmes/texlive/2018/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2018/09/02 1.7 (Carsten Heinz)
+)
+Underfull \hbox (badness 10000) in paragraph at lines 320--323
+
+ []
+
+
+Overfull \hbox (55.74927pt too wide) in paragraph at lines 330--331
+[][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+[25]
+Overfull \hbox (37.74908pt too wide) in paragraph at lines 355--356
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (25.74896pt too wide) in paragraph at lines 358--359
+[][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (247.75122pt too wide) in paragraph at lines 362--363
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (181.75055pt too wide) in paragraph at lines 366--367
+[][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+[26]
+<./ressources/images/./compiler_sequence_diagram.png, id=208, 862.22125pt x 824.
+07875pt>
+File: ./ressources/images/./compiler_sequence_diagram.png Graphic file (type png
+)
+<use ./ressources/images/./compiler_sequence_diagram.png>
+Package luatex.def Info: ./ressources/images/./compiler_sequence_diagram.png  us
+ed on input line 397.
+(luatex.def)             Requested size: 418.25555pt x 399.74059pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [27]
+LaTeX Font Info:    Font shape `TU/lmss/b/n' in size <12> not available
+(Font)              Font shape `TU/lmss/bx/n' tried instead on input line 400.
+
+[28<./ressources/images/./compiler_sequence_diagram.png>]
+<./ressources/images/./thymio_move.png, id=229, 458.71375pt x 424.58624pt>
+File: ./ressources/images/./thymio_move.png Graphic file (type png)
+<use ./ressources/images/./thymio_move.png>
+Package luatex.def Info: ./ressources/images/./thymio_move.png  used on input li
+ne 435.
+(luatex.def)             Requested size: 366.9715pt x 339.66945pt.
+ [29] [30<./ressources/images/./thymio_move.png>]
+<./ressources/images/./move_spsd.png, id=254, 121.45375pt x 129.48375pt>
+File: ./ressources/images/./move_spsd.png Graphic file (type png)
+<use ./ressources/images/./move_spsd.png>
+Package luatex.def Info: ./ressources/images/./move_spsd.png  used on input line
+ 457.
+(luatex.def)             Requested size: 97.1631pt x 103.58711pt.
+<./ressources/images/./move_dp.png, id=255, 441.65pt x 168.63pt>
+File: ./ressources/images/./move_dp.png Graphic file (type png)
+<use ./ressources/images/./move_dp.png>
+Package luatex.def Info: ./ressources/images/./move_dp.png  used on input line 4
+62.
+(luatex.def)             Requested size: 418.25555pt x 159.70612pt.
+<./ressources/images/./move_spdd.png, id=256, 122.4575pt x 216.81pt>
+File: ./ressources/images/./move_spdd.png Graphic file (type png)
+<use ./ressources/images/./move_spdd.png>
+Package luatex.def Info: ./ressources/images/./move_spdd.png  used on input line
+ 476.
+(luatex.def)             Requested size: 122.45718pt x 216.80946pt.
+ [31<./ressources/images/./move_spsd.png><./ressources/images/./move_dp.png>] [
+32<./ressources/images/./move_spdd.png>]
+chapter 9.
+[33
+
+
+] [34
+
+
+]
+chapter 10.
+[35] [36
+
+
+]
+chapter A.
+
+Underfull \hbox (badness 10000) in paragraph at lines 511--520
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 521--524
+
+ []
+
+<./ressources/images/./VPL/Thymio_VPL_window.png, id=296, 740.0147pt x 466.74374
+pt>
+File: ./ressources/images/./VPL/Thymio_VPL_window.png Graphic file (type png)
+<use ./ressources/images/./VPL/Thymio_VPL_window.png>
+Package luatex.def Info: ./ressources/images/./VPL/Thymio_VPL_window.png  used o
+n input line 526.
+(luatex.def)             Requested size: 418.25555pt x 263.80328pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [37]
+
+LaTeX Warning: Reference `howdoesitworkref' on page 38 undefined on input line 5
+30.
+
+
+LaTeX Warning: Reference `howdoesitworkref' on page 38 undefined on input line 5
+30.
+
+<./ressources/images/./VPL/Thymio_blocks.png, id=303, 557.83406pt x 557.08125pt>
+
+File: ./ressources/images/./VPL/Thymio_blocks.png Graphic file (type png)
+<use ./ressources/images/./VPL/Thymio_blocks.png>
+Package luatex.def Info: ./ressources/images/./VPL/Thymio_blocks.png  used on in
+put line 543.
+(luatex.def)             Requested size: 418.25555pt x 417.6994pt.
+
+Underfull \vbox (badness 6461) has occurred while \output is active []
+
+ [38<./ressources/images/./VPL/Thymio_VPL_window.PNG>]
+Underfull \hbox (badness 10000) in paragraph at lines 547--551
+
+ []
+
+<./ressources/images/./VPL/middlebtn_forward.png, id=315, 198.7425pt x 82.80937p
+t>
+File: ./ressources/images/./VPL/middlebtn_forward.png Graphic file (type png)
+<use ./ressources/images/./VPL/middlebtn_forward.png>
+Package luatex.def Info: ./ressources/images/./VPL/middlebtn_forward.png  used o
+n input line 552.
+(luatex.def)             Requested size: 99.371pt x 41.40457pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 556--559
+
+ []
+
+[39<./ressources/images/./VPL/Thymio_blocks.PNG><./ressources/images/./VPL/middl
+ebtn_forward.PNG>]
+<./ressources/images/./VPL/middlebtn_forward_green.png, id=322, 274.02374pt x 81
+.30376pt>
+File: ./ressources/images/./VPL/middlebtn_forward_green.png Graphic file (type p
+ng)
+<use ./ressources/images/./VPL/middlebtn_forward_green.png>
+Package luatex.def Info: ./ressources/images/./VPL/middlebtn_forward_green.png  
+used on input line 560.
+(luatex.def)             Requested size: 137.01154pt x 40.65176pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 564--566
+
+ []
+
+<./ressources/images/./VPL/middlebtn_3E.png, id=323, 273.27094pt x 298.86656pt>
+File: ./ressources/images/./VPL/middlebtn_3E.png Graphic file (type png)
+<use ./ressources/images/./VPL/middlebtn_3E.png>
+Package luatex.def Info: ./ressources/images/./VPL/middlebtn_3E.png  used on inp
+ut line 567.
+(luatex.def)             Requested size: 136.63512pt x 149.4329pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 571--573
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 574--575
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 576--582
+
+ []
+
+[40<./ressources/images/./VPL/middlebtn_forward_green.PNG><./ressources/images/.
+/VPL/middlebtn_3E.PNG>]
+<./ressources/images/./VPL/middlebtn_3E_adv.png, id=330, 402.00188pt x 285.31593
+pt>
+File: ./ressources/images/./VPL/middlebtn_3E_adv.png Graphic file (type png)
+<use ./ressources/images/./VPL/middlebtn_3E_adv.png>
+Package luatex.def Info: ./ressources/images/./VPL/middlebtn_3E_adv.png  used on
+ input line 583.
+(luatex.def)             Requested size: 201.00044pt x 142.65761pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 589--597
+
+ []
+
+[41<./ressources/images/./VPL/middlebtn_3E_adv.PNG>]
+Underfull \hbox (badness 10000) in paragraph at lines 610--613
+
+ []
+
+<./ressources/images/./Blockly/basic_variable.png, id=338, 250.68657pt x 63.2362
+5pt>
+File: ./ressources/images/./Blockly/basic_variable.png Graphic file (type png)
+<use ./ressources/images/./Blockly/basic_variable.png>
+Package luatex.def Info: ./ressources/images/./Blockly/basic_variable.png  used 
+on input line 614.
+(luatex.def)             Requested size: 125.34297pt x 31.61804pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 618--621
+
+ []
+
+<./ressources/images/./Blockly/basic_logic.png, id=339, 310.15875pt x 76.78688pt
+>
+File: ./ressources/images/./Blockly/basic_logic.png Graphic file (type png)
+<use ./ressources/images/./Blockly/basic_logic.png>
+Package luatex.def Info: ./ressources/images/./Blockly/basic_logic.png  used on 
+input line 622.
+(luatex.def)             Requested size: 155.079pt x 38.39334pt.
+[42<./ressources/images/./Blockly/basic_variable.PNG><./ressources/images/./Bloc
+kly/basic_logic.PNG>]
+<./ressources/images/./Blockly/blockly_window.png, id=348, 770.88pt x 548.80031p
+t>
+File: ./ressources/images/./Blockly/blockly_window.png Graphic file (type png)
+<use ./ressources/images/./Blockly/blockly_window.png>
+Package luatex.def Info: ./ressources/images/./Blockly/blockly_window.png  used 
+on input line 639.
+(luatex.def)             Requested size: 385.43906pt x 274.39948pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 643--645
+
+ []
+
+<./ressources/images/./Blockly/forward_stop_wall.png, id=349, 370.38374pt x 240.
+9pt>
+File: ./ressources/images/./Blockly/forward_stop_wall.png Graphic file (type png
+)
+<use ./ressources/images/./Blockly/forward_stop_wall.png>
+Package luatex.def Info: ./ressources/images/./Blockly/forward_stop_wall.png  us
+ed on input line 646.
+(luatex.def)             Requested size: 185.1914pt x 120.44969pt.
+[43<./ressources/images/./Blockly/blockly_window.png><./ressources/images/./Bloc
+kly/forward_stop_wall.PNG>]
+<./ressources/images/./Blockly/advanced_program.png, id=358, 394.47375pt x 595.4
+7469pt>
+File: ./ressources/images/./Blockly/advanced_program.png Graphic file (type png)
+
+<use ./ressources/images/./Blockly/advanced_program.png>
+Package luatex.def Info: ./ressources/images/./Blockly/advanced_program.png  use
+d on input line 653.
+(luatex.def)             Requested size: 197.23639pt x 297.7366pt.
+ [44<./ressources/images/./Blockly/advanced_program.PNG>]
+chapter B.
+
+Underfull \hbox (badness 10000) in paragraph at lines 662--662
+[]|\TU/lmr/m/n/10.95 Pri-or-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 662--662
+[]|\TU/lmr/m/n/10.95 Est.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 662--662
+\TU/lmr/m/n/10.95 Ef-fort
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 662--662
+[]|\TU/lmr/m/n/10.95 Up-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 662--662
+\TU/lmr/m/n/10.95 date
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 662--662
+\TU/lmr/m/n/10.95 Ef-fort
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 662--662
+[]|\TU/lmr/m/n/10.95 Ac-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 662--662
+\TU/lmr/m/n/10.95 tual
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 662--662
+\TU/lmr/m/n/10.95 Ef-
+ []
+
+
+Overfull \hbox (1.1013pt too wide) in paragraph at lines 662--662
+\TU/lmr/m/n/10.95 fort[h]| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 663--664
+[]|\TU/lmr/m/n/10.95 In-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 664--664
+\TU/lmr/m/n/10.95 En-vi-ron-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 665--665
+[]|\TU/lmr/m/n/10.95 Ba-sic
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 666--666
+[]|\TU/lmr/m/n/10.95 De-velop
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 666--666
+\TU/lmr/m/n/10.95 Play-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 666--666
+\TU/lmr/m/n/10.95 func-tion to gen-er-ate
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 667--667
+[]|\TU/lmr/m/n/10.95 Up-date
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 667--667
+\TU/lmr/m/n/10.95 Doc-u-men-
+ []
+
+
+Underfull \hbox (badness 1009) in paragraph at lines 667--667
+[]|\TU/lmr/m/n/10.95 Up-date ex-ist-ing doc-u-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 667--668
+[]|\TU/lmr/m/n/10.95 In-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 668--668
+[]|\TU/lmr/m/n/10.95 Ar-chi-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 668--668
+\TU/lmr/m/n/10.95 tec-ture
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 668--668
+\TU/lmr/m/n/10.95 Im-ple-men-
+ []
+
+
+Underfull \hbox (badness 5417) in paragraph at lines 668--668
+[]|\TU/lmr/m/n/10.95 Refac-tor the ex-ist-ing
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 668--669
+[]|\TU/lmr/m/n/10.95 In-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 669--669
+[]|\TU/lmr/m/n/10.95 Web De-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 670--671
+[]|\TU/lmr/m/n/10.95 In-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 671--671
+[]|\TU/lmr/m/n/10.95 Be-haviour
+ []
+
+
+Underfull \hbox (badness 6859) in paragraph at lines 671--671
+\TU/lmr/m/n/10.95 .aesl file and trans-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 672--672
+[]|\TU/lmr/m/n/10.95 Phy-isics
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 672--672
+\TU/lmr/m/n/10.95 Im-ple-men-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 672--672
+[]|\TU/lmr/m/n/10.95 Im-ple-men-ta-tion of
+ []
+
+
+Underfull \hbox (badness 1024) in paragraph at lines 672--672
+\TU/lmr/m/n/10.95 Col-li-sions for ThreeJS
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 673--673
+[]|\TU/lmr/m/n/10.95 Up-date
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 673--673
+\TU/lmr/m/n/10.95 Doc-u-men-
+ []
+
+
+Underfull \hbox (badness 1009) in paragraph at lines 673--673
+[]|\TU/lmr/m/n/10.95 Up-date ex-ist-ing doc-u-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 674--674
+[]|\TU/lmr/m/n/10.95 En-hanced
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 674--674
+[]|\TU/lmr/m/n/10.95 En-hance-ment of the
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 675--675
+[]|\TU/lmr/m/n/10.95 Cus-tomiz-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 675--675
+\TU/lmr/m/n/10.95 able Play-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 675--675
+[]|\TU/lmr/m/n/10.95 Im-ple-men-ta-tion of a
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 676--676
+[]|\TU/lmr/m/n/10.95 Up-date
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 676--676
+\TU/lmr/m/n/10.95 Doc-u-men-
+ []
+
+
+Underfull \hbox (badness 1009) in paragraph at lines 676--676
+[]|\TU/lmr/m/n/10.95 Up-date ex-ist-ing doc-u-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 677--677
+[]|\TU/lmr/m/n/10.95 En-hanced
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 677--677
+\TU/lmr/m/n/10.95 Be-haviour
+ []
+
+
+Underfull \hbox (badness 4279) in paragraph at lines 677--677
+[]|\TU/lmr/m/n/10.95 Im-ple-ment more sen-
+ []
+
+
+Underfull \hbox (badness 5008) in paragraph at lines 678--678
+[]|\TU/lmr/m/n/10.95 Fin-ish ex-ist-ing doc-u-
+ []
+
+
+Overfull \hbox (21.97739pt too wide) in alignment at lines 661--681
+ [][][][][][][][] 
+ []
+
+[45
+
+
+] [46]
+chapter C.
+
+Underfull \hbox (badness 10000) in paragraph at lines 687--687
+[]|\TU/lmr/m/n/10.95 Pri-or-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 687--687
+[]|\TU/lmr/m/n/10.95 Est.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 687--687
+\TU/lmr/m/n/10.95 Ef-fort
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 687--687
+[]|\TU/lmr/m/n/10.95 Up-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 687--687
+\TU/lmr/m/n/10.95 date
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 687--687
+\TU/lmr/m/n/10.95 Ef-fort
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 687--687
+[]|\TU/lmr/m/n/10.95 Ac-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 687--687
+\TU/lmr/m/n/10.95 tual
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 687--687
+\TU/lmr/m/n/10.95 Ef-
+ []
+
+
+Overfull \hbox (1.1013pt too wide) in paragraph at lines 687--687
+\TU/lmr/m/n/10.95 fort[h]| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 689--689
+[]|\TU/lmr/m/n/10.95 Tem-plate
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 689--689
+\TU/lmr/m/n/10.95 and Con-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 690--690
+[]|\TU/lmr/m/n/10.95 About
+ []
+
+
+Underfull \hbox (badness 3168) in paragraph at lines 690--690
+[]|\TU/lmr/m/n/10.95 What is thymio and
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 691--691
+\TU/lmr/m/n/10.95 En-vi-ron-
+ []
+
+
+Underfull \hbox (badness 1460) in paragraph at lines 692--692
+[]|\TU/lmr/m/n/10.95 Cre-ate the project in
+ []
+
+
+Underfull \hbox (badness 3417) in paragraph at lines 693--693
+[]|\TU/lmr/m/n/10.95 In-stall Thymio Suite,
+ []
+
+
+Overfull \hbox (21.97739pt too wide) in alignment at lines 686--694
+ [][][][][][][][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 699--699
+[]|\TU/lmr/m/n/10.95 Pri-or-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 699--699
+[]|\TU/lmr/m/n/10.95 Est.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 699--699
+\TU/lmr/m/n/10.95 Ef-fort
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 699--699
+[]|\TU/lmr/m/n/10.95 Up-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 699--699
+\TU/lmr/m/n/10.95 date
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 699--699
+\TU/lmr/m/n/10.95 Ef-fort
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 699--699
+[]|\TU/lmr/m/n/10.95 Ac-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 699--699
+\TU/lmr/m/n/10.95 tual
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 699--699
+\TU/lmr/m/n/10.95 Ef-
+ []
+
+
+Overfull \hbox (1.1013pt too wide) in paragraph at lines 699--699
+\TU/lmr/m/n/10.95 fort[h]| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 700--700
+[]|\TU/lmr/m/n/10.95 Ba-sic
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 701--701
+[]|\TU/lmr/m/n/10.95 Read doc-u-men-ta-tion
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 701--701
+\TU/lmr/m/n/10.95 and ex-am-ples, and
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 702--702
+[]|\TU/lmr/m/n/10.95 Up-date and deepen
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 703--703
+[]|\TU/lmr/m/n/10.95 Thymio
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 703--703
+[]|\TU/lmr/m/n/10.95 Learn-ing and us-ing
+ []
+
+
+Underfull \hbox (badness 4084) in paragraph at lines 703--703
+\TU/lmr/m/n/10.95 VPL, Blockly, Aseba
+ []
+
+
+Overfull \hbox (10.79205pt too wide) in paragraph at lines 703--703
+[]|\TU/lmr/m/n/10.95 Medium| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 704--704
+[]|\TU/lmr/m/n/10.95 De-velop
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 704--704
+\TU/lmr/m/n/10.95 Play-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 704--704
+\TU/lmr/m/n/10.95 func-tion to gen-er-ate
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 705--705
+[]|\TU/lmr/m/n/10.95 Two De-
+ []
+
+
+Underfull \hbox (badness 3460) in paragraph at lines 705--705
+\TU/lmr/m/n/10.95 fault Play-
+ []
+
+
+Underfull \hbox (badness 4556) in paragraph at lines 705--705
+[]|\TU/lmr/m/n/10.95 Gen-er-at-ing two de-fa-
+ []
+
+
+Underfull \hbox (badness 2020) in paragraph at lines 705--705
+\TU/lmr/m/n/10.95 lut play-ground to be
+ []
+
+
+Overfull \hbox (10.79205pt too wide) in paragraph at lines 705--705
+[]|\TU/lmr/m/n/10.95 Medium| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 706--706
+[]|\TU/lmr/m/n/10.95 Thymio
+ []
+
+
+Overfull \hbox (10.79205pt too wide) in paragraph at lines 706--706
+[]|\TU/lmr/m/n/10.95 Medium| 
+ []
+
+
+Underfull \hbox (badness 1776) in paragraph at lines 707--707
+[]|\TU/lmr/m/n/10.95 Mesh Gen-
+ []
+
+
+Underfull \hbox (badness 3118) in paragraph at lines 707--707
+\TU/lmr/m/n/10.95 er-ate meshes for the
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 708--708
+[]|\TU/lmr/m/n/10.95 Up-date
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 708--708
+\TU/lmr/m/n/10.95 Doc-u-men-
+ []
+
+
+Underfull \hbox (badness 1009) in paragraph at lines 708--708
+[]|\TU/lmr/m/n/10.95 Up-date ex-ist-ing doc-u-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 708--709
+[]|\TU/lmr/m/n/10.95 In-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 709--709
+[]|\TU/lmr/m/n/10.95 Four sup-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 709--709
+\TU/lmr/m/n/10.95 ported
+ []
+
+
+Underfull \hbox (badness 4084) in paragraph at lines 709--709
+\TU/lmr/m/n/10.95 VPL, Blockly, Aseba
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 709--710
+[]|\TU/lmr/m/n/10.95 In-
+ []
+
+
+Overfull \hbox (21.97739pt too wide) in alignment at lines 698--710
+ [][][][][][][][] 
+ []
+
+[47
+
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 715--715
+[]|\TU/lmr/m/n/10.95 Pri-or-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 715--715
+[]|\TU/lmr/m/n/10.95 Est.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 715--715
+\TU/lmr/m/n/10.95 Ef-fort
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 715--715
+[]|\TU/lmr/m/n/10.95 Up-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 715--715
+\TU/lmr/m/n/10.95 date
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 715--715
+\TU/lmr/m/n/10.95 Ef-fort
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 715--715
+[]|\TU/lmr/m/n/10.95 Ac-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 715--715
+\TU/lmr/m/n/10.95 tual
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 715--715
+\TU/lmr/m/n/10.95 Ef-
+ []
+
+
+Overfull \hbox (1.1013pt too wide) in paragraph at lines 715--715
+\TU/lmr/m/n/10.95 fort[h]| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 716--716
+[]|\TU/lmr/m/n/10.95 Up-date
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 716--716
+\TU/lmr/m/n/10.95 Doc-u-men-
+ []
+
+
+Underfull \hbox (badness 1009) in paragraph at lines 716--716
+[]|\TU/lmr/m/n/10.95 Up-date ex-ist-ing doc-u-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 716--717
+[]|\TU/lmr/m/n/10.95 In-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 717--717
+[]|\TU/lmr/m/n/10.95 Four sup-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 717--717
+\TU/lmr/m/n/10.95 ported
+ []
+
+
+Underfull \hbox (badness 4084) in paragraph at lines 717--717
+\TU/lmr/m/n/10.95 VPL, Blockly, Aseba
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 717--718
+[]|\TU/lmr/m/n/10.95 In-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 719--719
+[]|\TU/lmr/m/n/10.95 Ar-chi-tec-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 719--720
+[]|\TU/lmr/m/n/10.95 In-
+ []
+
+
+Overfull \hbox (10.79205pt too wide) in paragraph at lines 720--720
+[]|\TU/lmr/m/n/10.95 Medium| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 722--722
+[]|\TU/lmr/m/n/10.95 Ar-chi-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 722--722
+\TU/lmr/m/n/10.95 tec-ture
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 722--722
+\TU/lmr/m/n/10.95 Im-ple-men-
+ []
+
+
+Underfull \hbox (badness 5417) in paragraph at lines 722--722
+[]|\TU/lmr/m/n/10.95 Refac-tor the ex-ist-ing
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 722--723
+[]|\TU/lmr/m/n/10.95 In-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 723--723
+[]|\TU/lmr/m/n/10.95 Refac-tor
+ []
+
+
+Underfull \hbox (badness 7168) in paragraph at lines 724--724
+[]|\TU/lmr/m/n/10.95 Unit Test-
+ []
+
+
+Underfull \hbox (badness 6188) in paragraph at lines 724--724
+[]|\TU/lmr/m/n/10.95 Write the JavaScript
+ []
+
+
+Underfull \hbox (badness 2582) in paragraph at lines 725--725
+[]|\TU/lmr/m/n/10.95 Write the JavaScript-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 725--726
+[]|\TU/lmr/m/n/10.95 In-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 726--726
+[]|\TU/lmr/m/n/10.95 Web De-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 729--730
+[]|\TU/lmr/m/n/10.95 In-
+ []
+
+
+Underfull \hbox (badness 2790) in paragraph at lines 730--730
+\TU/lmr/m/n/10.95 low-ing in-dex, sim-u-la-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 730--731
+[]|\TU/lmr/m/n/10.95 In-
+ []
+
+
+Overfull \hbox (21.97739pt too wide) in alignment at lines 714--731
+ [][][][][][][][] 
+ []
+
+[48]
+Underfull \hbox (badness 10000) in paragraph at lines 736--736
+[]|\TU/lmr/m/n/10.95 Pri-or-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 736--736
+[]|\TU/lmr/m/n/10.95 Est.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 736--736
+\TU/lmr/m/n/10.95 Ef-fort
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 736--736
+[]|\TU/lmr/m/n/10.95 Up-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 736--736
+\TU/lmr/m/n/10.95 date
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 736--736
+\TU/lmr/m/n/10.95 Ef-fort
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 736--736
+[]|\TU/lmr/m/n/10.95 Ac-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 736--736
+\TU/lmr/m/n/10.95 tual
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 736--736
+\TU/lmr/m/n/10.95 Ef-
+ []
+
+
+Overfull \hbox (1.1013pt too wide) in paragraph at lines 736--736
+\TU/lmr/m/n/10.95 fort[h]| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 737--737
+[]|\TU/lmr/m/n/10.95 Be-haviour
+ []
+
+
+Underfull \hbox (badness 6859) in paragraph at lines 737--737
+\TU/lmr/m/n/10.95 .aesl file and trans-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 738--738
+[]|\TU/lmr/m/n/10.95 Phy-isics
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 738--738
+\TU/lmr/m/n/10.95 Im-ple-men-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 738--738
+[]|\TU/lmr/m/n/10.95 Im-ple-men-ta-tion of
+ []
+
+
+Underfull \hbox (badness 1024) in paragraph at lines 738--738
+\TU/lmr/m/n/10.95 Col-li-sions for ThreeJS
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 739--739
+[]|\TU/lmr/m/n/10.95 Up-date
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 739--739
+\TU/lmr/m/n/10.95 Doc-u-men-
+ []
+
+
+Underfull \hbox (badness 1009) in paragraph at lines 739--739
+[]|\TU/lmr/m/n/10.95 Up-date ex-ist-ing doc-u-
+ []
+
+
+Overfull \hbox (21.97739pt too wide) in alignment at lines 735--740
+ [][][][][][][][] 
+ []
+
+[49]
+Underfull \hbox (badness 10000) in paragraph at lines 745--745
+[]|\TU/lmr/m/n/10.95 Pri-or-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 745--745
+[]|\TU/lmr/m/n/10.95 Est.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 745--745
+\TU/lmr/m/n/10.95 Ef-fort
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 745--745
+[]|\TU/lmr/m/n/10.95 Up-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 745--745
+\TU/lmr/m/n/10.95 date
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 745--745
+\TU/lmr/m/n/10.95 Ef-fort
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 745--745
+[]|\TU/lmr/m/n/10.95 Ac-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 745--745
+\TU/lmr/m/n/10.95 tual
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 745--745
+\TU/lmr/m/n/10.95 Ef-
+ []
+
+
+Overfull \hbox (1.1013pt too wide) in paragraph at lines 745--745
+\TU/lmr/m/n/10.95 fort[h]| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 746--746
+[]|\TU/lmr/m/n/10.95 En-hanced
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 746--746
+[]|\TU/lmr/m/n/10.95 En-hance-ment of the
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 747--747
+[]|\TU/lmr/m/n/10.95 Cus-tomiz-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 747--747
+\TU/lmr/m/n/10.95 able Play-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 747--747
+[]|\TU/lmr/m/n/10.95 Im-ple-men-ta-tion of a
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 748--748
+[]|\TU/lmr/m/n/10.95 Up-date
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 748--748
+\TU/lmr/m/n/10.95 Doc-u-men-
+ []
+
+
+Underfull \hbox (badness 1009) in paragraph at lines 748--748
+[]|\TU/lmr/m/n/10.95 Up-date ex-ist-ing doc-u-
+ []
+
+
+Overfull \hbox (21.97739pt too wide) in alignment at lines 744--749
+ [][][][][][][][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 754--754
+[]|\TU/lmr/m/n/10.95 Pri-or-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 754--754
+[]|\TU/lmr/m/n/10.95 Est.
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 754--754
+\TU/lmr/m/n/10.95 Ef-fort
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 754--754
+[]|\TU/lmr/m/n/10.95 Up-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 754--754
+\TU/lmr/m/n/10.95 date
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 754--754
+\TU/lmr/m/n/10.95 Ef-fort
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 754--754
+[]|\TU/lmr/m/n/10.95 Ac-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 754--754
+\TU/lmr/m/n/10.95 tual
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 754--754
+\TU/lmr/m/n/10.95 Ef-
+ []
+
+
+Overfull \hbox (1.1013pt too wide) in paragraph at lines 754--754
+\TU/lmr/m/n/10.95 fort[h]| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 755--755
+[]|\TU/lmr/m/n/10.95 En-hanced
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 755--755
+\TU/lmr/m/n/10.95 Be-haviour
+ []
+
+
+Underfull \hbox (badness 4279) in paragraph at lines 755--755
+[]|\TU/lmr/m/n/10.95 Im-ple-ment more sen-
+ []
+
+
+Underfull \hbox (badness 5008) in paragraph at lines 756--756
+[]|\TU/lmr/m/n/10.95 Fin-ish ex-ist-ing doc-u-
+ []
+
+
+Overfull \hbox (5.24275pt too wide) in paragraph at lines 757--757
+[]|\TU/lmr/m/n/10.95 16.1| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 757--757
+[]|\TU/lmr/m/n/10.95 Cre-ate
+ []
+
+
+Overfull \hbox (5.24275pt too wide) in paragraph at lines 758--758
+[]|\TU/lmr/m/n/10.95 16.2| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 758--758
+[]|\TU/lmr/m/n/10.95 Pre-pare
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 758--758
+\TU/lmr/m/n/10.95 Pre-sen-ta-
+ []
+
+
+Overfull \hbox (5.24275pt too wide) in paragraph at lines 759--759
+[]|\TU/lmr/m/n/10.95 16.3| 
+ []
+
+
+Overfull \hbox (5.24275pt too wide) in paragraph at lines 760--760
+[]|\TU/lmr/m/n/10.95 16.4| 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 760--760
+[]|\TU/lmr/m/n/10.95 Fin-ish
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 760--760
+\TU/lmr/m/n/10.95 Writ-ting
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 760--760
+\TU/lmr/m/n/10.95 Doc-u-men-
+ []
+
+
+Overfull \hbox (5.24275pt too wide) in paragraph at lines 761--761
+[]|\TU/lmr/m/n/10.95 16.5| 
+ []
+
+
+Underfull \hbox (badness 3919) in paragraph at lines 761--761
+[]|\TU/lmr/m/n/10.95 Pre-pare to
+ []
+
+
+Underfull \hbox (badness 1275) in paragraph at lines 761--761
+\TU/lmr/m/n/10.95 put the project on a
+ []
+
+
+Overfull \hbox (21.97739pt too wide) in alignment at lines 753--763
+ [][][][][][][][] 
+ []
+
+[50] [51] [52
+
+
+]
+chapter D.
+[53]
+<./ressources/images/./Gantt-1.png, id=419, 2347.77126pt x 1660.2025pt>
+File: ./ressources/images/./Gantt-1.png Graphic file (type png)
+<use ./ressources/images/./Gantt-1.png>
+Package luatex.def Info: ./ressources/images/./Gantt-1.png  used on input line 7
+68.
+(luatex.def)             Requested size: 657.37149pt x 464.85353pt.
+
+Overfull \hbox (46.59798pt too wide) in paragraph at lines 768--769
+ [] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [54
+
+]
+Overfull \vbox (67.07123pt too high) has occurred while \output is active []
+
+
+[55<./ressources/images/./Gantt-1.png>]
+<./ressources/images/./Gantt-2.png, id=429, 2347.77126pt x 1660.2025pt>
+File: ./ressources/images/./Gantt-2.png Graphic file (type png)
+<use ./ressources/images/./Gantt-2.png>
+Package luatex.def Info: ./ressources/images/./Gantt-2.png  used on input line 7
+71.
+(luatex.def)             Requested size: 657.37149pt x 464.85353pt.
+
+Overfull \hbox (46.59798pt too wide) in paragraph at lines 771--772
+ [] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [56]
+Overfull \vbox (67.07123pt too high) has occurred while \output is active []
+
+
+[57<./ressources/images/./Gantt-2.png>] [58
+
+
+
+]
+chapter E.
+[59] [60
+
+
+]
+chapter F.
+
+Underfull \hbox (badness 10000) in paragraph at lines 779--781
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 782--783
+
+ []
+
+
+Overfull \hbox (4.11873pt too wide) in paragraph at lines 797--799
+\TU/lmr/m/n/10.95 workd to ac-cess it) [][]$\TU/lmtt/m/n/10.95 https://intranet
+.bfh.ch/TI/fr/Studium/Bachelor/Informatik/
+ []
+
+[61] [62
+
+
+]
+chapter G.
+[63] [64
+
+
+]
+chapter H.
+
+LaTeX Warning: Empty bibliography on input line 852.
+
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 854.
+[65]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 854.
+ (./flucq1_Documentation.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 854.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 854.
+
+
+Package rerunfilecheck Warning: File `flucq1_Documentation.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `flucq1_Documentation.out':
+(rerunfilecheck)             Before: <no file>
+(rerunfilecheck)             After:  0D7939EB3C246A8F8CA33DABCC32E3E4;2657.
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+
+Package biblatex Warning: Please (re)run Biber on the file:
+(biblatex)                flucq1_Documentation
+(biblatex)                and rerun LaTeX afterwards.
+
+Package logreq Info: Writing requests to 'flucq1_Documentation.run.xml'.
+
+\openout1 = flucq1_Documentation.run.xml
+)
+
+Here is how much of LuaTeX's memory you used:
+ 33115 strings out of 494407
+ 100000,1373583 words of node,token memory allocated
+ 611 words of node memory still in use:
+   6 hlist, 2 vlist, 2 rule, 2 glue, 4 kern, 1 glyph, 8 attribute, 75 glue_spec,
+ 8 attribute_list, 1 write, 1 pdf_action nodes
+   avail lists: 1:4,2:1711,3:794,4:56,5:377,6:329,7:5640,8:990,9:1531,10:25,11:3
+34
+ 35753 multiletter control sequences out of 65536+600000
+ 107 fonts using 9615943 bytes
+ 62i,9n,83p,9117b,922s stack positions out of 5000i,500n,10000p,200000b,100000s
+<d:/Programmes/texlive/2018/texmf-dist/fonts/opentype/public/lm/lmmono10-italic.
+otf><d:/Programmes/texlive/2018/texmf-dist/fonts/opentype/public/lm/lmmonolt10-b
+old.otf><d:/Programmes/texlive/2018/texmf-dist/fonts/opentype/public/lm/lmmono10
+-regular.otf><d:/Programmes/texlive/2018/texmf-dist/fonts/opentype/public/lm/lmr
+oman10-italic.otf><d:/Programmes/texlive/2018/texmf-dist/fonts/opentype/public/l
+m/lmromandemi10-regular.otf><d:/Programmes/texlive/2018/texmf-dist/fonts/opentyp
+e/public/lm/lmromanslant10-regular.otf><d:/Programmes/texlive/2018/texmf-dist/fo
+nts/opentype/public/lm/lmroman10-regular.otf><d:/Programmes/texlive/2018/texmf-d
+ist/fonts/opentype/public/lm/lmmono12-regular.otf><d:/Programmes/texlive/2018/te
+xmf-dist/fonts/opentype/public/lm/lmroman12-regular.otf><d:/Programmes/texlive/2
+018/texmf-dist/fonts/opentype/public/lm/lmsans10-bold.otf>
+Output written on flucq1_Documentation.pdf (65 pages, 1375846 bytes).
+
+PDF statistics: 552 PDF objects out of 1000 (max. 8388607)
+ 393 compressed objects within 4 object streams
+ 193 named destinations out of 1000 (max. 131072)
+ 1 words of extra memory for PDF output out of 10000 (max. 100000000)
 

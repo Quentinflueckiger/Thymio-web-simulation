@@ -426,19 +426,58 @@ and instead, shoot rays from the robot and check for collisions this way, as onl
 
 \section{Sensor and Actuator}
 
-A thymio robot moves in according with two motors, one for its right wheel and one for its left wheel. They have a value for the output power between -500 and 500, minus meaning the motor powers the wheel in the oposite direction. 
-And those two motors can only ouptut power in a straight line, forward / backward. Bellow are three representations of the expected movements of a Thymio. The yellow arrow is the power for the left motor, the blue arrow is the power for the right motor, 
-and the green arrow is the final vector movement for the robot. On the first representation the power of the two motors are the same, both in value and direction, thus the final vector is simply the same as either one of the two.
-On the second one the value of the power for both motors is still the same but their direction are opposite, hence the final vector is a circle because the robot will turn on itself. 
-And finaly the third representation shows the resultant vector when the value is not the same but the direction is.
+A Thymio robot moves in according with two motors, one for its right wheel and one for its left wheel. They have a value for the output power between -500 and 500, minus meaning the motor powers the wheel in the opposite direction. 
+And those two motors can only output power in a straight line, forward / backward. Bellow are three representations of the expected movements of a Thymio. The yellow arrow is the power for the left motor, the blue arrow is the power for the right motor, 
+and the green arrow is the final vector movement for the robot. On the first representation, the power of the two motors are the same, both in value and direction, thus the final vector is simply the same as either one of the two.
+On the second one, the value of the power for both motors is still the same but their direction is opposite, hence the final vector is a circle because the robot will turn on itself.
+And finally, the third representation shows the resultant vector when the value is not the same but the direction is.
 \begin{center}
-  \includegraphics[width=\textwidth]{./thymio_move}
+  \includegraphics[scale=0.8]{./thymio_move}
 \end{center}
 
-It was complex to convey the way the Thymio robots move onto this application as we move models and don't physically power motors. To achieve the same behaviour we decided to use some trigonometry and a few tricks.
+It was complex to convey the way the Thymio robots move onto this application as we move models and don't physically power motors. To achieve the same behavior we decided to use some trigonometry and a few tricks.
+The method that moves the robot is called only within the \texttt{render()} method from the main View, and thus every time the scene is being rendered we move the robot accordingly to the value of the motor. 
+Those values are set using the \texttt{setMotors(left, right)} method. The \texttt{move()} method, the one that computes the movement of the robot, is split into four categories depending on the values of the motors. 
 
-How they work in real life, what do they output, what do they return as value, and how they work in the application.
-Create playground
+The first category is when both motors have the same power in the same direction, therefore the resulting position change for both x and z coordinate is computed using the \texttt{getDirection()}, which returns 
+a Vector3 representing the direction the robot is facing, a predefined speed variable and the power given to either of the motors.
+\begin{lstlisting}[language=JavaScript, basicstyle=\ttfamily\small]
+  getDirection() {
+    var direction = new THREE.Vector3();
+    return this.object3D.getWorldDirection(direction);;
+  }
+\end{lstlisting} 
+\begin{lstlisting}[language=JavaScript, basicstyle=\ttfamily\small]
+  this.object3D.position.x += 
+    this.getDirection().x * this.speed * this.rightMotor;
+  this.object3D.position.z +=
+    this.getDirection().z * this.speed * this.rightMotor;
+\end{lstlisting}  
+\begin{center}
+  \includegraphics[scale=0.8]{./move_spsd}
+\end{center}
+
+The second option is when the value of the left motor is bigger than the right, regarding the direction. Alternatively, the third option is the same but when the value of the right motor is bigger than the left.
+\begin{center}
+  \includegraphics[width=\textwidth]{./move_dp}
+\end{center}
+In this case, we calculate the difference D of power between the two motors, the biggest minus the smallest, and then we use trigonometry to find the angle between the power of the motor and the resulting vector of the addition of the power of the motor and the difference D.
+This angle is then used as a parameter to rotate the model around the y-axis, to smooth things we multiply it by a variable turnSpeed.  
+\begin{lstlisting}[language=JavaScript, basicstyle=\ttfamily\small]
+  this.object3D.rotateY(
+    -(Math.atan(delta/Math.abs(this.leftMotor))*this.turnSpeed)
+  );
+\end{lstlisting} 
+The resulting change in position is computed the same way as for the first category. It might be more relevant to use the norm of the resulting vector 
+found earlier to have a more accurate speed.
+
+The fourth category happens when both power values are the same but in a different direction. In this case, we rotate the robot on itself around the y-axis according to either of its motor speed.
+\begin{center}
+  \includegraphics[scale=1]{./move_spdd}
+\end{center}
+%%How they work in real life, what do they output, what do they return as value, and how they work in the application.
+
+\section{Customize playgrounds}
 
 \chapter{Results}
 
