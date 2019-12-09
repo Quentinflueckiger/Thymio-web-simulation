@@ -310,7 +310,7 @@ Development
 Models + Basic controls
 \section{Model View Controller}
 MVC
-\section{WebServer}
+\section{WebServer \label{webserver}}
 Regarding the goal number 5, Require no software installation, we decided to use a webserver in order to access the application. At first we choose the IIS Manager that is built in with Windows 10, 
 we followed the steps in this tutorial video in order to configure IIS: \url{https://www.youtube.com/watch?v=rPRLe7QeVHM} .
 
@@ -414,7 +414,8 @@ the code for this regex.
 \end{lstlisting}  
 We have to be wary of one point when using this method, and it is that if the \texttt{ch} parameter is not a string, then it will throw an error. Coming back to the switch we first test if the chain of character is a number by combining regex and looking for multiple characters.
 If it is not the case we check wether or not its value is the same as one of the given keywords, such as \texttt{when} or \texttt{const}. And if none of the keywords match it is labeled as a string literal and given the value of the chain of characters. Here we encountered a probleme 
-of language between C++ and JavaScript, as the type of the token is given with an enum in C++, and they don't exist in JavaScript so we had to find a workaround to this language incompatibility. We used the Object method \texttt{freeze()} which prevents the modification of existing property attributes and the addition of new ones.
+of language between C++ and JavaScript, as the type of the token is given with an enum in C++, and they don't exist in JavaScript so we had to find a workaround to this language incompatibility. We used the Object method \texttt{freeze()}, which prevents the modification of existing property attributes and the addition of new ones, 
+and still had to give a value to each properties.
 
 \subsection{Parser}
 
@@ -801,7 +802,8 @@ See link bellow for more information and links. (It requires to be inside the bf
 \url{https://intranet.bfh.ch/TI/fr/Studium/Bachelor/Informatik/Tools/VMsHowto/Pages/default.aspx?k=vm}
 
 \textbf{First Configuration of XAMPP}\\
-configuration, installation, access
+The configuration of XAMPP is very basic. The steps done during the setup of the IIS Manager at \ref{webserver}, concerning forwarding and firewall, should still be followed. First we need to download and install it, it can be found under this link : \url{https://www.apachefriends.org/index.html} . Afterward it is needed to travel through the folder of the application until the folder 
+\texttt{htdocs}. There was stored the default placeholder files, we put them into a new default folder and instead added our content in this folder. Do not forget to take the .webconfig file from the \ref{webserver} section.
 
 \chapter{Meetings}
 \begin{tabular}{ | m{3cm} | m{10cm} | }
