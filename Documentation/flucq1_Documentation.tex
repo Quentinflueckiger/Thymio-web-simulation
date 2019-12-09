@@ -59,16 +59,22 @@
 
 \begin{document}
 
+\begin{titlepage}
+  \begin{center}
+    {\LARGE \bfseries\sffamily Web Simulation of a Thymio Robot}
 
-\title{Web Simulation of a Thymio Robot}
-\date{\today}   %% or \date{01 november 2018}
-\author{Quentin Flückiger (\texttt{flucq1@bfh.ch})}
+    \vspace{1cm}
 
+    {\large Quentin Flückiger (\texttt{flucq1@bfh.ch})}
+    \vspace{2mm}
 
+    \today
+    \vspace{2cm}
 
+    \includegraphics[width=\textwidth]{./title}
+  \end{center}
+\end{titlepage}
 
-\maketitle
-\includegraphics[width=\textwidth]{./title}
 \clearpage
 
 Declaration of Authorship
@@ -119,7 +125,7 @@ and reduce the cost and augment the lifetime for educational platforms and mater
   Thymio II sensor and actuator
 \end{center}
 
-\section{How does it works} \label{howdoesitworkref}
+\section{How does it works \label{howdoesitworkref}} 
 
 As seen in the figure above there exist two Thymio models, Thymio and Wireless Thymio. 
 The difference between them lies in the ability of the second one to be programmed wirelessly, 
@@ -150,6 +156,8 @@ To feed program to the robot, a software has been developed, it integrates the f
 The project Web Simulation of a Thymio robot is aimed to create a simulator for the Thymio II so as to allow people to see their programmed behaviour directly.
 
 \section{Goals}
+
+This aim has been split into 6 different defining goals in order to create this application.
 \begin{center}
   \includegraphics[width=\textwidth]{./goals}
 \end{center}
@@ -300,6 +308,7 @@ Development
 
 \section{Models}
 Models + Basic controls
+\section{Model View Controller}
 MVC
 \section{WebServer}
 Regarding the goal number 5, Require no software installation, we decided to use a webserver in order to access the application. At first we choose the IIS Manager that is built in with Windows 10, 
@@ -342,27 +351,20 @@ The alternative solution we came up with was to use XAMPP, we managed to push th
 
 There was two steps for the algorithm to create tracks, the first one was to compute a simple line between two points. But the result was 
 too thin and therefore a better solution was found.
-\begin{lstlisting}[language=JavaScript, basicstyle=\ttfamily\small]
-  var line = generateLine(color, points[i], points[i+1]);
-\end{lstlisting} 
 The second iteration for this alogrithm takes an array of points, those points are of type Vector3 so as to register the three coordinates, and compute 
-a new Vector3 that holds the resulting vector of the next point minus the current point. The x and z values of this vector are then used 
+a new Vector3 that holds the resulting vector position of the next point minus the current point. The x and z values of this vector are then used 
 as the center to position a box object, which represent the track, and then it is aligned to this vector.
 \begin{lstlisting}[language=JavaScript, basicstyle=\ttfamily\small]
   for (let i = 0; i < points.length-1; i++) {
 
-    // Calculate a Vector3 between the two points
     const trackWidth = new THREE.Vector3().copy(points[i+1]).sub(points[i]);
-    // Create the mesh with the calculated width from the Vector3
     const track = new THREE.Mesh(
       new THREE.BoxGeometry(trackWidth.length(), TrackHeight, TrackDepth),
       material
     )
 
-    // Position the center of the object to first point + half of the distance between the points (for x and z)
     track.position.x = points[i].x + trackWidth.x/2;
     track.position.z = points[i].z + trackWidth.z/2;
-    // Align mesh to calculated Vector3
     track.quaternion.setFromUnitVectors(new THREE.Vector3(1, 0, 0), trackWidth.clone().normalize());
     container.add(track);      
   }
@@ -371,7 +373,7 @@ as the center to position a box object, which represent the track, and then it i
 We decided to load only once the Thymio model, as it takes in average 500ms to load it, and we encountered some issues where the model would not load everytime when we would change the playgrounds.
 Therefore we reset it's position and rotation whenever we change the playground, or if a position is given in the playground.json data file, the Thymio is moved to the wanted position.
 
-Thinking about the creation of playground we decided to change how the playgrounds data were recorded and instead of having them as JavaScript file, we moved them all as Json file. So later on it would not require more work to load a 
+Thinking about the creation of playground we decided to change how the playgrounds data were recorded and instead of having them as JavaScript file, we moved them all into a Json file. So later on it would not require more work to load a 
 customized playground. To do so we open and read a json file of a given name, and then skim through the json file and create the Shapes accordingly of the data. Bellow an example for the boxes.
 \begin{lstlisting}[language=JavaScript, basicstyle=\ttfamily\small]
   if (file.boxes) {
@@ -382,7 +384,7 @@ customized playground. To do so we open and read a json file of a given name, an
   }
 \end{lstlisting} 
 
-Unfortunately we found later on that Three JS has a built in function that translate a ThreeJS Object into a Json file element, and inversely.
+Unfortunately we found later on that Three JS has a built in function that translate a ThreeJS Object into a Json file element, and inversely. But we are still using the solution we developed.
 
 \section{Interpreter}
 The interpreter found that compile/translate .aesl file into another programming language is the one used in the Thymio Suite application, its source code can be found in the following repository \href{https://github.com/aseba-community/aseba/tree/master/aseba/compiler}{Aseba git}.
@@ -411,7 +413,8 @@ the code for this regex.
   }
 \end{lstlisting}  
 We have to be wary of one point when using this method, and it is that if the \texttt{ch} parameter is not a string, then it will throw an error. Coming back to the switch we first test if the chain of character is a number by combining regex and looking for multiple characters.
-If it is not the case we check wether or not its value is the same as one of the given keywords, such as when or const. And if none of the keywords match it is labeled as a string literal and given the value of the chain of characters.
+If it is not the case we check wether or not its value is the same as one of the given keywords, such as \texttt{when} or \texttt{const}. And if none of the keywords match it is labeled as a string literal and given the value of the chain of characters. Here we encountered a probleme 
+of language between C++ and JavaScript, as the type of the token is given with an enum in C++, and they don't exist in JavaScript so we had to find a workaround to this language incompatibility. We used the Object method \texttt{freeze()} which prevents the modification of existing property attributes and the addition of new ones.
 
 \subsection{Parser}
 
