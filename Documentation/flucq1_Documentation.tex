@@ -199,7 +199,7 @@ Flückiger Quentin flucq1@bfh.ch \\
 
 \section{User Stories}
 \textbf{\large Users User Stories}\\
-\textbf{As} a user, I want to uplaod an .aesl file, so that I can witness the simulated behaviour. \\
+\textbf{As} a user, I want to upload an .aesl file, so that I can witness the simulated behaviour. \\
 Description:\\
 The user wants to upload an .aesl file to see the programmed behaviour simulated.
 Success:\\
@@ -239,23 +239,102 @@ Failure:\\
   \item The webserver isn't accessible.
 \end{itemize}
 
-\section{System sequence diagrams}
+\section{Use Cases Model}
 
+\textbf{Use Case: }Access the application \\
+\textbf{Primary Actor: }User \\
+\textbf{Stakeholders and Interests: }User: Wants to access the application through a web browser. \\
+\textbf{Preconditions: }User has access to the bfh network. \\
+\textbf{Success Guarantee (Postconditions): }The user can access the application via a modern web browser. \\
+\textbf{Main Success Scenario: } 
+\begin{enumerate}
+  \item User start web browser.
+  \item User navigate to website address.
+\end{enumerate}
+\textbf{Extensions: } 
+\begin{enumerate}
+  \item 
+  \begin{enumerate}
+    \item No available internet connection.
+  \end{enumerate}
+  \item 
+  \begin{enumerate}
+    \item Not logged in the bfh network.
+    \item Web Server currently offline.
+  \end{enumerate}
+\end{enumerate}
+\textbf{Special Requirements: }Modern web browser compatibility. \\
+\textbf{Technology and Data Variations List: }- \\
+\textbf{Frequency of Occurrence: }Could be nearly continuous.\\
+\textbf{Open Issues: }- \\
+\\
+\textbf{Use Case: }Interprete .aesl file \\
+\textbf{Primary Actor: }User \\
+\textbf{Stakeholders and Interests: }User: Wants to load .aesl behaviour file to be translated and simulated. \\
+\textbf{Preconditions: }User has a .aesl file containing behaviour code for Thymio. \\
+\textbf{Success Guarantee (Postconditions): }File is correctly compiled, and simulation simulate expected behaviour. \\
+\textbf{Main Success Scenario: }
+\begin{enumerate}
+  \item User access the website.
+  \item User input a .aesl file.
+  \item System control file integrity.
+  \item System compile file to JavaScript code that can be run as behaviour.
+  \item System run given program.
+\end{enumerate}
+\textbf{Extensions: }
+\begin{enumerate}\addtocounter{enumi}{1}
+  \item 
+  \begin{enumerate}
+    \item File too large for application.
+  \end{enumerate}
+  \item
+  \begin{enumerate}
+    \item System signals error and reject file because not conform to awaited structure.
+  \end{enumerate}
+  \item 
+  \begin{enumerate}
+    \item System signals error while compiling file.
+  \end{enumerate}
+\end{enumerate}
+\textbf{Special Requirements: }- \\
+\textbf{Technology and Data Variations List: }- \\
+\textbf{Frequency of Occurrence: }Very often. \\
+\textbf{Open Issues: }- \\
+\\
+\textbf{Use Case: }Change playground \\
+\textbf{Primary Actor: }User \\
+\textbf{Stakeholders and Interests: }User: Wants to change the rendered playground. \\
+\textbf{Preconditions: }User has access to the bfh network. \\
+\textbf{Success Guarantee (Postconditions): }The playground is changed accordingly the whishes of the user. \\
+\textbf{Main Success Scenario: }
+\begin{enumerate}
+  \item User access the website.
+  \item User chooses the wanted playground.
+  \item System load wanted playground.
+\end{enumerate}
+\textbf{Extensions: }
+\begin{enumerate}\addtocounter{enumi}{1}
+  \item 
+  \begin{enumerate}
+    \item The input file is not from the right file extension. 
+  \end{enumerate}
+  \item 
+  \begin{enumerate}
+    \item Fail to load playground because file not conform to awaited structure.
+    \item Internal error when playground was loaded.
+  \end{enumerate}
+\end{enumerate}
+\textbf{Special Requirements: }- \\
+\textbf{Technology and Data Variations List: }- \\
+\textbf{Frequency of Occurrence: }Often. \\
+\textbf{Open Issues: }- \\
+\textbf{System sequence diagram: } \\
 \begin{center}
-  \includegraphics[scale=0.7]{./loadPlayground_ssd} \\
-  \texttt{Load playground ssd}
+  \includegraphics[scale=0.7]{./loadPlayground_ssd}
 \end{center}
-
+\textbf{Sequence diagram: } \\
 \begin{center}
-  \includegraphics[scale=0.7]{./compiler_ssd} \\
-  \texttt{Compile source ssd}
-\end{center}
-
-\section{Sequence diagrams}
-
-\begin{center}
-  \includegraphics[scale=0.7]{./loadPlayground_sd} \\
-  \texttt{Load playground sd}
+  \includegraphics[scale=0.7]{./loadPlayground_sd}
 \end{center}
 
 
@@ -263,15 +342,21 @@ Failure:\\
 
 \chapter{Architecture}
 %% Domain class diagrams, Domain model, Package diagram, Sequence diagram, System sequence diagram
+
+We decided to divide the architecture into two different parts. One for the simulation side and the other one for the customization, although they are very similar there are still some differences that push us to look at them with two different angles. Both are build based on a Model View Controller system where the elements of the playground, be it a wall or the Thymio robot, are models and the page is seen by the user is the view. This view registers user inputs and transmits them to the controller. 
+
+As said we have split the architecture, bellow is a graphic representing the architecture for the simulator. We can see the Model View Controller and a second component which is the interpreter, 
+that is singular to the simulator page. Its role is to test the integrity of the file given as input through the controller and compile it into JavaScript code for it to be used as behavior code for the Thymio Model.
+
 \begin{center}
   \includegraphics[width=\textwidth]{./architecture_proposal-Page-1}
 \end{center}
-Proposed architecture for the simulator.
 
+
+And here is the second Model View Controller responsible for the playground customization, its architecture is the same as the other one except it doesn't implement an interpreter.
 \begin{center}
   \includegraphics[width=\textwidth]{./architecture_proposal-Page-2}
 \end{center}
-Proposed architecture for the playground creator.
 
 \chapter{What already exist} 
 
@@ -304,12 +389,14 @@ Every Three JS application is composed of at least one Camera element, a Rendere
 
 \chapter{Our Approach}
 
-Development
+\section{Base Development}
 
-\section{Models}
-Models + Basic controls
+The first steps were to learn how to use the Three JS library and thus we integrated the needed code directly onto some .html file, which was not very efficient for a big application but was okay to test the functionalities. 
+At that time, we looked for some useful methods that we would need later on, such as the way to resize the window and its content. Another functionality added at this period was the controls of the camera, that comes from the OrbitControls.js file and allows the creation of an OrbitControls object which let the user move the camera, rotate it and zoom with the mouse.
+
 \section{Model View Controller}
-MVC
+
+
 \section{WebServer \label{webserver}}
 Regarding the goal number 5, Require no software installation, we decided to use a webserver in order to access the application. At first we choose the IIS Manager that is built in with Windows 10, 
 we followed the steps in this tutorial video in order to configure IIS: \url{https://www.youtube.com/watch?v=rPRLe7QeVHM} .
@@ -760,7 +847,7 @@ We added two other events for the right and left buttons that are responsible to
   16 & Finish Documentation & Finish existing documentation & High &  &  &  & To Do \\
   16.1 & Create Video & Create the video file & High &  &  &  & To Do \\ 
   16.2 & Prepare Presentation Day & Create the poster and the presentation for the Presentation Day & High &  &  &  & To Do \\
-  16.3 & Write in the Book & Write the page for the Book & High & 8 & 4 &  & To Do \\ 
+  16.3 & Write in the Book & Write the page for the Book & High & 8 &  &  & To Do \\ 
   16.4 & Finish Writting Documentation & Terminate the writting part of the documentation & High &  &  &  & To Do \\ 
   16.5 & Prepare to Submit & Check spelling mistake, check images, print it, put the project on a USB stick & High &  &  &  & To Do\\ 
   17 & Prepare Defense & Prepare the defense & High &  &  &  & To Do \\ \hline

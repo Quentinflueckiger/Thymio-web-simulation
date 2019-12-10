@@ -2,7 +2,7 @@
 \BOOKMARK [0][-]{chapter.2}{Environment}{}% 2
 \BOOKMARK [0][-]{chapter.3}{Thymio}{}% 3
 \BOOKMARK [1][-]{section.3.1}{What is Thymio}{chapter.3}% 4
-\BOOKMARK [1][-]{section.3.2}{How does it works}{chapter.3}% 5
+\BOOKMARK [1][-]{section.3.2}{How does it works }{chapter.3}% 5
 \BOOKMARK [0][-]{chapter.4}{Requirements Documentation}{}% 6
 \BOOKMARK [1][-]{section.4.1}{Vision}{chapter.4}% 7
 \BOOKMARK [1][-]{section.4.2}{Goals}{chapter.4}% 8
@@ -10,21 +10,21 @@
 \BOOKMARK [1][-]{section.4.4}{Risk Analysis}{chapter.4}% 10
 \BOOKMARK [1][-]{section.4.5}{Stakeholder Descriptions}{chapter.4}% 11
 \BOOKMARK [1][-]{section.4.6}{User Stories}{chapter.4}% 12
-\BOOKMARK [1][-]{section.4.7}{System sequence diagrams}{chapter.4}% 13
-\BOOKMARK [1][-]{section.4.8}{Sequence diagrams}{chapter.4}% 14
-\BOOKMARK [0][-]{chapter.5}{Architecture}{}% 15
-\BOOKMARK [0][-]{chapter.6}{What already exist}{}% 16
-\BOOKMARK [0][-]{chapter.7}{Three JS}{}% 17
-\BOOKMARK [0][-]{chapter.8}{Our Approach}{}% 18
-\BOOKMARK [1][-]{section.8.1}{Models}{chapter.8}% 19
-\BOOKMARK [1][-]{section.8.2}{WebServer}{chapter.8}% 20
-\BOOKMARK [1][-]{section.8.3}{Playgrounds}{chapter.8}% 21
-\BOOKMARK [1][-]{section.8.4}{Interpreter}{chapter.8}% 22
-\BOOKMARK [2][-]{subsection.8.4.1}{Tokenize}{section.8.4}% 23
-\BOOKMARK [2][-]{subsection.8.4.2}{Parser}{section.8.4}% 24
-\BOOKMARK [1][-]{section.8.5}{Phyisics}{chapter.8}% 25
-\BOOKMARK [1][-]{section.8.6}{Sensor and Actuator}{chapter.8}% 26
-\BOOKMARK [1][-]{section.8.7}{Customize playgrounds}{chapter.8}% 27
+\BOOKMARK [1][-]{section.4.7}{Use Cases Model}{chapter.4}% 13
+\BOOKMARK [0][-]{chapter.5}{Architecture}{}% 14
+\BOOKMARK [0][-]{chapter.6}{What already exist}{}% 15
+\BOOKMARK [0][-]{chapter.7}{Three JS}{}% 16
+\BOOKMARK [0][-]{chapter.8}{Our Approach}{}% 17
+\BOOKMARK [1][-]{section.8.1}{Base Development}{chapter.8}% 18
+\BOOKMARK [1][-]{section.8.2}{Model View Controller}{chapter.8}% 19
+\BOOKMARK [1][-]{section.8.3}{WebServer }{chapter.8}% 20
+\BOOKMARK [1][-]{section.8.4}{Playgrounds}{chapter.8}% 21
+\BOOKMARK [1][-]{section.8.5}{Interpreter}{chapter.8}% 22
+\BOOKMARK [2][-]{subsection.8.5.1}{Tokenize}{section.8.5}% 23
+\BOOKMARK [2][-]{subsection.8.5.2}{Parser}{section.8.5}% 24
+\BOOKMARK [1][-]{section.8.6}{Phyisics}{chapter.8}% 25
+\BOOKMARK [1][-]{section.8.7}{Sensor and Actuator}{chapter.8}% 26
+\BOOKMARK [1][-]{section.8.8}{Customize playgrounds}{chapter.8}% 27
 \BOOKMARK [0][-]{chapter.9}{Results}{}% 28
 \BOOKMARK [0][-]{chapter.10}{Conclusion and future work}{}% 29
 \BOOKMARK [0][-]{appendix.A}{The different programming languages }{}% 30
