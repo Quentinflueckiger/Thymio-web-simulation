@@ -109,7 +109,7 @@ export default class EnvironmentController {
 
     onDPLeftClicked(e) {
         
-        this.thymio.mediator.setMotors(500,0);
+        this.thymio.mediator.setMotors(300,150);
     }
 
     onDPCenterClicked(e) {
@@ -124,6 +124,6 @@ export default class EnvironmentController {
 
     onDPDownClicked(e) {
         
-        this.thymio.mediator.setMotors(-300,300);
+        this.thymio.mediator.setMotors(-300,-300);
     }
 }

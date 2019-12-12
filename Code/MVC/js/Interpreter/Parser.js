@@ -122,8 +122,7 @@ export default class Parser{
         this.compiler.variablesMap.push({variableName : varName, variableAddress : varAddr, variableSize : varSize});
         this.compiler.freeVariablesIndex += varSize;
 
-
-
+        return temp;
     }
 
     parseStatement(){
@@ -137,6 +136,7 @@ export default class Parser{
         {
             var pos = new SourcePos();
             pos.setValues(this.tokens.front().pos);
+            this.tokens.removeFront();
             var subExpression = this.parseBinaryAndExpression();
             var temp = new Node.BinaryArithmeticNode(pos, Node.AsebaBinaryOperator.ASEBA_OP_BIT_XOR, node, subExpression);
             node = temp;
@@ -146,7 +146,19 @@ export default class Parser{
     }
 
     parseBinaryXorExpression(){
+        var node = this.parseBinaryAndExpression();
 
+        while(this.tokens.front().type === TT.type.TOKEN_OP_BIT_XOR)
+        {
+            var pos = new SourcePos();
+            pos.setValues(this.tokens.front().pos);
+            this.tokens.removeFront();
+            var subExpression = this.parseBinaryAndExpression();
+            var temp = new Node.BinaryArithmeticNode(pos, Node.AsebaBinaryOperator.ASEBA_OP_BIT_XOR, node, subExpression);
+            node = temp;
+        }
+
+        return node;
     }
 
     parseVarDefInit(memoryVectorNode) {

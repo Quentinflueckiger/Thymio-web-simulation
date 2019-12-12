@@ -1103,8 +1103,8 @@
 			if ( !(
 				(tokens.size() >= 2 && tokens[1] == Token::TOKEN_COMMA) ||
 				(tokens.size() >= 3 && tokens[0] == Token::TOKEN_OP_NEG && tokens[2] == Token::TOKEN_COMMA)
-				)
-			)
+				
+			))
 			{
 				// no
 				return nullptr;

@@ -1,4 +1,5 @@
 import SourcePos from "../SourcePos.js"
+import Deque from "../../Deque.js";
 
 const returnType = Object.freeze({
     UNIT : 0,
@@ -24,7 +25,7 @@ class Node {
         this.pos = new SourcePos();
         this.pos.setValues(pos);
 
-        this.children = [];
+        this.children = new Deque();
     }
 
     checkVectorSize(){
@@ -97,6 +98,8 @@ class ProgramNode extends BlockNode {
 class AssignementNode extends Node {
     constructor(pos, left, right){
         super(pos);
+        this.children.addRear(left);
+        this.children.addRear(right);
     }
 
     toString(){return "Assign"}
@@ -144,7 +147,10 @@ class UnaryArithmeticNode extends Node {
 }
 
 class ImmediateNode extends Node {
-
+    constructor(pos, value){
+        super(pos);
+        this.value = value;
+    }
 }
 
 class StoreNode extends Node {
@@ -188,8 +194,34 @@ class AbstractTreeNode extends Node {
     }
 }
 
-class TupleVectorNode extends Node {
+class TupleVectorNode extends AbstractTreeNode {
+    constructor(pos, value){
+        super(pos);
+        this.children.addRear(new ImmediateNode(pos, value));
+    }
+
+    isImmediateVector(){
+        for (let index = 0; index < this.children.size(); index++) {
+            const element = this.children.getAt(index);
+            var node = element;
+            if (!node) return false;          
+        }
+        return true;
+    }
+
+    getImmediateValue(index){
+        /*
+        assert(index < getVectorSize());
+		assert(isImmediateVector());
+		auto* node = dynamic_cast<ImmediateNode*>(children[index]);
+		assert(node);
+		return node->value;
+        */
+    }
     
+    addImmediateValue(value){
+        this.children.addRear(new ImmediateNode(pos, value));
+    }
 }
 
 class MemoryVectorNode extends AbstractTreeNode {

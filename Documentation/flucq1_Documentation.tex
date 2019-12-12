@@ -566,6 +566,8 @@ The fourth category happens when both power values are the same but in a differe
 \begin{center}
   \includegraphics[scale=1]{./move_spdd}
 \end{center}
+
+However this algorithm has flaws such as when the power of one motor is 0 the robot should be rotating on itself with said motor as anchor point, but instead it rotate and moves in the direction of the second motors direction.
 %%How they work in real life, what do they output, what do they return as value, and how they work in the application.
 
 \section{Customize playgrounds}
