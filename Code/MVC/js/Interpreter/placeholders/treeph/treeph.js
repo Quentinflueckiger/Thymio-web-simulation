@@ -241,3 +241,31 @@
     
             children.push_back(memory);
         }
+
+        	//! return the children's size, check for equal size, or E_NOVAL if no child
+            unsigned Node::getVectorSize() const
+            {
+                unsigned size = E_NOVAL;
+                unsigned new_size = E_NOVAL;
+
+                for (auto it : children)
+                {
+                    new_size = it->getVectorSize();
+                    if (size == E_NOVAL)
+                        size = new_size;
+                    else if (size != new_size)
+                        throw TranslatableError(sourcePos, ERROR_ARRAY_SIZE_MISMATCH).arg(size).arg(new_size);
+                }
+
+                return size;
+            }
+
+
+            unsigned TupleVectorNode::getVectorSize() const
+            {
+                unsigned size = 0;
+                NodesVector::const_iterator it;
+                for (it = children.begin(); it != children.end(); it++)
+                    size += (*it)->getVectorSize();
+                return size;
+            }

@@ -59,7 +59,18 @@ class Node {
         console.error("Based unimplemented dump method.");
     }
     getVectorSize() {
-        console.error("Based unimplemented getVectorSize method.");
+        var size = 65535;
+        var new_size = 65535;
+
+        for (const child in this.children) {
+            new_size = child.getVectorSize();
+            if(size === 65535)
+                size = new_size;
+            else if (size !=new_size)
+                console.error("Array size mismatch at: "+this.pos);
+        }
+
+        return size;
     }
 }
 
@@ -139,11 +150,21 @@ class CallSubNode extends Node {
 }
 
 class BinaryArithmeticNode extends Node {
+    constructor(pos, operation, left, right){
+        super(pos);
+        this.operation = operation;
+        this.children.addRear(left);
+        this.children.addRear(right);
+    }
 
 }
 
 class UnaryArithmeticNode extends Node {
-
+    constructor(pos, op, child){
+        super(pos);
+        this.op = op;
+        this.children.addRear(child);
+    }
 }
 
 class ImmediateNode extends Node {
@@ -200,6 +221,16 @@ class TupleVectorNode extends AbstractTreeNode {
         this.children.addRear(new ImmediateNode(pos, value));
     }
 
+    getVectorSize(){
+        var size = 0;
+        for (let index = 0; index != this.children.end(); index++) {
+            size += this.children.getAt(index).getVectorSize();
+            
+        }
+
+        return size;
+    }
+
     isImmediateVector(){
         for (let index = 0; index < this.children.size(); index++) {
             const element = this.children.getAt(index);
@@ -218,7 +249,7 @@ class TupleVectorNode extends AbstractTreeNode {
 		return node->value;
         */
     }
-    
+
     addImmediateValue(value){
         this.children.addRear(new ImmediateNode(pos, value));
     }
