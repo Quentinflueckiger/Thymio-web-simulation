@@ -18,6 +18,9 @@ const AsebaBinaryOperator = Object.freeze({
     ASEBA_OP_BIT_OR : 7,//"ASEBA_OP_BIT_OR",		    // TOKEN_OP_BIT_OR_EQUAL
     ASEBA_OP_BIT_XOR : 8,//"ASEBA_OP_BIT_XOR",		    // TOKEN_OP_BIT_XOR_EQUAL
     ASEBA_OP_BIT_AND : 9,//"ASEBA_OP_BIT_AND"		    // TOKEN_OP_BIT_AND_EQUAL
+    ASEBA_OP_OR : 10,
+    ASEBA_OP_AND : 11,
+    ASEBA_UNARY_OP_NOT : 12
 })
 
 class Node {
@@ -34,7 +37,7 @@ class Node {
     expandAbstractNodes(){
         console.error("Based unimplemented expandAbstractNodes method.");
     }
-    expandVectorialNodes(dump, compiler, index){
+    expandVectorialNodes(compiler, index){
         console.error("Based unimplemented expandVectorialNodes method.");
     }
     typeCheck(){
@@ -112,8 +115,8 @@ class ProgramNode extends BlockNode {
         super.emit(preLinkByteCode);
     }
 
-    expandVectorialNodes(dump, compiler, index){
-        return super.expandVectorialNodes(dump, compiler, index);
+    expandVectorialNodes(compiler, index){
+        return super.expandVectorialNodes(compiler, index);
     }
 }
 
@@ -145,7 +148,10 @@ class FoldedWhileNode extends Node {
 }
 
 class EventDeclNode extends Node {
-
+    constructor(pos, eventId){
+        super(pos);
+        this.eventId = eventId;
+    }
 }
 
 class EmitNode extends Node {
@@ -153,7 +159,10 @@ class EmitNode extends Node {
 }
 
 class SubDeclNode extends Node {
-
+    constructor(pos, subroutineId){
+        super(pos);
+        this.subroutineId = subroutineId;
+    }
 }
 
 class CallSubNode extends Node {
@@ -284,7 +293,7 @@ class MemoryVectorNode extends AbstractTreeNode {
     expandAbstractNodes(dump) {
 
     }
-    expandVectorialNodes(dump, compiler, index) {
+    expandVectorialNodes(compiler, index) {
 
     }
 

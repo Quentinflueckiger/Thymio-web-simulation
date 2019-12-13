@@ -269,3 +269,70 @@
                     size += (*it)->getVectorSize();
                 return size;
             }
+
+            //! return the compile-time base address of the memory range, taking
+            //! into account an immediate index foo[n] or foo[n:m]
+            //! return E_NOVAL if foo[expr]
+            unsigned MemoryVectorNode::getVectorAddr() const
+            {
+                assert(children.size() <= 1);
+
+                int shift = 0;
+
+                // index(es) given?
+                if (children.size() == 1)
+                {
+                    auto* index = dynamic_cast<TupleVectorNode*>(children[0]);
+                    if (index)
+                    {
+                        shift = index->getImmediateValue(0);
+                    }
+                    else
+                        // not know at compile time
+                        return E_NOVAL;
+                }
+
+                if (shift < 0 || shift >= int(arraySize))
+                    throw TranslatableError(sourcePos, ERROR_ARRAY_OUT_OF_BOUND).arg(arrayName).arg(shift).arg(arraySize);
+                return arrayAddr + shift;
+            }
+
+
+            //! return the vector's length
+            unsigned MemoryVectorNode::getVectorSize() const
+            {
+                assert(children.size() <= 1);
+
+                if (children.size() == 1)
+                {
+                    auto* index = dynamic_cast<TupleVectorNode*>(children[0]);
+                    if (index)
+                    {
+                        unsigned numberOfIndex = index->getVectorSize();
+                        // immediate indexes
+                        if (numberOfIndex == 1)
+                        {
+                            // foo[n] -> 1 dimension
+                            return 1;
+                        }
+                        else if (numberOfIndex == 2)
+                        {
+                            const int im0(index->getImmediateValue(0));
+                            const int im1(index->getImmediateValue(1));
+                            if (im1 < 0 || im1 >= int(arraySize))
+                                throw TranslatableError(sourcePos, ERROR_ARRAY_OUT_OF_BOUND).arg(arrayName).arg(im1).arg(arraySize);
+                            // foo[n:m] -> compute the span
+                            return im1 - im0 + 1;
+                        }
+                        else
+                            // whaaaaat? Are you trying foo[[1,2,3]]?
+                            throw TranslatableError(sourcePos, ERROR_ARRAY_ILLEGAL_ACCESS);
+                    }
+                    else
+                        // random access foo[expr]
+                        return 1;
+                }
+                else
+                    // full array access
+                    return arraySize;
+            }

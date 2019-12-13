@@ -369,7 +369,10 @@ export default class Lexer {
     }
 
     printTokens(){
-        console.log("Tokens", this.tokens);
+        this.tokens.items.forEach(element => {
+            console.log(element);
+        });
+        //console.log("Tokens", this.tokens);
     }
 
     isAlphaNumeric(ch) {

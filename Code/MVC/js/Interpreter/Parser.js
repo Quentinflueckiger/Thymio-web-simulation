@@ -32,10 +32,10 @@ export default class Parser{
             }
             // parse the rest of the code
             else {
-                console.log("Deleted : ", this.tokens.front());
-                this.tokens.removeFront();
-                //var child = this.parseStatement();
-                //block.children.push(child);
+                //console.log("Deleted : ", this.tokens.front());
+                //this.tokens.removeFront();
+                var child = this.parseStatement();
+                block.children.addRear(child);
 
             }
         }
@@ -70,6 +70,7 @@ export default class Parser{
         }
 
         this.tokens.removeFront();
+        // !!! one removeFront() too much it seems.
         var constValue = this.expectConstantExpression(constPos, this.parseBinaryOrExpression());
 
         // save constant
@@ -138,7 +139,7 @@ export default class Parser{
             pos.setValues(this.tokens.front().pos);
             this.tokens.removeFront();
             var subExpression = this.parseBinaryAndExpression();
-            var temp = new Node.BinaryArithmeticNode(pos.getValues(), Node.AsebaBinaryOperator.ASEBA_OP_BIT_XOR, node, subExpression);
+            var temp = new Node.BinaryArithmeticNode(pos.getValues(), Node.AsebaBinaryOperator.ASEBA_OP_BIT_OR, node, subExpression);
             node = temp;
         }
 
@@ -272,7 +273,7 @@ export default class Parser{
                 if(this.tokens.size() >=2 && this.tokens.getAt(1).type === TT.type.TOKEN_INT_LITERAL)
                 {
                     this.tokens.removeFront();
-                    this.tokens.getAt(0).iValue = -1;
+                    this.tokens.getAt(0).value = -1;
                     this.tokens.getAt(0).sValue = "-" + this.tokens.getAt(0).sValue;
                     return this.parseUnaryExpression();
                 }
@@ -315,17 +316,194 @@ export default class Parser{
         }
     }
 
+    //! Parse "or" grammar element.
     parseOr(){
+        var node = this.parseAnd();
 
+        while(this.tokens.front().type === TT.type.TOKEN_OP_OR)
+        {
+            var pos = new SourcePos();
+            pos.setValues(this.tokens.front().pos);
+            this.tokens.removeFront();
+            var subExpression = this.parseAnd();
+            var temp = new Node.BinaryArithmeticNode(pos.getValues(), Node.AsebaBinaryOperator.ASEBA_OP_OR, node, subExpression);
+            node = temp;
+        }
+
+        return node;
     }
     
-    parseStatement(){
+    //! Parse "and" grammar element.
+    parseAnd(){
+        var node = this.parseNot();
 
+        while(this.tokens.front().type === TT.type.TOKEN_OP_AND)
+        {
+            var pos = new SourcePos();
+            pos.setValues(this.tokens.front().pos);
+            this.tokens.removeFront();
+            var subExpression = this.parseAnd();
+            var temp = new Node.BinaryArithmeticNode(pos.getValues(), Node.AsebaBinaryOperator.ASEBA_OP_AND, node, subExpression);
+            node = temp;
+        }
+
+        return node;
+    }
+
+    //! Parse "not" grammar element.
+    parseNot(){
+        var pos = new SourcePos();
+        pos.setValues(this.tokens.front().pos);
+
+        var odd = false;
+        while(this.tokens.front() === TT.type.TOKEN_OP_NOT)
+        {
+            odd = !odd;
+            this.tokens.removeFront();
+        }
+
+        if(odd)
+            return new Node.UnaryArithmeticNode(pos.getValues(), Node.AsebaBinaryOperator.ASEBA_UNARY_OP_NOT, this.parseCondition());
+        else
+            return this.parseCondition();
+    }
+
+    //! Parse "condition" grammar element.
+    parseCondition(){
+        var node = this.parseBinaryOrExpression();
+
+        while((this.tokens.front().type === TT.type.TOKEN_OP_EQUAL) || (this.tokens.front().type === TT.type.TOKEN_OP_NOT_EQUAL) ||
+            (this.tokens.front().type === TT.type.TOKEN_OP_BIGGER) || (this.tokens.front().type === TT.type.TOKEN_OP_BIGGER_EQUAL) ||
+            (this.tokens.front().type === TT.type.TOKEN_OP_SMALLER) || (this.tokens.front().type === TT.type.TOKEN_OP_SMALLER_EQUAL)
+        )
+        {
+            var op = this.tokens.front();
+            var pos = new SourcePos();
+            pos.setValues(this.tokens.front().pos);
+            this.tokens.removeFront();
+            var subExpression = this.parseBinaryOrExpression();
+            var temp = new Node.BinaryArithmeticNode(pos.getValues(), this.getAsebaBinaryOperator(op, TT.type.TOKEN_OP_EQUAL, Node.AsebaBinaryOperator.ASEBA_OP_EQUAL), node, subExpression);
+            node = temp;
+        }
+
+        return node;
+    }
+
+    //! Parse "if" grammar element.
+    parseIfWhen(edgeSensitive){
+        this.tokens.removeFront();
+    }
+
+    parseFor(){
+        this.tokens.removeFront();
+    }  
+
+    parseWhile(){
+        this.tokens.removeFront();
+    }
+
+    parseEmit(){
+        this.tokens.removeFront();
+    }
+
+    parseFunctionCall(){
+        this.tokens.removeFront();
+    }
+
+    parseCallSub(){
+        this.tokens.removeFront();
+    }
+
+    parseAssignment(){
+        this.tokens.removeFront();
+    }
+
+    //! Parse "statement" grammar element.
+    parseStatement(){
+        this.freeTemporaryMemory();
+
+        switch(this.tokens.front())
+        {
+            case TT.type.TOKEN_STR_var:
+                console.error("Misplaced vardef at ",this.tokens.front().pos);
+                return false;
+            case TT.type.TOKEN_STR_onevent:
+                return this.parseOnEvent();
+            case TT.type.TOKEN_STR_sub:
+                return this.parseSubDecl();
+            default: return this.parseBlockStatement();
+        }
+    }
+    
+    //! Parse "block statement" grammar element.
+    parseBlockStatement(){
+        switch(this.tokens.front().type)
+        {
+            case TT.type.TOKEN_STR_if:
+                return this.parseIfWhen(false);
+            case TT.type.TOKEN_STR_when: 
+                return this.parseIfWhen(true);
+            case TT.type.TOKEN_STR_for: 
+                return this.parseFor();
+            case TT.type.TOKEN_STR_while: 
+                return this.parseWhile();
+            case TT.type.TOKEN_STR_emit: 
+                return this.parseEmit();
+            case TT.type.TOKEN_STR_hidden_emit: 
+                return this.parseEmit(true);
+            case TT.type.TOKEN_STR_call: 
+                return this.parseFunctionCall();
+            case TT.type.TOKEN_STR_callsub: 
+                return this.parseCallSub();
+            case TT.type.TOKEN_STR_return: 
+                return this.parseReturn();
+			default: return this.parseAssignment();
+        }
+    }
+
+    //! Parse "onevent" grammar element
+    parseOnEvent(){
+        var pos = new SourcePos();
+        pos.setValues(this.tokens.front().pos);
+        this.tokens.removeFront();
+
+        var eventId = this.expectAnyEventId();
+        if(this.compiler.implementedEvents.find(element => element === eventId))
+            console.error("Event already implemented.");
+        this.compiler.implementedEvents.push(eventId);
+
+        this.tokens.removeFront();
+
+        return new Node.EventDeclNode(pos.getValues(), eventId);
+    }
+
+    //! Parse "sub" grammar element, declaration of subroutine
+    parseSubDecl(){
+        var pos = new SourcePos();
+        pos.setValues(this.tokens.front().pos);
+        this.tokens.removeFront();
+
+        if(!(this.tokens.front().type === TT.type.TOKEN_STRING_LITERAL))
+            return false;
+        var name = this.tokens.front().sValue;
+        var it = this.compiler.subroutineReverseTable.find(element => element.revName === name);
+
+        if (it)
+        {
+            return false;
+        }
+        ({constantName : constName, constantValue : constValue});
+        var subroutineId = this.compiler.subroutineTable.length;
+        this.compiler.subroutineTable.push({subName : name, subAddress : 0, subLine : pos.row});
+        this.compiler.subroutineReverseTable.push({revName : name, revId : subroutineId});
+
+        this.tokens.removeFront();
+
+        return new Node.SubDeclNode(pos.getValues(), subroutineId);
     }
 
     parseConstantAndVariable(){
-        
-
+        console.log("parseConstantAndVariable");
     }
 
     parseVarDefInit(memoryVectorNode) {
@@ -408,15 +586,27 @@ export default class Parser{
     }
 
     // Only works when type of token is of IN_LITERAL, and return 0 if the next isn't a token of this type.
-    // To be enhanced when tree is ready
+    //!!!!! To be enhanced when tree is ready
     expectConstantExpression(constPos, tree){
         var result = 0;
+        console.log("CstEx: ", this.tokens.front());
+        console.log("At pos: ", constPos);
         if (this.tokens.front().type === TT.type.TOKEN_INT_LITERAL)
         {
             result = this.tokens.front().value;
             this.tokens.removeFront();
         }
         return result;
+
+        /*var result = 0;
+
+        var tempTree1 = new Node.AssignementNode(constPos.getValues(), new Node.MemoryVectorNode(constPos.getValues(),0,1,"fake"), tree);
+
+        tempTree1 = tempTree1.expandAbstractNodes();
+
+        var tempTree2 = tempTree1.expandVectorialNodes(this.compiler, 1);
+
+        //tempTree2.optimize();*/
     }
 
     // Replace static_cast<AsebaBinaryOperator>((op - Compiler::Token::) + AsebaBinaryOperator)
@@ -458,11 +648,82 @@ export default class Parser{
         */
     }
 
-    // To be enhanced with actual logic
+    //! Check and return a 16 bits signed integer
     expectInt16Literal(){
-
         if(this.tokens.front() === TT.type.TOKEN_OP_NEG)
-        return result;
+        {
+            this.tokens.removeFront();
+            var result = -this.expectAbsoluteInt16Literal(true);  
+            return result;
+        }
+        else
+        {
+            if(this.tokens.front().value < 0){
+                this.tokens.front().value *= -1;
+                var result = -this.expectAbsoluteInt16Literal(true); 
+                return result;
+            }
+            else
+            {
+                var result = this.expectAbsoluteInt16Literal(false); 
+                return result;
+            }
+        }
+
+    }
+
+    //! Check if next token is the absolute part of a 16 bits signed integer literal. If so, return it, if not, throw an exception
+    expectAbsoluteInt16Literal(negative){
+        if(!(this.tokens.front().type === TT.type.TOKEN_INT_LITERAL))
+        {
+            return false;
+        }
+        var limit = 32767;
+        if(negative)
+        {
+            limit++;
+        }
+        if (this.tokens.front().value < 0 || this.tokens.front().value > limit)
+        {
+            console.error("Int out of range at pos: ", this.tokens.front().pos);
+        }
+
+        return this.tokens.front().value;
+    }
+
+    //! Check if next token is a known local or global event identifier
+    expectAnyEventId(){
+        if(!(this.tokens.front().type === TT.type.TOKEN_STRING_LITERAL))
+        {
+            return false;
+        }
+        var name = this.tokens.front().sValue;
+        var pos = new SourcePos();
+        pos.setValues(this.tokens.front().pos);
+        var eventId = this.findAnyEvent(name, pos.getValues());
+
+        return eventId;
+    }
+
+    findAnyEvent(name, pos){
+        return this.findInTable("allEvent", name, pos)
+    }
+
+    findInTable(map, name, pos){
+        switch(map)
+        {
+            case "allEvent":
+                this.compiler.allEventsMap.forEach(element => {
+                    if (element.eventName === name)
+                        return element.eventId;
+                });
+                console.error("Event not found at pos:",pos);
+                break;
+        }
+    }
+
+    freeTemporaryMemory(){
+        this.compiler.endVariableIndex = 0;
     }
 
     link() {

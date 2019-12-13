@@ -1,4 +1,29 @@
 {
+	typename MapType::const_iterator findInTable(const MapType& map, const std::wstring& name, const SourcePos& pos, const ErrorCode notFoundError, const ErrorCode misspelledError)
+	{
+		auto it(map.find(name));
+		if (it == map.end())
+		{
+			const unsigned maxDist(3);
+			std::wstring bestName;
+			unsigned bestDist(std::numeric_limits<unsigned>::max());
+			for (auto jt(map.begin()); jt != map.end(); ++jt)
+			{
+				const std::wstring thatName(jt->first);
+				const unsigned d(editDistance<std::wstring>(name, thatName, maxDist));
+				if (d < bestDist && d < maxDist)
+				{
+					bestDist = d;
+					bestName = thatName;
+				}
+			}
+			if (bestDist < maxDist)
+				throw TranslatableError(pos, misspelledError).arg(name).arg(bestName);
+			else
+				throw TranslatableError(pos, notFoundError).arg(name);
+		}
+		return it;
+	}
 	//! There is a bug in the compiler, ask for a bug report
 	void Compiler::internalCompilerError() const
 	{

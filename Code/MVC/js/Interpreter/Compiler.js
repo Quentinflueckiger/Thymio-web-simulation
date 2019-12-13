@@ -113,6 +113,8 @@ export default class Compiler {
 			return false;
 		}
 		*/
+		console.log("Consts:", this.constantsMap);
+		console.log("Variables: ", this.variablesMap);
 		return true;
 	}
 
@@ -130,6 +132,8 @@ export default class Compiler {
 
 		this.globalEventsMap.length = 0;
 		this.allEventsMap.length = 0;
+		
+		this.allEventsMap.push({eventName : "testevent", eventId : "testId"});
 	}
 
 }    
