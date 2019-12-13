@@ -12,7 +12,7 @@ export default class Parser{
     parseProgram(tokens){
         this.tokens = tokens;
         var block = new Node.ProgramNode(this.tokens.front().pos);
-
+        console.log("Prog: ", block);
         while(this.tokens.size() > 1){
             // parse all declarations for constants
             if (this.tokens.front().type === TT.type.TOKEN_STR_const)
@@ -90,19 +90,20 @@ export default class Parser{
         varPos.setValues(this.tokens.front().pos);
         this.tokens.removeFront();
         var varSize = 65535;
-        var varAddr = this.compiler.freeVariablesIndex;
-
+        var varAddr = this.compiler.freeVariableIndex;
+        var exist = false;
         // check if variable exists
         this.compiler.variablesMap.forEach(element => {
             if (element.variableName === varName)
-                console.error("Variable "+varName+" already exist.");
+                exist = true;;
         });
-
         // check if variable conflicts with a constant
         this.compiler.constantsMap.forEach(element => {
             if (element.constantName === varName)
-                console.error("A constant with the name "+varName+" already exist.")
+                exist = true;
         });
+        if (exist)
+            return false;
 
         // optional assignation
         var me = new Node.MemoryVectorNode(varPos, varAddr, varSize, varName);
@@ -120,14 +121,15 @@ export default class Parser{
         
         // save variable
         this.compiler.variablesMap.push({variableName : varName, variableAddress : varAddr, variableSize : varSize});
-        this.compiler.freeVariablesIndex += varSize;
+        this.compiler.freeVariableIndex += varSize;
+        
+        console.log("Save variable: ",this.compiler.variablesMap);
 
         return temp;
     }
 
     //! Parse "binary or" grammar element.
     parseBinaryOrExpression(){
-        console.log("Level 0");
         var node = this.parseBinaryXorExpression();
 
         while(this.tokens.front().type === TT.type.TOKEN_OP_BIT_OR)
@@ -136,7 +138,7 @@ export default class Parser{
             pos.setValues(this.tokens.front().pos);
             this.tokens.removeFront();
             var subExpression = this.parseBinaryAndExpression();
-            var temp = new Node.BinaryArithmeticNode(pos, Node.AsebaBinaryOperator.ASEBA_OP_BIT_XOR, node, subExpression);
+            var temp = new Node.BinaryArithmeticNode(pos.getValues(), Node.AsebaBinaryOperator.ASEBA_OP_BIT_XOR, node, subExpression);
             node = temp;
         }
 
@@ -145,7 +147,6 @@ export default class Parser{
 
     //! Parse "binary xor" grammar element.
     parseBinaryXorExpression(){
-        console.log("Level 1");
         var node = this.parseBinaryAndExpression();
 
         while(this.tokens.front().type === TT.type.TOKEN_OP_BIT_XOR)
@@ -154,7 +155,7 @@ export default class Parser{
             pos.setValues(this.tokens.front().pos);
             this.tokens.removeFront();
             var subExpression = this.parseBinaryAndExpression();
-            var temp = new Node.BinaryArithmeticNode(pos, Node.AsebaBinaryOperator.ASEBA_OP_BIT_XOR, node, subExpression);
+            var temp = new Node.BinaryArithmeticNode(pos.getValues(), Node.AsebaBinaryOperator.ASEBA_OP_BIT_XOR, node, subExpression);
             node = temp;
         }
 
@@ -163,7 +164,6 @@ export default class Parser{
 
     //! Parse "binary and" grammar element.
     parseBinaryAndExpression(){
-        console.log("Level 2");
         var node = this.parseShiftExpression();
 
         while(this.tokens.front().type === TT.type.TOKEN_OP_BIT_AND)
@@ -172,7 +172,7 @@ export default class Parser{
             pos.setValues(this.tokens.front().pos);
             this.tokens.removeFront();
             var subExpression = this.parseShiftExpression();
-            var temp = new Node.BinaryArithmeticNode(pos, Node.AsebaBinaryOperator.ASEBA_OP_BIT_AND, node, subExpression);
+            var temp = new Node.BinaryArithmeticNode(pos.getValues(), Node.AsebaBinaryOperator.ASEBA_OP_BIT_AND, node, subExpression);
             node = temp;
         }
 
@@ -181,7 +181,6 @@ export default class Parser{
 
     //! Parse "shift_expression" grammar element.
     parseShiftExpression(){
-        console.log("Level 3");
         var node = this.parseAddExpression();
 
         while((this.tokens.front().type === TT.type.TOKEN_OP_SHIFT_LEFT) || (this.tokens.front().type === TT.type.TOKEN_OP_SHIFT_RIGHT))
@@ -191,7 +190,7 @@ export default class Parser{
             pos.setValues(this.tokens.front().pos);
             this.tokens.removeFront();
             var subExpression = this.parseAddExpression();
-            var temp = new Node.BinaryArithmeticNode(pos, this.getAsebaBinaryOperator(op, TT.type.TOKEN_OP_SHIFT_LEFT, Node.AsebaBinaryOperator.ASEBA_OP_SHIFT_LEFT), node, subExpression);
+            var temp = new Node.BinaryArithmeticNode(pos.getValues(), this.getAsebaBinaryOperator(op, TT.type.TOKEN_OP_SHIFT_LEFT, Node.AsebaBinaryOperator.ASEBA_OP_SHIFT_LEFT), node, subExpression);
             node = temp;
         }
 
@@ -200,7 +199,6 @@ export default class Parser{
 
     //! Parse "add_expression" grammar element.
     parseAddExpression(){
-        console.log("Level 4");
         var node = this.parseMultExpression();
 
         while((this.tokens.front().type === TT.type.TOKEN_OP_ADD) || (this.tokens.front().type === TT.type.TOKEN_OP_NEG))
@@ -210,7 +208,7 @@ export default class Parser{
             pos.setValues(this.tokens.front().pos);
             this.tokens.removeFront();
             var subExpression = this.parseMultExpression();
-            var temp = new Node.BinaryArithmeticNode(pos, this.getAsebaBinaryOperator(op, TT.type.TOKEN_OP_ADD, Node.AsebaBinaryOperator.ASEBA_OP_ADD), node, subExpression);
+            var temp = new Node.BinaryArithmeticNode(pos.getValues(), this.getAsebaBinaryOperator(op, TT.type.TOKEN_OP_ADD, Node.AsebaBinaryOperator.ASEBA_OP_ADD), node, subExpression);
             node = temp;
         }
 
@@ -219,7 +217,6 @@ export default class Parser{
 
     //! Parse "mult_expression" grammar element.
     parseMultExpression(){
-        console.log("Level 5");
         var node = this.parseUnaryExpression();
 
         while((this.tokens.front().type === TT.type.TOKEN_OP_MULT) || (this.tokens.front().type === TT.type.TOKEN_OP_DIV) || (this.tokens.front().type === TT.type.TOKEN_OP_MOD))
@@ -229,7 +226,7 @@ export default class Parser{
             pos.setValues(this.tokens.front().pos);
             this.tokens.removeFront();
             var subExpression = this.parseUnaryExpression();
-            var temp = new Node.BinaryArithmeticNode(pos, this.getAsebaBinaryOperator(op, TT.type.TOKEN_OP_MULT, Node.AsebaBinaryOperator.ASEBA_OP_MULT), node, subExpression);
+            var temp = new Node.BinaryArithmeticNode(pos.getValues(), this.getAsebaBinaryOperator(op, TT.type.TOKEN_OP_MULT, Node.AsebaBinaryOperator.ASEBA_OP_MULT), node, subExpression);
             node = temp;
         }
 
@@ -238,7 +235,6 @@ export default class Parser{
 
     //! Parse "unary_expression" grammar element.
     parseUnaryExpression(){
-        console.log("Level 6");
         if (!((this.tokens.front().type === TT.type.TOKEN_PAR_OPEN) || (this.tokens.front().type === TT.type.TOKEN_BRACKET_OPEN) || 
             (this.tokens.front().type === TT.type.TOKEN_OP_NEG) || (this.tokens.front().type === TT.type.TOKEN_OP_BIT_NOT) || 
             (this.tokens.front().type === TT.type.TOKEN_STR_abs) || (this.tokens.front().type === TT.type.TOKEN_STRING_LITERAL) || 
@@ -283,7 +279,7 @@ export default class Parser{
                 else
                 {
                     this.tokens.removeFront();
-                    return new Node.UnaryArithmeticNode(pos, Node.AsebaBinaryOperator.ASEBA_UNARY_OP_SUB, this.parseUnaryExpression());
+                    return new Node.UnaryArithmeticNode(pos.getValues(), Node.AsebaBinaryOperator.ASEBA_UNARY_OP_SUB, this.parseUnaryExpression());
                 }
             }
 
@@ -291,19 +287,19 @@ export default class Parser{
             {
                 this.tokens.removeFront();
 
-                return new Node.UnaryArithmeticNode(pos, Node.AsebaBinaryOperator.ASEBA_UNARY_OP_BIT_NOT, this.parseUnaryExpression());
+                return new Node.UnaryArithmeticNode(pos.getValues(), Node.AsebaBinaryOperator.ASEBA_UNARY_OP_BIT_NOT, this.parseUnaryExpression());
             }
 
             case TT.type.TOKEN_STR_abs:
             {
                 this.tokens.removeFront();
 
-                return new Node.UnaryArithmeticNode(pos, Node.AsebaBinaryOperator.ASEBA_UNARY_OP_ABS, this.parseUnaryExpression());
+                return new Node.UnaryArithmeticNode(pos.getValues(), Node.AsebaBinaryOperator.ASEBA_UNARY_OP_ABS, this.parseUnaryExpression());
             }
 
             case TT.type.TOKEN_INT_LITERAL:
             {
-                var arrayCtor = new Node.TupleVectorNode(pos, this.expectInt16Literal());
+                var arrayCtor = new Node.TupleVectorNode(pos.getValues(), this.expectInt16Literal());
                 this.tokens.removeFront();
                 return arrayCtor;
             }
@@ -329,7 +325,6 @@ export default class Parser{
 
     parseConstantAndVariable(){
         
-        console.log("Level 9");
 
     }
 
@@ -350,15 +345,13 @@ export default class Parser{
                 rValue = this.parseBinaryOrExpression();
             }
 
-            console.log("Rval: "+rValue);
             if (memoryVectorNode.getVectorSize() === 65535)
             {
-                console.log("MVN: ", rValue);
                 // infere the variable's size based on the initialization
                 memoryVectorNode.arraySize = rValue.getVectorSize();
             }
 
-            return new Node.AssignementNode(pos, memoryVectorNode, rValue);
+            return new Node.AssignementNode(pos.getValues(), memoryVectorNode, rValue);
         }
 
         return null;
@@ -366,7 +359,6 @@ export default class Parser{
 
     //! Parse "[ .... ]" grammar element
     parseTupleVector(compatibility) {
-        console.log("Level 7");
 
         if (!compatibility)
         {
@@ -436,16 +428,40 @@ export default class Parser{
         var asebaIndex = tokenIndex + asebaOP;
         
         console.log("TokenIndex: "+token+" asebaIndex: "+asebaIndex);
-        var resultAsebaOP = Node.AsebaBinaryOperator.ASEBA_OP_ADD;
+        //var resultAsebaOP = Node.AsebaBinaryOperator.asebaIndex;
 
         return resultAsebaOP;
+        /*
+        const arrAs = Object.values(AsebaBinaryOperator);
+        const keys = Object.keys(AsebaBinaryOperator);
+        var index = 0;
+        var result;
+        for(const val of arrAs)
+        {
+        if (val === 4)
+        {
+            var checkIndex = 0;
+            for(const key of keys)
+            {
+            if (checkIndex === index)
+            {
+                result = key;
+            }
+            checkIndex++;
+            }
+        }
+        index++;
+        }
+
+        console.log(result);
+        console.log(AsebaBinaryOperator[result])
+        */
     }
 
     // To be enhanced with actual logic
     expectInt16Literal(){
-        console.log("Level 8");
-        var result = 2;
 
+        if(this.tokens.front() === TT.type.TOKEN_OP_NEG)
         return result;
     }
 

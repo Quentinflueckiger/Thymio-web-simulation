@@ -28,7 +28,7 @@ export default class Deque {
     }
 
     end() {
-        return this.item[this.item.length-1];
+        return this.items[this.items.length-1];
     }
 
     getAt(pos) {
