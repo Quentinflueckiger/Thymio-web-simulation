@@ -97,8 +97,7 @@
             "positionZ" : 0,
             "size" : 3,
             "color" : "#9fa3bd"
-        },
-        "hasWalls": true
+          }
         }
     ],
     "cylinders" : [

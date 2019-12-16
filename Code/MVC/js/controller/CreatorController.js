@@ -97,6 +97,17 @@ export default class CreatorController {
     }
 
     saveClicked(e){
+        var fileName;
+        var promptTxt = prompt("Please enter a name for the file:", "");
+        if (promptTxt == null || promptTxt == "") {
+            return false;
+        } else {
+            fileName = promptTxt;
+        }
+        this.prepareData(fileName);
+    }
+
+    prepareData(fileName){
         var boxes = [], uShapes = [], cylinders = [], tracks = [], ground = [], thymio = [];
         for(var i = 0; i < this.playground.shapes.length; i++){
             switch(this.playground.shapes[i].className)
@@ -125,15 +136,80 @@ export default class CreatorController {
                     break;
             }
         }
-
-        createJsonFile(ground, boxes, cylinders, tracks, uShapes, thymio);
-
-        console.log("b: ", ground);
+        console.log("boxes: ", boxes);
+        this.createJsonFile(ground, boxes, cylinders, tracks, uShapes, fileName);
     }
 
-    createJsonFile(ground, boxes, cylinders, tracks, uShapes, thymio){
+    createJsonFile(ground, boxes, cylinders, tracks, uShapes, fileName){
+        var obj = {
+            playground: fileName
+        };
+        if(ground[0].className === 'Plane'){
+            obj.planes = [
+                {
+                    name : ground[0].name,
+                    props : ground[0].properties,
+                    hasWalls : ground[0].hasWalls
+                }
+            ]
+        }
+        else if(ground[0].className === 'Octagon'){
+            obj.octagons = [
+                {
+                    name : ground[0].name,
+                    props : ground[0].properties,
+                    hasWalls : ground[0].hasWalls
+                }
+            ]
+        }
+        else {
+            console.error("No ground given");
+        }
+        obj.boxes = [];
+        boxes.forEach(box => {
+            obj.boxes.push({
+                name : box.name,
+                props : box.properties
+            })
+        });
+        obj.cylinders = [];
+        cylinders.forEach(cylinder => {
+            obj.cylinders.push({
+                name : cylinder.name,
+                props : cylinder.properties
+            })
+        });
+        obj.tracks = [];
+        tracks.forEach(track => {
+            obj.tracks.push({
+                name : track.name,
+                props : track.properties
+            })
+        });
+        obj.uShapes = [];
+        uShapes.forEach(uShape => {
+            obj.uShapes.push({
+                name : uShape.name,
+                props : uShape.properties
+            })
+        });
         
+        var json = JSON.stringify(obj);
+        this.download(""+fileName+".json", json);
     }
+
+    download(filename, text) {
+        var element = document.createElement('a');
+        element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+        element.setAttribute('download', filename);
+      
+        element.style.display = 'none';
+        document.body.appendChild(element);
+      
+        element.click();
+      
+        document.body.removeChild(element);
+      }
 
     generateGround(e){
         var form = document.getElementById("groundForms").elements;

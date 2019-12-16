@@ -56,7 +56,7 @@ export default class EnvironmentController {
 
         if (file.planes) {
             for (const planeRecord of file.planes) {
-                var plane = new Plane(planeRecord.name, planeRecord.props);
+                var plane = new Plane(planeRecord.name, planeRecord.props, planeRecord.hasWalls);
                 playground.addShape(plane);
             }
         }
@@ -99,6 +99,10 @@ export default class EnvironmentController {
     onJsonPGSubmited(e){
         const file = document.getElementById("jsonPlaygroundFile").files[0];
         var ec = this;
+        this.environment.removePlayground(this.environment.playground[0]);
+        
+        this.thymio.mediator.stopMotors();
+        this.thymio.mediator.resetRotation();
         this.loadFile(file, ec);
     }
 
