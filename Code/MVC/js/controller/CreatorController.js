@@ -18,7 +18,7 @@ export default class CreatorController {
 
     loadPlayground(playgroundName) {
         var cc = this;
-        //loadJSON(function test(){}, this);
+
         var xmlhttp = new XMLHttpRequest();
         xmlhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
@@ -36,6 +36,10 @@ export default class CreatorController {
         const playground = new Playground(file.playground);
         this.environment.addPlayground(playground);
         
+        var props = {width : 50, height : 50, color : "#9fa3bd"};
+        var ground = new Plane("ground", props);
+        playground.addShape(ground);
+
         if (file.boxes) {
             for (const boxRecord of file.boxes) {
                 var box = new Box(boxRecord.name, boxRecord.props);
@@ -82,5 +86,21 @@ export default class CreatorController {
                 playground.addShape(track);
             }
         }
+    }
+
+    onKeyDown(e){
+        //console.log("E pressed: ",e.keyCode);
+    }
+
+    onKeyUp(e){
+        //console.log("E releases: ",e.keyCode);
+    }
+
+    changeGroundSizeX(x){
+        console.log("X: ", x);
+    }
+
+    changeGroundSizeZ(){
+        console.log("Z: ");
     }
 }
