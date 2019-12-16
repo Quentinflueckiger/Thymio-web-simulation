@@ -14,6 +14,9 @@ export default class CreatorController {
         this.view = new CreatorView(this, environment);
         this.view.initialize();
         this.thymio = thymio;
+        this.playground;
+        this.ground;
+        this.shapes = [];
     }
 
     loadPlayground(playgroundName) {
@@ -35,10 +38,6 @@ export default class CreatorController {
 
         const playground = new Playground(file.playground);
         this.environment.addPlayground(playground);
-        
-        var props = {width : 50, height : 50, color : "#9fa3bd"};
-        var ground = new Plane("ground", props);
-        playground.addShape(ground);
 
         if (file.boxes) {
             for (const boxRecord of file.boxes) {
@@ -86,6 +85,7 @@ export default class CreatorController {
                 playground.addShape(track);
             }
         }
+        this.playground = playground;
     }
 
     onKeyDown(e){
@@ -96,11 +96,70 @@ export default class CreatorController {
         //console.log("E releases: ",e.keyCode);
     }
 
-    changeGroundSizeX(x){
-        console.log("X: ", x);
+    saveClicked(e){
+        var boxes = [], uShapes = [], cylinders = [], tracks = [], ground = [], thymio = [];
+        for(var i = 0; i < this.playground.shapes.length; i++){
+            switch(this.playground.shapes[i].className)
+            {
+                case "Box":
+                    boxes.push(this.playground.shapes[i]);
+                    break;
+                case "UShapedFigure":
+                    uShapes.push(this.playground.shapes[i]);
+                    break;
+                case "Track":
+                    tracks.push(this.playground.shapes[i]);
+                    break;
+                case "Cylinder":
+                    cylinders.push(this.playground.shapes[i]);
+                    break;
+                case "Thymio":
+                    thymio.push(this.playground.shapes[i]);
+                    break;
+                case "Plane":
+                case "Octagon":
+                    ground.push(this.playground.shapes[i]);
+                    break;
+                default:
+                    console.error("Unregistered shape: ", this.playground.shapes[i].className);
+                    break;
+            }
+        }
+
+        createJsonFile(ground, boxes, cylinders, tracks, uShapes, thymio);
+
+        console.log("b: ", ground);
     }
 
-    changeGroundSizeZ(){
-        console.log("Z: ");
+    createJsonFile(ground, boxes, cylinders, tracks, uShapes, thymio){
+        
+    }
+
+    generateGround(e){
+        var form = document.getElementById("groundForms").elements;
+
+        this.playground.removeShape(this.ground);
+
+        if(form[0].checked){
+            var props = {
+                width :  parseInt(form[2].value, 10), 
+                height :  parseInt(form[3].value, 10),
+                color : form[4].value
+            };
+            var ground = new Plane("ground", props, form[5].checked);
+        }
+        else{
+            console.log("Val:  ", form[2].value);
+            var props = {
+                segmentLength : parseInt(form[2].value, 10)/2,
+                color : form[4].value
+            };
+            var ground = new Octagon("ground", props, form[5].checked);
+        }
+
+        this.playground.addShape(ground);
+        this.ground = ground;
+
+
     }
 }

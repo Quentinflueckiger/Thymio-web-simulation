@@ -3,23 +3,19 @@ import Observable from '../../Observable.js';
 export default class CreatorButtons extends Observable{
     constructor() {
         super();
-        //this.mediator = mediator;
-        //this.renderingContext = renderingContext;
     }
     
     init() {
         
-        document.getElementById("pgPickerButton").addEventListener('click', (e)=>this.onPGPickerClicked(e));
-        document.getElementById("aeslFileButton").addEventListener('click', (e)=>this.onAeslFileSubmited(e));
+        document.getElementById("saveButton").addEventListener('click', (e)=>this.onSaveClicked(e));
+        document.getElementById("generateGround").addEventListener('click', (e)=>this.onGenerateGroundClicked(e));
     }
 
-    onPGPickerClicked(e) {
-        
-        this.emit('pgPickerClicked', { e });
+    onSaveClicked(e){
+        this.emit('saveClicked', { e });
     }
 
-    onAeslFileSubmited(e) {
-        
-        this.emit('aeslFileSubmited', { e });
+    onGenerateGroundClicked(e) {
+        this.emit('generateGround', { e });
     }
 }

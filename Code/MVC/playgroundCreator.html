@@ -16,7 +16,19 @@
     <form action="./index.html">
         <input type="submit" value="To Simulator" />
     </form>
+    <button id = "saveButton" type="button">Save Playground</button>
 </div>  
+<div id="groundBtns">
+    <form id="groundForms">
+        Ground shape:
+        <input type="radio" name="shape" value="square" checked> Rectangle <input type="radio" name="shape" value="octagonal"> Octagonal <br>
+        Width: <input type="range" name="width" min="5" max="100" value="50" step="1"><br>
+        Length: <input type="range" name="length" min="5" max="100" value="50" step="1"><br>
+        Color: <input type="color" id="groundColor" name="color" value="#bdbbbb"><br>
+        Walls: <input type="radio" name="walls" value="true" checked> With <input type="radio" name="walls" value="false"> Without <br>
+        <button id = "generateGround" type="button">Generate Ground</button>
+    </form>
+</div>
 <script src="./bin/three.js"></script>
 <script src="./bin/physijs/physi.js"></script>
 <script src="./Creator.js" type ="module"></script>

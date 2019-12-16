@@ -8,6 +8,7 @@ export default class SimulatorButtons extends Observable{
     init() {
         
         document.getElementById("pgPickerButton").addEventListener('click', (e)=>this.onPGPickerClicked(e));
+        document.getElementById("jsonPGButton").addEventListener( 'click', (e)=>this.onJsonPGSubmited(e));
         document.getElementById("aeslFileButton").addEventListener('click', (e)=>this.onAeslFileSubmited(e));
 
         document.getElementById("dPadUp").addEventListener('click', (e)=>this.onDPUpClicked(e));
@@ -20,6 +21,11 @@ export default class SimulatorButtons extends Observable{
     onPGPickerClicked(e) {
         
         this.emit('pgPickerClicked', { e });
+    }
+
+    onJsonPGSubmited(e) {
+
+        this.emit('jsonPGSubmited', { e });
     }
 
     onAeslFileSubmited(e) {

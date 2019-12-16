@@ -77,6 +77,22 @@ a, button, input, select {
 	margin: 4px 2px;
 	cursor: pointer;
 }
+#groundBtns {
+	position: absolute;
+	top: 2%;
+	right: 0px;
+	width: 25%;
+	padding: 10px;
+	box-sizing: border-box;
+	text-align: center;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	pointer-events: none;
+	z-index: 1; 
+	color: green;
+}
 /*
 TEST FOR D-PAD
 .btn-group-vertical .button {

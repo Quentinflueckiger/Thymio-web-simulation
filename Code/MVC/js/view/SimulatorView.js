@@ -29,8 +29,9 @@ export default class SimulatorView {
         this.simulatorButtons.init();
         
         this.simulatorButtons.addObserver('pgPickerClicked', (e) => this.controller.onPGPickerClicked(e));
+        this.simulatorButtons.addObserver('jsonPGSubmited', (e) => this.controller.onJsonPGSubmited(e));
         this.simulatorButtons.addObserver('aeslFileSubmited', (e) => this.controller.onAeslFileSubmited(e));
-        
+
         this.simulatorButtons.addObserver('dPadUpClicked', (e) => this.controller.onDPUpClicked(e));
         this.simulatorButtons.addObserver('dPadLeftClicked', (e) => this.controller.onDPLeftClicked(e));
         this.simulatorButtons.addObserver('dPadCenterClicked', (e) => this.controller.onDPCenterClicked(e));

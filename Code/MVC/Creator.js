@@ -13,4 +13,4 @@ const environmentController = new CreatorController(environment, thymio);
 
 // Register the playground loaded as default
 environment.addThymio(thymio);
-environmentController.loadPlayground("emptyPlayground");
+environmentController.loadPlayground("Baseplayground");
