@@ -93,6 +93,22 @@ a, button, input, select {
 	z-index: 1; 
 	color: green;
 }
+#boxBtns{
+	position: absolute;
+	top: 60%;
+	right: 0px;
+	width: 25%;
+	padding: 10px;
+	box-sizing: border-box;
+	text-align: center;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	pointer-events: none;
+	z-index: 1; 
+	color: green;
+}
 /*
 TEST FOR D-PAD
 .btn-group-vertical .button {

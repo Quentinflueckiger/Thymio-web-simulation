@@ -9,6 +9,7 @@ export default class CreatorButtons extends Observable{
         
         document.getElementById("saveButton").addEventListener('click', (e)=>this.onSaveClicked(e));
         document.getElementById("generateGround").addEventListener('click', (e)=>this.onGenerateGroundClicked(e));
+        document.getElementById("generateBox").addEventListener('click', (e)=>this.onGenerateBoxClicked(e));
     }
 
     onSaveClicked(e){
@@ -17,5 +18,9 @@ export default class CreatorButtons extends Observable{
 
     onGenerateGroundClicked(e) {
         this.emit('generateGround', { e });
+    }
+
+    onGenerateBoxClicked(e) {
+        this.emit('generateBox', { e });
     }
 }

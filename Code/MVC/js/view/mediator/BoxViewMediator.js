@@ -20,9 +20,12 @@ export default class BoxViewMediator extends ViewMediator {
 
         // Compute Y offset
         mesh.position.y += this.model.properties.height/2;
-
+        
         mesh.castShadow = true;
         mesh.receiveShadow = true;
+
+        if(this.model.properties.rotateY)
+            mesh.rotateY(THREE.Math.degToRad(this.model.properties.rotateY, 10));
 
         return mesh;//container;
     }

@@ -17,6 +17,11 @@ export default class CreatorController {
         this.playground;
         this.ground;
         this.shapes = [];
+        this.ctrl = false;
+        this.positionShape = false;
+        this.rollOverMesh;
+        this.shapeType = 0;         // 0 = no shape, 1 = Box, 2 = Cylinder, 3 = uShape, 4 = tracks
+        this.props;
     }
 
     loadPlayground(playgroundName) {
@@ -54,8 +59,8 @@ export default class CreatorController {
         }
         
         if (file.thymios) {
-            
-            this.thymio.mediator.setPosition(file.thymios.positionX, file.thymios.positionX);
+            if(this.thymio.mediator)
+                this.thymio.mediator.setPosition(file.thymios.positionX, file.thymios.positionX);
         }
         
         if (file.octagons) {
@@ -89,11 +94,98 @@ export default class CreatorController {
     }
 
     onKeyDown(e){
-        //console.log("E pressed: ",e.keyCode);
+        console.log("E pressed: ",e.keyCode);
+        if (e.keyCode === 17)
+        {
+            this.ctrl = true;
+        }
+        else if (e.keyCode === 90 && this.ctrl)
+        {
+            console.log("Ctrl-Z");
+        }
+        else if (e.keyCode === 16)
+        {
+            this.view.renderingContext.controls.enabled = !this.view.renderingContext.controls.enabled;
+        }
+        else if (e.keyCode === 27)
+        {
+            this.positionShape  = false;
+            this.view.renderingContext.scene.remove(this.rollOverMesh);
+        }
     }
 
     onKeyUp(e){
         //console.log("E releases: ",e.keyCode);
+        if (e.keyCode === 17)
+        {
+            this.ctrl = false;
+        }
+    }
+
+    onMouseMove(e){
+        if(this.positionShape){
+            e.preventDefault();
+            this.view.mouse.set( ( e.clientX / window.innerWidth ) * 2 - 1, - ( e.clientY / window.innerHeight ) * 2 + 1 );
+            this.view.raycaster.setFromCamera( this.view.mouse, this.view.camera );
+            var intersects = this.view.raycaster.intersectObjects( this.view.objects );
+            if ( intersects.length > 0 ) {
+                var intersect = intersects[ 0 ];
+                this.rollOverMesh.position.x = intersect.point.x;
+                this.rollOverMesh.position.z = intersect.point.z;
+
+                this.rollOverMesh.position.divideScalar( 1 ).floor().multiplyScalar( 1).addScalar( 0.5 );
+            }
+            this.view.render();
+        }
+        
+    }
+
+    onMouseDown(e){
+        if(!this.view.renderingContext.controls.enabled && this.positionShape)
+        {
+            this.positionShape  = false;
+            
+            e.preventDefault();
+			this.view.mouse.set( ( e.clientX / window.innerWidth ) * 2 - 1, - ( e.clientY / window.innerHeight ) * 2 + 1 );
+			this.view.raycaster.setFromCamera( this.view.mouse, this.view.camera );
+			var intersects = this.view.raycaster.intersectObjects( this.view.objects );
+			if ( intersects.length > 0 ) {
+				var intersect = intersects[ 0 ];
+
+                
+                var voxel = new THREE.Vector3(0,0,0);
+                voxel.x = intersect.point.x;
+                voxel.z = intersect.point.z;
+                voxel.divideScalar( 1 ).floor().multiplyScalar( 1).addScalar( 0.5 );
+                switch(this.shapeType)
+                {   
+                    // Box
+                    case 1:
+                        this.props.positionX = voxel.x;
+                        this.props.positionZ = voxel.z;
+                        var mesh = new Box("Box"+this.props.positionX, this.props)
+                        break;
+                    // Cylinder
+                    case 2:
+                        break;
+                    // UShape
+                    case 3:
+                        break;
+                    // Track
+                    case 4:
+                        break;
+                    default:
+                        break;
+                }
+                this.playground.addShape(mesh);
+                //this.view.objects.push(mesh);
+				
+				this.view.render();
+			}
+
+            this.view.renderingContext.scene.remove(this.rollOverMesh);
+        }
+
     }
 
     saveClicked(e){
@@ -235,7 +327,31 @@ export default class CreatorController {
 
         this.playground.addShape(ground);
         this.ground = ground;
+    }
 
+    generateBox(e){
+        if(this.positionShape)
+            this.view.renderingContext.scene.remove(this.rollOverMesh);
+        var form = document.getElementById("boxForms").elements;
+        
+        this.props = {
+            width : parseInt(form[0].value, 10),
+            height : parseInt(form[2].value, 10),
+            depth : parseInt(form[1].value, 10),
+            color : form[3].value,
+            positionX : 0,
+            positionZ : 0,
+            rotateY : parseInt(form[4].value, 10)
+        };
+        var rollOverGeo = new THREE.BoxBufferGeometry(parseInt(form[0].value, 10),parseInt(form[2].value, 10),parseInt(form[1].value, 10));
+	    var rollOverMaterial = new THREE.MeshBasicMaterial( { color: form[3].value, opacity: 0.5, transparent: true } );
+        this.rollOverMesh = new THREE.Mesh( rollOverGeo, rollOverMaterial );
+        this.rollOverMesh.position.y += parseInt(form[2].value, 10)/2;
+        this.rollOverMesh.rotateY(THREE.Math.degToRad(parseInt(form[4].value, 10)));
+        this.view.renderingContext.scene.add( this.rollOverMesh );
 
+        this.shapeType = 1;
+
+        this.positionShape  = true;
     }
 }
