@@ -17,11 +17,14 @@ export default class CreatorController {
         this.playground;
         this.ground;
         this.shapes = [];
+        this.oldShapes = [];
         this.ctrl = false;
         this.positionShape = false;
         this.rollOverMesh;
-        this.shapeType = 0;         // 0 = no shape, 1 = Box, 2 = Cylinder, 3 = uShape, 4 = tracks
+        this.shapeType = 0;         // 0 = no shape, 1 = Box, 2 = Cylinder, 3 = Tracks
         this.props;
+        this.points = [];
+        this.oldPoints = [];
     }
 
     loadPlayground(playgroundName) {
@@ -94,14 +97,40 @@ export default class CreatorController {
     }
 
     onKeyDown(e){
-        console.log("E pressed: ",e.keyCode);
         if (e.keyCode === 17)
         {
             this.ctrl = true;
         }
         else if (e.keyCode === 90 && this.ctrl)
         {
-            console.log("Ctrl-Z");
+            if(this.shapes.length > 0 && this.shapeType != 3)
+            {
+                var temp = this.shapes.pop();
+                this.playground.removeShape(temp);
+                this.oldShapes.push(temp);
+            }
+            else if(this.points.length > 0 && this.shapeType === 3)
+            {
+                var temp = this.points.pop();
+                this.view.renderingContext.scene.remove(temp);
+                this.oldPoints.push(temp);
+            }
+        }
+        else if (e.keyCode === 89 && this.ctrl)
+        {
+            if (this.oldShapes.length > 0 && this.shapeType != 3)
+            {
+                var temp = this.oldShapes.pop();
+                this.playground.addShape(temp);
+                this.shapes.push(temp);
+            }
+            else if(this.oldPoints.length > 0 && this.shapeType === 3)
+            {
+                var temp = this.oldPoints.pop();
+                this.view.renderingContext.scene.add(temp);
+                this.points.push(temp);
+            }
+            
         }
         else if (e.keyCode === 16)
         {
@@ -115,7 +144,6 @@ export default class CreatorController {
     }
 
     onKeyUp(e){
-        //console.log("E releases: ",e.keyCode);
         if (e.keyCode === 17)
         {
             this.ctrl = false;
@@ -140,6 +168,7 @@ export default class CreatorController {
         
     }
 
+    // Might need to optimize it because as soon as a mesh is placed down the application is slowed down
     onMouseDown(e){
         if(!this.view.renderingContext.controls.enabled && this.positionShape)
         {
@@ -153,32 +182,45 @@ export default class CreatorController {
 				var intersect = intersects[ 0 ];
 
                 
-                var voxel = new THREE.Vector3(0,0,0);
-                voxel.x = intersect.point.x;
-                voxel.z = intersect.point.z;
-                voxel.divideScalar( 1 ).floor().multiplyScalar( 1).addScalar( 0.5 );
+                var interesctPos = new THREE.Vector3(0,0,0);
+                interesctPos.x = intersect.point.x;
+                interesctPos.z = intersect.point.z;
+                interesctPos.divideScalar( 1 ).floor().multiplyScalar( 1).addScalar( 0.5 );
                 switch(this.shapeType)
                 {   
                     // Box
                     case 1:
-                        this.props.positionX = voxel.x;
-                        this.props.positionZ = voxel.z;
-                        var mesh = new Box("Box"+this.props.positionX, this.props)
+                        this.props.positionX = interesctPos.x;
+                        this.props.positionZ = interesctPos.z;
+                        var mesh = new Box("Box"+this.props.positionX, this.props);
                         break;
                     // Cylinder
                     case 2:
-                        break;
-                    // UShape
-                    case 3:
+                        this.props.positionX = interesctPos.x;
+                        this.props.positionZ = interesctPos.z;
+                        var mesh = new Cylinder("Cylinder"+this.props.positionX, this.props);
                         break;
                     // Track
-                    case 4:
-                        break;
+                    case 3:
+                        // create little red point at pos
+                        var rollOverGeo = new THREE.BoxBufferGeometry(0.5, 0.5, 0.5);
+	                    var rollOverMaterial = new THREE.MeshBasicMaterial( { color: this.props.color } );
+                        var tempMesh = new THREE.Mesh( rollOverGeo, rollOverMaterial );
+                        tempMesh.position.y += 0.25;
+                        tempMesh.position.x = interesctPos.x;
+                        tempMesh.position.z = interesctPos.z;
+                        this.view.renderingContext.scene.add( tempMesh );
+                        this.points.push(tempMesh);
+                        this.positionShape = true;
+                        // go back to placing next points
+                        // do it while generate button not pressed
+                        return;
                     default:
                         break;
                 }
                 this.playground.addShape(mesh);
                 //this.view.objects.push(mesh);
+                this.shapes.push(mesh);
 				
 				this.view.render();
 			}
@@ -228,7 +270,6 @@ export default class CreatorController {
                     break;
             }
         }
-        console.log("boxes: ", boxes);
         this.createJsonFile(ground, boxes, cylinders, tracks, uShapes, fileName);
     }
 
@@ -304,7 +345,8 @@ export default class CreatorController {
       }
 
     generateGround(e){
-        var form = document.getElementById("groundForms").elements;
+        this.deletePlaceholder();
+        var form = document.getElementById("groundForm").elements;
 
         this.playground.removeShape(this.ground);
 
@@ -317,7 +359,6 @@ export default class CreatorController {
             var ground = new Plane("ground", props, form[5].checked);
         }
         else{
-            console.log("Val:  ", form[2].value);
             var props = {
                 segmentLength : parseInt(form[2].value, 10)/2,
                 color : form[4].value
@@ -329,10 +370,9 @@ export default class CreatorController {
         this.ground = ground;
     }
 
-    generateBox(e){
-        if(this.positionShape)
-            this.view.renderingContext.scene.remove(this.rollOverMesh);
-        var form = document.getElementById("boxForms").elements;
+    generateBox(e){    
+        this.deletePlaceholder();
+        var form = document.getElementById("boxForm").elements;
         
         this.props = {
             width : parseInt(form[0].value, 10),
@@ -353,5 +393,81 @@ export default class CreatorController {
         this.shapeType = 1;
 
         this.positionShape  = true;
+    }
+
+    generateCylinder(e){
+        this.deletePlaceholder();
+        var form = document.getElementById("cylinderForm").elements;
+
+        this.props = {
+            topRadius : parseInt(form[1].value, 10),
+            botRadius : parseInt(form[0].value, 10),
+            height : parseInt(form[2].value, 10),
+            positionX : 0,
+            positionZ : 0,
+            color : form[3].value
+        };
+        var rollOverGeo = new THREE.CylinderGeometry(this.props.topRadius, this.props.botRadius, this.props.height, 32);
+	    var rollOverMaterial = new THREE.MeshBasicMaterial( { color: form[3].value, opacity: 0.5, transparent: true } );
+        this.rollOverMesh = new THREE.Mesh( rollOverGeo, rollOverMaterial );
+        this.rollOverMesh.position.y += parseInt(form[2].value, 10)/2;
+        this.view.renderingContext.scene.add( this.rollOverMesh );
+
+        this.shapeType = 2;
+
+        this.positionShape = true;
+    }
+
+    startTrack(e){
+        this.deletePlaceholder();
+
+        var form = document.getElementById("trackForm").elements;
+        
+        this.props = {
+            color : form[0].value,
+            points : []
+        }
+
+        var rollOverGeo = new THREE.BoxBufferGeometry(0.5, 0.5, 0.5);
+	    var rollOverMaterial = new THREE.MeshBasicMaterial( { color: form[0].value, opacity: 0.5, transparent: true } );
+        this.rollOverMesh = new THREE.Mesh( rollOverGeo, rollOverMaterial );
+        this.rollOverMesh.position.y += 0.25;
+        this.view.renderingContext.scene.add( this.rollOverMesh );
+        this.shapeType = 3;
+
+        this.positionShape = true;
+    }
+
+    generateTrack(e){
+        this.points.pop();
+        // Compute tracks with point array
+        this.points.forEach(pt => {                      
+            this.props.points.push({
+                positionX : pt.position.x,
+                positionZ : pt.position.z
+            });
+        });
+        this.deletePlaceholder();
+        this.points = [];
+
+        var mesh = new Track("Track"+this.points.length, this.props);
+        this.playground.addShape(mesh);
+        this.shapes.push(mesh);
+				
+		this.view.render();
+		
+
+        this.view.renderingContext.scene.remove(this.rollOverMesh);
+    }
+
+    deletePlaceholder(){
+        if(this.positionShape && this.points.length == 0)
+            this.view.renderingContext.scene.remove(this.rollOverMesh);
+        else if (this.positionShape && this.points.length > 0)
+        {
+            this.points.forEach(pt => {
+                this.view.renderingContext.scene.remove(pt)
+            });
+        }
     }
 }

@@ -48,6 +48,9 @@ export default class CreatorView {
         this.creatorButtons.addObserver('saveClicked', (e) => this.controller.saveClicked(e));
         this.creatorButtons.addObserver('generateGround', () => this.controller.generateGround());
         this.creatorButtons.addObserver('generateBox', (e) => this.controller.generateBox(e));
+        this.creatorButtons.addObserver('generateCylinder', (e) => this.controller.generateCylinder(e));
+        this.creatorButtons.addObserver('startTrack', (e) => this.controller.startTrack(e));
+        this.creatorButtons.addObserver('generateTrack', (e) => this.controller.generateTrack(e));
 
         window.addEventListener( 'keydown', (e) => this.controller.onKeyDown(e));
         window.addEventListener( 'keyup', (e) => this.controller.onKeyUp(e));
@@ -64,7 +67,6 @@ export default class CreatorView {
 
         this.environmentViewMediator.onFrameRenderered();
         this.renderingContext.renderer.render(this.renderingContext.scene, this.renderingContext.camera);
-        this.camera = this.renderingContext.camera;
     }
 
     onWindowResize(){

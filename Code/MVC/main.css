@@ -20,7 +20,7 @@ canvas{
 	user-select: none;
 	pointer-events: none;
 	z-index: 1; 
-	color: green;
+	color: rgb(0, 0, 0);
 }
 
 button {
@@ -84,7 +84,7 @@ a, button, input, select {
 	width: 25%;
 	padding: 10px;
 	box-sizing: border-box;
-	text-align: center;
+	text-align: right;
 	-moz-user-select: none;
 	-webkit-user-select: none;
 	-ms-user-select: none;
@@ -100,7 +100,39 @@ a, button, input, select {
 	width: 25%;
 	padding: 10px;
 	box-sizing: border-box;
-	text-align: center;
+	text-align: right;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	pointer-events: none;
+	z-index: 1; 
+	color: green;
+}
+#cylinderBtns{
+	position: absolute;
+	top: 60%;
+	left: 0px;
+	width: 23%;
+	padding: 10px;
+	box-sizing: border-box;
+	text-align: left;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	pointer-events: none;
+	z-index: 1; 
+	color: green;
+}
+#trackBtns{
+	position: absolute;
+	top: 2%;
+	left: 0px;
+	width: 23%;
+	padding: 10px;
+	box-sizing: border-box;
+	text-align: left;
 	-moz-user-select: none;
 	-webkit-user-select: none;
 	-ms-user-select: none;
