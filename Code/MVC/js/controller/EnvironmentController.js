@@ -14,6 +14,7 @@ export default class EnvironmentController {
         this.view = new SimulatorView(this, environment);
         this.view.initialize();
         this.thymio = thymio;
+        this.playground;
     }
 
     onPGPickerClicked(e){
@@ -94,6 +95,8 @@ export default class EnvironmentController {
                 playground.addShape(track);
             }
         }
+
+        this.playground = playground;
     }
 
     onJsonPGSubmited(e){
@@ -115,7 +118,7 @@ export default class EnvironmentController {
 
     onDPUpClicked(e) {
         
-        this.thymio.mediator.setMotors(300,-300);
+        this.thymio.mediator.setMotors(300,300);
     }
 
     onDPLeftClicked(e) {
@@ -130,7 +133,7 @@ export default class EnvironmentController {
 
     onDPRightClicked(e) {
         
-        this.thymio.mediator.setMotors(0,300);
+        this.thymio.mediator.setMotors(150,300);
     }
 
     onDPDownClicked(e) {

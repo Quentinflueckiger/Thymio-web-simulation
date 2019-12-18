@@ -342,7 +342,7 @@ export default class CreatorController {
         element.click();
       
         document.body.removeChild(element);
-      }
+    }
 
     generateGround(e){
         this.deletePlaceholder();
