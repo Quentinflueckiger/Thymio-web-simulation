@@ -3,9 +3,9 @@ import Deque from '../Deque.js';
 import SourcePos from './SourcePos.js';
 import * as Node from './tree/Node.js';
 
-export default class Parser{
+export default class ParserIntegral{
     constructor(compiler){
-        this.tokens;
+        this.tokens = [];
         this.compiler = compiler;
     }
 
@@ -17,23 +17,24 @@ export default class Parser{
             // parse all declarations for constants
             if (this.tokens.front().type === TT.type.TOKEN_STR_const)
             {
+                console.log("Constant");
                 this.parseConstDef();
             }
-            // discard all variables declaration
+            // parse all vars declarations
             else if (this.tokens.front().type === TT.type.TOKEN_STR_var)
             {   
-                this.tokens.removeFront();
-                if(this.tokens.front().type === TT.type.TOKEN_STRING_LITERAL)
+                console.log("Variable");
+                var child = this.parseVarDef();
+                if(child)
                 {
-                    this.tokens.removeFront();
-                    if(this.tokens.front().type === TT.type.TOKEN_STRING_LITERAL || this.tokens.front().type === TT.type.TOKEN_INT_LITERAL)
-                        this.tokens.removeFront();
+                    block.children.addRear(child);
                 }
             }
             // parse the rest of the code
             else {
+                //console.log("Deleted : ", this.tokens.front());
+                //this.tokens.removeFront();
                 var child = this.parseStatement();
-                console.log("Child: ",child);
                 block.children.addRear(child);
 
             }
@@ -69,8 +70,8 @@ export default class Parser{
         }
 
         this.tokens.removeFront();
-        
-        var constValue = this.expectConstantExpression(constPos);
+        // !!! one removeFront() too much it seems.
+        var constValue = this.expectConstantExpression(constPos, this.parseBinaryOrExpression());
 
         // save constant
         this.compiler.constantsMap.push({constantName : constName, constantValue : constValue});
@@ -388,75 +389,7 @@ export default class Parser{
 
     //! Parse "if" grammar element.
     parseIfWhen(edgeSensitive){
-        var ifNode = new Node.IfWhenNode(this.tokens.front().pos);
-
-        // eat "if"/"when"
-        ifNode.edgeSensitive = edgeSensitive;
         this.tokens.removeFront();
-        
-        // condition
-        console.log("ParseOr: ", this.parseOr());
-        // !!!!!!!!!!!!!!!!!!!! Have to look into parseOr() and the following 
-        //ifNode.children.addRear(this.parseOr());
-
-        // then keyworkd
-        if (edgeSensitive)
-            if(this.tokens.front().type !== TT.type.TOKEN_STR_do)
-            {
-                console.log("Toke: ",this.tokens.front());
-                console.log("A");
-                return false;
-            }
-        else
-            if(this.tokens.front().type !== TT.type.TOKEN_STR_then)
-            {
-                console.log("B");
-                return false;
-            }
-
-        // parse true condition
-        ifNode.children.addRear(new Node.BlockNode((this.tokens.front().pos)));
-        while(!((this.tokens.front().type === TT.type.TOKEN_STR_else) || 
-                (this.tokens.front().type === TT.type.TOKEN_STR_elseif) ||
-                (this.tokens.front().type === TT.type.TOKEN_STR_end) 
-        ))
-        {
-            ifNode.children.addRear(this.parseBlockStatement());
-        }
-
-        // parse false condition (only for if)
-        /* To be translated if "if" is needed
-        if (!edgeSensitive)
-		{
-			if (tokens.front() == Token::TOKEN_STR_else)
-			{
-				tokens.pop_front();
-
-				ifNode->children.push_back(new BlockNode(tokens.front().pos));
-				while (tokens.front() != Token::TOKEN_STR_end)
-					ifNode->children[2]->children.push_back(parseBlockStatement());
-			}
-			// if elseif, queue new if directly after and return before parsing trailing end
-			if (tokens.front() == Token::TOKEN_STR_elseif)
-			{
-				ifNode->children.push_back(parseIfWhen(false));
-				return ifNode.release();
-			}
-        }
-        */
-
-        // end keyword
-        ifNode.endLine = this.tokens.front().pos.row;
-        if(!(this.tokens.front().type === TT.type.TOKEN_STR_end))
-        {
-            console.log("C");
-            return false;
-        }
-        this.tokens.removeFront();
-
-        return ifNode;
-
-        //this.tokens.removeFront();
     }
 
     parseFor(){
@@ -487,7 +420,7 @@ export default class Parser{
     parseStatement(){
         this.freeTemporaryMemory();
 
-        switch(this.tokens.front().type)
+        switch(this.tokens.front())
         {
             case TT.type.TOKEN_STR_var:
                 console.error("Misplaced vardef at ",this.tokens.front().pos);
@@ -496,8 +429,7 @@ export default class Parser{
                 return this.parseOnEvent();
             case TT.type.TOKEN_STR_sub:
                 return this.parseSubDecl();
-            default: 
-                return this.parseBlockStatement();
+            default: return this.parseBlockStatement();
         }
     }
     
@@ -628,11 +560,11 @@ export default class Parser{
             if (this.tokens.front().type === TT.type.TOKEN_BRACKET_OPEN)
             {
                 //nested tuples
-                arrayCtor.children.addRear(this.parseTupleVector());
+                arrayCtor.children.push(this.parseTupleVector());
             }
             else
             {
-                arrayCtor.children.addRear(this.parseBinaryOrExpression());
+                arrayCtor.children.push(this.parseBinaryOrExpression());
             }
 
             if (this.tokens.front().type !== TT.type.TOKEN_COMMA)
@@ -653,8 +585,10 @@ export default class Parser{
 
     // Only works when type of token is of IN_LITERAL, and return 0 if the next isn't a token of this type.
     //!!!!! To be enhanced when tree is ready
-    expectConstantExpression(constPos){
+    expectConstantExpression(constPos, tree){
         var result = 0;
+        console.log("CstEx: ", this.tokens.front());
+        console.log("At pos: ", constPos);
         if (this.tokens.front().type === TT.type.TOKEN_INT_LITERAL)
         {
             result = this.tokens.front().value;
@@ -759,10 +693,9 @@ export default class Parser{
     expectAnyEventId(){
         if(!(this.tokens.front().type === TT.type.TOKEN_STRING_LITERAL))
         {
-            console.error("Expected string for event declaration.");
             return false;
         }
-        var name = this.tokens.front().value;
+        var name = this.tokens.front().sValue;
         var pos = new SourcePos();
         pos.setValues(this.tokens.front().pos);
         var eventId = this.findAnyEvent(name, pos.getValues());
@@ -778,14 +711,10 @@ export default class Parser{
         switch(map)
         {
             case "allEvent":
-                var result;
                 this.compiler.allEventsMap.forEach(element => {
-                    if (element.eventName.localeCompare(name)===0){
-                        result = element.eventId;
-                    }
+                    if (element.eventName === name)
+                        return element.eventId;
                 });
-                if(result)
-                    return result;
                 console.error("Event not found at pos:",pos);
                 break;
         }

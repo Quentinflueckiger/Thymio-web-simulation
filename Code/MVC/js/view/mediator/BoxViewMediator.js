@@ -7,7 +7,7 @@ export default class BoxViewMediator extends ViewMediator {
 
     makeObject3D(){
         //const container = new THREE.Object3D();
-        const mesh = new Physijs.BoxMesh(
+        const mesh = new THREE.Mesh(
             new THREE.BoxGeometry(this.model.properties.width, this.model.properties.height, this.model.properties.depth),
             new THREE.MeshPhongMaterial( { color : this.model.properties.color} ),
             100

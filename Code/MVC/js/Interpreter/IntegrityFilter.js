@@ -3,7 +3,7 @@ import Compiler from './Compiler.js';
 
 
 // This content will most likely end in the compiler
-function loadFile(file, environmentController) {
+function loadFile(file, ec) {
     var reader = new FileReader();
 
     
@@ -16,7 +16,7 @@ function loadFile(file, environmentController) {
     reader.addEventListener('load', function(e) {
         var text = e.target.result;
 
-        interpreteSource(text);
+        interpreteSource(text, ec);
     });
     
     // file reading failed
@@ -36,7 +36,7 @@ function loadFile(file, environmentController) {
     reader.readAsText(file);
 }
 
-function interpreteSource(source) {
+function interpreteSource(source, ec) {
     var compiler = new Compiler();
     
     compiler.setTargetDescription();//getDescription(nodeId));
@@ -45,7 +45,7 @@ function interpreteSource(source) {
     var result = compiler.compile(source, 1, 1, 1);
 
     if (result) {
-
+        ec.setProgram(result);
     }
     else {
         

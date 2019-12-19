@@ -11,12 +11,8 @@ export default class RenderingContext {
 
     static getDefault(containerElement) {
 
-        Physijs.scripts.worker = "../../bin/physijs/physijs_worker.js";
-        Physijs.scripts.ammo = "../../bin/physijs/ammo.js";
-
         const width  = window.innerWidth, height = window.innerHeight;
-        const scene = new Physijs.Scene();
-        scene.setGravity(new THREE.Vector3( 0, -30, 0 ));
+        const scene = new THREE.Scene();
         const camera = new THREE.PerspectiveCamera(45, width / height, 1, 10000);
         const renderer = new THREE.WebGLRenderer();
 

@@ -15,6 +15,7 @@ export default class EnvironmentController {
         this.view.initialize();
         this.thymio = thymio;
         this.playground;
+        this.program;
     }
 
     onPGPickerClicked(e){
@@ -173,5 +174,9 @@ export default class EnvironmentController {
 
         // read as text file
         reader.readAsText(file);
+    }
+
+    setProgram(program){
+        this.program = program;
     }
 }

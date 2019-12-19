@@ -57,7 +57,7 @@ export default class ThymioViewMediator extends ViewMediator {
                 this.initSensor();  
                 
             this.move();
-            this.controlFrontProx(this.object3D.children[1]);
+            //this.controlFrontProx(this.object3D.children[1]);
         }
         
     }
@@ -124,7 +124,7 @@ export default class ThymioViewMediator extends ViewMediator {
         tempMesh.position.y += 1.5;
         tempMesh.position.x = this.object3D.position.x;
         tempMesh.position.z = this.object3D.position.z + 3;
-        this.object3D.add(tempMesh);
+        //this.object3D.add(tempMesh);
         this.sensorInitalized = true;
     }
 

@@ -48,7 +48,6 @@ export default class SimulatorView {
 
         this.environmentViewMediator.onFrameRenderered();
         this.renderingContext.renderer.render(this.renderingContext.scene, this.renderingContext.camera);
-        this.renderingContext.scene.simulate();
     }
 
     onWindowResize(){

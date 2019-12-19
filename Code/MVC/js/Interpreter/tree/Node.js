@@ -132,7 +132,27 @@ class AssignementNode extends Node {
 }
 
 class IfWhenNode extends Node {
+    constructor(pos){
+        super(pos);
+        this.edgeSensitive;
+        this.endLine;
+    }
 
+    checkVectorSize(){
+        /*
+        assert(children.size() > 0);
+
+		unsigned conditionSize = children[0]->getVectorSize();
+		if (conditionSize != 1)
+			throw TranslatableError(sourcePos, ERROR_IF_VECTOR_CONDITION);
+		// check true block
+		if (children.size() > 1 && children[1])
+			children[1]->checkVectorSize();
+		// check false block
+		if (children.size() > 2 && children[2])
+            children[2]->checkVectorSize();
+        */
+    };
 }
 
 class FoldedIfWhenNode extends Node {
