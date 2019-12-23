@@ -404,13 +404,11 @@ export default class Parser{
             if(this.tokens.front().type !== TT.type.TOKEN_STR_do)
             {
                 console.log("Toke: ",this.tokens.front());
-                console.log("A");
                 return false;
             }
         else
             if(this.tokens.front().type !== TT.type.TOKEN_STR_then)
             {
-                console.log("B");
                 return false;
             }
 

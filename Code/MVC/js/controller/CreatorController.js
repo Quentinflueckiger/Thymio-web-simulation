@@ -97,10 +97,12 @@ export default class CreatorController {
     }
 
     onKeyDown(e){
+        // Test for control key
         if (e.keyCode === 17)
         {
             this.ctrl = true;
         }
+        // Test for "Z" and control key
         else if (e.keyCode === 90 && this.ctrl)
         {
             if(this.shapes.length > 0 && this.shapeType != 3)
@@ -116,6 +118,7 @@ export default class CreatorController {
                 this.oldPoints.push(temp);
             }
         }
+        // Test for "Y" and control key
         else if (e.keyCode === 89 && this.ctrl)
         {
             if (this.oldShapes.length > 0 && this.shapeType != 3)
@@ -132,10 +135,12 @@ export default class CreatorController {
             }
             
         }
+        // Test for shift key
         else if (e.keyCode === 16)
         {
             this.view.renderingContext.controls.enabled = !this.view.renderingContext.controls.enabled;
         }
+        // Test for escape key
         else if (e.keyCode === 27)
         {
             this.positionShape  = false;
@@ -150,6 +155,7 @@ export default class CreatorController {
         }
     }
 
+    // Might need to optimize it because as soon as a mesh is placed down the application is slowed down
     onMouseMove(e){
         if(this.positionShape){
             e.preventDefault();

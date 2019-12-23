@@ -47,8 +47,8 @@ export default class RenderingContext {
         /*var helper = new THREE.CameraHelper( light.shadow.camera );
         scene.add( helper );*/
 
-        var axesHelper = new THREE.AxesHelper( 20 );
-        scene.add( axesHelper );
+        //var axesHelper = new THREE.AxesHelper( 20 );
+        //scene.add( axesHelper );
 
         /*
         var testBox = new Physijs.BoxMesh(

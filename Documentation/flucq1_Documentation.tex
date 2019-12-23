@@ -81,12 +81,10 @@
 
 \clearpage
 
-\includegraphics[width=\textwidth]{./Declaration_of_authonomy-1}
-\clearpage
+\includegraphics{./Declaration_of_authonomy.pdf}
 \clearpage
 
 Management Summary
-\clearpage
 \clearpage
 
 \tableofcontents
@@ -293,7 +291,7 @@ Failure:\\
   \item User access the website.
   \item User input a .aesl file.
   \item System control file integrity.
-  \item System compile file to JavaScript code that can be run as behaviour.
+  \item System compile file to \texttt{JavaScript} code that can be run as behaviour.
   \item System run given program.
 \end{enumerate}
 \textbf{Extensions: }
@@ -357,17 +355,18 @@ Failure:\\
 We decided to divide the architecture into two different parts. One for the simulation side and the other one for the customization, although they are very similar there are still some differences that push us to look at them with two different angles. Both are build based on a Model View Controller system where the elements of the playground, be it a wall or the Thymio robot, are models and the page is seen by the user is the view. This view registers user inputs and transmits them to the controller. 
 
 As said we have split the architecture, bellow is a graphic representing the architecture for the simulator. We can see the Model View Controller and a second component which is the interpreter, 
-that is singular to the simulator page. Its role is to test the integrity of the file given as input through the controller and compile it into JavaScript code for it to be used as behavior code for the Thymio Model.
+that is singular to the simulator page. Its role is to test the integrity of the file given as input through the controller and compile it into \texttt{JavaScript} code for it to be used as behavior code for the Thymio Model.
 
 \begin{center}
   \includegraphics[width=\textwidth]{./architecture_proposal-Page-1}
 \end{center}
 
-
 And here is the second Model View Controller responsible for the playground customization, its architecture is the same as the other one except it doesn't implement an interpreter.
 \begin{center}
   \includegraphics[width=\textwidth]{./architecture_proposal-Page-2}
 \end{center}
+%% TODO : Add text about different elements and transition, link it with current code
+
 
 \chapter{What already exist} 
 
@@ -393,8 +392,10 @@ The specification and usage can be found on their website with the following lin
 
 \section{Base Development}
 
-The first steps were to learn how to use the Three JS library and thus we integrated the needed code directly onto some .html file, which was not very efficient for a big application but was okay to test the functionalities. 
+The first steps were to learn how to use the \texttt{threejs} library and thus we integrated the needed code directly onto some .html file, which was not very efficient for a big application but was okay to test the functionalities. 
 At that time, we looked for some useful methods that we would need later on, such as the way to resize the window and its content. Another functionality added at this period was the controls of the camera, that comes from the OrbitControls.js file and allows the creation of an OrbitControls object which let the user move the camera, rotate it and zoom with the mouse.
+Afterward, we implemented method to create different Shapes with more ease for a larger application. We then moved the scripting part outside of the html and inside different \texttt{JavaScript} file as it was not convenient to have all the code into one single html file.
+
 
 \section{Model View Controller}
 
@@ -432,15 +433,18 @@ The text that needed to be added to the web.config file is the following : \\
 </configuration>
 \end{lstlisting}
 
-Unfortunately, after implementing the new MVC architecture for our application we encountered an issue where the application wasn't able to locate some Javascript file and giving the following error message in the console : 
+Unfortunately, after implementing the new MVC architecture for our application we encountered an issue where the application wasn't able to locate some \texttt{JavaScript} file and giving the following error message in the console : 
 \texttt{javascript file not found on server, net::ERR\textunderscore ABORTED 404 (Not Found)} .  After a while of debugging and asking questions to persons who could know the issue, 
 we decided to move away from ISS Manager as our knowledge of this software is too small and the time needed to acquire this knowledge wasn't worth the effort. 
 The alternative solution we came up with was to use XAMPP, we managed to push the same version of the application without any problem and without having to do anything special. So we decided to go forth with XAMPP.
 
 \section{Playgrounds}
 
-There was two steps for the algorithm to create tracks, the first one was to compute a simple line between two points. But the result was 
-too thin and therefore a better solution was found.
+We decided to create three different build-in playgrounds for the application. A basic, with four walls and a square plane. A borderless, composed of a track that leads out of the octagon plane. And one with multiple obstacle, walls and a track. 
+Each on of them would be composed of one \texttt{Group} element that is filled with different meshes created from the previously implemented method found in the \textt{GeometricalMeshes.js} file.
+
+We decided to enhance the the amount of different meshes and thus added an algorithm to create tracks. There was two steps for the algorithm to create tracks, the first one was to compute a simple line between two points. 
+But the result was too thin and therefore a better solution was found.
 The second iteration for this alogrithm takes an array of points, those points are of type Vector3 so as to register the three coordinates, and compute 
 a new Vector3 that holds the resulting vector position of the next point minus the current point. The x and z values of this vector are then used 
 as the center to position a box object, which represent the track, and then it is aligned to this vector.
@@ -461,11 +465,11 @@ as the center to position a box object, which represent the track, and then it i
   }
 \end{lstlisting} 
 
-We decided to load only once the Thymio model, as it takes in average 500ms to load it, and we encountered some issues where the model would not load everytime when we would change the playgrounds.
+We decided to load only once the Thymio model, as it takes in average 500ms to 1'000ms to load it, and we encountered some issues where the model would not load everytime when we would change the playgrounds.
 Therefore we reset it's position and rotation whenever we change the playground, or if a position is given in the playground.json data file, the Thymio is moved to the wanted position.
 
-Thinking about the creation of playground we decided to change how the playgrounds data were recorded and instead of having them as JavaScript file, we moved them all into a Json file. So later on it would not require more work to load a 
-customized playground. To do so we open and read a json file of a given name, and then skim through the json file and create the Shapes accordingly of the data. Bellow an example for the boxes.
+Thinking about the creation of playground we decided to change how the playgrounds data were recorded and instead of having them as \texttt{JavaScript} file, we moved them all into a \texttt{JSON} file. So later on it would not require more work to load a 
+customized playground. To do so we open and read a \texttt{JSON} file of a given name, and then skim through the \texttt{JSON} file and create the Shapes accordingly of the data. Bellow an example for the boxes.
 \begin{lstlisting}[language=JavaScript, basicstyle=\ttfamily\small]
   if (file.boxes) {
     for (const boxRecord of file.boxes) {
@@ -475,13 +479,13 @@ customized playground. To do so we open and read a json file of a given name, an
   }
 \end{lstlisting} 
 
-Unfortunately we found later on that Three JS has a built in function that translate a ThreeJS Object into a Json file element, and inversely. But we are still using the solution we developed.
+Unfortunately we found later on that \texttt{threejs} has a built in function that translate a ThreeJS Object into a \texttt{JSON} file element, and inversely. But we are still using the solution we developed.
 
 \section{Interpreter}
 The interpreter found that compile/translate .aesl file into another programming language is the one used in the Thymio Suite application, its source code can be found in the following repository \href{https://github.com/aseba-community/aseba/tree/master/aseba/compiler}{Aseba git}.
-Unfortunately, it is a C++ one, so we had to understand it and find a way to either use it and then use a C++ to Javascript interpreter, or translate the compiler from C++ to Javascript by hand.
+Unfortunately, it is a C++ one, so we had to understand it and find a way to either use it and then use a C++ to \texttt{JavaScript} interpreter, or translate the compiler from C++ to \texttt{JavaScript} by hand.
 We decided to translate the already existing one from \texttt{Aseba} and started by the compiler. After looking at his behaviour we recognize how it was built and separated,
-then came the time to translate it to Javascript. First thing first it creates multiple maps of variable, constant and events that need to be rebuild with each call to the compiler in case the previous ones produced errors.
+then came the time to translate it to \texttt{JavaScript}. First thing first it creates multiple maps of variable, constant and events that need to be rebuild with each call to the compiler in case the previous ones produced errors.
 Afterwhat comes the tokenization of the source file, which consist of creating Tokens with the position of the element, its type in the environment, and its value if provided. Then this tokenized source is parsed into Nodes, 
 which are expanded and type checked. Once the program is checked, it is emited as a first bytecode output and then this bytecode is linked creating the final program.
 
@@ -489,6 +493,7 @@ Here is a sequence diagram of the compilation of a file.
 \begin{center}
   \includegraphics[width=\textwidth]{./compiler_sequence_diagram}
 \end{center}
+%% TODO : ADD MORE TEXT
 
 \subsection{Tokenize}
 
@@ -505,12 +510,13 @@ the code for this regex.
 \end{lstlisting}  
 We have to be wary of one point when using this method, and it is that if the \texttt{ch} parameter is not a string, then it will throw an error. Coming back to the switch we first test if the chain of character is a number by combining regex and looking for multiple characters.
 If it is not the case we check wether or not its value is the same as one of the given keywords, such as \texttt{when} or \texttt{const}. And if none of the keywords match it is labeled as a string literal and given the value of the chain of characters. Here we encountered a probleme 
-of language between C++ and JavaScript, as the type of the token is given with an enum in C++, and they don't exist in JavaScript so we had to find a workaround to this language incompatibility. We used the Object method \texttt{freeze()}, which prevents the modification of existing property attributes and the addition of new ones, 
+of language between C++ and \texttt{JavaScript}, as the type of the token is given with an enum in C++, and they don't exist in \texttt{JavaScript} so we had to find a workaround to this language incompatibility. We used the Object method \texttt{freeze()}, which prevents the modification of existing property attributes and the addition of new ones, 
 and still had to give a value to each properties.
 
 \subsection{Parser}
 
-Once the source file is tokenized we can parse it into a three. To do so we translated the needed part of the three from \texttt{Aseba} in C++ to Javascript.
+%% TODO : Write what we have done and so and so
+Once the source file is tokenized we can parse it into a three. To do so we translated the needed part of the three from \texttt{Aseba} in C++ to \texttt{JavaScript}.
 
 
 \section{Phyisics}
@@ -572,9 +578,30 @@ The fourth category happens when both power values are the same but in a differe
 \end{center}
 
 However this algorithm has flaws such as when the power of one motor is 0 the robot should be rotating on itself with said motor as anchor point, but instead it rotate and moves in the direction of the second motors direction.
+
+%% TODO : Proximity sensors
+%% TODO : Lights
 %%How they work in real life, what do they output, what do they return as value, and how they work in the application.
 
 \section{Customize playgrounds}
+
+The creation of a customize playground that can be used later on in the simulation part of the application takes place on a different page. On this page, we keep the same architecture as for the simulation but we change the \textt{Controller} and the \texttt{View} elements 
+and don't add the compilation part. Thus most of the changes and logic come from the \texttt{CreatorController.js} file. We reflected  on how the data of the playground would be carried, or kept, and used in the simulator. Thus we had multiple options,
+such as using a database to store every customed playground so that they would all be available with the application. Or to download  them locally as a file on the user's computer. We went with the latest option as we previously prepared the program to load playgrounds from \texttt{JSON} files.
+Saving the playground data is done in four different steps, bellow a sequence diagram of the process.
+\begin{center}
+  \includegraphics[scale=1]{./savepg_sd}
+\end{center}
+
+First once the event that the save button has been pressed the application will open a \texttt{prompt} window in which the user will specify the file name. Then the data that composed the customized playground are behing separated into different array based on their \texttt{className} property. 
+Once every shapes contained in the cusomized playground have been gone through and categorized we create the final \texttt{JSON} file, it is created by using the \texttt{forEach} method of \texttt{JavaScript} array and writing the name of the mesh and it's properties. 
+Finally the file is downloaded on the user's computer and the process ends.
+
+Four shapes.
+Controls, CtrlZ and CtrlY.
+Generate track 2 steps.
+Little problem, application behing slow downed when a shape is added, placeholder and final shape.
+
 
 \chapter{Results}
 
@@ -688,7 +715,7 @@ It is an open-source client-side library that allows its users to easily add a b
 Blockly is not in itself a programming language but rather used to create one. Its design makes it flexible and it can support a large set of features. 
 As it is a visual programming language, we find the same advantages as the first possibility, such for example applying programming principles with no regard towards syntactic error.
 Blockly is among the growing and most used visual programming environments because of a few important features. First, it can export the code generated with the blocks to one of the five following programming languages, 
-as a built-in feature, JavaScript, Lua, Dart, Python, and PHP, and can be enhanced for any textual programming languages. 
+as a built-in feature, \texttt{JavaScript}, \texttt{Lua}, \texttt{Dart}, \texttt{Python}, and \texttt{PHP}, and can be enhanced for any textual programming languages. 
 The block pool can be expanded from its base pool or even reduced depending on the needs. The blocks are not restrained to only basic tasks and can implement sophisticated programming tasks. 
 And it has been translated in over forty languages, and as well right-to-left versions. \\
 
@@ -765,8 +792,8 @@ We added two other events for the right and left buttons that are responsible to
   6 & Architecture Implementation & Refactor the existing code into the designed architecture & High & 40 & 48 &  & In-Progress\\ 
   7 & Web Deployement & Deploy the application on a webserver & High & 16 & 12 & 12 & Done \\ 
   8 & Basic UI & Implement a basic UI & Low & 8 & 4 &  & In-Progress \\ 
-  9 & Behaviour Pipeline & Create pipeline to take .aesl file and translate/compile it into behaviour in javascript for the Thymio II & High & 40 &  &  & To Do \\ 
-  10 & Phyisics Implementation & Implementation of Collisions for ThreeJS Meshes & High & 20 &  &  & To Do \\ 
+  9 & Behaviour Pipeline & Create pipeline to take .aesl file and translate/compile it into behaviour in JavaScript for the Thymio II & High & 40 &  &  & To Do \\ 
+  10 & Phyisics Implementation & Implementation of Collisions for threejs Meshes & High & 20 &  &  & To Do \\ 
   11 & Update Documentation & Update existing documentation & High & 20 &  &  & To Do \\ 
   12 & Enhanced UI & Enhancement of the current UI & Low &  &  &  & To Do \\ 
   13 & Customizable Playgrounds & Implementation of a playground creator for users & High &  &  &  & To Do \\ 
@@ -795,7 +822,7 @@ We added two other events for the right and left buttons that are responsible to
 \begin{longtable}{p{5mm}|p{2cm}|p{4cm}|p{1cm}|p{1cm}|p{1cm}|p{1cm}|p{15mm}}
   ID                     & Story Name & Story / Task Description & Priority & Est. Effort {[}h{]} & Update Effort {[}h{]} & Actual Effort{[}h{]} & Status                \\ \hline
   3 & Basic Learning & Learning and training of the different technology used later on & High & 44 & 58 & 58 & Done \\
-  3.1 & ThreeJS & Read documentation and examples, and practice & High & 16 & 20 & 20 & Done \\ 
+  3.1 & threejs & Read documentation and examples, and practice & High & 16 & 20 & 20 & Done \\ 
   3.2 & JavaScript & Update and deepen knowledge  & High & 8 & 8 & 8 & Done \\ 
   3.3 & Thymio languages & Learning and using VPL, Blockly, Aseba and Scratch & Medium & 24 & 30 & 30 & Done \\ 
   4 & Develop Playgrounds & Create playgrounds and function to generate meshes & High & 40 & 48 & 48 & Done \\ 
@@ -831,7 +858,7 @@ We added two other events for the right and left buttons that are responsible to
 \textbf{2019-11-15 until 2019-12-09}
 \begin{longtable}{p{5mm}|p{2cm}|p{4cm}|p{1cm}|p{1cm}|p{1cm}|p{1cm}|p{15mm}}
   ID                     & Story Name & Story / Task Description & Priority & Est. Effort {[}h{]} & Update Effort {[}h{]} & Actual Effort{[}h{]} & Status                \\ \hline
-  9 & Behaviour Pipeline & Create pipeline to take .aesl file and translate/compile it into behaviour in javascript for the Thymio II & High & 40 &  &  & To Do \\ 
+  9 & Behaviour Pipeline & Create pipeline to take .aesl file and translate/compile it into behaviour in JavaScript for the Thymio II & High & 40 &  &  & To Do \\ 
   10 & Phyisics Implementation & Implementation of Collisions for ThreeJS Meshes & High & 20 &  &  & To Do \\
   11 & Update Documentation & Update existing documentation & High & 20 &  &  & To Do \\ 
 \end{longtable}
@@ -946,6 +973,8 @@ The configuration of XAMPP is very basic. The steps done during the setup of the
   \item Thymio model not always loading correctly -> Load one at the start of the page and reset its position/rotation upon change of playground.
   \item problem with dat.gui, it was creating a new creator view so the creator wasn't accessible. Decided to use html buttons instead
 \end{itemize}
+
+\includegraphics{./bachelor_quentin.pdf}
 
 %% Print the bibibliography and add the section to the table of content
 \printbibliography[heading=bibintoc]
