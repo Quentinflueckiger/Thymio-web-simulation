@@ -81,7 +81,7 @@
 
 \clearpage
 
-\includegraphics{./Declaration_of_authonomy.pdf}
+\includegraphics[width=\textwidth]{./Declaration_of_authonomy.pdf}
 \clearpage
 
 Management Summary
@@ -96,13 +96,13 @@ Management Summary
 
 \section{Three JS}
 
-\textfs{three.js} is a 3D library for \texttt{JavaScript} which uses a default \texttt{WebGL} renderer. It allows the user to display, create and animate 3D computer graphics in a web browser. Its basic rendering pipeline is as follow :
+\texttt{three.js} is a 3D library for \texttt{JavaScript} which uses a default \texttt{WebGL} renderer. It allows the user to display, create and animate 3D computer graphics in a web browser. Its basic rendering pipeline is as follow :
 \begin{center}
   \includegraphics[scale=0.5]{./basic_threejs_rendering}
 \end{center}
 
-Every \textfs{three.js} application is composed of at least one \texttt{Camera} element, a \texttt{Renderer} element and a \texttt{Scene} element. The different meshes are added to the scene and this scene along with the camera are rendered using the method 
-\texttt{requestAnimationFrame} from \textfs{three.js} on the renderer element. 
+Every \texttt{three.js} application is composed of at least one \texttt{Camera} element, a \texttt{Renderer} element and a \texttt{Scene} element. The different meshes are added to the scene and this scene along with the camera are rendered using the method 
+\texttt{requestAnimationFrame} from \texttt{three.js} on the renderer element. 
 %% TODO : ADD A BIT OF TEXT
 
 \chapter{Thymio}
@@ -441,7 +441,7 @@ The alternative solution we came up with was to use XAMPP, we managed to push th
 \section{Playgrounds}
 
 We decided to create three different build-in playgrounds for the application. A basic, with four walls and a square plane. A borderless, composed of a track that leads out of the octagon plane. And one with multiple obstacle, walls and a track. 
-Each on of them would be composed of one \texttt{Group} element that is filled with different meshes created from the previously implemented method found in the \textt{GeometricalMeshes.js} file.
+Each on of them would be composed of one \texttt{Group} element that is filled with different meshes created from the previously implemented method found in the \texttt{GeometricalMeshes.js} file.
 
 We decided to enhance the the amount of different meshes and thus added an algorithm to create tracks. There was two steps for the algorithm to create tracks, the first one was to compute a simple line between two points. 
 But the result was too thin and therefore a better solution was found.
@@ -585,12 +585,12 @@ However this algorithm has flaws such as when the power of one motor is 0 the ro
 
 \section{Customize playgrounds}
 
-The creation of a customize playground that can be used later on in the simulation part of the application takes place on a different page. On this page, we keep the same architecture as for the simulation but we change the \textt{Controller} and the \texttt{View} elements 
+The creation of a customize playground that can be used later on in the simulation part of the application takes place on a different page. On this page, we keep the same architecture as for the simulation but we change the \texttt{Controller} and the \texttt{View} elements 
 and don't add the compilation part. Thus most of the changes and logic come from the \texttt{CreatorController.js} file. We reflected  on how the data of the playground would be carried, or kept, and used in the simulator. Thus we had multiple options,
 such as using a database to store every customed playground so that they would all be available with the application. Or to download  them locally as a file on the user's computer. We went with the latest option as we previously prepared the program to load playgrounds from \texttt{JSON} files.
 Saving the playground data is done in four different steps, bellow a sequence diagram of the process.
 \begin{center}
-  \includegraphics[scale=1]{./savepg_sd}
+  \includegraphics[width=\textwidth]{./savepg_sd}
 \end{center}
 
 First once the event that the save button has been pressed the application will open a \texttt{prompt} window in which the user will specify the file name. Then the data that composed the customized playground are behing separated into different array based on their \texttt{className} property. 
@@ -974,7 +974,7 @@ The configuration of XAMPP is very basic. The steps done during the setup of the
   \item problem with dat.gui, it was creating a new creator view so the creator wasn't accessible. Decided to use html buttons instead
 \end{itemize}
 
-\includegraphics{./bachelor_quentin.pdf}
+\includegraphics[width=\textwidth]{./bachelor_quentin.pdf}
 
 %% Print the bibibliography and add the section to the table of content
 \printbibliography[heading=bibintoc]
