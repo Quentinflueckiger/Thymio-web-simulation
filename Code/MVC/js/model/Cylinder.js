@@ -1,6 +1,6 @@
-import Shape from "./Shape.js";
+import Model from "./Model.js";
 
-export default class Cylinder extends Shape {
+export default class Cylinder extends Model {
     constructor(name, properties) {
         super(name, properties);
         this.className = 'Cylinder';

@@ -1,6 +1,6 @@
-import Shape from './Shape.js';
+import Model from './Model.js';
 
-export default class Box extends Shape {
+export default class Box extends Model {
     constructor(name, properties) {
         super(name, properties);
         this.className = 'Box';

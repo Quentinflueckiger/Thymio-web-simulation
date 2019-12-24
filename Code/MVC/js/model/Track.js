@@ -1,6 +1,6 @@
-import Shape from "./Shape.js";
+import Model from "./Model.js";
 
-export default class Track extends Shape {
+export default class Track extends Model {
     constructor(name, properties) {
         super(name, properties);
         this.className = 'Track';

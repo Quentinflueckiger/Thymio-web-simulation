@@ -483,7 +483,7 @@ Unfortunately we found later on that \texttt{threejs} has a built in function th
 
 \section{Interpreter}
 The interpreter found that compile/translate .aesl file into another programming language is the one used in the Thymio Suite application, its source code can be found in the following repository \href{https://github.com/aseba-community/aseba/tree/master/aseba/compiler}{Aseba git}.
-Unfortunately, it is a C++ one, so we had to understand it and find a way to either use it and then use a C++ to \texttt{JavaScript} interpreter, or translate the compiler from C++ to \texttt{JavaScript} by hand.
+Unfortunately, it is a C++ one, so we had to understand it and find a way to either use it and then use a C++ to \texttt{JavaScript} interpreter, or translate the compiler from \texttt{C++} to \texttt{JavaScript} by hand.
 We decided to translate the already existing one from \texttt{Aseba} and started by the compiler. After looking at his behaviour we recognize how it was built and separated,
 then came the time to translate it to \texttt{JavaScript}. First thing first it creates multiple maps of variable, constant and events that need to be rebuild with each call to the compiler in case the previous ones produced errors.
 Afterwhat comes the tokenization of the source file, which consist of creating Tokens with the position of the element, its type in the environment, and its value if provided. Then this tokenized source is parsed into Nodes, 
@@ -498,10 +498,10 @@ Here is a sequence diagram of the compilation of a file.
 \subsection{Tokenize}
 
 To tokenize the source file we skim through the document and switch depending on the value of the character, we have basically five categories for this switch.
-The first one are the tokens which require only to read one character, such as ')', ',' those can directly be given their type. Next are the comments, the comment block ,\#* ... *\#, or the simple line comment ,\#. For the block comment,
-we run through the source in search of the *\# character association that marks the end of the comment block, throwing an error if not found. The third category encompass the cases that require one character look-ahead, such as when we found
-the character + is it a simple + or += or even ++ ? The fourth is almost the same but with two characters look-ahead, such as <. The fifth category, and the default case of this switch, is the one where the amount of look-ahead needed is not defined.
-In this category fit the numbers and the strings, which are found using a regex as replacement of the C++ method is\textunderscore utf8\textunderscore alpha\textunderscore num(), which controls that the element is either a letter or a number. Bellow is 
+The first one are the tokens which require only to read one character, such as \texttt{)}, \texttt{,} those can directly be given their type. Next are the comments, the comment block ,\texttt{\#* ... *\#}, or the simple line comment ,\texttt{\#}. For the block comment,
+we run through the source in search of the \texttt{*\#} character association that marks the end of the comment block, throwing an error if not found. The third category encompass the cases that require one character look-ahead, such as when we found
+the character \texttt{+} is it a simple \texttt{+} or \texttt{+=} or even \texttt{++} ? The fourth is almost the same but with two characters look-ahead, such as \texttt{<}. The fifth category, and the default case of this switch, is the one where the amount of look-ahead needed is not defined.
+In this category fit the numbers and the strings, which are found using a regex as replacement of the \texttt{C++} method \texttt{is\textunderscore utf8\textunderscore alpha\textunderscore num()}, which controls that the element is either a letter or a number. Bellow is 
 the code for this regex.
 \begin{lstlisting}[language=JavaScript, basicstyle=\ttfamily\small]
   isAlphaNumeric(ch) {
@@ -593,18 +593,22 @@ Saving the playground data is done in four different steps, bellow a sequence di
   \includegraphics[width=\textwidth]{./savepg_sd}
 \end{center}
 
-First once the event that the save button has been pressed the application will open a \texttt{prompt} window in which the user will specify the file name. Then the data that composed the customized playground are behing separated into different array based on their \texttt{className} property. 
+First, once the event that the save button has been pressed the application will open a \texttt{prompt} window in which the user will specify the file name. Then the data that composed the customized playground are behing separated into different array based on their \texttt{className} property. 
 Once every shapes contained in the cusomized playground have been gone through and categorized we create the final \texttt{JSON} file, it is created by using the \texttt{forEach} method of \texttt{JavaScript} array and writing the name of the mesh and it's properties. 
 Finally the file is downloaded on the user's computer and the process ends.
 
+It was needed to add a few more controls over the scene in order to increase the ease of use and the possibilities of creation. The camera controls need to be enabled so that the user can navigate through the scene but once he chose the spot he wants 
+the mesh to be at he needs to deactivate those controls with the \texttt{shift} key, and enabled them back with the same key. We decided to add three other controls. The first is the use of the \texttt{Esc} key to cancel the current mesh positioning, it removes the current placeholder from the scene. 
+The second and third are linked one to the other, it's the use of the \texttt{ctrl-Z} and \texttt{ctrl-Y} logic. To do so we create two different arrays, one with the current meshes in the scene and the other one with the removed meshes, which operate as \texttt{LIFO} Queue.
+However we test that the length of the respective array is legal to perform the action and if the current shape the user is creating is from the type \texttt{Tracks} then we apply another logic, which removes/reinserts the last point of the track.
+
+The user can add four different type of shapes to the scene.
 Four shapes.
-Controls, CtrlZ and CtrlY.
 Generate track 2 steps.
 Little problem, application behing slow downed when a shape is added, placeholder and final shape.
 
 
 \chapter{Results}
-
 
 
 
@@ -626,6 +630,8 @@ Little problem, application behing slow downed when a shape is added, placeholde
 %%
 
 \chapter{Conclusion and future work}
+
+Translate rest of functionality from c++ parser and co, add more sensors and actuator (sounds, pen and co)
 
 \appendix
 

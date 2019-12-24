@@ -1,6 +1,6 @@
-import Shape from "./Shape.js";
+import Model from "./Model.js";
 
-export default class UShapeFigure extends Shape {
+export default class UShapeFigure extends Model {
     constructor(name, properties){
         super(name, properties);
         this.className = 'UShapedFigure';

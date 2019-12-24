@@ -1,6 +1,6 @@
-import Shape from './Shape.js';
+import Model from './Model.js';
 
-export default class Plane extends Shape {
+export default class Plane extends Model {
     constructor(name, properties, hasWalls) {
         super(name, properties);
         this.className = 'Plane';
