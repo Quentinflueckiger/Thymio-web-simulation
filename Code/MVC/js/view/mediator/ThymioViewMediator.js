@@ -15,6 +15,7 @@ export default class ThymioViewMediator extends ViewMediator {
         this.ratio = 0.08; //Interval of {-40,40} instead of {-500,500}
         this.sensorInitalized = false;
         this.shapes = [];
+        this.sensors = [];
     }
 
     makeObject3D() {
@@ -52,12 +53,10 @@ export default class ThymioViewMediator extends ViewMediator {
     onFrameRenderered() {
         super.onFrameRenderered();
 
-        if (this.ready){
-            if(!this.sensorInitalized)
-                this.initSensor();  
-                
+        if (this.ready){        
             this.move();
-            //this.controlFrontProx(this.object3D.children[1]);
+            this.controlFrontProx();
+            this.controlBackProx();
         }
         
     }
@@ -117,32 +116,70 @@ export default class ThymioViewMediator extends ViewMediator {
 
     }
 
-    initSensor(){
-        var tempBox = new THREE.BoxBufferGeometry(1, 1, 1);
-        var rollOverMaterial = new THREE.MeshBasicMaterial( { color: "#fc031c" } );
-        var tempMesh = new THREE.Mesh( tempBox, rollOverMaterial );
-        tempMesh.position.y += 1.5;
-        tempMesh.position.x = this.object3D.position.x;
-        tempMesh.position.z = this.object3D.position.z + 3;
-        //this.object3D.add(tempMesh);
-        this.sensorInitalized = true;
-    }
-
     setPlaygroundShapes(shapes){
-        this.shapes = shapes;
+        this.shapes = [];
+        shapes.forEach(element => {
+            this.shapes.push(element.mediator.object3D);
+        });
     }
 
-    controlFrontProx(obj){
+    controlFrontProx(){
         var raycaster = new THREE.Raycaster();
         var intersects;
-        raycaster.set(obj.position, this.getDirection().normalize());
+        raycaster.set(this.object3D.position, this.getDirection().normalize());
         if (this.shapes.length < 1)
             return false;
-        intersects = raycaster.intersectObjects(this.shapes);
-
+    
+        intersects = raycaster.intersectObjects(this.shapes, true);
         for(let i = 0; i < intersects.length; i++){
-            console.log("Intersection with: ", intersects[i]);
+            //console.log("Intersection with: ", intersects[i]);
+            if (intersects[i].distance < 3.5){
+                if( intersects[i].object.mediator.model.className === "Plane" ||
+                    intersects[i].object.mediator.model.className === "Octagon")
+                {
+                    //console.log("plane");
+                    //console.log(intersects[i]);
+                }
+                else if (intersects[i].object.mediator.model.className === "Track")
+                {
+                    //console.log("Track");
+                }
+                else{
+                    console.log("Interesct: ", intersects[i]);
+                    this.stopMotors();
+                }
+            }
         }
+        
+    }
 
+    controlBackProx(){
+        var raycaster = new THREE.Raycaster();
+        var intersects;
+        raycaster.set(this.object3D.position, (this.getDirection().normalize()).negate());
+        if (this.shapes.length < 1)
+            return false;
+    
+        intersects = raycaster.intersectObjects(this.shapes, true);
+        for(let i = 0; i < intersects.length; i++){
+            //console.log("Intersection with: ", intersects[i]);
+            if (intersects[i].distance < 2.5){
+                if( intersects[i].object.mediator.model.className === "Plane" ||
+                    intersects[i].object.mediator.model.className === "Octagon")
+                {
+                    //console.log("plane");
+                }
+                else if (intersects[i].object.mediator.model.className === "Track")
+                {
+                    //console.log("Track");
+                }
+                else{
+
+                    console.log("Interesct: ", intersects[i]);
+                    this.stopMotors();
+                }
+            }
+        }
+        
     }
 }

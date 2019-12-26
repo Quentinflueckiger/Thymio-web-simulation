@@ -3,6 +3,7 @@ import ViewMediator from './ViewMediator.js';
 export default class PlaneViewMediator extends ViewMediator {
     constructor(plane, mediatorFactory){
         super(plane, mediatorFactory);
+        this.model.mediator = this;
     }
 
     makeObject3D(){

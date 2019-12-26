@@ -3,6 +3,7 @@ import ViewMediator from './ViewMediator.js';
 export default class BoxViewMediator extends ViewMediator {
     constructor(box, mediatorFactory){
         super(box, mediatorFactory); 
+        this.model.mediator = this;
     }
 
     makeObject3D(){
@@ -25,7 +26,7 @@ export default class BoxViewMediator extends ViewMediator {
         mesh.receiveShadow = true;
 
         if(this.model.properties.rotateY)
-            mesh.rotateY(THREE.Math.degToRad(this.model.properties.rotateY, 10));
+            mesh.rotateY(this.model.properties.rotateY);
 
         return mesh;//container;
     }

@@ -3,6 +3,7 @@ import ViewMediator from "./ViewMediator.js";
 export default class CylinderViewMediator extends ViewMediator {
     constructor(cylinder, mediatorFactory) {
         super(cylinder, mediatorFactory);
+        this.model.mediator = this;
     }
 
     makeObject3D() {

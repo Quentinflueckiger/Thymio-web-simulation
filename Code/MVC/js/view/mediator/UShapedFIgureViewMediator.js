@@ -3,6 +3,7 @@ import ViewMediator from "./ViewMediator.js";
 export default class UShapedFigureViewMediator extends ViewMediator {
     constructor(uShapedFigure, mediatorFactory) {
         super(uShapedFigure, mediatorFactory);
+        this.model.mediator = this;
     }
 
     makeObject3D() {

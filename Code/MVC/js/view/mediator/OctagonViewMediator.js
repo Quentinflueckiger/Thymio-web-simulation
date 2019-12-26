@@ -3,6 +3,7 @@ import ViewMediator from './ViewMediator.js';
 export default class OctagonViewMediator extends ViewMediator {
     constructor(octagon, mediatorFactory) {
         super(octagon, mediatorFactory);
+        this.model.mediator = this;
     }
 
     makeObject3D() {
@@ -43,7 +44,7 @@ export default class OctagonViewMediator extends ViewMediator {
         container.add(mesh);
         mesh.rotateX(-Math.PI/2);
         mesh.receiveShadow = true;
-
+        
         if (this.model.hasWalls) {
             const wallDepth = 1;
             const wallHeight = 6;
@@ -99,7 +100,7 @@ export default class OctagonViewMediator extends ViewMediator {
             container.add(wallW);
             container.add(wallNW);
         }
-
+        
         return container;
     }
 

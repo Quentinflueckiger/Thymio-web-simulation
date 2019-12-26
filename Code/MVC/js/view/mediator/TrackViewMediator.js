@@ -3,6 +3,7 @@ import ViewMediator from "./ViewMediator.js";
 export default class TrackViewMediator extends ViewMediator {
     constructor(track, mediatorFactory) {
         super(track, mediatorFactory);
+        this.model.mediator = this;
         //this.model.addObserver("PointAdded", (e) => this.onPointAdded(e));
         //this.model.addObserver("PointRemoved", (e) => this.onPointRemoved(e));
     }
