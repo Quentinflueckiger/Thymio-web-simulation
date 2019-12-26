@@ -403,7 +403,7 @@ export default class Parser{
         if (edgeSensitive)
             if(this.tokens.front().type !== TT.type.TOKEN_STR_do)
             {
-                console.log("Toke: ",this.tokens.front());
+                console.log("Token: ",this.tokens.front());
                 return false;
             }
         else

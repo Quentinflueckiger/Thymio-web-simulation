@@ -445,7 +445,7 @@ export default class CreatorController {
     }
 
     generateTrack(e){
-        this.points.pop();
+        //this.points.pop();
         // Compute tracks with point array
         this.points.forEach(pt => {                      
             this.props.points.push({

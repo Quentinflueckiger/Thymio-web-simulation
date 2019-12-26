@@ -601,11 +601,28 @@ It was needed to add a few more controls over the scene in order to increase the
 the mesh to be at he needs to deactivate those controls with the \texttt{shift} key, and enabled them back with the same key. We decided to add three other controls. The first is the use of the \texttt{Esc} key to cancel the current mesh positioning, it removes the current placeholder from the scene. 
 The second and third are linked one to the other, it's the use of the \texttt{ctrl-Z} and \texttt{ctrl-Y} logic. To do so we create two different arrays, one with the current meshes in the scene and the other one with the removed meshes, which operate as \texttt{LIFO} Queue.
 However we test that the length of the respective array is legal to perform the action and if the current shape the user is creating is from the type \texttt{Tracks} then we apply another logic, which removes/reinserts the last point of the track.
-
-The user can add four different type of shapes to the scene.
-Four shapes.
-Generate track 2 steps.
-Little problem, application behing slow downed when a shape is added, placeholder and final shape.
+There are three different shapes at the user's disposal and two types of grounds. A ground element will always be needed to save the current playground, otherwise, an error occurs. The two types of grounds are a simple rectangle and an octagon, with a set of properties. 
+Changing the properties will not change the mesh in real-time, but once the button \texttt{Generate Ground} is pressed it will remove the previous ground and add the new one. The creation of boxes and cylinders takes part in two steps. 
+During the first step, the user will choose the properties, such as \texttt{width}, the \texttt{length}, the \texttt{height}, the \texttt{color} and the \texttt{rotation} for the box, and then by clicking the \texttt{Generate} button of said shape, 
+a placeholder of the shape will be instantiated and it will follow the movements of the mouse while rounding its position to fit into the square represented by the \texttt{THREE.GridHelper} element. 
+\begin{lstlisting}[language=JavaScript, basicstyle=\ttfamily\small]
+  this.rollOverMesh.position.divideScalar( 1 ).floor()
+    .multiplyScalar( 1)
+    .addScalar( 0.5 );
+\end{lstlisting} 
+Then the user has multiple-choice, either click to fix the mesh onto the scene, or the properties didn't fit what he wanted so he would click once more on the \texttt{Generate} button with the new properties, 
+or cancel the action with the \texttt{Esc} key. 
+To lay Tracks we needed to create one more step as the mesh is composed of multiple points, those points are laid the same way as a \texttt{Box} mesh would but they are added to an array that stores the position of those points. 
+Once the track is finished and upon clicking on the \texttt{Generate Track} button the points placeholders will be removed and a track passing through the wanted positions will be computed by looping through the points array and feeding the property element of track with the position of \texttt{X} and \texttt{Z} of each points.
+\begin{lstlisting}[language=JavaScript, basicstyle=\ttfamily\small]
+  this.points.forEach(pt => {                      
+    this.props.points.push({
+      positionX : pt.position.x,
+      positionZ : pt.position.z
+    });
+  });
+\end{lstlisting} 
+However, the algorithm that tracks the movement of the mouse and changes the position of the temporary mesh is not optimized and will slow down the application drastically. Unfortunately we don't know which part of the algorithm has to be optimized.
 
 
 \chapter{Results}
@@ -632,6 +649,8 @@ Little problem, application behing slow downed when a shape is added, placeholde
 \chapter{Conclusion and future work}
 
 Translate rest of functionality from c++ parser and co, add more sensors and actuator (sounds, pen and co)
+Better sensors
+Architecture too heavy and restrictive
 
 \appendix
 
