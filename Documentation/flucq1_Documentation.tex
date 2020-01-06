@@ -28,7 +28,7 @@
 \usepackage{appendix}
 
 \usepackage{listings}
-\usepackage{color}
+\usepackage{xcolor}
 \definecolor{lightgray}{rgb}{.9,.9,.9}
 \definecolor{darkgray}{rgb}{.4,.4,.4}
 \definecolor{purple}{rgb}{0.65, 0.12, 0.82}
@@ -47,6 +47,42 @@
   stringstyle=\color{red}\ttfamily,
   morestring=[b]',
   morestring=[b]"
+}
+% Taken from Edward Cooper at
+% https://gist.github.com/ed-cooper/1927af4ccac39b083440d436d018d253
+\definecolor{delim}{RGB}{20,105,176}
+\definecolor{numb}{RGB}{106, 109, 32}
+\definecolor{string}{rgb}{0.64,0.08,0.08}
+
+\lstdefinelanguage{json}{
+    numbers=left,
+    numberstyle=\small,
+    frame=single,
+    rulecolor=\color{black},
+    showspaces=false,
+    showtabs=false,
+    breaklines=true,
+    postbreak=\raisebox{0ex}[0ex][0ex]{\ensuremath{\color{gray}\hookrightarrow\space}},
+    breakatwhitespace=true,
+    basicstyle=\ttfamily\small,
+    upquote=true,
+    morestring=[b]",
+    stringstyle=\color{string},
+    literate=
+     *{0}{{{\color{numb}0}}}{1}
+      {1}{{{\color{numb}1}}}{1}
+      {2}{{{\color{numb}2}}}{1}
+      {3}{{{\color{numb}3}}}{1}
+      {4}{{{\color{numb}4}}}{1}
+      {5}{{{\color{numb}5}}}{1}
+      {6}{{{\color{numb}6}}}{1}
+      {7}{{{\color{numb}7}}}{1}
+      {8}{{{\color{numb}8}}}{1}
+      {9}{{{\color{numb}9}}}{1}
+      {\{}{{{\color{delim}{\{}}}}{1}
+      {\}}{{{\color{delim}{\}}}}}{1}
+      {[}{{{\color{delim}{[}}}}{1}
+      {]}{{{\color{delim}{]}}}}{1},
 }
 
 \usepackage{pdfpages}
@@ -103,7 +139,8 @@ Management Summary
 
 Every \texttt{three.js} application is composed of at least one \texttt{Camera} element, a \texttt{Renderer} element and a \texttt{Scene} element. The different meshes are added to the scene and this scene along with the camera are rendered using the method 
 \texttt{requestAnimationFrame} from \texttt{three.js} on the renderer element. 
-%% TODO : ADD A BIT OF TEXT
+Using the \texttt{three.js} library it is possible as well to create Augmented Reality application working in web browser, which is very neat. For example it can display information from a database based on a marker. If this topic picked your interest, 
+we would recomend you the presentation, examples and discussion from \href{http://jeromeetienne.github.io/slides/augmentedrealitywiththreejs/}{Jerome Etienne}.
 
 \chapter{Thymio}
 \section{What is Thymio} 
@@ -350,23 +387,46 @@ Failure:\\
 %%Use case diagram
 
 \chapter{Architecture}
-%% Domain class diagrams, Domain model, Package diagram, Sequence diagram, System sequence diagram
+%% Domain class diagrams, Domain model, Sequence diagram
 
-We decided to divide the architecture into two different parts. One for the simulation side and the other one for the customization, although they are very similar there are still some differences that push us to look at them with two different angles. Both are build based on a Model View Controller system where the elements of the playground, be it a wall or the Thymio robot, are models and the page is seen by the user is the view. This view registers user inputs and transmits them to the controller. 
+We decided to divide the architecture into two different parts. One for the simulation side and the other one for the customization, although they are very similar there are still some differences that push us to look at them with two different angles. Both are build based on a \texttt{Model} \texttt{View} \texttt{Controller} system where the elements of the playground, be it a wall or the Thymio robot, are models and the page is seen by the user is the view. This view registers user inputs and transmits them to the controller. 
 
-As said we have split the architecture, bellow is a graphic representing the architecture for the simulator. We can see the Model View Controller and a second component which is the interpreter, 
-that is singular to the simulator page. Its role is to test the integrity of the file given as input through the controller and compile it into \texttt{JavaScript} code for it to be used as behavior code for the Thymio Model.
+As said we have split the architecture, bellow is a graphic representing the architecture for the simulator. We can see the \texttt{Model} \texttt{View} \texttt{Controller} and a second component which is the interpreter, 
+that is singular to the simulator page. Its role is to test the integrity of the file given as input through the \texttt{Controller} and compile it into \texttt{JavaScript} code for it to be used as behavior code for the Thymio model.
 
 \begin{center}
   \includegraphics[width=\textwidth]{./architecture_proposal-Page-1}
 \end{center}
 
-And here is the second Model View Controller responsible for the playground customization, its architecture is the same as the other one except it doesn't implement an interpreter.
+The \texttt{MVC} we are using is based on an example from \href{https://github.com/lucasmajerowicz/threejs-mvc-example}{Lucas Majerowicz}. Once the application starts the following process is run in order to create the \texttt{View}, \texttt{Model}, and \texttt{Controller}.
+\begin{center}
+  \includegraphics[width=\textwidth]{./start_app}
+\end{center}
+
+The \texttt{Model} part is split into three categories that extends the same base class \texttt{Observable} which works as an event system with the \texttt{addObserver} and \texttt{emit} method. 
+The first category of the three that we will cover is the one responsible for the buttons, we instantiate one of the right types depending on the \texttt{View}, at the start of the page and add \texttt{addEventListener} to the corresponding \texttt{HTML} elements. 
+Those events will trigger the \texttt{emit} method of its base class to notify the \texttt{View} that this particular button has been clicked. The \texttt{View} will catch this event because of the second base method of the \texttt{Observable} class, 
+forwarding it to the \texttt{EnvironmentController} class to take care of the logic. 
+The two categories left are linked as they operate as the two sides of a coin. They are used for the \texttt{three.js} elements. The first one, the \texttt{Model}, holds the data of the object such as its name, a list of properties containing the dimension, 
+color and other attributes for the object. It is those models that are added to the playground element, and whenever a shape is added to the playground, this one will call its base method \texttt{emit} in order to notify the \texttt{ViewMediator}. 
+The \texttt{ViewMediator} is the last category and is responsible to create the 3D objects with the data from its model. It is as well responsible for the logic that we would apply to a model, such as the animation of the 3D object, and the supervising of deleting or adding models.     
+The image below shows a class diagram of the \texttt{Model} part of the \texttt{MVC}, not all classes are represented for clarity purpose, as their configuration is very similar to one comprised in the diagram.
+\begin{center}
+  \includegraphics[width=\textwidth]{./mvc_cd}
+\end{center}
+
+The \texttt{View} and the \texttt{Controller} elements are different in the two pages whereas the \texttt{Model} is not. The \texttt{Controller} in the simulation side loads the playgrounds be it built-in or coming from the device, and upload the aesl file to the begining of the filter/compiler. 
+And in the customization side it is responsible for writing the \texttt{JSON} file with the data from the meshes of the scene,  instantiating the meshes and registering them once positioned, or deleting them. The two \texttt{Views} are very similar, 
+the differences are the observers added to its \texttt{CreatorButtons/SimulatorButtons}. This is how an observer is added.
+\begin{lstlisting}[language=JavaScript, basicstyle=\ttfamily\small]
+  this.simulatorButtons.addObserver('jsonPGSubmited',
+   (e) => this.controller.onJsonPGSubmited(e));
+\end{lstlisting} 
+
+And here is the second \texttt{Model} \texttt{View} \texttt{Controller} responsible for the playground customization, its architecture is the same as the other one except it doesn't implement an interpreter. 
 \begin{center}
   \includegraphics[width=\textwidth]{./architecture_proposal-Page-2}
 \end{center}
-%% TODO : Add text about different elements and transition, link it with current code
-
 
 \chapter{What already exist} 
 
@@ -593,8 +653,26 @@ The fourth category happens when both power values are the same but in a differe
 
 However this algorithm has flaws such as when the power of one motor is 0 the robot should be rotating on itself with said motor as anchor point, but instead it rotate and moves in the direction of the second motors direction.
 
-To determine if a collision occurs between the robot and one of the element of the environment we decided not to use an external phyisic but instead we throw raycast from various position 
-%% TODO : Proximity sensors
+To determine if a collision occurs between the robot and one of the elements of the environment we decided not to use an external physic library but instead we throw raycast from various positions in the thymio model. To do so we instantiated a \texttt{THREE.Raycaster} 
+object and had to find a way to get all 3D objects from our scene. This was quite troublesome because of the implementation of our model view controller, when instantiating a new \texttt{Model} we would not get a reference to its \texttt{ViewMediator} where the model is stored. 
+We used the benefit of \texttt{JavaScript} to find a workaround, whenever a \texttt{ViewMediator} is instantiated we add to its model the property \texttt{mediator} where the value is the current mediator. Thus we could use the following method in order to skim through the array containing the shapes rendered in the scene and create a new array filled with intersection objects. We then loop through the array to control that the distance is bigger than the given one. If not we operate an action depending on the \texttt{className} of the intersected object. 
+In the default case, we assume the robot encounters an element against which he should stop moving.
+\begin{lstlisting}[language=JavaScript, basicstyle=\ttfamily\small]
+  intersects = raycaster.intersectObjects(this.shapes, true);
+  for(let i = 0; i < intersects.length; i++){
+    if (intersects[i].distance < 3.5){
+      if(intersects[i].object.mediator.
+          model.className === "Plane" ||
+         intersects[i].object.mediator.
+          model.className === "Octagon"){}
+      else if (intersects[i].object.mediator.
+          model.className === "Track"){}
+      else{
+        this.stopMotors();
+      }
+    }
+  }
+\end{lstlisting} 
 %% TODO : Lights
 %%How they work in real life, what do they output, what do they return as value, and how they work in the application.
 
@@ -610,9 +688,33 @@ Saving the playground data is done in four different steps, bellow a sequence di
 
 First, once the event that the save button has been pressed the application will open a \texttt{prompt} window in which the user will specify the file name. Then the data that composed the customized playground are behing separated into different array based on their \texttt{className} property. 
 Once every shapes contained in the cusomized playground have been gone through and categorized we create the final \texttt{JSON} file, it is created by using the \texttt{forEach} method of \texttt{JavaScript} array and writing the name of the mesh and it's properties. 
-Finally the file is downloaded on the user's computer and the process ends.
-
-%% TODO : Add part of json file with data as example
+Finally the file is downloaded on the user's computer and the process ends. The \texttt{JSON} file obtained looks like the following.
+\begin{lstlisting}[language=json, basicstyle=\ttfamily\small]
+  "playground":"jailtype",
+    "octagons":[
+        {
+        "name":"ground",
+        "props":{
+            "segmentLength":35.5,
+            "color":"#bdbbbb"
+            },
+        "hasWalls":true
+        }
+    ],
+    "boxes":[
+        {
+        "name":"Box0.5",
+        "props":{
+            "width":4,
+            "height":10,
+            "depth":21,
+            "color":"#ff0202",
+            "positionX":0.5,
+            "positionZ":-17.5,
+            "rotateY":1.6755160819145565
+            }
+        },
+\end{lstlisting}
 
 It was needed to add a few more controls over the scene in order to increase the ease of use and the possibilities of creation. The camera controls need to be enabled so that the user can navigate through the scene but once he chose the spot he wants 
 the mesh to be at he needs to deactivate those controls with the \texttt{shift} key, and enabled them back with the same key. We decided to add three other controls. The first is the use of the \texttt{Esc} key to cancel the current mesh positioning, it removes the current placeholder from the scene. 
