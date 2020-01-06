@@ -399,6 +399,12 @@ Afterward, we implemented method to create different Shapes with more ease for a
 
 \section{Model View Controller}
 
+Registration of buttons,
+What happens when a button is clicked.
+\begin{center}
+  \includegraphics[width=\textwdith]{./button_mvc}
+  \label{button_mvc}
+\end{center}
 
 \section{WebServer \label{webserver}}
 Regarding the goal number 5, Require no software installation, we decided to use a webserver in order to access the application. At first we choose the IIS Manager that is built in with Windows 10, 
@@ -527,6 +533,14 @@ and instead, shoot rays from the robot and check for collisions this way, as onl
 
 \section{Sensor and Actuator}
 
+We represented the five buttons that sit on top of the Thymio directly in the UI and did not give the possibility to interact with the modelized ones. We wanted to create a Directional Pad style group of buttons such as in the first image bellow, 
+but ended with the second image, which is less nice, due to the time needed to make it perfect. All the buttons work as the previously explained sequence diagram on page \pageref{button_mvc}.
+\begin{center}
+  \begin{tabular}{c c}
+    \includegraphics{dpad} & \includegraphics{fake_dpad}
+  \end{tabular}
+\end{center}
+
 A Thymio robot moves in according with two motors, one for its right wheel and one for its left wheel. They have a value for the output power between -500 and 500, minus meaning the motor powers the wheel in the opposite direction. 
 And those two motors can only output power in a straight line, forward / backward. Bellow are three representations of the expected movements of a Thymio. The yellow arrow is the power for the left motor, the blue arrow is the power for the right motor, 
 and the green arrow is the final vector movement for the robot. On the first representation, the power of the two motors are the same, both in value and direction, thus the final vector is simply the same as either one of the two.
@@ -579,6 +593,7 @@ The fourth category happens when both power values are the same but in a differe
 
 However this algorithm has flaws such as when the power of one motor is 0 the robot should be rotating on itself with said motor as anchor point, but instead it rotate and moves in the direction of the second motors direction.
 
+To determine if a collision occurs between the robot and one of the element of the environment we decided not to use an external phyisic but instead we throw raycast from various position 
 %% TODO : Proximity sensors
 %% TODO : Lights
 %%How they work in real life, what do they output, what do they return as value, and how they work in the application.
@@ -596,6 +611,8 @@ Saving the playground data is done in four different steps, bellow a sequence di
 First, once the event that the save button has been pressed the application will open a \texttt{prompt} window in which the user will specify the file name. Then the data that composed the customized playground are behing separated into different array based on their \texttt{className} property. 
 Once every shapes contained in the cusomized playground have been gone through and categorized we create the final \texttt{JSON} file, it is created by using the \texttt{forEach} method of \texttt{JavaScript} array and writing the name of the mesh and it's properties. 
 Finally the file is downloaded on the user's computer and the process ends.
+
+%% TODO : Add part of json file with data as example
 
 It was needed to add a few more controls over the scene in order to increase the ease of use and the possibilities of creation. The camera controls need to be enabled so that the user can navigate through the scene but once he chose the spot he wants 
 the mesh to be at he needs to deactivate those controls with the \texttt{shift} key, and enabled them back with the same key. We decided to add three other controls. The first is the use of the \texttt{Esc} key to cancel the current mesh positioning, it removes the current placeholder from the scene. 
@@ -651,6 +668,8 @@ However, the algorithm that tracks the movement of the mouse and changes the pos
 Translate rest of functionality from c++ parser and co, add more sensors and actuator (sounds, pen and co)
 Better sensors
 Architecture too heavy and restrictive
+Very difficult to understand a whole C++ application and select the part needed to be translated
+Interpreter taking way more time than imagined
 
 \appendix
 
@@ -997,6 +1016,7 @@ The configuration of XAMPP is very basic. The steps done during the setup of the
   \item Thymio Blockly has trouble loading saved files. Using the software I wasn't able to load any .aesl file previously created with it, but I could load them if I used the index.html one.
   \item Thymio model not always loading correctly -> Load one at the start of the page and reset its position/rotation upon change of playground.
   \item problem with dat.gui, it was creating a new creator view so the creator wasn't accessible. Decided to use html buttons instead
+  \item c++ to javascript
 \end{itemize}
 
 \includegraphics[width=\textwidth]{./bachelor_quentin.pdf}

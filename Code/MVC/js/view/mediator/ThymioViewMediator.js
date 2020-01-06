@@ -7,7 +7,7 @@ export default class ThymioViewMediator extends ViewMediator {
     constructor(thymio, mediatorFactory) {
         super(thymio, mediatorFactory);
         this.ready = false;
-        this.speed = 0.001;
+        this.speed = 0.005;
         this.turnSpeed = 0.01;
         this.model.mediator = this;
         this.leftMotor = 0;

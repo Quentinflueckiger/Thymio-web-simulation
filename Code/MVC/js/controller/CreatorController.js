@@ -387,7 +387,7 @@ export default class CreatorController {
             color : form[3].value,
             positionX : 0,
             positionZ : 0,
-            rotateY : parseInt(form[4].value, 10)
+            rotateY : THREE.Math.degToRad(parseInt(form[4].value, 10))
         };
         var rollOverGeo = new THREE.BoxBufferGeometry(parseInt(form[0].value, 10),parseInt(form[2].value, 10),parseInt(form[1].value, 10));
 	    var rollOverMaterial = new THREE.MeshBasicMaterial( { color: form[3].value, opacity: 0.5, transparent: true } );
