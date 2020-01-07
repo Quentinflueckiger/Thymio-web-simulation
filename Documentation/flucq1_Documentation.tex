@@ -46,7 +46,8 @@
   commentstyle=\color{purple}\ttfamily,
   stringstyle=\color{red}\ttfamily,
   morestring=[b]',
-  morestring=[b]"
+  morestring=[b]",
+  columntstype=fullflexible
 }
 % Taken from Edward Cooper at
 % https://gist.github.com/ed-cooper/1927af4ccac39b083440d436d018d253
@@ -120,13 +121,30 @@
 \includegraphics[width=\textwidth]{pdf/Declaration_of_authonomy.pdf}
 \clearpage
 
-Management Summary
+\textbf{\large{Management Summary}}
+
+With all the growth that Information Technology has taken on in everyday life during the last decade, many questions have arisen. A very important one, at the very least in our minds, consists of the whole educational side. 
+At what point should Information Technology be taught, in mandatory school, high school, higher vocational, self-taught? In Switzerland, we are starting to introduce some optional courses in this field already in primary school. 
+Of course, they are not taught too deep and complicated concepts, it is more the way of reasoning and improving logical concepts. To help in this matter some school developed projects to ease the entry into the world of Information Technology, 
+such as the Swiss Federal Institute of Technology of Lausanne did with the project know as Thymio. Thymio is a little robot that can be programmed on a computer with four different languages, with varying degrees of difficulty. 
+Thus, it allows very young persons to experience and learn some of the basics. Unfortunately, this robot can have a few disadvantages, for example, the space required or the setup of its environment. 
+To fill these gaps, we have decided to create a simulation of the Thymio.
+Thus, the objective for this project became the creation of a Thymio simulator, it had to be a web application to ease the accessibility, no software installation required, and be compatible with modern browsers.
+
+We started by learning about the four different languages supported by the robot, viz., VPL, Blockly, Aseba, and Scratch. How to create a simple program with each of them and how the output programs were formatted. 
+As we decided to make the simulator completely web, we needed a way to represent and animate computer graphic elements, thus we chose \texttt{three.js} as a library to help us in those matters.
+
+Afterward, we created the base of the application, which consist of loading a Thymio model, having multiple basic playgrounds. We built on top of this a special playground creator tool, that allows the user to create its own playground with different meshes that he can place. 
+The data are then stored inside a \texttt{JSON} file on his machine and can be load in the simulator. The first actuator, an actuator is a component of a machine that is responsible for moving and controlling a mechanism or system, 
+to be added were the motors. We tried to make them behave as close to reality as possible, so two motors that can only do three things: Move forward, move backward, or don’t move at all.
+
+And last but not least, we had to develop a compiler that would translate a program written for Thymio in one of the four languages. To do this we used the code of the Thymio Suite application developed by \texttt{Aseba}. 
+As their application was coded in \texttt{C++} it was needed to understand it, or at least understand the part important for this, and translate them into \texttt{JavaScript}. 
+%% TODO : FILL
 \clearpage
 
 \tableofcontents
 \clearpage
-
-\chapter{Introduction}
 
 \chapter{Environment}
 
@@ -458,7 +476,7 @@ Afterward, we implemented method to create different Shapes with more ease for a
 
 
 \section{Model View Controller}
-
+%% TODO : STUFF
 Registration of buttons,
 What happens when a button is clicked.
 \begin{center}
@@ -547,6 +565,7 @@ customized playground. To do so we open and read a \texttt{JSON} file of a given
 Unfortunately we found later on that \texttt{threejs} has a built in function that translate a ThreeJS Object into a \texttt{JSON} file element, and inversely. But we are still using the solution we developed.
 
 \section{Interpreter}
+
 The interpreter found that compile/translate .aesl file into another programming language is the one used in the Thymio Suite application, its source code can be found in the following repository \href{https://github.com/aseba-community/aseba/tree/master/aseba/compiler}{Aseba git}.
 Unfortunately, it is a C++ one, so we had to understand it and find a way to either use it and then use a C++ to \texttt{JavaScript} interpreter, or translate the compiler from \texttt{C++} to \texttt{JavaScript} by hand.
 We decided to translate the already existing one from \texttt{Aseba} and started by the compiler. After looking at his behaviour we recognize how it was built and separated,
@@ -555,6 +574,7 @@ Afterwhat comes the tokenization of the source file, which consist of creating T
 which are expanded and type checked. Once the program is checked, it is emited as a first bytecode output and then this bytecode is linked creating the final program.
 
 Here is a sequence diagram of the compilation of a file.
+
 \begin{center}
   \includegraphics[width=\textwidth]{./compiler_sequence_diagram}
 \end{center}
@@ -568,11 +588,13 @@ we run through the source in search of the \texttt{*\#} character association th
 the character \texttt{+} is it a simple \texttt{+} or \texttt{+=} or even \texttt{++} ? The fourth is almost the same but with two characters look-ahead, such as \texttt{<}. The fifth category, and the default case of this switch, is the one where the amount of look-ahead needed is not defined.
 In this category fit the numbers and the strings, which are found using a regex as replacement of the \texttt{C++} method \texttt{is\textunderscore utf8\textunderscore alpha\textunderscore num()}, which controls that the element is either a letter or a number. Bellow is 
 the code for this regex.
+
 \begin{lstlisting}[language=JavaScript, basicstyle=\ttfamily\small]
   isAlphaNumeric(ch) {
     return ch.match(/^[a-z0-9]+$/i) !== null;
   }
-\end{lstlisting}  
+\end{lstlisting}
+
 We have to be wary of one point when using this method, and it is that if the \texttt{ch} parameter is not a string, then it will throw an error. Coming back to the switch we first test if the chain of character is a number by combining regex and looking for multiple characters.
 If it is not the case we check wether or not its value is the same as one of the given keywords, such as \texttt{when} or \texttt{const}. And if none of the keywords match it is labeled as a string literal and given the value of the chain of characters. Here we encountered a probleme 
 of language between C++ and \texttt{JavaScript}, as the type of the token is given with an enum in C++, and they don't exist in \texttt{JavaScript} so we had to find a workaround to this language incompatibility. We used the Object method \texttt{freeze()}, which prevents the modification of existing property attributes and the addition of new ones, 
@@ -594,9 +616,10 @@ and instead, shoot rays from the robot and check for collisions this way, as onl
 
 We represented the five buttons that sit on top of the Thymio directly in the UI and did not give the possibility to interact with the modelized ones. We wanted to create a Directional Pad style group of buttons such as in the first image bellow, 
 but ended with the second image, which is less nice, due to the time needed to make it perfect.
+
 \begin{center}
   \begin{tabular}{c c}
-	1  & 1 \\
+	  1  & 2 \\
     \includegraphics{dpad} & \includegraphics{fake_dpad}
   \end{tabular}
 \end{center}
@@ -616,7 +639,7 @@ Those values are set using the \texttt{setMotors(left, right)} method. The \text
 
 The first category is when both motors have the same power in the same direction, therefore the resulting position change for both x and z coordinate is computed using the \texttt{getDirection()}, which returns 
 a Vector3 representing the direction the robot is facing, a predefined speed variable and the power given to either of the motors.
-\begin{lstlisting}[language=JavaScript, basicstyle=\ttfamily\small]
+\begin{lstlisting}[language=JavaScript, gobble=2, basicstyle=\ttfamily\small]
   getDirection() {
     var direction = new THREE.Vector3();
     return this.object3D.getWorldDirection(direction);;
@@ -689,6 +712,7 @@ Saving the playground data is done in four different steps, bellow a sequence di
 First, once the event that the save button has been pressed the application will open a \texttt{prompt} window in which the user will specify the file name. Then the data that composed the customized playground are behing separated into different array based on their \texttt{className} property. 
 Once every shapes contained in the cusomized playground have been gone through and categorized we create the final \texttt{JSON} file, it is created by using the \texttt{forEach} method of \texttt{JavaScript} array and writing the name of the mesh and it's properties. 
 Finally the file is downloaded on the user's computer and the process ends. The \texttt{JSON} file obtained looks like the following.
+%% TODO : Be sure it is not in between two pages
 \begin{lstlisting}[language=json, basicstyle=\ttfamily\small]
   "playground":"jailtype",
     "octagons":[
@@ -746,7 +770,7 @@ However, the algorithm that tracks the movement of the mouse and changes the pos
 
 \chapter{Results}
 
-
+%% TODO : FILL FILL 
 
 %%\section{Usefull latex commands (to be deleted later on)}
 %%\lstset{language=JavaScript}
@@ -766,7 +790,7 @@ However, the algorithm that tracks the movement of the mouse and changes the pos
 %%
 
 \chapter{Conclusion and future work}
-
+%% TODO : FILL FILL
 Translate rest of functionality from c++ parser and co, add more sensors and actuator (sounds, pen and co)
 Better sensors
 Architecture too heavy and restrictive
@@ -925,7 +949,9 @@ We added two other events for the right and left buttons that are responsible to
 \end{center}
 
 \section{Aseba}
+%% TODO : FILL or delete?
 \section{Scratch}
+%% TODO : FILL or delete?
 
 \chapter{Product Backlog}
 \begin{longtable}{p{5mm}|p{2cm}|p{4cm}|p{1cm}|p{1cm}|p{1cm}|p{1cm}|p{15mm}}
@@ -1104,6 +1130,18 @@ The configuration of XAMPP is very basic. The steps done during the setup of the
   19.11.2019 & \textbf{Sixth meeting} \\
   & \\
   \hline
+  09.12.2019 & \textbf{Seventh meeting} \\
+  & \\
+  \hline
+  19.12.2019 & \textbf{Eighth meeting} \\
+  & - Documentation review\\
+  & - What to hand in to the secretariat and to Mr. Fuhrer\\
+  \hline
+  07.01.2020 & \textbf{Ninth meeting} \\
+  & - Documentation state\\
+  & - Latex commands\\
+  & - Final day and defense talk\\
+  \hline
 \end{tabular}
 
 \chapter{Problems encountered}
@@ -1121,6 +1159,7 @@ The configuration of XAMPP is very basic. The steps done during the setup of the
   \item c++ to javascript
 \end{itemize}
 
+\thispagestyle{empty}
 \includegraphics[width=\textwidth]{pdf/bachelor_quentin.pdf}
 
 %% Print the bibibliography and add the section to the table of content
