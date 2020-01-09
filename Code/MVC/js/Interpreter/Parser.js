@@ -9,6 +9,23 @@ export default class Parser{
         this.compiler = compiler;
     }
 
+    // Translated from Parser.cpp
+    /*
+        Aseba - an event-based framework for distributed robot control
+        Copyright (C) 2007--2016:
+            Stephane Magnenat <stephane at magnenat dot net>
+            (http://stephane.magnenat.net)
+            and other contributors, see authors.txt for details
+        This program is free software: you can redistribute it and/or modify
+        it under the terms of the GNU Lesser General Public License as published
+        by the Free Software Foundation, version 3 of the License.
+        This program is distributed in the hope that it will be useful,
+        but WITHOUT ANY WARRANTY; without even the implied warranty of
+        MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+        GNU Lesser General Public License for more details.
+        You should have received a copy of the GNU Lesser General Public License
+        along with this program. If not, see <http://www.gnu.org/licenses/>.
+    */
     parseProgram(tokens){
         this.tokens = tokens;
         var block = new Node.ProgramNode(this.tokens.front().pos);
@@ -649,7 +666,7 @@ export default class Parser{
         return arrayCtor;
     }
 
-    // Only works when type of token is of IN_LITERAL, and return 0 if the next isn't a token of this type.
+    // Only works when type of token is of INT_LITERAL, and return 0 if the next isn't a token of this type.
     //!!!!! To be enhanced when tree is ready
     expectConstantExpression(constPos){
         var result = 0;

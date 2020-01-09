@@ -8,6 +8,8 @@ import UShapedFigure from '../model/UShapedFigure.js';
 import Cylinder from '../model/Cylinder.js';
 import Track from '../model/Track.js';
 
+const nbrOfState = 3;
+
 export default class EnvironmentController {
     constructor(environment, thymio) {
         this.environment = environment;
@@ -16,6 +18,7 @@ export default class EnvironmentController {
         this.thymio = thymio;
         this.playground;
         this.program;
+        this.state = 0;             //0 = No behavior, 1 = Explorator behavior, 2 = Follow track behavior
     }
 
     onPGPickerClicked(e){
@@ -139,6 +142,7 @@ export default class EnvironmentController {
     onDPCenterClicked(e) {
         
         this.thymio.mediator.stopMotors();
+        this.state = (this.state + 1) % nbrOfState;
     }
 
     onDPRightClicked(e) {
