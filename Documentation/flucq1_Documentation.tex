@@ -121,9 +121,8 @@
 \includegraphics[width=\textwidth]{pdf/Declaration_of_authonomy.pdf}
 \clearpage
 
-\textbf{\large{Management Summary}}
-
-
+\textbf{\large{Management Summary}}\\
+\\
 With all the growth that Information Technology has taken on in everyday life during the last decade, many questions have arisen. A very important one, at the very least in our minds, consists of the whole educational side. 
 At what point should Information Technology be taught, in mandatory school, high school, higher vocational, self-taught? In Switzerland, we are starting to introduce some optional courses in this field already in primary school. 
 Of course, they are not taught too deep and complicated concepts, it is more the way of reasoning and improving logical concepts. To help in this matter some school developed projects to ease the entry into the world of Information Technology, 
@@ -152,6 +151,7 @@ As their application was coded in \texttt{C++} it was needed to understand it, o
 \section{Three JS}
 
 \texttt{three.js} is a 3D library for \texttt{JavaScript} which uses a default \texttt{WebGL} renderer. It allows the user to display, create and animate 3D computer graphics in a web browser. Its basic rendering pipeline is as follow :
+
 \begin{center}
   \includegraphics[scale=0.5]{./basic_threejs_rendering}
 \end{center}
@@ -227,6 +227,7 @@ The project Web Simulation of a Thymio robot is aimed to create a simulator for 
 \section{Goals}
 
 This aim has been split into 6 different defining goals in order to create this application.
+
 \begin{center}
   \includegraphics[width=\textwidth]{./goals}
 \end{center}
@@ -418,6 +419,7 @@ that is singular to the simulator page. Its role is to test the integrity of the
 \end{center}
 
 The \texttt{MVC} we are using is based on an example from \href{https://github.com/lucasmajerowicz/threejs-mvc-example}{Lucas Majerowicz}. Once the application starts the following process is run in order to create the \texttt{View}, \texttt{Model}, and \texttt{Controller}.
+
 \begin{center}
   \includegraphics[width=\textwidth]{./start_app}
 \end{center}
@@ -430,6 +432,7 @@ The two categories left are linked as they operate as the two sides of a coin. T
 color and other attributes for the object. It is those models that are added to the playground element, and whenever a shape is added to the playground, this one will call its base method \texttt{emit} in order to notify the \texttt{ViewMediator}. 
 The \texttt{ViewMediator} is the last category and is responsible to create the 3D objects with the data from its model. It is as well responsible for the logic that we would apply to a model, such as the animation of the 3D object, and the supervising of deleting or adding models.     
 The image below shows a class diagram of the \texttt{Model} part of the \texttt{MVC}, not all classes are represented for clarity purpose, as their configuration is very similar to one comprised in the diagram.
+
 \begin{center}
   \includegraphics[width=\textwidth]{./mvc_cd}
 \end{center}
@@ -437,12 +440,14 @@ The image below shows a class diagram of the \texttt{Model} part of the \texttt{
 The \texttt{View} and the \texttt{Controller} elements are different in the two pages whereas the \texttt{Model} is not. The \texttt{Controller} in the simulation side loads the playgrounds be it built-in or coming from the device, and upload the aesl file to the begining of the filter/compiler. 
 And in the customization side it is responsible for writing the \texttt{JSON} file with the data from the meshes of the scene,  instantiating the meshes and registering them once positioned, or deleting them. The two \texttt{Views} are very similar, 
 the differences are the observers added to its \texttt{CreatorButtons/SimulatorButtons}. This is how an observer is added.
+
 \begin{lstlisting}[language=JavaScript, gobble=2, basicstyle=\ttfamily\small]
   this.simulatorButtons.addObserver('jsonPGSubmited',
    (e) => this.controller.onJsonPGSubmited(e));
 \end{lstlisting} 
 
 And here is the second \texttt{Model} \texttt{View} \texttt{Controller} responsible for the playground customization, its architecture is the same as the other one except it doesn't implement an interpreter. 
+
 \begin{center}
   \includegraphics[width=\textwidth]{./architecture_proposal-Page-2}
 \end{center}
@@ -502,7 +507,8 @@ Then we had to open the port in order to access it from within the LAN.
 
 It was needed to create a web.config file and add a few file extension so that the .mtl and .obj would still be able to load. 
 Otherwise we encountered an error of the type "Failed to load resource: the server responded with a status of 404 (Not Found)." 
-The text that needed to be added to the web.config file is the following : \\
+The text that needed to be added to the web.config file is the following : 
+
 \begin{lstlisting}[language=XML, basicstyle=\ttfamily\small]
 <?xml version="1.0" encoding="UTF-8"?>
   <configuration>
@@ -532,6 +538,7 @@ But the result was too thin and therefore a better solution was found.
 The second iteration for this alogrithm takes an array of points, those points are of type Vector3 so as to register the three coordinates, and compute 
 a new Vector3 that holds the resulting vector position of the next point minus the current point. The x and z values of this vector are then used 
 as the center to position a box object, which represent the track, and then it is aligned to this vector.
+
 \begin{lstlisting}[language=JavaScript, gobble=2, basicstyle=\ttfamily\small]
   for (let i = 0; i < points.length-1; i++) {
 
@@ -554,6 +561,7 @@ Therefore we reset it's position and rotation whenever we change the playground,
 
 Thinking about the creation of playground we decided to change how the playgrounds data were recorded and instead of having them as \texttt{JavaScript} file, we moved them all into a \texttt{JSON} file. So later on it would not require more work to load a 
 customized playground. To do so we open and read a \texttt{JSON} file of a given name, and then skim through the \texttt{JSON} file and create the Shapes accordingly of the data. Bellow an example for the boxes.
+
 \begin{lstlisting}[language=JavaScript, gobble=2, basicstyle=\ttfamily\small]
   if (file.boxes) {
     for (const boxRecord of file.boxes) {
@@ -620,11 +628,12 @@ Once the source file has been tokenized with the Lexer, and no error occurred du
 
 It will start by creating a new \texttt{Node.ProgramNode} object with the position of the first element of the tokens array. Then the algorithm will loop on the tokens while it is not empty, and call methods depending on the type of the token. At this stage, we split into three categories, constant, variable and the rest. 
 In the case of constant, the algorithm will check the next token and control that it is of type string, otherwise the declaration of the constant isn’t valid and an error is thrown. If the condition is met we assign the name of the constant to a named variable, and the position to a position variable. 
-Afterward, it controls that no constant with this name already exists, then controls that the next token is of type \texttt{TOKEN_ASSIGN} to respect how a constant is declared, get the value that should be at the next token, if that one is not of type \texttt{TOKEN_INT_LITERAL} it will return the value 0. 
+Afterward, it controls that no constant with this name already exists, then controls that the next token is of type \texttt{TOKEN\textunderscore ASSIGN} to respect how a constant is declared, get the value that should be at the next token, if that one is not of type \texttt{TOKEN\textunderscore INT\textunderscore LITERAL} it will return the value 0. 
 This part will be improved by the completion of the translation of the tree. And finally the constant with its name, position and value will be added to the \texttt{constantsMap} of the compiler.
 
 If it is a variable, it will be discarded and the following tokens will be discarded as well if they are part of its declaration, we actually replaced the part where it would parse the variable by this removal system. We did so because the tree and the parser are not complete. 
 Here is how it should be, if the tree and parser were finished.
+
 \begin{lstlisting}[language=JavaScript, gobble=2, basicstyle=\ttfamily\small]
   var child = this.parseVarDef();
   if(child)
@@ -632,7 +641,9 @@ Here is how it should be, if the tree and parser were finished.
       programNode.children.addRear(child);
   }
 \end{lstlisting}
+
 And this is how it actually is.
+
 \begin{lstlisting}[language=JavaScript, gobble=2, basicstyle=\ttfamily\small]
   this.tokens.removeFront();
   if(this.tokens.front().type === TT.type.TOKEN_STRING_LITERAL)
@@ -645,14 +656,15 @@ And this is how it actually is.
 \end{lstlisting}
 
 The third part covers the rest of the tokens and is the most complex among the three. The token will go through multiples method based on switch on his type until he reaches the parse method that defines it. 
-Not every parse methods were translated from the \texttt{C++} program as their amount is rather big and not easy to translate into \texttt{JavaScript}. Below is a diagram that will show the process of a token of type \texttt{TOKEN_STR_onevent} to ease the understanding.
+Not every parse methods were translated from the \texttt{C++} program as their amount is rather big and not easy to translate into \texttt{JavaScript}. Below is a diagram that will show the process of a token of type \texttt{TOKEN\textunderscore STR\textunderscore onevent} to ease the understanding.
+
 \begin{center}
-  \includegraphics[scale=1]{./event_when}
+  \includegraphics[width=\textwidth]{./event_when}
 \end{center}
 
 The end method \texttt{parseOnEvent()} will control two things, first that an event with this \texttt{Id} exists, the list of \texttt{eventId} can be found in the \texttt{Compiler.js} under the \texttt{buildMaps} method, and that such an event hasn’t been implemented already. 
 If the conditions are met a new \texttt{Node.EventDeclNode} with the position and the id of this event will be returned and added to the \texttt{programNode}. 
-Or if the token is of type \texttt{TOKEN_STR_when} it will try to parse the condition and thus will start with the following \texttt{parseOr} method.
+Or if the token is of type \texttt{TOKEN\textunderscore STR\textunderscore when} it will try to parse the condition and thus will start with the following \texttt{parseOr} method.
 
 \begin{lstlisting}[language=JavaScript, gobble=2, basicstyle=\ttfamily\small]
   parseOr(){
@@ -674,8 +686,9 @@ Or if the token is of type \texttt{TOKEN_STR_when} it will try to parse the cond
 As we can see this method starts by calling another one and this will go on and on until very low methods such as the \texttt{parseUnaryExpression}.
 
 The tree that is built during the parsing which contains the \texttt{programNode}, \texttt{eventNode} and every other node, is created based on the following class diagram.
+
 \begin{center}
-  \includegraphics[width=\textwidth]{./tree}
+  \includegraphics[scale=0.6]{./tree}
 \end{center}
 
 This is where we stopped our work on the interpreter, for more information we kindly recommend you to look at the section Future research at the page \pageref{future}. 
@@ -703,6 +716,7 @@ And those two motors can only output power in a straight line, forward / backwar
 and the green arrow is the final vector movement for the robot. On the first representation, the power of the two motors are the same, both in value and direction, thus the final vector is simply the same as either one of the two.
 On the second one, the value of the power for both motors is still the same but their direction is opposite, hence the final vector is a circle because the robot will turn on itself.
 And finally, the third representation shows the resultant vector when the value is not the same but the direction is.
+
 \begin{center}
   \includegraphics[scale=0.8]{./thymio_move}
 \end{center}
@@ -713,37 +727,45 @@ Those values are set using the \texttt{setMotors(left, right)} method. The \text
 
 The first category is when both motors have the same power in the same direction, therefore the resulting position change for both x and z coordinate is computed using the \texttt{getDirection()}, which returns 
 a Vector3 representing the direction the robot is facing, a predefined speed variable and the power given to either of the motors.
+
 \begin{lstlisting}[language=JavaScript, gobble=2, basicstyle=\ttfamily\small]
   getDirection() {
     var direction = new THREE.Vector3();
     return this.object3D.getWorldDirection(direction);;
   }
 \end{lstlisting} 
+
 \begin{lstlisting}[language=JavaScript, gobble=2, basicstyle=\ttfamily\small]
   this.object3D.position.x += 
     this.getDirection().x * this.speed * this.rightMotor;
   this.object3D.position.z +=
     this.getDirection().z * this.speed * this.rightMotor;
 \end{lstlisting}  
+
 \begin{center}
   \includegraphics[scale=0.8]{./move_spsd}
 \end{center}
 
 The second option is when the value of the left motor is bigger than the right, regarding the direction. Alternatively, the third option is the same but when the value of the right motor is bigger than the left.
+
 \begin{center}
   \includegraphics[width=\textwidth]{./move_dp}
 \end{center}
+
 In this case, we calculate the difference D of power between the two motors, the biggest minus the smallest, and then we use trigonometry to find the angle between the power of the motor and the resulting vector of the addition of the power of the motor and the difference D.
 This angle is then used as a parameter to rotate the model around the y-axis, to smooth things we multiply it by a variable turnSpeed.  
+
 \begin{lstlisting}[language=JavaScript, gobble=2, basicstyle=\ttfamily\small]
   this.object3D.rotateY(
     -(Math.atan(delta/Math.abs(this.leftMotor))*this.turnSpeed)
   );
 \end{lstlisting} 
+
 The resulting change in position is computed the same way as for the first category. It might be more relevant to use the norm of the resulting vector 
 found earlier to have a more accurate speed.
 
 The fourth category happens when both power values are the same but in a different direction. In this case, we rotate the robot on itself around the y-axis according to either of its motor speed.
+
 \begin{center}
   \includegraphics[scale=1]{./move_spdd}
 \end{center}
@@ -755,6 +777,7 @@ To determine if a collision occurs between the robot and one of the elements of 
 object and had to find a way to get all 3D objects from our scene. This was quite troublesome because of the implementation of our model view controller, when instantiating a new \texttt{Model} we would not get a reference to its \texttt{ViewMediator} where the model is stored. 
 We used the benefit of \texttt{JavaScript} to find a workaround, whenever a \texttt{ViewMediator} is instantiated we add to its model the property \texttt{mediator} where the value is the current mediator. Thus we could use the following method in order to skim through the array containing the shapes rendered in the scene and create a new array filled with intersection objects. We then loop through the array to control that the distance is bigger than the given one. If not we operate an action depending on the \texttt{className} of the intersected object. 
 In the default case, we assume the robot encounters an element against which he should stop moving.
+
 \begin{lstlisting}[language=JavaScript, gobble=2, basicstyle=\ttfamily\small]
   intersects = raycaster.intersectObjects(this.shapes, true);
   for(let i = 0; i < intersects.length; i++){
@@ -779,6 +802,7 @@ The creation of a customize playground that can be used later on in the simulati
 and don't add the compilation part. Thus most of the changes and logic come from the \texttt{CreatorController.js} file. We reflected  on how the data of the playground would be carried, or kept, and used in the simulator. Thus we had multiple options,
 such as using a database to store every customed playground so that they would all be available with the application. Or to download  them locally as a file on the user's computer. We went with the latest option as we previously prepared the program to load playgrounds from \texttt{JSON} files.
 Saving the playground data is done in four different steps, bellow a sequence diagram of the process.
+
 \begin{center}
   \includegraphics[width=\textwidth]{./savepg_sd}
 \end{center}
@@ -787,6 +811,7 @@ First, once the event that the save button has been pressed the application will
 Once every shapes contained in the cusomized playground have been gone through and categorized we create the final \texttt{JSON} file, it is created by using the \texttt{forEach} method of \texttt{JavaScript} array and writing the name of the mesh and it's properties. 
 Finally the file is downloaded on the user's computer and the process ends. The \texttt{JSON} file obtained looks like the following.
 %% TODO : Be sure it is not in between two pages
+
 \begin{lstlisting}[language=json, basicstyle=\ttfamily\small]
   "playground":"jailtype",
     "octagons":[
@@ -822,15 +847,18 @@ There are three different shapes at the user's disposal and two types of grounds
 Changing the properties will not change the mesh in real-time, but once the button \texttt{Generate Ground} is pressed it will remove the previous ground and add the new one. The creation of boxes and cylinders takes part in two steps. 
 During the first step, the user will choose the properties, such as \texttt{width}, the \texttt{length}, the \texttt{height}, the \texttt{color} and the \texttt{rotation} for the box, and then by clicking the \texttt{Generate} button of said shape, 
 a placeholder of the shape will be instantiated and it will follow the movements of the mouse while rounding its position to fit into the square represented by the \texttt{THREE.GridHelper} element. 
+
 \begin{lstlisting}[language=JavaScript, gobble=2, basicstyle=\ttfamily\small]
   this.rollOverMesh.position.divideScalar( 1 ).floor()
     .multiplyScalar( 1)
     .addScalar( 0.5 );
 \end{lstlisting} 
+
 Then the user has multiple-choice, either click to fix the mesh onto the scene, or the properties didn't fit what he wanted so he would click once more on the \texttt{Generate} button with the new properties, 
 or cancel the action with the \texttt{Esc} key. 
 To lay Tracks we needed to create one more step as the mesh is composed of multiple points, those points are laid the same way as a \texttt{Box} mesh would but they are added to an array that stores the position of those points. 
 Once the track is finished and upon clicking on the \texttt{Generate Track} button the points placeholders will be removed and a track passing through the wanted positions will be computed by looping through the points array and feeding the property element of track with the position of \texttt{X} and \texttt{Z} of each points.
+
 \begin{lstlisting}[language=JavaScript, gobble=2, basicstyle=\ttfamily\small]
   this.points.forEach(pt => {                      
     this.props.points.push({
@@ -839,6 +867,7 @@ Once the track is finished and upon clicking on the \texttt{Generate Track} butt
     });
   });
 \end{lstlisting} 
+
 However, the algorithm that tracks the movement of the mouse and changes the position of the temporary mesh is not optimized and will slow down the application drastically. Unfortunately we don't know which part of the algorithm has to be optimized.
 
 \section{Incorporated Behavior}
@@ -1017,11 +1046,11 @@ We added two other events for the right and left buttons that are responsible to
 
 \section{Aseba}
 
-For the \texttt{Aseba} possibility we kindly recommend you to use the tutorials and example that can be found on the \hreft{https://www.thymio.org/program/aseba/}{\texttt{Thymio} web page}.
+For the \texttt{Aseba} possibility we kindly recommend you to use the tutorials and example that can be found on the \href{https://www.thymio.org/program/aseba/}{\texttt{Thymio} web page}.
 
 \section{Scratch}
 
-For the \texttt{Scratch} possibility we kindly recommend you to use the tutorials and example that can be found on the \hreft{https://www.thymio.org/program/scratch/}{\texttt{Thymio} web page}.
+For the \texttt{Scratch} possibility we kindly recommend you to use the tutorials and example that can be found on the \href{https://www.thymio.org/program/scratch/}{\texttt{Thymio} web page}.
 
 \chapter{Product Backlog}
 \begin{longtable}{p{5mm}|p{2cm}|p{4cm}|p{1cm}|p{1cm}|p{1cm}|p{1cm}|p{15mm}}
