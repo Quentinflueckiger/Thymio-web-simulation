@@ -47,7 +47,8 @@
   stringstyle=\color{red}\ttfamily,
   morestring=[b]',
   morestring=[b]",
-  columns=fullflexible
+  columns=fullflexible,
+  backgroundcolor = \color{lightgray}
 }
 % Taken from Edward Cooper at
 % https://gist.github.com/ed-cooper/1927af4ccac39b083440d436d018d253
@@ -69,6 +70,7 @@
     upquote=true,
     morestring=[b]",
     stringstyle=\color{string},
+    backgroundcolor = \color{lightgray},
     literate=
      *{0}{{{\color{numb}0}}}{1}
       {1}{{{\color{numb}1}}}{1}
@@ -873,24 +875,28 @@ However, the algorithm that tracks the movement of the mouse and changes the pos
 \section{Incorporated Behavior}
 %% TODO : FILL
 %% We saw that Thymio has some pre-programmed behavior directly into him, decided to code one (explorator) and add another one (track follower)
+
 \chapter{Conclusion}
 
 %% TODO : FILL FILL
 \section{Results}
 
-Very difficult to understand a whole C++ application and select the part needed to be translated
-Interpreter taking way more time than imagined
-Not possible to use a file as behavior input for the robot, but possible in future with more work
+We reached five out of the six goals that we determined at the beginning of the project. We have created an environment where a \texttt{Thymio} robot can move around a given playground. The playground can be chosen between built-in ones or fully created by the user with a tool that enables it. 
+One sensor and three actuators have been analyzed and implemented into the robot, the proximity sensors, the two motors, the lights, and the top d-pad buttons. The application runs smoothly, for the exception of the placement of new meshes in the playground creator due to an algorithm issue, 
+on any modern browser without further installation required and is accessible from inside the \texttt{BFH} network. Unfortunately, it is not possible to input a .aesl file containing a program to the application and use it as behavior for \texttt{Thymio}. 
+Thus the sixth objective, \texttt{Integration of Aseba Language}, was not brought to terms on account of multiple problems and issues. As we came into this project without experience regarding the creation of a compiler/interpreter, we underestimated greatly the amount of work this part would take during the project. 
+We decided to use an already existing compiler/interpreter, the one from Aseba that they use for their \texttt{Thymio Suite} application. Their code was written in C++ and it was the second step back after the time needed just to create a compiler, as our knowledge of this programming language is very basic. 
+Thus it was rather difficult to convert their program into JavaScript. But to compensate for this we analyzed a \texttt{Thymio} robot and discovered that it comes with some built-in behavior, so we decided to incorporate two of them to demonstrate that a web simulation of a \texttt{Thymio} is possible. 
+And furthermore, if the steps in the next section are brought to completion it is completely possible to fulfill the integration of the \texttt{Aseba} language into the application.
 
 \section{Future research \label{future}}
 
 Write how the next steps come with the tree ( checkVectorSize, expandAbstractNodes, expandVectorialNodes, typeCheck, emit, link)
 Translate rest of functionality from c++ parser and co, add more sensors and actuator (sounds, pen and co)
 Better sensors
-Architecture too heavy and restrictive
 
 \section{Personal conclusion}
-
+Architecture too heavy and restrictive
 
 
 \appendix
@@ -1046,11 +1052,11 @@ We added two other events for the right and left buttons that are responsible to
 
 \section{Aseba}
 
-For the \texttt{Aseba} possibility we kindly recommend you to use the tutorials and example that can be found on the \href{https://www.thymio.org/program/aseba/}{\texttt{Thymio} web page}.
+For the \texttt{Aseba} possibility we kindly recommend you to use the tutorials and examples that can be found on the \href{https://www.thymio.org/program/aseba/}{\texttt{Thymio} web page}.
 
 \section{Scratch}
 
-For the \texttt{Scratch} possibility we kindly recommend you to use the tutorials and example that can be found on the \href{https://www.thymio.org/program/scratch/}{\texttt{Thymio} web page}.
+For the \texttt{Scratch} possibility we kindly recommend you to use the tutorials and examples that can be found on the \href{https://www.thymio.org/program/scratch/}{\texttt{Thymio} web page}.
 
 \chapter{Product Backlog}
 \begin{longtable}{p{5mm}|p{2cm}|p{4cm}|p{1cm}|p{1cm}|p{1cm}|p{1cm}|p{15mm}}
@@ -1158,9 +1164,12 @@ For the \texttt{Scratch} possibility we kindly recommend you to use the tutorial
 \end{longtable}
 
 \chapter{Gantt Diagram}
+%% TODO: make sure it's 100% visible
+
 \begin{center}
   \includegraphics[scale = 0.28, angle=-90]{./Gantt-1}
 \end{center}
+
 \begin{center}
   \includegraphics[scale = 0.28,  angle=-90]{./Gantt-2}
 \end{center}
