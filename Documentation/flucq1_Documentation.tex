@@ -128,7 +128,7 @@
 With all the growth that Information Technology has taken on in everyday life during the last decade, many questions have arisen. A very important one, at the very least in our minds, consists of the whole educational side. 
 At what point should Information Technology be taught, in mandatory school, high school, higher vocational, self-taught? In Switzerland, we are starting to introduce some optional courses in this field already in primary school. 
 Of course, they are not taught too deep and complicated concepts, it is more the way of reasoning and improving logical concepts. To help in this matter some school developed projects to ease the entry into the world of Information Technology, 
-such as the Swiss Federal Institute of Technology of Lausanne did with the project know as Thymio. Thymio is a little robot that can be programmed on a computer with four different languages, with varying degrees of difficulty. 
+such as the Swiss Federal Institute of Technology of Lausanne did with the project known as Thymio. Thymio is a little robot that can be programmed on a computer with four different languages, with varying degrees of difficulty. 
 Thus, it allows very young persons to experience and learn some of the basics. Unfortunately, this robot can have a few disadvantages, for example, the space required or the setup of its environment. 
 To fill these gaps, we have decided to create a simulation of the Thymio.
 Thus, the objective for this project became the creation of a Thymio simulator, it had to be a web application to ease the accessibility, no software installation required, and be compatible with modern browsers.
@@ -480,16 +480,6 @@ The specification and usage can be found on their website with the following lin
 The first steps were to learn how to use the \texttt{threejs} library and thus we integrated the needed code directly onto some .html file, which was not very efficient for a big application but was okay to test the functionalities. 
 At that time, we looked for some useful methods that we would need later on, such as the way to resize the window and its content. Another functionality added at this period was the controls of the camera, that comes from the OrbitControls.js file and allows the creation of an OrbitControls object which let the user move the camera, rotate it and zoom with the mouse.
 Afterward, we implemented method to create different Shapes with more ease for a larger application. We then moved the scripting part outside of the html and inside different \texttt{JavaScript} file as it was not convenient to have all the code into one single html file.
-
-
-%%\section{Model View Controller \label{mvc}}
-%% TODO : STUFF
-%%As described in the 
-%%Registration of buttons,
-%%What happens when a button is clicked.
-%%\begin{center}
-%%  \includegraphics[width=\textwidth]{./button_mvc}
-%%\end{center}
 
 \section{WebServer \label{webserver}}
 Regarding the goal number 5, "Require no software installation", we decided to use a webserver in order to access the application. At first we choose the IIS Manager that is built in with Windows 10, 
@@ -872,7 +862,7 @@ Once the track is finished and upon clicking on the \texttt{Generate Track} butt
 
 However, the algorithm that tracks the movement of the mouse and changes the position of the temporary mesh is not optimized and will slow down the application drastically. Unfortunately we don't know which part of the algorithm has to be optimized.
 
-\section{Incorporated Behavior}
+%%\section{Incorporated Behavior}
 %% TODO : FILL
 %% We saw that Thymio has some pre-programmed behavior directly into him, decided to code one (explorator) and add another one (track follower)
 
@@ -882,7 +872,8 @@ However, the algorithm that tracks the movement of the mouse and changes the pos
 \section{Results}
 
 We reached five out of the six goals that we determined at the beginning of the project. We have created an environment where a \texttt{Thymio} robot can move around a given playground. The playground can be chosen between built-in ones or fully created by the user with a tool that enables it. 
-One sensor and three actuators have been analyzed and implemented into the robot, the proximity sensors, the two motors, the lights, and the top d-pad buttons. The application runs smoothly, for the exception of the placement of new meshes in the playground creator due to an algorithm issue, 
+One sensor and three actuators have been analyzed and implemented into the robot, the proximity sensors, the two motors, the lights, and the top d-pad buttons. We have also noticed that although our application architecture, MVC, allows for the addition of new models very easily, it is too heavy and restrictive in terms of diversity. 
+For example to add the sensor we had to implement them not in the cleanest way possible. The application runs smoothly, for the exception of the placement of new meshes in the playground creator due to an algorithm issue, 
 on any modern browser without further installation required and is accessible from inside the \texttt{BFH} network. Unfortunately, it is not possible to input a .aesl file containing a program to the application and use it as behavior for \texttt{Thymio}. 
 Thus the sixth objective, \texttt{Integration of Aseba Language}, was not brought to terms on account of multiple problems and issues. As we came into this project without experience regarding the creation of a compiler/interpreter, we underestimated greatly the amount of work this part would take during the project. 
 We decided to use an already existing compiler/interpreter, the one from Aseba that they use for their \texttt{Thymio Suite} application. Their code was written in C++ and it was the second step back after the time needed just to create a compiler, as our knowledge of this programming language is very basic. 
@@ -891,12 +882,21 @@ And furthermore, if the steps in the next section are brought to completion it i
 
 \section{Future research \label{future}}
 
-Write how the next steps come with the tree ( checkVectorSize, expandAbstractNodes, expandVectorialNodes, typeCheck, emit, link)
-Translate rest of functionality from c++ parser and co, add more sensors and actuator (sounds, pen and co)
-Better sensors
+In order to continue this project the next step would be to complete the goal that wasn’t brought to an end. And to do so it would require to finish translating the various \texttt{.cpp} and \texttt{.h} file from the folder compiler of \href{ https://github.com/aseba-community/aseba/tree/master/aseba/compiler}{Asebas Git}. 
+The next step of the process of compiling a file would be to implement the \texttt{checkVectorSize} method. Which recursively walk through the tree and check the different \texttt{Nodes} vector size and would throw an error in case the return value doesn’t match the expected one. 
+The \texttt{compiler} would then move on to expand the syntax tree to \texttt{Aseba} like syntax, through a recursive walk on the tree. And the tree would be recreated with the new syntax. Afterward, it would expand the vectorial nodes into scalar operations and rebuild the tree. 
+Then comes the step where the type of each node would be checked to see if they correspond to the expected ones. It would then optimize the current tree, and then emit the first \texttt{Bytecode} generated from the tree. 
+Using a subroutine table the compiler will fix-up the generated \texttt{Bytecode} that might be missing some \texttt{STOP} or \texttt{RET}. Then the \texttt{verifyStackCalls} method which will do as her name suggests, verify the integrity of the stack with no overflow. 
+And it will end by linking the bytecode into the final program, the linking is a flattening of complex structure into linear vector.
+
+Once this part would be over, more sensors could be added. Such as sound sensors to listen to the clap of hands, or a "Pen holder" to draw figures by moving Thymio around. 
+It would be ideal to design and implement a way that would ease the addition of sensors and actuators, something in the way of our Model / ViewMediator. And to improve the already existing one. For example by getting rid of the algorithm issue on the motor actuators.
 
 \section{Personal conclusion}
-Architecture too heavy and restrictive
+
+The work on this thesis was very interesting and challenging. There were many new technologies to learn, understand and master. We didn’t expect at the start of the project that we would be confronted with a full-scale \texttt{C++} application, but we ended up learning a lot from it, 
+and from the difficulties that lie when trying to translate a program in one programming language into another programming language. We observed that it was rather difficult to estimate the amount of work needed for the various part that we were not accustomed to, 
+such as compiler that took way more time, or the customizable playground that took way less. But we gained a lot of knowledge and experience during this project.
 
 
 \appendix
