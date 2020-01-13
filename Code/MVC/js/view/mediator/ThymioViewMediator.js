@@ -3,11 +3,14 @@ import { MTLLoader } from '../../../bin/loaders/MTLLoader.js';
 import { OBJLoader } from '../../../bin/loaders/OBJLoader.js';
 import ProximitySensor from "../sensors/ProximitySensor.js";
 
+const nbrOfState = 3;
+const gravity = 100;
+
 export default class ThymioViewMediator extends ViewMediator {
     constructor(thymio, mediatorFactory) {
         super(thymio, mediatorFactory);
         this.ready = false;
-        this.speed = 0.005;
+        this.speed = 0.003;
         this.turnSpeed = 0.01;
         this.model.mediator = this;
         this.leftMotor = 0;
@@ -16,6 +19,8 @@ export default class ThymioViewMediator extends ViewMediator {
         this.sensorInitalized = false;
         this.shapes = [];
         this.sensors = [];
+        this.state = 0;             //0 = No behavior, 1 = Explorator behavior, 2 = Follow track behavior
+        this.noGroundCnt = 0;
     }
 
     makeObject3D() {
@@ -50,20 +55,34 @@ export default class ThymioViewMediator extends ViewMediator {
         return this.object3D.getWorldDirection(direction);;
     }
     
+    resetState(){
+        this.state = 0;
+    }
+
     onFrameRenderered() {
         super.onFrameRenderered();
 
         if (this.ready){        
             this.move();
-            this.controlFrontProx();
-            this.controlBackProx();
+            this.controlFrontProx(3.5);
+            this.controlBackProx(2.5);
+            this.controlGroundProx();
         }
         
+    }
+
+    reset(){
+        this.stopMotors();
+        this.resetRotation();
+        this.resetState();
+        this.setPosition(0,0);
+        this.noGroundCnt = 0;
     }
 
     setPosition(x,z) {
         this.object3D.position.x = x;
         this.object3D.position.z = z;
+        this.object3D.position.y = 0;
     }
 
     setMotors(left, right) {
@@ -76,6 +95,33 @@ export default class ThymioViewMediator extends ViewMediator {
         this.rightMotor = 0;
     }
     
+    stepBack(){
+
+        this.setMotors(-250,-250);
+        var thm = this;
+        setTimeout(function(){
+            if(this.state == 1)
+            {
+                thm.stopMotors();
+                thm.halfTurn();
+            }
+        },1000);
+    }
+
+    halfTurn(){
+
+        this.setMotors(-400,400);
+        var thm = this;
+        setTimeout(function(){
+            if (this.state == 1)
+                thm.setMotors(400,400);
+        },750);
+    }
+
+    fall(){
+        this.object3D.position.y -= this.speed * gravity;
+    }
+
     resetRotation() {
         this.object3D.rotation.y = Math.PI/2;
     }
@@ -123,7 +169,7 @@ export default class ThymioViewMediator extends ViewMediator {
         });
     }
 
-    controlFrontProx(){
+    controlFrontProx(dist){
         var raycaster = new THREE.Raycaster();
         var intersects;
         raycaster.set(this.object3D.position, this.getDirection().normalize());
@@ -133,7 +179,7 @@ export default class ThymioViewMediator extends ViewMediator {
         intersects = raycaster.intersectObjects(this.shapes, true);
         for(let i = 0; i < intersects.length; i++){
             //console.log("Intersection with: ", intersects[i]);
-            if (intersects[i].distance < 3.5){
+            if (intersects[i].distance < dist){
                 if( intersects[i].object.mediator.model.className === "Plane" ||
                     intersects[i].object.mediator.model.className === "Octagon")
                 {
@@ -145,15 +191,22 @@ export default class ThymioViewMediator extends ViewMediator {
                     //console.log("Track");
                 }
                 else{
-                    console.log("Interesct: ", intersects[i]);
-                    this.stopMotors();
+                    //console.log("Interesct: ", intersects[i]);
+                    if(this.state == 0)
+                    {
+                        this.stopMotors();
+                    }
+                    else if(this.state == 1)
+                    {
+                        this.stepBack();
+                    }
                 }
             }
         }
         
     }
 
-    controlBackProx(){
+    controlBackProx(dist){
         var raycaster = new THREE.Raycaster();
         var intersects;
         raycaster.set(this.object3D.position, (this.getDirection().normalize()).negate());
@@ -163,7 +216,7 @@ export default class ThymioViewMediator extends ViewMediator {
         intersects = raycaster.intersectObjects(this.shapes, true);
         for(let i = 0; i < intersects.length; i++){
             //console.log("Intersection with: ", intersects[i]);
-            if (intersects[i].distance < 2.5){
+            if (intersects[i].distance < dist){
                 if( intersects[i].object.mediator.model.className === "Plane" ||
                     intersects[i].object.mediator.model.className === "Octagon")
                 {
@@ -175,11 +228,118 @@ export default class ThymioViewMediator extends ViewMediator {
                 }
                 else{
 
-                    console.log("Interesct: ", intersects[i]);
+                    //console.log("Interesct: ", intersects[i]);
                     this.stopMotors();
                 }
             }
         }
         
     }
+
+    controlGroundProx(){
+        var raycaster = new THREE.Raycaster();
+        var intersects;
+        var limit = 10;
+        raycaster.set(this.object3D.position, new THREE.Vector3(0,-1,0));
+        if(this.shapes.length < 1)
+            return false;
+
+        intersects = raycaster.intersectObjects(this.shapes, true);
+        for(let i = 0; i < intersects.length; i++){
+            
+            if( intersects[i].object.mediator.model.className === "Plane" ||
+                intersects[i].object.mediator.model.className === "Octagon")
+            {
+                return true;
+            }
+            else 
+            {
+            }
+        }
+        this.noGroundCnt++;
+        if (this.noGroundCnt > limit)
+            this.fall();
+    }
+
+    dPUpClicked(){
+        if(this.state == 0)
+        {
+            this.setMotors(400,400);
+        }
+        else if(this.state == 1)
+        {
+            this.setMotors(400,400);
+        }
+        else if(this.state == 2)
+        {
+
+        }
+        else
+        {
+            console.error("Unimplemented thymio state.");
+        }
+    }
+    
+    dPLeftClicked(){
+        if(this.state == 0)
+        {
+            this.setMotors(-100, 400);           
+        }
+        else if(this.state == 1)
+        {
+        }
+        else if(this.state == 2)
+        {
+
+        }
+        else
+        {
+            console.error("Unimplemented thymio state.");
+        }
+    }
+
+    dPRightClicked(){
+        if(this.state == 0)
+        {
+            this.setMotors(400,-100);
+        }
+        else if(this.state == 1)
+        {
+
+        }
+        else if(this.state == 2)
+        {
+
+        }
+        else
+        {
+            console.error("Unimplemented thymio state.");
+        }
+    }
+
+    dPDownClicked(){
+        if(this.state == 0)
+        {
+            this.setMotors(-400,-400);
+        }
+        else if(this.state == 1)
+        {
+
+        }
+        else if(this.state == 2)
+        {
+
+        }
+        else
+        {
+            console.error("Unimplemented thymio state.");
+        }
+    }
+
+    dPCenterClicked(){
+        console.log(this.state);
+        this.state = (this.state + 1) % nbrOfState;
+        this.stopMotors();
+    }
+
 }

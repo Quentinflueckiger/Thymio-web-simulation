@@ -8,8 +8,6 @@ import UShapedFigure from '../model/UShapedFigure.js';
 import Cylinder from '../model/Cylinder.js';
 import Track from '../model/Track.js';
 
-const nbrOfState = 3;
-
 export default class EnvironmentController {
     constructor(environment, thymio) {
         this.environment = environment;
@@ -18,7 +16,7 @@ export default class EnvironmentController {
         this.thymio = thymio;
         this.playground;
         this.program;
-        this.state = 0;             //0 = No behavior, 1 = Explorator behavior, 2 = Follow track behavior
+        
     }
 
     onPGPickerClicked(e){
@@ -26,8 +24,7 @@ export default class EnvironmentController {
         
         this.environment.removePlayground(this.environment.playground[0]);
         
-        this.thymio.mediator.stopMotors();
-        this.thymio.mediator.resetRotation();
+        this.thymio.mediator.reset();
 
         var newPlayground = pgPicker.options[pgPicker.selectedIndex].value;
         this.loadPlayground(newPlayground);
@@ -117,8 +114,7 @@ export default class EnvironmentController {
         var ec = this;
         this.environment.removePlayground(this.environment.playground[0]);
         
-        this.thymio.mediator.stopMotors();
-        this.thymio.mediator.resetRotation();
+        this.thymio.mediator.reset();
         this.loadFile(file, ec);
     }
 
@@ -131,28 +127,32 @@ export default class EnvironmentController {
 
     onDPUpClicked(e) {
         
-        this.thymio.mediator.setMotors(300,300);
+        this.thymio.mediator.dPUpClicked();
+        //this.thymio.mediator.setMotors(300,300);
     }
 
     onDPLeftClicked(e) {
         
-        this.thymio.mediator.setMotors(300,150);
+        this.thymio.mediator.dPLeftClicked();
+        //this.thymio.mediator.setMotors(300,150);
     }
 
     onDPCenterClicked(e) {
         
         this.thymio.mediator.stopMotors();
-        this.state = (this.state + 1) % nbrOfState;
+        this.thymio.mediator.dPCenterClicked();
     }
 
     onDPRightClicked(e) {
         
-        this.thymio.mediator.setMotors(150,300);
+        this.thymio.mediator.dPRightClicked();
+        //this.thymio.mediator.setMotors(150,300);
     }
 
     onDPDownClicked(e) {
         
-        this.thymio.mediator.setMotors(-300,-300);
+        this.thymio.mediator.dPDownClicked();
+        //this.thymio.mediator.setMotors(-300,-300);
     }
 
     // This content will most likely end in the compiler

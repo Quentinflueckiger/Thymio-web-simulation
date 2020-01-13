@@ -9,15 +9,14 @@ export default class PlaneViewMediator extends ViewMediator {
     makeObject3D(){
         const container = new THREE.Object3D();
         const mesh = new THREE.Mesh(
-            new THREE.PlaneGeometry(this.model.properties.width, this.model.properties.height, PlaneViewMediator.SphereSegments),
+            new THREE.BoxGeometry(this.model.properties.width,0.2, this.model.properties.height),//, PlaneViewMediator.SphereSegments),
             new THREE.MeshPhongMaterial( { color : this.model.properties.color, side: THREE.DoubleSide} )
-        )
-
+        );
+        mesh.position.y -= 0.1;
         container.add(mesh);
-        mesh.rotateX(Math.PI/2);
+        //mesh.rotateX(Math.PI/2);
         
         mesh.receiveShadow = true;
-
 
         if(this.model.hasWalls) {
             const wallDepth = 1;
