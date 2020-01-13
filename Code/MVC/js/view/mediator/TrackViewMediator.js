@@ -44,6 +44,10 @@ export default class TrackViewMediator extends ViewMediator {
             track.quaternion.setFromUnitVectors(new THREE.Vector3(1, 0, 0), trackWidth.clone().normalize());
             container.add(track);
         }
+        
+        points.forEach(point => {
+            this.model.points.push(point);
+        })
 
         container.position.y += TrackHeight/2;
         return container;

@@ -4,7 +4,7 @@ export default class Track extends Model {
     constructor(name, properties) {
         super(name, properties);
         this.className = 'Track';
-        //this.points = [];
+        this.points = [];
     }
 
     /*

@@ -138,8 +138,7 @@ export default class EnvironmentController {
     }
 
     onDPCenterClicked(e) {
-        
-        this.thymio.mediator.stopMotors();
+
         this.thymio.mediator.dPCenterClicked();
     }
 

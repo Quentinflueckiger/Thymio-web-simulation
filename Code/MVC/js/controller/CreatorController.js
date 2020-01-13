@@ -447,12 +447,18 @@ export default class CreatorController {
     generateTrack(e){
         //this.points.pop();
         // Compute tracks with point array
+        this.points.pop();
+        //var firstPt = this.points[0];
         this.points.forEach(pt => {                      
             this.props.points.push({
                 positionX : pt.position.x,
                 positionZ : pt.position.z
             });
         });
+        /*this.props.points.push({
+            positionX : firstPt.position.x,
+            positionZ : firstPt.position.z
+        });*/
         this.deletePlaceholder();
         this.points = [];
 

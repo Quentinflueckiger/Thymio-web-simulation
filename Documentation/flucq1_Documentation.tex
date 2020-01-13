@@ -849,7 +849,8 @@ a placeholder of the shape will be instantiated and it will follow the movements
 Then the user has multiple-choice, either click to fix the mesh onto the scene, or the properties didn't fit what he wanted so he would click once more on the \texttt{Generate} button with the new properties, 
 or cancel the action with the \texttt{Esc} key. 
 To lay Tracks we needed to create one more step as the mesh is composed of multiple points, those points are laid the same way as a \texttt{Box} mesh would but they are added to an array that stores the position of those points. 
-Once the track is finished and upon clicking on the \texttt{Generate Track} button the points placeholders will be removed and a track passing through the wanted positions will be computed by looping through the points array and feeding the property element of track with the position of \texttt{X} and \texttt{Z} of each points.
+Once the track is finished and upon clicking on the \texttt{Generate Track} button the points placeholders will be removed and a track passing through the wanted positions will be computed by looping through the points array and feeding the property element of track with the position of \texttt{X} and \texttt{Z} of each points. 
+It was necessary to delete the last point added as it was registering and instantiating a point when the user was clicking on \texttt{Generate Track}.
 
 \begin{lstlisting}[language=JavaScript, gobble=2, basicstyle=\ttfamily\small]
   this.points.forEach(pt => {                      

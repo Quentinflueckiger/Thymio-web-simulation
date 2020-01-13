@@ -21,6 +21,10 @@ export default class ThymioViewMediator extends ViewMediator {
         this.sensors = [];
         this.state = 0;             //0 = No behavior, 1 = Explorator behavior, 2 = Follow track behavior
         this.noGroundCnt = 0;
+        this.timeOuts = [];
+        this.points = [];
+        this.target;
+        this.followTrackStart = false;
     }
 
     makeObject3D() {
@@ -67,6 +71,9 @@ export default class ThymioViewMediator extends ViewMediator {
             this.controlFrontProx(3.5);
             this.controlBackProx(2.5);
             this.controlGroundProx();
+            if(this.state == 2 && this.followTrackStart){
+                this.controlTrack();
+            }
         }
         
     }
@@ -76,7 +83,9 @@ export default class ThymioViewMediator extends ViewMediator {
         this.resetRotation();
         this.resetState();
         this.setPosition(0,0);
+        this.clearTimeOuts();
         this.noGroundCnt = 0;
+        document.getElementById("dPadText").innerHTML = "Basic";
     }
 
     setPosition(x,z) {
@@ -99,13 +108,10 @@ export default class ThymioViewMediator extends ViewMediator {
 
         this.setMotors(-250,-250);
         var thm = this;
-        setTimeout(function(){
-            if(thm.state == 1)
-            {
-                thm.stopMotors();
-                thm.halfTurn(true);
-            }
-        },1000);
+        this.timeOuts.push(setTimeout(function(){
+            thm.stopMotors();
+            thm.halfTurn(true);
+        },1000));
     }
 
     halfTurn(dir){
@@ -114,10 +120,9 @@ export default class ThymioViewMediator extends ViewMediator {
         else
             this.setMotors(400, -400);
         var thm = this;
-        setTimeout(function(){
-            if (thm.state == 1)
-                thm.setMotors(400,400);
-        },750);
+        this.timeOuts.push(setTimeout(function(){
+            thm.setMotors(400,400);
+        },750));
     }
 
     fall(){
@@ -241,7 +246,7 @@ export default class ThymioViewMediator extends ViewMediator {
     controlGroundProx(){
         var raycaster = new THREE.Raycaster();
         var intersects;
-        var limit = 10;
+        var limit = 1000;
         var ground = false;
         raycaster.set(this.object3D.position, new THREE.Vector3(0,-1,0));
         if(this.shapes.length < 1)
@@ -249,7 +254,6 @@ export default class ThymioViewMediator extends ViewMediator {
 
         intersects = raycaster.intersectObjects(this.shapes, true);
         for(let i = 0; i < intersects.length; i++){
-            
             if( intersects[i].object.mediator.model.className === "Plane" ||
                 intersects[i].object.mediator.model.className === "Octagon")
             {
@@ -261,8 +265,14 @@ export default class ThymioViewMediator extends ViewMediator {
         }
         if (!ground)
             this.noGroundCnt++;
-        if (this.noGroundCnt > limit)
-            this.fall();
+        //if (this.noGroundCnt > limit)
+            //this.fall();
+    }
+
+    clearTimeOuts(){
+        this.timeOuts.forEach(element => {
+            clearTimeout(element);
+        });
     }
 
     dPUpClicked(){
@@ -276,7 +286,7 @@ export default class ThymioViewMediator extends ViewMediator {
         }
         else if(this.state == 2)
         {
-
+            this.startFollowingTrack();
         }
         else
         {
@@ -329,11 +339,12 @@ export default class ThymioViewMediator extends ViewMediator {
         }
         else if(this.state == 1)
         {
-
+            this.stopMotors();
+            this.clearTimeOuts();
         }
         else if(this.state == 2)
         {
-
+            this.stopFollowingTrack();
         }
         else
         {
@@ -343,7 +354,95 @@ export default class ThymioViewMediator extends ViewMediator {
 
     dPCenterClicked(){
         this.state = (this.state + 1) % nbrOfState;
+
+        var stateText = document.getElementById("dPadText");
+        if(this.state == 0)
+            stateText.innerHTML = "Basic";
+        else if(this.state == 1)
+            stateText.innerHTML = "Explorator";
+        else if(this.state == 2)
+            stateText.innerHTML = "Track Follower";
+
+        this.followTrackStart = false;
+        this.points = [];
         this.stopMotors();
+    }
+
+    startFollowingTrack(){
+        if (this.followTrackStart)
+            return false;
+        var trackExist;
+        
+        this.shapes.forEach(element => {
+            if (element.mediator.model.className === "Track")
+                trackExist = element;
+        });
+
+        if ( trackExist)
+        {   
+            trackExist.mediator.model.points.forEach(point => {
+                this.points.push(point);
+            })
+
+            this.findClosestpoint();
+
+            this.followTrackStart = true;
+        }
+        else
+        {
+
+        }
+    }
+
+    stopFollowingTrack(){
+        
+        this.followTrackStart = false;
+        this.points = [];
+        this.stopMotors();
+    }
+
+    findClosestpoint(){
+        var smallest = 100;
+        var index;
+        for (let i = 0; i < this.points.length; i++) {
+            if (this.object3D.position.distanceTo(this.points[i]) < smallest)
+            {
+                smallest = this.object3D.position.distanceTo(this.points[i]);
+                index = i;
+            }            
+        }
+        var pointsHolder = [];
+        for(let i = 0; i < this.points.length; i++)
+        {
+            if(i+index < this.points.length)
+                pointsHolder.push(this.points[i+index]);
+            /*else
+                pointsHolder.push(this.points[i-(this.points.length-index)]);*/
+        }
+        this.points = [];
+        pointsHolder.forEach(point => {
+            this.points.push(point);
+        });
+        this.goToPoint(this.points.shift());
+    }
+
+    goToPoint(point){
+        
+        this.target = point;
+        this.object3D.lookAt(this.target);
+        this.setMotors(400,400);
+    }
+
+    controlTrack(){      
+        if( this.object3D.position.distanceTo(this.target) < 2)
+        {   
+            if(this.points.length == 0)
+            {
+                this.stopFollowingTrack();
+                return true;
+            }
+            this.goToPoint(this.points.shift());
+        }
     }
 
 }
