@@ -100,20 +100,22 @@ export default class ThymioViewMediator extends ViewMediator {
         this.setMotors(-250,-250);
         var thm = this;
         setTimeout(function(){
-            if(this.state == 1)
+            if(thm.state == 1)
             {
                 thm.stopMotors();
-                thm.halfTurn();
+                thm.halfTurn(true);
             }
         },1000);
     }
 
-    halfTurn(){
-
-        this.setMotors(-400,400);
+    halfTurn(dir){
+        if (dir)
+            this.setMotors(-400,400);
+        else
+            this.setMotors(400, -400);
         var thm = this;
         setTimeout(function(){
-            if (this.state == 1)
+            if (thm.state == 1)
                 thm.setMotors(400,400);
         },750);
     }
@@ -240,6 +242,7 @@ export default class ThymioViewMediator extends ViewMediator {
         var raycaster = new THREE.Raycaster();
         var intersects;
         var limit = 10;
+        var ground = false;
         raycaster.set(this.object3D.position, new THREE.Vector3(0,-1,0));
         if(this.shapes.length < 1)
             return false;
@@ -250,13 +253,14 @@ export default class ThymioViewMediator extends ViewMediator {
             if( intersects[i].object.mediator.model.className === "Plane" ||
                 intersects[i].object.mediator.model.className === "Octagon")
             {
-                return true;
+                ground = true;
             }
             else 
             {
             }
         }
-        this.noGroundCnt++;
+        if (!ground)
+            this.noGroundCnt++;
         if (this.noGroundCnt > limit)
             this.fall();
     }
@@ -287,6 +291,7 @@ export default class ThymioViewMediator extends ViewMediator {
         }
         else if(this.state == 1)
         {
+            this.halfTurn(false);
         }
         else if(this.state == 2)
         {
@@ -305,7 +310,7 @@ export default class ThymioViewMediator extends ViewMediator {
         }
         else if(this.state == 1)
         {
-
+            this.halfTurn(true);
         }
         else if(this.state == 2)
         {
@@ -337,7 +342,6 @@ export default class ThymioViewMediator extends ViewMediator {
     }
 
     dPCenterClicked(){
-        console.log(this.state);
         this.state = (this.state + 1) % nbrOfState;
         this.stopMotors();
     }
