@@ -105,10 +105,20 @@
 \begin{titlepage}
   \begin{center}
     {\LARGE \bfseries\sffamily Web Simulation of a Thymio Robot}
-
+    \vspace{2mm}
+    {\bfseries Bachelor thesis}
     \vspace{1cm}
 
-    {\large Quentin Flückiger (\texttt{flucq1@bfh.ch})}
+    {\large Degree programme: Computer Science}
+    \vspace{2mm}
+
+    {\large Author: Quentin Flückiger (\texttt{flucq1@bfh.ch})}
+    \vspace{2mm}
+
+    {\large Thesis Advisor: Prof. Claude Fuhrer}
+    \vspace{2mm}
+
+    {\large Expert: Dr. Eric Dubuis}
     \vspace{2mm}
 
     \today
@@ -123,8 +133,9 @@
 \includegraphics[width=\textwidth]{pdf/Declaration_of_authonomy.pdf}
 \clearpage
 
-\textbf{\large{Management Summary}}\\
-\\
+\section*{Management Summary}
+%%\textbf{\large{Management Summary}}\\
+
 With all the growth that Information Technology has taken on in everyday life during the last decade, many questions have arisen. A very important one, at the very least in our minds, consists of the whole educational side. 
 At what point should Information Technology be taught, in mandatory school, high school, higher vocational, self-taught? In Switzerland, we are starting to introduce some optional courses in this field already in primary school. 
 Of course, they are not taught too deep and complicated concepts, it is more the way of reasoning and improving logical concepts. To help in this matter some school developed projects to ease the entry into the world of Information Technology, 
@@ -169,14 +180,14 @@ we would recomend you the presentation, examples and discussion from \href{http:
 Thymio is an educational robot that aims at improving early education (starting in primary school) in STEM (Science, Technology, Engineering and Mathematics),
 computational thinking, base computer science and researching the acknowledgement by kids of robots in their learning environment.
 The project also had technical aims, such as how to provide hardware modularity, fast reaction time amid perception and action,
-clear internal communication bus in a user-friendly way and streamline development for group robot, this includes direct changes to the robots’ programs and parallel debugging wirelessly, 
+clear internal communication bus in a user-friendly way and streamline development for group robot. This includes direct changes to the robots’ programs and parallel debugging wirelessly, 
 transparently and cheaply.\\
 
 The Thymio project is based on a collaboration between the MOBOTS group from the Swiss Federal Institute of Technology in Lausanne (EPFL) and the Lausanne Arts School (ECAL).
-MOBOTS being the Miniature Mobile Robots Group, they are mainly focused around system design for small robots of the kind. It started with a strange-looking pile of components, 
+MOBOTS being the Miniature Mobile Robots Group, they are mainly focused around system design for small robots of the kind. The project started with a strange pile of components, 
 that were assembled on any kind of support and hold the name of “Monsieur Patate” (Sir Potato), most likely due to its appearance, 
 that saw life during the first workshop between the two contributors. After what the first “Thymio” was developed, 
-it was a four-block robot that could be self-assembled, but not self-programmed as it was coming with pre-programmed behaviors. 
+it was a four-block robot that could be self-assembled, but not self-programmed as it was delivered with pre-programmed behaviors. 
 It was used as a user study to gather feedback from clients to know what features needed to be implemented on the Thymio II.\\
 
 \begin{center}
@@ -186,9 +197,9 @@ It was used as a user study to gather feedback from clients to know what feature
 
 The result is a robot with a complex and complete set of sensors and actuators. 
 The National Centre for Competence in Research (NCCR) Robotics research program supported the development of the robot whereas Mobsya, 
-a non-profit organization that creates a robot, software, and educational activities to broaden young people's mind about technology and science, 
+a non-profit organization that creates robots, software, and educational activities to broaden young people's mind about technology and science, 
 oversees the production, distribution, and communication of said robot. 
-Every step of the Thymio project is open-source and has a non-profit aim to enhance the quality of it with the user's project and research, 
+Every step of the Thymio project is open-source and has a non-profit aim, namely to enhance the quality of it with the user's project and research, 
 and reduce the cost and augment the lifetime for educational platforms and materials.
 
 \begin{center}
@@ -215,7 +226,7 @@ A more detailed section on the four differents programming languages can be foun
 \chapter{Requirements Documentation}
 \section{Vision}
 
-A start-up from the EPFL has developed a robot, the Thymio robot or Thymio II, that promotes the programming and robotic activities among children. 
+The Thymio robot or Thymio II is a robot developed by a start-up from the EPFL in order to promote programming and robotic activities among children.  
 To feed program to the robot, a software has been developed, it integrates the four following programming languages: 
 \begin{itemize}
   \item VPL
@@ -290,7 +301,7 @@ Description:\\
 The user wants to create home made playground with a simple playground creation tool.
 Success:\\
 \begin{itemize}
-  \item The playground was successfully created and saved.
+  \item The playground is successfully created and saved.
 \end{itemize}
 Failure:\\
 \begin{itemize}
@@ -411,7 +422,8 @@ Failure:\\
 \chapter{Architecture \label{Architecture}}
 %% Domain class diagrams, Domain model, Sequence diagram
 
-We decided to divide the architecture into two different parts. One for the simulation side and the other one for the customization, although they are very similar there are still some differences that push us to look at them with two different angles. Both are build based on a \texttt{Model} \texttt{View} \texttt{Controller} system where the elements of the playground, be it a wall or the Thymio robot, are models and the page is seen by the user is the view. This view registers user inputs and transmits them to the controller. 
+We decided to divide the architecture into two different parts. One for the simulation side and the other one for the customization, although they are very similar there are still some differences that push us to look at them with two different angles. 
+Both are build based on a \texttt{Model} \texttt{View} \texttt{Controller} system where the elements of the playground, be it a wall or the Thymio robot, are models and the page seen by the user is the \texttt{View}. This \texttt{View} registers user inputs and transmits them to the \texttt{Controller}. 
 
 As said we have split the architecture, bellow is a graphic representing the architecture for the simulator. We can see the \texttt{Model} \texttt{View} \texttt{Controller} and a second component which is the interpreter, 
 that is singular to the simulator page. Its role is to test the integrity of the file given as input through the \texttt{Controller} and compile it into \texttt{JavaScript} code for it to be used as behavior code for the Thymio model.
@@ -427,7 +439,7 @@ The \texttt{MVC} we are using is based on an example from \href{https://github.c
 \end{center}
 
 The \texttt{Model} part is split into three categories that extends the same base class \texttt{Observable} which works as an event system with the \texttt{addObserver} and \texttt{emit} method. 
-The first category of the three that we will cover is the one responsible for the buttons, we instantiate one of the right types depending on the \texttt{View}, at the start of the page and add \texttt{addEventListener} to the corresponding \texttt{HTML} elements. 
+The first category of the three that we will cover is the one responsible for the buttons. We instantiate one of the right types, depending on the \texttt{View}, at the start of the page and add \texttt{addEventListener} to the corresponding \texttt{HTML} elements. 
 Those events will trigger the \texttt{emit} method of its base class to notify the \texttt{View} that this particular button has been clicked. The \texttt{View} will catch this event because of the second base method of the \texttt{Observable} class, 
 forwarding it to the \texttt{EnvironmentController} class to take care of the logic. 
 The two categories left are linked as they operate as the two sides of a coin. They are used for the \texttt{three.js} elements. The first one, the \texttt{Model}, holds the data of the object such as its name, a list of properties containing the dimension, 
@@ -473,7 +485,7 @@ WeBots is a very powerful software that can do a lot of things, and one of these
 The two Aseba Studio and VPL for Thymio can be directly connected to the software and its simulated robot. 
 The specification and usage can be found on their website with the following link \href{https://www.cyberbotics.com/doc/guide/thymio2#mosybas-thymio-ii}{WeBots Thymio} .
 
-\chapter{Our Approach}
+\chapter{The Approach}
 
 \section{Base Development}
 
@@ -548,7 +560,7 @@ as the center to position a box object, which represent the track, and then it i
   }
 \end{lstlisting} 
 
-We decided to load only once the Thymio model, as it takes in average 500ms to 1'000ms to load it, and we encountered some issues where the model would not load everytime when we would change the playgrounds.
+We decided to load only once the Thymio model, as it takes in average 500ms to 1'000ms to load it, and we encountered some issues where the model would not load everytime the playground was changed.
 Therefore we reset it's position and rotation whenever we change the playground, or if a position is given in the playground.json data file, the Thymio is moved to the wanted position.
 
 Thinking about the creation of playground we decided to change how the playgrounds data were recorded and instead of having them as \texttt{JavaScript} file, we moved them all into a \texttt{JSON} file. So later on it would not require more work to load a 
