@@ -1,5 +1,5 @@
-%%scrreprt
-\documentclass{scrbook}
+\documentclass{scrreprt}
+%%\documentclass{scrbook}
 \usepackage{lipsum}
 %%\usepackage[french]{babel}
 %%\usepackage[ngerman]{babel}
@@ -234,7 +234,7 @@ This aim has been split into 6 different defining goals in order to create this 
   \includegraphics[width=\textwidth]{./goals}
 \end{center}
 
-\section{System Context}
+%%\section{System Context}
 %%\section{Requirements}
 \section{Risk Analysis}
 In order to carry out the project successfully, we must consider the following possible complications. The possible complications are on one hand assessed according to their impact and on the other hand according to their likelihood to occur. 
@@ -501,7 +501,7 @@ It was needed to create a web.config file and add a few file extension so that t
 Otherwise we encountered an error of the type "Failed to load resource: the server responded with a status of 404 (Not Found)." 
 The text that needed to be added to the web.config file is the following : 
 
-\begin{lstlisting}[language=XML, basicstyle=\ttfamily\small]
+\begin{lstlisting}[language=XML, basicstyle=\ttfamily\small, backgroundcolor = \color{lightgray}]
 <?xml version="1.0" encoding="UTF-8"?>
   <configuration>
     <system.webServer>

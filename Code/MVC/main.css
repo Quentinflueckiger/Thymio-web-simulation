@@ -62,7 +62,7 @@ a, button, input, select {
 	user-select: none;
 	pointer-events: none;
 	z-index: 1; 
-	color: rgb(128, 68, 0);
+	color: rgb(33, 255, 4);
 }
 
 .dPadbutton {

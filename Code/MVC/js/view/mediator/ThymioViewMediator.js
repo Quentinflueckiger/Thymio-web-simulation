@@ -198,7 +198,7 @@ export default class ThymioViewMediator extends ViewMediator {
                     //console.log("Track");
                 }
                 else{
-                    //console.log("Interesct: ", intersects[i]);
+                    console.log("Interesct: ", intersects[i]);
                     if(this.state == 0)
                     {
                         this.stopMotors();
@@ -206,6 +206,10 @@ export default class ThymioViewMediator extends ViewMediator {
                     else if(this.state == 1)
                     {
                         this.stepBack();
+                    }
+                    else if(this.state == 2)
+                    {
+                        this.stopFollowingTrack();
                     }
                 }
             }
@@ -366,6 +370,7 @@ export default class ThymioViewMediator extends ViewMediator {
         this.followTrackStart = false;
         this.points = [];
         this.stopMotors();
+        this.clearTimeOuts();
     }
 
     startFollowingTrack(){
