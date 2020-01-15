@@ -2,96 +2,92 @@
 \defcounter {refsection}{0}\relax 
 \select@language {english}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {1}Environment}{7}{chapter.1}
+\contentsline {chapter}{\numberline {1}Thymio}{6}{chapter.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {1.1}Three JS}{7}{section.1.1}
+\contentsline {section}{\numberline {1.1}What is Thymio}{6}{section.1.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {2}Thymio}{9}{chapter.2}
+\contentsline {section}{\numberline {1.2}How does it works }{8}{section.1.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.1}What is Thymio}{9}{section.2.1}
+\contentsline {chapter}{\numberline {2}Requirements Documentation}{9}{chapter.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.2}How does it works }{10}{section.2.2}
+\contentsline {section}{\numberline {2.1}Vision}{9}{section.2.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {3}Requirements Documentation}{13}{chapter.3}
+\contentsline {section}{\numberline {2.2}Goals}{9}{section.2.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.1}Vision}{13}{section.3.1}
+\contentsline {section}{\numberline {2.3}Risk Analysis}{9}{section.2.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.2}Goals}{13}{section.3.2}
+\contentsline {section}{\numberline {2.4}Stakeholder Descriptions}{10}{section.2.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.3}System Context}{13}{section.3.3}
+\contentsline {section}{\numberline {2.5}User Stories}{10}{section.2.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.4}Risk Analysis}{13}{section.3.4}
+\contentsline {section}{\numberline {2.6}Use Cases Model}{11}{section.2.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.5}Stakeholder Descriptions}{14}{section.3.5}
+\contentsline {chapter}{\numberline {3}Environment}{14}{chapter.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.6}User Stories}{14}{section.3.6}
+\contentsline {section}{\numberline {3.1}Three JS}{14}{section.3.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.7}Use Cases Model}{15}{section.3.7}
+\contentsline {chapter}{\numberline {4}Architecture }{15}{chapter.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {4}Architecture }{19}{chapter.4}
+\contentsline {chapter}{\numberline {5}What already exist}{19}{chapter.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {5}What already exist}{23}{chapter.5}
+\contentsline {chapter}{\numberline {6}The Approach}{21}{chapter.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {6}Our Approach}{25}{chapter.6}
+\contentsline {section}{\numberline {6.1}Base Development}{21}{section.6.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.1}Base Development}{25}{section.6.1}
+\contentsline {section}{\numberline {6.2}WebServer }{21}{section.6.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.2}WebServer }{25}{section.6.2}
+\contentsline {section}{\numberline {6.3}Playgrounds}{22}{section.6.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.3}Playgrounds}{26}{section.6.3}
+\contentsline {section}{\numberline {6.4}Interpreter}{23}{section.6.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.4}Interpreter}{27}{section.6.4}
+\contentsline {subsection}{\numberline {6.4.1}Tokenize}{25}{subsection.6.4.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {6.4.1}Tokenize}{29}{subsection.6.4.1}
+\contentsline {subsection}{\numberline {6.4.2}Parser}{26}{subsection.6.4.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {6.4.2}Parser}{30}{subsection.6.4.2}
+\contentsline {section}{\numberline {6.5}Phyisics}{29}{section.6.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.5}Phyisics}{33}{section.6.5}
+\contentsline {section}{\numberline {6.6}Sensor and Actuator}{29}{section.6.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.6}Sensor and Actuator}{33}{section.6.6}
+\contentsline {section}{\numberline {6.7}Customize playgrounds}{33}{section.6.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.7}Customize playgrounds}{37}{section.6.7}
+\contentsline {chapter}{\numberline {7}Conclusion}{36}{chapter.7}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {7}Conclusion}{41}{chapter.7}
+\contentsline {section}{\numberline {7.1}Results}{36}{section.7.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {7.1}Results}{41}{section.7.1}
+\contentsline {section}{\numberline {7.2}Future research }{36}{section.7.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {7.2}Future research }{41}{section.7.2}
+\contentsline {section}{\numberline {7.3}Personal conclusion}{37}{section.7.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {7.3}Personal conclusion}{42}{section.7.3}
+\contentsline {chapter}{\numberline {A}The different programming languages }{38}{appendix.A}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {A}The different programming languages }{43}{appendix.A}
+\contentsline {section}{\numberline {A.1}VPL}{38}{section.A.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A.1}VPL}{43}{section.A.1}
+\contentsline {section}{\numberline {A.2}Blockly 4 Thymio}{42}{section.A.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A.2}Blockly 4 Thymio}{47}{section.A.2}
+\contentsline {section}{\numberline {A.3}Aseba}{45}{section.A.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A.3}Aseba}{50}{section.A.3}
+\contentsline {section}{\numberline {A.4}Scratch}{45}{section.A.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A.4}Scratch}{50}{section.A.4}
+\contentsline {chapter}{\numberline {B}Product Backlog}{46}{appendix.B}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {B}Product Backlog}{51}{appendix.B}
+\contentsline {chapter}{\numberline {C}Sprint Backlog}{48}{appendix.C}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {C}Sprint Backlog}{53}{appendix.C}
+\contentsline {section}{\numberline {C.1}First Sprint}{48}{section.C.1}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {C.1}First Sprint}{53}{section.C.1}
+\contentsline {section}{\numberline {C.2}Second Sprint}{48}{section.C.2}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {C.2}Second Sprint}{53}{section.C.2}
+\contentsline {section}{\numberline {C.3}Third Sprint}{49}{section.C.3}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {C.3}Third Sprint}{54}{section.C.3}
+\contentsline {section}{\numberline {C.4}Fourth Sprint}{50}{section.C.4}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {C.4}Fourth Sprint}{55}{section.C.4}
+\contentsline {section}{\numberline {C.5}Fifth Sprint}{51}{section.C.5}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {C.5}Fifth Sprint}{56}{section.C.5}
+\contentsline {section}{\numberline {C.6}Sixth Sprint}{51}{section.C.6}
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {C.6}Sixth Sprint}{56}{section.C.6}
+\contentsline {chapter}{\numberline {D}Gantt Diagram}{53}{appendix.D}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {D}Gantt Diagram}{59}{appendix.D}
+\contentsline {chapter}{\numberline {E}Configuration}{57}{appendix.E}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {E}Version control}{63}{appendix.E}
+\contentsline {chapter}{\numberline {F}Meetings}{58}{appendix.F}
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {F}Configuration}{65}{appendix.F}
-\defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {G}Meetings}{67}{appendix.G}
-\defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {H}Problems encountered}{69}{appendix.H}
+\contentsline {chapter}{\numberline {G}Problems encountered}{60}{appendix.G}

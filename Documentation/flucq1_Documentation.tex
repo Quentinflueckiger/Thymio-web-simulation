@@ -106,6 +106,7 @@
   \begin{center}
     {\LARGE \bfseries\sffamily Web Simulation of a Thymio Robot}
     \vspace{2mm}
+
     {\bfseries Bachelor thesis}
     \vspace{1cm}
 
@@ -136,59 +137,44 @@
 \section*{Management Summary}
 %%\textbf{\large{Management Summary}}\\
 
-With all the growth that Information Technology has taken on in everyday life during the last decade, many questions have arisen. A very important one, at the very least in our minds, consists of the whole educational side. 
-At what point should Information Technology be taught, in mandatory school, high school, higher vocational, self-taught? In Switzerland, we are starting to introduce some optional courses in this field already in primary school. 
-Of course, they are not taught too deep and complicated concepts, it is more the way of reasoning and improving logical concepts. To help in this matter some school developed projects to ease the entry into the world of Information Technology, 
-such as the Swiss Federal Institute of Technology of Lausanne did with the project known as Thymio. Thymio is a little robot that can be programmed on a computer with four different languages, with varying degrees of difficulty. 
-Thus, it allows very young persons to experience and learn some of the basics. Unfortunately, this robot can have a few disadvantages, for example, the space required or the setup of its environment. 
-To fill these gaps, we have decided to create a simulation of the Thymio.
-Thus, the objective for this project became the creation of a Thymio simulator, it had to be a web application to ease the accessibility, no software installation required, and be compatible with modern browsers.
+As information technology has grown massively in everyday life during the last decade, many questions have arisen. A very important one, at the very least in our minds, concerns the educational side. 
+To what extent should information technology be taught, in mandatory school, high school, vocational education, or even self-taught? In Switzerland, some optional courses in this field have already been introduced in the curriculum of some primary schools. 
+Of course, the schoolkids are not taught too deep and complicated concepts, but they are rather familiarized with the way of reasoning and improving logical concepts. To ease the entry into the world of information technology, some schools have developed projects. 
+One example is the Thymio project of the Swiss Federal Institute of Technology of Lausanne. Thymio is a small robot that can be programmed on a computer with four different languages, with varying degrees of difficulty. 
+Thus, it allows very young people to experience and learn some of the basics of information technology. Unfortunately, this robot has a few disadvantages. One example is the space required or the setup of its environment. 
+In order to fill these gaps, we have decided to create a simulation of the Thymio.
+Therefore, the objective of this project is the creation of a Thymio simulator. The simulator has to be a web application to ease the accessibility, where no software installation is required, and it has to be compatible with modern browsers.
 
-We started by learning about the four different languages supported by the robot, viz., VPL, Blockly, Aseba, and Scratch. How to create a simple program with each of them and how the output programs were formatted. 
-As we decided to make the simulator completely web, we needed a way to represent and animate computer graphic elements, thus we chose \texttt{three.js} as a library to help us in those matters.
+We started the project by learning about the four different languages supported by the robot, namely VPL, Blockly, Aseba, and Scratch. We were interested in knowing how to create a simple program with each of them and how the output programs were formatted. 
+As we decided to make the simulator completely web, we needed a way to represent and animate computer graphic elements. In this sens, we chose \texttt{three.js} as a library.
 
-Afterward, we created the base of the application, which consist of loading a Thymio model, having multiple basic playgrounds. We built on top of this a special playground creator tool, that allows the user to create its own playground with different meshes that he can place. 
-The data are then stored inside a \texttt{JSON} file on his machine and can be load in the simulator. The first actuator, an actuator is a component of a machine that is responsible for moving and controlling a mechanism or system, 
-to be added were the motors. We tried to make them behave as close to reality as possible, so two motors that can only do three things: Move forward, move backward, or don’t move at all.
+Afterward, we created the base of the application. This base consists in loading a Thymio model and in having multiple basic playgrounds. On top of this we built a special playground creator tool, that allows the user to create his own playground with different meshes that he can place. 
+The data are then stored inside a \texttt{JSON} file on the user's machine and they can be loaded in the simulator. The first actuator to be added, which is a component of a machine that is responsible for moving and controlling a mechanism or system, 
+were the motors. We tried to make them behave as close to reality as possible, that is to say they can only do three things: move forward, move backward, or they do not move at all.
 
-And last but not least, we had to develop a compiler that would translate a program written for Thymio in one of the four languages. To do this we used the code of the Thymio Suite application developed by \texttt{Aseba}. 
-As their application was coded in \texttt{C++} it was needed to understand it, or at least understand the part important for this, and translate them into \texttt{JavaScript}. 
+Last but not least, we had to develop a compiler that would translate a program written for Thymio in one of the four languages. In order to do this we used the code of the Thymio Suite application developed by \texttt{Aseba}. 
+As their application was coded in \texttt{C++} it was needed to understand it and to translate them into \texttt{JavaScript}. 
 
 \clearpage
 
 \tableofcontents
 \clearpage
 
-\chapter{Environment}
-
-\section{Three JS}
-
-\texttt{three.js} is a 3D library for \texttt{JavaScript} which uses a default \texttt{WebGL} renderer. It allows the user to display, create and animate 3D computer graphics in a web browser. Its basic rendering pipeline is as follow :
-
-\begin{center}
-  \includegraphics[scale=0.5]{./basic_threejs_rendering}
-\end{center}
-
-Every \texttt{three.js} application is composed of at least one \texttt{Camera} element, a \texttt{Renderer} element and a \texttt{Scene} element. The different meshes are added to the scene and this scene along with the camera are rendered using the method 
-\texttt{requestAnimationFrame} from \texttt{three.js} on the renderer element. 
-Using the \texttt{three.js} library it is possible as well to create Augmented Reality application working in web browser, which is very neat. For example it can display information from a database based on a marker. If this topic picked your interest, 
-we would recomend you the presentation, examples and discussion from \href{http://jeromeetienne.github.io/slides/augmentedrealitywiththreejs/}{Jerome Etienne}.
-
 \chapter{Thymio}
 \section{What is Thymio} 
 
-Thymio is an educational robot that aims at improving early education (starting in primary school) in STEM (Science, Technology, Engineering and Mathematics),
-computational thinking, base computer science and researching the acknowledgement by kids of robots in their learning environment.
+Thymio is an educational robot that aims at improving early education (starting in primary school) in Science, Technology, Engineering and Mathematics (STEM),
+computational thinking, base computer science and at researching the acknowledgement by kids of robots in their learning environment.
 The project also had technical aims, such as how to provide hardware modularity, fast reaction time amid perception and action,
 clear internal communication bus in a user-friendly way and streamline development for group robot. This includes direct changes to the robots’ programs and parallel debugging wirelessly, 
 transparently and cheaply.\\
 
 The Thymio project is based on a collaboration between the MOBOTS group from the Swiss Federal Institute of Technology in Lausanne (EPFL) and the Lausanne Arts School (ECAL).
-MOBOTS being the Miniature Mobile Robots Group, they are mainly focused around system design for small robots of the kind. The project started with a strange pile of components, 
-that were assembled on any kind of support and hold the name of “Monsieur Patate” (Sir Potato), most likely due to its appearance, 
-that saw life during the first workshop between the two contributors. After what the first “Thymio” was developed, 
+MOBOTS being the Miniature Mobile Robots Group, they mainly focus on system design for small robots of the kind. The project started with a strange pile of components, 
+that were assembled on any kind of support and hold the name of “Monsieur Patate” (Sir Potato), most likely due to its appearance. 
+"Monsieuer Patate" saw life during the first workshop between the two contributors. Afterward, the first “Thymio” was developed, 
 it was a four-block robot that could be self-assembled, but not self-programmed as it was delivered with pre-programmed behaviors. 
-It was used as a user study to gather feedback from clients to know what features needed to be implemented on the Thymio II.\\
+Thymio was used as a user study to gather feedback from clients in order to know which features needed to be implemented on the Thymio II.\\
 
 \begin{center}
   \includegraphics[width=\textwidth]{prototype_thymio_old}\\
@@ -196,11 +182,9 @@ It was used as a user study to gather feedback from clients to know what feature
 \end{center}
 
 The result is a robot with a complex and complete set of sensors and actuators. 
-The National Centre for Competence in Research (NCCR) Robotics research program supported the development of the robot whereas Mobsya, 
-a non-profit organization that creates robots, software, and educational activities to broaden young people's mind about technology and science, 
-oversees the production, distribution, and communication of said robot. 
-Every step of the Thymio project is open-source and has a non-profit aim, namely to enhance the quality of it with the user's project and research, 
-and reduce the cost and augment the lifetime for educational platforms and materials.
+The National Centre for Competence in Research (NCCR) Robotics research program supported the development of the robot. The production distribution and communication of the robot was overseen by Mobsya, 
+a non-profit organization that creates robots, software, and educational activities to broaden young people's mind about technology and science. 
+Every step of the Thymio project is open-source and has a non-profit aim, namely to enhance the quality of it with the user's project and research as well as to reduce the cost and augment the lifetime for educational platforms and materials.
 
 \begin{center}
   \includegraphics[width=\textwidth]{Wireless-thymioII-sensor-actuator-color-en}\\
@@ -209,24 +193,24 @@ and reduce the cost and augment the lifetime for educational platforms and mater
 
 \section{How does it works \label{howdoesitworkref}} 
 
-As seen in the figure above there exist two Thymio models, Thymio and Wireless Thymio. 
-The difference between them lies in the ability of the second one to be programmed wirelessly, 
-as its name suggests. To begin the creation of a program for the robot there exist two possibilities.
+As pictured in the figure above there are two Thymio models, namely Thymio and Wireless Thymio. 
+The difference between them lies in the ability of the latter one to be programmed wirelessly, 
+as suggested by its name. There are two possibilities to begin the creation of a program for the robot there.
 The first one, and the most common one for the public is done by using the software Aseba and a connected Thymio. 
 In this case, the robot needs to be plugged in via USB cable or USB dongle (possible only if it is the Wireless Thymio) and powered on. 
-Then the software can be used to connect to said robot and start to program in one of the four different programming languages, 
-that are: VPL, Blockly, Aseba, and Scratch. Once the program is ready and sent to the robot it will be available to play. \\
+Then, the software can be used to connect to said robot and to start programming in one of the four different programming languages. 
+These are: VPL, Blockly, Aseba, and Scratch. Once the program is ready and sent to the robot it will be available to play. \\
 
 The second option is to use the work-in-progress Thymio Suite version. 
-This software doesn’t require a Thymio robot to be connected physically (or wirelessly) at all times as it has its own simulator built-in. 
-The four said languages are still available, and one need to be chosen. 
-After what comes the choice of connecting a physical Thymio or starting a simulation to emulate the programmed behavior.
-A more detailed section on the four differents programming languages can be found in the section \ref{fourlanguages} at the page \pageref{fourlanguages}.
+As the software possesses ots pwm bioét-in simulator it does not require a physically or wirelessly connected Thymio robot. 
+The same four programming languages are available and one has to be chosen. 
+After having selected the language comes the choice of either connecting a physical Thymio or starting a simulation to emulate the programmed behavior.
+A more detailed section on the four differents programming languages can be found in section \ref{fourlanguages} on page \pageref{fourlanguages}.
 
 \chapter{Requirements Documentation}
 \section{Vision}
 
-The Thymio robot or Thymio II is a robot developed by a start-up from the EPFL in order to promote programming and robotic activities among children.  
+The Thymio robot or Thymio II is a robot developed by a start-up from the EPFL in order to promote programming and robotic activities among children. 
 To feed program to the robot, a software has been developed, it integrates the four following programming languages: 
 \begin{itemize}
   \item VPL
@@ -236,6 +220,7 @@ To feed program to the robot, a software has been developed, it integrates the f
 \end{itemize}
 
 The project Web Simulation of a Thymio robot is aimed to create a simulator for the Thymio II so as to allow people to see their programmed behavior directly.
+%% TODO : add problematique 
 
 \section{Goals}
 
@@ -416,11 +401,22 @@ Failure:\\
   \includegraphics[scale=0.7]{./loadPlayground_sd}
 \end{center}
 
+\chapter{Environment}
 
-%%Use case diagram
+\section{Three JS}
+
+\texttt{three.js} is a 3D library for \texttt{JavaScript} which uses a default \texttt{WebGL} renderer. It allows the user to display, create and animate 3D computer graphics in a web browser. Its basic rendering pipeline is as follow :
+
+\begin{center}
+  \includegraphics[scale=0.5]{./basic_threejs_rendering}
+\end{center}
+
+Every \texttt{three.js} application is composed of at least one \texttt{Camera} element, a \texttt{Renderer} element and a \texttt{Scene} element. The different meshes are added to the scene and this scene along with the camera is rendered using the \texttt{three.js} method 
+\texttt{requestAnimationFrame} on the renderer element. 
+Using the \texttt{three.js} library it is possible as well to create Augmented Reality application working in web browser. For example it can display information from a database based on a marker. Interesting reading on this topic is available in 
+the presentation, examples and discussion of \href{http://jeromeetienne.github.io/slides/augmentedrealitywiththreejs/}{Jerome Etienne}.
 
 \chapter{Architecture \label{Architecture}}
-%% Domain class diagrams, Domain model, Sequence diagram
 
 We decided to divide the architecture into two different parts. One for the simulation side and the other one for the customization, although they are very similar there are still some differences that push us to look at them with two different angles. 
 Both are build based on a \texttt{Model} \texttt{View} \texttt{Controller} system where the elements of the playground, be it a wall or the Thymio robot, are models and the page seen by the user is the \texttt{View}. This \texttt{View} registers user inputs and transmits them to the \texttt{Controller}. 
@@ -798,6 +794,8 @@ In the default case, we assume the robot encounters an element against which he 
     }
   }
 \end{lstlisting} 
+
+%% TODO : Ground no collision for some reason
 %% TODO : Lights
 
 \section{Customize playgrounds}
@@ -881,7 +879,6 @@ However, the algorithm that tracks the movement of the mouse and changes the pos
 
 \chapter{Conclusion}
 
-%% TODO : FILL FILL
 \section{Results}
 
 We reached five out of the six goals that we determined at the beginning of the project. We have created an environment where a \texttt{Thymio} robot can move around a given playground. The playground can be chosen between built-in ones or fully created by the user with a tool that enables it. 
@@ -1180,14 +1177,12 @@ For the \texttt{Scratch} possibility we kindly recommend you to use the tutorial
 %% TODO: make sure it's 100% visible
 
 \begin{center}
-  \includegraphics[scale = 0.28, angle=-90]{./Gantt-1}
+  \includegraphics[scale = 0.24, angle=-90]{./Gantt-1}
 \end{center}
 
 \begin{center}
-  \includegraphics[scale = 0.28,  angle=-90]{./Gantt-2}
+  \includegraphics[scale = 0.24,  angle=-90]{./Gantt-2}
 \end{center}
-
-\chapter{Version control}
 
 \chapter{Configuration}
 
@@ -1281,6 +1276,7 @@ The configuration of XAMPP is very basic. The steps done during the setup of the
 
 \includegraphics[width=\textwidth]{pdf/bachelor_quentin.pdf}
 
+%% TODO : list of abbreviations
 %% Print the bibibliography and add the section to the table of content
 \printbibliography[heading=bibintoc]
 
