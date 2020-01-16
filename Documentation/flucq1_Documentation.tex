@@ -131,11 +131,10 @@
 
 \clearpage
 
-\includegraphics[width=\textwidth]{pdf/Declaration_of_authonomy.pdf}
+\includegraphics[width=\textwidth]{pdf/bachelor_quentin.pdf}
 \clearpage
 
 \section*{Management Summary}
-%%\textbf{\large{Management Summary}}\\
 
 As information technology has grown massively in everyday life during the last decade, many questions have arisen. A very important one, at the very least in our minds, concerns the educational side. 
 To what extent should information technology be taught, in mandatory school, high school, vocational education, or even self-taught? In Switzerland, some optional courses in this field have already been introduced in the curriculum of some primary schools. 
@@ -159,6 +158,203 @@ As their application was coded in \texttt{C++} it was needed to understand it an
 
 \tableofcontents
 \clearpage
+
+\chapter{Requirements Documentation}
+\section{Introduction}
+
+As information technology has grown massively in everyday life during the last decade, many questions have arisen. A very important one, at the very least in our minds, concerns the educational side. 
+To what extent should information technology be taught, in mandatory school, high school, vocational education, or even self-taught? In Switzerland, some optional courses in this field have already been introduced in the curriculum of some primary schools. 
+Of course, the schoolkids are not taught too deep and complicated concepts, but they are rather familiarized with the way of reasoning and improving logical concepts. To ease the entry into the world of information technology, some schools have developed projects. 
+
+\section{Vision}
+
+The Thymio robot or Thymio II is a robot developed by a start-up from the EPFL in order to promote programming and robotic activities among children. 
+To feed program to the robot, a software has been developed. It integrates the four following programming languages: 
+\begin{itemize}
+  \item VPL
+  \item Blockly4Thymio
+  \item Aseba
+  \item Scratch
+\end{itemize}
+
+The project Web Simulation of a Thymio robot aims at creating a simulator for the Thymio II so as to allow people to directly see their programmed behavior.
+
+\section{Goals}
+
+This aim was split into 6 different defining goals in order to create this application.
+
+\begin{center}
+  \includegraphics[width=\textwidth]{./goals}
+\end{center}
+
+\section{Risk Analysis}
+In order to carry out the project successfully, one must consider several possible complications. These are on one hand assessed according to their impact and on the other hand according to their likelihood to occur. 
+Thus, we obtain a predictable risk factor that allows us to have an overall view and take preventive measures if necessary.
+
+\begin{center}
+  \includegraphics[width=\textwidth]{./risk-matrix}\\
+  Risk Matrix
+\end{center}
+
+\begin{tabular}{p{2cm} p{2cm} p{2cm} p{2cm}}
+  Event & Likelihood (A) & Impact (B) & Risk Factor (A*B) \\ \hline
+  Financial issues & 0 & 1 & 0 \\
+  Collisions not implemented & 0.3 & 0.6 & 0.18 \\
+  Behavior pipeline not working & 0.4 & 0.9 & 0.36 \\
+  Playground creator not working & 0.4 & 0.6 & 0.24 \\
+\end{tabular}
+
+\section{Stakeholder Descriptions}
+\textbf{Product Owner}
+Flückiger Quentin flucq1@bfh.ch \\
+\textit{Interests}:
+\begin{itemize}
+  \item The product owner wants to satisfy the customer.
+\end{itemize}
+
+
+\textbf{Development Team}
+Flückiger Quentin flucq1@bfh.ch \\
+\textit{Interests}:
+\begin{itemize}
+  \item The development team wants to develop a usefull application for the customer.
+\end{itemize}
+
+\section{User Stories}
+\textbf{\large Users User Stories}\\
+\textbf{As} a user, I want to upload an .aesl file, so that I can witness the simulated behavior. \\
+Description:\\
+The user wants to upload an .aesl file to see the programmed behavior simulated.
+Success:\\
+\begin{itemize}
+  \item The simulation works.
+\end{itemize}
+Failure:\\
+\begin{itemize}
+  \item The .aesl file does not contain a program.
+  \item The .aesl file contains behavior not included in the simulator.
+\end{itemize}
+
+
+\textbf{As} a user, I want to create a simple testing environment, so that I can diversify the experiences. \\
+Description:\\
+The user wants to create a home made playground with a simple playground creation tool.
+Success:\\
+\begin{itemize}
+  \item The playground is successfully created and saved.
+\end{itemize}
+Failure:\\
+\begin{itemize}
+  \item The created playground is not saved properly.
+  \item The user encounters trouble while creating the playground, be it meshes creation or placement.
+\end{itemize}
+
+
+\textbf{As} a user, I want to use the application without having to install anything, so that the application can be accessed easily. \\
+Description:\\
+The user wants to access and use the application without installing anything.
+Success:\\
+\begin{itemize}
+  \item The use can start the application directly in his browser.
+\end{itemize}
+Failure:\\
+\begin{itemize}
+  \item The webserver is not accessible.
+\end{itemize}
+
+\section{Use Cases Model}
+
+\textbf{Use Case: }Access the application \\
+\textbf{Primary Actor: }User \\
+\textbf{Stakeholders and Interests: }User: Wants to access the application through a web browser. \\
+\textbf{Preconditions: }User has access to the bfh network. \\
+\textbf{Success Guarantee (Postconditions): }The user can access the application via a modern web browser. \\
+\textbf{Main Success Scenario: } 
+\begin{enumerate}
+  \item User starts the web browser.
+  \item User navigates to the website address.
+\end{enumerate}
+\textbf{Extensions: } 
+\begin{enumerate}
+  \item 
+  \begin{enumerate}
+    \item No available internet connection.
+  \end{enumerate}
+  \item 
+  \begin{enumerate}
+    \item Not logged in the bfh network.
+    \item Web Server currently offline.
+  \end{enumerate}
+\end{enumerate}
+\textbf{Special Requirements: }Modern web browser compatibility. \\
+\textbf{Technology and Data Variations List: }- \\
+\textbf{Frequency of Occurrence: }Could be nearly continuous.\\
+\textbf{Open Issues: }- \\
+\\
+\textbf{Use Case: }Interprete .aesl file \\
+\textbf{Primary Actor: }User \\
+\textbf{Stakeholders and Interests: }User: Wants to load .aesl behavior file to be translated and simulated. \\
+\textbf{Preconditions: }User has a .aesl file containing behavior code for Thymio. \\
+\textbf{Success Guarantee (Postconditions): }File is correctly compiled, and simulation simulate expected behavior. \\
+\textbf{Main Success Scenario: }
+\begin{enumerate}
+  \item User accesses the website.
+  \item User input a .aesl file.
+  \item System controls the file integrity.
+  \item System compiles the file to \texttt{JavaScript} code that can be run as behavior.
+  \item System runs the given program.
+\end{enumerate}
+\textbf{Extensions: }
+\begin{enumerate}\addtocounter{enumi}{1}
+  \item 
+  \begin{enumerate}
+    \item File too large for application.
+  \end{enumerate}
+  \item
+  \begin{enumerate}
+    \item System signals error and rejects the file because it is not conform to the awaited structure.
+  \end{enumerate}
+  \item 
+  \begin{enumerate}
+    \item System signals error while compiling file.
+  \end{enumerate}
+\end{enumerate}
+\textbf{Special Requirements: }- \\
+\textbf{Technology and Data Variations List: }- \\
+\textbf{Frequency of Occurrence: }Very often. \\
+\textbf{Open Issues: }- \\
+\\
+\textbf{Use Case: }Change playground \\
+\textbf{Primary Actor: }User \\
+\textbf{Stakeholders and Interests: }User: Wants to change the rendered playground. \\
+\textbf{Preconditions: }User has access to the bfh network. \\
+\textbf{Success Guarantee (Postconditions): }The playground is changed accordingly the whishes of the user. \\
+\textbf{Main Success Scenario: }
+\begin{enumerate}
+  \item User accesses the website.
+  \item User chooses the wanted playground.
+  \item System loads the wanted playground.
+\end{enumerate}
+\textbf{Extensions: }
+\begin{enumerate}\addtocounter{enumi}{1}
+  \item 
+  \begin{enumerate}
+    \item The input file is not from the right file extension. 
+  \end{enumerate}
+  \item 
+  \begin{enumerate}
+    \item Fail to load playground because the file is not conform to the awaited structure.
+    \item Internal error when the playground was loaded.
+  \end{enumerate}
+\end{enumerate}
+\textbf{Special Requirements: }- \\
+\textbf{Technology and Data Variations List: }- \\
+\textbf{Frequency of Occurrence: }Often. \\
+\textbf{Open Issues: }- \\
+\textbf{Sequence diagram: } \\
+\begin{center}
+  \includegraphics[scale=0.7]{./loadPlayground_sd}
+\end{center}
 
 \chapter{Thymio}
 \section{What is Thymio} 
@@ -207,200 +403,6 @@ The same four programming languages are available and one has to be chosen.
 After having selected the language comes the choice of either connecting a physical Thymio or starting a simulation to emulate the programmed behavior.
 A more detailed section on the four differents programming languages can be found in section \ref{fourlanguages} on page \pageref{fourlanguages}.
 
-\chapter{Requirements Documentation}
-\section{Vision}
-
-The Thymio robot or Thymio II is a robot developed by a start-up from the EPFL in order to promote programming and robotic activities among children. 
-To feed program to the robot, a software has been developed, it integrates the four following programming languages: 
-\begin{itemize}
-  \item VPL
-  \item Blockly4Thymio
-  \item Aseba
-  \item Scratch
-\end{itemize}
-
-The project Web Simulation of a Thymio robot is aimed to create a simulator for the Thymio II so as to allow people to see their programmed behavior directly.
-%% TODO : add problematique 
-
-\section{Goals}
-
-This aim has been split into 6 different defining goals in order to create this application.
-
-\begin{center}
-  \includegraphics[width=\textwidth]{./goals}
-\end{center}
-
-%%\section{System Context}
-%%\section{Requirements}
-\section{Risk Analysis}
-In order to carry out the project successfully, we must consider the following possible complications. The possible complications are on one hand assessed according to their impact and on the other hand according to their likelihood to occur. 
-Thus, we obtain a predictable risk factor that allows us to have an overall view and take preventive measures if necessary.
-
-\begin{center}
-  \includegraphics[width=\textwidth]{./risk-matrix}\\
-  Risk Matrix
-\end{center}
-
-\begin{tabular}{p{2cm} p{2cm} p{2cm} p{2cm}}
-  Event & Likelihood (A) & Impact (B) & Risk Factor (A*B) \\ \hline
-  Financial issues & 0 & 1 & 0 \\
-  Collisions not implemented & 0.3 & 0.6 & 0.18 \\
-  Behavior pipeline not working & 0.4 & 0.9 & 0.36 \\
-  Playground creator not working & 0.4 & 0.6 & 0.24 \\
-\end{tabular}
-
-\section{Stakeholder Descriptions}
-\textbf{Product Owner}
-Flückiger Quentin flucq1@bfh.ch \\
-\textit{Interests}:
-\begin{itemize}
-  \item The product owner wants to satisfy the customer.
-\end{itemize}
-
-
-\textbf{Development Team}
-Flückiger Quentin flucq1@bfh.ch \\
-\textit{Interests}:
-\begin{itemize}
-  \item The development team wants to develop a usefull application for the customer.
-\end{itemize}
-
-\section{User Stories}
-\textbf{\large Users User Stories}\\
-\textbf{As} a user, I want to upload an .aesl file, so that I can witness the simulated behavior. \\
-Description:\\
-The user wants to upload an .aesl file to see the programmed behavior simulated.
-Success:\\
-\begin{itemize}
-  \item The simulation works.
-\end{itemize}
-Failure:\\
-\begin{itemize}
-  \item The .aesl file doesn't contain a program.
-  \item The .aesl file contains behavior not included in the simulator.
-\end{itemize}
-
-
-\textbf{As} a user, I want to create a simple testing environment, so that I can diversify the experiences. \\
-Description:\\
-The user wants to create home made playground with a simple playground creation tool.
-Success:\\
-\begin{itemize}
-  \item The playground is successfully created and saved.
-\end{itemize}
-Failure:\\
-\begin{itemize}
-  \item The created playground isn't saved properly.
-  \item The user encounters trouble while creating the playground, be it meshes creation or placement.
-\end{itemize}
-
-
-\textbf{As} a user, I want to use the application without having to install anything, so that the application can be accessed easily. \\
-Description:\\
-The user wants to access and use the application without installing anything.
-Success:\\
-\begin{itemize}
-  \item The use can start the application directly in his browser.
-\end{itemize}
-Failure:\\
-\begin{itemize}
-  \item The webserver isn't accessible.
-\end{itemize}
-
-\section{Use Cases Model}
-
-\textbf{Use Case: }Access the application \\
-\textbf{Primary Actor: }User \\
-\textbf{Stakeholders and Interests: }User: Wants to access the application through a web browser. \\
-\textbf{Preconditions: }User has access to the bfh network. \\
-\textbf{Success Guarantee (Postconditions): }The user can access the application via a modern web browser. \\
-\textbf{Main Success Scenario: } 
-\begin{enumerate}
-  \item User start web browser.
-  \item User navigate to website address.
-\end{enumerate}
-\textbf{Extensions: } 
-\begin{enumerate}
-  \item 
-  \begin{enumerate}
-    \item No available internet connection.
-  \end{enumerate}
-  \item 
-  \begin{enumerate}
-    \item Not logged in the bfh network.
-    \item Web Server currently offline.
-  \end{enumerate}
-\end{enumerate}
-\textbf{Special Requirements: }Modern web browser compatibility. \\
-\textbf{Technology and Data Variations List: }- \\
-\textbf{Frequency of Occurrence: }Could be nearly continuous.\\
-\textbf{Open Issues: }- \\
-\\
-\textbf{Use Case: }Interprete .aesl file \\
-\textbf{Primary Actor: }User \\
-\textbf{Stakeholders and Interests: }User: Wants to load .aesl behavior file to be translated and simulated. \\
-\textbf{Preconditions: }User has a .aesl file containing behavior code for Thymio. \\
-\textbf{Success Guarantee (Postconditions): }File is correctly compiled, and simulation simulate expected behavior. \\
-\textbf{Main Success Scenario: }
-\begin{enumerate}
-  \item User access the website.
-  \item User input a .aesl file.
-  \item System control file integrity.
-  \item System compile file to \texttt{JavaScript} code that can be run as behavior.
-  \item System run given program.
-\end{enumerate}
-\textbf{Extensions: }
-\begin{enumerate}\addtocounter{enumi}{1}
-  \item 
-  \begin{enumerate}
-    \item File too large for application.
-  \end{enumerate}
-  \item
-  \begin{enumerate}
-    \item System signals error and reject file because not conform to awaited structure.
-  \end{enumerate}
-  \item 
-  \begin{enumerate}
-    \item System signals error while compiling file.
-  \end{enumerate}
-\end{enumerate}
-\textbf{Special Requirements: }- \\
-\textbf{Technology and Data Variations List: }- \\
-\textbf{Frequency of Occurrence: }Very often. \\
-\textbf{Open Issues: }- \\
-\\
-\textbf{Use Case: }Change playground \\
-\textbf{Primary Actor: }User \\
-\textbf{Stakeholders and Interests: }User: Wants to change the rendered playground. \\
-\textbf{Preconditions: }User has access to the bfh network. \\
-\textbf{Success Guarantee (Postconditions): }The playground is changed accordingly the whishes of the user. \\
-\textbf{Main Success Scenario: }
-\begin{enumerate}
-  \item User access the website.
-  \item User chooses the wanted playground.
-  \item System load wanted playground.
-\end{enumerate}
-\textbf{Extensions: }
-\begin{enumerate}\addtocounter{enumi}{1}
-  \item 
-  \begin{enumerate}
-    \item The input file is not from the right file extension. 
-  \end{enumerate}
-  \item 
-  \begin{enumerate}
-    \item Fail to load playground because file not conform to awaited structure.
-    \item Internal error when playground was loaded.
-  \end{enumerate}
-\end{enumerate}
-\textbf{Special Requirements: }- \\
-\textbf{Technology and Data Variations List: }- \\
-\textbf{Frequency of Occurrence: }Often. \\
-\textbf{Open Issues: }- \\
-\textbf{Sequence diagram: } \\
-\begin{center}
-  \includegraphics[scale=0.7]{./loadPlayground_sd}
-\end{center}
-
 \chapter{Environment}
 
 \section{Three JS}
@@ -418,66 +420,66 @@ the presentation, examples and discussion of \href{http://jeromeetienne.github.i
 
 \chapter{Architecture \label{Architecture}}
 
-We decided to divide the architecture into two different parts. One for the simulation side and the other one for the customization, although they are very similar there are still some differences that push us to look at them with two different angles. 
-Both are build based on a \texttt{Model} \texttt{View} \texttt{Controller} system where the elements of the playground, be it a wall or the Thymio robot, are models and the page seen by the user is the \texttt{View}. This \texttt{View} registers user inputs and transmits them to the \texttt{Controller}. 
+It was decided to divide the architecture into two different parts: one for the simulation side and the other one for the customization. Although they are very similar, there are still some differences that push us to look at them from two different angles. 
+Both parts are build based on a \texttt{Model} \texttt{View} \texttt{Controller} system where the elements of the playground, be it a wall or the Thymio robot, are models and the page seen by the user is the \texttt{View}. This \texttt{View} registers the user inputs and transmits them to the \texttt{Controller}. 
 
-As said we have split the architecture, bellow is a graphic representing the architecture for the simulator. We can see the \texttt{Model} \texttt{View} \texttt{Controller} and a second component which is the interpreter, 
-that is singular to the simulator page. Its role is to test the integrity of the file given as input through the \texttt{Controller} and compile it into \texttt{JavaScript} code for it to be used as behavior code for the Thymio model.
+As said we have split the architecture, bellow is a graphic representing the architecture for the simulator. The \texttt{Model} \texttt{View} \texttt{Controller} can be seen as well as a second component which is the interpreter. 
+The interpreter, is singular to the simulator page. Its role is to test the integrity of the file given as input through the \texttt{Controller} and to compile it into \texttt{JavaScript} code for it to be used as behavior code for the Thymio model.
 
 \begin{center}
   \includegraphics[width=\textwidth]{./architecture_proposal-Page-1}
 \end{center}
 
-The \texttt{MVC} we are using is based on an example from \href{https://github.com/lucasmajerowicz/threejs-mvc-example}{Lucas Majerowicz}. Once the application starts the following process is run in order to create the \texttt{View}, \texttt{Model}, and \texttt{Controller}.
+The used \texttt{MVC} is based on an example from \href{https://github.com/lucasmajerowicz/threejs-mvc-example}{Lucas Majerowicz}. Once the application starts, the following process is run in order to create the \texttt{View}, \texttt{Model}, and \texttt{Controller}.
 
 \begin{center}
   \includegraphics[width=\textwidth]{./start_app}
 \end{center}
 
-The \texttt{Model} part is split into three categories that extends the same base class \texttt{Observable} which works as an event system with the \texttt{addObserver} and \texttt{emit} method. 
-The first category of the three that we will cover is the one responsible for the buttons. We instantiate one of the right types, depending on the \texttt{View}, at the start of the page and add \texttt{addEventListener} to the corresponding \texttt{HTML} elements. 
+The \texttt{Model} part is split into three categories. They extends the same base class \texttt{Observable} which works as an event system with the \texttt{addObserver} and \texttt{emit} method. 
+The first category is the one responsible for the buttons. We instantiate one of the right types, depending on the \texttt{View}, at the start of the page and add \texttt{addEventListener} to the corresponding \texttt{HTML} elements. 
 Those events will trigger the \texttt{emit} method of its base class to notify the \texttt{View} that this particular button has been clicked. The \texttt{View} will catch this event because of the second base method of the \texttt{Observable} class, 
 forwarding it to the \texttt{EnvironmentController} class to take care of the logic. 
 The two categories left are linked as they operate as the two sides of a coin. They are used for the \texttt{three.js} elements. The first one, the \texttt{Model}, holds the data of the object such as its name, a list of properties containing the dimension, 
 color and other attributes for the object. It is those models that are added to the playground element, and whenever a shape is added to the playground, this one will call its base method \texttt{emit} in order to notify the \texttt{ViewMediator}. 
-The \texttt{ViewMediator} is the last category and is responsible to create the 3D objects with the data from its model. It is as well responsible for the logic that we would apply to a model, such as the animation of the 3D object, and the supervising of deleting or adding models.     
-The image below shows a class diagram of the \texttt{Model} part of the \texttt{MVC}, not all classes are represented for clarity purpose, as their configuration is very similar to one comprised in the diagram.
+The \texttt{ViewMediator} is the last category and it is responsible for creating the 3D objects with the data from its model. Further, it is responsible for the logic that could be applied to a model, such as the animation of the 3D object, and the supervising of deleting or adding models.     
+The image below shows a class diagram of the \texttt{Model} part of the \texttt{MVC}. For clarity purpose, not all classes are represented as their configuration is very similar to one comprised in the diagram.
 
 \begin{center}
   \includegraphics[width=\textwidth]{./mvc_cd}
 \end{center}
 
-The \texttt{View} and the \texttt{Controller} elements are different in the two pages whereas the \texttt{Model} is not. The \texttt{Controller} in the simulation side loads the playgrounds be it built-in or coming from the device, and upload the aesl file to the begining of the filter/compiler. 
-And in the customization side it is responsible for writing the \texttt{JSON} file with the data from the meshes of the scene,  instantiating the meshes and registering them once positioned, or deleting them. The two \texttt{Views} are very similar, 
-the differences are the observers added to its \texttt{CreatorButtons/SimulatorButtons}. This is how an observer is added.
+While the \texttt{View} and the \texttt{Controller} elements are different in the two pages, the \texttt{Model} is not. Int the simulation side, the \texttt{Controller} loads the playgrounds, be it built-in or coming from the device, and uploads the aesl file to the beginning of the filter/compiler. 
+In the customization side, it is responsible for writing the \texttt{JSON} file with the data from the meshes of the scene,  instantiating the meshes and registering them once positioned, or deleting them. The two \texttt{Views} are very similar. 
+The differences are the observers added to its \texttt{CreatorButtons/SimulatorButtons}, which is how an observer is added.
 
 \begin{lstlisting}[language=JavaScript, gobble=2, basicstyle=\ttfamily\small]
   this.simulatorButtons.addObserver('jsonPGSubmited',
    (e) => this.controller.onJsonPGSubmited(e));
 \end{lstlisting} 
 
-And here is the second \texttt{Model} \texttt{View} \texttt{Controller} responsible for the playground customization, its architecture is the same as the other one except it doesn't implement an interpreter. 
+Here is the second \texttt{Model} \texttt{View} \texttt{Controller} responsible for the playground customization. Its architecture is the same as the other one, except that it does not implement an interpreter. 
 
 \begin{center}
   \includegraphics[width=\textwidth]{./architecture_proposal-Page-2}
 \end{center}
 
-\chapter{What already exist} 
+\chapter{What already exists} 
 
 There exist two possibilities to simulate the behavior of a Thymio II Robot on a computer. 
 The first one is through the Thymio Suite application developed by the creator of Thymio. 
-It is an application that regroups multiple features such as coding the robot in one of the four available languages, 
+It is an application that groups multiple features such as coding the robot in one of the four available languages, 
 uploading the program to a real robot or simulating its behavior via a simulator developed in the programming language C++. 
-This simulator allows one to load a playground among multiple pre-set and run the coded program for the robot.
+This simulator allows one to load a playground among multiple pre-sets and to run the coded program for the robot.
 
 \begin{center}
   \includegraphics[width=\textwidth]{./suite_simulator}
 \end{center}
 
-The other option is to use WeBots, which is an open-source 3D robot simulator for industry, education and research purpose. 
-It has been developed in 1996 at the Swiss Federal Institute of Technology in Lausanne since then it became a property license software of Cyberbotics in 1998, 
-and in December 2018 was lastly released under the free and open-source Apache 2 license.
-WeBots is a very powerful software that can do a lot of things, and one of these things is an accurate Thymio II model with almost all its sensors and actuator. 
+The second possibility is to use WeBots, which is an open-source 3D robot simulator for industry, education and research purpose. 
+It was developed in 1996 at the Swiss Federal Institute of Technology in Lausanne. In 1998 it became a property license software of Cyberbotics, 
+and in December 2018 it was lastly released under the free and open-source Apache 2 license.
+WeBots is a very powerful software that can do a lot of things. One of these features is an accurate Thymio II model with almost all its sensors and actuator. 
 The two Aseba Studio and VPL for Thymio can be directly connected to the software and its simulated robot. 
 The specification and usage can be found on their website with the following link \href{https://www.cyberbotics.com/doc/guide/thymio2#mosybas-thymio-ii}{WeBots Thymio} .
 
@@ -485,15 +487,15 @@ The specification and usage can be found on their website with the following lin
 
 \section{Base Development}
 
-The first steps were to learn how to use the \texttt{threejs} library and thus we integrated the needed code directly onto some .html file, which was not very efficient for a big application but was okay to test the functionalities. 
-At that time, we looked for some useful methods that we would need later on, such as the way to resize the window and its content. Another functionality added at this period was the controls of the camera, that comes from the OrbitControls.js file and allows the creation of an OrbitControls object which let the user move the camera, rotate it and zoom with the mouse.
-Afterward, we implemented method to create different Shapes with more ease for a larger application. We then moved the scripting part outside of the html and inside different \texttt{JavaScript} file as it was not convenient to have all the code into one single html file.
+The first step was to learn how to use the \texttt{three.js} library. Thus, the needed code was directly integrated into some .html file. This integration was not very efficient for a big application, but it was acceptable to test the functionalities. 
+At that time, some useful methods that would be needed later on were looked for, such as the way to resize the window and its content. Another functionality added at this period was the control of the camera which comes from the OrbitControls.js file and allows the creation of an OrbitControls object. This object enables the user to move the camera, rotate it and zoom with the mouse.
+Afterward, a method was implemented to create different \texttt{Shapes} with more ease for a larger application. Then the scripting part was moved outside of the \texttt{HTML} and inside different \texttt{JavaScript} file as it was not convenient to have all the code into one single \texttt{HTML} file.
 
 \section{WebServer \label{webserver}}
-Regarding the goal number 5, "Require no software installation", we decided to use a webserver in order to access the application. At first we choose the IIS Manager that is built in with Windows 10, 
-we followed the steps in this tutorial video in order to configure IIS: \url{https://www.youtube.com/watch?v=rPRLe7QeVHM} .
+Regarding the goal number 5, "Require no software installation", it was decided to use a webserver in order to access the application. At first, the IIS Manager that is built-in with Windows 10 was chosen.  
+The \texttt{ISS} configuration followed the steps shown in this tutorial video: \url{https://www.youtube.com/watch?v=rPRLe7QeVHM} .
 
-Then we had to open the port in order to access it from within the LAN.
+Then, the port had to be opened in order to access it from within the LAN. This was done as follows:
 \begin{enumerate}
   \item Open the windows Firewall, click on Inbound Rules and New Rule. This will open the New Inbound Rule Wizard.
   \item Select the desired type, Port, click next.
@@ -505,9 +507,9 @@ Then we had to open the port in order to access it from within the LAN.
 
 \textbf{Additional setup}\\
 
-It was needed to create a web.config file and add a few file extension so that the .mtl and .obj would still be able to load. 
-Otherwise we encountered an error of the type "Failed to load resource: the server responded with a status of 404 (Not Found)." 
-The text that needed to be added to the web.config file is the following : 
+It was needed to create a web.config file and to add a few file extensions so that the .mtl and .obj would still be able to load. 
+Otherwise, an error of the type "Failed to load resource: the server responded with a status of 404 (Not Found)." was encountered. 
+The text that needed to be added to the web.config file is the following one: 
 
 \begin{lstlisting}[language=XML, basicstyle=\ttfamily\small, backgroundcolor = \color{lightgray}]
 <?xml version="1.0" encoding="UTF-8"?>
@@ -523,21 +525,21 @@ The text that needed to be added to the web.config file is the following :
 </configuration>
 \end{lstlisting}
 
-Unfortunately, after implementing the new MVC architecture for our application we encountered an issue where the application wasn't able to locate some \texttt{JavaScript} file and giving the following error message in the console : 
-\texttt{javascript file not found on server, net::ERR\textunderscore ABORTED 404 (Not Found)} .  After a while of debugging and asking questions to persons who could know the issue, 
-we decided to move away from ISS Manager as our knowledge of this software is too small and the time needed to acquire this knowledge wasn't worth the effort. 
-The alternative solution we came up with was to use XAMPP, we managed to push the same version of the application without any problem and without having to do anything special. So we decided to go forth with XAMPP.
+Unfortunately, after having implemented the new \texttt{MVC} architecture for the application, a further issue was encountered where the application was not able to locate some \texttt{JavaScript} file and gave the following error message in the console : 
+\texttt{javascript file not found on server, net::ERR\textunderscore ABORTED 404 (Not Found)}.  After a while of debugging and asking questions to specialists, 
+it was decided to move away from ISS Manager. The reasons for this decision were the limited knowledge of this software. The time needed to acquire this knowledge was not worth the effort. 
+The alternative solution we came up with was to use \texttt{XAMPP}. As the same version of the application could be pushed without any problem and without having to do anything special, it was decided to continue with \texttt{XAMPP}.
 
 \section{Playgrounds}
 
-We decided to create three different build-in playgrounds for the application. A basic, with four walls and a square plane. A borderless, composed of a track that leads out of the octagon plane. And one with multiple obstacle, walls and a track. 
-Each on of them would be composed of one \texttt{Group} element that is filled with different meshes created from the previously implemented method found in the \texttt{GeometricalMeshes.js} file.
+It was decided to create three different build-in playgrounds for the application: A basic, with four walls and a square plane; A borderless, composed of a track that leads out of the octagon plane; And one with multiple obstacles, walls and a track. 
+Each build-in playground would be composed of one \texttt{THREE.Group} element that is filled with different meshes created from the previously implemented method found in the \texttt{GeometricalMeshes.js} file.
 
-We decided to enhance the the amount of different meshes and thus added an algorithm to create tracks. There was two steps for the algorithm to create tracks, the first one was to compute a simple line between two points. 
-But the result was too thin and therefore a better solution was found.
-The second iteration for this alogrithm takes an array of points, those points are of type Vector3 so as to register the three coordinates, and compute 
-a new Vector3 that holds the resulting vector position of the next point minus the current point. The x and z values of this vector are then used 
-as the center to position a box object, which represent the track, and then it is aligned to this vector.
+In order to enhance the amount of different meshes, an algorithm to create tracks was added. The tracks creation happened in two steps. The first one consisted into computing a simple line between two points. 
+Unfortunately, the result was too thin and therefore a better solution was found.
+The second iteration for this algorithm takes an array of points, which are of type \texttt{THREE.Vector3} so as to register the three coordinates, and computes
+a new Vector3 that holds the resulting vector position of the next point minus the current point. The x and z values of this vector are then used
+as the center to position a box object, which represents the track, and are then aligned to this vector.
 
 \begin{lstlisting}[language=JavaScript, gobble=2, basicstyle=\ttfamily\small]
   for (let i = 0; i < points.length-1; i++) {
@@ -556,11 +558,11 @@ as the center to position a box object, which represent the track, and then it i
   }
 \end{lstlisting} 
 
-We decided to load only once the Thymio model, as it takes in average 500ms to 1'000ms to load it, and we encountered some issues where the model would not load everytime the playground was changed.
-Therefore we reset it's position and rotation whenever we change the playground, or if a position is given in the playground.json data file, the Thymio is moved to the wanted position.
+It was decided to load the Thymio model only once, as it takes in average 500ms to 1'000ms to load it, and as some issues where the model would not load every time the playground was changed were encountered.
+Therefore, its position and rotation are reset whenever the playground is changed. If a position is given in the playground.json data file, the Thymio is moved to the wanted position.
 
-Thinking about the creation of playground we decided to change how the playgrounds data were recorded and instead of having them as \texttt{JavaScript} file, we moved them all into a \texttt{JSON} file. So later on it would not require more work to load a 
-customized playground. To do so we open and read a \texttt{JSON} file of a given name, and then skim through the \texttt{JSON} file and create the Shapes accordingly of the data. Bellow an example for the boxes.
+Thinking about the creation of playground, it was decided to change how the playgrounds data were recorded. Instead of having them as \texttt{JavaScript} files, they were all moved into a \texttt{JSON} file. In this way, it would not require more work to load a 
+customized playground later on. To do so, a \texttt{JSON} file of a given name was opened, read, and then skimmed through the \texttt{JSON} file. The \texttt{Shapes} were created accordingly of the data. Bellow an example for the boxes.
 
 \begin{lstlisting}[language=JavaScript, gobble=2, basicstyle=\ttfamily\small]
   if (file.boxes) {
@@ -571,34 +573,34 @@ customized playground. To do so we open and read a \texttt{JSON} file of a given
   }
 \end{lstlisting} 
 
-Unfortunately we found later on that \texttt{threejs} has a built in function that translate a ThreeJS Object into a \texttt{JSON} file element, and inversely. But we are still using the solution we developed.
+Unfortunately, it was later found that \texttt{three.js} has a built-in function which translates a \texttt{ThreeJS} Object into a \texttt{JSON} file element, and inversely. However, dthe solution developed is still being use.
 
 \section{Interpreter}
 
 The interpreter found that compile/translate .aesl file into another programming language is the one used in the Thymio Suite application, its source code can be found in the following repository \href{https://github.com/aseba-community/aseba/tree/master/aseba/compiler}{Aseba git}.
-Unfortunately, it is a C++ one, so we had to understand it and find a way to either use it and then use a C++ to \texttt{JavaScript} interpreter, or translate the compiler from \texttt{C++} to \texttt{JavaScript} by hand.
-We decided to translate the already existing one from \texttt{Aseba} and started by the compiler. After looking at his behavior we recognize how it was built and separated,
-then came the time to translate it to \texttt{JavaScript}. First thing first it creates multiple maps of variable, constant and events that need to be rebuild with each call to the compiler in case the previous ones produced errors.
-Afterwhat comes the tokenization of the source file, which consist of creating Tokens with the position of the element, its type in the environment, and its value if provided. Then this tokenized source is parsed into Nodes, 
-which are expanded and type checked. Once the program is checked, it is emited as a first bytecode output and then this bytecode is linked creating the final program.
+Unfortunately, it is a \texttt{C++} one which means that an operation was needed in order to understand it and find a way to either use it and then use a \texttt{C++} to \texttt{JavaScript} interpreter, or translate the compiler from \texttt{C++} to \texttt{JavaScript} by hand.
+The decision was taken to translate the already existing one from \texttt{Aseba} and to start with the compiler. After looking at its behavior and recognizing how it was built and separated,
+the time came to translate it to \texttt{JavaScript}. First, the translation creates multiple maps of variable, constant and events. These maps need to be rebuilt with each call to the compiler in case the previous ones produced an error.
+Afterward comes the tokenization of the source file, which consists in creating \texttt{Tokens} with the position of the element, its type in the environment, and its value if provided. Then this tokenized source is parsed into \texttt{Nodes}, 
+which are expanded and type-checked. Once the program is checked, it is emitted as a first bytecode output. This bytecode is then linked, creating the final program.
 
-Here is a sequence diagram of the compilation of a file.
+The following figure displays a sequence diagram of the compilation of a file.
 
 \begin{center}
   \includegraphics[width=\textwidth]{./compiler_sequence_diagram}
 \end{center}
 
-Translating the compiler and everything around was a very hard task for multiple reasons. The first one being the size of the application, it was very hard to understand which component was linked to which, in what manners and how they interact with each other. We needed to spend a tremendous amount of time scavenging the files and folders in order to try to get an understanding of the architecture.
-The second reason would be the lack of comments in the code, which added to the first point is not helping at all. And as we never expected at the beginning of the project to work with \texttt{C++} we were not ready for it. Our knowledge of this programming language is very basic. So if we add the two previous points, we have a full-scale application coded in a language we are not familiar with and with sparse comments. 
-Thus making it a very difficult part for us, and one that we couldn't finish. 
+Translating the compiler and everything around was a very hard task for multiple reasons. The first one is the size of the application. Being a large application, it was very hard to understand which component was linked to which, in what manners and how they interacted with each other. A tremendous amount of time was required, scavenging the files and folders in order to try to get an understanding of the architecture.
+The second reason is the lack of comments in the source code. Considering the size of the application it was a significant difficulty. In addition to that, it was not planned to work with \texttt{C++} and we were not ready for it. Our knowledge of this programming language is very basic. To summarize, we have a full-scale application coded in a language we are not familiar with and with sparse comments. 
+Consequently, it was a very difficult part of the project and could not be completed. 
 
 \subsection{Tokenize}
 
-To tokenize the source file we skim through the document and switch depending on the value of the character, we have basically five categories for this switch.
-The first one are the tokens which require only to read one character, such as \texttt{)}, \texttt{,} those can directly be given their type. Next are the comments, the comment block ,\texttt{\#* ... *\#}, or the simple line comment ,\texttt{\#}. For the block comment,
-we run through the source in search of the \texttt{*\#} character association that marks the end of the comment block, throwing an error if not found. The third category encompass the cases that require one character look-ahead, such as when we found
-the character \texttt{+} is it a simple \texttt{+} or \texttt{+=} or even \texttt{++} ? The fourth is almost the same but with two characters look-ahead, such as \texttt{<}. The fifth category, and the default case of this switch, is the one where the amount of look-ahead needed is not defined.
-In this category fit the numbers and the strings, which are found using a regex as replacement of the \texttt{C++} method \texttt{is\textunderscore utf8\textunderscore alpha\textunderscore num()}, which controls that the element is either a letter or a number. Bellow is 
+To tokenize the source file it was needed to skim through the document and switch depending on the value of the character. There are basically five categories for this switch.
+The first one comprises the tokens requiring only one character to read, such as \texttt{)} or \texttt{,}. These can directly be given their type. The second category is made of the comments, that is to say the comment block,\texttt{\#* ... *\#}, or the simple line comment,\texttt{\#}. In case of the block comment,
+we run through the source in search of the \texttt{*\#} character association that marks the end of the comment block, throwing an error if the character is not found. The third category encompasses the cases that require one character look-ahead.
+An example is the character \texttt{+} which could either be a simple \texttt{+} or \texttt{+=} or even \texttt{++}. The fourth is almost the same but with two characters look-ahead, such as \texttt{<}. The fifth category, and the default case of this switch, is the one where the amount of look-ahead needed is not defined.
+In this category, the numbers and the strings fit, which are found using a regex as replacement of the \texttt{C++} method \texttt{is\textunderscore utf8\textunderscore alpha\textunderscore num()}. Which controls that the element is either a letter or a number. Below is 
 the code for this regex.
 
 \begin{lstlisting}[language=JavaScript, gobble=2, basicstyle=\ttfamily\small]
@@ -607,10 +609,10 @@ the code for this regex.
   }
 \end{lstlisting}
 
-We have to be wary of one point when using this method, and it is that if the \texttt{ch} parameter is not a string, then it will throw an error. Coming back to the switch we first test if the chain of character is a number by combining regex and looking for multiple characters.
-If it is not the case we check wether or not its value is the same as one of the given keywords, such as \texttt{when} or \texttt{const}. And if none of the keywords match it is labeled as a string literal and given the value of the chain of characters. Here we encountered a probleme 
-of language between \texttt{C++} and \texttt{JavaScript}, as the type of the token is given with an \texttt{enum} in \texttt{C++}, and they don't exist in \texttt{JavaScript} so we had to find a workaround to this language incompatibility. We used the Object method \texttt{freeze()}, which prevents the modification of existing property attributes and the addition of new ones, 
-and still had to give a value to each properties.
+One has to be careful about one point when using this method. If the \texttt{ch} parameter is not a string, then it will throw an error. Coming back to the switch, it first has to be tested if the chain of character is a number. This is done by combining regex and looking for multiple characters.
+If the chain of character is not a number, it has to be checked whether its value is the same as the one of the given keywords, such as \texttt{when} or \texttt{const}. In case none of the keywords matches, the chain of character is labeled as a string literal and it is given the value of the chain of characters. Here a problem
+of language between \texttt{C++} and \texttt{JavaScript} was encountered, as the type of the token is given with an \texttt{enum} in \texttt{C++} and they do not exist in \texttt{JavaScript}. Consequently, a workaround had to be found in order to solve this language incompatibility. The Object method \texttt{freeze()}, which prevents the modification of existing property attributes and the addition of new ones, 
+was used and a value had to be given to each properties.
 
 \begin{lstlisting}[language=JavaScript, gobble=2, basicstyle=\ttfamily\small]
   const type = Object.freeze( 
@@ -626,13 +628,13 @@ and still had to give a value to each properties.
 
 Once the source file has been tokenized with the Lexer, and no error occurred during the process, the \texttt{Compiler}, that has been partially translated from \texttt{C++} to \texttt{JavaScript}, will pass the tokens as an argument to the parser which will parse it and create a program tree.
 
-It will start by creating a new \texttt{Node.ProgramNode} object with the position of the first element of the tokens array. Then the algorithm will loop on the tokens while it is not empty, and call methods depending on the type of the token. At this stage, we split into three categories, constant, variable and the rest. 
-In the case of constant, the algorithm will check the next token and control that it is of type string, otherwise the declaration of the constant isn’t valid and an error is thrown. If the condition is met we assign the name of the constant to a named variable, and the position to a position variable. 
-Afterward, it controls that no constant with this name already exists, then controls that the next token is of type \texttt{TOKEN\textunderscore ASSIGN} to respect how a constant is declared, get the value that should be at the next token, if that one is not of type \texttt{TOKEN\textunderscore INT\textunderscore LITERAL} it will return the value 0. 
-This part will be improved by the completion of the translation of the tree. And finally the constant with its name, position and value will be added to the \texttt{constantsMap} of the compiler.
+The \texttt{Parser} will start by creating a new \texttt{Node.ProgramNode} object with the position of the first element of the tokens array. Then the algorithm will loop on the tokens while it is not empty, and call methods depending on the type of the token. At this stage, the token is split into three categories, namely constant, variable and the rest. 
+In the case of constant, the algorithm will check the next token and control that it is of type string. Should this not be the case, the declaration of the constant is not valid and an error is thrown. Should the condition be met, the name of the constant is assigned to a named variable, and the position to a position variable. 
+Afterward, the \texttt{Parser} controls that no constant with this name already exists. Then it controls that the next token is of type \texttt{TOKEN\textunderscore ASSIGN} to respect how a constant is declared and gets the value that should be at the next token. If the next token does not belong to the type \texttt{TOKEN\textunderscore INT\textunderscore LITERAL}, it will return the value 0. 
+This part will be improved by the completion of the translation of the tree. Finally, the constant with its name, position and value will be added to the \texttt{constantsMap} of the compiler.
 
-If it is a variable, it will be discarded and the following tokens will be discarded as well if they are part of its declaration, we actually replaced the part where it would parse the variable by this removal system. We did so because the tree and the parser are not complete. 
-Here is how it should be, if the tree and parser were finished.
+If the token is a variable, it will be discarded and the following tokens will be discarded as well if they are part of its declaration. In fact, the part where it would parse the variable was replaced with this removal system. This was done because the \texttt{tree} and the \texttt{parser} are not complete. 
+Here is how it should be, if the \texttt{tree} and the \texttt{parser} were finished.
 
 \begin{lstlisting}[language=JavaScript, gobble=2, basicstyle=\ttfamily\small]
   var child = this.parseVarDef();
@@ -655,16 +657,16 @@ And this is how it actually is.
   }
 \end{lstlisting}
 
-The third part covers the rest of the tokens and is the most complex among the three. The token will go through multiples method based on switch on his type until he reaches the parse method that defines it. 
-Not every parse methods were translated from the \texttt{C++} program as their amount is rather big and not easy to translate into \texttt{JavaScript}. Below is a diagram that will show the process of a token of type \texttt{TOKEN\textunderscore STR\textunderscore onevent} to ease the understanding.
+The third part covers the rest of the tokens and is the most complex among the three. The token will go through multiple methods based on a switch on its type until it reaches the parse method that defines it. 
+Not every parse method was translated from the \texttt{C++} program as the amount of parse method is rather big and not easy to translate into \texttt{JavaScript}. Below is a diagram showing the process of a token of type \texttt{TOKEN\textunderscore STR\textunderscore onevent} to ease the understanding.
 
 \begin{center}
   \includegraphics[width=\textwidth]{./event_when}
 \end{center}
 
-The end method \texttt{parseOnEvent()} will control two things, first that an event with this \texttt{Id} exists, the list of \texttt{eventId} can be found in the \texttt{Compiler.js} under the \texttt{buildMaps} method, and that such an event hasn’t been implemented already. 
-If the conditions are met a new \texttt{Node.EventDeclNode} with the position and the id of this event will be returned and added to the \texttt{programNode}. 
-Or if the token is of type \texttt{TOKEN\textunderscore STR\textunderscore when} it will try to parse the condition and thus will start with the following \texttt{parseOr} method.
+The end method \texttt{parseOnEvent()} controls two things. First it checks whether an event with this \texttt{Id} exists. Then it verifies that such an event has not been implemented already. The list of \texttt{eventId} can be found in the \texttt{Compiler.js} under the \texttt{buildMaps} method.
+If these two conditions are met, a new \texttt{Node.EventDeclNode} with the position and the id of this event will be returned and added to the \texttt{programNode}. 
+In case the token is of type \texttt{TOKEN\textunderscore STR\textunderscore when}, the \texttt{Parser} will try to parse the condition and thus will start with the following \texttt{parseOr} method.
 
 \begin{lstlisting}[language=JavaScript, gobble=2, basicstyle=\ttfamily\small]
   parseOr(){
@@ -683,7 +685,7 @@ Or if the token is of type \texttt{TOKEN\textunderscore STR\textunderscore when}
   }
 \end{lstlisting}
 
-As we can see this method starts by calling another one and this will go on and on until very low methods such as the \texttt{parseUnaryExpression}.
+As it can be observed, this method starts by calling another one. This will go on and on until very low methods such as the \texttt{parseUnaryExpression}.
 
 The tree that is built during the parsing which contains the \texttt{programNode}, \texttt{eventNode} and every other node, is created based on the following class diagram.
 
@@ -691,18 +693,18 @@ The tree that is built during the parsing which contains the \texttt{programNode
   \includegraphics[scale=0.6]{./tree}
 \end{center}
 
-This is where we stopped our work on the interpreter, for more information we kindly recommend you to look at the section Future research at the page \pageref{future}. 
+This is the point that was reached, for more information on the possible completion and future work refer at the section Future research on page \pageref{future}.
 
 \section{Phyisics}
 
-Adding physics to allow collisions between the robot and the different objects. Trying to use Physijs, source code can be found in the following repository \href{https://github.com/chandlerprall/Physijs/wiki/Basic-Setup}{Physijs git}, 
-but with the architecture of our application, we encounter a problem due to the fact we are adding THREE.Object3D instead of basic mesh and Physijs works only with a fixed amount of meshes. A solution would be to not use Physijs as we need it only for the Thymio,
-and instead, shoot rays from the robot and check for collisions this way, as only Thymio needs to move and stop upon collisions.
+Adding physics allows collisions between the robot and the different objects. It's been tried to use \texttt{Physijs}, the source code can be found in the following repository \href{https://github.com/chandlerprall/Physijs/wiki/Basic-Setup}{Physijs git}, 
+but with the architecture of the application, a problem was encountered due to the fact that \texttt{THREE.Object3D} are added instead of basic mesh and \texttt{Physijs} works only with a fixed amount of meshes. A solution would be not to use \texttt{Physijs} as it is only needed for the \texttt{Thymio} to move and to stop upon collisions.
+Instead of \texttt{Physijs}, the robot could shoot rays in order to check for collisions.
 
 \section{Sensor and Actuator}
 
-We represented the five buttons that sit on top of the Thymio directly in the UI and did not give the possibility to interact with the modelized ones. We wanted to create a Directional Pad style group of buttons such as in the first image bellow, 
-but ended with the second image, which is less nice, due to the time needed to make it perfect.
+The five buttons that sit on top of the \texttt{Thymio} were represented directly in the \texttt{UI}. There was no interaction with the modelized ones. Initially, we wanted to create a directional pad style group of buttons similar to the one on the first image below. 
+However, due to time constraints, the created group of buttons could not be perfectly arranged, as pictured on the right.
 
 \begin{center}
   \begin{tabular}{c c}
@@ -711,21 +713,21 @@ but ended with the second image, which is less nice, due to the time needed to m
   \end{tabular}
 \end{center}
 
-A Thymio robot moves in according with two motors, one for its right wheel and one for its left wheel. They have a value for the output power between -500 and 500, minus meaning the motor powers the wheel in the opposite direction. 
-And those two motors can only output power in a straight line, forward / backward. Bellow are three representations of the expected movements of a Thymio. The yellow arrow is the power for the left motor, the blue arrow is the power for the right motor, 
-and the green arrow is the final vector movement for the robot. On the first representation, the power of the two motors are the same, both in value and direction, thus the final vector is simply the same as either one of the two.
-On the second one, the value of the power for both motors is still the same but their direction is opposite, hence the final vector is a circle because the robot will turn on itself.
-And finally, the third representation shows the resultant vector when the value is not the same but the direction is.
+A \texttt{Thymio} robot moves according to two motors, one for its right wheel and one for its left wheel. They have a value for the output power between -500 and 500, where the minus sign means that the motor powers the wheel in the opposite direction. 
+Those two motors can only output power in a straight line, forward / backward. Below are displayed three representations of the expected movements of a \texttt{Thymio}. The yellow arrow is the power for the left motor, the blue arrow is the power for the right motor, 
+and the green arrow is the final vector movement for the robot. On the first representation, the power of the two motors is the same, both in value and direction. Thus, the final vector is simply the same as either one of the two.
+On the second representation, the value of the power for both motors is still the same but their direction is opposite. Hence, the final vector is a circle because the robot will turn on itself.
+Finally, the third representation shows the resultant vector when the value is not the same but the direction is.
 
 \begin{center}
   \includegraphics[scale=0.8]{./thymio_move}
 \end{center}
 
-It was complex to convey the way the Thymio robots move onto this application as we move models and don't physically power motors. To achieve the same behavior we decided to use some trigonometry and a few tricks.
-The method that moves the robot is called only within the \texttt{render()} method from the main View, and thus every time the scene is being rendered we move the robot accordingly to the value of the motor. 
+It was complex to convey the way the Thymio robots move onto this application as we move models and do not physically power motors. To achieve the same behavior, it was decided to resort to trigonometry and a few tricks.
+The method that moves the robot is called only within the \texttt{render()} method from the main View, and thus every time the scene is being rendered, the robot is moved according to the value of the motor. 
 Those values are set using the \texttt{setMotors(left, right)} method. The \texttt{move()} method, the one that computes the movement of the robot, is split into four categories depending on the values of the motors. 
 
-The first category is when both motors have the same power in the same direction, therefore the resulting position change for both x and z coordinate is computed using the \texttt{getDirection()}, which returns 
+The first category is when both motors have the same power in the same direction. Thus, the resulting position change for both x and z coordinate is computed using the \texttt{getDirection()}, which returns 
 a Vector3 representing the direction the robot is facing, a predefined speed variable and the power given to either of the motors.
 
 \begin{lstlisting}[language=JavaScript, gobble=2, basicstyle=\ttfamily\small]
@@ -746,14 +748,14 @@ a Vector3 representing the direction the robot is facing, a predefined speed var
   \includegraphics[scale=0.8]{./move_spsd}
 \end{center}
 
-The second option is when the value of the left motor is bigger than the right, regarding the direction. Alternatively, the third option is the same but when the value of the right motor is bigger than the left.
+The second option is when the value of the left motor is bigger than the one of the right one, regarding the direction. Alternatively, the third option is the same but when the value of the right motor is bigger than the one of the left one.
 
 \begin{center}
   \includegraphics[width=\textwidth]{./move_dp}
 \end{center}
 
-In this case, we calculate the difference D of power between the two motors, the biggest minus the smallest, and then we use trigonometry to find the angle between the power of the motor and the resulting vector of the addition of the power of the motor and the difference D.
-This angle is then used as a parameter to rotate the model around the y-axis, to smooth things we multiply it by a variable turnSpeed.  
+In this case, we calculate the difference \texttt{D} of power between the two motors, subtracting the smallest from the biggest. Then, trigonometry was used to find the angle between the power of the motor and the resulting vector of the addition of the power of the motor and the difference \texttt{D}.
+This angle is then used as a parameter to rotate the model around the y-axis. In order to smooth the rotation, we multiply it by a variable turnSpeed.  
 
 \begin{lstlisting}[language=JavaScript, gobble=2, basicstyle=\ttfamily\small]
   this.object3D.rotateY(
@@ -764,19 +766,19 @@ This angle is then used as a parameter to rotate the model around the y-axis, to
 The resulting change in position is computed the same way as for the first category. It might be more relevant to use the norm of the resulting vector 
 found earlier to have a more accurate speed.
 
-The fourth category happens when both power values are the same but in a different direction. In this case, we rotate the robot on itself around the y-axis according to either of its motor speed.
+The fourth category happens when both power values are the same but in a different direction. In this case, the robot is rotated on itself around the y-axis according to either one of its motor speed.
 
 \begin{center}
   \includegraphics[scale=1]{./move_spdd}
 \end{center}
 
-However this algorithm has flaws such as when the power of one motor is 0 the robot should be rotating on itself with said motor as anchor point, but instead it rotate and moves in the direction of the second motors direction.
+However, this algorithm has a few flaws. One of these happens when the power of one motor is 0. While the robot should be rotating on itself with the said motor as an anchor point, it rotates and moves in the direction of the second motor's direction.
 
 
-To determine if a collision occurs between the robot and one of the elements of the environment we decided not to use an external physic library but instead we throw raycast from various positions in the thymio model. To do so we instantiated a \texttt{THREE.Raycaster} 
-object and had to find a way to get all 3D objects from our scene. This was quite troublesome because of the implementation of our model view controller, when instantiating a new \texttt{Model} we would not get a reference to its \texttt{ViewMediator} where the model is stored. 
-We used the benefit of \texttt{JavaScript} to find a workaround, whenever a \texttt{ViewMediator} is instantiated we add to its model the property \texttt{mediator} where the value is the current mediator. Thus we could use the following method in order to skim through the array containing the shapes rendered in the scene and create a new array filled with intersection objects. We then loop through the array to control that the distance is bigger than the given one. If not we operate an action depending on the \texttt{className} of the intersected object. 
-In the default case, we assume the robot encounters an element against which he should stop moving.
+In order to determine whether a collision occurs between the robot and one of the elements of the environment, it was decided not to use an external physic library but rather to throw raycast from various positions in the thymio model. In this sense, we instantiated a \texttt{THREE.Raycaster} 
+object and looked for a way to get all 3D objects from our scene. This was quite troublesome because of the implementation of our model view controller. When instantiating a new \texttt{Model} we would not get a reference to its \texttt{ViewMediator} where the model is stored. 
+We used the benefit of \texttt{JavaScript} to find a workaround Whenever a \texttt{ViewMediator} is instantiated, the property \texttt{mediator} is added to its model where the value is the current mediator. Thus, the method displayed below was used in order to skim through the array containing the shapes rendered in the scene and create a new array filled with intersection objects. Then, the array was loop through to control that the distance is bigger than the given one. If not it operates an action depending on the \texttt{className} of the intersected object. 
+In the default case, we assume that the robot encounters an element against which he should stop moving.
 
 \begin{lstlisting}[language=JavaScript, gobble=2, basicstyle=\ttfamily\small]
   intersects = raycaster.intersectObjects(this.shapes, true);
@@ -795,23 +797,23 @@ In the default case, we assume the robot encounters an element against which he 
   }
 \end{lstlisting} 
 
-%% TODO : Ground no collision for some reason
-%% TODO : Lights
+A variant of this algorithm was used in order to control the ground collision. Thus allowing the robot to know if it is progressing on the ground or not. If the robot is not progressing on the ground, the algorithm would make it fall by changing its \texttt{Y} coordinate.
+However, for some reasons the \texttt{intersectObjects} method would not detect any intersection if the robot was in the upper half part of the playground. Thus, the ground check were disabled.
 
 \section{Customize playgrounds}
 
-The creation of a customize playground that can be used later on in the simulation part of the application takes place on a different page. On this page, we keep the same architecture as for the simulation but we change the \texttt{Controller} and the \texttt{View} elements 
-and don't add the compilation part. Thus most of the changes and logic come from the \texttt{CreatorController.js} file. We reflected  on how the data of the playground would be carried, or kept, and used in the simulator. Thus we had multiple options,
-such as using a database to store every customed playground so that they would all be available with the application. Or to download  them locally as a file on the user's computer. We went with the latest option as we previously prepared the program to load playgrounds from \texttt{JSON} files.
-Saving the playground data is done in four different steps, bellow a sequence diagram of the process.
+The creation of a customize playground that can be used later on in the simulation part of the application takes place on a different page. On this page, the architecture is the same as for the simulation, but the \texttt{Controller} as well as the \texttt{View} elements are changed
+and the compilation part is excluded. Thus, most of the changes and logic come from the \texttt{CreatorController.js} file. We reflected on how the data of the playground would be carried, or kept, and used in the simulator. Thus, multiple options appear,
+such as using a database to store every customed playground so that they would all be available with the application. Another option would be to download them locally as a file on the user's computer. We continued with the latest option as we previously prepared the program to load playgrounds from \texttt{JSON} files.
+Saving the playground data is done in four different steps. A sequence diagram of the process is shown below.
 
 \begin{center}
-  \includegraphics[width=\textwidth]{./savepg_sd}
+  \includegraphics[scale=0.55]{./savepg_sd}
 \end{center}
 
-First, once the event that the save button has been pressed the application will open a \texttt{prompt} window in which the user will specify the file name. Then the data that composed the customized playground are behing separated into different array based on their \texttt{className} property. 
-Once every shapes contained in the cusomized playground have been gone through and categorized we create the final \texttt{JSON} file, it is created by using the \texttt{forEach} method of \texttt{JavaScript} array and writing the name of the mesh and it's properties. 
-Finally the file is downloaded on the user's computer and the process ends. The \texttt{JSON} file obtained looks like the following.
+First, once the event that the \texttt{saveButton} has been pressed is thrown, the application will open a \texttt{prompt} window in which the user will specify the file name. Then, the data that composed the customized playground are being separated into different arrays based on their \texttt{className} property. 
+Once the shapes contained in the customized playground have been gone through and categorized, the final \texttt{JSON} file is created. Its creation uses the \texttt{forEach} method of \texttt{JavaScript} array and writes the name of the mesh as well as its properties. 
+Finally, the file is downloaded on the user's computer and the process ends. The \texttt{JSON} file obtained looks like as follow.
 %% TODO : Be sure it is not in between two pages
 
 \begin{lstlisting}[language=json, basicstyle=\ttfamily\small]
@@ -841,13 +843,13 @@ Finally the file is downloaded on the user's computer and the process ends. The 
         },
 \end{lstlisting}
 
-It was needed to add a few more controls over the scene in order to increase the ease of use and the possibilities of creation. The camera controls need to be enabled so that the user can navigate through the scene but once he chose the spot he wants 
-the mesh to be at he needs to deactivate those controls with the \texttt{shift} key, and enabled them back with the same key. We decided to add three other controls. The first is the use of the \texttt{Esc} key to cancel the current mesh positioning, it removes the current placeholder from the scene. 
-The second and third are linked one to the other, it's the use of the \texttt{ctrl-Z} and \texttt{ctrl-Y} logic. To do so we create two different arrays, one with the current meshes in the scene and the other one with the removed meshes, which operate as \texttt{LIFO} Queue.
-However we test that the length of the respective array is legal to perform the action and if the current shape the user is creating is from the type \texttt{Tracks} then we apply another logic, which removes/reinserts the last point of the track.
+It was needed to add a few more controls over the scene in order to increase the ease of use and the possibilities of creation. The camera controls need to be enabled so that the user can navigate through the scene but once the user chooses his desired location for
+the mesh, he needs to deactivate those controls with the \texttt{shift} key, and enabled them back with the same key. It was decided to add three other controls. The first is the use of the \texttt{Esc} key to cancel the current mesh positioning. This control removes the current placeholder from the scene. 
+The second and third are linked with each other. It is the use of the \texttt{ctrl-Z} and \texttt{ctrl-Y} logic. To do so we create two different arrays, one with the current meshes in the scene and the other one with the removed meshes, which operate as \texttt{LIFO} Queue.
+However, we test that the length of the respective array is legal to perform the action and that the current shape being created by the user is from the type \texttt{Tracks}. Then, another logic is applied, which removes/reinserts the last point of the track.
 There are three different shapes at the user's disposal and two types of grounds. A ground element will always be needed to save the current playground, otherwise, an error occurs. The two types of grounds are a simple rectangle and an octagon, with a set of properties. 
 Changing the properties will not change the mesh in real-time, but once the button \texttt{Generate Ground} is pressed it will remove the previous ground and add the new one. The creation of boxes and cylinders takes part in two steps. 
-During the first step, the user will choose the properties, such as \texttt{width}, the \texttt{length}, the \texttt{height}, the \texttt{color} and the \texttt{rotation} for the box, and then by clicking the \texttt{Generate} button of said shape, 
+During the first step, the user will choose the properties, such as the \texttt{width}, the \texttt{length}, the \texttt{height}, the \texttt{color} and the \texttt{rotation} for the box. Then, by clicking the \texttt{Generate} button of the shape, 
 a placeholder of the shape will be instantiated and it will follow the movements of the mouse while rounding its position to fit into the square represented by the \texttt{THREE.GridHelper} element. 
 
 \begin{lstlisting}[language=JavaScript, gobble=2, basicstyle=\ttfamily\small]
@@ -856,9 +858,9 @@ a placeholder of the shape will be instantiated and it will follow the movements
     .addScalar( 0.5 );
 \end{lstlisting} 
 
-Then the user has multiple-choice, either click to fix the mesh onto the scene, or the properties didn't fit what he wanted so he would click once more on the \texttt{Generate} button with the new properties, 
+Afterward, the user has multiple-choices. He can either click to fix the mesh onto the scene, or the properties did not fit what he wanted so he would click once more on the \texttt{Generate} button with the new properties, 
 or cancel the action with the \texttt{Esc} key. 
-To lay Tracks we needed to create one more step as the mesh is composed of multiple points, those points are laid the same way as a \texttt{Box} mesh would but they are added to an array that stores the position of those points. 
+In order to lay Tracks, it was needed to create one more step as the mesh is composed of multiple points. Those points are laid the same way as a \texttt{Box} mesh would be but they are added to an array that stores the position of those point. 
 Once the track is finished and upon clicking on the \texttt{Generate Track} button the points placeholders will be removed and a track passing through the wanted positions will be computed by looping through the points array and feeding the property element of track with the position of \texttt{X} and \texttt{Z} of each points. 
 It was necessary to delete the last point added as it was registering and instantiating a point when the user was clicking on \texttt{Generate Track}.
 
@@ -871,42 +873,71 @@ It was necessary to delete the last point added as it was registering and instan
   });
 \end{lstlisting} 
 
-However, the algorithm that tracks the movement of the mouse and changes the position of the temporary mesh is not optimized and will slow down the application drastically. Unfortunately we don't know which part of the algorithm has to be optimized.
+However, the algorithm tracking the movement of the mouse and changing the position of the temporary mesh is not optimized and will slow down the application drastically. Unfortunately, we do not know which part of the algorithm has to be optimized.
 
-%%\section{Incorporated Behavior}
-%% TODO : FILL
-%% We saw that Thymio has some pre-programmed behavior directly into him, decided to code one (explorator) and add another one (track follower)
+\section{Incorporated Behavior}
+
+The \texttt{Thymio} robot has multiple pre-programmed behavior which can be chosen using the central button of the D-pad. Thus, three behavior were implemented in the simulation as well. First, a basic behavior. This behavior allows user to input power to the motors using the D-pad.
+Second, is an explorer behavior. In this state, the robot will act as an explorer by moving forward and upon collision with an element of the playground, it will drive back, turn and drive forward again until it is stopped by the user.
+To achieve this sequence of instructions, a \texttt{JavaScipt} method that allows a delayed call to a function was used. It is the \texttt{setTimeout} method, which was used to stop the motors after a given time and start to turn.
+
+\begin{lstlisting}[language=JavaScript, gobble=2, basicstyle=\ttfamily\small]
+  this.setMotors(-250,-250);
+  var thm = this;
+  this.timeOuts.push(setTimeout(function(){
+    thm.stopMotors();
+    thm.halfTurn(true);
+  },1000));
+\end{lstlisting} 
+
+The third behavior that was programmed, is a track follower one. Upon pressing the forward button, the robot will look for the closest point of the track and start to follow the track from that point.
+It was decided to reach the points from the track starting by the closest one, so the previous would be discarded. Although by uncommenting a line in the code this behavior can be achieved.
+
+\begin{lstlisting}[language=JavaScript, gobble=2, basicstyle=\ttfamily\small]
+  var smallest = 100;
+  var index;
+  for (let i = 0; i < this.points.length; i++) {
+    if (this.object3D.position.distanceTo(this.points[i]) < smallest)
+    {
+      smallest = this.object3D.position.distanceTo(this.points[i]);
+      index = i;
+    }            
+  }
+\end{lstlisting}
+
+In order to reach the next point the algorithm is not using the motors of the robots, this could be improved. To control whether the robot is close enough to the target point a method is called, in the \texttt{onFrameRendered} method only if the state corresponds to the track follower,
+and if the robot is following a track, which will change the behavior depending on the distance to the target and the number of points left.
 
 \chapter{Conclusion}
 
 \section{Results}
 
-We reached five out of the six goals that we determined at the beginning of the project. We have created an environment where a \texttt{Thymio} robot can move around a given playground. The playground can be chosen between built-in ones or fully created by the user with a tool that enables it. 
-One sensor and three actuators have been analyzed and implemented into the robot, the proximity sensors, the two motors, the lights, and the top d-pad buttons. We have also noticed that although our application architecture, MVC, allows for the addition of new models very easily, it is too heavy and restrictive in terms of diversity. 
-For example to add the sensor we had to implement them not in the cleanest way possible. The application runs smoothly, for the exception of the placement of new meshes in the playground creator due to an algorithm issue, 
-on any modern browser without further installation required and is accessible from inside the \texttt{BFH} network. Unfortunately, it is not possible to input a .aesl file containing a program to the application and use it as behavior for \texttt{Thymio}. 
-Thus the sixth objective, \texttt{Integration of Aseba Language}, was not brought to terms on account of multiple problems and issues. As we came into this project without experience regarding the creation of a compiler/interpreter, we underestimated greatly the amount of work this part would take during the project. 
-We decided to use an already existing compiler/interpreter, the one from Aseba that they use for their \texttt{Thymio Suite} application. Their code was written in C++ and it was the second step back after the time needed just to create a compiler, as our knowledge of this programming language is very basic. 
-Thus it was rather difficult to convert their program into JavaScript. But to compensate for this we analyzed a \texttt{Thymio} robot and discovered that it comes with some built-in behavior, so we decided to incorporate two of them to demonstrate that a web simulation of a \texttt{Thymio} is possible. 
-And furthermore, if the steps in the next section are brought to completion it is completely possible to fulfill the integration of the \texttt{Aseba} language into the application.
+We have reached five out of the six goals that were determined at the beginning of the project. We have created an environment where a \texttt{Thymio} robot can move around a given playground. The playground can be chosen between built-in ones and others that are fully created by the user with a tool enabling it.
+One sensor and three actuators have been analyzed and implemented into the robot, the proximity sensors, the two motors, the lights, and the top d-pad buttons. We have also noticed that although our application architecture, \texttt{MVC}, allows the addition of new models very easily, it is too heavy and restrictive in terms of diversity. 
+For example, to add the proximity sensors we had to implement them in a non-optimized manner. The application runs smoothly, except for the placement of new meshes in the playground creator due to an algorithm issue, 
+on any modern browser without further installation required and is accessible from inside the \texttt{BFH} network. Unfortunately, it is not possible to input a .aesl file containing a program to the application and to use it as a behavior for \texttt{Thymio}. 
+Thus, the sixth objective, the \texttt{Integration of Aseba Language}, was not brought to terms due to multiple problems and issues. As we came into this project without experience regarding the creation of a compiler/interpreter, we underestimated greatly the amount of work required by this part during the project. 
+We decided to use an already existing compiler/interpreter, namely the one from Aseba used for their \texttt{Thymio Suite} application. The code was written in \texttt{C++} and considering our basic knowledge of this programming language, it was a second slowdown in the project.
+Thus, it was rather difficult to convert this program into JavaScript. However, in order to compensate for this, we analyzed a \texttt{Thymio} robot and discovered that it is delivered with some built-in behaviors. Consequently, we decided to incorporate two of them to demonstrate that a web simulation of a \texttt{Thymio} is possible. 
+In addition to that, if the steps in the next section are brought to completion it is completely possible to fulfill the integration of the \texttt{Aseba} language into the application.
 
 \section{Future research \label{future}}
 
-In order to continue this project the next step would be to complete the goal that wasn’t brought to an end. And to do so it would require to finish translating the various \texttt{.cpp} and \texttt{.h} file from the folder compiler of \href{ https://github.com/aseba-community/aseba/tree/master/aseba/compiler}{Asebas Git}. 
-The next step of the process of compiling a file would be to implement the \texttt{checkVectorSize} method. Which recursively walk through the tree and check the different \texttt{Nodes} vector size and would throw an error in case the return value doesn’t match the expected one. 
-The \texttt{compiler} would then move on to expand the syntax tree to \texttt{Aseba} like syntax, through a recursive walk on the tree. And the tree would be recreated with the new syntax. Afterward, it would expand the vectorial nodes into scalar operations and rebuild the tree. 
-Then comes the step where the type of each node would be checked to see if they correspond to the expected ones. It would then optimize the current tree, and then emit the first \texttt{Bytecode} generated from the tree. 
-Using a subroutine table the compiler will fix-up the generated \texttt{Bytecode} that might be missing some \texttt{STOP} or \texttt{RET}. Then the \texttt{verifyStackCalls} method which will do as her name suggests, verify the integrity of the stack with no overflow. 
-And it will end by linking the bytecode into the final program, the linking is a flattening of complex structure into linear vector.
+In order to continue this project the next step would be to complete the goal that could not be brought to an end. This would require to finish translating the various \texttt{.cpp} and \texttt{.h} file from the folder compiler of \href{ https://github.com/aseba-community/aseba/tree/master/aseba/compiler}{Asebas Git}. 
+The further step of the process of compiling a file would be to implement the \texttt{checkVectorSize} method. This method recursively walks through the tree and checks the different \texttt{Nodes} vector size and throws an error in case the return value does not match the expected one. 
+The \texttt{compiler} would then continue on to expand the syntax tree to \texttt{Aseba} like syntax, through a recursive walk on the tree. The tree would be recreated with the new syntax. Afterward, it would expand the vectorial nodes into scalar operations and rebuild the tree. 
+In the next step, the type of each node would be checked to see if it corresponds to the expected one. It would then optimize the current tree, and then emit the first \texttt{Bytecode} generated from the tree. 
+Using a subroutine table, the compiler would fix-up the generated \texttt{Bytecode} that might be missing some \texttt{STOP} or \texttt{RET}. Then, the \texttt{verifyStackCalls} method, as its name suggests it, would verify the integrity of the stack with no overflow. 
+And it would end by linking the bytecode into the final program. Here, the linking is a flattening of complex structure into linear vector.
 
-Once this part would be over, more sensors could be added. Such as sound sensors to listen to the clap of hands, or a "Pen holder" to draw figures by moving Thymio around. 
-It would be ideal to design and implement a way that would ease the addition of sensors and actuators, something in the way of our Model / ViewMediator. And to improve the already existing one. For example by getting rid of the algorithm issue on the motor actuators.
+Once this part would be over, more sensors could be added. Those sensors could, for example, be sound sensors to listen to the clap of hands, or a "Pen holder" to draw figures by moving Thymio around. 
+Ideally, a way to ease the addition of sensors and actuators would be designed and implemented. It could be something similar to our \texttt{Model} / \texttt{ViewMediator}. And to improve the already existing one. For example by getting rid of the algorithm issue on the motor actuators.
 
 \section{Personal conclusion}
 
-The work on this thesis was very interesting and challenging. There were many new technologies to learn, understand and master. We didn’t expect at the start of the project that we would be confronted with a full-scale \texttt{C++} application, but we ended up learning a lot from it, 
-and from the difficulties that lie when trying to translate a program in one programming language into another programming language. We observed that it was rather difficult to estimate the amount of work needed for the various part that we were not accustomed to, 
-such as compiler that took way more time, or the customizable playground that took way less. But we gained a lot of knowledge and experience during this project.
+The work on this thesis was very interesting and challenging. There were many new technologies to learn, understand and master. Initially, we did not expect to be confronted with a full-scale \texttt{C++} application, but we have learned a lot from it.
+The difficulties that emerge when translating a program in one programming language into another programming language were also very instructive. We observed that it was rather difficult to estimate the amount of work needed for the various part that we were not accustomed to.
+For example, the compiler was very time-consuming, while the customizable playground required less time. In conclusion, we gained a lot of knowledge and experience during this project.
 
 
 \appendix
@@ -919,23 +950,23 @@ developed by the creator of Aseba. A visual programming language is an abstracti
 It is based on the manipulation of program elements graphically that can be manipulated following some spatial grammar to create a program. 
 VPLs are based on a set of entities and relations, whereas most of the time entities are represented by boxes, 
 or other graphical objects, and relations by simple arrows. They can be categorized into icon-based, 
-form-based and diagram-based languages depending on the extent of visual expression inside of it. 
+form-based and diagram-based languages depending on the extent of visual expression inside of them. 
 The use of visual programming languages can be found in multiple areas, such as the game engine “Unreal Engine 4” where their system of Blueprints is created upon a node-based VPL, 
 or “Microsoft SQL Server Integration Services”. This abstraction allows easier access for neophytes, 
-for example using graphic elements such as blocks, forms, diagrams, and others reduce drastically, if not eliminate, the syntactic errors made by the user.\\
+for example using graphic elements such as blocks, forms, diagrams, and others which reduce drastically, if not eliminate, the syntactic errors made by the user.\\
 
-In the case of the VPL developed by Aseba’s team, and the one we are mostly interested in, we have a programming language based on two types of blocks: Event blocks and Action blocks. 
-From those two are built the seventeen, respectively eleven event blocks and six action blocks, entities. 
-One of the main goals of VPL for Thymio was to let people who cannot yet read the ability to start programming and discover this world.\\
+In the case of the VPL developed by Aseba’s team, the one we are mostly interested in, it is a programming language based on two types of blocks: Event blocks and Action blocks. 
+Based on those two blocks, the seventeen, respectively eleven event blocks and six action blocks, entities are built. 
+One of the main goals of VPL for Thymio was to enable people who cannot yet read to start programming and discover this world.\\
 
 \begin{center}
   \includegraphics[width=\textwidth]{./VPL/Thymio_VPL_window}\\
   Thymio VPL Event and Action blocks
 \end{center}
 
-To begin creating a program follow the first steps described in the section \ref{howdoesitworkref} at the page \pageref{howdoesitworkref}. 
-Once the VPL option has been chosen and the Thymio Visual Programming Language window appears we are ready to go. 
-The window is split into six different regions with each of their purposes.
+To begin creating a program follow the first steps described in section \ref{howdoesitworkref} on \pageref{howdoesitworkref}. 
+Once the VPL option has been chosen and the Thymio Visual Programming Language window appears programming begins. 
+The window is split into six different regions, where each has its own purpose as listed below.
 \begin{enumerate}
   \item A tool bar
   \item A programming window
@@ -950,17 +981,17 @@ The window is split into six different regions with each of their purposes.
   Thymio VPL Window
 \end{center}
 
-At first, the programming window will be empty of blocks, containing just a placeholder with empty slots. 
-This placeholder is the base of every Thymio VPL program, it contains exactly one event block and one or more action block. 
-This means that whenever the event of the event block happens then the set of actions added to this placeholder will occur at the same time. 
+At first, the programming window is empty of blocks, containing just a placeholder with empty slots. 
+This placeholder is the base of every Thymio VPL program. It contains exactly one event block and one or more action block. 
+This means that whenever the event of the event block happens, then the set of actions added to this placeholder will occur at the same time. 
 For example, with the following pair: \\
 \begin{center}
   \includegraphics[scale=0.5]{./VPL/middlebtn_forward}\\
   Event and one Action relation
 \end{center}
 
-Both wheels are powered to the maximum when the middle button is pressed. But more than one action can be attributed to one event, 
-to do so simply drag another action block onto the previous pair, notice that the same block cannot be used twice for the same event. 
+Both wheels are powered to the maximum when the middle button is pressed. However, more than one action can be attributed to one event. 
+In order to do that, another action block has to be dragged into the previous pair. It should be noted that the same block cannot be used twice for the same event. 
 Here we turned the lights on top and set them to a complete green:\\
 \begin{center}
   \includegraphics[scale=0.5]{./VPL/middlebtn_forward_green}\\
@@ -974,15 +1005,15 @@ Let us add two more event blocks to allow the robot to turn:\\
   Event and Actions relations
 \end{center}
 
-Now we have a basic behavior, go straight with green lights when the middle button is pushed, turn left on itself with orange lights when the left button is pushed, 
+Now we have a basic behavior: go straight with green lights when the middle button is pushed, turn left on itself with orange lights when the left button is pushed, 
 and at last turn right on itself with yellow lights when the right button is pushed.\\
 
 By clicking the button with a student as an icon we enable the advanced mode that gives us more possibilities for multiple blocks. It raises the amount of action block from four to six as well. \\
 
-Let us refactor a bit the program from before, we will change the program by making the robot look left then right and starting over again using timers. 
-To help us develop a more interesting program we have now access to a condition, a four led light on top of the robot, using this and the timer we can behave depending on the state of the robot. 
+Let us refactor a bit the program from before. We will change the program by making the robot look left then right and starting over again using timers. 
+In order to help us develop a more interesting program, we have now access to a condition, namely a four led light on top of the robot. Using this and the timer we can behave depending on the state of the robot. 
 For example, hereafter the middle button was pressed a timer will start and after a short amount of time, it will light one particular led. 
-Afterward, the event “timer elapsed” will be triggered but which pair should the program execute, turning right or turning left? 
+Afterward, the event “timer elapsed” will be triggered. However, it has to be decided which pair should be executed by the program, namely turning right or turning left? 
 Hence comes the use of the condition as we will execute the part of the program that corresponds to the state of the condition light. 
 In this example, it will go back and forth between the two pairs: \\
 \begin{center}
@@ -992,29 +1023,29 @@ In this example, it will go back and forth between the two pairs: \\
 
 \section{Blockly 4 Thymio}
 
-The second possibility is to use \texttt{Blockly4Thymio} which is an environment based on Blockly. Blockly was released in May 2012 and was initially a replacement for OpenBlocks for the \texttt{MIT App Inventor}. 
+The second possibility to program the \texttt{Thymio} is to use \texttt{Blockly4Thymio}, which is an environment based on Blockly. Blockly was released in May 2012 and was initially a replacement for OpenBlocks for the \texttt{MIT App Inventor}. 
 It is an open-source client-side library that allows its users to easily add a block-based visual programming language to an application or website. 
-Blockly is not in itself a programming language but rather used to create one. Its design makes it flexible and it can support a large set of features. 
-As it is a visual programming language, we find the same advantages as the first possibility, such for example applying programming principles with no regard towards syntactic error.
+Blockly is not in itself a programming language but it is rather used to create one. Its design makes it flexible and it can support a large set of features. 
+As it is a visual programming language, it shows similar advantages to the first possibility. For example, it can apply programming principles with no regard towards syntactic error.
 Blockly is among the growing and most used visual programming environments because of a few important features. First, it can export the code generated with the blocks to one of the five following programming languages, 
-as a built-in feature, \texttt{JavaScript}, \texttt{Lua}, \texttt{Dart}, \texttt{Python}, and \texttt{PHP}, and can be enhanced for any textual programming languages. 
+as a built-in feature, \texttt{JavaScript}, \texttt{Lua}, \texttt{Dart}, \texttt{Python}, and \texttt{PHP}. Second, it can be enhanced for any textual programming languages. 
 The block pool can be expanded from its base pool or even reduced depending on the needs. The blocks are not restrained to only basic tasks and can implement sophisticated programming tasks. 
-And it has been translated in over forty languages, and as well right-to-left versions. \\
+Additionally, it has been translated into over forty languages, and there exist right-to-left versions. \\
 
-Blockly includes a set of pre-defined blocks that can be used to develop with more ease the wanted application. They are arranged into eight families:
+Blockly includes a set of pre-defined blocks that can be used to develop more easily the wanted application. They are arranged into eight families:
 \begin{description}
   \item [Logic:] Blocks with Boolean definition, equality check, and conditions.
   \item [Loop:] Blocks for loops.
-  \item [Math:] Blocks for numbers, arithmetic operation, a few basic math functions (for example cos, sin, square root) and some mathematical constant (Pi).
+  \item [Math:] Blocks for numbers, arithmetic operations, a few basic math functions (for example cos, sin, square root) and some mathematical constant (Pi).
   \item [Text:] Blocks to create text and text operations.
-  \item [Lists:] Blocks to create lists and standard list operation (length, get the value).
+  \item [Lists:] Blocks to create lists and standard list operations (length, get the value).
   \item [Color:] Blocks with a color definition.
   \item [Variables:] Blocks to create variables, and to set/get their values.
   \item [Functions:] Blocks to create functions, with return value or not, and to call existing function.
 \end{description}
 
 Each block holds a pre-assigned shape, thus restraining its usage to certain situations as a "hidden" way to control the syntax. Their shapes are defined by the different connections with other blocks, 
-both external and internal, while external blocks describe what happens after or before, the internals describe what happens during or what are the arguments, logic. 
+both external and internal. While external blocks describe what happens after or before, the internals ones describe what happens during or what are the arguments, the logic. 
 Following is a basic variable block with three external connectors, and a math block with the value of one, with one connector, that is assigned to the \texttt{Count} variable (the blocks need to be assembled). \\
 \begin{center}
   \includegraphics[scale=0.5]{./Blockly/basic_variable}\\
@@ -1022,17 +1053,17 @@ Following is a basic variable block with three external connectors, and a math b
 \end{center}
 
 Using the same logic as above we created a \texttt{Limit} variable with the value of 5 to demonstrate the next example. 
-The block used is from the logic family and test whether the \texttt{Count} variable is smaller or equal to the \texttt{Limit} as internal blocks. 
-It can then be added to a loop, a function or other statements that needs logic.\\
+The block used is from the logic family and it tests whether the \texttt{Count} variable is smaller or equal to the \texttt{Limit} as internal blocks. 
+It can then be added to a loop, a function or to other statements that needs logic.\\
 \begin{center}
   \includegraphics[scale=0.5]{./Blockly/basic_logic}\\
   Logic block
 \end{center}
 
 Added to the base that Blockly is for \texttt{Blockly4Thymio}, is a compilator that interpret and adapt the Blockly code directly into Aseba language, and an Aseba Framework. 
-Let us once again follow the steps described in the “How does it works” section in order to start blockly-ing a little program with \texttt{Blockly4Thymio}. 
+Let us once again follow the steps described in the “How does it works” section in order to start blockly-ing a small program with \texttt{Blockly4Thymio}. 
 Note that it is possible to open the \texttt{Thymio Blockly} environment without going through the Thymio suite, and without any Thymio II connected (physically or simulated). 
-To do so open the location of Thymio, the downloaded not the installed, and select thymio\textunderscore blockly, and then index.
+In order to do so, open the location of Thymio, the downloaded and not the installed one, and select thymio\textunderscore blockly, and then index.
 The environment window that opens after choosing the Blockly option is split into four parts.
 \begin{enumerate}
   \item A tool bar
@@ -1046,15 +1077,15 @@ The environment window that opens after choosing the Blockly option is split int
   Thymio Blockly window
 \end{center}
 
-The following figure demonstrates a simple program, once run the program listens to two different events. When the center button is pressed and when the front middle proximity sensor detects a wall. 
-The first one will activate the two motors at the same speed, as to drive forward, and light the top LED to green. Whereas the second will stop the motors and turn the LED to red. \\
+The following figure displays a simple program. Once run the program listens to two different events. When the center button is pressed and when the front middle proximity sensor detects a wall. 
+The first one will activate the two motors at the same speed, as to drive forward, and light the top LED to green. The second will stop the motors and turn the LED to red. \\
 \begin{center}
   \includegraphics[scale=0.5]{./Blockly/forward_stop_wall}\\
   Basic program
 \end{center}
 
-Here we set a variable to act as a control if Thymio is moving or not. We then use this information into a test when we click the middle button, and we either move forward or stop according to the result. 
-We added two other events for the right and left buttons that are responsible to turn the robot.
+Here we set a variable to control whether the \texttt{Thymio} is moving or not. This information is then used into a test when clicking the middle button, and either moving forward or stoping according to the result.
+Two other events were added for the right and left buttons that are responsible to turn the robot.
 \begin{center}
   \includegraphics[scale=0.5]{./Blockly/advanced_program}\\
   More complex program
@@ -1062,33 +1093,32 @@ We added two other events for the right and left buttons that are responsible to
 
 \section{Aseba}
 
-For the \texttt{Aseba} possibility we kindly recommend you to use the tutorials and examples that can be found on the \href{https://www.thymio.org/program/aseba/}{\texttt{Thymio} web page}.
+For the \texttt{Aseba} possibility, we kindly recommend you to use the tutorials and examples that can be found on the \href{https://www.thymio.org/program/aseba/}{\texttt{Thymio} web page}.
 
 \section{Scratch}
 
-For the \texttt{Scratch} possibility we kindly recommend you to use the tutorials and examples that can be found on the \href{https://www.thymio.org/program/scratch/}{\texttt{Thymio} web page}.
+For the \texttt{Scratch} possibility, we kindly recommend you to use the tutorials and examples that can be found on the \href{https://www.thymio.org/program/scratch/}{\texttt{Thymio} web page}.
 
 \chapter{Product Backlog}
 \begin{longtable}{p{5mm}|p{2cm}|p{4cm}|p{1cm}|p{1cm}|p{1cm}|p{1cm}|p{15mm}}
   ID                     & Story Name & Story / Task Description & Priority & Est. Effort {[}h{]} & Update Effort {[}h{]} & Actual Effort{[}h{]} & Status                \\ \hline
-  1 & Create Documentation & Develop and write the documentation & High & 16 & 16 & 16 & In-Progress \\ 
+  1 & Create Documentation & Develop and write the documentation & High & 16 & 16 & 16 & Done \\ 
   2 & Set up the Environment & Setting up and configuring the development environment & High & 12 & 12 & 12 & Done \\ 
   3 & Basic Learning & Learning and training of the different technology used later on & High & 44 & 58 & 58 & Done \\ 
   4 & Develop Playgrounds & Create playgrounds and function to generate meshes & High & 40 & 48 & 48 & Done \\ 
-  5 & Update Documentation & Update existing documentation & High & 60 &  &  & In-Progress \\
-  6 & Architecture Implementation & Refactor the existing code into the designed architecture & High & 40 & 48 &  & In-Progress\\ 
+  5 & Update Documentation & Update existing documentation & High & 60 & 76 & 76 & Done \\
+  6 & Architecture Implementation & Refactor the existing code into the designed architecture & High & 40 & 48 & 48 & Done\\ 
   7 & Web Deployement & Deploy the application on a webserver & High & 16 & 12 & 12 & Done \\ 
-  8 & Basic UI & Implement a basic UI & Low & 8 & 4 &  & In-Progress \\ 
-  9 & Behavior Pipeline & Create pipeline to take .aesl file and translate/compile it into behavior in JavaScript for the Thymio II & High & 40 &  &  & To Do \\ 
-  10 & Phyisics Implementation & Implementation of Collisions for threejs Meshes & High & 20 &  &  & To Do \\ 
-  11 & Update Documentation & Update existing documentation & High & 20 &  &  & To Do \\ 
-  12 & Enhanced UI & Enhancement of the current UI & Low &  &  &  & To Do \\ 
-  13 & Customizable Playgrounds & Implementation of a playground creator for users & High &  &  &  & To Do \\ 
-  14 & Update Documentation & Update existing documentation & High & 20 &  &  & To Do \\ 
-  15 & Enhanced Behavior Pipeline & Implement more sensors, action and event for Thymio II & High &  &  &  & To Do \\ 
-  16 & Finish Documentation & Finish existing documentation & High &  &  &  & To Do \\
-  17 & Prepare Defense & Prepare the defense & High &  &  &  & To Do \\ 
-   &  &  & Total &  &  &  &  \\ 
+  8 & Basic UI & Implement a basic UI & Low & 8 & 8 & 8 & Done \\ 
+  9 & Behavior Pipeline & Create pipeline to take .aesl file and translate/compile it into behavior in JavaScript for the Thymio II & High & 40 & 80 & 80 & Done \\ 
+  10 & Phyisics Implementation & Implementation of Collisions for threejs Meshes & High & 20 & 16 & 16 & Done \\ 
+  11 & Update Documentation & Update existing documentation & High & 20 & 20 & 20 & Done \\ 
+  12 & Enhanced UI & Enhancement of the current UI & Low & 10 & [/] & {/} & To Do \\ 
+  13 & Customizable Playgrounds & Implementation of a playground creator for users & High & 40 & 24 & 24 & Done \\ 
+  14 & Update Documentation & Update existing documentation & High & 20 & 24 & 24 & Done \\ 
+  15 & Enhanced Behavior Pipeline & Implement more sensors, action and event for Thymio II & High & {/} & {/} & {/} & To Do \\ 
+  16 & Finish Documentation & Finish existing documentation & High & 80 & 88 & 88 & Done \\
+  17 & Prepare Defense & Prepare the defense & High & 24 &  &  & To Do \\ 
 \end{longtable}
 
 \chapter{Sprint Backlog}
@@ -1145,9 +1175,9 @@ For the \texttt{Scratch} possibility we kindly recommend you to use the tutorial
 \textbf{2019-11-15 until 2019-12-09}
 \begin{longtable}{p{5mm}|p{2cm}|p{4cm}|p{1cm}|p{1cm}|p{1cm}|p{1cm}|p{15mm}}
   ID                     & Story Name & Story / Task Description & Priority & Est. Effort {[}h{]} & Update Effort {[}h{]} & Actual Effort{[}h{]} & Status                \\ \hline
-  9 & Behavior Pipeline & Create pipeline to take .aesl file and translate/compile it into behavior in JavaScript for the Thymio II & High & 40 &  &  & To Do \\ 
-  10 & Phyisics Implementation & Implementation of Collisions for ThreeJS Meshes & High & 20 &  &  & To Do \\
-  11 & Update Documentation & Update existing documentation & High & 20 &  &  & To Do \\ 
+  9 & Behavior Pipeline & Create pipeline to take .aesl file and translate/compile it into behavior in JavaScript for the Thymio II & High & 40 & 80 & 80 & Done \\ 
+  10 & Phyisics Implementation & Implementation of Collisions for ThreeJS Meshes & High & 20 & 0 & {/} & To Do \\
+  11 & Update Documentation & Update existing documentation & High & 20 & 20 & 20 & Done \\ 
 \end{longtable}
 
 \section{Fifth Sprint}
@@ -1155,6 +1185,7 @@ For the \texttt{Scratch} possibility we kindly recommend you to use the tutorial
 \begin{longtable}{p{5mm}|p{2cm}|p{4cm}|p{1cm}|p{1cm}|p{1cm}|p{1cm}|p{15mm}}
   ID                     & Story Name & Story / Task Description & Priority & Est. Effort {[}h{]} & Update Effort {[}h{]} & Actual Effort{[}h{]} & Status                \\ \hline
   12 & Enhanced UI & Enhancement of the current UI & Low & 10 & {/} & {/} & To Do \\ 
+  10 & Phyisics Implementation & Implementation of Collisions for ThreeJS Meshes & High & 20 & 16 & 16 & Done \\
   13 & Customizable Playgrounds & Implementation of a playground creator for users & High & 40 & 24 & 24 & Done \\ 
   14 & Update Documentation & Update existing documentation & High & 20 & 24 & 24 & Done \\ 
 \end{longtable}
@@ -1163,33 +1194,35 @@ For the \texttt{Scratch} possibility we kindly recommend you to use the tutorial
 \textbf{2019-12-30 until 2020-01-17}
 \begin{longtable}{p{5mm}|p{2cm}|p{4cm}|p{1cm}|p{1cm}|p{1cm}|p{1cm}|p{15mm}}
   ID                     & Story Name & Story / Task Description & Priority & Est. Effort {[}h{]} & Update Effort {[}h{]} & Actual Effort{[}h{]} & Status                \\ \hline
-  15 & Enhanced Behavior Pipeline & Implement more sensors, action and event for Thymio II & High &  &  &  & To Do \\ 
-  16 & Finish Documentation & Finish existing documentation & High &  &  &  & To Do \\
-  16.1 & Create Video & Create the video file & High & 16 &  &  & To Do \\ 
-  16.2 & Prepare Presentation Day & Create the poster and the presentation for the Presentation Day & High & 16 & 4 &  & In-Progress \\
+  15 & Enhanced Behavior Pipeline & Implement more sensors, action and event for Thymio II & High & {/} & {/} & {/} & To Do \\ 
+  16 & Finish Documentation & Finish existing documentation & High & 80 & 88 & 88 & Done \\
+  16.1 & Create Video & Create the video file & High & 16 & 16 & 16 & Done \\ 
+  16.2 & Prepare Presentation Day & Create the poster and the presentation for the Presentation Day & High & 16 & 16 & 16 & Done \\
   16.3 & Write in the Book & Write the page for the Book & High & 8 & 4 & 4 & Done \\ 
-  16.4 & Finish Writting Documentation & Terminate the writting part of the documentation & High & 32 & 24 &  & In-Progress \\ 
-  16.5 & Prepare to Submit & Check spelling mistake, check images, print it, put the project on a USB stick & High & 8 &  &  & To Do\\ 
-  17 & Prepare Defense & Prepare the defense & High &  &  &  & To Do \\ \hline
+  16.4 & Finish Writting Documentation & Terminate the writting part of the documentation & High & 32 & 44 & 44 & Done \\ 
+  16.5 & Prepare to Submit & Check spelling mistake, check images, print it, put the project on a USB stick & High & 8 & 8 & 8 & Done\\ 
+  17 & Prepare Defense & Prepare the defense & High & 24 &  &  & To Do \\ \hline
 \end{longtable}
 
 \chapter{Gantt Diagram}
 %% TODO: make sure it's 100% visible
 
 \begin{center}
-  \includegraphics[scale = 0.24, angle=-90]{./Gantt-1}
+  \includegraphics[scale = 0.31, angle=-90]{./Gantt-1}
 \end{center}
 
 \begin{center}
-  \includegraphics[scale = 0.24,  angle=-90]{./Gantt-2}
+  \includegraphics[scale = 0.31,  angle=-90]{./Gantt-2}
 \end{center}
 
 \chapter{Configuration}
 
-\textbf{User information} \\
-On demand.\\
+\section{User Information}
 
-\textbf{Access the Windows Virtual Machine}\\
+On demand.
+
+\section{Access the Windows Virtual Machine}
+
 \begin{center}
   \begin{tabular}{|c|c|c|}
     \hline
@@ -1204,14 +1237,15 @@ On demand.\\
   \end{tabular}
 \end{center}
 
-See link bellow for more information and links. (It requires to be inside the bfh networkd to access it)
+See the link below for more information and links. It requires to be inside the bfh networkd to access it
 \url{https://intranet.bfh.ch/TI/fr/Studium/Bachelor/Informatik/Tools/VMsHowto/Pages/default.aspx?k=vm}
 
-\textbf{First Configuration of XAMPP}\\
-The configuration of XAMPP is very basic. The steps done during the setup of the IIS Manager at \ref{webserver}, concerning forwarding and firewall, should still be followed. First we need to download and install it, it can be found under this link : \url{https://www.apachefriends.org/index.html} . Afterward it is needed to travel through the folder of the application until the folder 
-\texttt{htdocs}. There the default placeholder files was stored, we put them into a new default folder and instead added our content in this folder. Do not forget to take the .webconfig file from the \ref{webserver} section.
+\section{First Configuration of XAMPP}
+The configuration of XAMPP is very basic. The steps done during the setup of the IIS Manager at \ref{webserver}, concerning forwarding and firewall, should still be followed. First, we need to download and install it. It can be found under this link: \url{https://www.apachefriends.org/index.html} . Afterward, it is needed to travel through the folder of the application until the folder 
+\texttt{htdocs}. This is where the default placeholder files was stored. There, we put them into a new default folder and instead added our content in this folder. It should not be forgotten to take the .webconfig file from the \ref{webserver} section.
 
 \chapter{Meetings}
+
 \begin{tabular}{ | m{3cm} | m{10cm} | }
   \hline
   Date & Content \\
@@ -1224,7 +1258,7 @@ The configuration of XAMPP is very basic. The steps done during the setup of the
   24.09.2019 & \textbf{Second meeting} \\
   & - Documentation language : English \\
   & - Thymio model \\
-  & - Base talk about riks management \\
+  & - Base talk about risk management \\
   \hline
   08.10.2019 & \textbf{Third meeting}\\
   & Workplace\\
@@ -1235,7 +1269,7 @@ The configuration of XAMPP is very basic. The steps done during the setup of the
   15.10.2019 & \textbf{Fourth meeting} \\
   & - Which shapes and meshes should the user be able to create for his own custom playground \\
   & - Problems with webserver, has to be accessible from outside the vm, so maybe switching from windosw to linux \\
-  & - Talk about the problem of thymio suite, that is the software allows the user to create programs only if a physical or a simulated one is plugged in \\
+  & - Talk about the problem of thymio suite, where the software only allows the user to create programs if a physical or a simulated one is plugged in \\
   \hline
   25.10.2019 & \textbf{Fifth meeting} \\
   & - Discussed using a Finite state machine to handle the events, but it may be too rigid so a non-deterministic finite state machine was the possible solution we came with \\
@@ -1256,6 +1290,10 @@ The configuration of XAMPP is very basic. The steps done during the setup of the
   & - Latex commands\\
   & - Final day and defense talk\\
   \hline
+  14.01.2020 & \textbf{Tenth meeting} \\
+  & - Latex commands\\
+  & - Organizational questions\\
+ \hline
 \end{tabular}
 
 \chapter{Problems encountered}
@@ -1267,16 +1305,15 @@ The configuration of XAMPP is very basic. The steps done during the setup of the
         https://stackoverflow.com/questions/16097580/three-js-loading-obj-error-in-azure-but-not-locally
   \item shadow not rendering on plane of all playgrounds
   \item javascript file not found on server, net::ERR\textunderscore ABORTED 404 (Not Found) => first solution (working partially) was to add a IIS\textunderscore IUSRS.
-  \item Thymio Blockly has trouble loading saved files. Using the software I wasn't able to load any .aesl file previously created with it, but I could load them if I used the index.html one.
+  \item Thymio Blockly has trouble loading saved files. Using the software I was not able to load any .aesl file previously created with it, but I could load them if I used the index.html one.
   \item Thymio model not always loading correctly -> Load one at the start of the page and reset its position/rotation upon change of playground.
-  \item problem with dat.gui, it was creating a new creator view so the creator wasn't accessible. Decided to use html buttons instead
+  \item problem with dat.gui, it was creating a new creator view so the creator was not accessible -> decided to use html buttons instead
   \item c++ to javascript
 \end{itemize}
 
 
-\includegraphics[width=\textwidth]{pdf/bachelor_quentin.pdf}
+\includegraphics[width=\textwidth]{pdf/Declaration_of_authonomy.pdf}
 
-%% TODO : list of abbreviations
 %% Print the bibibliography and add the section to the table of content
 \printbibliography[heading=bibintoc]
 

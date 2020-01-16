@@ -158,7 +158,7 @@ export default class Parser{
         }
 
         return node;
-    }
+    }   
 
     //! Parse "binary xor" grammar element.
     parseBinaryXorExpression(){
